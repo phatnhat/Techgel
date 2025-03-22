@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<head th:replace="~{admin/fragments :: page_head('Admin Techgel', 'none')}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div th:replace="~{admin/header :: header}"></div>
+        <div th:replace="~{admin/sidebar :: sidebar}"></div>
+        <div th:replace="${main}"></div>
+        <div th:replace="~{admin/footer :: footer}"></div>
+        <div id="sidebar-overlay"></div>
+    </div>
+
+    <th:block th:replace="~{admin/fragments :: script}"></th:block>
+    <script>
+        $('[data-toggle="tooltip"]').tooltip({ placement: 'bottom' });
+    </script>
+</body>
+</html>

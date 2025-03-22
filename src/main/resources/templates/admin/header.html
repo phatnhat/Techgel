@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:fragment="header">
+        <nav class="main-header navbar navbar-expand-md navbar-dark bg-dark">
+            <ul class="navbar-nav pl-2 pl-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" id="nopSideBarPusher" data-widget="pushmenu" href="#">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+            <a th:href="@{/webadmin}" class="brand-link navbar-dark">
+                <img th:src="@{/imgs/logo.jpg}" alt="logo.png" class="brand-image logo d-block d-md-none d-sm-block d-sm-none">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ml-auto pl-2 mr-4">
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link disabled" sec:authentication="principal.username"></a>
+
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <div th:replace="~{admin/logout :: logout}"></div>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

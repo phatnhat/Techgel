@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:fragment="footer">
+        <style>
+            .bg-color-footer {
+                background-color: #03041C;
+                background-image: url([[@{/imgs/footer-01.png}]]);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+        <footer class="footer-area footer-style-one-wrapper bg-color-footer bg_images" style="padding: 50px 0;">
+            <div class="container">
+                <div class="footer-main footer-style-one">
+                    <div class="row g-5">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-footer-wrapper border-right mr--20">
+                                <div class="logo">
+                                    <a href="index.html" style="color: white;text-transform: uppercase;font-size:25px;">
+<!--                                        <img th:src="@{/imgs/logo-footer.png}" width="200" alt="Techgel Logo">-->
+                                        Công ty CP Kỹ thuật Công nghệ Sài Gòn
+                                    </a>
+                                </div>
+                                <p class="description">
+                                    Nội dung
+                                </p>
+                                <div class="day-time">
+                                    <div class="icon"><i class="fa-solid fa-clock"></i></div>
+                                    <div class="content">
+                                        <div class="day">Monday - Saturday:</div>
+                                        <div class="time">8:30 AM – 5:30 PM</div>
+                                    </div>
+                                </div>
+                                <ul class="social-icons solid-social-icons rounded-social-icons">
+                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <div class="single-footer-wrapper pl-50 pl_md--0 pl_sm--0">
+                                <h5 class="ft-title">Liên kết nhanh</h5>
+                                <ul class="ft-link">
+                                    <li>
+                                        <a href="about.html">Về chúng tôi</a>
+                                    </li>
+                                    <li>
+                                        <a href="team.html">Dự án</a>
+                                    </li>
+                                    <li>
+                                        <a href="service.html">Tin tức</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html">Tuyển dụng</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">Liên hệ</a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-footer-wrapper pr--15">
+                                <h5 class="ft-title">Bài viết gần đây</h5>
+
+                                <div class="single-post">
+                                    <div class="thumbnail">
+                                        <img src="https://themes-park.net/product/html/bizper/assets/images/footer/small-post.jpg" alt="Business_Corporate">
+                                    </div>
+                                    <div class="content">
+                                        <div class="date"><i class="fa-solid fa-calendar-days"></i><span>12 Feb, 2022</span></div>
+
+                                        <a href="blog-details.html">
+                                            <h6 class="title">Nội dung 1</h6>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="single-post">
+                                    <div class="thumbnail">
+                                        <img src="https://themes-park.net/product/html/bizper/assets/images/footer/small-post-2.jpg" alt="Business_Corporate">
+                                    </div>
+                                    <div class="content">
+                                        <div class="date"><i class="fa-solid fa-calendar-days"></i><span>12 Feb, 2022</span></div>
+
+                                        <a href="blog-details.html">
+                                            <h6 class="title">Nội dung 2</h6>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-footer-wrapper">
+                                <h5 class="ft-title">Official info:</h5>
+                                <ul class="ft-link">
+                                    <li class="ft-location">30 Phan Chu Trinh, Phường 2, Bình Thạnh, Hồ Chí Minh</li>
+
+                                    <li>
+                                        <div class="single-contact">
+
+                                            <div class="icon">
+                                                <i class="fa-solid fa-envelope-open-text"></i>
+                                            </div>
+
+                                            <div class="content">
+                                                <span>E-mail:</span>
+                                                <a href="mailto:webmaster@example.com">info@techgel.com</a>
+                                            </div>
+
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="single-contact">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-phone"></i>
+                                            </div>
+                                            <div class="content">
+                                                <span>Phone:</span>
+                                                <a href="tel:+4733378901">028 3510 7030</a>
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div th:replace="~{clients/footer/copyright :: copyright}"></div>
+    </div>
+</body>
+</html>

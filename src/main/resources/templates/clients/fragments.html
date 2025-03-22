@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="page_head(title, remove)" th:remove="${remove}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <title>[[${title}]] - [[${ SITE_NAME }]]</title>
+    <link th:href="@{/css/plugins/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/plugins/bootstrap-theme.min.css}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" th:href="@{/css/plugins/swiper-bundle.min.css}"/>
+
+    <!-- SAL -->
+    <link rel="stylesheet" th:href="@{/css/_sal.css}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sal.js@0.8.5/dist/sal.css">
+
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/_animations.css}">
+</head>
+<body>
+    <th:block th:fragment="script">
+        <script th:src="@{/js/plugins/bootstrap.bundle.min.js}"></script>
+        <script th:src="@{/js/plugins/jquery.min.js}"></script>
+        <script th:src="@{/js/plugins/swiper-bundle.min.js}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sal.js@0.8.5/dist/sal.min.js"></script>
+        <script th:src="@{/js/plugins/gsap.min.js}"></script>
+        <script th:src="@{/js/plugins/scrolltrigger.min.js}"></script>
+        <script th:src="@{/js/plugins/splittext.js}"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script th:src="@{/js/main.js}"></script>
+    </th:block>
+</body>
+</html>

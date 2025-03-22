@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div th:fragment="homepage">
+      <style>
+          .background-image-services {
+              background-image: url([[@{/imgs/services-bg-image.png}]]);
+          }
+          .bg-project-1 {
+              background-image: url([[@{/imgs/project-bg-01.jpg}]]);
+              background-repeat: no-repeat;
+              background-position: top center;
+          }
+          .background-partner:before {
+              position: absolute;
+              content: "";
+              width: 100%;
+              height: 100%;
+              left: 0;
+              top: 0;
+              z-index: -1;
+              background-image: url([[@{/imgs/background_duan.jpg}]]); no-repeat center center / cover;
+              opacity: 0.2;
+          }
+          .line_img {
+              height: 10px;
+              background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center / auto 200%;
+          }
+      </style>
+
+      <div th:replace="~{clients/home/banner :: banner}"></div>
+
+      <!-- About -->
+      <div class="about-area tmp-section-gap about-style-one">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-lg-6">
+                      <div class="about-thumbnails">
+                          <div class="thumbnail">
+                              <img th:src="@{https://themes-park.net/product/html/bizper/assets/images/about/01.png}" alt="corporate_business">
+                              <div class="image-two">
+                                  <img th:src="@{https://themes-park.net/product/html/bizper/assets/images/about/03.png}" alt="corporate_business">
+                              </div>
+                              <div class="image-three animated">
+                                  <img class="" th:src="@{https://themes-park.net/product/html/bizper/assets/images/about/02.png}" alt="corporate_business">
+                              </div>
+                              <div class="square"></div>
+                              <div class="flower">
+                                  <img th:src="@{https://themes-park.net/product/html/bizper/assets/images/about/flower.png}" alt="Corporate_Business">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="about-inner">
+                          <div class="section-head text-align-left section-head-one-side">
+                              <div class="section-sub-title">
+                                  <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
+                                  <span class="subtitle">VỀ CHÚNG TÔI</span>
+                              </div>
+                              <h2 class="title split-collab" style="opacity: 1;">
+                                  <span th:each="t: ${'TECHGEL'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                                  </span>
+                              </h2>
+                          </div>
+                          <p class="description" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
+                              Công ty CP Kỹ thuật Công nghệ Sài Gòn Được thành lập từ năm 1999, TECHGEL đã khẳng định vị thế là một trong những đơn vị hàng đầu trong lĩnh vực cung cấp và lắp đặt Hệ thống Năng lượng, Công nghệ, Công nghiệp, Hạ tầng, Công trình dân dụng tại Việt Nam. Với hơn 25 năm kinh nghiệm, chúng tôi tự hào mang đến cho khách hàng những giải pháp toàn diện tiên tiến, hiệu quả và bền vững, đạt tiêu chuẩn hàng đầu quốc tế.
+                          </p>
+                          <div class="thumbnail-with-title" data-sal-delay="350" data-sal="slide-up" data-sal-duration="800">
+                              <div class="thumbnail">
+                                  <img src="https://themes-park.net/product/html/bizper/assets/images/about/about-with-icon.png" alt="">
+                                  <div class="icon">
+                                      <i class="fa-regular fa-dollar-sign"></i>
+                                  </div>
+                              </div>
+                              <div class="title">Sứ mệnh • Tầm nhìn • Giá trị cốt lõi</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- counter up -->
+      <div class="tmp-counterup-area tmp-section-gap">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="section-head">
+                          <div class="section-sub-title center-title">
+                              <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
+                              <span class="subtitle">15000 Trusted</span>
+                          </div>
+                          <h2 class="title split-collab" style="opacity: 1;">
+                            <span th:each="t: ${'Doanh nghiệp xuất sắc'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                            </span>
+                          </h2>
+                      </div>
+                  </div>
+              </div>
+              <div class="row g-5 mt--20 counter_animation">
+                  <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                      <div class="count-box counter-style-4 text-center">
+                          <h5 class="counter-title">DỰ ÁN THI CÔNG</h5>
+                          <div>
+                              <h3 class="title animated fadeIn"><span class="counter animated fadeInDownBig">130</span>+</h3>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                      <div class="count-box counter-style-4 text-center">
+                          <h5 class="counter-title">DOANH SỐ BACKLOG</h5>
+                          <div>
+                              <h3 class="title animated fadeIn"><span class="counter animated fadeInDownBig">16.955</span>B</h3>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                      <div class="count-box counter-style-4 text-center">
+                          <h5 class="counter-title">TỔNG SỐ NHÂN VIÊN</h5>
+                          <div>
+                              <h3 class="title animated fadeIn"><span class="counter animated fadeInDownBig">900</span></h3>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                      <div class="count-box counter-style-4 text-center">
+                          <h5 class="counter-title">LỰC LƯỢNG THI CÔNG</h5>
+                          <div>
+                              <h3 class="title animated fadeIn"><span class="counter animated fadeInDownBig">10.000</span>+</h3>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Service -->
+      <div class="tmp-services-area services-style--1 background-image-services bg_image tmp-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="section-head">
+                        <div class="section-sub-title center-title">
+                            <img th:src="@{/imgs/section-custom-menubar.png}" alt="Business_Consulting_services">
+                            <span>Lĩnh vực hoạt động</span>
+                        </div>
+                        <h2 class="title split-collab" style="opacity: 1;">
+                          <span th:each="t: ${'Chuyên về những lĩnh vực'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                          </span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center flex-wrap" style="gap: 20px;">
+                <div class="" style="width: 350px;">
+                    <div class="single-services service-style-one">
+                        <div class="services-inner with-shadow card-bg-color">
+                            <div class="thumbnail">
+                                <img th:src="@{/imgs/services-icon-1.png}" alt="Business consulting services">
+                            </div>
+                            <div class="services-content">
+                                <a href="service-details.html">
+                                    <h5 class="title">Năng lượng</h5>
+                                </a>
+                                <p class="desctiption">
+                                    Nội dung 1 <br><br><br>                                </p>
+                                <a href="service-details.html" class="icon angle-roted">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="number">
+                                <img th:src="@{/imgs/number-01.png}" alt="Business Consulting number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="width: 350px;">
+                    <div class="single-services service-style-one">
+                        <div class="services-inner with-shadow card-bg-color">
+                            <div class="thumbnail">
+                                <img th:src="@{/imgs/services-icon-2.png}" alt="Business consulting services">
+                            </div>
+                            <div class="services-content">
+                                <a href="service-details.html">
+                                    <h5 class="title">Công nghệ</h5>
+                                </a>
+                                <p class="desctiption">
+                                    Nội dung 2 <br><br><br>
+                                </p>
+                                <a href="service-details.html" class="icon angle-roted">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="number">
+                                <img th:src="@{/imgs/number-02.png}" alt="Business Consulting number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="width: 350px;">
+                    <div class="single-services service-style-one">
+                        <div class="services-inner with-shadow card-bg-color">
+                            <div class="thumbnail">
+                                <img th:src="@{/imgs/services-icon-3.png}" alt="Business consulting services">
+                            </div>
+                            <div class="services-content">
+                                <a href="service-details.html">
+                                    <h5 class="title">Công nghiệp</h5>
+                                </a>
+                                <p class="desctiption">
+                                    Nội dung 3 <br><br><br>
+                                </p>
+                                <a href="service-details.html" class="icon angle-roted">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="number">
+                                <img th:src="@{/imgs/number-03.png}" alt="Business Consulting number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="width: 350px;">
+                    <div class="single-services service-style-one">
+                        <div class="services-inner with-shadow card-bg-color">
+                            <div class="thumbnail">
+                                <img th:src="@{/imgs/services-icon-3.png}" alt="Business consulting services">
+                            </div>
+                            <div class="services-content">
+                                <a href="service-details.html">
+                                    <h5 class="title">Công trình xây dựng</h5>
+                                </a>
+                                <p class="desctiption">
+                                    Nội dung 3 <br><br><br>
+                                </p>
+                                <a href="service-details.html" class="icon angle-roted">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="number">
+                                <img th:src="@{/imgs/number-03.png}" alt="Business Consulting number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="width: 350px;">
+                    <div class="single-services service-style-one">
+                        <div class="services-inner with-shadow card-bg-color">
+                            <div class="thumbnail">
+                                <img th:src="@{/imgs/services-icon-3.png}" alt="Business consulting services">
+                            </div>
+                            <div class="services-content">
+                                <a href="service-details.html">
+                                    <h5 class="title">Hạ tầng</h5>
+                                </a>
+                                <p class="desctiption">
+                                    Nội dung 3 <br><br><br>
+                                </p>
+                                <a href="service-details.html" class="icon angle-roted">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="number">
+                                <img th:src="@{/imgs/number-03.png}" alt="Business Consulting number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="services-bottom">
+                        <div class="services-bottom-inner">
+                            <p class="description">
+                                Sự thành công của chúng tôi với tư cách là nhà tư vấn sẽ phụ thuộc vào tính đúng đắn cốt yếu của lời khuyên.
+                            </p>
+                            <p class="description">Bạn muốn tìm hiểu thêm về chúng tôi?
+                                <button class="btn-simple">Bấm vào đây</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Service process -->
+      <div class="tpm-services-process-area tmp-section-gap">
+        <div class="container">
+            <div class="row" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="col-lg-12">
+                    <div class="section-head">
+                        <div class="section-sub-title center-title">
+                            <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
+                            <span class="subtitle">Dịch vụ của chúng tôi</span>
+                        </div>
+                        <h2 class="title split-collab" style="opacity: 1;">
+                            <span th:each="t: ${'Dịch vụ'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                          </span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">
+                    <div class="single-services">
+                        <div class="services-inner">
+                            <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
+                                <a href="#">
+                                    <img th:src="@{/imgs/services-round-1.png}" alt="Business consulting services">
+                                </a>
+                                <div class="number-bg-round">
+                                    <span>01</span>
+                                </div>
+                            </div>
+                            <div class="services-content services-content-style-1 text-center">
+                                <h5 class="title">Gặp gỡ khách hàng</h5>
+                                <p class="description">
+                                    Nội dung 1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="350" data-sal="slide-up" data-sal-duration="800">
+                    <div class="single-services">
+                        <div class="services-inner">
+                            <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
+                                <a href="#">
+                                    <img th:src="@{/imgs/services-round-2.png}" alt="Business consulting services">
+                                </a>
+                                <div class="number-bg-round">
+                                    <span>02</span>
+                                </div>
+                            </div>
+                            <div class="services-content services-content-style-1 text-center">
+                                <h5 class="title">Chiến lược dự án</h5>
+                                <p class="description">
+                                    Nội dung 2
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="single-services">
+                        <div class="services-inner">
+                            <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
+                                <a href="#">
+                                    <img th:src="@{/imgs/services-round-3.png}" alt="Business consulting services">
+                                </a>
+                                <div class="number-bg-round">
+                                    <span>03</span>
+                                </div>
+                            </div>
+                            <div class="services-content services-content-style-1 text-center">
+                                <h5 class="title">Thiết kế chiến dịch</h5>
+                                <p class="description">
+                                    Nội dung 3
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="tmp-project-area tmp-section-gapTop bg-project-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-head color-white">
+                            <div class="section-sub-title center-title">
+                                <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
+                                <span class="subtitle">Dự án</span>
+                            </div>
+                            <h2 class="title split-collab" style="opacity: 1;">
+                              <span th:each="t: ${'Những dự án tốt nhất của chúng tôi'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                              </span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <div class="container-full">
+              <div class="slider_projects">
+                  <div class="item slick-slide">
+                      <div class="wrapper">
+                          <a href="https://www.centralcons.vn/project/selavia/"></a>
+                          <figure>
+                              <img src="https://www.centralcons.vn/wp-content/uploads/2022/04/selavia.jpg" class="img-fluid" alt="" draggable="false">
+                          </figure>
+                          <div class="meta_info">
+                              <h4 class="fs-20 fw-bold text-uppercase">Selavia</h4>
+                              <div class="detail_info">
+                                  <div class="table-responsive">
+                                      <table class="table">
+                                          <tbody>
+                                          <tr>
+                                              <td>Khách hàng</td>
+                                              <td>TTC Group</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Vị trí</td>
+                                              <td>Ấp Suối Lớn, xã Dương Tơ, Phú Quốc</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Phạm vi công việc</td>
+                                              <td>
+                                                  Tổng Thầu Design &amp; Build <br>
+                                                  99 Shophouse 5 Tầng<br>
+                                                  Tổng Thầu<br>
+                                                  Thi công cụm Khách sạn                                    </td>
+                                          </tr>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                                  <a href="http://central.commawebdesign.com/project/the-metropole/" class="read_more" tabindex="-1">Đọc tiếp</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item slick-slide">
+                      <div class="wrapper">
+                          <a href="https://www.centralcons.vn/project/selavia/"></a>
+                          <figure>
+                              <img src="https://www.centralcons.vn/wp-content/uploads/2022/04/selavia.jpg" class="img-fluid" alt="" draggable="false">
+                          </figure>
+                          <div class="meta_info">
+                              <h4 class="fs-20 fw-bold text-uppercase">Selavia</h4>
+                              <div class="detail_info">
+                                  <div class="table-responsive">
+                                      <table class="table">
+                                          <tbody>
+                                          <tr>
+                                              <td>Khách hàng</td>
+                                              <td>TTC Group</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Vị trí</td>
+                                              <td>Ấp Suối Lớn, xã Dương Tơ, Phú Quốc</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Phạm vi công việc</td>
+                                              <td>
+                                                  Tổng Thầu Design &amp; Build <br>
+                                                  99 Shophouse 5 Tầng<br>
+                                                  Tổng Thầu<br>
+                                                  Thi công cụm Khách sạn                                    </td>
+                                          </tr>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                                  <a href="http://central.commawebdesign.com/project/the-metropole/" class="read_more" tabindex="-1">Đọc tiếp</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item slick-slide">
+                      <div class="wrapper">
+                          <a href="https://www.centralcons.vn/project/selavia/"></a>
+                          <figure>
+                              <img src="https://www.centralcons.vn/wp-content/uploads/2022/04/selavia.jpg" class="img-fluid" alt="" draggable="false">
+                          </figure>
+                          <div class="meta_info">
+                              <h4 class="fs-20 fw-bold text-uppercase">Selavia</h4>
+                              <div class="detail_info">
+                                  <div class="table-responsive">
+                                      <table class="table">
+                                          <tbody>
+                                          <tr>
+                                              <td>Khách hàng</td>
+                                              <td>TTC Group</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Vị trí</td>
+                                              <td>Ấp Suối Lớn, xã Dương Tơ, Phú Quốc</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Phạm vi công việc</td>
+                                              <td>
+                                                  Tổng Thầu Design &amp; Build <br>
+                                                  99 Shophouse 5 Tầng<br>
+                                                  Tổng Thầu<br>
+                                                  Thi công cụm Khách sạn                                    </td>
+                                          </tr>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                                  <a href="http://central.commawebdesign.com/project/the-metropole/" class="read_more" tabindex="-1">Đọc tiếp</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item slick-slide">
+                      <div class="wrapper">
+                          <a href="https://www.centralcons.vn/project/selavia/"></a>
+                          <figure>
+                              <img src="https://www.centralcons.vn/wp-content/uploads/2022/04/selavia.jpg" class="img-fluid" alt="" draggable="false">
+                          </figure>
+                          <div class="meta_info">
+                              <h4 class="fs-20 fw-bold text-uppercase">Selavia</h4>
+                              <div class="detail_info">
+                                  <div class="table-responsive">
+                                      <table class="table">
+                                          <tbody>
+                                          <tr>
+                                              <td>Khách hàng</td>
+                                              <td>TTC Group</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Vị trí</td>
+                                              <td>Ấp Suối Lớn, xã Dương Tơ, Phú Quốc</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Phạm vi công việc</td>
+                                              <td>
+                                                  Tổng Thầu Design &amp; Build <br>
+                                                  99 Shophouse 5 Tầng<br>
+                                                  Tổng Thầu<br>
+                                                  Thi công cụm Khách sạn                                    </td>
+                                          </tr>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                                  <a href="http://central.commawebdesign.com/project/the-metropole/" class="read_more" tabindex="-1">Đọc tiếp</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item slick-slide">
+                      <div class="wrapper">
+                          <a href="https://www.centralcons.vn/project/selavia/"></a>
+                          <figure>
+                              <img src="https://www.centralcons.vn/wp-content/uploads/2022/04/selavia.jpg" class="img-fluid" alt="" draggable="false">
+                          </figure>
+                          <div class="meta_info">
+                              <h4 class="fs-20 fw-bold text-uppercase">Selavia</h4>
+                              <div class="detail_info">
+                                  <div class="table-responsive">
+                                      <table class="table">
+                                          <tbody>
+                                          <tr>
+                                              <td>Khách hàng</td>
+                                              <td>TTC Group</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Vị trí</td>
+                                              <td>Ấp Suối Lớn, xã Dương Tơ, Phú Quốc</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Phạm vi công việc</td>
+                                              <td>
+                                                  Tổng Thầu Design &amp; Build <br>
+                                                  99 Shophouse 5 Tầng<br>
+                                                  Tổng Thầu<br>
+                                                  Thi công cụm Khách sạn                                    </td>
+                                          </tr>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                                  <a href="http://central.commawebdesign.com/project/the-metropole/" class="read_more" tabindex="-1">Đọc tiếp</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- QNA -->
+      <div class="faq-area faq-style-one faq-bg-image bg_image tmp-section-gap mt-dec--180" style="display:none;">
+          <div class="container pt--180">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-head">
+                        <div class="section-sub-title center-title">
+                            <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
+                            <span class="subtitle">QUESTION AND ANSWERS</span>
+                        </div>
+                        <h2 class="title split-collab" style="opacity: 1;">
+                          <span th:each="t: ${'Frequency Asked Questions'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                          </span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+              <div class="row align-items-center">
+                  <div class="col-lg-6">
+                      <div class="thumbnail">
+                          <img th:src="@{/imgs/faq-1.png}" alt="Business Consulting FAQ">
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="faq-accordion">
+                          <div class="accordion" id="accordionExample">
+                              <div class="accordion-item">
+                                  <div class="accordion-header" id="headingOne">
+                                      <div class="accordion-button" data-bs-toggle="collapse" role="button" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+                                          <div class="accordion-button-left">
+                                              <i class="fa-regular fa-question"></i>
+                                              <span>Why is collaborative learning so important</span>
+                                          </div>
+                                          <div class="accordion-button-right">
+                                              <i class="fa-solid fa-arrow-right"></i>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                      <div class="accordion-body">
+                                          Companions shy had solicitude favorable own. Which could saw guest man now heard but. Lasted my coming uneasy marked so should. Gravity letters it amongst herself dearest an windows by. Wooded ladies she.
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="accordion-item">
+                                  <div class="accordion-header" id="headingTwo">
+                                      <div class="accordion-button collapsed" data-bs-toggle="collapse" role="button" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                          <div class="accordion-button-left">
+                                              <i class="fa-regular fa-question"></i>
+                                              <span>Do you offer free trials</span>
+                                          </div>
+                                          <div class="accordion-button-right">
+                                              <i class="fa-solid fa-arrow-right"></i>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                      <div class="accordion-body">
+                                          Companions shy had solicitude favorable own. Which could saw guest man now heard but. Lasted my coming uneasy marked so should. Gravity letters it amongst herself dearest an windows by. Wooded ladies she.
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="accordion-item">
+                                  <div class="accordion-header" id="headingThree">
+                                      <div class="accordion-button collapsed" data-bs-toggle="collapse" role="button" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                          <div class="accordion-button-left">
+                                              <i class="fa-regular fa-question"></i>
+                                              <span>Can I share my courses with non-registered users</span>
+                                          </div>
+                                          <div class="accordion-button-right">
+                                              <i class="fa-solid fa-arrow-right"></i>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                      <div class="accordion-body">
+                                          Companions shy had solicitude favorable own. Which could saw guest man now heard but. Lasted my coming uneasy marked so should. Gravity letters it amongst herself dearest an windows by. Wooded ladies she.
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- team -->
+      <div class="team-area tmp-section-gap bg-white" style="display:none;">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="section-head">
+                          <div class="section-sub-title center-title">
+                              <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate services">
+                              <span>ĐỘI NGŨ CHUYÊN GIA</span>
+                          </div>
+                          <h2 class="title split-collab" style="opacity: 1;">
+                          <span th:each="t: ${'Gặp gỡ đội ngũ chuyên gia của chúng tôi'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                          </span>
+                          </h2>
+                      </div>
+                  </div>
+              </div>
+              <div class="row g-5">
+                  <div class="col-lg-4 col-md-6 col-sm-12 col-12" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+                    <div class="single-team">
+                        <a href="team-details.html" class="thumbnail" data-tmp-cursor="lg transparent fw-bold" data-tmp-cursor-text="View Details">
+                            <img th:src="@{/imgs/IMG_6797.JPG}" alt="Corporate team">
+                        </a>
+                        <div class="content">
+                            <div class="team-name content-with-bg">
+                                <a href="#" class="name-area">
+                                    <h6 class="name">Nguyễn Quốc Dũng</h6>
+                                </a>
+                                <div class="designation">CEO &amp; Founder</div>
+                            </div>
+                            <div class="share-icon-style-one">
+                                <ul class="social-icons social-icons-with-bg">
+                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                </ul>
+                                <i class="fa-sharp fa-solid fa-share-nodes"></i>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12 col-12" data-sal="slide-up" data-sal-delay="250" data-sal-duration="800">
+                      <div class="single-team">
+                          <a href="team-details.html" class="thumbnail" data-tmp-cursor="lg transparent fw-bold" data-tmp-cursor-text="View Details">
+                              <img th:src="@{/imgs/IMG_6797.JPG}" alt="Corporate team">
+                          </a>
+                          <div class="content">
+                              <div class="team-name content-with-bg">
+                                  <a href="#" class="name-area">
+                                      <h6 class="name">Nguyễn Quốc Dũng</h6>
+                                  </a>
+                                  <div class="designation">CEO &amp; Founder</div>
+                              </div>
+                              <div class="share-icon-style-one">
+                                  <ul class="social-icons social-icons-with-bg">
+                                      <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                      <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                      <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                  </ul>
+                                  <i class="fa-sharp fa-solid fa-share-nodes"></i>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12 col-12" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800">
+                      <div class="single-team">
+                          <a href="team-details.html" class="thumbnail" data-tmp-cursor="lg transparent fw-bold" data-tmp-cursor-text="View Details">
+                              <img th:src="@{/imgs/IMG_6797.JPG}" alt="Corporate team">
+                          </a>
+                          <div class="content">
+                              <div class="team-name content-with-bg">
+                                  <a href="#" class="name-area">
+                                      <h6 class="name">Nguyễn Quốc Dũng</h6>
+                                  </a>
+                                  <div class="designation">CEO &amp; Founder</div>
+                              </div>
+                              <div class="share-icon-style-one">
+                                  <ul class="social-icons social-icons-with-bg">
+                                      <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                      <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                      <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                  </ul>
+                                  <i class="fa-sharp fa-solid fa-share-nodes"></i>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- contact -->
+      <div class="contact-area-three tmp-section-gapTop" style="display:none;">
+          <div class="bg-shape">
+              <img th:src="@{/imgs/cta-02.png}" alt="bussiness-contact">
+          </div>
+          <div class="container">
+              <div class="row g-5">
+                  <div class="col-lg-5">
+                      <div class="contact-inner">
+                          <div class="section-head section-head-one-side text-align-left" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                              <span class="title">Liên hệ</span>
+                              <p class="description">
+                                  Nội dung 1
+                              </p>
+                          </div>
+                          <ul class="ft-link ft-link-style-three p-0" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">
+                              <li>
+                                  <div class="single-contact background-transparent">
+                                      <div class="icon">
+                                          <i class="fa-solid fa-phone"></i>
+                                      </div>
+                                      <div class="content">
+                                          <span>Hotline</span>
+                                          <a class="contact-here" href="#">028 3510 7030</a>
+                                      </div>
+                                  </div>
+                              </li>
+
+
+                              <li>
+                                  <div class="single-contact background-transparent">
+                                      <div class="icon">
+                                          <i class="fa-solid fa-envelope-open-text"></i>
+                                      </div>
+
+                                      <div class="content">
+                                          <span>E-mail</span>
+                                          <a class="contact-here" href="#">info@techgel.com</a>
+                                      </div>
+
+                                  </div>
+                              </li>
+
+                              <li>
+                                  <div class="single-contact background-transparent">
+                                      <div class="icon">
+                                          <i class="fa-solid fa-map-location-dot"></i>
+                                      </div>
+                                      <div class="content">
+                                          <span>Địa chỉ</span>
+                                          <a class="contact-here" href="#">30 Phan Chu Trinh, Phường 2, Bình Thạnh, Hồ Chí Minh</a>
+                                      </div>
+                                  </div>
+                              </li>
+
+                          </ul>
+                          <div class="tmp-tag-list tag-list-one" data-sal-delay="350" data-sal="slide-up" data-sal-duration="800">
+                              <a class="tag-list" href="#">Facebook</a>
+                              <a class="tag-list" href="#">Twitter</a>
+                              <a class="tag-list" href="#">Linkedin</a>
+                              <a class="tag-list" href="#">Skype</a>
+                              <a class="tag-list" href="#">Pinterest</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-7" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="contact-inner">
+                        <div class="section-head section-head-one-side text-align-left">
+                            <span class="title">KẾT NỐI</span>
+                            <p class="description">
+                                Nội dung 1
+                            </p>
+                        </div>
+                        <div class="contact-form style-two">
+                            <form action="" id="contact-form">
+                                <div class="contact-form-wrapper row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input class="input-field" name="contact-name" placeholder="Họ và tên" id="contact-name" type="text" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input class="input-field" name="contact-phone" placeholder="SĐT" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <input class="input-field" name="contact-phone" placeholder="Email" type="email" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <textarea class="input-field" placeholder="Nội dung cần hỗ trợ" name="contact-message" id="contact-message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-submit-group">
+                                            <button name="submit" class="tmp-btn btn-primary" type="submit" id="submit">
+                                                Gửi thông tin
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- blog -->
+      <div class="tmp-blog-area tmp-section-gap">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="section-head">
+                          <div class="section-sub-title center-title">
+                              <img th:src="@{imgs/section-custom-menubar.png}" alt="Corporate_service">
+                              <span class="subtitle">BÀI VIẾT MỚI NHẤT</span>
+                          </div>
+                          <h2 class="title split-collab" style="opacity: 1;">
+                          <span th:each="t: ${'Tin tức & bài viết mới nhất'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                          </span>
+                          </h2>
+                      </div>
+                  </div>
+              </div>
+              <div class="row g-5">
+                  <div class="col-lg-4 col-md-6 col-sm-12 col1-2" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                      <div class="single-blog">
+                          <div class="blog-inner">
+                              <div class="thumbnail">
+                                  <a href="blog-details.html"><img th:src="@{/imgs/blog-01.jpg}" alt="Business Consulting Blog"></a>
+                                  <div class="pmt-blog-meta">
+                                      <ul class="all-meta">
+                                          <li class="date"><span>20</span></li>
+                                          <li class="month"><span>JAN</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div class="blog-content">
+                                  <div class="blog-body">
+                                      <a href="blog-details.html" class="title-area">
+                                          <h4 class="title">Tiêu đề 1</h4>
+                                      </a>
+                                      <p class="description">
+                                          Nội dung 1
+                                      </p>
+                                  </div>
+                                  <a class="btn-read-more" href="blog-details.html">
+                                      <span class="read-more-text">Đọc thêm</span>
+                                      <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12 col1-2" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">
+                      <div class="single-blog">
+                          <div class="blog-inner">
+                              <div class="thumbnail">
+                                  <a href="blog-details.html"><img th:src="@{/imgs/blog-02.jpg}" alt="Business Consulting Blog"></a>
+                                  <div class="pmt-blog-meta">
+                                      <ul class="all-meta">
+                                          <li class="date"><span>20</span></li>
+                                          <li class="month"><span>JAN</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div class="blog-content">
+                                  <div class="blog-body">
+                                      <a href="blog-details.html" class="title-area">
+                                          <h4 class="title">Tiêu đề 2</h4>
+                                      </a>
+                                      <p class="description">
+                                          Nội dung 2
+                                      </p>
+                                  </div>
+                                  <a class="btn-read-more" href="blog-details.html">
+                                      <span class="read-more-text">Đọc thêm</span>
+                                      <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12 col1-2" data-sal-delay="350" data-sal="slide-up" data-sal-duration="800">
+                      <div class="single-blog">
+                          <div class="blog-inner">
+                              <div class="thumbnail">
+                                  <a href="blog-details.html"><img th:src="@{/imgs/blog-03.jpg}" alt="Business Consulting Blog"></a>
+                                  <div class="pmt-blog-meta">
+                                      <ul class="all-meta">
+                                          <li class="date"><span>20</span></li>
+                                          <li class="month"><span>JAN</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div class="blog-content">
+                                  <div class="blog-body">
+                                      <a href="blog-details.html" class="title-area">
+                                          <h4 class="title">Tiêu đề 3</h4>
+                                      </a>
+                                      <p class="description">
+                                          Nội dung 3
+                                      </p>
+                                  </div>
+                                  <a class="btn-read-more" href="blog-details.html">
+                                      <span class="read-more-text">Đọc thêm</span>
+                                      <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- partners & clients -->
+      <div class="tmp-partner-area background-partner" style="position: relative; padding: 50px 0;">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="section-head">
+                          <div class="section-sub-title center-title">
+                              <img th:src="@{imgs/section-custom-menubar.png}" alt="Corporate_service">
+                              <span class="subtitle">Đối tác và khách hàng</span>
+                          </div>
+                          <h2 class="title split-collab" style="opacity: 0;">
+                          <span th:each="t: ${''.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                          </span>
+                          </h2>
+                      </div>
+                  </div>
+              </div>
+              <div class="d-flex flex-column justify-content-center" style="gap: 20px;" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                  <div class="line_img"></div>
+                  <div class="partner_slider">
+                      <div class="item slick-slide">
+                          <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/empire_city_logo2.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="item slick-slide">
+                          <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/empire_city_logo2.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="item slick-slide">
+                          <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/empire_city_logo2.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="item slick-slide">
+                          <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/empire_city_logo2.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="item slick-slide">
+                          <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/empire_city_logo2.png" alt="" class="img-fluid">
+                      </div><div class="item slick-slide">
+                      <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/empire_city_logo2.png" alt="" class="img-fluid">
+                  </div>
+                      <div class="item slick-slide">
+                          <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/empire_city_logo2.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="item slick-slide">
+                          <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/empire_city_logo2.png" alt="" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="line_img"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+</html>

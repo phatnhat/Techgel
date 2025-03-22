@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{clients/fragments :: page_head('Techgel', 'none')}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="index-one">
+        <div th:replace="~{clients/header/navigation :: navigation}"></div>
+        <div th:replace="~{clients/home/home :: homepage}"></div>
+        <div th:replace="~{clients/footer/footer :: footer}"></div>
+        <div th:replace="~{clients/progress-wrap :: progress-wrap}"></div>
+    </div>
+
+    <th:block th:replace="~{clients/fragments :: script}"></th:block>
+</body>
+</html>

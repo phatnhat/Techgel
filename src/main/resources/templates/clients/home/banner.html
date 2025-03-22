@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:fragment="banner">
+        <div class="tmp-banner-swiper-one-area">
+            <div class="swiper mySwiper-banner-one swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" th:each="banner, iter: ${banners}">
+                        <div th:class="'tmp-banner-area bg_image banner-one-height-control tmp-section-gap ' + 'bg_image-' + ${iter.index+1}"
+                            th:style="'background: url(' + ${banner} + ');'">
+                            <div class="shape-image-banner-one">
+                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/01.png" alt="banner" class="one">
+                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/02.png" alt="banner" class="two">
+                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/03.png" alt="banner" class="three">
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="banner-one-main-wrapper">
+                                            <div class="inner">
+                                                <span class="sub-title">TOP 500 DOANH NGHIỆP LỚN NHẤT VIỆT NAM</span>
+                                                <h1 class="title">TECHGEL</h1>
+                                                <p class="disc">
+                                                    TECHGEL đã trải qua hành trình phát triển mạnh mẽ, trở thành một công ty đa ngành nghề uy tín. Không chỉ chinh phục thị trường Việt Nam, chúng tôi còn mở rộng hoạt động sang các nước Đông Nam Á và châu Đại Dương, khẳng định năng lực và vị thế trên trường quốc tế.
+                                                </p>
+                                                <div class="button-area-banner-one mt-5">
+                                                    <a href="service.html" class="tmp-btn btn-primary">Xem chi tiết</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

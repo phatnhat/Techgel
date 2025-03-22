@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{/admin/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main class="content-wrapper" style="height: 100%;">
+        <div class="content-header clearfix" style="padding: 15px 1rem;">
+            <h3 class="float-left">
+                Trang chủ/Navigation
+            </h3>
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="form-horizontal">
+                    <div class="cards-group">
+                        <div class="card card-default">
+                            <div class="card-body">
+                                <div class="dt-container dt-bootstrap4 dt-empty-footer">
+                                    <div class="d-md-flex justify-content-between align-items-center col-12 dt-layout-full col-md">
+                                        <table class="table table-bordered table-hover table-striped dataTable" style="width: 100%;">
+                                            <thead>
+                                            <tr>
+                                                <th data-dt-column="1" class="dt-orderable-none" rowspan="0" colspan="1">
+                                                    <div class="dt-scroll-sizing">
+                                                        <span class="dt-column-title">Tiêu đề</span>
+                                                        <span class="dt-column-order"></span>
+                                                    </div>
+                                                </th>
+                                                <th class="text-center dt-orderable-none" data-dt-column="1" rowspan="1" colspan="1">
+                                                    <div class="dt-scroll-sizing">
+                                                        <span class="dt-column-title">Hiển thị Menu</span>
+                                                        <span class="dt-column-order"></span>
+                                                    </div>
+                                                </th>
+                                                <th class="text-center dt-orderable-none dt-type-numeric" data-dt-column="2" rowspan="1" colspan="1">
+                                                    <div class="dt-scroll-sizing">
+                                                        <span class="dt-column-title">Thứ tự hiển thị</span>
+                                                        <span class="dt-column-order"></span>
+                                                    </div>
+                                                </th>
+                                                <th class="button-column dt-orderable-none" data-dt-column="4" rowspan="3" colspan="1">
+                                                    <div class="dt-scroll-sizing">
+                                                        <span class="dt-column-title">Hành động</span>
+                                                        <span class="dt-column-order"></span>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <th:block th:each="navigation: ${homeNavigations}">
+                                                <tr>
+                                                    <td>
+                                                        [[${navigation.title_vi}]]
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <i th:if="${navigation.isPublished}" class="fas fa-check true-icon"></i>
+                                                        <i th:unless="${navigation.isPublished}" class="fa-solid fa-xmark"></i>
+                                                    </td>
+                                                    <td class="text-center dt-type-numeric">[[${navigation.displayOrder}]]</td>
+                                                    <td class="button-column">
+                                                        <a class="btn btn-default" th:href="@{/webadmin/home/navigation/edit?id={id}(id=${navigation.id})}">
+                                                            <i class="fas fa-pencil"></i>&nbsp;Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr th:each="subnav: ${navigation.children}">
+                                                    <td>
+                                                        [[${navigation.title_vi}]] >> [[${subnav.title_vi}]]
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <i th:if="${subnav.isPublished}" class="fas fa-check true-icon"></i>
+                                                        <i th:unless="${subnav.isPublished}" class="fa-solid fa-xmark"></i>
+                                                    </td>
+                                                    <td class="text-center dt-type-numeric">[[${subnav.displayOrder}]]</td>
+                                                    <td class="button-column">
+                                                        <a class="btn btn-default" th:href="@{/webadmin/home/navigation/edit?id={id}(id=${subnav.id})}">
+                                                            <i class="fas fa-pencil"></i>&nbsp;Edit</a>
+                                                    </td>
+                                                </tr>
+                                            </th:block>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:fragment="navigation">
+        <header class="tmp-header-area-start header-one">
+            <div class="header-top-one">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="header-top-inner">
+                                <div class="left-information-area">
+                                    <div class="location-area">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <a href="#">30 Phan Chu Trinh, Phường 2, Bình Thạnh, Hồ Chí Minh</a>
+                                    </div>
+<!--                                    <div class="working-time">-->
+<!--                                        <i class="fa-regular fa-clock"></i>-->
+<!--                                        <p>Giờ làm việc: 8:30 AM – 5:30 PM</p>-->
+<!--                                    </div>-->
+                                </div>
+                                <div class="right-header-top">
+<!--                                    <div class="social-area-transparent">-->
+<!--                                        <span>Theo dõi</span>-->
+<!--                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>-->
+<!--                                        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>-->
+<!--                                    </div>-->
+                                    <div class="social-area-transparent">
+                                        <span>Thứ 4 19/03/2025 | Hotline: 028 3510 7030 |</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="main-header-one-wrapper">
+                            <div class="header-mida-area">
+                                <div class="logo-area-start">
+                                    <a class="logo" href="../index.html">
+                                        <img width="200" th:src="@{/imgs/logo.jpg}" alt="Techgel Logo">
+                                    </a>
+                                </div>
+                                <div class="mid-header-center">
+                                    <div class="input-area">
+                                        <input type="text" placeholder="Tìm kiếm...">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                </div>
+                                <a href="contact.html" class="tmp-btn btn-primary">e-Brochure</a>
+                            </div>
+                            <div class="tmp-nav-area-one header--sticky">
+                                <div class="logo-md-sm-device">
+                                    <a href="#" class="logo">
+                                        <img th:src="@{imgs/logo.jpg}" alt="Techgel Logo">
+                                    </a>
+                                </div>
+                                <div class="header-nav main-nav-one">
+                                    <nav>
+                                        <ul class="parent-nav">
+                                            <li th:each="navigation, i: ${homeNavigations}" th:class="${not navigation.children.isEmpty() ? 'has-dropdown' : ''}">
+                                                <a href="#" class="nav-link">
+                                                    <span class="rolling-text">
+<!--                                                        <div class="block">-->
+<!--                                                            <span th:each="t, iter:  ${navigation.toCharArray()}" class="letter" th:style="'transition-delay:' + ${0.015 * iter.index} + 's'">[[${ #strings.replace(#strings.capitalize(t), ' ', '&nbsp;') }]]</span>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="block">-->
+<!--                                                            <span th:each="t, iter:  ${navigation.toCharArray()}" class="letter" th:style="'transition-delay:' + ${0.015 * iter.index} + 's'">[[${ #strings.replace(#strings.capitalize(t), ' ', '&nbsp;') }]]</span>-->
+<!--                                                        </div>-->
+                                                        <div class="block">
+                                                            <span>[[${#strings.toUpperCase(navigation.title_vi)}]]</span>
+                                                        </div>
+                                                    </span>
+                                                </a>
+                                                <ul class="submenu" th:if="${not navigation.children.isEmpty()}">
+                                                    <li th:each="sub, si: ${navigation.children}">
+                                                        <a href="service.html">[[${sub.title_vi}]]</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="actions-area">
+                                    <div class="tmp-side-collups-area" id="side-collups">
+                                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                            <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                            <rect width="20" height="2" fill="#1F1F25"></rect>
+                                        </svg>
+                                    </div>
+                                    <div class="lang-picker dropdown">
+                                        <form action="" method="get">
+                                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="outline:none;border:none;box-shadow:none;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#c93728"></rect><path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path><path d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z" fill="#fff" opacity=".2"></path><path fill="#ff5" d="M18.008 16.366L21.257 14.006 17.241 14.006 16 10.186 14.759 14.006 10.743 14.006 13.992 16.366 12.751 20.186 16 17.825 19.249 20.186 18.008 16.366z"></path></svg>&nbsp;&nbsp; VI
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><button class="dropdown-item" lang="vi" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#c93728"></rect><path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path><path d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z" fill="#fff" opacity=".2"></path><path fill="#ff5" d="M18.008 16.366L21.257 14.006 17.241 14.006 16 10.186 14.759 14.006 10.743 14.006 13.992 16.366 12.751 20.186 16 17.825 19.249 20.186 18.008 16.366z"></path></svg>&nbsp;&nbsp; VI</button></li>
+                                                <li><button class="dropdown-item" lang="en" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#071b65"></rect><path d="M5.101,4h-.101c-1.981,0-3.615,1.444-3.933,3.334L26.899,28h.101c1.981,0,3.615-1.444,3.933-3.334L5.101,4Z" fill="#fff"></path><path d="M22.25,19h-2.5l9.934,7.947c.387-.353,.704-.777,.929-1.257l-8.363-6.691Z" fill="#b92932"></path><path d="M1.387,6.309l8.363,6.691h2.5L2.316,5.053c-.387,.353-.704,.777-.929,1.257Z" fill="#b92932"></path><path d="M5,28h.101L30.933,7.334c-.318-1.891-1.952-3.334-3.933-3.334h-.101L1.067,24.666c.318,1.891,1.952,3.334,3.933,3.334Z" fill="#fff"></path><rect x="13" y="4" width="6" height="24" fill="#fff"></rect><rect x="1" y="13" width="30" height="6" fill="#fff"></rect><rect x="14" y="4" width="4" height="24" fill="#b92932"></rect><rect x="14" y="1" width="4" height="30" transform="translate(32) rotate(90)" fill="#b92932"></rect><path d="M28.222,4.21l-9.222,7.376v1.414h.75l9.943-7.94c-.419-.384-.918-.671-1.471-.85Z" fill="#b92932"></path><path d="M2.328,26.957c.414,.374,.904,.656,1.447,.832l9.225-7.38v-1.408h-.75L2.328,26.957Z" fill="#b92932"></path><path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path><path d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z" fill="#fff" opacity=".2"></path></svg>&nbsp;&nbsp; EN</button></li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="side-hide">
+            <div class="top-area">
+                <a href="../index.html" class="logo-area">
+                    <img th:src="@{/imgs/logo.jpg}" alt="Techgel Logo">
+                </a>
+                <div class="close-icon-area">
+                    <div id="close-slide__main">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="image-area-feature">
+                    <img th:src="@{/imgs/sidebar.jpg}" alt="sidebar">
+                </div>
+                <h5 class="title mt-4">Biến ý tưởng của bạn thành hiện thực </h5>
+                <p class="disc">
+                    Cung cấp các sản phẩm và dịch vụ với chất lượng tốt nhất, có tính bền vững về môi trường và mang lại giá trị kinh tế cho đối tác thông qua quy trình quản lý chuẩn mực và đội ngũ nhân viên chuyên nghiệp, đồng thời góp phần xây dựng và phát triển nguồn nhân lực cao cấp cho lĩnh vực thiết kế và quản lý các dự án xây dựng tại Việt Nam.
+                </p>
+                <div class="short-contact-area-side-collups">
+                    <div class="single-contact-information-side">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="information">
+                            <span>Tel</span>
+                            <a href="#" class="number">028 3510 7030</a>
+                        </div>
+                    </div>
+                    <div class="single-contact-information-side">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="information">
+                            <span>Mail</span>
+                            <a href="#" class="number">info@techgel.com</a>
+                        </div>
+                    </div>
+                    <div class="single-contact-information-side">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="information">
+                            <span>Địa chỉ</span>
+                            <a href="#" class="number">30 Phan Chu Trinh, Phường 2, Bình Thạnh, Hồ Chí Minh</a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="social-icons solid-social-icons rounded-social-icons">
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="overlay_every-where" data-tmp-cursor="md text-black dark:text-white opacity-10" data-tmp-cursor-icon="fa-regular fa-x fa-fw"></div>
+    </div>
+</body>
+</html>
