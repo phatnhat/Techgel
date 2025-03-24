@@ -11,22 +11,28 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" th:each="banner, iter: ${banners}">
                         <div th:class="'tmp-banner-area bg_image banner-one-height-control tmp-section-gap ' + 'bg_image-' + ${iter.index+1}"
-                            th:style="'background: url(' + ${banner} + ');'">
+                            th:style="'background: url(' + @{${banner}} + ');background-size:100% 100%;background-repeat:no-repeat;'">
                             <div class="shape-image-banner-one">
-                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/01.png" alt="banner" class="one">
-                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/02.png" alt="banner" class="two">
-                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/03.png" alt="banner" class="three">
+<!--                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/01.png" alt="banner" class="one">-->
+<!--                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/02.png" alt="banner" class="two">-->
+<!--                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/03.png" alt="banner" class="three">-->
                             </div>
                             <div class="container">
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="banner-one-main-wrapper">
                                             <div class="inner">
-                                                <span class="sub-title">TOP 500 DOANH NGHIỆP LỚN NHẤT VIỆT NAM</span>
+                                                <span class="sub-title">SỰ TRỞ LẠI SAU THỜI GIAN KHỦNG HOẢNG</span>
                                                 <h1 class="title">TECHGEL</h1>
                                                 <p class="disc">
-                                                    TECHGEL đã trải qua hành trình phát triển mạnh mẽ, trở thành một công ty đa ngành nghề uy tín. Không chỉ chinh phục thị trường Việt Nam, chúng tôi còn mở rộng hoạt động sang các nước Đông Nam Á và châu Đại Dương, khẳng định năng lực và vị thế trên trường quốc tế.
-                                                </p>
+                                                    Sau một thời gian vắng bóng do sự cố
+                                                    khủng hoảng thị trường, COVID 19 và vấn
+                                                    đề nội bộ.
+                                                    TECHGEL thế hệ mới do hai nhà
+                                                    đầu tư là có cổ đông lớn có uy tín trong lĩnh vực tư vấn các công trình Hàng không và lĩnh vực đầu tư.
+                                                    Khai thác các công trình
+                                                    Năng lượng điện tiếp quản với sứ mệnh
+                                                    <br>"MAKE TECHGEL GREAT AGAIN"                                                </p>
                                                 <div class="button-area-banner-one mt-5">
                                                     <a href="service.html" class="tmp-btn btn-primary">Xem chi tiết</a>
                                                 </div>

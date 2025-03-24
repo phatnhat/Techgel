@@ -36,6 +36,7 @@ public class HomeNavigation extends BasedEntity {
     @JoinColumn(name = "parent_id")
     private HomeNavigation parent;
 
+    @OrderBy(value = "displayOrder ASC")
     @ToString.Exclude
     @JsonManagedReference
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "parent", cascade = CascadeType.ALL)

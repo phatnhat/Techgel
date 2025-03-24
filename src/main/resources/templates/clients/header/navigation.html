@@ -55,7 +55,7 @@
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </div>
                                 </div>
-                                <a href="contact.html" class="tmp-btn btn-primary">e-Brochure</a>
+                                <a th:href="@{/brochure}" target="_blank" class="tmp-btn btn-primary" style="padding: 10px 15px;font-size:15px;">e-Brochure</a>
                             </div>
                             <div class="tmp-nav-area-one header--sticky">
                                 <div class="logo-md-sm-device">
@@ -81,7 +81,7 @@
                                                     </span>
                                                 </a>
                                                 <ul class="submenu" th:if="${not navigation.children.isEmpty()}">
-                                                    <li th:each="sub, si: ${navigation.children}">
+                                                    <li th:each="sub, si: ${navigation.children}" th:if="${sub.isPublished}">
                                                         <a href="service.html">[[${sub.title_vi}]]</a>
                                                     </li>
                                                 </ul>

@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # Service cho ứng dụng Spring Boot
+  app:
+    build:
+      context: . # Build từ Dockerfile trong thư mục hiện tại
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Ánh xạ cổng 8080 của container ra cổng 8080 của máy host
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/techgel
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=nhatphat0
+    depends_on:
+      - mysql # Đảm bảo MySQL được khởi động trước
+
+  # Service cho MySQL
+  mysql:
+    image: mysql:8.0 # Sử dụng image MySQL 8.0
+    container_name: mysql
+    ports:
+      - "3306:3306" # Ánh xạ cổng 3306 của container ra cổng 3306 của máy host
+    environment:
+      - MYSQL_ROOT_PASSWORD=root # Đặt mật khẩu cho root
+      - MYSQL_DATABASE=nhatphat0 # Tạo database mặc định
+    volumes:
+      - mysql-data:/var/lib/mysql # Lưu trữ dữ liệu MySQL vào volume
+
+# Định nghĩa volume để lưu trữ dữ liệu MySQL
+volumes:
+  mysql-data:

@@ -139,7 +139,7 @@ $(document).ready(function () {
         pauseOnHover: false,
         speed: 1000,
         infinite: false,
-        dots: true,
+        dots: false,
         arrows: false,
         responsive: [
             {

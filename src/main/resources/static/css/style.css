@@ -785,7 +785,12 @@ nav ul li.has-dropdown:hover .submenu {
 .banner-one-main-wrapper {
     display: flex;
     align-items: center;
-    padding: 100px 0;
+    padding: 80px 0;
+}
+
+.banner-one-main-wrapper .inner{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
 
 .banner-one-height-control {
@@ -1286,6 +1291,10 @@ nav ul li.has-dropdown:hover .submenu {
 
 .thumbnail.thumbnail-rounded.border-top-left.hover-animation a img {
     padding: 0;
+    /* co the sua doi */
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
 }
 
 .single-services .services-inner .thumbnail.thumbnail-rounded .number-bg-round {

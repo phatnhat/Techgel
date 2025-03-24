@@ -94,10 +94,10 @@
                       <div class="section-head">
                           <div class="section-sub-title center-title">
                               <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
-                              <span class="subtitle">15000 Trusted</span>
+                              <span class="subtitle">Doanh nghiệp xuất sắc</span>
                           </div>
                           <h2 class="title split-collab" style="opacity: 1;">
-                            <span th:each="t: ${'Doanh nghiệp xuất sắc'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                            <span th:each="t: ${'Top 500 doanh nghiệp xuất sắc nhất'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
                               [[${ #strings.replace(t, ' ', '&nbsp;') }]]
                             </span>
                           </h2>
@@ -142,7 +142,7 @@
       </div>
 
       <!-- Service -->
-      <div class="tmp-services-area services-style--1 background-image-services bg_image tmp-section-gap">
+      <div class="tmp-services-area services-style--1 background-image-services bg_image tmp-section-gap" style="display:none;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
@@ -300,10 +300,10 @@
                     <div class="section-head">
                         <div class="section-sub-title center-title">
                             <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
-                            <span class="subtitle">Dịch vụ của chúng tôi</span>
+                            <span class="subtitle">Lĩnh vực hoạt động</span>
                         </div>
                         <h2 class="title split-collab" style="opacity: 1;">
-                            <span th:each="t: ${'Dịch vụ'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                            <span th:each="t: ${'Chuyên về những lĩnh vực'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
                               [[${ #strings.replace(t, ' ', '&nbsp;') }]]
                           </span>
                         </h2>
@@ -316,14 +316,14 @@
                         <div class="services-inner">
                             <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
                                 <a href="#">
-                                    <img th:src="@{/imgs/services-round-1.png}" alt="Business consulting services">
+                                    <img src="https://www.nannymcphee.co.uk/wp-content/uploads/2023/05/Renewable-Energy-Featured-1.jpg" alt="Business consulting services">
                                 </a>
                                 <div class="number-bg-round">
                                     <span>01</span>
                                 </div>
                             </div>
                             <div class="services-content services-content-style-1 text-center">
-                                <h5 class="title">Gặp gỡ khách hàng</h5>
+                                <h5 class="title">Năng lượng</h5>
                                 <p class="description">
                                     Nội dung 1
                                 </p>
@@ -336,14 +336,14 @@
                         <div class="services-inner">
                             <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
                                 <a href="#">
-                                    <img th:src="@{/imgs/services-round-2.png}" alt="Business consulting services">
+                                    <img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-637243664-1520356722.jpg?resize=640:*" alt="Business consulting services">
                                 </a>
                                 <div class="number-bg-round">
                                     <span>02</span>
                                 </div>
                             </div>
                             <div class="services-content services-content-style-1 text-center">
-                                <h5 class="title">Chiến lược dự án</h5>
+                                <h5 class="title">Hàng không</h5>
                                 <p class="description">
                                     Nội dung 2
                                 </p>
@@ -356,16 +356,78 @@
                         <div class="services-inner">
                             <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
                                 <a href="#">
-                                    <img th:src="@{/imgs/services-round-3.png}" alt="Business consulting services">
+                                    <img src="https://d2csxpduxe849s.cloudfront.net/media/E32629C6-9347-4F84-81FEAEF7BFA342B3/9808C26F-5279-436F-93604EB4D94925E4/WebsiteJpg_XL-FIENG_Main%20Visual_Cyan.jpg" alt="Business consulting services">
                                 </a>
                                 <div class="number-bg-round">
                                     <span>03</span>
                                 </div>
                             </div>
                             <div class="services-content services-content-style-1 text-center">
-                                <h5 class="title">Thiết kế chiến dịch</h5>
+                                <h5 class="title">Công nghiệp</h5>
                                 <p class="description">
                                     Nội dung 3
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">
+                    <div class="single-services">
+                        <div class="services-inner">
+                            <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
+                                <a href="#">
+                                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/7/436040572/KV/MD/QU/26343654/building-construction-services-500x500.jpeg" alt="Business consulting services">
+                                </a>
+                                <div class="number-bg-round">
+                                    <span>04</span>
+                                </div>
+                            </div>
+                            <div class="services-content services-content-style-1 text-center">
+                                <h5 class="title">Công trình dân dụng</h5>
+                                <p class="description">
+                                    Nội dung 4
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="350" data-sal="slide-up" data-sal-duration="800">
+                    <div class="single-services">
+                        <div class="services-inner">
+                            <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
+                                <a href="#">
+                                    <img src="https://www.letsbuild.com/wp-content/uploads/2023/07/types-of-infrastructure.jpeg" alt="Business consulting services">
+                                </a>
+                                <div class="number-bg-round">
+                                    <span>05</span>
+                                </div>
+                            </div>
+                            <div class="services-content services-content-style-1 text-center">
+                                <h5 class="title">Hạ tầng giao thông</h5>
+                                <p class="description">
+                                    Nội dung 5
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="single-services">
+                        <div class="services-inner">
+                            <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
+                                <a href="#">
+                                    <img src="https://cdn.britannica.com/84/203584-131-357FBE7D/speed-internet-technology-background.jpg" alt="Business consulting services">
+                                </a>
+                                <div class="number-bg-round">
+                                    <span>06</span>
+                                </div>
+                            </div>
+                            <div class="services-content services-content-style-1 text-center">
+                                <h5 class="title">Công nghệ</h5>
+                                <p class="description">
+                                    Nội dung 6
                                 </p>
                             </div>
                         </div>

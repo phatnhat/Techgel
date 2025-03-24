@@ -35,7 +35,7 @@ public class AdminMainController {
 
     @GetMapping("/home/navigation")
     public String homeNavigation(Model model){
-        List<HomeNavigation> homeNavigations = homeNavigationService.getParents();
+        List<HomeNavigation> homeNavigations = homeNavigationService.getAllParents();
         model.addAttribute("homeNavigations", homeNavigations);
 
         return "admin/home/navigation";
@@ -51,8 +51,11 @@ public class AdminMainController {
     }
 
     @PostMapping("/home/navigation/edit")
-    public String saveHomeNavigationEdit(HomeNavigation homeNavigation){
+    public String saveHomeNavigationEdit(HomeNavigation homeNavigation, @RequestParam String action){
         homeNavigationService.update(homeNavigation);
-        return "admin/home/navigation";
+        if(action.equals("save")){
+            return "redirect:/webadmin/home/navigation";
+        }
+        return String.format("redirect:/webadmin/home/navigation/edit?id=%s", homeNavigation.getId());
     }
 }

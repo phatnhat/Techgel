@@ -52,14 +52,24 @@ public class MainController {
         subnavigations.add(new ArrayList<>());
 
         List<String> banners = new ArrayList<>();
-        banners.add("https://www.centralcons.vn/wp-content/uploads/2025/02/TAIPEI-WEB-2-scaled.jpg");
-        banners.add("https://www.centralcons.vn/wp-content/uploads/2025/02/Zhongya-Anju-Social-Housing-WWEb-scaled.jpg");
-        banners.add("https://www.centralcons.vn/wp-content/uploads/2025/02/SUMO-WEB-2-scaled.jpg");
-        banners.add("https://www.centralcons.vn/wp-content/uploads/2025/02/BANGTONG-Web-1-scaled.jpg");
+//        banners.add("https://www.centralcons.vn/wp-content/uploads/2025/02/TAIPEI-WEB-2-scaled.jpg");
+//        banners.add("https://www.centralcons.vn/wp-content/uploads/2025/02/Zhongya-Anju-Social-Housing-WWEb-scaled.jpg");
+//        banners.add("https://www.centralcons.vn/wp-content/uploads/2025/02/SUMO-WEB-2-scaled.jpg");
+//        banners.add("https://www.centralcons.vn/wp-content/uploads/2025/02/BANGTONG-Web-1-scaled.jpg");
+
+        banners.add("/imgs/carosel-01.jpg");
+        banners.add("/imgs/carosel-02.jpg");
+        banners.add("/imgs/carosel-03.jpg");
+        banners.add("/imgs/carosel-04.jpg");
 
         model.addAttribute("navigations", navigations);
         model.addAttribute("subnavigations", subnavigations);
         model.addAttribute("banners", banners);
         return "clients/index";
+    }
+
+    @GetMapping("/brochure")
+    public String viewBrochure(){
+        return "/clients/brochure";
     }
 }

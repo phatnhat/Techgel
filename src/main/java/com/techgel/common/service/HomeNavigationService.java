@@ -22,6 +22,10 @@ public class HomeNavigationService {
         return this.getAll().stream().filter(navigation -> navigation.getParent() == null && navigation.isPublished() == true).toList();
     }
 
+    public List<HomeNavigation> getAllParents(){
+        return this.getAll().stream().filter(navigation -> navigation.getParent() == null).toList();
+    }
+
     public List<HomeNavigation> getChildrens(){
         return this.getAll().stream().filter(navigation -> navigation.getParent() != null && navigation.isPublished() == true).collect(Collectors.toList());
     }
