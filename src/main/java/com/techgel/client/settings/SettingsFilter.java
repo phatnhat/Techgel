@@ -29,7 +29,6 @@ public class SettingsFilter implements Filter {
         List<HomeNavigation> homeNavigations = homeNavigationService.getParents();
 
         if(!hasNotAllowedExtension(url) && !hasNotAllowedPath(url)){
-            System.out.println(homeNavigations);
             request.setAttribute("homeNavigations", homeNavigations);
         }else{
             chain.doFilter(request, response);

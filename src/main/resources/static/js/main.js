@@ -52,7 +52,7 @@ $(document).ready(function () {
         centeredSlides: true,
         speed: 2000,
         autoplay: {
-            delay: 3000,
+            delay: 15000,
             disableOnInteraction: false,
         },
         // loopFillGroupWithBlank: true,

@@ -415,7 +415,7 @@ nav ul li.has-dropdown a.nav-link::before {
 .rolling-text {
     display: inline-block;
     overflow: hidden;
-    line-height: 30px;
+    /*line-height: 30px;*/
     height: 21px;
 }
 .rolling-text .block {
@@ -1356,9 +1356,10 @@ nav ul li.has-dropdown:hover .submenu {
 .services-content.services-content-style-1 .title {
     font-size: 27px;
     font-weight: 800;
-    line-height: 45px;
-    margin-top: 37px;
+    /*line-height: 45px;*/
+    margin-top: 0px;
     margin-bottom: 0;
+    text-transform: uppercase;
 }
 
 .services-content.services-content-style-1 .description {
