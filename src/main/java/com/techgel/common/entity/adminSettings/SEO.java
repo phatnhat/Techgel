@@ -13,13 +13,17 @@ import lombok.Setter;
 @Entity
 @Table(name = "seos")
 public class SEO extends BasedEntity {
-    private String meta_title_vi;
-    private String meta_title_en;
-    private String meta_description_vi;
-    private String meta_description_en;
-    private String meta_keywords_vi;
-    private String meta_keywords_en;
     private String slug_vi;
     private String slug_en;
+    private String title_vi;
+    private String title_en;
+    private String description_vi;
+    private String description_en;
+    private String keywords_vi;
+    private String keywords_en;
+    private String og_title_vi;
+    private String og_title_en;
+    private String og_description_vi;
+    private String og_description_en;
     private String entity_type;
 }

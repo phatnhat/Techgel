@@ -42,6 +42,8 @@ public class HomeNavigation extends BasedEntity {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "parent", cascade = CascadeType.ALL)
     private Set<HomeNavigation> children = new HashSet<>();
 
+    private String seo_keyword;
+
     public HomeNavigation(Long id) {
         this.id = id;
     }

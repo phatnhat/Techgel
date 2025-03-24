@@ -6,13 +6,13 @@
 </head>
 <body>
     <main class="content-wrapper" style="height: 100%;">
-        <form th:action="@{/webadmin/home/navigation/edit}" method="post" th:object="${homeNavigation}">
-            <input type="hidden" name="id" th:field="*{id}">
-            <input type="hidden" name="parent" th:field="*{parent}">
+        <form th:action="@{/webadmin/home/navigation/edit}" method="post" th:object="${homeNavigationDTO}">
+            <input type="hidden" name="id" th:field="*{homeNavigation.id}">
+            <input type="hidden" name="parent" th:field="*{homeNavigation.parent}">
             <div class="content-header clearfix" style="padding: 15px 1rem;">
                 <h1 class="float-left">
-                    <th:block th:if="${homeNavigation.parent}">[[${homeNavigation.parent.title_vi}]] >></th:block>
-                    [[${homeNavigation.title_vi}]]
+                    <th:block th:if="${homeNavigationDTO.homeNavigation.parent}">[[${homeNavigationDTO.homeNavigation.parent.title_vi}]] >></th:block>
+                    [[${homeNavigationDTO.homeNavigation.title_vi}]]
                     <small>
                         <i class="fas fa-arrow-circle-left"></i>
                         <a th:href="@{/webadmin/home/navigation}">Back</a>
@@ -46,7 +46,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-9">
-                                            <input checked="checked" class="check-box" data-val-required="The Published field is required." id="Published" type="checkbox" name="isPublished" th:field="*{published}">
+                                            <input checked="checked" class="check-box" data-val-required="The Published field is required." id="Published" type="checkbox" name="isPublished" th:field="*{homeNavigation.published}">
                                             <span class="field-validation-valid" data-valmsg-for="Published" data-valmsg-replace="true"></span>
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="number" class="form-control" data-val="true" data-val-required="The Display order field is required." name="displayOrder" th:field="*{displayOrder}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
+                                            <input type="number" class="form-control" data-val="true" data-val-required="The Display order field is required." name="displayOrder" th:field="*{homeNavigation.displayOrder}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
                                             <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
                                         </div>
                                     </div>
@@ -66,10 +66,10 @@
                                     <div class="row">
                                         <div class="row form-group col-md-6">
                                             <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="DisplayOrder">Tiêu đề VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." name="title_vi" th:field="*{title_vi}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." name="title_vi" th:field="*{homeNavigation.title_vi}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
                                                 <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
@@ -87,7 +87,7 @@
 
                             </div>
                         </nop-card>
-                        <nop-card>
+                        <nop-card th:if="${homeNavigation.seo_keyword != null}">
                             <div class="card card-secondary card-outline advanced-setting" data-card-name="category-seo" data-hideattribute="CategoryPage.HideSEOBlock" id="category-seo">
                                 <div class="card-header with-border clearfix">
                                     <div class="card-title">
@@ -103,37 +103,37 @@
                                         <div class="form-group row">
                                             <div class="col-md-3">
                                                 <div class="label-wrapper"><label class="col-form-label" for="SeName">Link thân thiện VI</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set a search engine friendly page name e.g. 'the-best-category' to make your page URL 'http://www.yourStore.com/the-best-category'. Leave empty to generate it automatically based on the name of the category.">
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
                                                         <i class="fas fa-circle-question"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Max length of search name is 200 chars" data-val-length-max="200" data-val-length-min="0" id="SeName" name="SeName" type="text">
+                                                <input class="form-control text-box single-line" th:field="*{seo.slug_vi}" data-val="true" data-val-length="Max length is 100 chars" data-val-length-max="200" data-val-length-min="0" name="slug_vi" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="SeName" data-valmsg-replace="true"></span>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="SeName">Link thân thiện EN</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set a search engine friendly page name e.g. 'the-best-category' to make your page URL 'http://www.yourStore.com/the-best-category'. Leave empty to generate it automatically based on the name of the category.">
+                                                <div class="label-wrapper"><label class="col-form-label">Link thân thiện EN</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
                                                         <i class="fas fa-circle-question"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Max length of search name is 200 chars" data-val-length-max="200" data-val-length-min="0" id="SeName" name="SeName" type="text">
+                                                <input class="form-control text-box single-line" th:field="*{seo.slug_en}" data-val="true" data-val-length="Max length is 200 chars" data-val-length-max="200" data-val-length-min="0" name="slug_en" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="SeName" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="MetaTitle">Tiêu đề SEO VI</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Override the page title. The default is the name of the category.">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề SEO VI</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
                                                         <i class="fas fa-circle-question"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="'Meta Title' must be between 0 and 400 characters." data-val-length-max="400" data-val-length-min="0" id="MetaTitle" name="MetaTitle" type="text" value="">
+                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Tiêu đề phải từ 1 đến 400 ký tự" data-val-length-max="400" data-val-length-min="1" name="title_vi" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="MetaTitle" data-valmsg-replace="true"></span>
                                             </div>
                                             <div class="col-md-3">
