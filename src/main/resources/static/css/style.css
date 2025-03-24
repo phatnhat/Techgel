@@ -1037,7 +1037,7 @@ nav ul li.has-dropdown:hover .submenu {
 }
 
 .about-area.about-style-one .thumbnail-with-title .thumbnail img {
-    min-width: max-content;
+    max-width: 150px;
 }
 
 .about-area.about-style-one .thumbnail-with-title .thumbnail .icon {

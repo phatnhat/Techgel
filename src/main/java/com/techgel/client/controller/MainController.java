@@ -72,9 +72,9 @@ public class MainController {
 //        banners.add("https://www.centralcons.vn/wp-content/uploads/2025/02/SUMO-WEB-2-scaled.jpg");
 //        banners.add("https://www.centralcons.vn/wp-content/uploads/2025/02/BANGTONG-Web-1-scaled.jpg");
 
+        banners.add("/imgs/068a850f-79c2-493a-b394-54fff1eb5eb4.jfif");
         banners.add("/imgs/46736717-3837-4318-8fa9-c3e0fed82c68.jfif");
         banners.add("/imgs/b29dced9-353e-4031-bb40-d5e1e45753f6.jfif");
-        banners.add("/imgs/068a850f-79c2-493a-b394-54fff1eb5eb4.jfif");
         banners.add("/imgs/carosel-04.jpg");
 
         model.addAttribute("testNavigations", navigations);
