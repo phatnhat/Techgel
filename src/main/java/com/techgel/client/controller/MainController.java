@@ -17,20 +17,27 @@ public class MainController {
     @GetMapping("")
     public String viewHomagePage(Model model){
         List<String> navigations = new ArrayList<>();
-        navigations.add("Trang chủ");
-        navigations.add("Giới thiệu");
+        navigations.add("Về Techgel");
+        navigations.add("Năng lực thi công");
         navigations.add("Dự án");
         navigations.add("Tin tức");
+        navigations.add("Cổ đông");
         navigations.add("Tuyển dụng");
         navigations.add("Liên hệ");
 
         List<List<String>> subnavigations = new ArrayList<>();
-        subnavigations.add(new ArrayList<>());
         subnavigations.add(new ArrayList<>(){{
-            add("Giới thiệu");
+            add("Tổng quan");
             add("Sơ đồ tổ chức");
-            add("Giấy phép và chứng chỉ");
+            add("Tầm nhìn giá trị cốt lõi");
+            add("Giấy phép & chứng chỉ");
+            add("Đối tác khách hàng");
+        }});
+        subnavigations.add(new ArrayList<>(){{
+            add("Lĩnh vực hoạt động");
             add("Hồ sơ năng lực");
+            add("Phát triển bề vững");
+            add("Hình ảnh thi công");
         }});
         subnavigations.add(new ArrayList<>(){{
             add("Năng lượng");
@@ -40,14 +47,21 @@ public class MainController {
             add("Công trình dân dụng");
         }});
         subnavigations.add(new ArrayList<>(){{
-            add("Thông tin nổi bật");
-            add("Tin tức hằng ngày");
+            add("Đại hội cổ đông");
+            add("Các báo cáo");
+            add("Công bố thông tin");
+            add("Thông tin cổ phiếu");
+        }});
+        subnavigations.add(new ArrayList<>(){{
+            add("Tin dự án");
+            add("Hoạt động nội bộ");
+            add("Hoạt động đào tạo");
         }});
         subnavigations.add(new ArrayList<>(){{
             add("Cơ hội nghề nghiệp");
             add("Chính sách nhân sự");
             add("Phát triển nguồn nhân lực");
-
+            add("Văn hóa Techgel");
         }});
         subnavigations.add(new ArrayList<>());
 
@@ -62,7 +76,7 @@ public class MainController {
         banners.add("/imgs/carosel-03.jpg");
         banners.add("/imgs/carosel-04.jpg");
 
-        model.addAttribute("navigations", navigations);
+        model.addAttribute("testNavigations", navigations);
         model.addAttribute("subnavigations", subnavigations);
         model.addAttribute("banners", banners);
         return "clients/index";

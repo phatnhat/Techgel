@@ -64,25 +64,20 @@
                                     </a>
                                 </div>
                                 <div class="header-nav main-nav-one">
+
                                     <nav>
                                         <ul class="parent-nav">
-                                            <li th:each="navigation, i: ${homeNavigations}" th:class="${not navigation.children.isEmpty() ? 'has-dropdown' : ''}">
+                                            <li th:each="n, i: ${testNavigations}" th:class="${not subnavigations[i.index].isEmpty() ? 'has-dropdown' : ''}">
                                                 <a href="#" class="nav-link">
                                                     <span class="rolling-text">
-<!--                                                        <div class="block">-->
-<!--                                                            <span th:each="t, iter:  ${navigation.toCharArray()}" class="letter" th:style="'transition-delay:' + ${0.015 * iter.index} + 's'">[[${ #strings.replace(#strings.capitalize(t), ' ', '&nbsp;') }]]</span>-->
-<!--                                                        </div>-->
-<!--                                                        <div class="block">-->
-<!--                                                            <span th:each="t, iter:  ${navigation.toCharArray()}" class="letter" th:style="'transition-delay:' + ${0.015 * iter.index} + 's'">[[${ #strings.replace(#strings.capitalize(t), ' ', '&nbsp;') }]]</span>-->
-<!--                                                        </div>-->
                                                         <div class="block">
-                                                            <span>[[${#strings.toUpperCase(navigation.title_vi)}]]</span>
+                                                            <span>[[${#strings.toUpperCase(n)}]]</span>
                                                         </div>
                                                     </span>
                                                 </a>
-                                                <ul class="submenu" th:if="${not navigation.children.isEmpty()}">
-                                                    <li th:each="sub, si: ${navigation.children}" th:if="${sub.isPublished}">
-                                                        <a href="service.html">[[${sub.title_vi}]]</a>
+                                                <ul class="submenu" th:if="${not subnavigations[i.index].isEmpty()}">
+                                                    <li th:each="sub, si: ${subnavigations[i.index]}">
+                                                        <a href="service.html">[[${sub}]]</a>
                                                     </li>
                                                 </ul>
                                             </li>
