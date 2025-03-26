@@ -6,7 +6,7 @@
 </head>
 <body>
     <div th:fragment="navigation">
-        <header class="tmp-header-area-start header-one">
+        <header class="tmp-header-area-start header-one" th:classappend="${requestURI != '/' ? 'header-two header-four header--sticky' : ''}">
             <div class="header-top-one">
                 <div class="container">
                     <div class="row">
@@ -42,10 +42,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="main-header-one-wrapper">
+                        <div th:if="${requestURI == '/'}" class="main-header-one-wrapper">
                             <div class="header-mida-area">
                                 <div class="logo-area-start">
-                                    <a class="logo" href="../index.html">
+                                    <a class="logo" href="#">
                                         <img width="200" th:src="@{/imgs/logo.jpg}" alt="Techgel Logo">
                                     </a>
                                 </div>
@@ -106,6 +106,45 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div th:unless="${requestURI == '/'}" class="header-mida-area style-two ">
+                            <div class="logo-area-start">
+                                <a href="">
+                                    <img width="200" th:src="@{/imgs/logo.jpg}" alt="logo">
+                                </a>
+                            </div>
+                            <div class="header-nav main-nav-one">
+                                <nav>
+                                    <ul class="parent-nav">
+                                        <li th:each="n, i: ${testNavigations}" th:class="${not subnavigations[i.index].isEmpty() ? 'has-dropdown' : ''}">
+                                            <a href="#" class="nav-link">
+                                                    <span class="rolling-text">
+                                                        <div class="block">
+                                                            <span>[[${#strings.toUpperCase(n)}]]</span>
+                                                        </div>
+                                                    </span>
+                                            </a>
+                                            <ul class="submenu" th:if="${not subnavigations[i.index].isEmpty()}">
+                                                <li th:each="sub, si: ${subnavigations[i.index]}">
+                                                    <a href="service.html">[[${sub}]]</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="actions-area">
+                                <a href="/brochure" target="_blank" class="tmp-btn btn-primary" style="padding: 10px 15px;font-size:15px;" bis_skin_checked="1">e-Brochure</a>
+                                <div class="tmp-side-collups-area" id="side-collups">
+                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="14" width="20" height="2" fill="#fff"></rect>
+                                        <rect y="7" width="20" height="2" fill="#fff"></rect>
+                                        <rect width="20" height="2" fill="#fff"></rect>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

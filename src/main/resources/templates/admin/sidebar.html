@@ -24,13 +24,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a th:href="@{/webadmin/home/navigation}" class="nav-link">
+                                    <a th:href="@{/webadmin/home/navigation}" class="nav-link" th:classappend="${#strings.contains(requestURI, 'navigation') ? 'active' : ''}">
                                         <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> Navigation </p>
+                                        <p>Navigation</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Admin/Category/List" class="nav-link">
+                                    <a th:href="@{/webadmin/home/e-brochure}" class="nav-link" th:classappend="${#strings.contains(requestURI, 'e-brochure') ? 'active' : ''}">
                                         <i class="nav-icon far fa-dot-circle"></i>
                                         <p> E-Brochure </p>
                                     </a>

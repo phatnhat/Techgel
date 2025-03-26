@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SEORepository extends JpaRepository<SEO, Long> {
-    @Query("SELECT s FROM SEO s WHERE s.entity_type = ?1")
+    @Query("SELECT s FROM SEO s WHERE s.seo_entity_type = ?1")
     SEO findByEntity_type(String entity_type);
 }

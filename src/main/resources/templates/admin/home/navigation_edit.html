@@ -8,7 +8,10 @@
     <main class="content-wrapper" style="height: 100%;">
         <form th:action="@{/webadmin/home/navigation/edit}" method="post" th:object="${homeNavigationDTO}">
             <input type="hidden" name="id" th:field="*{homeNavigation.id}">
+            <input type="hidden" name="id" th:field="*{seo.id}">
             <input type="hidden" name="parent" th:field="*{homeNavigation.parent}">
+            <input type="hidden" name="seo_keyword" th:field="*{homeNavigation.seo_keyword}">
+            <input type="hidden" name="seo_entity_type" th:field="*{seo.seo_entity_type}">
             <div class="content-header clearfix" style="padding: 15px 1rem;">
                 <h1 class="float-left">
                     <th:block th:if="${homeNavigationDTO.homeNavigation.parent}">[[${homeNavigationDTO.homeNavigation.parent.title_vi}]] >></th:block>
@@ -78,7 +81,7 @@
                                                 <div class="label-wrapper"><label class="col-form-label">Tiêu đề EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." name="title_en" th:field="*{title_en}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{homeNavigation.title_en}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden">
                                                 <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
@@ -102,14 +105,14 @@
                                     <div>
                                         <div class="form-group row">
                                             <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="SeName">Link thân thiện VI</label>
+                                                <div class="label-wrapper"><label class="col-form-label">Link thân thiện VI</label>
                                                     <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
                                                         <i class="fas fa-circle-question"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" th:field="*{seo.slug_vi}" data-val="true" data-val-length="Max length is 100 chars" data-val-length-max="200" data-val-length-min="0" name="slug_vi" type="text">
+                                                <input class="form-control text-box single-line" th:field="*{seo.seo_slug_vi}" data-val="true" data-val-length="Max length is 100 chars" data-val-length-max="200" data-val-length-min="0" name="slug_vi" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="SeName" data-valmsg-replace="true"></span>
                                             </div>
                                             <div class="col-md-3">
@@ -120,7 +123,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" th:field="*{seo.slug_en}" data-val="true" data-val-length="Max length is 200 chars" data-val-length-max="200" data-val-length-min="0" name="slug_en" type="text">
+                                                <input class="form-control text-box single-line" th:field="*{seo.seo_slug_en}" data-val="true" data-val-length="Max length is 200 chars" data-val-length-max="200" data-val-length-min="0" name="slug_en" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="SeName" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
@@ -133,90 +136,99 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Tiêu đề phải từ 1 đến 400 ký tự" data-val-length-max="400" data-val-length-min="1" name="title_vi" type="text">
+                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="255" data-val-length-min="0" th:field="*{seo.seo_title_vi}" name="seo_title_vi" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="MetaTitle" data-valmsg-replace="true"></span>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="MetaTitle">Tiêu đề SEO EN</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Override the page title. The default is the name of the category.">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề SEO EN</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
                                                         <i class="fas fa-circle-question"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="'Meta Title' must be between 0 and 400 characters." data-val-length-max="400" data-val-length-min="0" id="MetaTitle" name="MetaTitle" type="text" value="">
+                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="255" data-val-length-min="0" th:field="*{seo.seo_title_en}" name="seo_title_en" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="MetaTitle" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="MetaDescription">Mô tả SEO VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Meta description to be added to category page header."><i class="fas fa-circle-question"></i></div></div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="'Meta Description' must be between 0 and 2147483647 characters." data-val-length-max="2147483647" data-val-length-min="0" id="MetaDescription" name="MetaDescription"></textarea>
-                                                <span class="field-validation-valid" data-valmsg-for="MetaDescription" data-valmsg-replace="true"></span>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="MetaDescription">Mô tả SEO EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Meta description to be added to category page header."><i class="fas fa-circle-question"></i></div></div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="'Meta Description' must be between 0 and 2147483647 characters." data-val-length-max="2147483647" data-val-length-min="0" id="MetaDescription" name="MetaDescription"></textarea>
-                                                <span class="field-validation-valid" data-valmsg-for="MetaDescription" data-valmsg-replace="true"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="MetaTitle">Từ khóa SEO VI</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Override the page title. The default is the name of the category.">
+                                                <div class="label-wrapper"><label class="col-form-label">Mô tả SEO VI</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
                                                         <i class="fas fa-circle-question"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="'Meta Title' must be between 0 and 400 characters." data-val-length-max="400" data-val-length-min="0" id="MetaTitle" name="MetaTitle" type="text" value="">
+                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="" data-val-length-max="2147483647" data-val-length-min="0" th:field="*{seo.seo_description_vi}" name="seo_description_vi"></textarea>
+                                                <span class="field-validation-valid" data-valmsg-for="MetaDescription" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper">
+                                                    <label class="col-form-label">Mô tả SEO EN</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
+                                                        <i class="fas fa-circle-question"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="" data-val-length-max="2147483647" data-val-length-min="0" th:field="*{seo.seo_description_en}" name="seo_description_en"></textarea>
+                                                <span class="field-validation-valid" data-valmsg-for="MetaDescription" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Từ khóa SEO VI</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
+                                                        <i class="fas fa-circle-question"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="255" data-val-length-min="0" th:field="*{seo.seo_keywords_vi}" name="seo_keywords_vi" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="MetaTitle" data-valmsg-replace="true"></span>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="label-wrapper"><label class="col-form-label" for="MetaTitle">Từ khóa SEO EN</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Override the page title. The default is the name of the category.">
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
                                                         <i class="fas fa-circle-question"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="'Meta Title' must be between 0 and 400 characters." data-val-length-max="400" data-val-length-min="0" id="MetaTitle" name="MetaTitle" type="text" value="">
+                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="255" data-val-length-min="0" th:field="*{seo.seo_keywords_en}" name="seo_keywords_en" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="MetaTitle" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="MetaKeywords">Og:title VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Meta keywords to be added to category page header."><i class="fas fa-circle-question"></i></div></div>
+                                                <div class="label-wrapper"><label class="col-form-label">Og:title VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title=""><i class="fas fa-circle-question"></i></div></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="'Meta Keywords' must be between 0 and 400 characters." data-val-length-max="400" data-val-length-min="0" id="MetaKeywords" name="MetaKeywords" type="text" value="">
+                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="255" data-val-length-min="0" th:field="*{seo.seo_og_title_vi}" name="seo_og_title_vi" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="MetaKeywords" data-valmsg-replace="true"></span>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="MetaKeywords">Og:title EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Meta keywords to be added to category page header."><i class="fas fa-circle-question"></i></div></div>
+                                                <div class="label-wrapper"><label class="col-form-label">Og:title EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title=""><i class="fas fa-circle-question"></i></div></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="'Meta Keywords' must be between 0 and 400 characters." data-val-length-max="400" data-val-length-min="0" id="MetaKeywords" name="MetaKeywords" type="text" value="">
+                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="400" data-val-length-min="0" th:field="*{seo.seo_og_title_en}" name="seo_og_title_en" type="text">
                                                 <span class="field-validation-valid" data-valmsg-for="MetaKeywords" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="MetaDescription">Og:description VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Meta description to be added to category page header."><i class="fas fa-circle-question"></i></div></div>
+                                                <div class="label-wrapper"><label class="col-form-label">Og:description VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title=""><i class="fas fa-circle-question"></i></div></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="'Meta Description' must be between 0 and 2147483647 characters." data-val-length-max="2147483647" data-val-length-min="0" id="MetaDescription" name="MetaDescription"></textarea>
+                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="" data-val-length-max="2147483647" data-val-length-min="0" th:field="*{seo.seo_og_description_vi}" name="seo_og_description_vi"></textarea>
                                                 <span class="field-validation-valid" data-valmsg-for="MetaDescription" data-valmsg-replace="true"></span>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="MetaDescription">Og:description EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Meta description to be added to category page header."><i class="fas fa-circle-question"></i></div></div>
+                                                <div class="label-wrapper"><label class="col-form-label">Og:description EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title=""><i class="fas fa-circle-question"></i></div></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="'Meta Description' must be between 0 and 2147483647 characters." data-val-length-max="2147483647" data-val-length-min="0" id="MetaDescription" name="MetaDescription"></textarea>
+                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="" data-val-length-max="2147483647" data-val-length-min="0" th:field="*{seo.seo_og_description_en}" name="seo_og_description_en"></textarea>
                                                 <span class="field-validation-valid" data-valmsg-for="MetaDescription" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>

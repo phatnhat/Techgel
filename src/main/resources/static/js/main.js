@@ -93,7 +93,6 @@ $(document).ready(function () {
         },
     });
 });
-
 $(document).ready(function () {
     $('.slider_projects').slick({
         slidesToShow: 3,
@@ -161,6 +160,39 @@ $(document).ready(function () {
             },
         ]
     });
+});
+$(document).ready(function() {
+    // Swiper: Slider
+    new Swiper('.swiper-container-style-two', {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        slidesPerView: 2,
+        paginationClickable: true,
+        spaceBetween: 20,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        breakpoints: {
+            1920: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            1028: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            480: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
+    })
 });
 
 jQuery(window).on('scroll', function() {
@@ -266,10 +298,10 @@ function counterJumpanimation() {
     }
 
 }
+counterJumpanimation();
 
 sal({
     threshold: 0.1,
     once: true,
 });
 
-counterJumpanimation()

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{/clients/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main class="content-wrapper">
+    <style>
+        .breadcrumb-bg {
+            background-image: url([[@{/imgs/vision-mission-values.jpg}]]);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+    <div class="breadcrumb-area bg_image tmp-section-gap breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inner text-center">
+                        <h1 class="title split-collab" style="opacity: 0;">
+                              <span th:each="t: ${'Tầm nhìn, sứ mệnh & giá trị cốt lõi'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                              </span>
+                        </h1>
+                        <ul class="page-list">
+                            <li class="tmp-breadcrumb-item"><a href="">Về Techgel</a></li>
+                            <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
+                            <li class="tmp-breadcrumb-item active">Tầm nhìn, sứ mệnh & giá trị cốt lõi</li>
+                        </ul>
+                        <div class="circle-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-organizational tmp-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-head pb-3">
+                        <h2 class="title split-collab" style="opacity: 0;">
+                              <span th:each="t: ${'Tầm nhìn'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                              </span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="vision_info my-5">
+                    <div class="row justify-content-end">
+                        <div class="col-md-8">
+                            <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/core.jpg" class="img-fluid" alt="" draggable="false">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

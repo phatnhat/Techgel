@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" th:replace="~{/clients/index :: dynamic(~{::main})}">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-  <div th:fragment="homepage">
+  <main class="content-wrapper">
       <style>
           .background-image-services {
               background-image: url([[@{/imgs/services-bg-image.png}]]);
@@ -72,7 +72,7 @@
                               Công ty CP Kỹ thuật Công nghệ Sài Gòn (TECHGEL) là một trong những đơn vị hàng đầu tại Việt Nam trong lĩnh vực thiết kế, cung cấp và lắp đặt hệ thống điện, hàng không, công nghiệp, dân dụng, hạ tầng & công nghệ. Với hơn 25 năm kinh nghiệm, TECHGEL đã khẳng định được vị thế của mình trên thị trường và mang đến cho khách hàng những giải pháp toàn diện, tiên tiến, hiệu quả và bền vững, đạt tiêu chuẩn hàng đầu quốc tế & trong nước.                          </p>
                           <div class="thumbnail-with-title" data-sal-delay="350" data-sal="slide-up" data-sal-duration="800">
                               <div class="thumbnail">
-                                  <img th:src="@{/imgs/logo.jpg}" alt="Logo Techgel">
+                                  <img th:src="@{/imgs/logo-01.png}" alt="Logo Techgel">
 <!--                                  <div class="icon">-->
 <!--                                      <i class="fa-regular fa-dollar-sign"></i>-->
 <!--                                  </div>-->
@@ -1022,7 +1022,7 @@
           <div class="container">
               <div class="row">
                   <div class="col-lg-12">
-                      <div class="section-head">
+                      <div class="section-head pb-3">
                           <div class="section-sub-title center-title">
                               <img th:src="@{imgs/section-custom-menubar.png}" alt="Corporate_service">
                               <span class="subtitle">Đối tác và khách hàng</span>
@@ -1066,6 +1066,6 @@
               </div>
           </div>
       </div>
-  </div>
+  </main>
 </body>
 </html>

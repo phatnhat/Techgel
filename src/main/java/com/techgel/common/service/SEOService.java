@@ -1,5 +1,6 @@
 package com.techgel.common.service;
 
+import com.techgel.common.entity.adminSettings.HomeNavigation;
 import com.techgel.common.entity.adminSettings.SEO;
 import com.techgel.common.repository.SEORepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,5 +13,9 @@ public class SEOService {
 
     public SEO getSEOByEntityType(String entity_type){
         return seoRepository.findByEntity_type(entity_type);
+    }
+
+    public void update(SEO seo){
+        seoRepository.save(seo);
     }
 }
