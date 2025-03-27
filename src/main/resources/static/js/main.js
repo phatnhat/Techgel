@@ -305,3 +305,10 @@ sal({
     once: true,
 });
 
+
+/* Click event */
+$(document).ready(function(){
+    $('#filter_projects-btn').click(function(){
+        $('.filter_advance').toggle();
+    })
+});

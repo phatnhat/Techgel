@@ -4,8 +4,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @ControllerAdvice
 public class GlobalModelAttributes {
@@ -61,7 +60,60 @@ public class GlobalModelAttributes {
         }});
         subnavigations.add(new ArrayList<>());
 
+        List<List<Map<String, String>>> test = new ArrayList<List<Map<String, String>>>();
+        test.add(new ArrayList<>(){{
+            add(new LinkedHashMap<>(){{
+                put("Tổng quan", "about-us");
+                put("Sơ đồ tổ chức", "organizational-chart");
+                put("Tầm nhìn giá trị cốt lõi", "vision-mission-values");
+                put("Giấy phép & chứng chỉ", "licenses-certificates");
+                put("Đối tác khách hàng", "clients-partners");
+            }});
+        }});
+        test.add(new ArrayList<>(){{
+            add(new LinkedHashMap<>(){{
+                put("Lĩnh vực hoạt động", "");
+                put("Phát triển bền vững", "");
+                put("Hình ảnh thi công", "");
+            }});
+        }});
+        test.add(new ArrayList<>(){{
+            add(new LinkedHashMap<>(){{
+                put("Dự án nổi bật", "");
+                put("Năng lượng", "");
+                put("Hàng không", "");
+                put("Công nghiệp", "");
+                put("Hạ tầng giao thông", "");
+                put("Dân dụng", "");
+                put("Công nghệ", "");
+            }});
+        }});
+        test.add(new ArrayList<>(){{
+            add(new LinkedHashMap<>(){{
+                put("Tin dự án", "");
+                put("Hoạt động nội bộ", "");
+                put("Hoạt động đào tạo", "");
+            }});
+        }});
+        test.add(new ArrayList<>(){{
+            add(new LinkedHashMap<>(){{
+                put("Đại hội cổ đông", "");
+                put("Các báo cáo", "");
+                put("Công bố thông tin", "");
+                put("Thông tin cổ phiếu", "");
+            }});
+        }});
+        test.add(new ArrayList<>(){{
+            add(new LinkedHashMap<>(){{
+                put("Cơ hội nghề nghiệp", "");
+                put("Chính sách nhân sự", "");
+                put("Phát triển nguồn nhân lực", "");
+                put("Văn hóa Techgel", "");
+            }});
+        }});
+        test.add(new ArrayList<>());
+
         model.addAttribute("testNavigations", navigations);
-        model.addAttribute("subnavigations", subnavigations);
+        model.addAttribute("subnavigations", test);
     }
 }

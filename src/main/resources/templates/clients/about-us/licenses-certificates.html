@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main class="content-wrapper">
+        <style>
+            .breadcrumb-bg {
+                background-image: url([[@{/imgs/certified-guarantee-warranty-verify-stamp-word-concept.jpg}]]);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .line_img {
+                height: 10px;
+                background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center / auto 200%;
+                flex-grow: 1;
+            }
+        </style>
+
+        <div class="breadcrumb-area bg_image tmp-section-gap breadcrumb-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-inner text-center">
+                            <h1 class="title split-collab" style="opacity: 0;">
+                              <span th:each="t: ${'Giấy phép & chứng chỉ'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                              </span>
+                            </h1>
+                            <ul class="page-list">
+                                <li class="tmp-breadcrumb-item"><a href="">Về Techgel</a></li>
+                                <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
+                                <li class="tmp-breadcrumb-item active">Giấy phép & chứng chỉ</li>
+                            </ul>
+                            <div class="circle-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-lc tmp-section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-head pb-3">
+                            <h2 class="title split-collab d-flex align-items-center justify-content-center" style="opacity:0;gap:30px;">
+                                <div class="line_img"></div>
+                                <div>
+                                  <span th:each="t: ${'Giấy phép'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                                  </span>
+                                </div>
+                                <div class="line_img"></div>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 mb-md-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-3 col-6">
+                            <div class="item_cert">
+                                <figure>
+                                    <a th:href="@{/files/1.-GIAY-PHEP-DKKD-TECHGEL-05.04.2023.pdf}" target="_blank">
+                                        <img th:src="@{/imgs/licenses-certificates/licenses1.png}" class="img-fluid" alt="" draggable="false">
+                                    </a>
+                                </figure>
+                                <div class="text-center">TECHGEL Business Registration License 05.04.2023</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="item_cert">
+                                <figure>
+                                    <a th:href="@{/files/4.-Giay-phep-TK-GS-Thi-cong-PCCC.pdf}" target="_blank">
+                                        <img th:src="@{/imgs/licenses-certificates/licenses2.png}" class="img-fluid" alt="" draggable="false">
+                                    </a>
+                                </figure>
+                                <div class="text-center">Design, Supervision, and Fire Protection Construction License</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="item_cert">
+                                <figure>
+                                    <a th:href="@{/files/5.-Giay-phep-hoat-dong-Dien-Luc-Thiet-ke-Giam-sat.pdf}" target="_blank">
+                                        <img th:src="@{/imgs/licenses-certificates/licenses3.jpg}" class="img-fluid" alt="" draggable="false">
+                                    </a>
+                                </figure>
+                                <div class="text-center">Electricity Operation License – Design and Supervision</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-head pb-3">
+                            <h2 class="title split-collab d-flex align-items-center justify-content-center" style="opacity:0;gap:30px;">
+                                <div class="line_img"></div>
+                                <div>
+                                  <span th:each="t: ${'Chứng chỉ'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                                  </span>
+                                </div>
+                                <div class="line_img"></div>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 mb-md-5">
+                    <div class="row justify-content-center" id="gallery-certificate">
+                        <div class="col-md-3 col-6">
+                            <div class="item_cert">
+                                <figure>
+                                    <a data-pswp-width="1500" data-pswp-height="2000" th:href="@{/imgs/licenses-certificates/certificate1.png}">
+                                        <img th:src="@{/imgs/licenses-certificates/certificate1.png}" class="img-fluid" alt="">
+                                    </a>
+                                </figure>
+                                <div class="text-center">Construction Operation Capacity Certificate – Energy Sector, Technical Infrastructure</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="item_cert">
+                                <figure>
+                                    <a data-pswp-width="1500" data-pswp-height="2000" th:href="@{/imgs/licenses-certificates/certificate2.png}">
+                                        <img th:src="@{/imgs/licenses-certificates/certificate2.png}" class="img-fluid" alt="" draggable="false">
+                                    </a>
+                                </figure>
+                                <div class="text-center">ISO certificate 9001 - Techgel
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="item_cert">
+                                <figure>
+                                    <a data-pswp-width="1500" data-pswp-height="2000" th:href="@{/imgs/licenses-certificates/certificate3.png}">
+                                        <img th:src="@{/imgs/licenses-certificates/certificate3.png}" class="img-fluid" alt="" draggable="false">
+                                    </a>
+                                </figure>
+                                <div class="text-center">ISO certificate E 14001 -V Techgel</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="item_cert">
+                                <figure>
+                                    <a data-pswp-width="1500" data-pswp-height="2000" th:href="@{/imgs/licenses-certificates/certificate4.png}">
+                                        <img th:src="@{/imgs/licenses-certificates/certificate4.png}" class="img-fluid" alt="" draggable="false">
+                                    </a>
+                                </figure>
+                                <div class="text-center">ISO certificate -OHS - 45001-V Techgel</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type='module'>
+            import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe-lightbox.esm.js';
+            const lightbox = new PhotoSwipeLightbox({
+                gallery: '#gallery-certificate',
+                children: 'a',
+                showHideAnimationType: 'zoom',
+                fitImagesInViewport: true,
+                imageScaleMethod: 'fit',
+                pswpModule: () => import('https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe.esm.js')
+            });
+            lightbox.init();
+        </script>
+    </main>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{/clients/index :: dynamic(~{::main})}">
+<html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -34,7 +34,7 @@
                               </span>
                             </h1>
                             <ul class="page-list">
-                                <li class="tmp-breadcrumb-item"><a href="">Về Techgel</a></li>
+                                <li class="tmp-breadcrumb-item"><a href="/">Trang chủ</a></li>
                                 <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
                                 <li class="tmp-breadcrumb-item active">Tổng quan</li>
                             </ul>
@@ -89,7 +89,7 @@
                         <div class="section-head pb-3">
                             <div class="section-sub-title center-title">
                                 <img th:src="@{imgs/section-custom-menubar.png}" alt="Corporate_service">
-                                <span class="subtitle">E-BROCHURE</span>
+                                <span class="subtitle">E-PROFILE</span>
                             </div>
                             <h2 class="title split-collab" style="opacity: 0;">
                               <span th:each="t: ${'Hồ sơ năng lực'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
@@ -103,11 +103,11 @@
                     <div class="col-md-4">
                         <div>
                             <div class="img_shadow mb-md-5 mb-3 px-5 px-md-0">
-                                <a data-sal-delay="150" data-sal="zoom-in" data-sal-duration="800" th:href="@{/brochure}" target="_blank" class="d-flex justify-content-center">
+                                <a data-sal-delay="150" data-sal="zoom-in" data-sal-duration="800" th:href="@{/profile}" target="_blank" class="d-flex justify-content-center">
                                     <img class="img-fluid" th:src="@{/imgs/brochure-cover.png}" alt="" draggable="false"></a>
                             </div>
                             <div class="text-center">
-                                <a th:href="@{/brochure}" target="_blank" class="btn-brochure">e-Brochure</a>
+                                <a th:href="@{/brochure}" target="_blank" class="btn-brochure">e-Profile</a>
                             </div>
                         </div>
                     </div>

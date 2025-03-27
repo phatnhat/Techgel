@@ -21,26 +21,41 @@ public class MainController {
         banners.add("/imgs/carosel-04.jpg");
 
         model.addAttribute("banners", banners);
-        return "/clients/home/home";
+        return "clients/home/home";
     }
 
-    @GetMapping("/brochure")
+    @GetMapping("/profile")
     public String viewBrochure(){
-        return "/clients/brochure";
+        return "profile";
     }
 
     @GetMapping("/about-us")
     public String viewIntroduce(){
-        return "/clients/about-us/introduce";
+        return "clients/about-us/introduce";
     }
 
     @GetMapping("/organizational-chart")
     public String viewOrganizationalChart(){
-        return "/clients/about-us/organizational-chart";
+        return "clients/about-us/organizational-chart";
     }
 
     @GetMapping("/vision-mission-values")
     public String viewVisionMissionValues(){
-        return "/clients/about-us/vision-mission-values";
+        return "clients/about-us/vision-mission-values";
+    }
+
+    @GetMapping("/licenses-certificates")
+    public String viewLicensesCertificates(){
+        return "clients/about-us/licenses-certificates";
+    }
+
+    @GetMapping("/clients-partners")
+    public String viewClientsPartners(){
+        return "clients/about-us/clients-partners";
+    }
+
+    @GetMapping("/projects")
+    public String viewProjects(){
+        return "clients/projects";
     }
 }

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main class="content-wrapper">
+        <style>
+            .breadcrumb-bg {
+                background-image: url([[@{/imgs/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.jpg}]]);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .line_img {
+                height: 10px;
+                background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center / auto 200%;
+                flex-grow: 1;
+            }
+        </style>
+
+        <div class="breadcrumb-area bg_image tmp-section-gap breadcrumb-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-inner text-center">
+                            <h1 class="title split-collab" style="opacity: 0;">
+                              <span th:each="t: ${'Khách hàng và đối tác'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                              </span>
+                            </h1>
+                            <ul class="page-list">
+                                <li class="tmp-breadcrumb-item"><a href="/">Trang chủ</a></li>
+                                <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
+                                <li class="tmp-breadcrumb-item active">Khách hàng và đối tác</li>
+                            </ul>
+                            <div class="circle-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-cp tmp-section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-head pb-3">
+                            <h2 class="title split-collab d-flex align-items-center justify-content-center" style="opacity:0;gap:30px;">
+                                <div class="line_img"></div>
+                                <div>
+                                  <span th:each="t: ${'Khách hàng'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                                  </span>
+                                </div>
+                                <div class="line_img"></div>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="partner_list mt-4">
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/vingroup.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/1200px-Tokyu_logo.svg.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/ssggroup.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/ree.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/empirecity.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/hoalam.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/logo-chu-dau-tu-van-xuan-land-group-1608694908.7669.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/masterise.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/ttc-logo-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/son-kim-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/1584004197668-1583807295821-TTG-Logo-Hires_BW_01.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/alma.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/charm-resort-long-hai-1-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/uoagroup.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/phatdat.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/thegioididong.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/nl-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/167452208_189324836332581_5093706123017627137_n-1.jpg" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/Logo_MIK-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/cp-group-1.jpg" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/bim.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/logo-bw-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/logo-saigon-pearl-1-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/CMC-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/logo_en-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/eco-park-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2022/04/LOGO-HUNG-VUONG-2.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/gotecland-1-e1540949596182-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/sovico-1.jpg" class="img-fluid" alt="" draggable="false">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-head pb-3">
+                            <h2 class="title split-collab d-flex align-items-center justify-content-center" style="opacity:0;gap:30px;">
+                                <div class="line_img"></div>
+                                <div>
+                                  <span th:each="t: ${'Đối tác'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                                  </span>
+                                </div>
+                                <div class="line_img"></div>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="partner_list mt-4">
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/CMC-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/logo_en-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/eco-park-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2022/04/LOGO-HUNG-VUONG-2.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/gotecland-1-e1540949596182-1.png" class="img-fluid" alt="" draggable="false">
+                    </div>
+                    <div class="partner_item" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/sovico-1.jpg" class="img-fluid" alt="" draggable="false">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

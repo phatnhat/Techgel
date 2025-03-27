@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{/clients/index :: dynamic(~{::main})}">
+<html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -31,7 +31,7 @@
                               </span>
                         </h1>
                         <ul class="page-list">
-                            <li class="tmp-breadcrumb-item"><a href="">Về Techgel</a></li>
+                            <li class="tmp-breadcrumb-item"><a href="/">Trang chủ</a></li>
                             <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
                             <li class="tmp-breadcrumb-item active">Tầm nhìn, sứ mệnh & giá trị cốt lõi</li>
                         </ul>
@@ -102,6 +102,110 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-head pb-3">
+                        <h2 class="title split-collab d-flex align-items-center justify-content-center" style="opacity:0;gap:30px;">
+                            <div class="line_img"></div>
+                            <div>
+                                  <span th:each="t: ${'GIÁ TRỊ CỐT LÕI'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                                  </span>
+                            </div>
+                            <div class="line_img"></div>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="value_info my-5" style="overflow:hidden;">
+                    <div class="row">
+                        <div class="col-md-8" data-sal-delay="300" data-sal="slide-right" data-sal-duration="800">
+                            <div class="item_img">
+                                <img th:src="@{/imgs/standard-quality-control-collage-concept.jpg}" class="img-fluid" alt="" draggable="false">
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-sal-delay="300" data-sal="slide-left" data-sal-duration="800">
+                            <div class="item_value">
+                                <div class="value_inner">
+                                    <div class="icon_img">
+                                        <img th:src="@{/imgs/badge.png}" class="img-fluid" alt="" draggable="false">
+                                    </div>
+                                    <div class="fs-20 num fw-bold">01</div>
+                                    <h3 class="fs-24 fw-bold text-uppercase">Chất lượng hàng đầu</h3>
+                                    <div class="description text-justify">
+                                        Techgel luôn đặt chất lượng sản phẩm và dịch vụ lên hàng đầu, cam kết cung cấp các sản phẩm chính hãng, chất lượng cao, có nguồn gốc xuất xứ rõ ràng và dịch vụ tận tình, chu đáo.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                            <div class="item_value">
+                                <div class="value_inner">
+                                    <div class="icon_img">
+                                        <img th:src="@{/imgs/responsibility.png}" class="img-fluid" alt="" draggable="false">
+                                    </div>
+                                    <div class="fs-20 num fw-bold">02</div>
+                                    <h3 class="fs-24 fw-bold text-uppercase">Uy tín và trách nhiệm</h3>
+                                    <div class="description text-justify">
+                                        Techgel xây dựng uy tín dựa trên sự trung thực, minh bạch và trách nhiệm trong mọi hoạt động kinh doanh.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                            <div class="item_value">
+                                <div class="value_inner">
+                                    <div class="icon_img">
+                                        <img th:src="@{/imgs/creativity.png}" class="img-fluid" alt="" draggable="false">
+                                    </div>
+                                    <div class="fs-20 num fw-bold">03</div>
+                                    <h3 class="fs-24 fw-bold text-uppercase">Sáng tạo và đổi mới</h3>
+                                    <div class="description text-justify">
+                                        Techgel không ngừng tìm kiếm, nghiên cứu và áp dụng những công nghệ mới nhất để mang đến cho khách hàng những giải pháp tối ưu và hiệu quả nhất.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800">
+                            <div class="item_value">
+                                <div class="value_inner">
+                                    <div class="icon_img">
+                                        <img th:src="@{/imgs/sustainable-development.png}" class="img-fluid" alt="" draggable="false">
+                                    </div>
+                                    <div class="fs-20 num fw-bold">04</div>
+                                    <h3 class="fs-24 fw-bold text-uppercase">Phát triển bền vững</h3>
+                                    <div class="description text-justify">
+                                        Techgel luôn hướng đến sự phát triển bền vững, không chỉ cho doanh nghiệp mà còn cho cả cộng đồng và xã hội.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-sal-delay="300" data-sal="slide-right" data-sal-duration="800">
+                            <div class="item_value">
+                                <div class="value_inner">
+                                    <div class="icon_img">
+                                        <img th:src="@{/imgs/trust.png}" class="img-fluid" alt="" draggable="false">
+                                    </div>
+                                    <div class="fs-20 num fw-bold">05</div>
+                                    <h3 class="fs-24 fw-bold text-uppercase">Tôn trọng và hợp tác</h3>
+                                    <div class="description text-justify">
+                                        Techgel xây dựng mối quan hệ tốt đẹp với đối tác, khách hàng và đồng nghiệp dựa trên sự tôn trọng, tin cậy và hợp tác.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8" data-sal-delay="300" data-sal="slide-left" data-sal-duration="800">
+                            <div class="item_img">
+                                <img th:src="@{/imgs/people-financial-results-analyzing-statistics.jpg}" class="img-fluid" alt="" draggable="false">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </main>

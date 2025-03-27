@@ -45,7 +45,7 @@
                         <div th:if="${requestURI == '/'}" class="main-header-one-wrapper">
                             <div class="header-mida-area">
                                 <div class="logo-area-start">
-                                    <a class="logo" href="#">
+                                    <a class="logo" href="">
                                         <img width="200" th:src="@{/imgs/logo.jpg}" alt="Techgel Logo">
                                     </a>
                                 </div>
@@ -55,7 +55,7 @@
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </div>
                                 </div>
-                                <a th:href="@{/brochure}" target="_blank" class="tmp-btn btn-primary" style="padding: 10px 15px;font-size:15px;">e-Brochure</a>
+                                <a th:href="@{/profile}" target="_blank" class="tmp-btn btn-primary" style="padding: 10px 15px;font-size:15px;">e-Profile</a>
                             </div>
                             <div class="tmp-nav-area-one header--sticky">
                                 <div class="logo-md-sm-device">
@@ -76,9 +76,13 @@
                                                     </span>
                                                 </a>
                                                 <ul class="submenu" th:if="${not subnavigations[i.index].isEmpty()}">
-                                                    <li th:each="sub, si: ${subnavigations[i.index]}">
-                                                        <a href="service.html">[[${sub}]]</a>
-                                                    </li>
+                                                    <th:block th:each="sub, si: ${subnavigations[i.index]}">
+                                                        <th:block th:each="entry: ${sub.entrySet()}">
+                                                            <li>
+                                                                <a th:href="@{${entry.value}}">[[${entry.key}]]</a>
+                                                            </li>
+                                                        </th:block>
+                                                    </th:block>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -109,7 +113,7 @@
                         
                         <div th:unless="${requestURI == '/'}" class="header-mida-area style-two ">
                             <div class="logo-area-start">
-                                <a href="">
+                                <a href="/">
                                     <img width="200" th:src="@{/imgs/logo.jpg}" alt="logo">
                                 </a>
                             </div>
@@ -125,16 +129,20 @@
                                                     </span>
                                             </a>
                                             <ul class="submenu" th:if="${not subnavigations[i.index].isEmpty()}">
-                                                <li th:each="sub, si: ${subnavigations[i.index]}">
-                                                    <a href="service.html">[[${sub}]]</a>
-                                                </li>
+                                                <th:block th:each="sub, si: ${subnavigations[i.index]}">
+                                                    <th:block th:each="entry: ${sub.entrySet()}">
+                                                        <li>
+                                                            <a th:href="@{${entry.value}}">[[${entry.key}]]</a>
+                                                        </li>
+                                                    </th:block>
+                                                </th:block>
                                             </ul>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
                             <div class="actions-area">
-                                <a href="/brochure" target="_blank" class="tmp-btn btn-primary" style="padding: 10px 15px;font-size:15px;" bis_skin_checked="1">e-Brochure</a>
+                                <a href="/profile" target="_blank" class="tmp-btn btn-primary" style="padding: 10px 15px;font-size:15px;" bis_skin_checked="1">e-profile</a>
                                 <div class="tmp-side-collups-area" id="side-collups">
                                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect y="14" width="20" height="2" fill="#fff"></rect>
