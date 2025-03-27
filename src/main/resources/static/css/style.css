@@ -2741,3 +2741,49 @@ p.description {
     -o-transform: translateY(3px);
     transform: translateY(3px);
 }
+
+.about-vmv .vision_info,
+.about-vmv .mission_info{
+    position: relative;
+}
+
+.about-vmv .vision_info .content_abs {
+    position: absolute;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    width: 40%;
+    padding: 2rem 3rem;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.about-vmv .vision_info .content_abs:before,
+.about-vmv .mission_info .content_abs:before{
+    position: absolute;
+    content: "";
+    height: calc(100% - 4rem);
+    width: 3px;
+    background: orange;
+    left: 2rem;
+    top: 2rem;
+}
+
+.about-vmv .mission_info .content_abs {
+    position: absolute;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    width: 40%;
+    padding: 2rem 3rem;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

@@ -21,7 +21,7 @@ public class MainController {
         banners.add("/imgs/carosel-04.jpg");
 
         model.addAttribute("banners", banners);
-        return "clients/home/home";
+        return "/clients/home/home";
     }
 
     @GetMapping("/brochure")

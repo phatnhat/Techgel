@@ -13,6 +13,11 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
+        .line_img {
+            height: 10px;
+            background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center / auto 200%;
+            flex-grow: 1;
+        }
     </style>
 
     <div class="breadcrumb-area bg_image tmp-section-gap breadcrumb-bg">
@@ -37,25 +42,63 @@
         </div>
     </div>
 
-    <div class="about-organizational tmp-section-gap">
+    <div class="about-vmv tmp-section-gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-head pb-3">
-                        <h2 class="title split-collab" style="opacity: 0;">
-                              <span th:each="t: ${'Tầm nhìn'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                              </span>
+                        <h2 class="title split-collab d-flex align-items-center justify-content-center" style="opacity:0;gap:30px;">
+                            <div class="line_img"></div>
+                              <div>
+                                  <span th:each="t: ${'TẦM NHÌN'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                                  </span>
+                              </div>
+                            <div class="line_img"></div>
                         </h2>
                     </div>
                 </div>
             </div>
             <div>
-                <div class="vision_info my-5">
-                    <div class="row justify-content-end">
+                <div class="vision_info my-5" style="overflow:hidden;">
+                    <div class="row justify-content-end" data-sal-delay="150" data-sal="slide-left" data-sal-duration="800">
                         <div class="col-md-8">
-                            <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/core.jpg" class="img-fluid" alt="" draggable="false">
+                            <img th:src="@{/imgs/vision.jpg}" class="img-fluid" alt="" draggable="false">
                         </div>
+                    </div>
+                    <div class="content_abs">
+                        <div class="fs-18 fw-bold text-justify" data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
+                            Trong suốt hơn 25 năm hoạt động, Techgel đã thực hiện thành công sứ mệnh thương hiệu – mang công nghệ sáng tạo đến với hoạt động kinh doanh của khách hàng. Tuy nhiên, với rất nhiều những đổi mới đã, đang và sẽ được khởi xướng hoặc phát triển trong giai đoạn sắp tới, việc thực hiện các chiến lược chuyển đổi kinh doanh là cực kì quan trọng và cấp thiết, đòi hỏi sự nắm bắt và cập nhật kịp thời cho quá trình chuyển giao kỹ thuật hiện đại. Tầm nhìn mới của Techgel là hỗ trợ khách hàng trong việc chuyển đổi số để theo đuổi, đón đầu và vượt qua sự phát triển công nghệ hiện tại.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-head pb-3">
+                        <h2 class="title split-collab d-flex align-items-center justify-content-center" style="opacity:0;gap:30px;">
+                            <div class="line_img"></div>
+                            <div>
+                                  <span th:each="t: ${'SỨ MỆNH'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                                  </span>
+                            </div>
+                            <div class="line_img"></div>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mission_info my-5" style="overflow:hidden;">
+                    <div class="row justify-content-start" data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
+                        <div class="col-md-8">
+                            <img th:src="@{/imgs/mission.jpg}" class="img-fluid" alt="" draggable="false">
+                        </div>
+                    </div>
+                    <div class="content_abs">
+                        <div class="fs-18 fw-bold text-justify" data-sal-delay="150" data-sal="slide-left" data-sal-duration="800">
+                            Techgel tạo sự khác biệt từ chất lượng sản phẩm đến tiêu chuẩn dịch vụ hàng đầu. Techgel cung cấp giải pháp tối ưu cho bài toán thiếu hụt năng lượng với giá trị kinh tế cao, lâu dài và bền vững.                        </div>
                     </div>
                 </div>
             </div>
