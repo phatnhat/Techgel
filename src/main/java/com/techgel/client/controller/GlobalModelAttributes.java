@@ -48,7 +48,8 @@ public class GlobalModelAttributes {
         }});
         subnavigations.add(new ArrayList<>(){{
             add("Đại hội cổ đông");
-            add("Các báo cáo");
+            add("Báo cáo thường niên");
+            add("Báo cáo tài chính");
             add("Công bố thông tin");
             add("Thông tin cổ phiếu");
         }});
@@ -72,40 +73,42 @@ public class GlobalModelAttributes {
         }});
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
-                put("Lĩnh vực hoạt động", "");
+                put("Lĩnh vực hoạt động", "our-business-lines");
                 put("Phát triển bền vững", "");
-                put("Hình ảnh thi công", "");
+                put("Hình ảnh thi công", "gallery");
             }});
         }});
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
-                put("Dự án nổi bật", "");
-                put("Năng lượng", "");
-                put("Hàng không", "");
-                put("Công nghiệp", "");
-                put("Hạ tầng giao thông", "");
-                put("Dân dụng", "");
-                put("Công nghệ", "");
+                put("Dự án nổi bật", "projects");
+                put("Năng lượng", "projects");
+                put("Hàng không", "projects");
+                put("Công nghiệp", "projects");
+                put("Hạ tầng giao thông", "projects");
+                put("Dân dụng", "projects");
+                put("Công nghệ", "projects");
             }});
         }});
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
-                put("Tin dự án", "");
-                put("Hoạt động nội bộ", "");
-                put("Hoạt động đào tạo", "");
+                put("Tin dự án", "news");
+                put("Hoạt động nội bộ", "news");
+                put("Hoạt động đào tạo", "news");
             }});
         }});
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
-                put("Đại hội cổ đông", "");
-                put("Các báo cáo", "");
-                put("Công bố thông tin", "");
-                put("Thông tin cổ phiếu", "");
+//                put("Đại hội cổ đông", "shareholder");
+//                put("Báo cáo thường niên", "shareholder");
+//                put("Báo cáo tài chính", "shareholder");
+//                put("Công bố thông tin", "shareholder");
+                put("Quan hệ cổ đông", "shareholder");
+                put("Thông tin cổ phiếu", "stock-info");
             }});
         }});
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
-                put("Cơ hội nghề nghiệp", "");
+                put("Cơ hội nghề nghiệp", "job-opportunities");
                 put("Chính sách nhân sự", "");
                 put("Phát triển nguồn nhân lực", "");
                 put("Văn hóa Techgel", "");

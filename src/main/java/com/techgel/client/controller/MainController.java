@@ -58,4 +58,44 @@ public class MainController {
     public String viewProjects(){
         return "clients/projects";
     }
+
+    @GetMapping("/our-business-lines")
+    public String viewOurBusinessLines(){
+        return "clients/what-we-do/our-business-lines";
+    }
+
+    @GetMapping("/gallery")
+    public String viewConstructionGallery(){
+        return "clients/what-we-do/construction-gallery";
+    }
+
+    @GetMapping("/contact-us")
+    public String viewContactUs(){
+        return "clients/contact-us";
+    }
+
+    @GetMapping("/news")
+    public String viewNews(){
+        return "clients/news/news";
+    }
+
+    @GetMapping("/news-details")
+    public String viewNewsDetails() {
+        return "clients/news/news-details";
+    }
+
+    @GetMapping("/shareholder")
+    public String viewShareholder() {
+        return "clients/shareholder/shareholder";
+    }
+
+    @GetMapping("/stock-info")
+    public String viewStockInfo() {
+        return "clients/shareholder/stock-info";
+    }
+
+    @GetMapping("/job-opportunities")
+    public String viewJobOpportunities() {
+        return "clients/careers/job-opportunities";
+    }
 }

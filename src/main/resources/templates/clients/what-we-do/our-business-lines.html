@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main class="content-wrapper">
+        <style>
+            .breadcrumb-bg {
+                background-image: url(https://img.freepik.com/free-photo/futuristic-business-scene-with-ultra-modern-ambiance_23-2151003773.jpg?t=st=1743405751~exp=1743409351~hmac=2b9dada125a9fc1d3c61eb2319f71a377993f051601c809cb8df8bc43cc4ce7a&w=1380);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100vh;
+            }
+
+            .bg-1 {
+                background-image: url([[@{/imgs/bg-01.jpg}]]);
+            }
+
+            .line_img {
+                height: 10px;
+                background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center / auto 200%;
+            }
+        </style>
+
+        <div class="breadcrumb-area bg_image breadcrumb-bg">
+            <div id="brxe-oubmqr" class="brxe-container">
+                <div id="brxe-twzaik" class="brxe-block"news>
+                    <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline"news>
+                        <h1><span class="uni-text-outline">TECHGEL<br></span>LĨNH VỰC HOẠT ĐỘNG</h1>
+                    </div>
+                </div>
+                <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
+                    <div id="brxe-rqhadm" class="brxe-text-basic"news>Cuộn chuột</div>
+                    <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+
+        <div id="next" class="whatwedo_page py-5">
+            <div class="container">
+                <div class="general">
+                    <div class="row gx-0 align-items-center">
+                        <div class="col-md-6 order-md-1">
+                            <div class="img_full">
+                                <img src="https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041863.jpg?t=st=1743130119~exp=1743133719~hmac=24516a989293ea0e63ea471b1fda60eeaed3b0053b18103991399c6984dc7b20&w=996" class="img-fluid" alt="" draggable="false">
+                            </div>
+                        </div>
+                        <div class="col-md-6 order-md-0">
+                            <div class="content text-justify">
+                                <h3 class="fs-30 fw-bold">Lorem Ipsum</h3>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                                <ul>
+                                    <li>Shortened construction period</li>
+                                    <li>Strict control of construction quality and safety</li>
+                                    <li>Maximized cost-saving and investment efficiency.</li>
+                                </ul>
+                                <p>
+                                    <img src="http://www.centralcons.vn/wp-content/uploads/2021/11/img.png" alt="" width="500">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="obl-area tmp-section-gap about-style-one mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-head pb-3">
+                            <div class="section-sub-title center-title">
+                                <img th:src="@{imgs/section-custom-menubar.png}" alt="Corporate_service">
+                                <span class="subtitle">Lĩnh vực hoạt động</span>
+                            </div>
+                            <h2 class="title split-collab" style="opacity: 0;">
+                              <span th:each="t: ${'TECHGEL hoạt động trong nhiều lĩnh vực khác nhau'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                              </span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-5">
+                    <div style="height: 500px;" class="col-6 d-flex my-5">
+                        <a data-sal-delay="250" data-sal="zoom-in" data-sal-duration="800" class="flex justify-content-end" href="" alt="Mythrill" target="_blank">
+                            <div class="obl-card">
+                                <div class="wrapper">
+                                    <img src="https://i.pinimg.com/736x/b1/a7/bb/b1a7bb939b07aece941a7d3c304de2c9.jpg" class="cover-image" />
+<!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
+                                        <p class="obl-card-title text-center font-weight-bold">NĂNG LƯỢNG</p>
+                                </div>
+                                <img th:src="@{/imgs/Pngtreerenewableenergyislandwithsolar_20061974.png}" class="character" />
+                            </div>
+                        </a>
+                        <ol class="olcards">
+                            <li style="--cardColor:#162d59" data-sal-delay="350" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">⚡</div>
+                                    <div class="text">Điện gió</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#162d59" data-sal-delay="450" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">⚡</div>
+                                    <div class="text">Điện mặt trời</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#162d59" data-sal-delay="550" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">⚡</div>
+                                    <div class="text">Nhà máy nhiệt điện</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#162d59" data-sal-delay="650" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">⚡</div>
+                                    <div class="text">Năng lượng sinh khối</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#162d59" data-sal-delay="750" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">⚡</div>
+                                    <div class="text">Giải pháp tiết kiệm năng lượng</div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div style="height: 500px;" class="col-6 d-flex my-5">
+                        <a data-sal-delay="250" data-sal="zoom-in" data-sal-duration="800" class="flex justify-content-end" href="" alt="Mythrill" target="_blank">
+                            <div class="obl-card">
+                                <div class="wrapper">
+                                    <img src="https://i.pinimg.com/736x/94/89/b2/9489b2531564f783dea236ba33439a7b.jpg" class="cover-image" />
+                                    <!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
+                                    <p class="obl-card-title text-center font-weight-bold">HÀNG KHÔNG</p>
+                                </div>
+                                <img th:src="@{/imgs/Pngtreelargepassengerairplaneflying through_20686786.png}" class="character" />
+                            </div>
+                        </a>
+                        <ol class="olcards">
+                            <li style="--cardColor:#36aeb3" data-sal-delay="350" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">✈️</div>
+                                    <div class="text">Nhà ga hành khách</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#36aeb3" data-sal-delay="450" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">✈️</div>
+                                    <div class="text">Nhà ga hàng hóa</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#36aeb3" data-sal-delay="550" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">✈️</div>
+                                    <div class="text">Hangar bảo dưỡng tàu bay</div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div style="height: 500px;" class="col-6 d-flex my-5">
+                        <a data-sal-delay="250" data-sal="zoom-in" data-sal-duration="800" class="flex justify-content-end" href="" alt="Mythrill" target="_blank">
+                            <div class="obl-card">
+                                <div class="wrapper">
+                                    <img src="https://i.pinimg.com/736x/8c/e7/16/8ce716cf43bcf501e81c44c90565ed71.jpg" class="cover-image" />
+                                    <!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
+                                    <p class="obl-card-title text-center font-weight-bold">CÔNG NGHIỆP</p>
+                                </div>
+                                <img th:src="@{/imgs/908bc42151d5948b5495f443a544ef91-removebg-preview.png}" class="character" />
+                            </div>
+                        </a>
+                        <ol class="olcards">
+                            <li style="--cardColor:#fc374e" data-sal-delay="350" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">🏭</div>
+                                    <div class="text">Xử lý nước thải</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#fc374e" data-sal-delay="450" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">🏭</div>
+                                    <div class="text">Cung cấp nước sạch</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#fc374e" data-sal-delay="550" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon">🏭</div>
+                                    <div class="text">Nhà xưởng khu công nghiệp</div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div style="height: 500px;" class="col-6 d-flex my-5">
+                        <a data-sal-delay="250" data-sal="zoom-in" data-sal-duration="800" class="flex justify-content-end" href="" alt="Mythrill" target="_blank">
+                            <div class="obl-card">
+                                <div class="wrapper">
+                                    <img src="https://i.pinimg.com/736x/9b/e3/09/9be3097543ef4dc871a2c3a3a0bbd276.jpg" class="cover-image" />
+                                    <!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
+                                    <p class="obl-card-title text-center font-weight-bold">DÂN DỤNG</p>
+                                </div>
+                                <img th:src="@{/imgs/dd498f479372d99fa37e9a6fb154c20f-removebg-preview.png}" class="character" />
+                            </div>
+                        </a>
+                        <ol class="olcards">
+                            <li style="--cardColor:#f15f0e" data-sal-delay="350" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon"><img width="30" height="30" src="https://img.icons8.com/external-soft-fill-juicy-fish/60/external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish.png" alt="external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish"/></div>
+                                    <div class="text">Khách sạn & khu nghỉ dưỡng</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#f15f0e" data-sal-delay="450" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon"><img width="30" height="30" src="https://img.icons8.com/external-soft-fill-juicy-fish/60/external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish.png" alt="external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish"/></div>
+                                    <div class="text">Bệnh viện</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#f15f0e" data-sal-delay="550" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon"><img width="30" height="30" src="https://img.icons8.com/external-soft-fill-juicy-fish/60/external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish.png" alt="external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish"/></div>
+                                    <div class="text">Siêu thị</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#f15f0e" data-sal-delay="650" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon"><img width="30" height="30" src="https://img.icons8.com/external-soft-fill-juicy-fish/60/external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish.png" alt="external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish"/></div>
+                                    <div class="text">Chung cư cao tầng, văn phòng, trường học</div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div style="height: 500px;" class="col-6 d-flex my-5">
+                        <a data-sal-delay="250" data-sal="zoom-in" data-sal-duration="800" class="flex justify-content-end" href="" alt="Mythrill" target="_blank">
+                            <div class="obl-card">
+                                <div class="wrapper">
+                                    <img src="https://i.pinimg.com/736x/55/fe/56/55fe566d34945f9534f734ae4576e09e.jpg" class="cover-image" />
+                                    <!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
+                                    <p class="obl-card-title text-center font-weight-bold">HẠ TẦNG</p>
+                                </div>
+                                <img th:src="@{/imgs/5c8f1c651a264ba52f5b573e62a08c88-removebg-preview.png}" class="character" />
+                            </div>
+                        </a>
+                        <ol class="olcards">
+                            <li style="--cardColor:#d637fc" data-sal-delay="350" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon"><img width="30" height="30" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-infrastructure-gig-economy-flaticons-flat-flat-icons.png" alt="external-infrastructure-gig-economy-flaticons-flat-flat-icons"/></div>
+                                    <div class="text">Hạ tầng khu công nghiệp, nhà máy</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#d637fc" data-sal-delay="450" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon"><img width="30" height="30" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-infrastructure-gig-economy-flaticons-flat-flat-icons.png" alt="external-infrastructure-gig-economy-flaticons-flat-flat-icons"/></div>
+                                    <div class="text">Hạ tầng giao thông</div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div style="height: 500px;" class="col-6 d-flex my-5">
+                        <a data-sal-delay="250" data-sal="zoom-in" data-sal-duration="800" class="flex justify-content-end" href="" alt="Mythrill" target="_blank">
+                            <div class="obl-card">
+                                <div class="wrapper">
+                                    <img src="https://i.pinimg.com/736x/03/2b/b4/032bb4387d0796e02d7e23ac92adea99.jpg" class="cover-image" />
+                                    <!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
+                                    <p class="obl-card-title text-center font-weight-bold">CÔNG NGHỆ</p>
+                                </div>
+                                <img th:src="@{/imgs/1f4d7cbabe36eb5d21276808ead1c0b3-removebg-preview.png}" class="character" />
+                            </div>
+                        </a>
+                        <ol class="olcards">
+                            <li style="--cardColor:#37bbfc" data-sal-delay="350" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon"><img width="30" height="30" src="https://img.icons8.com/stickers/100/technology.png" alt="technology"/></div>
+                                    <div class="text">Công nghệ hàng không</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#37bbfc" data-sal-delay="450" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon"><img width="30" height="30" src="https://img.icons8.com/stickers/100/technology.png" alt="technology"/></div>
+                                    <div class="text">Công nghệ Datacenter</div>
+                                </div>
+                            </li>
+                            <li style="--cardColor:#37bbfc" data-sal-delay="550" data-sal="slide-right" data-sal-duration="800">
+                                <div class="content">
+                                    <div class="icon"><img width="30" height="30" src="https://img.icons8.com/stickers/100/technology.png" alt="technology"/></div>
+                                    <div class="text">Công nghệ AI</div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

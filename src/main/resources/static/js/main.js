@@ -312,3 +312,122 @@ $(document).ready(function(){
         $('.filter_advance').toggle();
     })
 });
+
+
+/* Masonry */
+$(document).ready( function() {
+    var $grid = $('.grid').masonry({
+        itemSelector: '.grid_item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        gutter: 15
+    });
+});
+
+
+/* Nanogallery2 */
+$(document).ready(function () {
+    $("#construction-nanogallery2").nanogallery2({
+        items:[
+            {
+                src:'https://img.freepik.com/free-photo/construction-silhouette_1127-3246.jpg?t=st=1743154790~exp=1743158390~hmac=dec3c948baedea392b40a4a521397a6f5c9fca1070422333b7fc33b5faa980b6&w=1380',
+                srct:'https://img.freepik.com/free-photo/construction-silhouette_1127-3246.jpg?t=st=1743154790~exp=1743158390~hmac=dec3c948baedea392b40a4a521397a6f5c9fca1070422333b7fc33b5faa980b6&w=1380',
+            },
+            {   src:'https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380',
+                srct:'https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept_640221-156.jpg?t=st=1743155207~exp=1743158807~hmac=b02ebd1aeff708ac3638af70307b989ec875dc09d8cb979223e2cdac11d23f57&w=1380',
+                srct:'https://img.freepik.com/free-photo/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept_640221-156.jpg?t=st=1743155207~exp=1743158807~hmac=b02ebd1aeff708ac3638af70307b989ec875dc09d8cb979223e2cdac11d23f57&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/construction-tall-concrete-pylon-bridge-using-tower-crane_1112-1141.jpg?t=st=1743155270~exp=1743158870~hmac=46186e78fa4b5aa6b7cf9709bfff9f7318bad4b4b15525c00387a3dd60b98032&w=1380',
+                srct:'https://img.freepik.com/free-photo/construction-tall-concrete-pylon-bridge-using-tower-crane_1112-1141.jpg?t=st=1743155270~exp=1743158870~hmac=46186e78fa4b5aa6b7cf9709bfff9f7318bad4b4b15525c00387a3dd60b98032&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/construction-silhouette_1127-2991.jpg?t=st=1743155290~exp=1743158890~hmac=3412c26aedb354c11d3998e95e81149c2f9e5261b6835c65656101073c31c19d&w=1380',
+                srct:'https://img.freepik.com/free-photo/construction-silhouette_1127-2991.jpg?t=st=1743155290~exp=1743158890~hmac=3412c26aedb354c11d3998e95e81149c2f9e5261b6835c65656101073c31c19d&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/beautiful-view-construction-site-city-sunset_181624-9347.jpg?t=st=1743155336~exp=1743158936~hmac=e8716bb6dbe1fb5c3fbfcfe125e8cffa3dced3d89b3960618212e8310f9582e7&w=1380',
+                srct:'https://img.freepik.com/free-photo/beautiful-view-construction-site-city-sunset_181624-9347.jpg?t=st=1743155336~exp=1743158936~hmac=e8716bb6dbe1fb5c3fbfcfe125e8cffa3dced3d89b3960618212e8310f9582e7&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/large-building-site_1127-3251.jpg?t=st=1743155358~exp=1743158958~hmac=5a9d9e486f072a5ce432baf1f7b33f5ed6d08fb6f9478c70adf1e29b65e38545&w=740',
+                srct:'https://img.freepik.com/free-photo/large-building-site_1127-3251.jpg?t=st=1743155358~exp=1743158958~hmac=5a9d9e486f072a5ce432baf1f7b33f5ed6d08fb6f9478c70adf1e29b65e38545&w=740'
+            },
+            {   src:'https://img.freepik.com/free-photo/building-construction-worker-site-with-architect_23-2149124266.jpg?t=st=1743155407~exp=1743159007~hmac=5edb90c7b809f71e3cb7659d7b8a340b70601ab58794099fe6377caaa2be167e&w=1380',
+                srct:'https://img.freepik.com/free-photo/building-construction-worker-site-with-architect_23-2149124266.jpg?t=st=1743155407~exp=1743159007~hmac=5edb90c7b809f71e3cb7659d7b8a340b70601ab58794099fe6377caaa2be167e&w=1380'
+            },
+            {
+                src:'https://img.freepik.com/free-photo/construction-silhouette_1127-3246.jpg?t=st=1743154790~exp=1743158390~hmac=dec3c948baedea392b40a4a521397a6f5c9fca1070422333b7fc33b5faa980b6&w=1380',
+                srct:'https://img.freepik.com/free-photo/construction-silhouette_1127-3246.jpg?t=st=1743154790~exp=1743158390~hmac=dec3c948baedea392b40a4a521397a6f5c9fca1070422333b7fc33b5faa980b6&w=1380',
+            },
+            {   src:'https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380',
+                srct:'https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept_640221-156.jpg?t=st=1743155207~exp=1743158807~hmac=b02ebd1aeff708ac3638af70307b989ec875dc09d8cb979223e2cdac11d23f57&w=1380',
+                srct:'https://img.freepik.com/free-photo/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept_640221-156.jpg?t=st=1743155207~exp=1743158807~hmac=b02ebd1aeff708ac3638af70307b989ec875dc09d8cb979223e2cdac11d23f57&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/construction-tall-concrete-pylon-bridge-using-tower-crane_1112-1141.jpg?t=st=1743155270~exp=1743158870~hmac=46186e78fa4b5aa6b7cf9709bfff9f7318bad4b4b15525c00387a3dd60b98032&w=1380',
+                srct:'https://img.freepik.com/free-photo/construction-tall-concrete-pylon-bridge-using-tower-crane_1112-1141.jpg?t=st=1743155270~exp=1743158870~hmac=46186e78fa4b5aa6b7cf9709bfff9f7318bad4b4b15525c00387a3dd60b98032&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/construction-silhouette_1127-2991.jpg?t=st=1743155290~exp=1743158890~hmac=3412c26aedb354c11d3998e95e81149c2f9e5261b6835c65656101073c31c19d&w=1380',
+                srct:'https://img.freepik.com/free-photo/construction-silhouette_1127-2991.jpg?t=st=1743155290~exp=1743158890~hmac=3412c26aedb354c11d3998e95e81149c2f9e5261b6835c65656101073c31c19d&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/beautiful-view-construction-site-city-sunset_181624-9347.jpg?t=st=1743155336~exp=1743158936~hmac=e8716bb6dbe1fb5c3fbfcfe125e8cffa3dced3d89b3960618212e8310f9582e7&w=1380',
+                srct:'https://img.freepik.com/free-photo/beautiful-view-construction-site-city-sunset_181624-9347.jpg?t=st=1743155336~exp=1743158936~hmac=e8716bb6dbe1fb5c3fbfcfe125e8cffa3dced3d89b3960618212e8310f9582e7&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/large-building-site_1127-3251.jpg?t=st=1743155358~exp=1743158958~hmac=5a9d9e486f072a5ce432baf1f7b33f5ed6d08fb6f9478c70adf1e29b65e38545&w=740',
+                srct:'https://img.freepik.com/free-photo/large-building-site_1127-3251.jpg?t=st=1743155358~exp=1743158958~hmac=5a9d9e486f072a5ce432baf1f7b33f5ed6d08fb6f9478c70adf1e29b65e38545&w=740'
+            },
+            {   src:'https://img.freepik.com/free-photo/building-construction-worker-site-with-architect_23-2149124266.jpg?t=st=1743155407~exp=1743159007~hmac=5edb90c7b809f71e3cb7659d7b8a340b70601ab58794099fe6377caaa2be167e&w=1380',
+                srct:'https://img.freepik.com/free-photo/building-construction-worker-site-with-architect_23-2149124266.jpg?t=st=1743155407~exp=1743159007~hmac=5edb90c7b809f71e3cb7659d7b8a340b70601ab58794099fe6377caaa2be167e&w=1380'
+            },
+            {
+                src:'https://img.freepik.com/free-photo/construction-silhouette_1127-3246.jpg?t=st=1743154790~exp=1743158390~hmac=dec3c948baedea392b40a4a521397a6f5c9fca1070422333b7fc33b5faa980b6&w=1380',
+                srct:'https://img.freepik.com/free-photo/construction-silhouette_1127-3246.jpg?t=st=1743154790~exp=1743158390~hmac=dec3c948baedea392b40a4a521397a6f5c9fca1070422333b7fc33b5faa980b6&w=1380',
+            },
+            {   src:'https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380',
+                srct:'https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept_640221-156.jpg?t=st=1743155207~exp=1743158807~hmac=b02ebd1aeff708ac3638af70307b989ec875dc09d8cb979223e2cdac11d23f57&w=1380',
+                srct:'https://img.freepik.com/free-photo/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept_640221-156.jpg?t=st=1743155207~exp=1743158807~hmac=b02ebd1aeff708ac3638af70307b989ec875dc09d8cb979223e2cdac11d23f57&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/construction-tall-concrete-pylon-bridge-using-tower-crane_1112-1141.jpg?t=st=1743155270~exp=1743158870~hmac=46186e78fa4b5aa6b7cf9709bfff9f7318bad4b4b15525c00387a3dd60b98032&w=1380',
+                srct:'https://img.freepik.com/free-photo/construction-tall-concrete-pylon-bridge-using-tower-crane_1112-1141.jpg?t=st=1743155270~exp=1743158870~hmac=46186e78fa4b5aa6b7cf9709bfff9f7318bad4b4b15525c00387a3dd60b98032&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/construction-silhouette_1127-2991.jpg?t=st=1743155290~exp=1743158890~hmac=3412c26aedb354c11d3998e95e81149c2f9e5261b6835c65656101073c31c19d&w=1380',
+                srct:'https://img.freepik.com/free-photo/construction-silhouette_1127-2991.jpg?t=st=1743155290~exp=1743158890~hmac=3412c26aedb354c11d3998e95e81149c2f9e5261b6835c65656101073c31c19d&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/beautiful-view-construction-site-city-sunset_181624-9347.jpg?t=st=1743155336~exp=1743158936~hmac=e8716bb6dbe1fb5c3fbfcfe125e8cffa3dced3d89b3960618212e8310f9582e7&w=1380',
+                srct:'https://img.freepik.com/free-photo/beautiful-view-construction-site-city-sunset_181624-9347.jpg?t=st=1743155336~exp=1743158936~hmac=e8716bb6dbe1fb5c3fbfcfe125e8cffa3dced3d89b3960618212e8310f9582e7&w=1380'
+            },
+            {   src:'https://img.freepik.com/free-photo/large-building-site_1127-3251.jpg?t=st=1743155358~exp=1743158958~hmac=5a9d9e486f072a5ce432baf1f7b33f5ed6d08fb6f9478c70adf1e29b65e38545&w=740',
+                srct:'https://img.freepik.com/free-photo/large-building-site_1127-3251.jpg?t=st=1743155358~exp=1743158958~hmac=5a9d9e486f072a5ce432baf1f7b33f5ed6d08fb6f9478c70adf1e29b65e38545&w=740'
+            },
+            {   src:'https://img.freepik.com/free-photo/building-construction-worker-site-with-architect_23-2149124266.jpg?t=st=1743155407~exp=1743159007~hmac=5edb90c7b809f71e3cb7659d7b8a340b70601ab58794099fe6377caaa2be167e&w=1380',
+                srct:'https://img.freepik.com/free-photo/building-construction-worker-site-with-architect_23-2149124266.jpg?t=st=1743155407~exp=1743159007~hmac=5edb90c7b809f71e3cb7659d7b8a340b70601ab58794099fe6377caaa2be167e&w=1380'
+            },
+        ],
+        itemsBaseURL:     'http://nanogallery2.nanostudio.org/samples/',
+        locationHash:     false,
+
+        thumbnailWidth:   'auto',
+        thumbnailHeight:  250,
+
+        // hover effects
+        thumbnailHoverEffect2: 'label_font-size_1em_1.5em|title_backgroundColor_rgba(255,255,255,0.34)_rgba(((84,132,12,0.8)|title_color_#000_#fff|image_scale_1.00_1.10_5000|image_rotateZ_0deg_4deg_5000',
+
+    });
+});
+
+/* Clamp.js */
+$(document).ready(function(){
+    let news_descriptions = document.querySelectorAll('.news-body .description');
+    for(var i = 0; i < news_descriptions.length; i++){
+        $clamp(news_descriptions[i], {clamp: 3});
+    }
+
+    let news_title = document.querySelectorAll('.news-body .title, single-news-recent-post-sidebar .title');
+    for(var i = 0; i < news_title.length; i++){
+        $clamp(news_title[i], {clamp: 3});
+    }
+
+
+});
