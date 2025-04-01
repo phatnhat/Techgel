@@ -10,56 +10,28 @@ import java.util.*;
 public class GlobalModelAttributes {
     @ModelAttribute
     public void addCommonAttributes(Model model) {
-        List<String> navigations = new ArrayList<>();
-        navigations.add("Về Techgel");
-        navigations.add("Năng lực thi công");
-        navigations.add("Dự án");
-        navigations.add("Tin tức");
-        navigations.add("Cổ đông");
-        navigations.add("Tuyển dụng");
-        navigations.add("Liên hệ");
-
-        List<List<String>> subnavigations = new ArrayList<>();
-        subnavigations.add(new ArrayList<>(){{
-            add("Tổng quan");
-            add("Sơ đồ tổ chức");
-            add("Tầm nhìn giá trị cốt lõi");
-            add("Giấy phép & chứng chỉ");
-            add("Đối tác khách hàng");
+        List<Map<String, String>> navigations = new ArrayList<>();
+        navigations.add(new HashMap<>(){{
+            put("Về Techgel", "about-us");
         }});
-        subnavigations.add(new ArrayList<>(){{
-            add("Lĩnh vực hoạt động");
-            add("Hồ sơ năng lực");
-            add("Phát triển bề vững");
-            add("Hình ảnh thi công");
+        navigations.add(new HashMap<>(){{
+            put("Năng lực thi công", "our-business-lines");
         }});
-        subnavigations.add(new ArrayList<>(){{
-            add("Năng lượng");
-            add("Hàng không");
-            add("Công nghiệp");
-            add("Hạ tầng giao thông");
-            add("Dân dụng");
-            add("Công nghệ");
+        navigations.add(new HashMap<>(){{
+            put("Dự án", "projects");
         }});
-        subnavigations.add(new ArrayList<>(){{
-            add("Tin dự án");
-            add("Hoạt động nội bộ");
-            add("Hoạt động đào tạo");
+        navigations.add(new HashMap<>(){{
+            put("Tin tức", "news");
         }});
-        subnavigations.add(new ArrayList<>(){{
-            add("Đại hội cổ đông");
-            add("Báo cáo thường niên");
-            add("Báo cáo tài chính");
-            add("Công bố thông tin");
-            add("Thông tin cổ phiếu");
+        navigations.add(new HashMap<>(){{
+            put("Cổ đông", "shareholder");
         }});
-        subnavigations.add(new ArrayList<>(){{
-            add("Cơ hội nghề nghiệp");
-            add("Chính sách nhân sự");
-            add("Phát triển nguồn nhân lực");
-            add("Văn hóa Techgel");
+        navigations.add(new HashMap<>(){{
+            put("Tuyển dụng", "job-opportunities");
         }});
-        subnavigations.add(new ArrayList<>());
+        navigations.add(new HashMap<>(){{
+            put("Liên hệ", "contact-us");
+        }});
 
         List<List<Map<String, String>>> test = new ArrayList<List<Map<String, String>>>();
         test.add(new ArrayList<>(){{
@@ -74,13 +46,12 @@ public class GlobalModelAttributes {
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
                 put("Lĩnh vực hoạt động", "our-business-lines");
-                put("Phát triển bền vững", "");
+                put("Phát triển bền vững", "sustainable-development");
                 put("Hình ảnh thi công", "gallery");
             }});
         }});
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
-                put("Dự án nổi bật", "projects");
                 put("Năng lượng", "projects");
                 put("Hàng không", "projects");
                 put("Công nghiệp", "projects");
@@ -89,13 +60,7 @@ public class GlobalModelAttributes {
                 put("Công nghệ", "projects");
             }});
         }});
-        test.add(new ArrayList<>(){{
-            add(new LinkedHashMap<>(){{
-                put("Tin dự án", "news");
-                put("Hoạt động nội bộ", "news");
-                put("Hoạt động đào tạo", "news");
-            }});
-        }});
+        test.add(new ArrayList<>());
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
 //                put("Đại hội cổ đông", "shareholder");
@@ -109,9 +74,8 @@ public class GlobalModelAttributes {
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
                 put("Cơ hội nghề nghiệp", "job-opportunities");
-                put("Chính sách nhân sự", "");
-                put("Phát triển nguồn nhân lực", "");
-                put("Văn hóa Techgel", "");
+                put("Chính sách nhân sự", "hr-policies");
+                put("Văn hóa Techgel", "techgel-culture");
             }});
         }});
         test.add(new ArrayList<>());

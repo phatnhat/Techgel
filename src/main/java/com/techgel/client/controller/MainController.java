@@ -26,7 +26,7 @@ public class MainController {
 
     @GetMapping("/profile")
     public String viewBrochure(){
-        return "profile";
+        return "clients/profile";
     }
 
     @GetMapping("/about-us")
@@ -97,5 +97,15 @@ public class MainController {
     @GetMapping("/job-opportunities")
     public String viewJobOpportunities() {
         return "clients/careers/job-opportunities";
+    }
+
+    @GetMapping("/hr-policies")
+    public String viewHrPolicies() {
+        return "clients/careers/hr-policies";
+    }
+
+    @GetMapping("/sustainable-development")
+    public String viewSustainableDevelopment() {
+        return "clients/what-we-do/sustainable-development";
     }
 }

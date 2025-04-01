@@ -8,10 +8,15 @@
     <main class="content-wrapper">
         <style>
             .breadcrumb-bg {
-                background-image: url(https://img.freepik.com/free-photo/girl-having-online-class-her-tablet_23-2148597998.jpg?t=st=1743156323~exp=1743159923~hmac=a9f64c38ce812bff8684b4e27502db169a1ac01f1cc38fff2117d76dbdbf2043&w=1380);
+                background-image: url(https://img.freepik.com/free-photo/girl-having-online-class-her-tablet_23-2148597998.jpg?t=st=1743481532~exp=1743485132~hmac=820117f584ed1d6f5bc6d9955d080132f00f13c317803ca06454c1692ef60533&w=1380);
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100vh;
             }
 
             .bg-1 {
@@ -24,29 +29,21 @@
             }
         </style>
 
-        <div class="breadcrumb-area bg_image tmp-section-gap breadcrumb-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="breadcrumb-inner text-center">
-                            <h1 class="title split-collab" style="opacity: 0;">
-                              <span th:each="t: ${'Liên hệ'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                              </span>
-                            </h1>
-                            <ul class="page-list">
-                                <li class="tmp-breadcrumb-item"><a href="/">Trang chủ</a></li>
-                                <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
-                                <li class="tmp-breadcrumb-item active">Liên hệ</li>
-                            </ul>
-                            <div class="circle-1"></div>
-                        </div>
+        <div class="breadcrumb-area bg_image breadcrumb-bg">
+            <div id="brxe-oubmqr" class="brxe-container">
+                <div id="brxe-twzaik" class="brxe-block">
+                    <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline">
+                        <h1><span class="uni-text-outline"><br></span>LIÊN HỆ</h1>
                     </div>
                 </div>
+                <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
+                    <div id="brxe-rqhadm" class="brxe-text-basic">Cuộn chuột</div>
+                    <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+                </a>
             </div>
         </div>
 
-        <div class="contact-area-three tmp-section-gapTop mb-5">
+        <div id="next" class="contact-area-three tmp-section-gapTop mb-5">
             <div class="bg-shape">
                 <img th:src="@{/imgs/cta-02.png}" alt="bussiness-contact">
             </div>
@@ -155,6 +152,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center py-5" style="width: 100%;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1068867637746!2d106.7019151!3d10.803124999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528cb2c9f3e89%3A0x6f989c07f1986191!2zQ8O0bmcgVHkgQ3AgS-G7uSBUaHXhuq10IEPDtG5nIE5naOG7hyBTw6BpIEfDsm4gKFRlY2hnZWwp!5e0!3m2!1sen!2s!4v1743481814117!5m2!1sen!2s" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </main>
 

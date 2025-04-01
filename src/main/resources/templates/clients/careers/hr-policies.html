@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main class="content-wrapper">
+        <style>
+            .breadcrumb-bg {
+                background-image: url(https://img.freepik.com/free-photo/business-situation-job-interview-concept-job-seeker-present-resume-managers_1421-78.jpg?t=st=1743411161~exp=1743414761~hmac=ad7f4be4696c1044993e232e9a724f27b419528456c87b47a6ab825093a09e7f&w=1380);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100vh;
+            }
+        </style>
+
+        <div class="breadcrumb-area bg_image breadcrumb-bg">
+            <div id="brxe-oubmqr" class="brxe-container">
+                <div id="brxe-twzaik" class="brxe-block">
+                    <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline">
+                        <h1><span class="uni-text-outline">TECHGEL<br></span>CHÍNH SÁCH NHÂN SỰ</h1>
+                    </div>
+                </div>
+                <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
+                    <div id="brxe-rqhadm" class="brxe-text-basic">Cuộn chuột</div>
+                    <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+
+        <div id="next" class="career_page py-5">
+            <div class="container">
+                <h1 class="title split-collab" style="opacity: 1;">
+                  <span th:each="t: ${'Chính sách nhân sự'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                  </span>
+                </h1>
+                <div class="mt-5">
+                    <div class="row gx-0 align-items-center">
+                        <div class="col-md-7">
+                            <img src="https://img.freepik.com/free-photo/modern-business-building-scenery-touching-sky_181624-5785.jpg?t=st=1743469759~exp=1743473359~hmac=53580ff165c4113c2160dd705bb2f637fc8052e7a075e2a93be3d4d8f754a12c&w=740" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-md-5">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

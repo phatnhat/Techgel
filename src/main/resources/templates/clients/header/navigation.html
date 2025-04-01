@@ -68,10 +68,10 @@
                                     <nav>
                                         <ul class="parent-nav">
                                             <li th:each="n, i: ${testNavigations}" th:class="${not subnavigations[i.index].isEmpty() ? 'has-dropdown' : ''}">
-                                                <a href="#" class="nav-link">
+                                                <a th:href="@{${n.entrySet()[0].value}}" class="nav-link">
                                                     <span class="rolling-text">
                                                         <div class="block">
-                                                            <span>[[${#strings.toUpperCase(n)}]]</span>
+                                                            <span>[[${#strings.toUpperCase(n.entrySet()[0].key)}]]</span>
                                                         </div>
                                                     </span>
                                                 </a>
@@ -89,13 +89,13 @@
                                     </nav>
                                 </div>
                                 <div class="actions-area">
-                                    <div class="tmp-side-collups-area" id="side-collups">
-                                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
-                                            <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
-                                            <rect width="20" height="2" fill="#1F1F25"></rect>
-                                        </svg>
-                                    </div>
+<!--                                    <div class="tmp-side-collups-area d-none" id="side-collups">-->
+<!--                                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                            <rect y="14" width="20" height="2" fill="#1F1F25"></rect>-->
+<!--                                            <rect y="7" width="20" height="2" fill="#1F1F25"></rect>-->
+<!--                                            <rect width="20" height="2" fill="#1F1F25"></rect>-->
+<!--                                        </svg>-->
+<!--                                    </div>-->
                                     <div class="lang-picker dropdown">
                                         <form action="" method="get">
                                             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="outline:none;border:none;box-shadow:none;">
@@ -121,10 +121,10 @@
                                 <nav>
                                     <ul class="parent-nav">
                                         <li th:each="n, i: ${testNavigations}" th:class="${not subnavigations[i.index].isEmpty() ? 'has-dropdown' : ''}">
-                                            <a href="#" class="nav-link">
+                                            <a th:href="@{${n.entrySet()[0].value}}" class="nav-link">
                                                     <span class="rolling-text">
                                                         <div class="block">
-                                                            <span>[[${#strings.toUpperCase(n)}]]</span>
+                                                            <span>[[${#strings.toUpperCase(n.entrySet()[0].key)}]]</span>
                                                         </div>
                                                     </span>
                                             </a>
@@ -143,13 +143,13 @@
                             </div>
                             <div class="actions-area">
                                 <a href="/profile" target="_blank" class="tmp-btn btn-primary" style="padding: 10px 15px;font-size:15px;" bis_skin_checked="1">e-profile</a>
-                                <div class="tmp-side-collups-area" id="side-collups">
-                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect y="14" width="20" height="2" fill="#fff"></rect>
-                                        <rect y="7" width="20" height="2" fill="#fff"></rect>
-                                        <rect width="20" height="2" fill="#fff"></rect>
-                                    </svg>
-                                </div>
+<!--                                <div class="tmp-side-collups-area d-none" id="side-collups">-->
+<!--                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                        <rect y="14" width="20" height="2" fill="#fff"></rect>-->
+<!--                                        <rect y="7" width="20" height="2" fill="#fff"></rect>-->
+<!--                                        <rect width="20" height="2" fill="#fff"></rect>-->
+<!--                                    </svg>-->
+<!--                                </div>-->
                             </div>
                         </div>
                         

@@ -1,19 +1,25 @@
 $(document).on('click', '#side-collups', function () {
     $("#side-hide").addClass("show");
     $("#overlay_every-where").addClass("bgshow");
+
+    $(this).removeClass('display');
 });
 $(document).on('click', '#close-slide__main', function () {
     $("#side-hide").removeClass("show");
     $("#overlay_every-where").removeClass("bgshow");
+    $('#side-collups').addClass('display');
+    console.log($('#side-collups'));
 });
 $(document).on('click', '#overlay_every-where', function () {
     $("#side-hide").removeClass("show");
     $("#overlay_every-where").removeClass("bgshow");
+    $('#side-collups').addClass('display');
 });
 // for onepage mobile menu item
 $(document).on('click', '.onepage .mainmenu li a', function () {
     $("#side-hide").removeClass("show");
     $("#overlay_every-where").removeClass("bgshow");
+    $('#side-collups').addClass('display');
 });
 
 $(window).scroll(function () {
@@ -428,6 +434,19 @@ $(document).ready(function(){
     for(var i = 0; i < news_title.length; i++){
         $clamp(news_title[i], {clamp: 3});
     }
+});
 
+/* Scroll sustainable-development */
+document.querySelectorAll('.scroll-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
 
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    });
 });

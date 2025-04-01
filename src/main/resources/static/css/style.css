@@ -569,6 +569,25 @@ nav ul li.has-dropdown:hover .submenu {
     gap: 20px;
 }
 
+#side-collups {
+    opacity: 0;
+}
+#side-collups.display {
+    position: fixed;
+    left: 100%;
+    top: 50%;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    z-index: 10000;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
 .tmp-side-collups-area svg {
     cursor: pointer;
 }
@@ -811,10 +830,6 @@ nav ul li.has-dropdown:hover .submenu {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-}
-
-.tmp-section-gap {
-    padding: 120px 0;
 }
 
 .tmp-banner-swiper-one-area .swiper-slide-active .tmp-banner-area .inner span.sub-title {
@@ -2503,14 +2518,17 @@ p.description {
 }
 
 .header-four.header--sticky.sticky {
-    /*background: rgba(0, 0, 0, 0.6509803922);*/
-    background: #ffffff57;
+    background: white;
     display: block;
     transform: none;
     left: 0;
     transform: none;
     backdrop-filter: blur(10px);
     background-blend-mode: multiply;
+}
+
+.header-four.header--sticky.sticky nav ul li a.nav-link {
+    color: black!important;
 }
 
 .tmp-header-area-start.header-four.sticky .header-top-one {
@@ -4136,6 +4154,448 @@ p.description {
     background: transparent;
     font-weight: bold;
     letter-spacing: 2px;
-    color: #e17126;
+    color: var(--color-primary);
     text-decoration: underline;
+}
+
+
+
+
+
+.words {
+    color: white;
+    font-size: 0;
+    line-height: 1.5;
+    font-weight: 700;
+}
+.words span {
+    font-size: 5rem;
+    display: inline-block;
+    animation: move 3s ease-in-out infinite;
+}
+@keyframes move {
+    0% {
+        transform: translate(-30%, 0);
+    }
+    50% {
+        text-shadow: 0 25px 50px rgba(0, 0, 0, 0.75);
+    }
+    100% {
+        transform: translate(30%, 0);
+    }
+}
+.words span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.words span:nth-child(3) {
+    animation-delay: 1s;
+}
+.words span:nth-child(4) {
+    animation-delay: 1.5s;
+}
+.words span:nth-child(5) {
+    animation-delay: 2s;
+}
+.words span:nth-child(6) {
+    animation-delay: 2.5s;
+}
+.words span:nth-child(7) {
+    animation-delay: 3s;
+}
+
+
+
+
+
+
+
+@-webkit-keyframes partner-slider-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+@keyframes partner-slider-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+.partner-area-slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.partner-area-slider::before, .partner-area-slider::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+.partner-area-slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+.partner-area-slider::before {
+    left: 0;
+    top: 0;
+}
+.partner-area-slider .slide-track {
+    -webkit-animation: partner-slider-scroll 40s linear infinite;
+    animation: partner-slider-scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+.partner-area-slider .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 250px;
+}
+
+.sd-area {
+    overflow: hidden;
+}
+.sd-area .quote {
+    z-index: 1;
+    background-image: url(https://unicons.vn/wp-content/uploads/about-unicons-bg.svg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all .25s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 10rem;
+}
+.sd-area .quote:hover {
+    background-image: url(https://unicons.vn/wp-content/uploads/2024/02/about-unicons-hover@2x.webp);
+    background-size: cover;
+}
+.sd-area .quote .quote-content {
+    text-align: center;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    height: 100%;
+    align-items: center;
+    max-width: 950px;
+    align-self: stretch !important;
+    width: 100%;
+    justify-content: center;
+}
+
+.sd-area .quote .quote-content h2 {
+    color: #364250;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;
+}
+.sd-area .quote .quote-content h1 {
+    color: #1A1A1A;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.5em;
+    font-style: italic;
+}
+.sd-area .commit-page {
+    font-family: 'Raleway', sans-serif;
+    background-image: radial-gradient(circle at center, #899Dc4, #495D84);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at bottom, #1b2735, #090a0f);
+    font-weight: 300;
+}
+.sd-area .commit-page .all {
+    display: flex;
+    perspective: 10px;
+    transform: perspective(300px) rotateX(20deg);
+    will-change: perspective;
+    perspective-origin: center center;
+    transition: all 1.3s ease-out;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+.sd-area .commit-page .all:hover {
+    perspective: 1000px;
+    transition: all 1.3s ease-in;
+    transform: perspective(10000px) rotateX(0deg);
+    .text {
+        opacity: 1;
+    }
+    & > div {
+        opacity: 1;
+        transition-delay: 0s;
+    }
+    .explainer {
+        opacity: 0;
+    }
+}
+
+.sd-area .commit-page .left,
+.sd-area .commit-page .center,
+.sd-area .commit-page .right,
+.sd-area .commit-page .lefter,
+.sd-area .commit-page .righter {
+    width: 500px;
+    height: 200px;
+    text-align: center;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    box-shadow: 0 0 20px 5px rgba(100, 100, 255, .4);
+    opacity: 0;
+    transition: all .3s ease;
+    transition-delay: 1s;
+    position: relative;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*background-color: #58d;*/
+    cursor: pointer;
+    /*background-blend-mode: color-burn;*/
+
+    &:hover {
+        box-shadow: 0 0 30px 10px rgba(100, 100, 255, .6);
+    }
+}
+.sd-area .commit-page .text {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all .3s ease;
+    bottom: 0;
+    left: 5px;
+    position: absolute;
+    will-change: transform;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(100, 100, 255, .6)
+}
+.sd-area .commit-page .lefter {
+    transform: translateX(-60px) translateZ(-50px) rotateY(-10deg);
+    background-image: url(https://searefico.com/wp-content/uploads/2022/03/DSC_7869-e1647139730699-1024x857.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.sd-area .commit-page .left {
+    transform: translateX(-30px) translateZ(-25px) rotateY(-5deg);
+    background-image: url(https://img.freepik.com/free-photo/entrepreneurs-discussing-work-results-meeting_1163-5277.jpg?t=st=1743492145~exp=1743495745~hmac=8fae732bfc1cd07c7ff392748956fc7ca012b250d42393110462ebc2e873fe8f&w=740);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.sd-area .commit-page .center {
+    opacity: 1;
+    background-image: url(https://techgel.com.vn/wp-content/uploads/2024/05/Logo_Techgel-full.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: white;
+}
+.sd-area .commit-page .right {
+    transform: translateX(30px) translateZ(-25px) rotateY(5deg);
+    background-image: url(https://searefico.com/wp-content/uploads/2022/03/businessmen-shaking-hands-during-meeting-1024x683.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.sd-area .commit-page .righter {
+    transform: translateX(60px) translateZ(-50px) rotateY(10deg);
+    background-image: url(https://searefico.com/wp-content/uploads/2022/03/9175.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.sd-area .commit-page .explainer {
+    font-weight: 300;
+    font-size: 2rem;
+    color: #fff;
+    transition: all .6s ease;
+    width: 100%;
+    height: 100%;
+    background-color: #303050;
+    background-image: radial-gradient(circle at center top, #cce, #33a);
+    border-radius: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, .8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sd-area .commit-page .ref {
+    background-color: #000;
+    background-image: linear-gradient(to bottom, #d80, #c00);
+    border-radius: 3px;
+    padding: 7px 10px;
+    position: absolute;
+    font-size: 16px;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 3px rgba(0, 0, 0, .4);
+    &::first-letter {
+        font-size: 12px;
+    }
+}
+.commit-page-details ul {
+    --col-gap: 2rem;
+    --row-gap: 30rem;
+    --line-w: 0.25rem;
+    display: grid;
+    grid-template-columns: var(--line-w) 1fr;
+    grid-auto-columns: max-content;
+    column-gap: var(--col-gap);
+    list-style: none;
+    width: min(60rem, 90%);
+    margin-inline: auto;
+}
+.commit-page-details ul::before {
+    content: "";
+    grid-column: 1;
+    grid-row: 1 / span 20;
+    background: rgb(225, 225, 225);
+    border-radius: calc(var(--line-w) / 2);
+}
+.commit-page-details ul li:not(:last-child) {
+    margin-bottom: var(--row-gap);
+}
+.commit-page-details ul li {
+    grid-column: 2;
+    --inlineP: 1.5rem;
+    margin-inline: var(--inlineP);
+    grid-row: span 2;
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+}
+.commit-page-details ul li .date {
+    --dateH: 3rem;
+    height: var(--dateH);
+    margin-inline: calc(var(--inlineP) * -1);
+
+    text-align: center;
+    background-color: var(--accent-color);
+
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    display: grid;
+    place-content: center;
+    position: relative;
+
+    border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+}
+.commit-page-details ul li .date::before {
+    content: "";
+    width: var(--inlineP);
+    aspect-ratio: 1;
+    background: var(--accent-color);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+    position: absolute;
+    top: 100%;
+
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    right: 0;
+}
+.commit-page-details ul li .date::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+    background: rgba(245, 245, 245);
+    border: 0.3rem solid var(--accent-color);
+    border-radius: 50%;
+    top: 50%;
+
+    transform: translate(50%, -50%);
+    right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+}
+.commit-page-details ul li .title,
+.commit-page-details ul li .descr {
+    background: rgba(245, 245, 245);
+    position: relative;
+    padding-inline: 1.5rem;
+}
+.commit-page-details ul li .title {
+    overflow: hidden;
+    padding-block-start: 1.5rem;
+    padding-block-end: 1rem;
+    font-weight: 500;
+}
+.commit-page-details ul li .descr {
+    padding-block-end: 1.5rem;
+    font-weight: 300;
+}
+.commit-page-details ul li .title::before,
+.commit-page-details ul li .descr::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    left: 50%;
+    border-radius: 50%;
+    filter: blur(4px);
+    transform: translate(-50%, 50%);
+}
+.commit-page-details ul li .title::before {
+    bottom: calc(100% + 0.125rem);
+}
+.commit-page-details ul li .descr::before {
+    z-index: -1;
+    bottom: 0.25rem;
+}
+@media (min-width: 40rem) {
+    .commit-page-details ul {
+        grid-template-columns: 1fr var(--line-w) 1fr;
+    }
+    .commit-page-details ul::before {
+        grid-column: 2;
+    }
+    .commit-page-details ul li:nth-child(odd) {
+        grid-column: 1;
+    }
+    .commit-page-details ul li:nth-child(even) {
+        grid-column: 3;
+    }
+    .commit-page-details ul li:nth-child(2) {
+        grid-row: 2/4;
+    }
+    .commit-page-details ul li:nth-child(odd) .date::before {
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+        left: 0;
+    }
+    .commit-page-details ul li:nth-child(odd) .date::after {
+        transform: translate(-50%, -50%);
+        left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+    }
+    .commit-page-details ul li:nth-child(odd) .date {
+        border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+    }
 }
