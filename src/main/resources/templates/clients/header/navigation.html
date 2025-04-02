@@ -68,7 +68,7 @@
                                     <nav>
                                         <ul class="parent-nav">
                                             <li th:each="n, i: ${testNavigations}" th:class="${not subnavigations[i.index].isEmpty() ? 'has-dropdown' : ''}">
-                                                <a th:href="@{${n.entrySet()[0].value}}" class="nav-link">
+                                                <a th:href="@{${n.entrySet()[0].value}}" class="nav-link d-flex justify-content-center align-items-center">
                                                     <span class="rolling-text">
                                                         <div class="block">
                                                             <span>[[${#strings.toUpperCase(n.entrySet()[0].key)}]]</span>

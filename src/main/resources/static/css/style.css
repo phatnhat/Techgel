@@ -230,6 +230,7 @@ body::before {
     align-items: center;
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
 .header-one .header--sticky.sticky {
@@ -399,6 +400,7 @@ ul li {
 nav ul li a.nav-link {
     color: #03041c;
     font-weight: 700;
+    padding: 0 1rem;
 }
 
 nav ul li.has-dropdown a.nav-link {
@@ -412,7 +414,7 @@ nav ul li.has-dropdown a.nav-link {
 nav ul li.has-dropdown a.nav-link::before {
     content: "▼" !important;
     position: absolute !important;
-    top: 49%;
+    top: 50%;
     font-family: "Font Awesome 6 Pro" !important;
     right: -3px;
     transform: translateY(-50%);
@@ -424,7 +426,7 @@ nav ul li.has-dropdown a.nav-link::before {
     display: inline-block;
     overflow: hidden;
     /*line-height: 30px;*/
-    height: 21px;
+    /*height: 21px;*/
 }
 .rolling-text .block {
     min-width: max-content;
