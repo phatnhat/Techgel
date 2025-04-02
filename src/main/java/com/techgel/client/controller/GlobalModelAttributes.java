@@ -75,7 +75,7 @@ public class GlobalModelAttributes {
             add(new LinkedHashMap<>(){{
                 put("Cơ hội nghề nghiệp", "job-opportunities");
                 put("Chính sách nhân sự", "hr-policies");
-                put("Văn hóa Techgel", "techgel-culture");
+                put("Văn hóa Techgel", "cultural-techgel");
             }});
         }});
         test.add(new ArrayList<>());

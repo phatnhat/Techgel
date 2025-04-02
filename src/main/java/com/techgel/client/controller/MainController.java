@@ -108,4 +108,9 @@ public class MainController {
     public String viewSustainableDevelopment() {
         return "clients/what-we-do/sustainable-development";
     }
+
+    @GetMapping("/cultural-techgel")
+    public String viewCulturalTechgel() {
+        return "clients/careers/cultural-techgel";
+    }
 }

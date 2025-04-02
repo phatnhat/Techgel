@@ -6,7 +6,7 @@
 </head>
 <body>
     <div th:fragment="navigation">
-        <header class="tmp-header-area-start header-one" th:classappend="${requestURI != '/' ? 'header-two header-four header--sticky' : ''}">
+        <header class="tmp-header-area-start header-one position-relative bg-white" style="z-index:999;">
 <!--            <div class="header-top-one">-->
 <!--                <div class="container">-->
 <!--                    <div class="row">-->
@@ -42,10 +42,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div th:if="${requestURI == '/'}" class="main-header-one-wrapper">
+                        <div class="main-header-one-wrapper">
                             <div class="header-mida-area">
                                 <div class="logo-area-start">
-                                    <a class="logo" href="">
+                                    <a class="logo" href="/">
                                         <img width="200" th:src="@{/imgs/logo.jpg}" alt="Techgel Logo">
                                     </a>
                                 </div>
@@ -89,13 +89,6 @@
                                     </nav>
                                 </div>
                                 <div class="actions-area">
-<!--                                    <div class="tmp-side-collups-area d-none" id="side-collups">-->
-<!--                                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--                                            <rect y="14" width="20" height="2" fill="#1F1F25"></rect>-->
-<!--                                            <rect y="7" width="20" height="2" fill="#1F1F25"></rect>-->
-<!--                                            <rect width="20" height="2" fill="#1F1F25"></rect>-->
-<!--                                        </svg>-->
-<!--                                    </div>-->
                                     <div class="lang-picker dropdown">
                                         <form action="" method="get">
                                             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="outline:none;border:none;box-shadow:none;">
@@ -111,7 +104,7 @@
                             </div>
                         </div>
                         
-                        <div th:unless="${requestURI == '/'}" class="header-mida-area style-two ">
+                        <div th:unless="${requestURI == '/'}" class="header-mida-area style-two d-none">
                             <div class="logo-area-start">
                                 <a href="/">
                                     <img width="200" th:src="@{/imgs/logo.jpg}" alt="logo">
@@ -143,13 +136,6 @@
                             </div>
                             <div class="actions-area">
                                 <a href="/profile" target="_blank" class="tmp-btn btn-primary" style="padding: 10px 15px;font-size:15px;" bis_skin_checked="1">e-profile</a>
-<!--                                <div class="tmp-side-collups-area d-none" id="side-collups">-->
-<!--                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--                                        <rect y="14" width="20" height="2" fill="#fff"></rect>-->
-<!--                                        <rect y="7" width="20" height="2" fill="#fff"></rect>-->
-<!--                                        <rect width="20" height="2" fill="#fff"></rect>-->
-<!--                                    </svg>-->
-<!--                                </div>-->
                             </div>
                         </div>
                         

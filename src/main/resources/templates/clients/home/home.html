@@ -34,7 +34,7 @@
 
       <div th:replace="~{clients/home/banner :: banner}"></div>
 
-      <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="d-flex flex-column justify-content-center align-items-center d-none">
           <div class="words word-1">
               <span>T</span>
               <span>E</span>
@@ -920,112 +920,221 @@
       </div>
 
       <!-- news -->
-      <div class="tmp-news-area tmp-section-gap">
+      <div class="tmp-news-area tmp-section-gap news-area">
           <div class="container">
-              <div class="row">
-                  <div class="col-lg-12">
-                      <div class="section-head">
-                          <div class="section-sub-title center-title">
-                              <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
-                              <span class="subtitle">BÀI VIẾT MỚI NHẤT</span>
-                          </div>
-                          <h2 class="title split-collab" style="opacity: 1;">
-                          <span th:each="t: ${'Tin tức & bài viết mới nhất'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                          </span>
-                          </h2>
+<!--              <div class="row">-->
+<!--                  <div class="col-lg-12">-->
+<!--                      <div class="section-head">-->
+<!--                          <div class="section-sub-title center-title">-->
+<!--                              <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">-->
+<!--                              <span class="subtitle">BÀI VIẾT MỚI NHẤT</span>-->
+<!--                          </div>-->
+<!--                          <h2 class="title split-collab" style="opacity: 1;">-->
+<!--                          <span th:each="t: ${'Tin tức & bài viết mới nhất'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">-->
+<!--                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]-->
+<!--                          </span>-->
+<!--                          </h2>-->
+<!--                      </div>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--              <div class="row g-5">-->
+<!--                  <div class="col-lg-4 col-md-6 col-sm-12 col1-2" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+<!--                      <div class="single-news">-->
+<!--                          <div class="news-inner">-->
+<!--                              <div class="thumbnail">-->
+<!--                                  <a href="#"><img th:src="@{/imgs/news-01.JPG}" alt="Business Consulting news"></a>-->
+<!--                                  <div class="pmt-news-meta">-->
+<!--                                      <ul class="all-meta">-->
+<!--                                          <li class="date"><span>20</span></li>-->
+<!--                                          <li class="month"><span>JAN</span></li>-->
+<!--                                      </ul>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="news-content">-->
+<!--                                  <div class="news-body">-->
+<!--                                      <a href="#" class="title-area">-->
+<!--                                          <h4 class="title">Tiêu đề 1</h4>-->
+<!--                                      </a>-->
+<!--                                      <p class="description">-->
+<!--                                          Nội dung 1-->
+<!--                                      </p>-->
+<!--                                  </div>-->
+<!--                                  <a class="btn-read-more" href="#">-->
+<!--                                      <span class="read-more-text">Đọc thêm</span>-->
+<!--                                      <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>-->
+<!--                                  </a>-->
+<!--                              </div>-->
+<!--                          </div>-->
+<!--                      </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-lg-4 col-md-6 col-sm-12 col1-2" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">-->
+<!--                      <div class="single-news">-->
+<!--                          <div class="news-inner">-->
+<!--                              <div class="thumbnail">-->
+<!--                                  <a href="#"><img th:src="@{/imgs/news-02.JPG}" alt="Business Consulting news"></a>-->
+<!--                                  <div class="pmt-news-meta">-->
+<!--                                      <ul class="all-meta">-->
+<!--                                          <li class="date"><span>20</span></li>-->
+<!--                                          <li class="month"><span>JAN</span></li>-->
+<!--                                      </ul>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="news-content">-->
+<!--                                  <div class="news-body">-->
+<!--                                      <a href="#" class="title-area">-->
+<!--                                          <h4 class="title">Tiêu đề 2</h4>-->
+<!--                                      </a>-->
+<!--                                      <p class="description">-->
+<!--                                          Nội dung 2-->
+<!--                                      </p>-->
+<!--                                  </div>-->
+<!--                                  <a class="btn-read-more" href="news-details.html">-->
+<!--                                      <span class="read-more-text">Đọc thêm</span>-->
+<!--                                      <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>-->
+<!--                                  </a>-->
+<!--                              </div>-->
+<!--                          </div>-->
+<!--                      </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-lg-4 col-md-6 col-sm-12 col1-2" data-sal-delay="350" data-sal="slide-up" data-sal-duration="800">-->
+<!--                      <div class="single-news">-->
+<!--                          <div class="news-inner">-->
+<!--                              <div class="thumbnail">-->
+<!--                                  <a href="#"><img th:src="@{/imgs/news-03.JPG}" alt="Business Consulting news"></a>-->
+<!--                                  <div class="pmt-news-meta">-->
+<!--                                      <ul class="all-meta">-->
+<!--                                          <li class="date"><span>20</span></li>-->
+<!--                                          <li class="month"><span>JAN</span></li>-->
+<!--                                      </ul>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="news-content">-->
+<!--                                  <div class="news-body">-->
+<!--                                      <a href="#" class="title-area">-->
+<!--                                          <h4 class="title">Tiêu đề 3</h4>-->
+<!--                                      </a>-->
+<!--                                      <p class="description">-->
+<!--                                          Nội dung 3-->
+<!--                                      </p>-->
+<!--                                  </div>-->
+<!--                                  <a class="btn-read-more" href="#">-->
+<!--                                      <span class="read-more-text">Đọc thêm</span>-->
+<!--                                      <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>-->
+<!--                                  </a>-->
+<!--                              </div>-->
+<!--                          </div>-->
+<!--                      </div>-->
+<!--                  </div>-->
+<!--              </div>-->
+
+              <div class="menu-news">
+                  <div class="row align-items-center">
+                      <div class="col-md-6">
+                          <h3 class="fs-40 fw-bold text-uppercase">Tin tức</h3>
+                      </div>
+                      <div class="col-md-6">
+                          <ul class="menu-news-list">
+                              <li class="menu-item">
+                                  <a href="#" aria-current="page">Xem tất cả <i class="fa-solid fa-angle-double-right"></i></a>
+                              </li>
+                          </ul>
                       </div>
                   </div>
               </div>
-              <div class="row g-5">
-                  <div class="col-lg-4 col-md-6 col-sm-12 col1-2" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                      <div class="single-news">
-                          <div class="news-inner">
-                              <div class="thumbnail">
-                                  <a href="#"><img th:src="@{/imgs/news-01.JPG}" alt="Business Consulting news"></a>
-                                  <div class="pmt-news-meta">
-                                      <ul class="all-meta">
-                                          <li class="date"><span>20</span></li>
-                                          <li class="month"><span>JAN</span></li>
-                                      </ul>
-                                  </div>
-                              </div>
-                              <div class="news-content">
-                                  <div class="news-body">
-                                      <a href="#" class="title-area">
-                                          <h4 class="title">Tiêu đề 1</h4>
+              <div class="post-features mb-md-5">
+                  <div class="row">
+                      <div class="col-md-8">
+                          <div class="single-news">
+                              <div class="news-inner row">
+                                  <div class="thumbnail col-md-7 p-0">
+                                      <a href="#">
+                                          <img src="https://techgel.com.vn/wp-content/uploads/2025/03/tl.webp" alt="">
                                       </a>
-                                      <p class="description">
-                                          Nội dung 1
-                                      </p>
+                                      <div class="pmt-news-meta">
+                                          <ul class="all-meta">
+                                              <li class="date"><span>20</span></li>
+                                              <li class="month"><span>JAN</span></li>
+                                          </ul>
+                                      </div>
                                   </div>
-                                  <a class="btn-read-more" href="#">
-                                      <span class="read-more-text">Đọc thêm</span>
-                                      <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                  </a>
+                                  <div class="news-content col-md-5">
+                                      <div class="news-head">
+                                          <span class="name">Tin tức</span>
+                                          <span class="designation">Tin dự án</span>
+                                      </div>
+                                      <div class="news-body">
+                                          <a href="news-details.html" class="title-area">
+                                              <h4 class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+                                          </a>
+                                          <p class="description">
+                                              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.                                            </p>
+                                      </div>
+                                      <a class="btn-read-more" href="news-details.html">
+                                          <span class="read-more-text">Đọc thêm</span>
+                                          <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                      </a>
+                                  </div>
                               </div>
                           </div>
                       </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 col1-2" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">
-                      <div class="single-news">
-                          <div class="news-inner">
-                              <div class="thumbnail">
-                                  <a href="#"><img th:src="@{/imgs/news-02.JPG}" alt="Business Consulting news"></a>
-                                  <div class="pmt-news-meta">
-                                      <ul class="all-meta">
-                                          <li class="date"><span>20</span></li>
-                                          <li class="month"><span>JAN</span></li>
-                                      </ul>
+                      <div class="col-md-4">
+                          <div class="post-sidebar">
+                              <div class="item-post-sb">
+                                  <div class="meta-post">
+                                      <div class="date-post">
+                                          <ul class="all-meta">
+                                              <li class="date"><span>20</span></li>
+                                              <li class="month"><span>JAN</span></li>
+                                          </ul>
+                                      </div>
+                                      <div class="post-info">
+                                          <div class="post_info">
+                                              <h5 class="fs-16 fw-bold"><a href="#">TECHGEL – SỰ TRỞ LẠI MẠNH MẼ SAU KHỦNG HOẢNG</a>
+                                              </h5>
+                                              <a href="#" style="font-size:12px;"><i>Xem thêm <i style="font-size:9px;" class="fa fa-angle-double-right"></i></i> </a>
+                                          </div>
+                                      </div>
                                   </div>
                               </div>
-                              <div class="news-content">
-                                  <div class="news-body">
-                                      <a href="#" class="title-area">
-                                          <h4 class="title">Tiêu đề 2</h4>
-                                      </a>
-                                      <p class="description">
-                                          Nội dung 2
-                                      </p>
-                                  </div>
-                                  <a class="btn-read-more" href="news-details.html">
-                                      <span class="read-more-text">Đọc thêm</span>
-                                      <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                  </a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 col1-2" data-sal-delay="350" data-sal="slide-up" data-sal-duration="800">
-                      <div class="single-news">
-                          <div class="news-inner">
-                              <div class="thumbnail">
-                                  <a href="#"><img th:src="@{/imgs/news-03.JPG}" alt="Business Consulting news"></a>
-                                  <div class="pmt-news-meta">
-                                      <ul class="all-meta">
-                                          <li class="date"><span>20</span></li>
-                                          <li class="month"><span>JAN</span></li>
-                                      </ul>
+                              <div class="item-post-sb">
+                                  <div class="meta-post">
+                                      <div class="date-post">
+                                          <ul class="all-meta">
+                                              <li class="date"><span>20</span></li>
+                                              <li class="month"><span>JAN</span></li>
+                                          </ul>
+                                      </div>
+                                      <div class="post-info">
+                                          <div class="post_info">
+                                              <h5 class="fs-16 fw-bold"><a href="#">TECHGEL – NHÀ GA T3 CẢNG HÀNG KHÔNG QUỐC TẾ TÂN SƠN NHẤT</a>
+                                              </h5>
+                                              <a href="#" style="font-size:12px;"><i>Xem thêm <i style="font-size:9px;" class="fa fa-angle-double-right"></i></i> </a>
+                                          </div>
+                                      </div>
                                   </div>
                               </div>
-                              <div class="news-content">
-                                  <div class="news-body">
-                                      <a href="#" class="title-area">
-                                          <h4 class="title">Tiêu đề 3</h4>
-                                      </a>
-                                      <p class="description">
-                                          Nội dung 3
-                                      </p>
+                              <div class="item-post-sb">
+                                  <div class="meta-post">
+                                      <div class="date-post">
+                                          <ul class="all-meta">
+                                              <li class="date"><span>20</span></li>
+                                              <li class="month"><span>JAN</span></li>
+                                          </ul>
+                                      </div>
+                                      <div class="post-info">
+                                          <div class="post_info">
+                                              <h5 class="fs-16 fw-bold"><a href="#">Tái Chế Pin Mặt Trời: Quy Trình Tái Chế và Lợi Ích</a>
+                                              </h5>
+                                              <a href="#" style="font-size:12px;"><i>Xem thêm <i style="font-size:9px;" class="fa fa-angle-double-right"></i></i> </a>
+                                          </div>
+                                      </div>
                                   </div>
-                                  <a class="btn-read-more" href="#">
-                                      <span class="read-more-text">Đọc thêm</span>
-                                      <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                  </a>
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
+
           </div>
       </div>
 
