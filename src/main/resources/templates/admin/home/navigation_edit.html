@@ -7,11 +7,23 @@
 <body>
     <main class="content-wrapper" style="height: 100%;">
         <form th:action="@{/webadmin/home/navigation/edit}" method="post" th:object="${homeNavigationDTO}">
+            <div th:if="${errors}" th:each="error: ${errors}" class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+                <strong>[[${ message }]]!</strong> [[${ error.value }]]
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div th:if="${errors == null and message != null}" class="alert alert-success alert-dismissible fade m-0" role="alert">
+                <strong>[[${ message }]]!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <input type="hidden" name="id" th:field="*{homeNavigation.id}">
-            <input type="hidden" name="id" th:field="*{seo.id}">
+            <input type="hidden" name="seo_id" th:field="*{homeNavigation.seo}">
+            <input type="hidden" th:field="*{seo.id}">
+            <input type="hidden" name="url_templates" th:field="*{homeNavigation.url_templates}">
             <input type="hidden" name="parent" th:field="*{homeNavigation.parent}">
-            <input type="hidden" name="seo_keyword" th:field="*{homeNavigation.seo_keyword}">
-            <input type="hidden" name="seo_entity_type" th:field="*{seo.seo_entity_type}">
             <div class="content-header clearfix" style="padding: 15px 1rem;">
                 <h1 class="float-left">
                     <th:block th:if="${homeNavigationDTO.homeNavigation.parent}">[[${homeNavigationDTO.homeNavigation.parent.title_vi}]] >></th:block>
@@ -90,7 +102,7 @@
 
                             </div>
                         </nop-card>
-                        <nop-card th:if="${homeNavigation.seo_keyword != null}">
+                        <nop-card>
                             <div class="card card-secondary card-outline advanced-setting" data-card-name="category-seo" data-hideattribute="CategoryPage.HideSEOBlock" id="category-seo">
                                 <div class="card-header with-border clearfix">
                                     <div class="card-title">

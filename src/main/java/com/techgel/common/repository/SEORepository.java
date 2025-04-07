@@ -7,6 +7,15 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SEORepository extends JpaRepository<SEO, Long> {
-    @Query("SELECT s FROM SEO s WHERE s.seo_entity_type = ?1")
-    SEO findByEntity_type(String entity_type);
+    @Query("SELECT COUNT(e) > 0 FROM SEO e WHERE e.seo_slug_vi = :slug AND e.id != :id")
+    boolean existsBySeoSlugVi(String slug, Long id);
+
+    @Query("SELECT COUNT(e) > 0 FROM SEO e WHERE e.seo_slug_en = :slug AND e.id != :id")
+    boolean existsBySeoSlugEn(String slug, Long id);
+
+    @Query("SELECT e FROM SEO e WHERE e.seo_slug_vi = :slug")
+    SEO findBySeo_slug_vi(String slug);
+
+    @Query("SELECT e FROM SEO e WHERE e.seo_slug_en = :slug")
+    SEO findBySeo_slug_en(String slug);
 }

@@ -8,7 +8,7 @@
     <main class="content-wrapper" style="height: 100%;">
         <div class="content-header clearfix" style="padding: 15px 1rem;">
             <h3 class="float-left">
-                Trang chủ/E-Brochure
+                Trang chủ/E-Profile
             </h3>
         </div>
         <section class="content">
@@ -42,15 +42,15 @@
                                                 </th>
                                             </tr>
                                             </thead>
-                                            <tbody th:if="${eBrochure != null}">
+                                            <tbody th:if="${eProfile != null}">
                                                 <tr>
-                                                    <td>[[${eBrochure.title}]]</td>
+                                                    <td>[[${eProfile.title_vi}]]</td>
                                                     <td class="text-center">
-                                                        <i th:if="${eBrochure.isPublished}" class="fas fa-check true-icon"></i>
-                                                        <i th:unless="${eBrochure.isPublished}" class="fa-solid fa-xmark"></i>
+                                                        <i th:if="${eProfile.isPublished}" class="fas fa-check true-icon"></i>
+                                                        <i th:unless="${eProfile.isPublished}" class="fa-solid fa-xmark"></i>
                                                     </td>
                                                     <td class="button-column">
-                                                        <a class="btn btn-default" th:href="@{/webadmin/home/e-brochure/edit}">
+                                                        <a class="btn btn-default" th:href="@{/webadmin/home/e-profile/edit?id={id}(id=${eProfile.id})}">
                                                             <i class="fas fa-pencil"></i>&nbsp;Edit</a>
                                                     </td>
                                                 </tr>
@@ -64,16 +64,6 @@
                 </div>
             </div>
         </section>
-
-        <div class="d-flex flex-column m-0 p-0 justify-content-between">
-            <div>
-                <span>Upload image:</span>
-            </div>
-            <div>
-                <input type="file" class="my-pond" name="filepond" multiple data-allow-reorder="true" data-max-file-size="3MB">
-            </div>
-        </div>
-
     </main>
 </body>
 </html>

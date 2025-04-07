@@ -3,7 +3,14 @@
 <head th:fragment="page_head(title, remove)" th:remove="${remove}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-    <title>[[${title}]] - [[${ SITE_NAME }]]</title>
+    <title>[[${title}]]</title>
+    <meta name="description" th:content="${description}">
+    <meta name="keywords" th:content="${keywords}">
+    <meta property="og:title" th:content="${og_title}">
+    <meta property="og:description" th:content="${og_description}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="vi_VN">
+
     <link th:href="@{/css/plugins/bootstrap.min.css}" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/plugins/bootstrap-theme.min.css}">
 
@@ -52,6 +59,8 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/clamp-js/0.7.0/clamp.min.js" integrity="sha512-Zf7q41OZ49XVIFrkbCVLkBEklVxQv4sVdMGnCwL9bfuCfA862QmAJSU61yrcrMwze7Ij7oUXpQVoUXmftBfk0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
 
         <script th:src="@{/js/main.js}"></script>
     </th:block>

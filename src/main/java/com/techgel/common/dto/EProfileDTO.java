@@ -1,6 +1,6 @@
 package com.techgel.common.dto;
 
-import com.techgel.common.entity.adminSettings.HomeNavigation;
+import com.techgel.common.entity.adminSettings.EProfile;
 import com.techgel.common.entity.adminSettings.SEO;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -12,14 +12,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class HomeNavigationDTO {
+public class EProfileDTO {
     @Valid
-    private HomeNavigation homeNavigation;
+    private EProfile eProfile;
 
     @Valid
     private SEO seo;
 
-    public HomeNavigationDTO(@Valid HomeNavigation homeNavigation) {
-        this.homeNavigation = homeNavigation;
+    public EProfileDTO(@Valid EProfile eProfile) {
+        this.eProfile = eProfile;
     }
 }

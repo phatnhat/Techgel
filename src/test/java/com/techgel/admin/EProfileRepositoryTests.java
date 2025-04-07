@@ -1,7 +1,8 @@
 package com.techgel.admin;
 
-import com.techgel.common.entity.adminSettings.EBrochure;
-import com.techgel.common.repository.EBrochureRepository;
+import com.techgel.common.entity.adminSettings.EProfile;
+import com.techgel.common.entity.adminSettings.SEO;
+import com.techgel.common.repository.EProfileRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -13,14 +14,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest(showSql = false)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(value = false)
-public class EBrochureRepositoryTests {
+public class EProfileRepositoryTests {
     @Autowired
-    EBrochureRepository eBrochureRepository;
+    EProfileRepository eProfileRepository;
 
     @Test
     public void testCreateEBrochure(){
-        EBrochure eBrochure = new EBrochure("E-Brochure", true, "/e-brochure.pdf");
-        EBrochure eBrochureSaved = eBrochureRepository.save(eBrochure);
-        assertThat(eBrochureSaved.getId()).isGreaterThan(0);
+        EProfile eProfile = new EProfile("Hồ sơ năng lực", "E-Profile", "", true, "", new SEO());
+        EProfile eProfileSaved = eProfileRepository.save(eProfile);
+        assertThat(eProfileSaved.getId()).isGreaterThan(0);
     }
 }

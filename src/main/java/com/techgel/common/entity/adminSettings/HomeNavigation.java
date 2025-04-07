@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.techgel.common.entity.BasedEntity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +15,7 @@ import lombok.ToString;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -21,10 +24,14 @@ import java.util.Set;
 @Entity
 @Table(name = "home_navigations")
 public class HomeNavigation extends BasedEntity {
-    @Column(length = 50, nullable = false)
+    @NotBlank(message = "Title vi không được để trống")
+    @Size(max = 50, message = "Title vi không vượt quá 50 ký tự")
+    @Column(length = 50, unique = true, nullable = false)
     private String title_vi;
 
-    @Column(length = 50, nullable = false)
+    @NotBlank(message = "Title en không được để trống")
+    @Size(max = 50, message = "Title en không vượt quá 50 ký tự")
+    @Column(length = 50, unique = true, nullable = false)
     private String title_en;
 
     private boolean isPublished;
@@ -42,24 +49,38 @@ public class HomeNavigation extends BasedEntity {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "parent", cascade = CascadeType.ALL)
     private Set<HomeNavigation> children = new HashSet<>();
 
-    private String seo_keyword;
+    @OneToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "seo_id")
+    private SEO seo;
+
+    private String url_templates;
 
     public HomeNavigation(Long id) {
         this.id = id;
     }
 
-    public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder) {
+    public HomeNavigation(String title_vi, String title_en, boolean isPublished, SEO seo, int displayOrder) {
         this.title_vi = title_vi;
         this.title_en = title_en;
         this.isPublished = isPublished;
         this.displayOrder = displayOrder;
+        this.seo = seo;
     }
 
-    public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder, HomeNavigation parent) {
+    public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder, SEO seo, HomeNavigation parent) {
         this.title_vi = title_vi;
         this.title_en = title_en;
         this.isPublished = isPublished;
         this.displayOrder = displayOrder;
+        this.seo = seo;
         this.parent = parent;
+    }
+
+    public String getSlug(){
+        return "";
+    }
+
+    public List<HomeNavigation> getChildrens(){
+        return this.children.stream().filter(navigation -> navigation.getParent() != null && navigation.isPublished() == true).collect(Collectors.toList());
     }
 }

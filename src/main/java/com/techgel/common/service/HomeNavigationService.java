@@ -26,8 +26,8 @@ public class HomeNavigationService {
         return this.getAll().stream().filter(navigation -> navigation.getParent() == null).toList();
     }
 
-    public List<HomeNavigation> getChildrens(){
-        return this.getAll().stream().filter(navigation -> navigation.getParent() != null && navigation.isPublished() == true).collect(Collectors.toList());
+    public HomeNavigation getTemplate(String slug) {
+        return this.getAll().stream().filter(navigation -> navigation.getSeo().getSeo_slug_vi() != null && navigation.getSeo().getSeo_slug_vi().equalsIgnoreCase(slug)).toList().get(0);
     }
 
     public HomeNavigation getById(Long id){
