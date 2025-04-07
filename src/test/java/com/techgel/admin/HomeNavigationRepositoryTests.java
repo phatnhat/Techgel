@@ -38,25 +38,25 @@ public class HomeNavigationRepositoryTests {
     @Test
     public void testCreateSubHomeNavigation(){
         HomeNavigation aboutUsParent = homeNavigationRepository.findById(1L).get();
-        HomeNavigation aboutUs1 = new HomeNavigation("Tổng quan", "", true, 1, new SEO(), aboutUsParent);
-        HomeNavigation aboutUs2 = new HomeNavigation("Sơ đồ tổ chức", "", true, 2, new SEO(), aboutUsParent);
-        HomeNavigation aboutUs3 = new HomeNavigation("Tầm nhìn giá trị cốt lõi", "", true, 3, new SEO(), aboutUsParent);
-        HomeNavigation aboutUs4 = new HomeNavigation("Giấy phép & chứng chỉ", "", true, 4, new SEO(), aboutUsParent);
-        HomeNavigation aboutUs5 = new HomeNavigation("Đối tác khách hàng", "", true, 5, new SEO(), aboutUsParent);
+        HomeNavigation aboutUs1 = new HomeNavigation("Tổng quan", "1", true, 1, new SEO(), aboutUsParent);
+        HomeNavigation aboutUs2 = new HomeNavigation("Sơ đồ tổ chức", "2", true, 2, new SEO(), aboutUsParent);
+        HomeNavigation aboutUs3 = new HomeNavigation("Tầm nhìn giá trị cốt lõi", "3", true, 3, new SEO(), aboutUsParent);
+        HomeNavigation aboutUs4 = new HomeNavigation("Giấy phép & chứng chỉ", "4", true, 4, new SEO(), aboutUsParent);
+        HomeNavigation aboutUs5 = new HomeNavigation("Đối tác khách hàng", "5", true, 5, new SEO(), aboutUsParent);
 
         HomeNavigation whatWeDoParent = homeNavigationRepository.findById(2L).get();
-        HomeNavigation whatWeDo1 = new HomeNavigation("Lĩnh vực hoạt động", "", true, 1, new SEO(), whatWeDoParent);
-        HomeNavigation whatWeDo2 = new HomeNavigation("Hồ sơ năng lực", "", true, 2,new SEO(), whatWeDoParent);
-        HomeNavigation whatWeDo3 = new HomeNavigation("Phát triển bề vững", "", true, 3,new SEO(), whatWeDoParent);
-        HomeNavigation whatWeDo4 = new HomeNavigation("Hình ảnh thi công", "", true, 4,new SEO(), whatWeDoParent);
+        HomeNavigation whatWeDo1 = new HomeNavigation("Lĩnh vực hoạt động", "6", true, 1, new SEO(), whatWeDoParent);
+        HomeNavigation whatWeDo2 = new HomeNavigation("Hồ sơ năng lực", "7", true, 2,new SEO(), whatWeDoParent);
+        HomeNavigation whatWeDo3 = new HomeNavigation("Phát triển bề vững", "8", true, 3,new SEO(), whatWeDoParent);
+        HomeNavigation whatWeDo4 = new HomeNavigation("Hình ảnh thi công", "9", true, 4,new SEO(), whatWeDoParent);
 
         HomeNavigation projectsParent = homeNavigationRepository.findById(3L).get();
-        HomeNavigation projects1 = new HomeNavigation("Năng lượng", "", true, 1,new SEO(), projectsParent);
-        HomeNavigation projects2 = new HomeNavigation("Công trình hàng không", "", true, 2,new SEO(), projectsParent);
-        HomeNavigation projects3 = new HomeNavigation("Công nghiệp", "", true, 3,new SEO(), projectsParent);
-        HomeNavigation projects4 = new HomeNavigation("Dân dụng", "", true, 4,new SEO(), projectsParent);
-        HomeNavigation projects5 = new HomeNavigation("Hạ tầng giao thông", "", true, 5,new SEO(), projectsParent);
-        HomeNavigation projects6 = new HomeNavigation("Công nghệ", "", true, 6,new SEO(), projectsParent);
+        HomeNavigation projects1 = new HomeNavigation("Năng lượng", "10", true, 1,new SEO(), projectsParent);
+        HomeNavigation projects2 = new HomeNavigation("Công trình hàng không", "11", true, 2,new SEO(), projectsParent);
+        HomeNavigation projects3 = new HomeNavigation("Công nghiệp", "12", true, 3,new SEO(), projectsParent);
+        HomeNavigation projects4 = new HomeNavigation("Dân dụng", "13", true, 4,new SEO(), projectsParent);
+        HomeNavigation projects5 = new HomeNavigation("Hạ tầng giao thông", "14", true, 5,new SEO(), projectsParent);
+        HomeNavigation projects6 = new HomeNavigation("Công nghệ", "15", true, 6,new SEO(), projectsParent);
 
 //        HomeNavigation blogParent = homeNavigationRepository.findById(4L).get();
 //        HomeNavigation blog1 = new HomeNavigation("Tin dự án", "", true, 1,"", blogParent);
@@ -64,13 +64,13 @@ public class HomeNavigationRepositoryTests {
 //        HomeNavigation blog3 = new HomeNavigation("Hoạt động đào tạo", "", true, 3,"", blogParent);
 
         HomeNavigation investorParent = homeNavigationRepository.findById(5L).get();
-        HomeNavigation investor1 = new HomeNavigation("Quan hệ cổ đông", "", true, 1,new SEO(), investorParent);
-        HomeNavigation investor2 = new HomeNavigation("Thông tin cổ phiếu", "", true, 2,new SEO(), investorParent);
+        HomeNavigation investor1 = new HomeNavigation("Quan hệ cổ đông", "16", true, 1,new SEO(), investorParent);
+        HomeNavigation investor2 = new HomeNavigation("Thông tin cổ phiếu", "17", true, 2,new SEO(), investorParent);
 
         HomeNavigation careersParent = homeNavigationRepository.findById(6L).get();
-        HomeNavigation careers1 = new HomeNavigation("Cơ hội nghề nghiệp", "", true, 1,new SEO(), careersParent);
-        HomeNavigation careers2 = new HomeNavigation("Chính sách nhân sự", "", true, 2,new SEO(), careersParent);
-        HomeNavigation careers3 = new HomeNavigation("Văn hóa Techgel", "", true, 3,new SEO(), careersParent);
+        HomeNavigation careers1 = new HomeNavigation("Cơ hội nghề nghiệp", "18", true, 1,new SEO(), careersParent);
+        HomeNavigation careers2 = new HomeNavigation("Chính sách nhân sự", "19", true, 2,new SEO(), careersParent);
+        HomeNavigation careers3 = new HomeNavigation("Văn hóa Techgel", "20", true, 3,new SEO(), careersParent);
 
         homeNavigationRepository.saveAll(List.of(aboutUs1, aboutUs2, aboutUs3, aboutUs4, aboutUs5,
                 whatWeDo1, whatWeDo2, whatWeDo3, whatWeDo4,
