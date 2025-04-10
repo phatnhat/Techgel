@@ -63,7 +63,7 @@ public class HomeNavigationRepositoryTests {
 
         HomeNavigation investorParent = homeNavigationRepository.findById(5L).get();
         HomeNavigation investor1 = new HomeNavigation("Quan hệ cổ đông", "16", true, 1, investorParent, "/investor/shareholder");
-        HomeNavigation investor2 = new HomeNavigation("Thông tin cổ phiếu", "17", true, 2, investorParent);
+        HomeNavigation investor2 = gnew HomeNavigation("Thông tin cổ phiếu", "17", true, 2, investorParent);
 
         HomeNavigation careersParent = homeNavigationRepository.findById(6L).get();
         HomeNavigation careers1 = new HomeNavigation("Cơ hội nghề nghiệp", "18", true, 1, careersParent);
