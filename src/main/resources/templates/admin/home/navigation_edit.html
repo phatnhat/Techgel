@@ -6,7 +6,7 @@
 </head>
 <body>
     <main class="content-wrapper" style="height: 100%;">
-        <form th:action="@{/webadmin/home/navigation/edit}" method="post" th:object="${homeNavigationDTO}">
+        <form th:action="@{/webadmin/home/navigation/edit}" method="post" th:object="${homeNavigation}">
             <div th:if="${errors}" th:each="error: ${errors}" class="alert alert-danger alert-dismissible fade show m-0" role="alert">
                 <strong>[[${ message }]]!</strong> [[${ error.value }]]
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -19,15 +19,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <input type="hidden" name="id" th:field="*{homeNavigation.id}">
-            <input type="hidden" name="seo_id" th:field="*{homeNavigation.seo}">
-            <input type="hidden" th:field="*{seo.id}">
-            <input type="hidden" name="url_templates" th:field="*{homeNavigation.url_templates}">
-            <input type="hidden" name="parent" th:field="*{homeNavigation.parent}">
+            <input type="hidden" name="id" th:field="*{id}">
+            <input type="hidden" name="parent" th:field="*{parent}">
             <div class="content-header clearfix" style="padding: 15px 1rem;">
                 <h1 class="float-left">
-                    <th:block th:if="${homeNavigationDTO.homeNavigation.parent}">[[${homeNavigationDTO.homeNavigation.parent.title_vi}]] >></th:block>
-                    [[${homeNavigationDTO.homeNavigation.title_vi}]]
+                    <th:block th:if="${homeNavigation.parent}">[[${homeNavigation.parent.title_vi}]] >></th:block>
+                    [[${homeNavigation.title_vi}]]
                     <small>
                         <i class="fas fa-arrow-circle-left"></i>
                         <a th:href="@{/webadmin/home/navigation}">Back</a>
@@ -61,7 +58,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-9">
-                                            <input checked="checked" class="check-box" data-val-required="The Published field is required." id="Published" type="checkbox" name="isPublished" th:field="*{homeNavigation.published}">
+                                            <input checked="checked" class="check-box" data-val-required="The Published field is required." id="Published" type="checkbox" name="isPublished" th:field="*{published}">
                                             <span class="field-validation-valid" data-valmsg-for="Published" data-valmsg-replace="true"></span>
                                         </div>
                                     </div>
@@ -73,7 +70,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="number" class="form-control" data-val="true" data-val-required="The Display order field is required." name="displayOrder" th:field="*{homeNavigation.displayOrder}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
+                                            <input type="number" class="form-control" data-val="true" data-val-required="The Display order field is required." name="displayOrder" th:field="*{displayOrder}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
                                             <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
                                         </div>
                                     </div>
@@ -84,7 +81,7 @@
                                                 <div class="label-wrapper"><label class="col-form-label">Tiêu đề VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." name="title_vi" th:field="*{homeNavigation.title_vi}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." name="title_vi" th:field="*{title_vi}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
                                                 <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
@@ -93,160 +90,13 @@
                                                 <div class="label-wrapper"><label class="col-form-label">Tiêu đề EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{homeNavigation.title_en}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{title_en}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden">
                                                 <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                            </div>
-                        </nop-card>
-                        <nop-card>
-                            <div class="card card-secondary card-outline advanced-setting" data-card-name="category-seo" data-hideattribute="CategoryPage.HideSEOBlock" id="category-seo">
-                                <div class="card-header with-border clearfix">
-                                    <div class="card-title">
-                                        <i class="fas fa-magnifying-glass-plus"></i>SEO</div>
-                                    <div class="card-tools float-right">
-                                        <button class="btn btn-tool" data-card-widget="collapse" type="button">
-                                            <i class="fa toggle-icon fa-minus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div>
-                                        <div class="form-group row">
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label">Link thân thiện VI</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
-                                                        <i class="fas fa-circle-question"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control text-box single-line" th:field="*{seo.seo_slug_vi}" data-val="true" data-val-length="Max length is 100 chars" data-val-length-max="200" data-val-length-min="0" name="slug_vi" type="text">
-                                                <span class="field-validation-valid" data-valmsg-for="SeName" data-valmsg-replace="true"></span>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label">Link thân thiện EN</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
-                                                        <i class="fas fa-circle-question"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control text-box single-line" th:field="*{seo.seo_slug_en}" data-val="true" data-val-length="Max length is 200 chars" data-val-length-max="200" data-val-length-min="0" name="slug_en" type="text">
-                                                <span class="field-validation-valid" data-valmsg-for="SeName" data-valmsg-replace="true"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề SEO VI</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
-                                                        <i class="fas fa-circle-question"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="255" data-val-length-min="0" th:field="*{seo.seo_title_vi}" name="seo_title_vi" type="text">
-                                                <span class="field-validation-valid" data-valmsg-for="MetaTitle" data-valmsg-replace="true"></span>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề SEO EN</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
-                                                        <i class="fas fa-circle-question"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="255" data-val-length-min="0" th:field="*{seo.seo_title_en}" name="seo_title_en" type="text">
-                                                <span class="field-validation-valid" data-valmsg-for="MetaTitle" data-valmsg-replace="true"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label">Mô tả SEO VI</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
-                                                        <i class="fas fa-circle-question"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="" data-val-length-max="2147483647" data-val-length-min="0" th:field="*{seo.seo_description_vi}" name="seo_description_vi"></textarea>
-                                                <span class="field-validation-valid" data-valmsg-for="MetaDescription" data-valmsg-replace="true"></span>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper">
-                                                    <label class="col-form-label">Mô tả SEO EN</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
-                                                        <i class="fas fa-circle-question"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="" data-val-length-max="2147483647" data-val-length-min="0" th:field="*{seo.seo_description_en}" name="seo_description_en"></textarea>
-                                                <span class="field-validation-valid" data-valmsg-for="MetaDescription" data-valmsg-replace="true"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label">Từ khóa SEO VI</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
-                                                        <i class="fas fa-circle-question"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="255" data-val-length-min="0" th:field="*{seo.seo_keywords_vi}" name="seo_keywords_vi" type="text">
-                                                <span class="field-validation-valid" data-valmsg-for="MetaTitle" data-valmsg-replace="true"></span>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label" for="MetaTitle">Từ khóa SEO EN</label>
-                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="">
-                                                        <i class="fas fa-circle-question"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="255" data-val-length-min="0" th:field="*{seo.seo_keywords_en}" name="seo_keywords_en" type="text">
-                                                <span class="field-validation-valid" data-valmsg-for="MetaTitle" data-valmsg-replace="true"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label">Og:title VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title=""><i class="fas fa-circle-question"></i></div></div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="255" data-val-length-min="0" th:field="*{seo.seo_og_title_vi}" name="seo_og_title_vi" type="text">
-                                                <span class="field-validation-valid" data-valmsg-for="MetaKeywords" data-valmsg-replace="true"></span>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label">Og:title EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title=""><i class="fas fa-circle-question"></i></div></div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Không được quá 255 ký tự" data-val-length-max="400" data-val-length-min="0" th:field="*{seo.seo_og_title_en}" name="seo_og_title_en" type="text">
-                                                <span class="field-validation-valid" data-valmsg-for="MetaKeywords" data-valmsg-replace="true"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label">Og:description VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title=""><i class="fas fa-circle-question"></i></div></div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="" data-val-length-max="2147483647" data-val-length-min="0" th:field="*{seo.seo_og_description_vi}" name="seo_og_description_vi"></textarea>
-                                                <span class="field-validation-valid" data-valmsg-for="MetaDescription" data-valmsg-replace="true"></span>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="label-wrapper"><label class="col-form-label">Og:description EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title=""><i class="fas fa-circle-question"></i></div></div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <textarea class="form-control" rows="4" cols="20" data-val="true" data-val-length="" data-val-length-max="2147483647" data-val-length-min="0" th:field="*{seo.seo_og_description_en}" name="seo_og_description_en"></textarea>
-                                                <span class="field-validation-valid" data-valmsg-for="MetaDescription" data-valmsg-replace="true"></span>
-                                            </div>
-                                        </div>
-    
-                                    </div>
-                                </div>
                             </div>
                         </nop-card>
                     </div>

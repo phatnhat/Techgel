@@ -43,5 +43,34 @@
         <script th:src="@{/js/admin-main.js}"></script>
 
     </th:block>
+
+    <th:block th:fragment="delete_carousel_modal">
+        <div id="delete-carousel-action-confirmation" class="modal fade" tabindex="-1" aria-labelledby="delete-carousel-action-confirmation-title" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="delete-carousel-action-confirmation-title">Are you sure?</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to perform this action?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="delete-carousel-action-confirmation-submit-button" class="btn btn-primary float-right">
+                            Yes
+                        </button>
+                        <span class="btn btn-default float-right margin-r-5" data-dismiss="modal">No, cancel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </th:block>
+
+    <th:block th:fragment="loading">
+        <div class="loading">
+            <div class="shapes-4"></div>
+            <div class="classic-1"></div>
+        </div>
+    </th:block>
 </body>
 </html>

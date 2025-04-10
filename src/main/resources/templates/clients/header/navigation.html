@@ -55,7 +55,7 @@
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </div>
                                 </div>
-                                <div class="button-borders">
+                                <div class="button-borders" th:if="${eProfile.isPublished}">
                                     <a th:href="@{/profile}" target="_blank" class="btn primary-button">E-PROFILE</a>
                                 </div>
                             </div>

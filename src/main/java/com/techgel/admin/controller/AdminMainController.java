@@ -1,15 +1,12 @@
 package com.techgel.admin.controller;
 
-import com.techgel.common.dto.EProfileDTO;
-import com.techgel.common.dto.HomeNavigationDTO;
+import com.techgel.common.entity.adminSettings.Carousel;
 import com.techgel.common.entity.adminSettings.EProfile;
 import com.techgel.common.entity.adminSettings.HomeNavigation;
-import com.techgel.common.entity.adminSettings.SEO;
+import com.techgel.common.service.CarouselService;
 import com.techgel.common.service.EProfileService;
 import com.techgel.common.service.HomeNavigationService;
-import com.techgel.common.service.SEOService;
 import com.techgel.common.utils.SlugUtils;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -19,7 +16,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.*;
@@ -28,9 +24,9 @@ import java.util.*;
 @RequiredArgsConstructor
 @RequestMapping("/webadmin")
 public class AdminMainController {
-    final HomeNavigationService homeNavigationService;
-    final SEOService seoService;
-    final EProfileService eProfileService;
+    private final HomeNavigationService homeNavigationService;
+    private final EProfileService eProfileService;
+    private final CarouselService carouselService;
 
     @GetMapping("")
     public String viewWebAdmin(){
@@ -55,18 +51,14 @@ public class AdminMainController {
     @GetMapping("/home/navigation/edit")
     public String homeNavigationEdit(Model model, @RequestParam(name = "id") Long idNavigation){
         HomeNavigation homeNavigation = homeNavigationService.getById(idNavigation);
-        SEO seo = seoService.getById(homeNavigation.getSeo().getId());
-        HomeNavigationDTO homeNavigationDTO = new HomeNavigationDTO(homeNavigation, seo);
 
-        model.addAttribute("homeNavigationDTO", homeNavigationDTO);
         model.addAttribute("homeNavigation", homeNavigation);
-        model.addAttribute("SEO", seo);
         return "admin/home/navigation_edit";
     }
 
     @PostMapping("/home/navigation/edit")
     public String saveHomeNavigationEdit(RedirectAttributes redirectAttributes, @RequestParam String action,
-                                         @Valid HomeNavigationDTO homeNavigationDTO, BindingResult result){
+                                         @Valid HomeNavigation homeNavigation, BindingResult result){
         if(result.hasErrors()){
             Map<String, String> errors = new HashMap<>();
             result.getFieldErrors().forEach(error -> {
@@ -77,20 +69,13 @@ public class AdminMainController {
             redirectAttributes.addFlashAttribute("errors", errors);
             redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
         }else{
-            homeNavigationService.update(homeNavigationDTO.getHomeNavigation());
+            homeNavigationService.update(homeNavigation);
 
-            if(homeNavigationDTO.getSeo().getSeo_slug_vi().trim().equals("")){
-                homeNavigationDTO.getSeo().setSeo_slug_vi(SlugUtils.toSlug(homeNavigationDTO.getHomeNavigation().getTitle_vi()));
-            }
-            if(homeNavigationDTO.getSeo().getSeo_slug_en().trim().equals("")){
-                homeNavigationDTO.getSeo().setSeo_slug_en(SlugUtils.toSlug(homeNavigationDTO.getHomeNavigation().getTitle_en()));
-            }
-            seoService.update(homeNavigationDTO.getSeo());
             redirectAttributes.addFlashAttribute("message", "Chỉnh sửa thành công!");
         }
 
         if(action.equals("save")) return "redirect:/webadmin/home/navigation";
-        return String.format("redirect:/webadmin/home/navigation/edit?id=%s", homeNavigationDTO.getHomeNavigation().getId());
+        return String.format("redirect:/webadmin/home/navigation/edit?id=%s", homeNavigation.getId());
     }
 
     @GetMapping("/home/e-profile")
@@ -106,20 +91,17 @@ public class AdminMainController {
     @GetMapping("/home/e-profile/edit")
     public String homeEProfileEdit(Model model, @RequestParam(name = "id") Long idEProfile){
         EProfile eProfile = eProfileService.getById(idEProfile);
-        SEO seo = seoService.getById(eProfile.getSeo().getId());
-        EProfileDTO eProfileDTO = new EProfileDTO(eProfile, seo);
 
-        model.addAttribute("eProfileDTO", eProfileDTO);
         model.addAttribute("eProfile", eProfile);
-        model.addAttribute("SEO", seo);
         return "admin/home/eprofile_edit";
     }
 
     @PostMapping("/home/e-profile/edit")
-    public String saveEProfileEdit(RedirectAttributes redirectAttributes, @RequestParam String action,
-                                        @RequestParam(name = "image") MultipartFile image,
-                                         @RequestParam(name = "file") MultipartFile file,
-                                         @Valid EProfileDTO eProfileDTO, BindingResult result){
+    public String saveEProfileEdit(RedirectAttributes redirectAttributes,
+                                   @RequestParam String action,
+                                    @RequestParam(name = "image-delete", required = false) boolean image_delete,
+                                    @RequestParam(name = "file-delete", required = false) boolean file_delete,
+                                    @Valid EProfile eProfile, BindingResult result){
 
         if(result.hasErrors()){
             Map<String, String> errors = new HashMap<>();
@@ -129,19 +111,77 @@ public class AdminMainController {
             redirectAttributes.addFlashAttribute("errors", errors);
             redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
         }else{
-            eProfileService.update(eProfileDTO.getEProfile());
+            if(image_delete) eProfile.setImage_url(null);
+            if(file_delete) eProfile.setFile_url(null);
 
-            if(eProfileDTO.getSeo().getSeo_slug_vi().trim().equals("")){
-                eProfileDTO.getSeo().setSeo_slug_vi(SlugUtils.toSlug(eProfileDTO.getEProfile().getTitle_vi()));
-            }
-            if(eProfileDTO.getSeo().getSeo_slug_en().trim().equals("")){
-                eProfileDTO.getSeo().setSeo_slug_en(SlugUtils.toSlug(eProfileDTO.getEProfile().getTitle_en()));
-            }
-            seoService.update(eProfileDTO.getSeo());
+            eProfileService.update(eProfile);
+
             redirectAttributes.addFlashAttribute("message", "Chỉnh sửa thành công!");
         }
 
         if(action.equals("save")) return "redirect:/webadmin/home/e-profile";
-        return String.format("redirect:/webadmin/home/e-profile/edit?id=%s", eProfileDTO.getEProfile().getId());
+        return String.format("redirect:/webadmin/home/e-profile/edit?id=%s", eProfile.getId());
+    }
+
+    @GetMapping("/home/carousel")
+    public String homeCarousel(Model model){
+        List<Carousel> carousels = carouselService.getAll();
+        model.addAttribute("carousels", carousels);
+        return "admin/home/carousel";
+    }
+
+    @GetMapping("/home/carousel/create")
+    public String homeCarouselCreate(Model model){
+        model.addAttribute("carousel", new Carousel());
+        return "admin/home/carousel_edit";
+    }
+
+    @GetMapping("/home/carousel/edit")
+    public String homeCarouselEdit(Model model, @RequestParam Long id){
+        try{
+            Carousel carousel = carouselService.getById(id);
+            if(carousel != null){
+                model.addAttribute("carousel", carousel);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/home/carousel_edit";
+    }
+
+    @PostMapping("/home/carousel/edit")
+    public String saveHomeCarousel(RedirectAttributes redirectAttributes,
+                                   @RequestParam String action,
+                                   @RequestParam(name = "image-delete", required = false) boolean image_delete,
+                                   @Valid Carousel carousel,
+                                   BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("errors", errors);
+                redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            }else {
+                if(image_delete) carousel.setImage_url(null);
+                carouselService.update(carousel);
+                redirectAttributes.addFlashAttribute("message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            return "redirect:/webadmin/home/carousel";
+        }
+
+        if(action.equals("save")) return "redirect:/webadmin/home/carousel";
+        return String.format("redirect:/webadmin/home/carousel/edit?id=%s", carousel.getId());
+    }
+
+    @GetMapping("/clients-partners")
+    public String viewClientsPartners(Model model){
+        List<Carousel> carousels = carouselService.getAll();
+        model.addAttribute("carousels", carousels);
+        return "admin/clients-partners";
     }
 }

@@ -30,17 +30,17 @@ public class MainController {
         return "clients/home/home";
     }
 
-    @GetMapping("/{slug:[a-z0-9-]+}")
-    public String handleSlug(@PathVariable String slug, Model model){
-        HomeNavigation homeNavigation = homeNavigationService.getTemplate(slug);
-        model.addAttribute("title", homeNavigation.getSeo().getSeo_title_vi());
-        model.addAttribute("keywords", homeNavigation.getSeo().getSeo_keywords_vi());
-        model.addAttribute("description", homeNavigation.getSeo().getSeo_description_vi());
-        model.addAttribute("og_title", homeNavigation.getSeo().getSeo_og_title_vi());
-        model.addAttribute("og_description", homeNavigation.getSeo().getSeo_og_description_vi());
-
-        return "clients/" + homeNavigation.getUrl_templates();
-    }
+//    @GetMapping("/{slug:[a-z0-9-]+}")
+//    public String handleSlug(@PathVariable String slug, Model model){
+//        HomeNavigation homeNavigation = homeNavigationService.getTemplate(slug);
+//        model.addAttribute("title", homeNavigation.getSeo().getSeo_title_vi());
+//        model.addAttribute("keywords", homeNavigation.getSeo().getSeo_keywords_vi());
+//        model.addAttribute("description", homeNavigation.getSeo().getSeo_description_vi());
+//        model.addAttribute("og_title", homeNavigation.getSeo().getSeo_og_title_vi());
+//        model.addAttribute("og_description", homeNavigation.getSeo().getSeo_og_description_vi());
+//
+//        return "clients/" + homeNavigation.getUrl_templates();
+//    }
 
     @GetMapping("/profile")
     public String viewBrochure(){

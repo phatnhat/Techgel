@@ -49,31 +49,26 @@ public class HomeNavigation extends BasedEntity {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "parent", cascade = CascadeType.ALL)
     private Set<HomeNavigation> children = new HashSet<>();
 
-    @OneToOne(cascade = CascadeType.ALL, optional = true)
-    @JoinColumn(name = "seo_id")
-    private SEO seo;
-
-    private String url_templates;
+    private String slug;
 
     public HomeNavigation(Long id) {
         this.id = id;
     }
 
-    public HomeNavigation(String title_vi, String title_en, boolean isPublished, SEO seo, int displayOrder) {
+    public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder) {
         this.title_vi = title_vi;
         this.title_en = title_en;
         this.isPublished = isPublished;
         this.displayOrder = displayOrder;
-        this.seo = seo;
     }
 
-    public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder, SEO seo, HomeNavigation parent) {
+    public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder, HomeNavigation parent, String slug) {
         this.title_vi = title_vi;
         this.title_en = title_en;
         this.isPublished = isPublished;
         this.displayOrder = displayOrder;
-        this.seo = seo;
         this.parent = parent;
+        this.slug = slug;
     }
 
     public String getSlug(){
