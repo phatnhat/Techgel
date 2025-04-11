@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+:root {
+  --themeDarker: #79140f;
+  --themeDark: #a51b14;
+  --themeDarkAlt: #c32017;
+  --themePrimary: #DA251A;
+  --themeSecondary: #dd3b32;
+  --themeTertiary: #e8746e;
+  --themeLight: #f4b6b3;
+  --themeLighter: #f9d8d6;
+  --themeLighterAlt: #fdf5f5;
+  --black: #000000;
+  --white: #ffffff;
+  --neutralDark: #201f1e;
+  --neutralPrimary: #323130;
+  --neutralPrimaryAlt: #3b3a39;
+  --neutralSecondary: #605e5c;
+  --neutralTertiary: #a19f9d;
+  --neutralTertiaryAlt: #c8c6c4;
+  --neutralQuaternaryAlt: #e1dfdd;
+  --neutralLight: #edebe9;
+  --neutralLighter: #f3f2f1;
+  --neutralLighterAlt: #faf9f8;
+  --font-primary: arial, sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+}
+
+[data-theme=dark] {
+  --themeDarker: #fbe9e7;
+  --themeDark: #f4b6b3;
+  --themeDarkAlt: #e8746e;
+  --themePrimary: #dd3b32;
+  --themeSecondary: #c32017;
+  --themeTertiary: #a51b14;
+  --themeLight: #79140f;
+  --themeLighter: #4a0e0b;
+  --themeLighterAlt: #2a0504;
+  --black: #ffffff;
+  --white: #000000;
+  --neutralDark: #fafafa;
+  --neutralPrimary: #e0e0e0;
+  --neutralPrimaryAlt: #d4d4d4;
+  --neutralSecondary: #a8a8a8;
+  --neutralTertiary: #808080;
+  --neutralTertiaryAlt: #666666;
+  --neutralQuaternaryAlt: #4d4d4d;
+  --neutralLight: #3a3a3a;
+  --neutralLighter: #2a2a2a;
+  --neutralLighterAlt: #1a1a1a;
+  --font-primary: arial, sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+}
+
+:root {
+  --alwaysWhite: #ffffff;
+  --alwaysBlack: #000000;
+  --font-size-base: 16px;
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.75rem;
+  --font-size-h3: 2.25rem;
+  --font-size-h4: 1.75rem;
+  --font-size-h5: 1.5rem;
+  --font-size-h6: 1.25rem;
+  /* Paragraphs */
+  --font-size-p: 1rem;
+  --font-size-p-bold: 1.125rem;
+  --font-size-p-small: 0.875rem;
+  --font-size-p-small-bold: 0.875rem;
+  /* Font weights */
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --font-size-p: 0.9375rem;
+    --font-size-p-bold: 1.0625rem;
+    --font-size-p-small: 0.8125rem;
+    --font-size-p-small-bold: 0.8125rem;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2.125rem;
+    --font-size-h3: 1.75rem;
+    --font-size-h4: 1.5rem;
+    --font-size-h5: 1.25rem;
+    --font-size-h6: 1.125rem;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --font-size-p: 0.875rem;
+    --font-size-p-bold: 1rem;
+    --font-size-p-small: 0.75rem;
+    --font-size-p-small-bold: 0.75rem;
+    --font-size-h1: 2rem;
+    --font-size-h2: 1.75rem;
+    --font-size-h3: 1.5rem;
+    --font-size-h4: 1.25rem;
+    --font-size-h5: 1rem;
+    --font-size-h6: 0.875rem;
+  }
+}
+html {
+  width: fit-content;
+  font-size: 16px;
+}
+
+.content-wrapper {
+  width: 100vw;
+}
+
+.about-area {
+  background-color: var(--white);
+}
+
+.section-head .title {
+  color: var(--black);
+  font-size: var(--font-size-h2);
+  line-height: 2.8125rem;
+  margin-bottom: 0;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0 !important;
+  font-family: var(--font-secondary);
+}
+
+/*# sourceMappingURL=base.css.map */

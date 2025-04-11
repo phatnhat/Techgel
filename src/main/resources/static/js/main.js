@@ -1,3 +1,43 @@
+const userTheme = localStorage.getItem("theme") || "light"; // fallback
+console.log(userTheme);
+document.documentElement.setAttribute("data-theme", 'dark');
+
+$(document).ready(function () {
+  addSplitCollabAnimation();
+});
+
+// Functionality
+function addSplitCollabAnimation() {
+  $(".split-collab").each(function () {
+    const $el = $(this);
+    
+    const split = new SplitText($el, {
+      type: "chars",
+    });
+
+    const letters = split.chars;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: $el,
+        start: "top 85%",
+        once: true, // only run once
+        onEnter: () => $el.removeClass("split-collab"), // ✅ FIXED: remove class (no dot)
+      },
+    });
+
+    tl.set($el, { opacity: 1 }).from(letters, {
+      duration: 0.5,
+      autoAlpha: 0,
+      x: 50,
+      stagger: { amount: 1 },
+      ease: "back.out(1)",
+    });
+  });
+}
+
+// Phat's code
+
 $(document).on('click', '#side-collups', function () {
     $("#side-hide").addClass("show");
     $("#overlay_every-where").addClass("bgshow");
@@ -222,39 +262,6 @@ if (window.innerWidth > 991) {
     gsap.registerPlugin(SplitText);
 
     $(document).ready(function () {
-        let addAnimation = function () {
-            $(".split-collab").each(function (index) {
-                const textInstance = $(this);
-                const text = new SplitText(textInstance, {
-                    type: "chars",
-                });
-
-                let letters = text.chars;
-
-                let tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: textInstance,
-                        start: "top 85%",
-                        end: "top 85%",
-                        onComplete: function () {
-                            textInstance.removeClass(".split-collab");
-                        }
-                    }
-                });
-
-                tl.set(textInstance, { opacity: 1 }).from(letters, {
-                    duration: .5,
-                    autoAlpha: 0,
-                    x: 50,
-                    // scaleY: 0,
-                    // skewX: 50,
-                    stagger: { amount: 1 },
-                    ease: "back.out(1)"
-                });
-            });
-        };
-
-        addAnimation();
 
         window.addEventListener("resize", function (event) {
             if ($(window).width() >= 992) {

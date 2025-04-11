@@ -1,349 +1,585 @@
 <!DOCTYPE html>
 <html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="content-wrapper">
-        <style>
-            .breadcrumb-bg {
-                background-image: url(https://img.freepik.com/free-photo/business-people-partnership-support-team-urban-scene-concept_53876-144834.jpg?t=st=1743404958~exp=1743408558~hmac=83189300f44b2cb94aa41c6bbef03d7802e1c4e7fb1dbcb160b614b54ba4bccb&w=1380);
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: calc(100vh - 80px);
-            }
+      <style>
+        .breadcrumb-bg {
+          background-image: url(https://img.freepik.com/free-photo/business-people-partnership-support-team-urban-scene-concept_53876-144834.jpg?t=st=1743404958~exp=1743408558~hmac=83189300f44b2cb94aa41c6bbef03d7802e1c4e7fb1dbcb160b614b54ba4bccb&w=1380);
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: calc(100vh - 80px);
+        }
 
-            .bg-1 {
-                background-image: url([[@{/imgs/bg-01.jpg}]]);
-            }
+        .bg-1 {
+          background-image: url([[@{/imgs/bg-01.jpg}]]);
+        }
 
-            .line_img {
-                height: 10px;
-                background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center / auto 200%;
-            }
-        </style>
-        <div class="breadcrumb-area bg_image breadcrumb-bg">
-            <div id="brxe-oubmqr" class="brxe-container">
-                <div id="brxe-twzaik" class="brxe-block"news>
-                    <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline">
-                        <h1><span class="uni-text-outline">VỀ TECHGEL<br></span>TỔNG QUAN</h1>
-                    </div>
-                </div>
-                <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
-                    <div id="brxe-rqhadm" class="brxe-text-basic"news>Cuộn chuột</div>
-                    <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
-                </a>
+        .line_img {
+          height: 10px;
+          background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center /
+            auto 200%;
+        }
+      </style>
+      <div class="breadcrumb-area bg_image breadcrumb-bg">
+        <div id="brxe-oubmqr" class="brxe-container">
+          <div id="brxe-twzaik" class="brxe-block" news>
+            <div
+              id="brxe-naxryb"
+              class="brxe-text uni-text-outline-white uni-text-outline"
+            >
+              <h1>
+                <span class="uni-text-outline">VỀ TECHGEL<br /></span>TỔNG QUAN
+              </h1>
             </div>
+          </div>
+          <a
+            id="brxe-ygpexj"
+            href="#next"
+            data-brx-anchor="true"
+            class="brxe-block"
+          >
+            <div id="brxe-rqhadm" class="brxe-text-basic" news>Cuộn chuột</div>
+            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+          </a>
         </div>
+      </div>
 
-        <div id="next" class="about-area tmp-section-gap about-style-one">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <div class="about-inner">
-                            <div class="section-head text-align-left section-head-one-side">
-                                <div class="section-sub-title">
-                                    <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
-                                    <span class="subtitle">VỀ CHÚNG TÔI</span>
-                                </div>
-                                <h2 class="title split-collab" style="opacity: 1;">
+      <div id="next" class="about-area tmp-section-gap about-style-one">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <div class="about-inner">
+                <div class="section-head text-align-left section-head-one-side">
+                  <div class="section-sub-title">
+                    <img
+                      th:src="@{/imgs/section-custom-menubar.png}"
+                      alt="Corporate_service"
+                    />
+                    <span class="subtitle">VỀ CHÚNG TÔI</span>
+                  </div>
+                  <!-- <h2 class="title split-collab" style="opacity: 1;">
                                   <span th:each="t: ${'TECHGEL'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
                                       [[${ #strings.replace(t, ' ', '&nbsp;') }]]
                                   </span>
-                                </h2>
-                            </div>
-                            <p class="description" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-                                Công ty CP Kỹ thuật Công nghệ Sài Gòn (TECHGEL) là một trong những đơn vị hàng đầu tại Việt Nam trong lĩnh vực thiết kế, cung cấp và lắp đặt hệ thống điện, hàng không, công nghiệp, dân dụng, hạ tầng & công nghệ. Với hơn 25 năm kinh nghiệm, TECHGEL đã khẳng định được vị thế của mình trên thị trường và mang đến cho khách hàng những giải pháp toàn diện, tiên tiến, hiệu quả và bền vững, đạt tiêu chuẩn hàng đầu quốc tế & trong nước.                          </p>
-                            <div class="thumbnail-with-title" data-sal-delay="350" data-sal="slide-up" data-sal-duration="800">
-                                <div class="thumbnail">
-                                    <img th:src="@{/imgs/logo-01.png}" alt="Logo Techgel">
-                                </div>
-                                <div class="title">Tầm nhìn • Sứ mệnh • Giá trị cốt lõi</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <img width="450" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800" src="https://techgel.com.vn/wp-content/uploads/2023/08/gioi-thieu-Cong-Ty-Cp-Ky-Thuat-Cong-Nghe-Sai-Gon.png" alt="">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <h2 style="color: #FF8C00;" data-sal-delay="200" data-sal="slide-left" data-sal-duration="800">Kỹ thuật Công nghệ Sài Gòn</h2>
-                            <i data-sal-delay="200" data-sal="slide-right" data-sal-duration="800">Công nghệ tiên phong, kiến tạo nền tảng vững chắc cho mọi công trình</i>
-                        </div>
-                    </div>
+                                </h2> -->
+                  <h2 class="title split-collab" data-text="TECHGEL">
+                    TECHGEL
+                  </h2>
                 </div>
+                <p
+                  class="description"
+                  data-sal-delay="200"
+                  data-sal="slide-up"
+                  data-sal-duration="800"
+                >
+                  Công ty CP Kỹ thuật Công nghệ Sài Gòn (TECHGEL) là một trong
+                  những đơn vị hàng đầu tại Việt Nam trong lĩnh vực thiết kế,
+                  cung cấp và lắp đặt hệ thống điện, hàng không, công nghiệp,
+                  dân dụng, hạ tầng & công nghệ. Với hơn 25 năm kinh nghiệm,
+                  TECHGEL đã khẳng định được vị thế của mình trên thị trường và
+                  mang đến cho khách hàng những giải pháp toàn diện, tiên tiến,
+                  hiệu quả và bền vững, đạt tiêu chuẩn hàng đầu quốc tế & trong
+                  nước.
+                </p>
+                <div
+                  class="thumbnail-with-title"
+                  data-sal-delay="350"
+                  data-sal="slide-up"
+                  data-sal-duration="800"
+                >
+                  <div class="thumbnail">
+                    <img th:src="@{/imgs/logo-01.png}" alt="Logo Techgel" />
+                  </div>
+                  <div class="title">Tầm nhìn • Sứ mệnh • Giá trị cốt lõi</div>
+                </div>
+              </div>
             </div>
-        </div>
-
-        <div class="about-ebrochure tmp-section-gap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-head pb-3">
-                            <div class="section-sub-title center-title">
-                                <img th:src="@{imgs/section-custom-menubar.png}" alt="Corporate_service">
-                                <span class="subtitle">E-PROFILE</span>
-                            </div>
-                            <h2 class="title split-collab" style="opacity: 0;">
-                              <span th:each="t: ${'Hồ sơ năng lực'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                              </span>
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-md-4">
-                        <div>
-                            <div class="img_shadow mb-md-5 mb-3 px-5 px-md-0">
-                                <a data-sal-delay="150" data-sal="zoom-in" data-sal-duration="800" th:href="@{/profile}" target="_blank" class="d-flex justify-content-center">
-                                    <img class="img-fluid" th:src="@{/imgs/brochure-cover.png}" alt="" draggable="false"></a>
-                            </div>
-                            <div class="text-center">
-                                <a th:href="@{/brochure}" target="_blank" class="btn-brochure">e-Profile</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-5">
+              <img
+                width="450"
+                data-sal-delay="200"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                src="https://techgel.com.vn/wp-content/uploads/2023/08/gioi-thieu-Cong-Ty-Cp-Ky-Thuat-Cong-Nghe-Sai-Gon.png"
+                alt=""
+              />
+              <div
+                class="d-flex flex-column align-items-center justify-content-center"
+              >
+                <h2
+                  style="color: #ff8c00"
+                  data-sal-delay="200"
+                  data-sal="slide-left"
+                  data-sal-duration="800"
+                >
+                  Kỹ thuật Công nghệ Sài Gòn
+                </h2>
+                <i
+                  data-sal-delay="200"
+                  data-sal="slide-right"
+                  data-sal-duration="800"
+                  >Công nghệ tiên phong, kiến tạo nền tảng vững chắc cho mọi
+                  công trình</i
+                >
+              </div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <div class="testimonial-with-brand bg-1">
-            <div class="testimonial-brand-area tmp-section-gapTop">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="testimonials-button-area">
-                                <div class="section-head text-align-left">
-                                    <div class="section-sub-title">
-                                        <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
-                                        <span class="subtitle">Khách hàng đã nói gì về chúng tôi?</span>
-                                    </div>
-                                    <h2 class="title split-collab" style="opacity: 1;">
-                                      <span th:each="t: ${'Cảm nhận khách hàng'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                                          [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                                      </span>
-                                    </h2>
-                                </div>
-                                <div class="button-next-prev">
-                                    <div class="swiper-button-prev"></div>
-                                    <div class="swiper-button-next"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="swiper-style-one tmp-section-gapBottom">
-                                <div class="swiper-container-style-two swiper-initialized swiper-horizontal swiper-backface-hidden">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="single-card card-horizontal">
-                                                <div class="card-inner">
-                                                    <div class="content">
-                                                        <div class="rating rating-style-three" >
-                                                            <div class="stars-group" >
-                                                                <div class="star" >
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <p class="description">Its incredible. its really wonderful. company has completely surpassed our expect. Urna porttitor rhoncus dolor purus non enim praesent at the facilisis lectus. Adipiscing tristique risus.</p>
-                                                        <div class="content content-without-bg">
-                                                            <div class="name">Clade Owen</div>
-                                                            <div class="designation">CEO &amp; Founder</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="thumbnail">
-                                                        <img src="https://themes-park.net/product/html/bizper/assets/images/testimonial/testimonial-1.jpg" alt="testimonial">
-                                                        <div class="icon icon-quote">
-                                                            <i class="fa-solid fa-quote-left"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="single-card card-horizontal">
-                                                <div class="card-inner">
-                                                    <div class="content">
-                                                        <div class="rating rating-style-three">
-                                                            <div class="stars-group">
-                                                                <div class="star">
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <p class="description">Its incredible. its really wonderful. company has completely surpassed our expect. Urna porttitor rhoncus dolor purus non enim praesent at the facilisis lectus. Adipiscing tristique risus.</p>
-
-                                                        <div class="content content-without-bg">
-                                                            <div class="name">Nicolas Alvin</div>
-                                                            <div class="designation">Web Developer</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="thumbnail">
-                                                        <img src="	https://themes-park.net/product/html/bizper/assets/images/testimonial/testimonial-2.jpg" alt="testimonial">
-                                                        <div class="icon icon-quote">
-                                                            <i class="fa-solid fa-quote-left"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="single-card card-horizontal">
-                                                <div class="card-inner">
-                                                    <div class="content">
-                                                        <div class="rating rating-style-three" >
-                                                            <div class="stars-group" >
-                                                                <div class="star" >
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <p class="description">Its incredible. its really wonderful. company has completely surpassed our expect. Urna porttitor rhoncus dolor purus non enim praesent at the facilisis lectus. Adipiscing tristique risus.</p>
-                                                        <div class="content content-without-bg">
-                                                            <div class="name">Clade Owen</div>
-                                                            <div class="designation">CEO &amp; Founder</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="thumbnail">
-                                                        <img src="https://themes-park.net/product/html/bizper/assets/images/testimonial/testimonial-1.jpg" alt="testimonial">
-                                                        <div class="icon icon-quote">
-                                                            <i class="fa-solid fa-quote-left"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="single-card card-horizontal">
-                                                <div class="card-inner">
-                                                    <div class="content">
-                                                        <div class="rating rating-style-three">
-                                                            <div class="stars-group">
-                                                                <div class="star">
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <p class="description">Its incredible. its really wonderful. company has completely surpassed our expect. Urna porttitor rhoncus dolor purus non enim praesent at the facilisis lectus. Adipiscing tristique risus.</p>
-
-                                                        <div class="content content-without-bg">
-                                                            <div class="name">Nicolas Alvin</div>
-                                                            <div class="designation">Web Developer</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="thumbnail">
-                                                        <img src="	https://themes-park.net/product/html/bizper/assets/images/testimonial/testimonial-2.jpg" alt="testimonial">
-                                                        <div class="icon icon-quote">
-                                                            <i class="fa-solid fa-quote-left"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="about-ebrochure tmp-section-gap">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-head pb-3">
+                <div class="section-sub-title center-title">
+                  <img
+                    th:src="@{imgs/section-custom-menubar.png}"
+                    alt="Corporate_service"
+                  />
+                  <span class="subtitle">E-PROFILE</span>
                 </div>
+                <h2 class="title split-collab" style="opacity: 0">
+                  <span
+                    th:each="t: ${'Hồ sơ năng lực'.toCharArray()}"
+                    style="
+                      position: relative;
+                      display: inline-block;
+                      translate: none;
+                      rotate: none;
+                      scale: none;
+                      transform: translate(0px, 0px);
+                      opacity: 1;
+                      visibility: inherit;
+                    "
+                  >
+                    [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                  </span>
+                </h2>
+              </div>
             </div>
-        </div>
-
-        <!-- partners & clients -->
-        <div class="tmp-partner-area" style="position: relative; padding: 50px 0;">
-            <div class="container-full">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-head pb-3">
-                            <div class="section-sub-title center-title">
-                                <img th:src="@{imgs/section-custom-menubar.png}" alt="Corporate_service">
-                                <span class="subtitle">Đối tác và khách hàng</span>
-                            </div>
-                            <h2 class="title split-collab" style="opacity: 0;">
-                          <span th:each="t: ${''.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                          </span>
-                            </h2>
-                        </div>
-                    </div>
+          </div>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-4">
+              <div>
+                <div class="img_shadow mb-md-5 mb-3 px-5 px-md-0">
+                  <a
+                    data-sal-delay="150"
+                    data-sal="zoom-in"
+                    data-sal-duration="800"
+                    th:href="@{/profile}"
+                    target="_blank"
+                    class="d-flex justify-content-center"
+                  >
+                    <img
+                      class="img-fluid"
+                      th:src="@{/imgs/brochure-cover.png}"
+                      alt=""
+                      draggable="false"
+                  /></a>
                 </div>
-                <div class="partner-area-slider">
-                    <div class="slide-track">
-                        <div class="slide">
-                            <img src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://sangphatwater.com/upload/images/logo-vikoda.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="	https://techgel.com.vn/wp-content/uploads/2023/08/67.jpg" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://sangphatwater.com/upload/images/logo-vikoda.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="	https://techgel.com.vn/wp-content/uploads/2023/08/67.jpg" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png" width="100" class="img-fluid" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp" width="100" class="img-fluid" alt="" />
-                        </div>
-                    </div>
+                <div class="text-center">
+                  <a th:href="@{/brochure}" target="_blank" class="btn-brochure"
+                    >e-Profile</a
+                  >
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+
+      <div class="testimonial-with-brand bg-1">
+        <div class="testimonial-brand-area tmp-section-gapTop">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="testimonials-button-area">
+                  <div class="section-head text-align-left">
+                    <div class="section-sub-title">
+                      <img
+                        th:src="@{/imgs/section-custom-menubar.png}"
+                        alt="Corporate_service"
+                      />
+                      <span class="subtitle"
+                        >Khách hàng đã nói gì về chúng tôi?</span
+                      >
+                    </div>
+                    <h2 class="title split-collab" style="opacity: 1">
+                      <span
+                        th:each="t: ${'Cảm nhận khách hàng'.toCharArray()}"
+                        style="
+                          position: relative;
+                          display: inline-block;
+                          translate: none;
+                          rotate: none;
+                          scale: none;
+                          transform: translate(0px, 0px);
+                          opacity: 1;
+                          visibility: inherit;
+                        "
+                      >
+                        [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                      </span>
+                    </h2>
+                  </div>
+                  <div class="button-next-prev">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="swiper-style-one tmp-section-gapBottom">
+                  <div
+                    class="swiper-container-style-two swiper-initialized swiper-horizontal swiper-backface-hidden"
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="single-card card-horizontal">
+                          <div class="card-inner">
+                            <div class="content">
+                              <div class="rating rating-style-three">
+                                <div class="stars-group">
+                                  <div class="star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                  </div>
+                                </div>
+                              </div>
+                              <p class="description">
+                                Its incredible. its really wonderful. company
+                                has completely surpassed our expect. Urna
+                                porttitor rhoncus dolor purus non enim praesent
+                                at the facilisis lectus. Adipiscing tristique
+                                risus.
+                              </p>
+                              <div class="content content-without-bg">
+                                <div class="name">Clade Owen</div>
+                                <div class="designation">CEO &amp; Founder</div>
+                              </div>
+                            </div>
+                            <div class="thumbnail">
+                              <img
+                                src="https://themes-park.net/product/html/bizper/assets/images/testimonial/testimonial-1.jpg"
+                                alt="testimonial"
+                              />
+                              <div class="icon icon-quote">
+                                <i class="fa-solid fa-quote-left"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="single-card card-horizontal">
+                          <div class="card-inner">
+                            <div class="content">
+                              <div class="rating rating-style-three">
+                                <div class="stars-group">
+                                  <div class="star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                  </div>
+                                </div>
+                              </div>
+                              <p class="description">
+                                Its incredible. its really wonderful. company
+                                has completely surpassed our expect. Urna
+                                porttitor rhoncus dolor purus non enim praesent
+                                at the facilisis lectus. Adipiscing tristique
+                                risus.
+                              </p>
+
+                              <div class="content content-without-bg">
+                                <div class="name">Nicolas Alvin</div>
+                                <div class="designation">Web Developer</div>
+                              </div>
+                            </div>
+                            <div class="thumbnail">
+                              <img
+                                src="	https://themes-park.net/product/html/bizper/assets/images/testimonial/testimonial-2.jpg"
+                                alt="testimonial"
+                              />
+                              <div class="icon icon-quote">
+                                <i class="fa-solid fa-quote-left"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="single-card card-horizontal">
+                          <div class="card-inner">
+                            <div class="content">
+                              <div class="rating rating-style-three">
+                                <div class="stars-group">
+                                  <div class="star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                  </div>
+                                </div>
+                              </div>
+                              <p class="description">
+                                Its incredible. its really wonderful. company
+                                has completely surpassed our expect. Urna
+                                porttitor rhoncus dolor purus non enim praesent
+                                at the facilisis lectus. Adipiscing tristique
+                                risus.
+                              </p>
+                              <div class="content content-without-bg">
+                                <div class="name">Clade Owen</div>
+                                <div class="designation">CEO &amp; Founder</div>
+                              </div>
+                            </div>
+                            <div class="thumbnail">
+                              <img
+                                src="https://themes-park.net/product/html/bizper/assets/images/testimonial/testimonial-1.jpg"
+                                alt="testimonial"
+                              />
+                              <div class="icon icon-quote">
+                                <i class="fa-solid fa-quote-left"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="single-card card-horizontal">
+                          <div class="card-inner">
+                            <div class="content">
+                              <div class="rating rating-style-three">
+                                <div class="stars-group">
+                                  <div class="star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                  </div>
+                                </div>
+                              </div>
+                              <p class="description">
+                                Its incredible. its really wonderful. company
+                                has completely surpassed our expect. Urna
+                                porttitor rhoncus dolor purus non enim praesent
+                                at the facilisis lectus. Adipiscing tristique
+                                risus.
+                              </p>
+
+                              <div class="content content-without-bg">
+                                <div class="name">Nicolas Alvin</div>
+                                <div class="designation">Web Developer</div>
+                              </div>
+                            </div>
+                            <div class="thumbnail">
+                              <img
+                                src="	https://themes-park.net/product/html/bizper/assets/images/testimonial/testimonial-2.jpg"
+                                alt="testimonial"
+                              />
+                              <div class="icon icon-quote">
+                                <i class="fa-solid fa-quote-left"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- partners & clients -->
+      <div class="tmp-partner-area" style="position: relative; padding: 50px 0">
+        <div class="container-full">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-head pb-3">
+                <div class="section-sub-title center-title">
+                  <img
+                    th:src="@{imgs/section-custom-menubar.png}"
+                    alt="Corporate_service"
+                  />
+                  <span class="subtitle">Đối tác và khách hàng</span>
+                </div>
+                <h2 class="title split-collab" style="opacity: 0">
+                  <span
+                    th:each="t: ${''.toCharArray()}"
+                    style="
+                      position: relative;
+                      display: inline-block;
+                      translate: none;
+                      rotate: none;
+                      scale: none;
+                      transform: translate(0px, 0px);
+                      opacity: 1;
+                      visibility: inherit;
+                    "
+                  >
+                    [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                  </span>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="partner-area-slider">
+            <div class="slide-track">
+              <div class="slide">
+                <img
+                  src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://sangphatwater.com/upload/images/logo-vikoda.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="	https://techgel.com.vn/wp-content/uploads/2023/08/67.jpg"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://sangphatwater.com/upload/images/logo-vikoda.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="	https://techgel.com.vn/wp-content/uploads/2023/08/67.jpg"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp"
+                  width="100"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
