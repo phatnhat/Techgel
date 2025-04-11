@@ -1,162 +1,457 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <div th:fragment="navigation">
-        <header class="tmp-header-area-start header-one position-relative bg-white" style="z-index:999;">
-<!--            <div class="header-top-one">-->
-<!--                <div class="container">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-lg-12">-->
-<!--                            <div class="header-top-inner">-->
-<!--                                <div class="left-information-area">-->
-<!--                                    <div class="location-area">-->
-<!--                                        <i class="fa-solid fa-location-dot"></i>-->
-<!--                                        <a href="#">30 Phan Chu Trinh, Phường 2, Bình Thạnh, Hồ Chí Minh</a>-->
-<!--                                    </div>-->
-<!--&lt;!&ndash;                                    <div class="working-time">&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <i class="fa-regular fa-clock"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <p>Giờ làm việc: 8:30 AM – 5:30 PM</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
-<!--                                </div>-->
-<!--                                <div class="right-header-top">-->
-<!--&lt;!&ndash;                                    <div class="social-area-transparent">&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <span>Theo dõi</span>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
-<!--                                    <div class="social-area-transparent">-->
-<!--                                        <span>Thứ 4 19/03/2025 | Hotline: 028 3510 7030 |</span>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="main-header-one-wrapper">
-                            <div class="header-mida-area">
-                                <div class="logo-area-start">
-                                    <a class="logo" href="/">
-                                        <img width="200" th:src="@{/imgs/logo.jpg}" alt="Techgel Logo">
-                                    </a>
-                                </div>
-                                <div class="mid-header-center">
-                                    <div class="input-area">
-                                        <input type="text" placeholder="Tìm kiếm...">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </div>
-                                </div>
-                                <div class="button-borders" th:if="${eProfile.isPublished}">
-                                    <a th:href="@{/profile}" target="_blank" class="btn primary-button">E-PROFILE</a>
-                                </div>
-                            </div>
-                            <div class="tmp-nav-area-one header--sticky">
-                                <div class="logo-md-sm-device">
-                                    <a href="#" class="logo">
-                                        <img th:src="@{imgs/logo.jpg}" alt="Techgel Logo">
-                                    </a>
-                                </div>
-                                <div class="header-nav main-nav-one">
 
-                                    <nav>
-                                        <ul class="parent-nav">
-                                            <li th:each="n, i: ${homeNavigations}" th:class="${not n.getChildrens.isEmpty() ? 'has-dropdown' : ''}">
-                                                <a th:href="@{${n.slug}}" class="nav-link d-flex justify-content-center align-items-center">
-                                                    <span class="rolling-text">
-                                                        <div class="block">
-                                                            <span>[[${#strings.toUpperCase(n.title_vi)}]]</span>
-                                                        </div>
-                                                    </span>
-                                                </a>
-                                                <ul class="submenu" th:if="${not n.getChildrens.isEmpty()}">
-                                                    <li th:each="sub : ${n.getChildrens}">
-                                                        <a th:href="@{${sub.slug}}">[[${sub.title_vi}]]</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <div class="actions-area">
-                                    <div class="lang-picker dropdown">
-                                        <form action="" method="get">
-                                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="outline:none;border:none;box-shadow:none;">
-                                                <svg width="32" height="32" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#DA251D" d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"></path><path fill="#FF0" d="M19.753 16.037L18 10.642l-1.753 5.395h-5.672l4.589 3.333l-1.753 5.395L18 21.431l4.589 3.334l-1.753-5.395l4.589-3.333z"></path></g></svg>&nbsp;&nbsp; VI
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li><button class="dropdown-item" lang="vi" type="submit"><svg width="32" height="32" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#DA251D" d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"></path><path fill="#FF0" d="M19.753 16.037L18 10.642l-1.753 5.395h-5.672l4.589 3.333l-1.753 5.395L18 21.431l4.589 3.334l-1.753-5.395l4.589-3.333z"></path></g></svg>&nbsp;&nbsp; VI</button></li>
-                                                <li><button class="dropdown-item" lang="en" type="submit"><svg height="32" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#41479B;" d="M473.655,88.276H38.345C17.167,88.276,0,105.443,0,126.621V385.38 c0,21.177,17.167,38.345,38.345,38.345h435.31c21.177,0,38.345-17.167,38.345-38.345V126.621 C512,105.443,494.833,88.276,473.655,88.276z"></path> <path style="fill:#F5F5F5;" d="M511.469,120.282c-3.022-18.159-18.797-32.007-37.814-32.007h-9.977l-163.54,107.147V88.276h-88.276 v107.147L48.322,88.276h-9.977c-19.017,0-34.792,13.847-37.814,32.007l139.778,91.58H0v88.276h140.309L0.531,391.717 c3.022,18.159,18.797,32.007,37.814,32.007h9.977l163.54-107.147v107.147h88.276V316.577l163.54,107.147h9.977 c19.017,0,34.792-13.847,37.814-32.007l-139.778-91.58H512v-88.276H371.691L511.469,120.282z"></path> <g> <polygon style="fill:#FF4B55;" points="282.483,88.276 229.517,88.276 229.517,229.517 0,229.517 0,282.483 229.517,282.483 229.517,423.724 282.483,423.724 282.483,282.483 512,282.483 512,229.517 282.483,229.517 "></polygon> <path style="fill:#FF4B55;" d="M24.793,421.252l186.583-121.114h-32.428L9.224,410.31 C13.377,415.157,18.714,418.955,24.793,421.252z"></path> <path style="fill:#FF4B55;" d="M346.388,300.138H313.96l180.716,117.305c5.057-3.321,9.277-7.807,12.287-13.075L346.388,300.138z"></path> <path style="fill:#FF4B55;" d="M4.049,109.475l157.73,102.387h32.428L15.475,95.842C10.676,99.414,6.749,104.084,4.049,109.475z"></path> <path style="fill:#FF4B55;" d="M332.566,211.862l170.035-110.375c-4.199-4.831-9.578-8.607-15.699-10.86L300.138,211.862H332.566z"></path> </g> </g></svg>&nbsp;&nbsp; EN</button></li>
-                                            </ul>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
+      <header
+        class="tmp-header-area-start header-one position-relative bg-white"
+        style="z-index: 999"
+      >
+        <!--            <div class="header-top-one">-->
+        <!--                <div class="container">-->
+        <!--                    <div class="row">-->
+        <!--                        <div class="col-lg-12">-->
+        <!--                            <div class="header-top-inner">-->
+        <!--                                <div class="left-information-area">-->
+        <!--                                    <div class="location-area">-->
+        <!--                                        <i class="fa-solid fa-location-dot"></i>-->
+        <!--                                        <a href="#">30 Phan Chu Trinh, Phường 2, Bình Thạnh, Hồ Chí Minh</a>-->
+        <!--                                    </div>-->
+        <!--&lt;!&ndash;                                    <div class="working-time">&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        <i class="fa-regular fa-clock"></i>&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        <p>Giờ làm việc: 8:30 AM – 5:30 PM</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+        <!--                                </div>-->
+        <!--                                <div class="right-header-top">-->
+        <!--&lt;!&ndash;                                    <div class="social-area-transparent">&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        <span>Theo dõi</span>&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+        <!--                                    <div class="social-area-transparent">-->
+        <!--                                        <span>Thứ 4 19/03/2025 | Hotline: 028 3510 7030 |</span>-->
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="main-header-one-wrapper">
+                <div class="header-mida-area">
+                  <div class="logo-area-start">
+                    <a class="logo" href="/">
+                      <img
+                        width="200"
+                        th:src="@{/imgs/logo.jpg}"
+                        alt="Techgel Logo"
+                      />
+                    </a>
+                  </div>
+                  <div class="mid-header-center">
+                    <div class="input-area">
+                      <input type="text" placeholder="Tìm kiếm..." />
+                      <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
+                  </div>
+                  <div class="lang-picker dropdown">
+                    <form action="" method="get">
+                      <button
+                        class="btn dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        style="outline: none; border: none; box-shadow: none"
+                      >
+                        <svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 36 36"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          aria-hidden="true"
+                          role="img"
+                          class="iconify iconify--twemoji"
+                          preserveAspectRatio="xMidYMid meet"
+                          fill="#000000"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <path
+                              fill="#DA251D"
+                              d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"
+                            ></path>
+                            <path
+                              fill="#FF0"
+                              d="M19.753 16.037L18 10.642l-1.753 5.395h-5.672l4.589 3.333l-1.753 5.395L18 21.431l4.589 3.334l-1.753-5.395l4.589-3.333z"
+                            ></path>
+                          </g></svg
+                        >&nbsp;&nbsp; VI
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <button class="dropdown-item" lang="vi" type="submit">
+                            <svg
+                              width="32"
+                              height="32"
+                              viewBox="0 0 36 36"
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              aria-hidden="true"
+                              role="img"
+                              class="iconify iconify--twemoji"
+                              preserveAspectRatio="xMidYMid meet"
+                              fill="#000000"
+                            >
+                              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                              <g
+                                id="SVGRepo_tracerCarrier"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></g>
+                              <g id="SVGRepo_iconCarrier">
+                                <path
+                                  fill="#DA251D"
+                                  d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"
+                                ></path>
+                                <path
+                                  fill="#FF0"
+                                  d="M19.753 16.037L18 10.642l-1.753 5.395h-5.672l4.589 3.333l-1.753 5.395L18 21.431l4.589 3.334l-1.753-5.395l4.589-3.333z"
+                                ></path>
+                              </g></svg
+                            >&nbsp;&nbsp; VI
+                          </button>
+                        </li>
+                        <li>
+                          <button class="dropdown-item" lang="en" type="submit">
+                            <svg
+                              height="32"
+                              width="32"
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              viewBox="0 0 512 512"
+                              xml:space="preserve"
+                              fill="#000000"
+                            >
+                              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                              <g
+                                id="SVGRepo_tracerCarrier"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></g>
+                              <g id="SVGRepo_iconCarrier">
+                                <path
+                                  style="fill: #41479b"
+                                  d="M473.655,88.276H38.345C17.167,88.276,0,105.443,0,126.621V385.38 c0,21.177,17.167,38.345,38.345,38.345h435.31c21.177,0,38.345-17.167,38.345-38.345V126.621 C512,105.443,494.833,88.276,473.655,88.276z"
+                                ></path>
+                                <path
+                                  style="fill: #f5f5f5"
+                                  d="M511.469,120.282c-3.022-18.159-18.797-32.007-37.814-32.007h-9.977l-163.54,107.147V88.276h-88.276 v107.147L48.322,88.276h-9.977c-19.017,0-34.792,13.847-37.814,32.007l139.778,91.58H0v88.276h140.309L0.531,391.717 c3.022,18.159,18.797,32.007,37.814,32.007h9.977l163.54-107.147v107.147h88.276V316.577l163.54,107.147h9.977 c19.017,0,34.792-13.847,37.814-32.007l-139.778-91.58H512v-88.276H371.691L511.469,120.282z"
+                                ></path>
+                                <g>
+                                  <polygon
+                                    style="fill: #ff4b55"
+                                    points="282.483,88.276 229.517,88.276 229.517,229.517 0,229.517 0,282.483 229.517,282.483 229.517,423.724 282.483,423.724 282.483,282.483 512,282.483 512,229.517 282.483,229.517 "
+                                  ></polygon>
+                                  <path
+                                    style="fill: #ff4b55"
+                                    d="M24.793,421.252l186.583-121.114h-32.428L9.224,410.31 C13.377,415.157,18.714,418.955,24.793,421.252z"
+                                  ></path>
+                                  <path
+                                    style="fill: #ff4b55"
+                                    d="M346.388,300.138H313.96l180.716,117.305c5.057-3.321,9.277-7.807,12.287-13.075L346.388,300.138z"
+                                  ></path>
+                                  <path
+                                    style="fill: #ff4b55"
+                                    d="M4.049,109.475l157.73,102.387h32.428L15.475,95.842C10.676,99.414,6.749,104.084,4.049,109.475z"
+                                  ></path>
+                                  <path
+                                    style="fill: #ff4b55"
+                                    d="M332.566,211.862l170.035-110.375c-4.199-4.831-9.578-8.607-15.699-10.86L300.138,211.862H332.566z"
+                                  ></path>
+                                </g>
+                              </g></svg
+                            >&nbsp;&nbsp; EN
+                          </button>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                  <div class="button-borders">
+                    <a
+                      th:href="@{/profile}"
+                      target="_blank"
+                      class="btn primary-button"
+                      >E-PROFILE</a
+                    >
+                  </div>
                 </div>
+                <div class="tmp-nav-area-one header--sticky">
+                  <div class="logo-md-sm-device">
+                    <a href="#" class="logo">
+                      <img th:src="@{imgs/logo.jpg}" alt="Techgel Logo" />
+                    </a>
+                  </div>
+                  <div class="header-nav main-nav-one">
+                    <nav>
+                      <ul class="parent-nav">
+                        <li
+                          th:each="n, i: ${homeNavigations}"
+                          th:class="${not n.getChildrens.isEmpty() ? 'has-dropdown' : ''}"
+                        >
+                          <a
+                            th:href="@{${n.seo.seo_slug_vi}}"
+                            class="nav-link d-flex justify-content-center align-items-center"
+                          >
+                            <span class="rolling-text">
+                              <div class="block">
+                                <span
+                                  >[[${#strings.toUpperCase(n.title_vi)}]]</span
+                                >
+                              </div>
+                            </span>
+                          </a>
+                          <ul
+                            class="submenu"
+                            th:if="${not n.getChildrens.isEmpty()}"
+                          >
+                            <li th:each="sub : ${n.getChildrens}">
+                              <a th:href="@{${sub.seo.seo_slug_vi}}"
+                                >[[${sub.title_vi}]]</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="actions-area">
+                    <div class="lang-picker dropdown">
+                      <form action="" method="get">
+                        <button
+                          class="btn dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                          style="outline: none; border: none; box-shadow: none"
+                        >
+                          <svg
+                            width="32"
+                            height="32"
+                            viewBox="0 0 36 36"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true"
+                            role="img"
+                            class="iconify iconify--twemoji"
+                            preserveAspectRatio="xMidYMid meet"
+                            fill="#000000"
+                          >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                              id="SVGRepo_tracerCarrier"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                              <path
+                                fill="#DA251D"
+                                d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"
+                              ></path>
+                              <path
+                                fill="#FF0"
+                                d="M19.753 16.037L18 10.642l-1.753 5.395h-5.672l4.589 3.333l-1.753 5.395L18 21.431l4.589 3.334l-1.753-5.395l4.589-3.333z"
+                              ></path>
+                            </g></svg
+                          >&nbsp;&nbsp; VI
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <button
+                              class="dropdown-item"
+                              lang="vi"
+                              type="submit"
+                            >
+                              <svg
+                                width="32"
+                                height="32"
+                                viewBox="0 0 36 36"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                aria-hidden="true"
+                                role="img"
+                                class="iconify iconify--twemoji"
+                                preserveAspectRatio="xMidYMid meet"
+                                fill="#000000"
+                              >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g
+                                  id="SVGRepo_tracerCarrier"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                ></g>
+                                <g id="SVGRepo_iconCarrier">
+                                  <path
+                                    fill="#DA251D"
+                                    d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"
+                                  ></path>
+                                  <path
+                                    fill="#FF0"
+                                    d="M19.753 16.037L18 10.642l-1.753 5.395h-5.672l4.589 3.333l-1.753 5.395L18 21.431l4.589 3.334l-1.753-5.395l4.589-3.333z"
+                                  ></path>
+                                </g></svg
+                              >&nbsp;&nbsp; VI
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              class="dropdown-item"
+                              lang="en"
+                              type="submit"
+                            >
+                              <svg
+                                height="32"
+                                width="32"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 512 512"
+                                xml:space="preserve"
+                                fill="#000000"
+                              >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g
+                                  id="SVGRepo_tracerCarrier"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                ></g>
+                                <g id="SVGRepo_iconCarrier">
+                                  <path
+                                    style="fill: #41479b"
+                                    d="M473.655,88.276H38.345C17.167,88.276,0,105.443,0,126.621V385.38 c0,21.177,17.167,38.345,38.345,38.345h435.31c21.177,0,38.345-17.167,38.345-38.345V126.621 C512,105.443,494.833,88.276,473.655,88.276z"
+                                  ></path>
+                                  <path
+                                    style="fill: #f5f5f5"
+                                    d="M511.469,120.282c-3.022-18.159-18.797-32.007-37.814-32.007h-9.977l-163.54,107.147V88.276h-88.276 v107.147L48.322,88.276h-9.977c-19.017,0-34.792,13.847-37.814,32.007l139.778,91.58H0v88.276h140.309L0.531,391.717 c3.022,18.159,18.797,32.007,37.814,32.007h9.977l163.54-107.147v107.147h88.276V316.577l163.54,107.147h9.977 c19.017,0,34.792-13.847,37.814-32.007l-139.778-91.58H512v-88.276H371.691L511.469,120.282z"
+                                  ></path>
+                                  <g>
+                                    <polygon
+                                      style="fill: #ff4b55"
+                                      points="282.483,88.276 229.517,88.276 229.517,229.517 0,229.517 0,282.483 229.517,282.483 229.517,423.724 282.483,423.724 282.483,282.483 512,282.483 512,229.517 282.483,229.517 "
+                                    ></polygon>
+                                    <path
+                                      style="fill: #ff4b55"
+                                      d="M24.793,421.252l186.583-121.114h-32.428L9.224,410.31 C13.377,415.157,18.714,418.955,24.793,421.252z"
+                                    ></path>
+                                    <path
+                                      style="fill: #ff4b55"
+                                      d="M346.388,300.138H313.96l180.716,117.305c5.057-3.321,9.277-7.807,12.287-13.075L346.388,300.138z"
+                                    ></path>
+                                    <path
+                                      style="fill: #ff4b55"
+                                      d="M4.049,109.475l157.73,102.387h32.428L15.475,95.842C10.676,99.414,6.749,104.084,4.049,109.475z"
+                                    ></path>
+                                    <path
+                                      style="fill: #ff4b55"
+                                      d="M332.566,211.862l170.035-110.375c-4.199-4.831-9.578-8.607-15.699-10.86L300.138,211.862H332.566z"
+                                    ></path>
+                                  </g>
+                                </g></svg
+                              >&nbsp;&nbsp; EN
+                            </button>
+                          </li>
+                        </ul>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </header>
-        <div id="side-hide">
-            <div class="top-area">
-                <a href="../index.html" class="logo-area">
-                    <img th:src="@{/imgs/logo.jpg}" alt="Techgel Logo">
-                </a>
-                <div class="close-icon-area">
-                    <div id="close-slide__main">
-                        <i class="fa-solid fa-x"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="body">
-                <div class="image-area-feature">
-                    <img th:src="@{/imgs/sidebar.jpg}" alt="sidebar">
-                </div>
-                <h5 class="title mt-4">Biến ý tưởng của bạn thành hiện thực </h5>
-                <p class="disc">
-                    Cung cấp các sản phẩm và dịch vụ với chất lượng tốt nhất, có tính bền vững về môi trường và mang lại giá trị kinh tế cho đối tác thông qua quy trình quản lý chuẩn mực và đội ngũ nhân viên chuyên nghiệp, đồng thời góp phần xây dựng và phát triển nguồn nhân lực cao cấp cho lĩnh vực thiết kế và quản lý các dự án xây dựng tại Việt Nam.
-                </p>
-                <div class="short-contact-area-side-collups">
-                    <div class="single-contact-information-side">
-                        <i class="fa-solid fa-phone"></i>
-                        <div class="information">
-                            <span>Tel</span>
-                            <a href="#" class="number">028 3510 7030</a>
-                        </div>
-                    </div>
-                    <div class="single-contact-information-side">
-                        <i class="fa-solid fa-envelope"></i>
-                        <div class="information">
-                            <span>Mail</span>
-                            <a href="#" class="number">info@techgel.com</a>
-                        </div>
-                    </div>
-                    <div class="single-contact-information-side">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="information">
-                            <span>Địa chỉ</span>
-                            <a href="#" class="number">30 Phan Chu Trinh, Phường 2, Bình Thạnh, Hồ Chí Minh</a>
-                        </div>
-                    </div>
-                </div>
-                <ul class="social-icons solid-social-icons rounded-social-icons">
-                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-            </div>
+          </div>
         </div>
-        <div id="overlay_every-where" data-tmp-cursor="md text-black dark:text-white opacity-10" data-tmp-cursor-icon="fa-regular fa-x fa-fw"></div>
+      </header>
+      <div id="side-hide">
+        <div class="top-area">
+          <a href="../index.html" class="logo-area">
+            <img th:src="@{/imgs/logo.jpg}" alt="Techgel Logo" />
+          </a>
+          <div class="close-icon-area">
+            <div id="close-slide__main">
+              <i class="fa-solid fa-x"></i>
+            </div>
+          </div>
+        </div>
+        <div class="body">
+          <div class="image-area-feature">
+            <img th:src="@{/imgs/sidebar.jpg}" alt="sidebar" />
+          </div>
+          <h5 class="title mt-4">Biến ý tưởng của bạn thành hiện thực</h5>
+          <p class="disc">
+            Cung cấp các sản phẩm và dịch vụ với chất lượng tốt nhất, có tính
+            bền vững về môi trường và mang lại giá trị kinh tế cho đối tác thông
+            qua quy trình quản lý chuẩn mực và đội ngũ nhân viên chuyên nghiệp,
+            đồng thời góp phần xây dựng và phát triển nguồn nhân lực cao cấp cho
+            lĩnh vực thiết kế và quản lý các dự án xây dựng tại Việt Nam.
+          </p>
+          <div class="short-contact-area-side-collups">
+            <div class="single-contact-information-side">
+              <i class="fa-solid fa-phone"></i>
+              <div class="information">
+                <span>Tel</span>
+                <a href="#" class="number">028 3510 7030</a>
+              </div>
+            </div>
+            <div class="single-contact-information-side">
+              <i class="fa-solid fa-envelope"></i>
+              <div class="information">
+                <span>Mail</span>
+                <a href="#" class="number">info@techgel.com</a>
+              </div>
+            </div>
+            <div class="single-contact-information-side">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="information">
+                <span>Địa chỉ</span>
+                <a href="#" class="number"
+                  >30 Phan Chu Trinh, Phường 2, Bình Thạnh, Hồ Chí Minh</a
+                >
+              </div>
+            </div>
+          </div>
+          <ul class="social-icons solid-social-icons rounded-social-icons">
+            <li>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        id="overlay_every-where"
+        data-tmp-cursor="md text-black dark:text-white opacity-10"
+        data-tmp-cursor-icon="fa-regular fa-x fa-fw"
+      ></div>
     </div>
-</body>
+  </body>
 </html>
