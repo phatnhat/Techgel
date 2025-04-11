@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{admin/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main class="content-wrapper" style="height: 100%;">
+        <form id="homeStatistic-form" th:action="@{/webadmin/home/statistic/edit}" th:object="${homeStatistic}" method="post">
+            <div th:if="${statistic_errors}" th:each="error: ${statistic_errors}" class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+                <strong>[[${ statistic_message }]]!</strong> [[${ error.value }]]
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div th:if="${statistic_errors == null and statistic_message != null}" class="alert alert-success alert-dismissible fade m-0" role="alert">
+                <strong>[[${ statistic_message }]]!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <input type="hidden" th:field="*{id}">
+            <div class="content-header clearfix" style="padding: 15px 1rem;">
+                <h1 class="float-left">
+                    Về chúng tôi
+                    <small>
+                        <i class="fas fa-arrow-circle-left"></i>
+                        <a th:href="@{/webadmin/home/statistic}">Back</a>
+                    </small>
+                </h1>
+                <div class="float-right">
+                    <button type="submit" name="action" value="save" class="btn btn-primary">
+                        <i class="far fa-floppy-disk"></i>
+                        Save
+                    </button>
+                    <button type="submit" name="action" value="save-continue" class="btn btn-primary">
+                        <i class="far fa-floppy-disk"></i>
+                        Save and Continue Edit
+                    </button>
+                </div>
+            </div>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="form-horizontal">
+                        <nop-card>
+                            <div class="card card-secondary card-outline" data-card-name="category-display" data-hideattribute="CategoryPage.HideDisplayBlock" id="category-display"><div class="card-header with-border clearfix"><div class="card-title"><i class="fas fa-tv"></i>Display</div><div class="card-tools float-right"><button class="btn btn-tool" data-card-widget="collapse" type="button"><i class="fa toggle-icon fa-minus"></i></button></div></div>
+                                <div class="card-body" style="display: block;">
+                                    <div class="row">
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{title_vi}">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{title_en}">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề phụ VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." name="title_vi" th:field="*{subtitle_vi}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề phụ EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{subtitle_en}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nop-card>
+                    </div>
+                </div>
+            </section>
+        </form>
+
+    </main>
+</body>
+</html>

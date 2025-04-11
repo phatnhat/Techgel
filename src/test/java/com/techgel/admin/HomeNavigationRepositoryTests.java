@@ -22,13 +22,13 @@ public class HomeNavigationRepositoryTests {
     @Test
     public void testCreateHomeNavigation(){
         //HomeNavigation home = new HomeNavigation("Trang chủ", "Home", true, 1);
-        HomeNavigation aboutUs = new HomeNavigation("Về Techgel", "About Techgel", true, 1);
-        HomeNavigation whatWeDo = new HomeNavigation("Năng lực thi công", "What we do", true, 2);
-        HomeNavigation projects = new HomeNavigation("Dự án", "Projects", true, 3);
-        HomeNavigation blog = new HomeNavigation("Tin tức", "News", true, 4);
-        HomeNavigation investor = new HomeNavigation("Cổ đông", "Investors", true, 4);
-        HomeNavigation careers = new HomeNavigation("Tuyển dụng", "Careers", true, 6);
-        HomeNavigation contact = new HomeNavigation("Liên hệ", "Contact us", true, 7);
+        HomeNavigation aboutUs = new HomeNavigation("Về Techgel", "About Techgel", true, 1, "/about-us");
+        HomeNavigation whatWeDo = new HomeNavigation("Năng lực thi công", "What we do", true, 2, "/what-we-do");
+        HomeNavigation projects = new HomeNavigation("Dự án", "Projects", true, 3, "/projects");
+        HomeNavigation blog = new HomeNavigation("Tin tức", "News", true, 4, "/news");
+        HomeNavigation investor = new HomeNavigation("Cổ đông", "Investors", true, 4, "/investor");
+        HomeNavigation careers = new HomeNavigation("Tuyển dụng", "Careers", true, 6, "/careers");
+        HomeNavigation contact = new HomeNavigation("Liên hệ", "Contact us", true, 7, "/contact-us");
 
         homeNavigationRepository.saveAll(List.of(aboutUs, whatWeDo, projects, blog, investor, careers, contact));
     }
@@ -63,12 +63,12 @@ public class HomeNavigationRepositoryTests {
 
         HomeNavigation investorParent = homeNavigationRepository.findById(5L).get();
         HomeNavigation investor1 = new HomeNavigation("Quan hệ cổ đông", "16", true, 1, investorParent, "/investor/shareholder");
-        HomeNavigation investor2 = gnew HomeNavigation("Thông tin cổ phiếu", "17", true, 2, investorParent);
+        HomeNavigation investor2 = new HomeNavigation("Thông tin cổ phiếu", "17", true, 2, investorParent, "/investor/stock-info");
 
         HomeNavigation careersParent = homeNavigationRepository.findById(6L).get();
-        HomeNavigation careers1 = new HomeNavigation("Cơ hội nghề nghiệp", "18", true, 1, careersParent);
-        HomeNavigation careers2 = new HomeNavigation("Chính sách nhân sự", "19", true, 2, careersParent);
-        HomeNavigation careers3 = new HomeNavigation("Văn hóa Techgel", "20", true, 3, careersParent);
+        HomeNavigation careers1 = new HomeNavigation("Cơ hội nghề nghiệp", "18", true, 1, careersParent, "/careers/job-opportunities");
+        HomeNavigation careers2 = new HomeNavigation("Chính sách nhân sự", "19", true, 2, careersParent, "/careers/hr-policies");
+        HomeNavigation careers3 = new HomeNavigation("Văn hóa Techgel", "20", true, 3, careersParent, "/careers/cultural-techgel");
 
         homeNavigationRepository.saveAll(List.of(aboutUs1, aboutUs2, aboutUs3, aboutUs4, aboutUs5,
                 whatWeDo1, whatWeDo2, whatWeDo3, whatWeDo4,

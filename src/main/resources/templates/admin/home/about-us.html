@@ -8,14 +8,8 @@
     <main class="content-wrapper">
         <div class="content-header clearfix" style="padding: 15px 1rem;">
             <h3 class="float-left">
-                Trang chủ/Carousel
+                Trang chủ/Về chúng tôi
             </h3>
-            <div class="float-right">
-                <a class="btn btn-primary" th:href="@{/webadmin/home/carousel/create}">
-                    <i class="fas fa-square-plus"></i>
-                    Add new
-                </a>
-            </div>
         </div>
         <section class="content">
             <div class="container-fluid">
@@ -42,13 +36,13 @@
                                             <tr>
                                                 <th data-dt-column="1" class="text-center dt-orderable-none" rowspan="0" colspan="1">
                                                     <div class="dt-scroll-sizing">
-                                                        <span class="dt-column-title">Ảnh</span>
+                                                        <span class="dt-column-title">Tiêu đề</span>
                                                         <span class="dt-column-order"></span>
                                                     </div>
                                                 </th>
                                                 <th class="text-center dt-orderable-none" data-dt-column="1" rowspan="1" colspan="1">
                                                     <div class="dt-scroll-sizing">
-                                                        <span class="dt-column-title">Thứ tự hiển thị</span>
+                                                        <span class="dt-column-title">Tiêu đề phụ</span>
                                                         <span class="dt-column-order"></span>
                                                     </div>
                                                 </th>
@@ -61,18 +55,12 @@
                                             </tr>
                                             </thead>
                                             <tbody >
-                                            <tr th:each="crs: ${carousels}">
-                                                <td class="text-center">
-                                                    <img th:src="'/uploads/' + ${crs.image_url}" alt="" width="100">
-                                                </td>
-                                                <td class="text-center dt-type-numeric">[[${crs.displayOrder}]]</td>
+                                            <tr th:each="about: ${homeAboutUs}">
+                                                <td class="text-center dt-type-numeric">[[${about.title_vi}]]</td>
+                                                <td class="text-center dt-type-numeric">[[${about.subtitle_vi}]]</td>
                                                 <td class="button-column">
-                                                    <a class="btn btn-default" th:href="@{/webadmin/home/carousel/edit?id={id}(id=${crs.id})}">
+                                                    <a class="btn btn-default" th:href="@{/webadmin/home/about-us/edit?id={id}(id=${about.id})}">
                                                         <i class="fas fa-pencil"></i>&nbsp;Edit</a>
-                                                    <button th:data-id="${crs.id}" th:data-image_url="${crs.image_url}" data-type=data-type="carousel" id="delete-carousel" type="button" class="btn btn-danger btn-delete-carousel" data-toggle="modal" data-target="#delete-action-confirmation">
-                                                        <i class="far fa-trash-can"></i>
-                                                        Delete
-                                                    </button>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -85,8 +73,6 @@
                 </div>
             </div>
         </section>
-
-        <th:block th:include="~{admin/fragments :: delete_modal}"></th:block>
     </main>
 </body>
 </html>

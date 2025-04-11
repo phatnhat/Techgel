@@ -55,11 +55,12 @@ public class HomeNavigation extends BasedEntity {
         this.id = id;
     }
 
-    public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder) {
+    public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder, String slug) {
         this.title_vi = title_vi;
         this.title_en = title_en;
         this.isPublished = isPublished;
         this.displayOrder = displayOrder;
+        this.slug = slug;
     }
 
     public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder, HomeNavigation parent, String slug) {
@@ -69,10 +70,6 @@ public class HomeNavigation extends BasedEntity {
         this.displayOrder = displayOrder;
         this.parent = parent;
         this.slug = slug;
-    }
-
-    public String getSlug(){
-        return "";
     }
 
     public List<HomeNavigation> getChildrens(){

@@ -184,49 +184,205 @@ $(document).ready(function() {
     }
 
 
+    const homeAboutUsImageFilepond1 = FilePond.create(document.querySelector('#homeaboutus-image-filepond-1'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#homeaboutus-image-filepond-1').parent().attr("data-id"));
+                    formData.append('type', 'homeaboutus-image-1');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='image_url_1']").val(response);
+                    return response;
+                }
+            },
+        },
+        acceptedFileTypes: ['image/*'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file ảnh',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file ảnh',
+        labelIdle: 'Kéo thả file ảnh hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const homeAboutUsImageFilepond2 = FilePond.create(document.querySelector('#homeaboutus-image-filepond-2'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#homeaboutus-image-filepond-2').parent().attr("data-id"));
+                    formData.append('type', 'homeaboutus-image-2');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='image_url_2']").val(response);
+                    return response;
+                }
+            },
+        },
+        acceptedFileTypes: ['image/*'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file ảnh',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file ảnh',
+        labelIdle: 'Kéo thả file ảnh hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const homeAboutUsImageFilepond3 = FilePond.create(document.querySelector('#homeaboutus-image-filepond-3'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#homeaboutus-image-filepond-3').parent().attr("data-id"));
+                    formData.append('type', 'homeaboutus-image-3');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='image_url_3']").val(response);
+                    return response;
+                }
+            },
+        },
+        acceptedFileTypes: ['image/*'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file ảnh',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file ảnh',
+        labelIdle: 'Kéo thả file ảnh hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const homeaboutus_form = document.querySelector('#homeAboutUs-form');
+    if(homeaboutus_form){
+        homeaboutus_form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            try{
+                $('.loading-wrapper').show();
+
+                await Promise.all([
+                    homeAboutUsImageFilepond1.processFiles(),
+                    homeAboutUsImageFilepond2.processFiles(),
+                    homeAboutUsImageFilepond3.processFiles()
+                ]);
+
+                const form = e.target;
+
+                const isImage1Delete = form.elements['image-delete-1'] ? form.elements['image-delete-1'].checked : false;
+                const isImage2Delete = form.elements['image-delete-2'] ? form.elements['image-delete-2'].checked : false;
+                const isImage3Delete = form.elements['image-delete-3'] ? form.elements['image-delete-3'].checked : false;
+
+                await Promise.all([
+                    isImage1Delete ? FilePondDelete(form.elements['image_url_1'].value) : Promise.resolve(),
+                    isImage2Delete ? FilePondDelete(form.elements['image_url_2'].value) : Promise.resolve(),
+                    isImage3Delete ? FilePondDelete(form.elements['image_url_3'].value) : Promise.resolve(),
+                ]);
+
+                const actionInput = document.createElement('input');
+                actionInput.type = 'hidden';
+                actionInput.name = 'action';
+                actionInput.value = document.activeElement.value;
+                form.appendChild(actionInput);
+
+                form.submit();
+            }catch(error){}
+
+            $('.loading-wrapper').hide();
+        });
+    }
+
+
     document.querySelectorAll('.btn-delete-carousel').forEach(button => {
         button.addEventListener('click', function() {
             var itemIdToDelete = this.getAttribute('data-id');
             var image_url = this.getAttribute("data-image_url");
-            $("#delete-carousel-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
-            $("#delete-carousel-action-confirmation-submit-button").attr("data-image_url", image_url);
+            var type = this.getAttribute("data-type");
+            $("#delete-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
+            $("#delete-action-confirmation-submit-button").attr("data-image_url", image_url);
+            $("#delete-action-confirmation-submit-button").attr("data-type", type);
+        });
+    });
+    document.querySelectorAll('.btn-delete-statistic-items').forEach(button => {
+        button.addEventListener('click', function() {
+            var itemIdToDelete = this.getAttribute('data-id');
+            var type = this.getAttribute("data-type");
+            $("#delete-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
+            $("#delete-action-confirmation-submit-button").attr("data-type", type);
         });
     });
 
-    $('#delete-carousel').attr("data-toggle", "modal").attr("data-target", "#delete-carousel-action-confirmation");
-    $('#delete-carousel-action-confirmation-submit-button').attr("name", $("#delete-carousel").attr("name"));
-    $("#delete-carousel").attr("name", "");
-    if($("#delete-carousel").attr("type") == "submit")
-        $("#delete-carousel").attr("type", "button");
 
-    $('#delete-carousel-action-confirmation-submit-button').bind('click', function () {
-        try{
-            $('.loading-wrapper').show();
 
-            let id = $(this).attr('data-id');
-            let form = new FormData()
-            form.append("image_url", $(this).attr("data-image_url"))
+    $('#delete-action-confirmation-submit-button').bind('click', function () {
+        let type = $(this).attr('data-type');
+        console.log(type)
+        if(type == 'carousel'){
+            try{
+                $('.loading-wrapper').show();
 
-            FilePondDelete($(this).attr("data-image_url"))
+                let id = $(this).attr('data-id');
+                let form = new FormData()
+                form.append("image_url", $(this).attr("data-image_url"))
 
-            fetch(`/webadmin/home/carousel/delete/${id}`, {
-                method: 'DELETE',
-                body: form
-            })
-                .then(response => {
-                    if (response.ok) {
-                        window.location.href = '/webadmin/home/carousel';
-                    }
-                });
+                FilePondDelete($(this).attr("data-image_url"))
 
-            $('#delete-carousel-action-confirmation').modal('toggle');
-        }catch (error) {}
+                fetch(`/webadmin/home/carousel/delete/${id}`, {
+                    method: 'DELETE',
+                    body: form
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = '/webadmin/home/carousel';
+                        }
+                    });
 
-        $('.loading-wrapper').hide();
+                $('#delete-carousel-action-confirmation').modal('toggle');
+            }catch (error) {}
 
-        return false;
+            $('.loading-wrapper').hide();
+
+            return false;
+        }
+        else if(type == 'statistic-items'){
+            try{
+                $('.loading-wrapper').show();
+
+                let id = $(this).attr('data-id');
+                let form = new FormData()
+                form.append("image_url", $(this).attr("data-image_url"))
+
+                fetch(`/webadmin/home/statistic-items/delete/${id}`, {
+                    method: 'DELETE',
+                    body: form
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = '/webadmin/home/statistic';
+                        }
+                    });
+
+                $('#delete-action-confirmation').modal('toggle');
+            }catch (error) {}
+
+            $('.loading-wrapper').hide();
+
+            return false;
+        }
+
     });
-
 
     // try{
     //     if(eProfileEditImageUrl){

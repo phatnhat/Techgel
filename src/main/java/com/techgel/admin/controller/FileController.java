@@ -6,6 +6,7 @@ import com.techgel.common.entity.adminSettings.Carousel;
 import com.techgel.common.entity.adminSettings.EProfile;
 import com.techgel.common.service.CarouselService;
 import com.techgel.common.service.EProfileService;
+import org.apache.commons.codec.digest.HmacUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -159,5 +162,33 @@ public class FileController {
             return ResponseEntity.internalServerError()
                     .body("Could not delete file: " + e.getMessage());
         }
+    }
+
+    @GetMapping("/test")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<String> test(){
+        return ResponseEntity.ok("test ok");
+    }
+
+    @GetMapping("/auth")
+    public Map<String, String> getAuthParams() {
+        String privateKey = "private_kIkQXu7ysEJT/beBZA0P4FEETbs=";
+        long expire = System.currentTimeMillis() / 1000 + 3600; // 1 giờ sau
+
+        String signature = null;
+        try {
+            signature = HmacUtils.hmacSha1Hex(
+                    privateKey,
+                    expire + "public_ASvR2wFcF7VvLB6epCFVNodU38o="
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return Map.of(
+                "token", UUID.randomUUID().toString(),
+                "expire", String.valueOf(expire),
+                "signature", signature
+        );
     }
 }

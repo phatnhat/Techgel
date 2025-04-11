@@ -47,42 +47,47 @@ public class MainController {
         return "clients/profile";
     }
 
-    @GetMapping("/about-us")
+    @GetMapping({"/about-us", "/about-us/overview"})
     public String viewIntroduce(){
         return "clients/about-us/introduce";
     }
 
-    @GetMapping("/organizational-chart")
+    @GetMapping("/about-us/organizational-chart")
     public String viewOrganizationalChart(){
         return "clients/about-us/organizational-chart";
     }
 
-    @GetMapping("/vision-mission-values")
+    @GetMapping("/about-us/vision-mission-values")
     public String viewVisionMissionValues(){
         return "clients/about-us/vision-mission-values";
     }
 
-    @GetMapping("/licenses-certificates")
+    @GetMapping("/about-us/licenses-certificates")
     public String viewLicensesCertificates(){
         return "clients/about-us/licenses-certificates";
     }
 
-    @GetMapping("/clients-partners")
+    @GetMapping("/about-us/clients-partners")
     public String viewClientsPartners(){
         return "clients/about-us/clients-partners";
     }
 
-    @GetMapping("/projects")
-    public String viewProjects(){
+    @GetMapping({"/projects", "/projects/{slug}"})
+    public String viewProjects(@PathVariable(required = false) String slug){
         return "clients/projects";
     }
 
-    @GetMapping("/our-business-lines")
+    @GetMapping("/what-we-do/our-business-lines")
     public String viewOurBusinessLines(){
         return "clients/what-we-do/our-business-lines";
     }
 
-    @GetMapping("/gallery")
+    @GetMapping("/what-we-do/sustainable-development")
+    public String viewSustainableDevelopment() {
+        return "clients/what-we-do/sustainable-development";
+    }
+
+    @GetMapping("/what-we-do/gallery")
     public String viewConstructionGallery(){
         return "clients/what-we-do/construction-gallery";
     }
@@ -102,32 +107,27 @@ public class MainController {
         return "clients/news/news-details";
     }
 
-    @GetMapping("/shareholder")
+    @GetMapping("/investor/shareholder")
     public String viewShareholder() {
         return "clients/shareholder/shareholder";
     }
 
-    @GetMapping("/stock-info")
+    @GetMapping("/investor/stock-info")
     public String viewStockInfo() {
         return "clients/shareholder/stock-info";
     }
 
-    @GetMapping("/job-opportunities")
+    @GetMapping("/careers/job-opportunities")
     public String viewJobOpportunities() {
         return "clients/careers/job-opportunities";
     }
 
-    @GetMapping("/hr-policies")
+    @GetMapping("/careers/hr-policies")
     public String viewHrPolicies() {
         return "clients/careers/hr-policies";
     }
 
-    @GetMapping("/sustainable-development")
-    public String viewSustainableDevelopment() {
-        return "clients/what-we-do/sustainable-development";
-    }
-
-    @GetMapping("/cultural-techgel")
+    @GetMapping("/careers/cultural-techgel")
     public String viewCulturalTechgel() {
         return "clients/careers/cultural-techgel";
     }

@@ -42,57 +42,56 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Admin/Manufacturer/List" class="nav-link">
+                                    <a th:href="@{/webadmin/home/about-us}" class="nav-link">
                                         <i class="nav-icon far fa-dot-circle"></i>
                                         <p> Về chúng tôi </p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Admin/Manufacturer/List" class="nav-link">
+                                    <a th:href="@{/webadmin/home/statistic}" class="nav-link">
                                         <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> Lĩnh vực hoạt động </p>
+                                        <p> Top doanh nghiệp </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/webadmin/about-us}" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Về Techgel
+                                    <i class="right fas fa-angle-left "></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a th:href="@{/webadmin/about-us/overview}" class="nav-link" th:classappend="${#strings.contains(requestURI, 'navigation') ? 'active' : ''}">
+                                        <i class="nav-icon far fa-dot-circle"></i>
+                                        <p>Overview</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Admin/Manufacturer/List" class="nav-link">
+                                    <a th:href="@{/webadmin/home/e-profile}" class="nav-link" th:classappend="${#strings.contains(requestURI, 'e-brochure') ? 'active' : ''}">
                                         <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> Quy trình làm việc </p>
+                                        <p> E-Profile </p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Admin/Manufacturer/List" class="nav-link">
-                                        <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> Dự án </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/Admin/Manufacturer/List" class="nav-link">
-                                        <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> Thành tựu </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/Admin/Manufacturer/List" class="nav-link">
-                                        <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> Đội ngũ </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/Admin/Manufacturer/List" class="nav-link">
+                                    <a th:href="@{/webadmin/home/carousel}" class="nav-link">
                                         <i class="nav-icon far fa-dot-circle"></i>
                                         <p> Carousel </p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Admin/Manufacturer/List" class="nav-link">
+                                    <a th:href="@{/webadmin/home/about-us}" class="nav-link">
                                         <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> Footer </p>
+                                        <p> Về chúng tôi </p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Admin/Manufacturer/List" class="nav-link">
+                                    <a th:href="@{/webadmin/home/statistic}" class="nav-link">
                                         <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> Copyright </p>
+                                        <p> Top doanh nghiệp </p>
                                     </a>
                                 </li>
                             </ul>

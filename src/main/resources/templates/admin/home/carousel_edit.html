@@ -38,7 +38,7 @@
                         <i class="far fa-floppy-disk"></i>
                             Save and Continue Edit
                     </button>
-                    <button th:unless="${#strings.contains(requestURI, 'create')}" type="button" value="Delete" id="delete-carousel" class="btn btn-danger btn-delete-carousel" th:data-id="${carousel.id}" th:data-image_url="${carousel.image_url}" data-toggle="modal" data-target="#delete-carousel-action-confirmation">
+                    <button th:unless="${#strings.contains(requestURI, 'create')}" type="button" value="Delete" id="delete-carousel" data-type="carousel" class="btn btn-danger btn-delete-carousel" th:data-id="${carousel.id}" th:data-image_url="${carousel.image_url}" data-toggle="modal" data-target="#delete-action-confirmation">
                         <i class="far fa-trash-can"></i>
                             Delete
                     </button>
@@ -83,7 +83,7 @@
             </section>
         </form>
 
-        <th:block th:include="~{admin/fragments :: delete_carousel_modal}"></th:block>
+        <th:block th:include="~{admin/fragments :: delete_modal}"></th:block>
         <div class="loading-wrapper" th:include="~{admin/fragments :: loading}" style="display: none;"></div>
 
         <script th:inline="javascript">
