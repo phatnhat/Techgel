@@ -214,7 +214,7 @@
                           th:class="${not n.getChildrens.isEmpty() ? 'has-dropdown' : ''}"
                         >
                           <a
-                            th:href="@{${n.seo.seo_slug_vi}}"
+                            th:href="@{${n.slug}}"
                             class="nav-link d-flex justify-content-center align-items-center"
                           >
                             <span class="rolling-text">
@@ -230,7 +230,7 @@
                             th:if="${not n.getChildrens.isEmpty()}"
                           >
                             <li th:each="sub : ${n.getChildrens}">
-                              <a th:href="@{${sub.seo.seo_slug_vi}}"
+                              <a th:href="@{${sub.slug}}"
                                 >[[${sub.title_vi}]]</a
                               >
                             </li>

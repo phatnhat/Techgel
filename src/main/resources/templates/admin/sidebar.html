@@ -64,28 +64,45 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a th:href="@{/webadmin/about-us/overview}" class="nav-link" th:classappend="${#strings.contains(requestURI, 'navigation') ? 'active' : ''}">
+                                <li class="nav-item has-treeview">
+                                    <a href="#" class="nav-link">
                                         <i class="nav-icon far fa-dot-circle"></i>
-                                        <p>Overview</p>
+                                        <p>
+                                            Tổng quan
+                                            <i class="right fas fa-angle-left "></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview" style="display: none;">
+                                        <li class="nav-item">
+                                            <a th:href="@{/webadmin/about-us/overview/introduce}" class="nav-link">
+                                                <i class="nav-icon far fa-circle"></i>
+                                                <p> Giới thiệu </p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a th:href="@{/webadmin/about-us/overview/testimonial}" class="nav-link">
+                                                <i class="nav-icon far fa-circle"></i>
+                                                <p> Cảm nhận khách hàng </p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a th:href="@{/webadmin/about-us/organizational-chart}" class="nav-link">
+                                        <i class="nav-icon far fa-dot-circle"></i>
+                                        <p> Sơ đồ tổ chức </p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a th:href="@{/webadmin/home/e-profile}" class="nav-link" th:classappend="${#strings.contains(requestURI, 'e-brochure') ? 'active' : ''}">
+                                    <a th:href="@{/webadmin/about-us/vision-mission-values}" class="nav-link">
                                         <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> E-Profile </p>
+                                        <p> Tầm nhìn, Sứ mệnh, Giá trị cốt lõi </p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a th:href="@{/webadmin/home/carousel}" class="nav-link">
+                                    <a th:href="@{/webadmin/about-us/licenses-certificates}" class="nav-link">
                                         <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> Carousel </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a th:href="@{/webadmin/home/about-us}" class="nav-link">
-                                        <i class="nav-icon far fa-dot-circle"></i>
-                                        <p> Về chúng tôi </p>
+                                        <p> Giấy phép & Chứng chỉ </p>
                                     </a>
                                 </li>
                                 <li class="nav-item">

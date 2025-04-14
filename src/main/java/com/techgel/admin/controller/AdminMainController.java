@@ -27,6 +27,14 @@ public class AdminMainController {
     private final HomeStatisticService homeStatisticService;
     private final HomeStatisticItemsService homeStatisticItemsService;
     private final AboutUsIntroduceService aboutUsIntroduceService;
+    private final AboutUsTestimonialService aboutUsTestimonialService;
+    private final AboutUsTestimonialItemsService aboutUsTestimonialItemsService;
+    private final AboutUsOrganizationalService aboutUsOrganizationalService;
+    private final AboutUsOrganizationalChartItemsService aboutUsOrganizationalChartItemsService;
+    private final AboutUsVMVItemService aboutUsVMVItemService;
+    private final AboutUsLicenseCertificateService aboutUsLicenseCertificateService;
+    private final AboutUsLicenseCertificateItemsService aboutUsLicenseCertificateItemsService;
+
 
     @GetMapping("")
     public String viewWebAdmin(){
@@ -347,8 +355,8 @@ public class AdminMainController {
         return String.format("redirect:/webadmin/home/statistic-items/edit?id=%s", homeStatisticItems.getId());
     }
 
-    @GetMapping("/about-us/introduce")
-    public String aboutUsIntroduce(Model model){
+    @GetMapping("/about-us/overview/introduce")
+    public String aboutUsOverviewIntroduce(Model model){
         AboutUsIntroduce aboutUsIntroduce;
         if(aboutUsIntroduceService.getAll().isEmpty())
             aboutUsIntroduce = aboutUsIntroduceService.update(new AboutUsIntroduce("Về chúng tôi", "TECHGEL", "About Us", "TECHGEL"));
@@ -357,5 +365,407 @@ public class AdminMainController {
         model.addAttribute("aboutUsIntroduce", aboutUsIntroduce);
 
         return "admin/about-us/introduce";
+    }
+
+    @GetMapping("/about-us/overview/introduce/edit")
+    public String aboutUsOverviewIntroduceEdit(Model model, @RequestParam Long id){
+        try{
+            AboutUsIntroduce aboutUsIntroduce = aboutUsIntroduceService.getById(id);
+            if(aboutUsIntroduce != null){
+                model.addAttribute("aboutUsIntroduce", aboutUsIntroduce);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/about-us/introduce_edit";
+    }
+
+    @PostMapping("/about-us/overview/introduce/edit")
+    public String saveAboutUsOverviewIntroduce(RedirectAttributes redirectAttributes,
+                                  @RequestParam String action,
+                                  @RequestParam(name = "image-delete", required = false) boolean image_delete,
+                                  @Valid AboutUsIntroduce aboutUsIntroduce,
+                                  BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("errors", errors);
+                redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            }else {
+                if(image_delete) aboutUsIntroduce.setImage_url(null);
+
+                aboutUsIntroduceService.update(aboutUsIntroduce);
+                redirectAttributes.addFlashAttribute("message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("errors", new HashMap<>(){{put("", "Có gì đó không đúng");}});
+            redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+        }
+
+        if(action.equals("save")) return "redirect:/webadmin/about-us/overview/introduce";
+        return String.format("redirect:/webadmin/about-us/overview/introduce/edit?id=%s", aboutUsIntroduce.getId());
+    }
+
+    @GetMapping("/about-us/overview/testimonial")
+    public String aboutUsOverviewTestimonial(Model model){
+        AboutUsTestimonial aboutUsTestimonial;
+
+        if(aboutUsTestimonialService.getAll().isEmpty())
+            aboutUsTestimonial = aboutUsTestimonialService.update(new AboutUsTestimonial("Khách hàng đã nói gì về chúng tôi?", "Cảm nhận khách hàng", "What do our customers say about us?", "Customer feedback"));
+        else aboutUsTestimonial = aboutUsTestimonialService.getAll().get(0);
+
+        List<AboutUsTestimonialItems> aboutUsTestimonialItems = aboutUsTestimonialItemsService.getAll();
+
+        model.addAttribute("aboutUsTestimonial", aboutUsTestimonial);
+        model.addAttribute("aboutUsTestimonialItems", aboutUsTestimonialItems);
+
+        return "admin/about-us/testimonial";
+    }
+
+    @GetMapping("/about-us/overview/testimonial/edit")
+    public String aboutUsOverviewTestimonialEdit(Model model, @RequestParam Long id){
+        try{
+            AboutUsTestimonial aboutUsTestimonial = aboutUsTestimonialService.getById(id);
+            if(aboutUsTestimonial != null){
+                model.addAttribute("aboutUsTestimonial", aboutUsTestimonial);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/about-us/testimonial_edit";
+    }
+
+    @PostMapping("/about-us/overview/testimonial/edit")
+    public String saveAboutUsTestimonial(RedirectAttributes redirectAttributes,
+                                @RequestParam String action,
+                                @Valid AboutUsTestimonial aboutUsTestimonial,
+                                BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("testimonial_errors", errors);
+                redirectAttributes.addFlashAttribute("testimonial_message", "Xãy ra lỗi");
+            }else {
+                aboutUsTestimonialService.update(aboutUsTestimonial);
+                redirectAttributes.addFlashAttribute("testimonial_message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("testimonial_errors", new HashMap<>(){{put("", "Có gì đó không đúng");}});
+            redirectAttributes.addFlashAttribute("testimonial_message", "Xãy ra lỗi");
+        }
+
+        if(action.equals("save")) return "redirect:/webadmin/about-us/overview/testimonial";
+        return String.format("redirect:/webadmin/about-us/overview/testimonial/edit?id=%s", aboutUsTestimonial.getId());
+    }
+
+    @GetMapping("/about-us/overview/testimonial-items/create")
+    public String aboutUsOverviewItemCreate(Model model){
+        AboutUsTestimonialItems aboutUsTestimonialItems = new AboutUsTestimonialItems();
+        model.addAttribute("aboutUsTestimonialItems", aboutUsTestimonialItems);
+        return "admin/about-us/testimonial-items_edit";
+    }
+
+    @GetMapping("/about-us/overview/testimonial-items/edit")
+    public String aboutUsTestimonialItemsEdit(Model model, @RequestParam Long id){
+        try{
+            AboutUsTestimonialItems aboutUsTestimonialItems = aboutUsTestimonialItemsService.getById(id);
+            if(aboutUsTestimonialItems != null){
+                model.addAttribute("aboutUsTestimonialItems", aboutUsTestimonialItems);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/about-us/testimonial-items_edit";
+    }
+
+    @PostMapping("/about-us/overview/testimonial-items/edit")
+    public String saveAboutUsTestimonialItems(RedirectAttributes redirectAttributes,
+                                     @RequestParam String action,
+                                     @RequestParam(name = "image-delete", required = false) boolean image_delete,
+                                     @Valid AboutUsTestimonialItems aboutUsTestimonialItems,
+                                     BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("testimonial_items_errors", errors);
+                redirectAttributes.addFlashAttribute("testimonial_items_message", "Xãy ra lỗi");
+            }else {
+                if(image_delete) aboutUsTestimonialItems.setThumbnail_url(null);
+
+                aboutUsTestimonialItemsService.update(aboutUsTestimonialItems);
+                redirectAttributes.addFlashAttribute("testimonial_items_message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("testimonial_items_errors", new HashMap<>(){{put("", "Có gì đó không đúng");}});
+            redirectAttributes.addFlashAttribute("testimonial_items_message", "Xãy ra lỗi");
+        }
+
+        if(action.equals("save")) return "redirect:/webadmin/about-us/overview/testimonial";
+        return String.format("redirect:/webadmin/about-us/overview/testimonial-items/edit?id=%s", aboutUsTestimonialItems.getId());
+    }
+
+
+    @GetMapping("/about-us/organizational-chart")
+    public String aboutUsOverviewOrganizationalChart(Model model){
+        AboutUsOrganizationalChart aboutUsOrganizationalChart;
+
+        if(aboutUsOrganizationalService.getAll().isEmpty())
+            aboutUsOrganizationalChart = aboutUsOrganizationalService.update(new AboutUsOrganizationalChart("TECHGEL", "Sơ đồ tổ chức", "TECHGEL", "Organizational Chart"));
+        else aboutUsOrganizationalChart = aboutUsOrganizationalService.getAll().get(0);
+
+        List<AboutUsOrganizationalChartItems> aboutUsOrganizationalChartItems = aboutUsOrganizationalChartItemsService.getAll();
+
+        model.addAttribute("aboutUsOrganizationalChart", aboutUsOrganizationalChart);
+        model.addAttribute("aboutUsOrganizationalChartItems", aboutUsOrganizationalChartItems);
+
+        return "admin/about-us/organizational-chart";
+    }
+
+    @GetMapping("/about-us/organizational-chart/edit")
+    public String aboutUsOrganizationalChartEdit(Model model, @RequestParam Long id){
+        try{
+            AboutUsOrganizationalChart aboutUsOrganizationalChart = aboutUsOrganizationalService.getById(id);
+            if(aboutUsOrganizationalChart != null){
+                model.addAttribute("aboutUsOrganizationalChart", aboutUsOrganizationalChart);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/about-us/organizational-chart_edit";
+    }
+
+    @PostMapping("/about-us/organizational-chart/edit")
+    public String aboutUsOrganizationalChartEdit(RedirectAttributes redirectAttributes,
+                                         @RequestParam String action,
+                                         @RequestParam(name = "file-delete", required = false) boolean file_delete,
+                                         @Valid AboutUsOrganizationalChart aboutUsOrganizationalChart,
+                                         BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("organizational_chart_errors", errors);
+                redirectAttributes.addFlashAttribute("organizational_chart_message", "Xãy ra lỗi");
+            }else {
+                if(file_delete) aboutUsOrganizationalChart.setFile_url(null);
+                aboutUsOrganizationalService.update(aboutUsOrganizationalChart);
+                redirectAttributes.addFlashAttribute("organizational_chart_message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("organizational_chart_errors", new HashMap<>(){{put("", "Có gì đó không đúng");}});
+            redirectAttributes.addFlashAttribute("organizational_chart_message", "Xãy ra lỗi");
+        }
+
+        if(action.equals("save")) return "redirect:/webadmin/about-us/organizational-chart";
+        return String.format("redirect:/webadmin/about-us/organizational-chart/edit?id=%s", aboutUsOrganizationalChart.getId());
+    }
+
+    @GetMapping("/about-us/organizational-chart-items/create")
+    public String aboutUsOrganizationalChartItemCreate(Model model){
+        AboutUsOrganizationalChartItems aboutUsOrganizationalChartItems = new AboutUsOrganizationalChartItems();
+        model.addAttribute("aboutUsOrganizationalChartItems", aboutUsOrganizationalChartItems);
+        return "admin/about-us/organizational-chart-items_edit";
+    }
+
+    @GetMapping("/about-us/organizational-chart-items/edit")
+    public String aboutUsOrganizationalChartItemsEdit(Model model, @RequestParam Long id){
+        try{
+            AboutUsOrganizationalChartItems aboutUsOrganizationalChartItems = aboutUsOrganizationalChartItemsService.getById(id);
+            if(aboutUsOrganizationalChartItems != null){
+                model.addAttribute("aboutUsOrganizationalChartItems", aboutUsOrganizationalChartItems);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/about-us/organizational-chart-items_edit";
+    }
+
+    @PostMapping("/about-us/organizational-chart-items/edit")
+    public String saveAboutUsorganizationalChartItems(RedirectAttributes redirectAttributes,
+                                              @RequestParam String action,
+                                              @RequestParam(name = "image-delete", required = false) boolean image_delete,
+                                              @Valid AboutUsOrganizationalChartItems aboutUsOrganizationalChartItems,
+                                              BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("organizational_chart_items_errors", errors);
+                redirectAttributes.addFlashAttribute("organizational_chart_items_message", "Xãy ra lỗi");
+            }else {
+                if(image_delete) aboutUsOrganizationalChartItems.setImage_url(null);
+
+                aboutUsOrganizationalChartItemsService.update(aboutUsOrganizationalChartItems);
+                redirectAttributes.addFlashAttribute("organizational_chart_items_message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("organizational_chart_items_errors", new HashMap<>(){{put("", "Có gì đó không đúng");}});
+            redirectAttributes.addFlashAttribute("organizational_chart_items_message", "Xãy ra lỗi");
+        }
+
+        if(action.equals("save")) return "redirect:/webadmin/about-us/organizational-chart";
+        return String.format("redirect:/webadmin/about-us/organizational-chart-items/edit?id=%s", aboutUsOrganizationalChartItems.getId());
+    }
+
+    @GetMapping("/about-us/vision-mission-values")
+    public String aboutUsVisionMissionValues(Model model){
+        if(aboutUsVMVItemService.getAll().isEmpty()) {
+            aboutUsVMVItemService.update(new AboutUsVMVItems("Tầm nhìn", "Vision", "", "", 1, false, null));
+            aboutUsVMVItemService.update(new AboutUsVMVItems("Sứ mệnh", "Mission", "", "", 2, false, null));
+            aboutUsVMVItemService.update(new AboutUsVMVItems("Giá trị cốt lõi", "Values", "", "", 3, true, null));
+        }
+
+        List<AboutUsVMVItems> aboutUsVMVItems = aboutUsVMVItemService.getAll();
+
+        model.addAttribute("aboutUsVMVItems", aboutUsVMVItems);
+
+        return "admin/about-us/vision-mission-values";
+    }
+
+    @GetMapping("/about-us/licenses-certificates")
+    public String aboutUsLicenseCertificate(Model model){
+        List<AboutUsLicenseCertificate> aboutUsLicenseCertificates = aboutUsLicenseCertificateService.getAll();
+
+        model.addAttribute("aboutUsLicenseCertificates", aboutUsLicenseCertificates);
+
+        return "admin/about-us/license-certificate";
+    }
+
+    @GetMapping("/about-us/licenses-certificates/create")
+    public String aboutUsLicensesCertificateSave(Model model){
+        model.addAttribute("aboutUsLicenseCertificate", new AboutUsLicenseCertificate());
+        return "admin/about-us/license-certificate_edit";
+    }
+
+    @GetMapping("/about-us/licenses-certificates/edit")
+    public String aboutUsLicensesCertificateEdit(Model model, @RequestParam Long id){
+        try{
+            AboutUsLicenseCertificate aboutUsLicenseCertificate = aboutUsLicenseCertificateService.getById(id);
+            if(aboutUsLicenseCertificate != null){
+                model.addAttribute("aboutUsLicenseCertificate", aboutUsLicenseCertificate);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/about-us/license-certificate_edit";
+    }
+
+    @PostMapping("/about-us/licenses-certificates/edit")
+    public String saveAboutUsLicensesCertificate(RedirectAttributes redirectAttributes,
+                                   @RequestParam String action,
+                                   @Valid AboutUsLicenseCertificate aboutUsLicenseCertificate,
+                                   BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("errors", errors);
+                redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            }else {
+                aboutUsLicenseCertificateService.update(aboutUsLicenseCertificate);
+                redirectAttributes.addFlashAttribute("message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            return "redirect:/webadmin/about-us/licenses-certificates";
+        }
+
+        if(action.equals("save")) return "redirect:/webadmin/about-us/licenses-certificates";
+        return String.format("redirect:/webadmin/about-us/licenses-certificates/edit?id=%s", aboutUsLicenseCertificate.getId());
+    }
+
+    @GetMapping("/about-us/licenses-certificates-items")
+    public String aboutUsLicenseCertificateList(Model model, @RequestParam Long id){
+        try{
+            AboutUsLicenseCertificate aboutUsLicenseCertificate = aboutUsLicenseCertificateService.getById(id);
+            if(aboutUsLicenseCertificate != null){
+                List<AboutUsLicenseCertificateItems> aboutUsLicenseCertificateItems = aboutUsLicenseCertificateItemsService.getAllByAboutUsLicensesCertificateId(id);
+
+                model.addAttribute("aboutUsLicenseCertificate", aboutUsLicenseCertificate);
+                model.addAttribute("aboutUsLicenseCertificateItems", aboutUsLicenseCertificateItems);
+
+                return "admin/about-us/license-certificate-items";
+            }
+        }catch (Exception e){
+            return "redirect:/webadmin";
+        }
+
+        return "redirect:/webadmin/about-us/licenses-certificates";
+    }
+
+    @GetMapping("/about-us/licenses-certificates-items/create")
+    public String aboutUsLicensesCertificateItemSave(Model model, @RequestParam Long parentId){
+        AboutUsLicenseCertificate aboutUsLicenseCertificate = aboutUsLicenseCertificateService.getById(parentId);
+        if(aboutUsLicenseCertificate != null){
+            model.addAttribute("parentId", parentId);
+            model.addAttribute("aboutUsLicenseCertificate", aboutUsLicenseCertificate);
+            model.addAttribute("aboutUsLicenseCertificateItems", new AboutUsLicenseCertificateItems());
+            return "admin/about-us/license-certificate-items_edit";
+        }
+        return "redirect:/about-us/licenses-certificates";
+    }
+
+    @GetMapping("/about-us/licenses-certificates-items/edit")
+    public String aboutUsOverviewTestimonialEdit(Model model, @RequestParam Long id, @RequestParam Long parentId){
+        try{
+            AboutUsLicenseCertificateItems aboutUsLicenseCertificateItems = aboutUsLicenseCertificateItemsService.getByIdAndParentId(id, parentId);
+            if(aboutUsLicenseCertificateItems != null){
+                model.addAttribute("aboutUsLicenseCertificate", aboutUsLicenseCertificateService.getById(parentId));
+                model.addAttribute("aboutUsLicenseCertificateItems", aboutUsLicenseCertificateItems);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/about-us/license-certificate-items_edit";
+    }
+
+    @PostMapping("/about-us/licenses-certificates-items/edit")
+    public String saveAboutUsLicensesCertificateItem(RedirectAttributes redirectAttributes,
+                                                 @RequestParam String action,
+                                                 @RequestParam(name = "image-delete", required = false) boolean image_delete,
+                                                 @Valid AboutUsLicenseCertificateItems aboutUsLicenseCertificateItems,
+                                                 BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("errors", errors);
+                redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            }else {
+                if(image_delete) aboutUsLicenseCertificateItems.setImage_url(null);
+                aboutUsLicenseCertificateItemsService.update(aboutUsLicenseCertificateItems);
+                redirectAttributes.addFlashAttribute("message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            return "redirect:/webadmin/about-us/licenses-certificates-items";
+        }
+
+        if(action.equals("save")) return String.format("redirect:/webadmin/about-us/licenses-certificates-items?id=%s", aboutUsLicenseCertificateItems.getAboutUsLicenseCertificate().getId());
+        return String.format("redirect:/webadmin/about-us/licenses-certificates-items/edit?parentId=%s&id=%s", aboutUsLicenseCertificateItems.getAboutUsLicenseCertificate().getId(), aboutUsLicenseCertificateItems.getId());
     }
 }

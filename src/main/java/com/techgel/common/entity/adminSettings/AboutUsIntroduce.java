@@ -23,8 +23,10 @@ public class AboutUsIntroduce extends BasedEntity {
     @Lob
     private String content_en;
     private String image_url;
-    private String image_title;
-    private String image_subtitle;
+    private String image_title_vi;
+    private String image_title_en;
+    private String image_subtitle_vi;
+    private String image_subtitle_en;
 
     public AboutUsIntroduce(String title_vi, String title_en, String subtitle_vi, String subtitle_en) {
         this.title_vi = title_vi;

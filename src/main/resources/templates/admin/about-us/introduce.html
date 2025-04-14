@@ -8,7 +8,7 @@
     <main class="content-wrapper">
         <div class="content-header clearfix" style="padding: 15px 1rem;">
             <h3 class="float-left">
-                Trang chủ/Về chúng tôi
+                Về Techgel / Tổng quan /Giới thiệu
             </h3>
         </div>
         <section class="content">
@@ -55,11 +55,11 @@
                                             </tr>
                                             </thead>
                                             <tbody >
-                                            <tr th:each="about: ${homeAboutUs}">
-                                                <td class="text-center dt-type-numeric">[[${about.title_vi}]]</td>
-                                                <td class="text-center dt-type-numeric">[[${about.subtitle_vi}]]</td>
+                                            <tr th:each="introduce: ${aboutUsIntroduce}">
+                                                <td class="text-center dt-type-numeric">[[${introduce.title_vi}]]</td>
+                                                <td class="text-center dt-type-numeric">[[${introduce.subtitle_vi}]]</td>
                                                 <td class="button-column">
-                                                    <a class="btn btn-default" th:href="@{/webadmin/home/about-us/edit?id={id}(id=${about.id})}">
+                                                    <a class="btn btn-default" th:href="@{/webadmin/about-us/overview/introduce/edit?id={id}(id=${introduce.id})}">
                                                         <i class="fas fa-pencil"></i>&nbsp;Edit</a>
                                                 </td>
                                             </tr>

@@ -305,6 +305,314 @@ $(document).ready(function() {
     }
 
 
+    const AboutUsOverviewIntroduceImageFilepond = FilePond.create(document.querySelector('#aboutUsIntroduce-image-filepond'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#aboutUsIntroduce-image-filepond').parent().attr("data-id"));
+                    formData.append('type', 'aboutUsIntroduce-image');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='image_url']").val(response);
+                    return response;
+                }
+            },
+        },
+        acceptedFileTypes: ['image/*'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file ảnh',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file ảnh',
+        labelIdle: 'Kéo thả file ảnh hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const aboutUsIntroduce_form = document.querySelector('#aboutUsIntroduce-form');
+    if(aboutUsIntroduce_form){
+        aboutUsIntroduce_form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            try{
+                $('.loading-wrapper').show();
+
+                await Promise.all([
+                    AboutUsOverviewIntroduceImageFilepond.processFiles()
+                ]);
+
+                const form = e.target;
+
+                const isImageDelete = form.elements['image-delete'] ? form.elements['image-delete'].checked : false;
+
+                await Promise.all([
+                    isImageDelete ? FilePondDelete(form.elements['image_url'].value) : Promise.resolve()
+                ]);
+
+                const actionInput = document.createElement('input');
+                actionInput.type = 'hidden';
+                actionInput.name = 'action';
+                actionInput.value = document.activeElement.value;
+                form.appendChild(actionInput);
+
+                form.submit();
+            }catch(error){}
+
+            $('.loading-wrapper').hide();
+        });
+    }
+
+
+    const AboutUsOverviewTestimonialImageFilepond = FilePond.create(document.querySelector('#aboutUsTestimonial-image-filepond'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#aboutUsTestimonial-image-filepond').parent().attr("data-id"));
+                    formData.append('type', 'aboutUsTestimonial-image');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='thumbnail_url']").val(response);
+                    return response;
+                }
+            },
+        },
+        acceptedFileTypes: ['image/*'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file ảnh',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file ảnh',
+        labelIdle: 'Kéo thả file ảnh hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const aboutUsTestimonial_form = document.querySelector('#testimonialItems-form');
+    if(aboutUsTestimonial_form){
+        aboutUsTestimonial_form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            try{
+                $('.loading-wrapper').show();
+
+                await Promise.all([
+                    AboutUsOverviewTestimonialImageFilepond.processFiles()
+                ]);
+
+                const form = e.target;
+
+                const isImageDelete = form.elements['image-delete'] ? form.elements['image-delete'].checked : false;
+
+                await Promise.all([
+                    isImageDelete ? FilePondDelete(form.elements['thumbnail_url'].value) : Promise.resolve()
+                ]);
+
+                const actionInput = document.createElement('input');
+                actionInput.type = 'hidden';
+                actionInput.name = 'action';
+                actionInput.value = document.activeElement.value;
+                form.appendChild(actionInput);
+
+                form.submit();
+            }catch(error){}
+
+            $('.loading-wrapper').hide();
+        });
+    }
+
+
+    let organizationalChartFileFilepond = FilePond.create(document.querySelector('#organizational-chart-file-filepond'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#organizational-chart-file-filepond').parent().attr("data-id"));
+                    formData.append('type', 'organizational-chart-file');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='file_url']").val(response);
+                    return response;
+                },
+                oncomplete: (response) => {
+                    console.log(response);
+                }
+            },
+        },
+        acceptedFileTypes: ['application/pdf'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file PDF',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file PDF',
+        labelIdle: 'Kéo thả file PDF hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const aboutUsOrganizationalChart_form = document.querySelector('#aboutUsOrganizationalChart-form');
+    if(aboutUsOrganizationalChart_form){
+        aboutUsOrganizationalChart_form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            try{
+                $('.loading-wrapper').show();
+
+                await Promise.all([
+                    organizationalChartFileFilepond.processFiles()
+                ]);
+
+                const form = e.target;
+
+                const isImageDelete = form.elements['file-delete'] ? form.elements['file-delete'].checked : false;
+
+                await Promise.all([
+                    isImageDelete ? FilePondDelete(form.elements['file_url'].value) : Promise.resolve()
+                ]);
+
+                const actionInput = document.createElement('input');
+                actionInput.type = 'hidden';
+                actionInput.name = 'action';
+                actionInput.value = document.activeElement.value;
+                form.appendChild(actionInput);
+
+                form.submit();
+            }catch(error){}
+
+            $('.loading-wrapper').hide();
+        });
+    }
+
+
+    const AboutUsOrganizationalChartItemsImageFilepond = FilePond.create(document.querySelector('#aboutUsOrganizationalChartItems-image-filepond'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#aboutUsOrganizationalChartItems-image-filepond').parent().attr("data-id"));
+                    formData.append('type', 'aboutUsOrganizationalChartItems-image');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='image_url']").val(response);
+                    return response;
+                }
+            },
+        },
+        acceptedFileTypes: ['image/*'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file ảnh',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file ảnh',
+        labelIdle: 'Kéo thả file ảnh hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const organizationalChartItems_form = document.querySelector('#organizationalChartItems-form');
+    if(organizationalChartItems_form){
+        organizationalChartItems_form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            try{
+                $('.loading-wrapper').show();
+
+                await Promise.all([
+                    AboutUsOrganizationalChartItemsImageFilepond.processFiles()
+                ]);
+
+                const form = e.target;
+
+                const isImageDelete = form.elements['image-delete'] ? form.elements['image-delete'].checked : false;
+
+                await Promise.all([
+                    isImageDelete ? FilePondDelete(form.elements['image_url'].value) : Promise.resolve()
+                ]);
+
+                const actionInput = document.createElement('input');
+                actionInput.type = 'hidden';
+                actionInput.name = 'action';
+                actionInput.value = document.activeElement.value;
+                form.appendChild(actionInput);
+
+                form.submit();
+            }catch(error){}
+
+            $('.loading-wrapper').hide();
+        });
+    }
+
+
+    const AboutUsLicenseCertificateItemsImageFilepond = FilePond.create(document.querySelector('#aboutUsLicenseCertificateItems-image-filepond'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#aboutUsLicenseCertificateItems-image-filepond').parent().attr("data-id"));
+                    formData.append('type', 'aboutUsLicenseCertificateItems-image');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='image_url']").val(response);
+                    return response;
+                }
+            },
+        },
+        acceptedFileTypes: ['image/*'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file ảnh',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file ảnh',
+        labelIdle: 'Kéo thả file ảnh hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const aboutUsLicenseCertificateItems_form = document.querySelector('#aboutUsLicenseCertificateItems-form');
+    if(aboutUsLicenseCertificateItems_form){
+        aboutUsLicenseCertificateItems_form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            try{
+                $('.loading-wrapper').show();
+
+                await Promise.all([
+                    AboutUsLicenseCertificateItemsImageFilepond.processFiles()
+                ]);
+
+                const form = e.target;
+
+                const isImageDelete = form.elements['image-delete'] ? form.elements['image-delete'].checked : false;
+
+                await Promise.all([
+                    isImageDelete ? FilePondDelete(form.elements['image_url'].value) : Promise.resolve()
+                ]);
+
+                const actionInput = document.createElement('input');
+                actionInput.type = 'hidden';
+                actionInput.name = 'action';
+                actionInput.value = document.activeElement.value;
+                form.appendChild(actionInput);
+
+                form.submit();
+            }catch(error){}
+
+            $('.loading-wrapper').hide();
+        });
+    }
+
+
     document.querySelectorAll('.btn-delete-carousel').forEach(button => {
         button.addEventListener('click', function() {
             var itemIdToDelete = this.getAttribute('data-id');
@@ -323,7 +631,46 @@ $(document).ready(function() {
             $("#delete-action-confirmation-submit-button").attr("data-type", type);
         });
     });
-
+    document.querySelectorAll('.btn-delete-testimonial-items').forEach(button => {
+        button.addEventListener('click', function() {
+            var itemIdToDelete = this.getAttribute('data-id');
+            var thumbnail_url = this.getAttribute("data-thumbnail_url");
+            var type = this.getAttribute("data-type");
+            $("#delete-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
+            $("#delete-action-confirmation-submit-button").attr("data-thumbnail_url", thumbnail_url);
+            $("#delete-action-confirmation-submit-button").attr("data-type", type);
+        });
+    });
+    document.querySelectorAll('.btn-delete-organizational-chart-items').forEach(button => {
+        button.addEventListener('click', function() {
+            var itemIdToDelete = this.getAttribute('data-id');
+            var image_url = this.getAttribute("data-image_url");
+            var type = this.getAttribute("data-type");
+            $("#delete-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
+            $("#delete-action-confirmation-submit-button").attr("data-image_url", image_url);
+            $("#delete-action-confirmation-submit-button").attr("data-type", type);
+        });
+    });
+    document.querySelectorAll('.btn-delete-license-certificate').forEach(button => {
+        button.addEventListener('click', function() {
+            var itemIdToDelete = this.getAttribute('data-id');
+            var type = this.getAttribute("data-type");
+            $("#delete-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
+            $("#delete-action-confirmation-submit-button").attr("data-type", type);
+        });
+    });
+    document.querySelectorAll('.btn-delete-license-certificate-items').forEach(button => {
+        button.addEventListener('click', function() {
+            var itemIdToDelete = this.getAttribute('data-id');
+            var parentId = this.getAttribute("data-parentId");
+            var image_url = this.getAttribute("data-image_url");
+            var type = this.getAttribute("data-type");
+            $("#delete-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
+            $("#delete-action-confirmation-submit-button").attr("data-parentId", parentId);
+            $("#delete-action-confirmation-submit-button").attr("data-image_url", image_url);
+            $("#delete-action-confirmation-submit-button").attr("data-type", type);
+        });
+    });
 
 
     $('#delete-action-confirmation-submit-button').bind('click', function () {
@@ -381,7 +728,110 @@ $(document).ready(function() {
 
             return false;
         }
+        else if(type == 'testimonial-items'){
+            try{
+                $('.loading-wrapper').show();
 
+                let id = $(this).attr('data-id');
+                let form = new FormData()
+                form.append("thumbnail_url", $(this).attr("data-thumbnail_url"))
+
+                FilePondDelete($(this).attr("data-thumbnail_url"))
+
+                fetch(`/webadmin/about-us/overview/testimonial-items/delete/${id}`, {
+                    method: 'DELETE',
+                    body: form
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = '/webadmin/about-us/overview/testimonial';
+                        }
+                    });
+
+                $('#delete-action-confirmation').modal('toggle');
+            }catch (error) {}
+
+            $('.loading-wrapper').hide();
+
+            return false;
+        }
+        else if(type == 'organizational-chart-items'){
+            try{
+                $('.loading-wrapper').show();
+
+                let id = $(this).attr('data-id');
+                let form = new FormData()
+                form.append("image_url", $(this).attr("data-image_url"))
+
+                FilePondDelete($(this).attr("data-image_url"))
+
+                fetch(`/webadmin/about-us/organizational-chart-items/delete/${id}`, {
+                    method: 'DELETE',
+                    body: form
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = '/webadmin/about-us/organizational-chart';
+                        }
+                    });
+
+                $('#delete-action-confirmation').modal('toggle');
+            }catch (error) {}
+
+            $('.loading-wrapper').hide();
+
+            return false;
+        }
+        else if(type == 'license-certificate'){
+            try{
+                $('.loading-wrapper').show();
+
+                let id = $(this).attr('data-id');
+
+                fetch(`/webadmin/about-us/licenses-certificates/delete/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = '/webadmin/about-us/licenses-certificates';
+                        }
+                    });
+
+                $('#delete-action-confirmation').modal('toggle');
+            }catch (error) {}
+
+            $('.loading-wrapper').hide();
+
+            return false;
+        }
+        else if(type == 'license-certificate-items'){
+            try{
+                $('.loading-wrapper').show();
+
+                let id = $(this).attr('data-id');
+                let parentId = $(this).attr('data-parentId');
+                let form = new FormData()
+                form.append("image_url", $(this).attr("data-image_url"))
+
+                FilePondDelete($(this).attr("data-image_url"))
+
+                fetch(`/webadmin/about-us/licenses-certificates-items/delete/${id}`, {
+                    method: 'DELETE',
+                    body: form
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = `/webadmin/about-us/licenses-certificates-items?id=${parentId}`;
+                        }
+                    });
+
+                $('#delete-action-confirmation').modal('toggle');
+            }catch (error) {}
+
+            $('.loading-wrapper').hide();
+
+            return false;
+        }
     });
 
     // try{

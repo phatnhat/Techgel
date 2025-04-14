@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{admin/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <main class="content-wrapper" style="height: 100%;">
+    <form id="organizationalChartItems-form" th:action="@{/webadmin/about-us/organizational-chart-items/edit}" th:object="${aboutUsOrganizationalChartItems}" method="post">
+      <div th:if="${organizational_chart_items_errors}" th:each="error: ${organizational_chart_items_errors}" class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+        <strong>[[${ organizational_chart_items_message }]]!</strong> [[${ error.value }]]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div th:if="${organizational_chart_items_errors == null and organizational_chart_items_message != null}" class="alert alert-success alert-dismissible fade m-0" role="alert">
+        <strong>[[${ organizational_chart_items_message }]]!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <input type="hidden" th:field="*{id}">
+      <input type="hidden" th:field="*{image_url}">
+      <div class="content-header clearfix" style="padding: 15px 1rem;">
+        <h1 class="float-left">
+          Sơ đồ tổ chức
+          <small>
+            <i class="fas fa-arrow-circle-left"></i>
+            <a th:href="@{/webadmin/about-us/organizational-chart}">Back</a>
+          </small>
+        </h1>
+        <div class="float-right">
+          <button type="submit" name="action" value="save" class="btn btn-primary">
+            <i class="far fa-floppy-disk"></i>
+            Save
+          </button>
+          <button th:unless="${#strings.contains(requestURI, 'create')}" type="submit" name="action" value="save-continue" class="btn btn-primary">
+            <i class="far fa-floppy-disk"></i>
+            Save and Continue Edit
+          </button>
+          <button th:unless="${#strings.contains(requestURI, 'create')}" th:data-image_url="${aboutUsOrganizationalChartItems.image_url}" data-type="organizational-chart-items" type="button" value="Delete" id="delete-organizational-chart" class="btn btn-danger btn-delete-organizational-chart-items" th:data-id="${aboutUsOrganizationalChartItems.id}" data-toggle="modal" data-target="#delete-action-confirmation">
+            <i class="far fa-trash-can"></i>
+            Delete
+          </button>
+        </div>
+      </div>
+      <section class="content">
+        <div class="container-fluid">
+          <div class="form-horizontal">
+            <nop-card>
+              <div class="card card-secondary card-outline" data-card-name="category-display" data-hideattribute="CategoryPage.HideDisplayBlock" id="category-display"><div class="card-header with-border clearfix"><div class="card-title"><i class="fas fa-tv"></i>Display</div><div class="card-tools float-right"><button class="btn btn-tool" data-card-widget="collapse" type="button"><i class="fa toggle-icon fa-minus"></i></button></div></div>
+                <div class="card-body" style="display: block;">
+
+                  <div class="form-group row">
+                    <div class="col-md-3">
+                      <div class="label-wrapper"><label class="col-form-label">Thứ tự hiển thị</label>
+                        <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <input type="number" class="form-control" data-val="true" data-val-required="The Display order field is required." name="displayOrder" th:field="*{displayOrder}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
+                      <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-md-2">
+                      <div class="label-wrapper"><label class="col-form-label">Upload Ảnh</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                    </div>
+                    <div th:if="${aboutUsOrganizationalChartItems.image_url == null or aboutUsOrganizationalChartItems.image_url.isBlank()}" class="col-md-10" th:data-id="${aboutUsOrganizationalChartItems.id}">
+                      <input type="file" id="aboutUsOrganizationalChartItems-image-filepond" class="filepond" name="image" data-allow-reorder="true" accept="image/jpeg, image/png">
+                    </div>
+                    <div th:if="${aboutUsOrganizationalChartItems.image_url != null and not aboutUsOrganizationalChartItems.image_url.isBlank()}" class="col-md-10 py-2" th:data-id="${aboutUsOrganizationalChartItems.id}" style="border: 1px solid #ced4da;border-radius:.25rem">
+                      <input type="hidden" name="image" th:value="${aboutUsOrganizationalChartItems.image_url}">
+                      <img th:src="'/uploads/' + ${aboutUsOrganizationalChartItems.image_url}" alt="" style="max-height:100px;">
+                      <input type="checkbox" name="image-delete"> Xóa ảnh
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </nop-card>
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <th:block th:include="~{admin/fragments :: delete_modal}"></th:block>
+    <div class="loading-wrapper" th:include="~{admin/fragments :: loading}" style="display: none;"></div>
+
+  </main>
+</body>
+</html>

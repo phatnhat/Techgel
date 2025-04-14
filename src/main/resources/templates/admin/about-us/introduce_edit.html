@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{admin/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main class="content-wrapper" style="height: 100%;">
+        <form id="aboutUsIntroduce-form" th:action="@{/webadmin/about-us/overview/introduce/edit}" th:object="${aboutUsIntroduce}" method="post" enctype="multipart/form-data">
+            <div th:if="${errors}" th:each="error: ${errors}" class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+                <strong>[[${ message }]]!</strong> [[${ error.value }]]
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div th:if="${errors == null and message != null}" class="alert alert-success alert-dismissible fade m-0" role="alert">
+                <strong>[[${ message }]]!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <input type="hidden" th:field="*{id}">
+            <input type="hidden" th:field="*{image_url}">
+            <div class="content-header clearfix" style="padding: 15px 1rem;">
+                <h1 class="float-left">
+                    Tổng quan / Giới thiệu
+                    <small>
+                        <i class="fas fa-arrow-circle-left"></i>
+                        <a th:href="@{/webadmin/about-us/overview/introduce}">Back</a>
+                    </small>
+                </h1>
+                <div class="float-right">
+                    <button type="submit" name="action" value="save" class="btn btn-primary">
+                        <i class="far fa-floppy-disk"></i>
+                        Save
+                    </button>
+                    <button type="submit" name="action" value="save-continue" class="btn btn-primary">
+                        <i class="far fa-floppy-disk"></i>
+                        Save and Continue Edit
+                    </button>
+                </div>
+            </div>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="form-horizontal">
+                        <nop-card>
+                            <div class="card card-secondary card-outline" data-card-name="category-display" data-hideattribute="CategoryPage.HideDisplayBlock" id="category-display"><div class="card-header with-border clearfix"><div class="card-title"><i class="fas fa-tv"></i>Display</div><div class="card-tools float-right"><button class="btn btn-tool" data-card-widget="collapse" type="button"><i class="fa toggle-icon fa-minus"></i></button></div></div>
+                                <div class="card-body" style="display: block;">
+                                    <div class="row">
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." name="title_vi" th:field="*{title_vi}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{title_en}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề phụ VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." name="title_vi" th:field="*{subtitle_vi}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden" value="DisplayOrder">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề phụ EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{subtitle_en}"><input name="__Invariant" type="hidden" value="DisplayOrder"><input name="__Invariant" type="hidden">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Nội dung VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" th:field="*{content_vi}"></textarea>
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Nội dung EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" th:field="*{content_en}"></textarea>
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+                                            <div class="label-wrapper"><label class="col-form-label">Upload ảnh 1</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                        </div>
+
+                                        <div th:if="${aboutUsIntroduce.image_url == null or aboutUsIntroduce.image_url.isBlank()}" class="col-md-10" th:data-id="${aboutUsIntroduce.id}">
+                                            <input type="file" id="aboutUsIntroduce-image-filepond" class="filepond" name="image" data-allow-reorder="true" accept="image/jpeg, image/png">
+                                        </div>
+                                        <div th:if="${aboutUsIntroduce.image_url != null and not aboutUsIntroduce.image_url.isBlank()}" class="col-md-10 py-2" th:data-id="${aboutUsIntroduce.id}" style="border: 1px solid #ced4da;border-radius:.25rem">
+                                            <input type="hidden" name="image" th:value="${aboutUsIntroduce.image_url}">
+                                            <img th:src="'/uploads/' + ${aboutUsIntroduce.image_url}" alt="" style="max-height:100px;">
+                                            <input type="checkbox" name="image-delete"> Xóa ảnh
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề ảnh VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{image_title_vi}">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Tiêu đề ảnh EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{image_title_en}">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Phụ đề ảnh VI</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{image_subtitle_vi}">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group col-md-6">
+                                            <div class="col-md-3">
+                                                <div class="label-wrapper"><label class="col-form-label">Phụ đề ảnh EN</label><div title="" data-toggle="tooltip" class="ico-help" data-original-title="Set the category's display order. 1 represents the top of the list."><i class="fas fa-circle-question"></i></div></div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" data-val="true" data-val-required="The Display order field is required." th:field="*{image_subtitle_en}">
+                                                <span class="field-validation-valid" data-valmsg-for="DisplayOrder" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </nop-card>
+                    </div>
+                </div>
+            </section>
+        </form>
+
+        <div class="loading-wrapper" th:include="~{admin/fragments :: loading}" style="display: none;"></div>
+    </main>
+</body>
+</html>

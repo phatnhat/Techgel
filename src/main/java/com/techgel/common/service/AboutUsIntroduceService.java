@@ -10,10 +10,14 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AboutUsIntroduceService {
-    private AboutUsIntroduceRepository aboutUsIntroduceRepository;
+    private final AboutUsIntroduceRepository aboutUsIntroduceRepository;
 
     public List<AboutUsIntroduce> getAll(){
         return aboutUsIntroduceRepository.findAll();
+    }
+
+    public AboutUsIntroduce getById(Long id){
+        return aboutUsIntroduceRepository.findById(id).orElse(null);
     }
 
     public AboutUsIntroduce update(AboutUsIntroduce aboutUsIntroduce){

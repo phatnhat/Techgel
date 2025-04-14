@@ -164,31 +164,4 @@ public class FileController {
         }
     }
 
-    @GetMapping("/test")
-    @CrossOrigin(origins = "*")
-    public ResponseEntity<String> test(){
-        return ResponseEntity.ok("test ok");
-    }
-
-    @GetMapping("/auth")
-    public Map<String, String> getAuthParams() {
-        String privateKey = "private_kIkQXu7ysEJT/beBZA0P4FEETbs=";
-        long expire = System.currentTimeMillis() / 1000 + 3600; // 1 giờ sau
-
-        String signature = null;
-        try {
-            signature = HmacUtils.hmacSha1Hex(
-                    privateKey,
-                    expire + "public_ASvR2wFcF7VvLB6epCFVNodU38o="
-            );
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return Map.of(
-                "token", UUID.randomUUID().toString(),
-                "expire", String.valueOf(expire),
-                "signature", signature
-        );
-    }
 }
