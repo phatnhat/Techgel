@@ -13,23 +13,24 @@
           <div class="swiper-slide" th:each="banner, iter: ${banners}">
             <div
               th:class="'tmp-banner-area bg_image banner-one-height-control tmp-section-gap ' + 'bg_image-' + ${iter.index+1}"
-              th:style="'background: url(' + @{${banner}} + ');background-size:100% 100%;background-repeat:no-repeat;'"
+              th:style="'background: url(' + @{${banner}} + ');'"
             >
-              <div class="shape-image-banner-one">
-                <!--                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/01.png" alt="banner" class="one">-->
-                <!--                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/02.png" alt="banner" class="two">-->
-                <!--                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/03.png" alt="banner" class="three">-->
-              </div>
+              <div class="shape-image-banner-one"></div>
               <div class="container">
                 <div class="row">
                   <div class="col-xl-9">
                     <div class="banner-one-main-wrapper">
-                      <div class="inner">
-                        <h1 class="title">TECHGEL</h1>
-                        <span class="sub-title">SỰ TRỞ LẠI </span>
-                        <div class="button-area-banner-one">
-                          <a href="service.html" class="tmp-btn btn-primary"
-                            >Xem chi tiết</a
+                      <div class="banner-box">
+                        <div class="overlay"></div>
+                        <div class="inner">
+                          <h3 class="title">
+                            NHÀ CHỜ T3 TÂN SƠN NHẤT KHU VỰC QUỐC NGOẠI ĐỒNG BẰNG
+                            SÔNG HỒNG GÌ GÌ ĐÓ NHIỀU LÊN CHO CHẠY TEXT DÀI RA
+                            THỬ NGHIỆM
+                          </h3>
+                          <span class="sub-title">Khánh thành 30/04/2025.</span>
+                          <span class="sub-title"
+                            >Thêm text ÁDJÁDSẠDPÁDSẤPPDJÁPDJSẤPPDJP</span
                           >
                         </div>
                       </div>

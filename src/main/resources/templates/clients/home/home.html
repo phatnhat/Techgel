@@ -31,7 +31,7 @@
           opacity: 0.2;
         }
         .line_img {
-          height: 10px;
+          height: .625rem;
           background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center /
             auto 200%;
         }
@@ -56,17 +56,17 @@
       <!-- About -->
       <div class="about-area tmp-section-gap about-style-one">
         <div class="container">
-          <div class="row align-items-center">
+          <div class="about-area-row row align-items-center">
             <div class="col-lg-6">
               <div class="about-thumbnails">
                 <div class="thumbnail">
                   <img
                     th:src="@{/imgs/4c1ddf764377f329aa663.jpg}"
                     style="
-                      height: 590px;
-                      width: 410px;
+                      height: 36.875rem;
+                      width: 25.625rem;
                       object-fit: cover;
-                      border-radius: 10px;
+                      border-radius: .625rem;
                     "
                     alt="corporate_business"
                   />
@@ -74,10 +74,10 @@
                     <img
                       th:src="@{/imgs/5440d22b4e2afe74a73b2.jpg}"
                       style="
-                        height: 280px;
-                        width: 190px;
+                        height: 17.5rem;
+                        width: 11.875rem;
                         object-fit: cover;
-                        border-radius: 10px;
+                        border-radius: .625rem;
                       "
                       alt="corporate_business"
                     />
@@ -87,14 +87,14 @@
                       class=""
                       th:src="@{/imgs/0a8b05e299e329bd70f21.jpg}"
                       style="
-                        height: 200px;
-                        width: 410px;
+                        height: 12.5rem;
+                        width: 25.625rem;
                         object-fit: cover;
-                        border-radius: 10px;
-                        box-shadow: -10px 10px 0px rgba(33, 33, 33, 1),
-                          -20px 20px 0px rgba(33, 33, 33, 0.7),
-                          -30px 30px 0px rgba(33, 33, 33, 0.4),
-                          -40px 40px 0px rgba(33, 33, 33, 0.1);
+                        border-radius: .625rem;
+                        box-shadow: -0.625rem .625rem 0rem rgba(33, 33, 33, 1),
+                          -1.25rem 1.25rem 0rem rgba(33, 33, 33, 0.7),
+                          -1.875rem 1.875rem 0rem rgba(33, 33, 33, 0.4),
+                          -2.5rem 2.5rem 0rem rgba(33, 33, 33, 0.1);
                       "
                       alt="corporate_business"
                     />
@@ -120,20 +120,7 @@
                     <span class="subtitle">VỀ CHÚNG TÔI</span>
                   </div>
                   <h2 class="title split-collab" style="opacity: 1">
-                    <span
-                      th:each="t: ${'TECHGEL'.toCharArray()}"
-                      style="
-                        position: relative;
-                        display: inline-block;
-                        translate: none;
-                        rotate: none;
-                        scale: none;
-                        transform: translate(0px, 0px);
-                        opacity: 1;
-                        visibility: inherit;
-                      "
-                    >
-                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                    <span>TECHGEL</span>
                     </span>
                   </h2>
                 </div>
@@ -152,22 +139,6 @@
                   hiệu quả và bền vững, đạt tiêu chuẩn hàng đầu quốc tế & trong
                   nước.
                 </p>
-                <div
-                  class="thumbnail-with-title"
-                  data-sal-delay="350"
-                  data-sal="slide-up"
-                  data-sal-duration="800"
-                >
-                  <div class="thumbnail">
-                    <img th:src="@{/imgs/logo-01.png}" alt="Logo Techgel" />
-                    <!--                                  <div class="icon">-->
-                    <!--                                      <i class="fa-regular fa-dollar-sign"></i>-->
-                    <!--                                  </div>-->
-                  </div>
-                  <a th:href="@{vision-mission-values}" class="title"
-                    >Tầm nhìn • Sứ mệnh • Giá trị cốt lõi</a
-                  >
-                </div>
               </div>
             </div>
           </div>
@@ -176,113 +147,58 @@
 
       <!-- counter up -->
       <div class="tmp-counterup-area tmp-section-gap">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-head">
-                <div class="section-sub-title center-title">
-                  <img
-                    th:src="@{/imgs/section-custom-menubar.png}"
-                    alt="Corporate_service"
-                  />
-                  <span class="subtitle">Doanh nghiệp xuất sắc</span>
-                </div>
-                <h2 class="title split-collab" style="opacity: 1">
-                  <span
-                    th:each="t: ${'Top 500 doanh nghiệp xuất sắc nhất'.toCharArray()}"
-                    style="
-                      position: relative;
-                      display: inline-block;
-                      translate: none;
-                      rotate: none;
-                      scale: none;
-                      transform: translate(0px, 0px);
-                      opacity: 1;
-                      visibility: inherit;
-                    "
-                  >
-                    [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                  </span>
-                </h2>
-              </div>
+        <div class="col-lg-12">
+          <div class="section-head">
+            <div class="section-sub-title center-title">
+              <img
+                th:src="@{/imgs/section-custom-menubar.png}"
+                alt="Corporate_service"
+              />
+              <span class="subtitle">Doanh nghiệp xuất sắc</span>
+            </div>
+            <h2 class="title split-collab">Top 500 tại Việt Nam</h2>
+          </div>
+        </div>
+      </div>
+      <div class="counter_animation">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
+          <div class="count-box counter-style-4 text-center">
+            <h5 class="counter-title">DỰ ÁN THI CÔNG</h5>
+            <div>
+              <h3 class="title animated fadeIn">
+                <span class="counter animated fadeInDownBig property-number">100</span>+
+              </h3>
             </div>
           </div>
-          <div class="row g-5 mt--20 counter_animation">
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim"
-              style="
-                translate: none;
-                rotate: none;
-                scale: none;
-                opacity: 1;
-                transform: translate(0px, 0px);
-              "
-            >
-              <div class="count-box counter-style-4 text-center">
-                <h5 class="counter-title">DỰ ÁN THI CÔNG</h5>
-                <div>
-                  <h3 class="title animated fadeIn">
-                    <span class="counter animated fadeInDownBig">100</span>+
-                  </h3>
-                </div>
-              </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
+          <div class="count-box counter-style-4 text-center">
+            <h5 class="counter-title">TỔNG TÀI SẢN</h5>
+            <div>
+              <h3 class="title animated fadeIn">
+                <span class="counter animated fadeInDownBig property-number">1.754</span>tỷ
+              </h3>
             </div>
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim"
-              style="
-                translate: none;
-                rotate: none;
-                scale: none;
-                opacity: 1;
-                transform: translate(0px, 0px);
-              "
-            >
-              <div class="count-box counter-style-4 text-center">
-                <h5 class="counter-title">TỔNG TÀI SẢN</h5>
-                <div>
-                  <h3 class="title animated fadeIn">
-                    <span class="counter animated fadeInDownBig">1.754</span>tỷ
-                  </h3>
-                </div>
-              </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
+          <div class="count-box counter-style-4 text-center">
+            <h5 class="counter-title">TỔNG SỐ NHÂN VIÊN</h5>
+            <div>
+              <h3 class="title animated fadeIn">
+                <span class="counter animated fadeInDownBig property-number">450</span>+
+              </h3>
             </div>
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim"
-              style="
-                translate: none;
-                rotate: none;
-                scale: none;
-                opacity: 1;
-                transform: translate(0px, 0px);
-              "
-            >
-              <div class="count-box counter-style-4 text-center">
-                <h5 class="counter-title">TỔNG SỐ NHÂN VIÊN</h5>
-                <div>
-                  <h3 class="title animated fadeIn">
-                    <span class="counter animated fadeInDownBig">450</span>+
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim"
-              style="
-                translate: none;
-                rotate: none;
-                scale: none;
-                opacity: 1;
-                transform: translate(0px, 0px);
-              "
-            >
-              <div class="count-box counter-style-4 text-center">
-                <h5 class="counter-title">LỰC LƯỢNG THI CÔNG</h5>
-                <div>
-                  <h3 class="title animated fadeIn">
-                    <span class="counter animated fadeInDownBig">1.000</span>+
-                  </h3>
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
+          <div class="count-box counter-style-4 text-center">
+            <h5 class="counter-title">LỰC LƯỢNG THI CÔNG</h5>
+            <div>
+              <h3 class="title animated fadeIn">
+                <span class="counter animated fadeInDownBig property-number">1.000</span>+
+              </h3>
             </div>
           </div>
         </div>
@@ -310,20 +226,8 @@
                   <span>Lĩnh vực hoạt động</span>
                 </div>
                 <h2 class="title split-collab" style="opacity: 1">
-                  <span
-                    th:each="t: ${'Chuyên về những lĩnh vực'.toCharArray()}"
-                    style="
-                      position: relative;
-                      display: inline-block;
-                      translate: none;
-                      rotate: none;
-                      scale: none;
-                      transform: translate(0px, 0px);
-                      opacity: 1;
-                      visibility: inherit;
-                    "
-                  >
-                    [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                  <span>
+                    Lĩnh vực chuyên ngành
                   </span>
                 </h2>
               </div>
@@ -331,9 +235,9 @@
           </div>
           <div
             class="d-flex justify-content-center flex-wrap"
-            style="gap: 20px"
+            style="gap: 1.25rem"
           >
-            <div class="" style="width: 350px">
+            <div class="" style="width: 21.875rem">
               <div class="single-services service-style-one">
                 <div class="services-inner with-shadow card-bg-color">
                   <div class="thumbnail">
@@ -360,7 +264,7 @@
                 </div>
               </div>
             </div>
-            <div class="" style="width: 350px">
+            <div class="" style="width: 21.875rem">
               <div class="single-services service-style-one">
                 <div class="services-inner with-shadow card-bg-color">
                   <div class="thumbnail">
@@ -387,7 +291,7 @@
                 </div>
               </div>
             </div>
-            <div class="" style="width: 350px">
+            <div class="" style="width: 21.875rem">
               <div class="single-services service-style-one">
                 <div class="services-inner with-shadow card-bg-color">
                   <div class="thumbnail">
@@ -414,7 +318,7 @@
                 </div>
               </div>
             </div>
-            <div class="" style="width: 350px">
+            <div class="" style="width: 21.875rem">
               <div class="single-services service-style-one">
                 <div class="services-inner with-shadow card-bg-color">
                   <div class="thumbnail">
@@ -441,7 +345,7 @@
                 </div>
               </div>
             </div>
-            <div class="" style="width: 350px">
+            <div class="" style="width: 21.875rem">
               <div class="single-services service-style-one">
                 <div class="services-inner with-shadow card-bg-color">
                   <div class="thumbnail">
@@ -507,20 +411,8 @@
                   <span class="subtitle">Lĩnh vực hoạt động</span>
                 </div>
                 <h2 class="title split-collab" style="opacity: 1">
-                  <span
-                    th:each="t: ${'Chuyên về những lĩnh vực'.toCharArray()}"
-                    style="
-                      position: relative;
-                      display: inline-block;
-                      translate: none;
-                      rotate: none;
-                      scale: none;
-                      transform: translate(0px, 0px);
-                      opacity: 1;
-                      visibility: inherit;
-                    "
-                  >
-                    [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                  <span>
+                    Lĩnh vực chuyên ngành
                   </span>
                 </h2>
               </div>
@@ -528,7 +420,7 @@
           </div>
           <div
             class="d-flex justify-content-center align-items-center flex-wrap"
-            style="row-gap: 3rem"
+            style="row-gap: 48px"
           >
             <div
               class="single-services"
@@ -710,21 +602,7 @@
                   <span class="subtitle">Dự án</span>
                 </div>
                 <h2 class="title split-collab" style="opacity: 1">
-                  <span
-                    th:each="t: ${'Những dự án tốt nhất của chúng tôi'.toCharArray()}"
-                    style="
-                      position: relative;
-                      display: inline-block;
-                      translate: none;
-                      rotate: none;
-                      scale: none;
-                      transform: translate(0px, 0px);
-                      opacity: 1;
-                      visibility: inherit;
-                    "
-                  >
-                    [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                  </span>
+                  <span>Dự án tiêu biểu</span>
                 </h2>
               </div>
             </div>
@@ -972,7 +850,7 @@
                       translate: none;
                       rotate: none;
                       scale: none;
-                      transform: translate(0px, 0px);
+                      transform: translate(0rem, 0rem);
                       opacity: 1;
                       visibility: inherit;
                     "
@@ -1107,7 +985,7 @@
       </div>
 
       <!-- team -->
-      <div class="team-area tmp-section-gap bg-white" style="display: none">
+      <div class="team-area tmp-section-gap" style="display: none">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
@@ -1128,7 +1006,7 @@
                       translate: none;
                       rotate: none;
                       scale: none;
-                      transform: translate(0px, 0px);
+                      transform: translate(0rem, 0rem);
                       opacity: 1;
                       visibility: inherit;
                     "
@@ -1272,7 +1150,7 @@
           <!--                              <span class="subtitle">BÀI VIẾT MỚI NHẤT</span>-->
           <!--                          </div>-->
           <!--                          <h2 class="title split-collab" style="opacity: 1;">-->
-          <!--                          <span th:each="t: ${'Tin tức & bài viết mới nhất'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">-->
+          <!--                          <span th:each="t: ${'Tin tức & bài viết mới nhất'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0rem, 0rem); opacity: 1; visibility: inherit;">-->
           <!--                              [[${ #strings.replace(t, ' ', '&nbsp;') }]]-->
           <!--                          </span>-->
           <!--                          </h2>-->
@@ -1288,7 +1166,7 @@
           <!--                                  <div class="pmt-news-meta">-->
           <!--                                      <ul class="all-meta">-->
           <!--                                          <li class="date"><span>20</span></li>-->
-          <!--                                          <li class="month"><span>JAN</span></li>-->
+          <!--                                          <li class="month"><span>THÁNG 1</span></li>-->
           <!--                                      </ul>-->
           <!--                                  </div>-->
           <!--                              </div>-->
@@ -1317,7 +1195,7 @@
           <!--                                  <div class="pmt-news-meta">-->
           <!--                                      <ul class="all-meta">-->
           <!--                                          <li class="date"><span>20</span></li>-->
-          <!--                                          <li class="month"><span>JAN</span></li>-->
+          <!--                                          <li class="month"><span>THÁNG 1</span></li>-->
           <!--                                      </ul>-->
           <!--                                  </div>-->
           <!--                              </div>-->
@@ -1346,7 +1224,7 @@
           <!--                                  <div class="pmt-news-meta">-->
           <!--                                      <ul class="all-meta">-->
           <!--                                          <li class="date"><span>20</span></li>-->
-          <!--                                          <li class="month"><span>JAN</span></li>-->
+          <!--                                          <li class="month"><span>THÁNG 1</span></li>-->
           <!--                                      </ul>-->
           <!--                                  </div>-->
           <!--                              </div>-->
@@ -1370,11 +1248,11 @@
           <!--              </div>-->
 
           <div class="menu-news">
-            <div class="row align-items-center">
+            <div class="d-flex flex-row align-items-center">
               <div class="col-md-6">
                 <h3 class="fs-40 fw-bold text-uppercase">Tin tức</h3>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 margin-left-auto">
                 <ul class="menu-news-list">
                   <li class="menu-item">
                     <a href="#" aria-current="page"
@@ -1387,7 +1265,7 @@
           </div>
           <div class="post-features mb-md-5">
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-8 align-middle">
                 <div class="single-news">
                   <div class="news-inner row">
                     <div class="thumbnail col-md-7 p-0">
@@ -1400,7 +1278,7 @@
                       <div class="pmt-news-meta">
                         <ul class="all-meta">
                           <li class="date"><span>20</span></li>
-                          <li class="month"><span>JAN</span></li>
+                          <li class="month"><span>THÁNG 1</span></li>
                         </ul>
                       </div>
                     </div>
@@ -1440,7 +1318,7 @@
                       <div class="date-post">
                         <ul class="all-meta">
                           <li class="date"><span>20</span></li>
-                          <li class="month"><span>JAN</span></li>
+                          <li class="month"><span>THÁNG 1</span></li>
                         </ul>
                       </div>
                       <div class="post-info">
@@ -1450,11 +1328,11 @@
                               >TECHGEL – SỰ TRỞ LẠI MẠNH MẼ SAU KHỦNG HOẢNG</a
                             >
                           </h5>
-                          <a href="#" style="font-size: 12px"
+                          <a href="#" style="font-size: .75rem"
                             ><i
                               >Xem thêm
                               <i
-                                style="font-size: 9px"
+                                style="font-size: .5625rem"
                                 class="fa fa-angle-double-right"
                               ></i
                             ></i>
@@ -1468,7 +1346,7 @@
                       <div class="date-post">
                         <ul class="all-meta">
                           <li class="date"><span>20</span></li>
-                          <li class="month"><span>JAN</span></li>
+                          <li class="month"><span>THÁNG 1</span></li>
                         </ul>
                       </div>
                       <div class="post-info">
@@ -1479,11 +1357,11 @@
                               SƠN NHẤT</a
                             >
                           </h5>
-                          <a href="#" style="font-size: 12px"
+                          <a href="#" style="font-size: .75rem"
                             ><i
                               >Xem thêm
                               <i
-                                style="font-size: 9px"
+                                style="font-size: .5625rem"
                                 class="fa fa-angle-double-right"
                               ></i
                             ></i>
@@ -1497,7 +1375,7 @@
                       <div class="date-post">
                         <ul class="all-meta">
                           <li class="date"><span>20</span></li>
-                          <li class="month"><span>JAN</span></li>
+                          <li class="month"><span>THÁNG 1</span></li>
                         </ul>
                       </div>
                       <div class="post-info">
@@ -1508,11 +1386,11 @@
                               Ích</a
                             >
                           </h5>
-                          <a href="#" style="font-size: 12px"
+                          <a href="#" style="font-size: .75rem"
                             ><i
                               >Xem thêm
                               <i
-                                style="font-size: 9px"
+                                style="font-size: .5625rem"
                                 class="fa fa-angle-double-right"
                               ></i
                             ></i>
@@ -1531,7 +1409,7 @@
       <!-- partners & clients -->
       <div
         class="tmp-partner-area background-partner d-none"
-        style="position: relative; padding: 50px 0"
+        style="position: relative; padding: 3.125rem 0"
       >
         <div class="container">
           <div class="row">
@@ -1553,7 +1431,7 @@
                       translate: none;
                       rotate: none;
                       scale: none;
-                      transform: translate(0px, 0px);
+                      transform: translate(0rem, 0rem);
                       opacity: 1;
                       visibility: inherit;
                     "
@@ -1566,7 +1444,7 @@
           </div>
           <div
             class="d-flex flex-column justify-content-center"
-            style="gap: 20px"
+            style="gap: 1.25rem"
             data-sal-delay="150"
             data-sal="slide-up"
             data-sal-duration="800"
@@ -1617,7 +1495,7 @@
               </div>
               <div class="item slick-slide">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/75rem-Coca-Cola_logo.svg.png"
                   alt=""
                   class="img-fluid"
                 />
@@ -1635,7 +1513,7 @@
         </div>
       </div>
 
-      <div class="tmp-partner-area" style="position: relative; padding: 50px 0">
+      <div class="tmp-partner-area" style="position: relative; padding: 3.125rem 0">
         <div class="container-full">
           <div class="row">
             <div class="col-lg-12">
@@ -1656,7 +1534,7 @@
                       translate: none;
                       rotate: none;
                       scale: none;
-                      transform: translate(0px, 0px);
+                      transform: translate(0rem, 0rem);
                       opacity: 1;
                       visibility: inherit;
                     "
@@ -1719,7 +1597,7 @@
               </div>
               <div class="slide">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/75rem-Coca-Cola_logo.svg.png"
                   width="100"
                   class="img-fluid"
                   alt=""
@@ -1783,7 +1661,7 @@
               </div>
               <div class="slide">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/75rem-Coca-Cola_logo.svg.png"
                   width="100"
                   class="img-fluid"
                   alt=""
