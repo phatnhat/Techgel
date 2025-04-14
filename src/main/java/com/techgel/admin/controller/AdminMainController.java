@@ -2,7 +2,6 @@ package com.techgel.admin.controller;
 
 import com.techgel.common.entity.adminSettings.*;
 import com.techgel.common.service.*;
-import com.techgel.common.utils.SlugUtils;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -34,7 +33,8 @@ public class AdminMainController {
     private final AboutUsVMVItemService aboutUsVMVItemService;
     private final AboutUsLicenseCertificateService aboutUsLicenseCertificateService;
     private final AboutUsLicenseCertificateItemsService aboutUsLicenseCertificateItemsService;
-
+    private final AboutUsClientPartnerService aboutUsClientPartnerService;
+    private final AboutUsClientPartnerItemsService aboutClientPartnerItemsService;
 
     @GetMapping("")
     public String viewWebAdmin(){
@@ -727,7 +727,7 @@ public class AdminMainController {
     }
 
     @GetMapping("/about-us/licenses-certificates-items/edit")
-    public String aboutUsOverviewTestimonialEdit(Model model, @RequestParam Long id, @RequestParam Long parentId){
+    public String aboutUsLicenseCertificateItemEdit(Model model, @RequestParam Long id, @RequestParam Long parentId){
         try{
             AboutUsLicenseCertificateItems aboutUsLicenseCertificateItems = aboutUsLicenseCertificateItemsService.getByIdAndParentId(id, parentId);
             if(aboutUsLicenseCertificateItems != null){
@@ -767,5 +767,134 @@ public class AdminMainController {
 
         if(action.equals("save")) return String.format("redirect:/webadmin/about-us/licenses-certificates-items?id=%s", aboutUsLicenseCertificateItems.getAboutUsLicenseCertificate().getId());
         return String.format("redirect:/webadmin/about-us/licenses-certificates-items/edit?parentId=%s&id=%s", aboutUsLicenseCertificateItems.getAboutUsLicenseCertificate().getId(), aboutUsLicenseCertificateItems.getId());
+    }
+
+    @GetMapping("/about-us/clients-partners")
+    public String aboutUsClientPartner(Model model){
+        List<AboutUsClientPartner> aboutUsClientPartners = aboutUsClientPartnerService.getAll();
+
+        model.addAttribute("aboutUsClientPartners", aboutUsClientPartners);
+
+        return "admin/about-us/client-partner";
+    }
+
+    @GetMapping("/about-us/clients-partners/create")
+    public String aboutUsClientPartnerSave(Model model){
+        model.addAttribute("aboutUsClientPartner", new AboutUsClientPartner());
+        return "admin/about-us/client-partner_edit";
+    }
+
+    @GetMapping("/about-us/clients-partners/edit")
+    public String aboutUsClientPartnerEdit(Model model, @RequestParam Long id){
+        try{
+            AboutUsClientPartner aboutUsClientPartner = aboutUsClientPartnerService.getById(id);
+            if(aboutUsClientPartner != null){
+                model.addAttribute("aboutUsClientPartner", aboutUsClientPartner);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/about-us/client-partner_edit";
+    }
+
+    @PostMapping("/about-us/clients-partners/edit")
+    public String saveAboutUsClientPartner(RedirectAttributes redirectAttributes,
+                                                 @RequestParam String action,
+                                                 @Valid AboutUsClientPartner aboutUsClientPartner,
+                                                 BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("errors", errors);
+                redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            }else {
+                aboutUsClientPartnerService.update(aboutUsClientPartner);
+                redirectAttributes.addFlashAttribute("message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            return "redirect:/webadmin/about-us/clients-partners";
+        }
+
+        if(action.equals("save")) return "redirect:/webadmin/about-us/clients-partners";
+        return String.format("redirect:/webadmin/about-us/clients-partners/edit?id=%s", aboutUsClientPartner.getId());
+    }
+
+    @GetMapping("/about-us/clients-partners-items")
+    public String aboutUsClientPartnerList(Model model, @RequestParam Long id){
+        try{
+            AboutUsClientPartner aboutUsClientPartner = aboutUsClientPartnerService.getById(id);
+            if(aboutUsClientPartner != null){
+                List<AboutUsClientPartnerItems> aboutUsClientPartnerItems = aboutClientPartnerItemsService.getAllByAboutUsLicensesCertificateId(id);
+
+                model.addAttribute("aboutUsClientPartner", aboutUsClientPartner);
+                model.addAttribute("aboutUsClientPartnerItems", aboutUsClientPartnerItems);
+
+                return "admin/about-us/client-partner-items";
+            }
+        }catch (Exception e){
+            return "redirect:/webadmin";
+        }
+
+        return "redirect:/webadmin/about-us/clients-partners";
+    }
+
+    @GetMapping("/about-us/clients-partners-items/create")
+    public String aboutUsClientPartnerItemSave(Model model, @RequestParam Long parentId){
+        AboutUsClientPartner aboutUsClientPartner = aboutUsClientPartnerService.getById(parentId);
+        if(aboutUsClientPartner != null){
+            model.addAttribute("parentId", parentId);
+            model.addAttribute("aboutUsClientPartner", aboutUsClientPartner);
+            model.addAttribute("aboutUsClientPartnerItems", new AboutUsClientPartnerItems());
+            return "admin/about-us/client-partner-items_edit";
+        }
+        return "redirect:/about-us/clients-partners";
+    }
+
+    @GetMapping("/about-us/clients-partners-items/edit")
+    public String aboutUsClientPartnerItemEdit(Model model, @RequestParam Long id, @RequestParam Long parentId){
+        try{
+            AboutUsClientPartnerItems aboutUsClientPartnerItems = aboutClientPartnerItemsService.getByIdAndParentId(id, parentId);
+            if(aboutUsClientPartnerItems != null){
+                model.addAttribute("aboutUsClientPartner", aboutUsClientPartnerService.getById(parentId));
+                model.addAttribute("aboutUsClientPartnerItems", aboutUsClientPartnerItems);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/about-us/client-partner-items_edit";
+    }
+
+    @PostMapping("/about-us/clients-partners-items/edit")
+    public String saveAboutUsClientPartnerItem(RedirectAttributes redirectAttributes,
+                                                     @RequestParam String action,
+                                                     @RequestParam(name = "image-delete", required = false) boolean image_delete,
+                                                     @Valid AboutUsClientPartnerItems aboutUsClientPartnerItems,
+                                                     BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("errors", errors);
+                redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            }else {
+                if(image_delete) aboutUsClientPartnerItems.setImage_url(null);
+                aboutClientPartnerItemsService.update(aboutUsClientPartnerItems);
+                redirectAttributes.addFlashAttribute("message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            return "redirect:/webadmin/about-us/clients-partners-items";
+        }
+
+        if(action.equals("save")) return String.format("redirect:/webadmin/about-us/clients-partners-items?id=%s", aboutUsClientPartnerItems.getAboutUsClientPartner().getId());
+        return String.format("redirect:/webadmin/about-us/clients-partners-items/edit?parentId=%s&id=%s", aboutUsClientPartnerItems.getAboutUsClientPartner().getId(), aboutUsClientPartnerItems.getId());
     }
 }

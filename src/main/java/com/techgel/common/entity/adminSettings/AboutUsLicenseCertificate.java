@@ -22,8 +22,8 @@ public class AboutUsLicenseCertificate extends BasedEntity {
     private String title_en;
     private int displayOrder;
 
-    @OneToMany(mappedBy = "aboutUsLicenseCertificate", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AboutUsLicenseCertificateItems> aboutUsLicenseCertificateItems = new ArrayList<>();
+//    @OneToMany(mappedBy = "aboutUsLicenseCertificate", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<AboutUsLicenseCertificateItems> aboutUsLicenseCertificateItems = new ArrayList<>();
 
     public AboutUsLicenseCertificate(String title_vi, String title_en, int displayOrder) {
         this.title_vi = title_vi;

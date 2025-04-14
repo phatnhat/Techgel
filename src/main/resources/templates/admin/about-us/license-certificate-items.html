@@ -46,6 +46,12 @@
                                         <tr>
                                             <th data-dt-column="1" class="text-center dt-orderable-none" rowspan="0" colspan="1">
                                                 <div class="dt-scroll-sizing">
+                                                    <span class="dt-column-title">Ảnh</span>
+                                                    <span class="dt-column-order"></span>
+                                                </div>
+                                            </th>
+                                            <th data-dt-column="1" class="text-center dt-orderable-none" rowspan="0" colspan="1">
+                                                <div class="dt-scroll-sizing">
                                                     <span class="dt-column-title">Tiêu đề</span>
                                                     <span class="dt-column-order"></span>
                                                 </div>
@@ -66,6 +72,9 @@
                                         </thead>
                                         <tbody >
                                         <tr th:each="lc: ${aboutUsLicenseCertificateItems}">
+                                            <td class="text-center">
+                                                <img th:src="'/uploads/' + ${lc.image_url}" alt="" width="100">
+                                            </td>
                                             <td class="text-center dt-type-numeric">[[${lc.title_vi}]]</td>
                                             <td class="text-center dt-type-numeric">[[${lc.displayOrder}]]</td>
                                             <td class="button-column">

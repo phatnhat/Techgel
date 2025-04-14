@@ -175,12 +175,11 @@
               <nav>
                 <ul class="parent-nav">
                   <li
-                    th:each="n, i: ${homeNavigations}"
-                    th:class="${not n.getChildrens.isEmpty() ? 'has-dropdown' : ''}"
-                  >
+                          th:each="n, i: ${homeNavigations}"
+                          th:class="${not n.getChildrens.isEmpty() ? 'has-dropdown' : ''}">
                     <a
-                      th:href="@{${n.slug}}"
-                      class="nav-link d-flex justify-content-center align-items-center"
+                            th:href="@{${n.slug}}"
+                            class="nav-link d-flex justify-content-center align-items-center"
                     >
                       <span class="rolling-text">
                         <div class="block">
@@ -191,12 +190,12 @@
                     <ul class="submenu" th:if="${not n.getChildrens.isEmpty()}">
                       <li th:each="sub : ${n.getChildrens}">
                         <a th:href="@{${sub.slug}}"
-                          >[[${sub.title_vi}]]</a
-                        >
+                        >[[${sub.title_vi}]]</a>
                       </li>
                     </ul>
                   </li>
                 </ul>
+
               </nav>
             </div>
             <div class="actions-area">
