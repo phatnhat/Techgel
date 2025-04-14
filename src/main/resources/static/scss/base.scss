@@ -6,6 +6,20 @@ html {
     overflow-x: hidden;
 }
 
+.border-right {
+  border-right: .0625rem solid var(--black);
+}
+
+.border-grey {
+  border-color: var(--alwaysGrey);
+}
+
+.hide-border-responsive {
+  @media (max-width: 48rem) {
+    border: none;
+  }
+} 
+
 .margin-left-auto {
   margin-left: auto;
 }
@@ -13,6 +27,29 @@ html {
 .align-middle {
   align-content: center;
 }
+
+.center {
+  text-align: center;
+}
+
+.border-gradient {
+  border-bottom: 4px solid; // or any thickness
+  border-image: linear-gradient(
+    to right,
+    white 0%,
+    #aaa 12.5%,
+    black 50%,
+    #aaa 87.5%,
+    white 100%
+  );
+  border-image-slice: 1;
+}
+
+.always-black {
+  color: var(--alwaysBlack);
+}
+
+// Content stuff
 
 .content-wrapper {
     width: 100vw;
@@ -538,3 +575,36 @@ html {
   text-align: center;
 }
 
+// news
+.news-body{
+  .title{
+    display: block
+  }
+}
+
+// footer
+
+@media (max-width: 48rem) {
+  .footer-main.footer-style-one {
+    text-align: center;
+  }
+
+  .single-post {
+    justify-content: center;
+  }
+
+  .day-time {
+    justify-self: center;
+  }
+
+  .social-icons.solid-social-icons {
+    justify-content: center;
+  }
+}
+
+// aboutUs inner
+.about-inner {
+    place-items: center;
+    margin: auto;
+    padding-bottom: 1.5rem;
+}
