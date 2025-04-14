@@ -31,7 +31,7 @@
           opacity: 0.2;
         }
         .line_img {
-          height: 10px;
+          height: .625rem;
           background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center /
             auto 200%;
         }
@@ -61,40 +61,40 @@
               <div class="about-thumbnails">
                 <div class="thumbnail">
                   <img
-                    th:src="@{/imgs/4c1ddf764377f329aa663.jpg}"
+                    th:src="@{/imgs/mer-adv.jpg}"
                     style="
-                      height: 590px;
-                      width: 410px;
+                      height: 36.875rem;
+                      width: 25.625rem;
                       object-fit: cover;
-                      border-radius: 10px;
+                      border-radius: .625rem;
                     "
                     alt="corporate_business"
                   />
                   <div class="image-two">
                     <img
-                      th:src="@{/imgs/5440d22b4e2afe74a73b2.jpg}"
+                      th:src="@{/imgs/news/san-bay-long-thanh.jpg}"
                       style="
-                        height: 280px;
-                        width: 190px;
+                        height: 17.5rem;
+                        width: 11.875rem;
                         object-fit: cover;
-                        border-radius: 10px;
+                        border-radius: .625rem;
                       "
-                      alt="corporate_business"
+                      alt="san-bay-long-thanh"
                     />
                   </div>
                   <div class="image-three animated">
                     <img
                       class=""
-                      th:src="@{/imgs/0a8b05e299e329bd70f21.jpg}"
+                      th:src="@{/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-6.jpg}"
                       style="
-                        height: 200px;
-                        width: 410px;
+                        height: 12.5rem;
+                        width: 25.625rem;
                         object-fit: cover;
-                        border-radius: 10px;
-                        box-shadow: -10px 10px 0px rgba(33, 33, 33, 1),
-                          -20px 20px 0px rgba(33, 33, 33, 0.7),
-                          -30px 30px 0px rgba(33, 33, 33, 0.4),
-                          -40px 40px 0px rgba(33, 33, 33, 0.1);
+                        border-radius: .625rem;
+                        box-shadow: -0.625rem .625rem 0rem rgba(33, 33, 33, 1),
+                          -1.25rem 1.25rem 0rem rgba(33, 33, 33, 0.7),
+                          -1.875rem 1.875rem 0rem rgba(33, 33, 33, 0.4),
+                          -2.5rem 2.5rem 0rem rgba(33, 33, 33, 0.1);
                       "
                       alt="corporate_business"
                     />
@@ -235,9 +235,9 @@
           </div>
           <div
             class="d-flex justify-content-center flex-wrap"
-            style="gap: 20px"
+            style="gap: 1.25rem"
           >
-            <div class="" style="width: 350px">
+            <div class="" style="width: 21.875rem">
               <div class="single-services service-style-one">
                 <div class="services-inner with-shadow card-bg-color">
                   <div class="thumbnail">
@@ -264,7 +264,7 @@
                 </div>
               </div>
             </div>
-            <div class="" style="width: 350px">
+            <div class="" style="width: 21.875rem">
               <div class="single-services service-style-one">
                 <div class="services-inner with-shadow card-bg-color">
                   <div class="thumbnail">
@@ -291,7 +291,7 @@
                 </div>
               </div>
             </div>
-            <div class="" style="width: 350px">
+            <div class="" style="width: 21.875rem">
               <div class="single-services service-style-one">
                 <div class="services-inner with-shadow card-bg-color">
                   <div class="thumbnail">
@@ -318,7 +318,7 @@
                 </div>
               </div>
             </div>
-            <div class="" style="width: 350px">
+            <div class="" style="width: 21.875rem">
               <div class="single-services service-style-one">
                 <div class="services-inner with-shadow card-bg-color">
                   <div class="thumbnail">
@@ -345,7 +345,7 @@
                 </div>
               </div>
             </div>
-            <div class="" style="width: 350px">
+            <div class="" style="width: 21.875rem">
               <div class="single-services service-style-one">
                 <div class="services-inner with-shadow card-bg-color">
                   <div class="thumbnail">
@@ -420,7 +420,7 @@
           </div>
           <div
             class="d-flex justify-content-center align-items-center flex-wrap"
-            style="row-gap: 3rem"
+            style="row-gap: 48px"
           >
             <div
               class="single-services"
@@ -434,7 +434,7 @@
                 >
                   <a href="#">
                     <img
-                      src="https://www.nannymcphee.co.uk/wp-content/uploads/2023/05/Renewable-Energy-Featured-1.jpg"
+                      th:src="@{/imgs/solar_energy.jpg}"
                       alt="Business consulting services"
                     />
                   </a>
@@ -610,7 +610,7 @@
         </div>
         <div class="container-full">
           <div class="slider_projects">
-            <div class="item slick-slide">
+            <!-- <div class="item slick-slide">
               <div class="wrapper">
                 <a href="#"></a>
                 <figure>
@@ -820,7 +820,49 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
+<div class="item slick-slide" th:each="project : ${signatureProjects}">
+  <div class="wrapper">
+    <a th:href="@{${project.detailUrl}}"></a>
+    <figure>
+      <img th:src="@{${project.imageUrl}}"
+           class="img-fluid"
+           alt=""
+           draggable="false" />
+    </figure>
+
+    <div class="meta_info">
+      <h4 class="fs-20 fw-bold text-uppercase">
+        [[${project.title}]]
+      </h4>
+
+      <div class="detail_info">
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Khách hàng</td>
+                <td>[[${project.client}]]</td>
+              </tr>
+              <tr>
+                <td>Vị trí</td>
+                <td>[[${project.location}]]</td>
+              </tr>
+              <tr>
+                <td>Phạm vi công việc</td>
+                <td>[[${project.scope}]]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a th:href="@{${project.detailUrl}}" class="read_more" tabindex="-1">
+          Xem thêm <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
@@ -850,7 +892,7 @@
                       translate: none;
                       rotate: none;
                       scale: none;
-                      transform: translate(0px, 0px);
+                      transform: translate(0rem, 0rem);
                       opacity: 1;
                       visibility: inherit;
                     "
@@ -1006,7 +1048,7 @@
                       translate: none;
                       rotate: none;
                       scale: none;
-                      transform: translate(0px, 0px);
+                      transform: translate(0rem, 0rem);
                       opacity: 1;
                       visibility: inherit;
                     "
@@ -1160,7 +1202,7 @@
           </div>
           <div class="post-features mb-md-5">
             <div class="row">
-              <div class="col-md-8 align-middle border-right hide-border-responsive border-grey">
+              <div class="col-md-7 align-middle border-right hide-border-responsive border-grey">
                 <div class="single-news">
                   <div class="news-inner row">
                     <div class="thumbnail col-md-7 p-0">
@@ -1202,8 +1244,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="post-sidebar">
+              <div class="post-sidebar col-md-5">
                   <div class="item-post-sb">
                     <div class="meta-post">
                       <div class="date-post">
@@ -1219,20 +1260,23 @@
                               >TECHGEL – SỰ TRỞ LẠI MẠNH MẼ SAU KHỦNG HOẢNG</a
                             >
                           </h5>
-                          <a href="#" style="font-size: 12px"
+                          <a href="#" style="font-size: .75rem"
                             ><i
                               >Xem thêm
                               <i
-                                style="font-size: 9px"
+                                style="font-size: .5625rem"
                                 class="fa fa-angle-double-right"
                               ></i
                             ></i>
                           </a>
                         </div>
-                      </div>
                     </div>
                   </div>
-                  <div class="item-post-sb">
+
+                  
+                  
+                </div>
+                <div class="item-post-sb">
                     <div class="meta-post">
                       <div class="date-post">
                         <ul class="all-meta">
@@ -1248,11 +1292,11 @@
                               SƠN NHẤT</a
                             >
                           </h5>
-                          <a href="#" style="font-size: 12px"
+                          <a href="#" style="font-size: .75rem"
                             ><i
                               >Xem thêm
                               <i
-                                style="font-size: 9px"
+                                style="font-size: .5625rem"
                                 class="fa fa-angle-double-right"
                               ></i
                             ></i>
@@ -1277,11 +1321,11 @@
                               Ích</a
                             >
                           </h5>
-                          <a href="#" style="font-size: 12px"
+                          <a href="#" style="font-size: .75rem"
                             ><i
                               >Xem thêm
                               <i
-                                style="font-size: 9px"
+                                style="font-size: .5625rem"
                                 class="fa fa-angle-double-right"
                               ></i
                             ></i>
@@ -1290,7 +1334,6 @@
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
             </div>
           </div>
@@ -1300,7 +1343,7 @@
       <!-- partners & clients -->
       <div
         class="tmp-partner-area background-partner d-none"
-        style="position: relative; padding: 50px 0"
+        style="position: relative; padding: 3.125rem 0"
       >
         <div class="container">
           <div class="row">
@@ -1322,7 +1365,7 @@
                       translate: none;
                       rotate: none;
                       scale: none;
-                      transform: translate(0px, 0px);
+                      transform: translate(0rem, 0rem);
                       opacity: 1;
                       visibility: inherit;
                     "
@@ -1335,7 +1378,7 @@
           </div>
           <div
             class="d-flex flex-column justify-content-center"
-            style="gap: 20px"
+            style="gap: 1.25rem"
             data-sal-delay="150"
             data-sal="slide-up"
             data-sal-duration="800"
@@ -1386,7 +1429,7 @@
               </div>
               <div class="item slick-slide">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/75rem-Coca-Cola_logo.svg.png"
                   alt=""
                   class="img-fluid"
                 />
@@ -1404,7 +1447,7 @@
         </div>
       </div>
 
-      <div class="tmp-partner-area" style="position: relative; padding: 50px 0">
+      <div class="tmp-partner-area" style="position: relative; padding: 3.125rem 0">
         <div class="container-full">
           <div class="row">
             <div class="col-lg-12">
@@ -1425,7 +1468,7 @@
                       translate: none;
                       rotate: none;
                       scale: none;
-                      transform: translate(0px, 0px);
+                      transform: translate(0rem, 0rem);
                       opacity: 1;
                       visibility: inherit;
                     "
@@ -1488,7 +1531,7 @@
               </div>
               <div class="slide">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/75rem-Coca-Cola_logo.svg.png"
                   width="100"
                   class="img-fluid"
                   alt=""
@@ -1552,7 +1595,7 @@
               </div>
               <div class="slide">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/75rem-Coca-Cola_logo.svg.png"
                   width="100"
                   class="img-fluid"
                   alt=""
