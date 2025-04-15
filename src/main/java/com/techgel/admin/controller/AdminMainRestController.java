@@ -18,6 +18,8 @@ public class AdminMainRestController {
     private final AboutUsOrganizationalChartItemsService aboutUsOrganizationalChartItemsService;
     private final AboutUsLicenseCertificateService aboutUsLicenseCertificateService;
     private final AboutUsLicenseCertificateItemsService aboutUsLicenseCertificateItemsService;
+    private final AboutUsClientPartnerService aboutUsClientPartnerService;
+    private final AboutUsClientPartnerItemsService aboutUsClientPartnerItemsService;
     private final GoogleDriveService googleDriveService;
 
     @DeleteMapping("/home/carousel/delete/{id}")
@@ -102,6 +104,36 @@ public class AdminMainRestController {
             AboutUsLicenseCertificateItems aboutUsLicenseCertificateItems = aboutUsLicenseCertificateItemsService.getById(id);
             if(aboutUsLicenseCertificateItems != null){
                 aboutUsLicenseCertificateItemsService.deleteById(id);
+            }else throw new Exception();
+        }catch (Exception e){
+            return ResponseEntity.internalServerError()
+                    .body("Lỗi khi xóa");
+        }
+
+        return ResponseEntity.ok("Delete successfully!");
+    }
+
+    @DeleteMapping("/about-us/clients-partners/delete/{id}")
+    public ResponseEntity<String> deleteClientPartner(@PathVariable Long id){
+        try{
+            AboutUsClientPartner aboutUsClientPartner = aboutUsClientPartnerService.getById(id);
+            if(aboutUsClientPartner != null){
+                aboutUsClientPartnerService.deleteById(id);
+            }else throw new Exception();
+        }catch (Exception e){
+            return ResponseEntity.internalServerError()
+                    .body("Lỗi khi xóa");
+        }
+
+        return ResponseEntity.ok("Delete successfully!");
+    }
+
+    @DeleteMapping("/about-us/clients-partners-items/delete/{id}")
+    public ResponseEntity<String> deleteClientPartnerItems(@PathVariable Long id){
+        try{
+            AboutUsClientPartnerItems aboutUsClientPartnerItems = aboutUsClientPartnerItemsService.getById(id);
+            if(aboutUsClientPartnerItems != null){
+                aboutUsClientPartnerItemsService.deleteById(id);
             }else throw new Exception();
         }catch (Exception e){
             return ResponseEntity.internalServerError()
