@@ -133,6 +133,10 @@ html {
   overflow-x: hidden;
 }
 
+.small-text-shadow {
+  text-shadow: 0.525rem 0.45rem 0.5rem rgb(218, 37, 26);
+}
+
 .border-right {
   border-right: 0.0625rem solid var(--black);
 }
@@ -193,12 +197,12 @@ html[data-theme=dark] .only-dark {
     display: block;
   }
 }
-@media (min-width: 640px) and (max-width: 1023.98px) {
+@media (min-width: 640px) and (max-width: 1023.9808px) {
   .only-tablet {
     display: block;
   }
 }
-@media (max-width: 639.98px) {
+@media (max-width: 639.9808px) {
   .only-mobile {
     display: block;
   }
@@ -679,6 +683,65 @@ html[data-theme=dark] .only-dark {
   place-items: center;
   margin: auto;
   padding-bottom: 1.5rem;
+}
+
+.single-card.card-horizontal .card-inner {
+  display: flex;
+  height: 25rem;
+  align-items: center;
+  padding: 3.125rem;
+  border-radius: 0.625rem;
+  background: linear-gradient(var(--white) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
+.single-card.card-horizontal .card-inner .thumbnail {
+  position: relative;
+}
+.single-card.card-horizontal .card-inner .thumbnail img {
+  height: 13.125rem;
+  width: 9rem;
+  max-width: max-content;
+  object-fit: cover;
+}
+.single-card.card-horizontal .card-inner .content .description {
+  margin: 0.9375rem 1.875rem 1.25rem 0;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  color: var(--black);
+}
+.single-card.card-horizontal .card-inner .content.content-without-bg .name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.0625rem;
+  color: var(--black);
+  font-family: var(--font-secondary);
+}
+.single-card.card-horizontal .card-inner .content.content-without-bg .designation {
+  font-size: 1rem;
+  line-height: 1.3125rem;
+  font-weight: 400;
+  color: var(--themePrimary);
+  font-family: var(--font-secondary);
+  margin-top: 0.625rem;
+}
+
+.breadcrumb-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+div#brxe-rqhadm {
+  padding: 5px 10px;
+  margin-bottom: 0.625rem;
+  background: var(--themePrimary);
+  border-radius: 10px;
+  font-size: 1.25rem;
 }
 
 /*# sourceMappingURL=base.css.map */

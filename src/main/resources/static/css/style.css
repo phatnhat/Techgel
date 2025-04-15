@@ -2132,15 +2132,6 @@ p.description {
     justify-content: space-between;
 }
 
-.single-card.card-horizontal .card-inner {
-    border-radius: .625rem;
-    background: #ffffff;
-    padding: 3.125rem;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(var(--white) 0%, rgba(255, 255, 255, 0.2) 100%);
-}
-
 .rating {
     display: flex;
     align-items: center;
@@ -2164,41 +2155,6 @@ p.description {
     transition: 0.3s;
 }
 
-.single-card.card-horizontal .card-inner .content .description {
-    margin-bottom: 1.25rem;
-    font-size: 1rem;
-    line-height: 1.75rem;
-    color: var(--black);
-    font-weight: 400;
-    padding-right: 1.875rem;
-    margin-top: .9375rem;
-}
-
-.single-card.card-horizontal .card-inner .content .content.content-without-bg .name {
-    font-size: 1.35rem;
-    font-weight: 700;
-    line-height: 1.0625rem;
-    color: var(--black);
-    font-family: var(--font-secondary);
-}
-
-.single-card.card-horizontal .card-inner .content .content.content-without-bg .designation {
-    font-size: 1rem;
-    color: var(--themePrimary);
-    line-height: 1.3125rem;
-    font-weight: 400;
-    font-family: var(--font-secondary);
-    margin-top: .625rem;
-}
-
-.single-card.card-horizontal .card-inner .thumbnail {
-    position: relative;
-}
-
-.single-card.card-horizontal .card-inner .thumbnail img {
-    max-width: max-content;
-}
-
 .icon.icon-quote {
     height: 2.8125rem;
     width: 2.8125rem;
@@ -2208,7 +2164,7 @@ p.description {
     border-radius: 100%;
     display: inline-block;
     position: absolute;
-    left: 1.25rem;
+    left: 0.15rem;
     border: .125rem solid #ffffff;
 }
 
@@ -2218,14 +2174,7 @@ p.description {
     font-size: 1.25rem;
 }
 
-.single-card.card-horizontal .card-inner {
-    border-radius: .625rem;
-    background: #ffffff;
-    padding: 3.125rem;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(var(--white) 0%, rgba(255, 255, 255, 0.2) 100%);
-}
+
 
 .testimonials-button-area .button-next-prev .swiper-button-prev {
     right: 4.0625rem;
@@ -2579,11 +2528,14 @@ p.description {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -12px;
+    background: var(--alwaysWhite);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid var(--alwaysBlack);
 }
 
 .about-cp .partner_list .partner_item {
     flex: 0 0 20%;
-    padding: 16px 12px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -4514,7 +4466,6 @@ p.description {
 .career_development_page .objectives .traning_step .num {
     color: var(--neutralSecondary);
     position: relative;
-    padding-bottom: 16px;
     margin-bottom: 16px;
     font-size: 1.875rem;
     -webkit-transition: all 0.5s ease;

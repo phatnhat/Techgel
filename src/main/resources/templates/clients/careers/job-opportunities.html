@@ -1,330 +1,580 @@
 <!DOCTYPE html>
 <html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
-  <main class="content-wrapper">
+  </head>
+  <body>
+    <main class="content-wrapper">
       <style>
-          .breadcrumb-bg {
-              background-image: url(https://img.freepik.com/free-photo/business-situation-job-interview-concept-job-seeker-present-resume-managers_1421-78.jpg?t=st=1743411161~exp=1743414761~hmac=ad7f4be4696c1044993e232e9a724f27b419528456c87b47a6ab825093a09e7f&w=1380);
-              background-position: center;
-              background-size: cover;
-              background-repeat: no-repeat;
-              display:flex;
-              justify-content: center;
-              align-items: center;
-              width: 100%;
-              height: calc(100vh - 80px);
-          }
+        .breadcrumb-bg {
+          background-image: url([[@{/imgs/banners/job-opportunity.webp}]]);
+        }
       </style>
 
       <div class="breadcrumb-area bg_image breadcrumb-bg">
-          <div id="brxe-oubmqr" class="brxe-container">
-              <div id="brxe-twzaik" class="brxe-block">
-                  <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline">
-                      <h1><span class="uni-text-outline">TUYỂN DỤNG<br></span>CƠ HỘI NGHỀ NGHIỆP</h1>
-                  </div>
-              </div>
-              <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
-                  <div id="brxe-rqhadm" class="brxe-text-basic">Cuộn chuột</div>
-                  <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
-              </a>
+        <div id="brxe-oubmqr" class="brxe-container">
+          <div id="brxe-twzaik" class="brxe-block small-text-shadow">
+            <div
+              id="brxe-naxryb"
+              class="brxe-text uni-text-outline-white uni-text-outline"
+            >
+              <h1>
+                <span class="uni-text-outline">TUYỂN DỤNG<br /></span>CƠ HỘI
+                NGHỀ NGHIỆP
+              </h1>
+            </div>
           </div>
+          <a
+            id="brxe-ygpexj"
+            href="#next"
+            data-brx-anchor="true"
+            class="brxe-block small-text-shadow"
+          >
+            <div id="brxe-rqhadm" class="brxe-text-basic">Cuộn chuột</div>
+            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
       </div>
 
       <div class="menu_careers">
-          <div class="container">
-              <ul id="menu-menu-careers">
-                  <li class="menu-item current-menu-item">
-                      <a href="#">CƠ HỘI NGHỀ NGHIỆP</a>
-                  </li>
-                  <li class="menu-item">
-                      <a href="#">CHÍNH SÁCH NHÂN SỰ</a>
-                  </li>
-                  <li class="menu-item">
-                      <a href="#">VĂN HÓA TECHGEL</a>
-                  </li>
-              </ul>
-          </div>
+        <div class="container">
+          <ul id="menu-menu-careers">
+            <li class="menu-item current-menu-item">
+              <a href="#">CƠ HỘI NGHỀ NGHIỆP</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">CHÍNH SÁCH NHÂN SỰ</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">VĂN HÓA TECHGEL</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div id="next" class="careers_page py-5">
-          <div class="container">
-              <h1 class="title split-collab" style="opacity: 1;">
-                  <span th:each="t: ${'Cơ hội nghề nghiệp'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                  </span>
-              </h1>
-              <hr>
-              <div class="list_careers pb-md-5">
+        <div class="container">
+          <h1 class="title split-collab" style="opacity: 1">
+            <span
+              th:each="t: ${'Cơ hội nghề nghiệp'.toCharArray()}"
+              style="
+                position: relative;
+                display: inline-block;
+                translate: none;
+                rotate: none;
+                scale: none;
+                transform: translate(0px, 0px);
+                opacity: 1;
+                visibility: inherit;
+              "
+            >
+              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+            </span>
+          </h1>
+          <hr />
+          <div class="list_careers pb-md-5">
+            <div class="row">
+              <div class="col-md-4 col-6">
+                <div class="item_career">
                   <div class="row">
-                      
-                      <div class="col-md-4 col-6">
-                          <div class="item_career">
-                              <div class="row">
-                                  <div class="col-md-4">
-                                      <a href="#">
-                                          <img width="300" height="300" src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740" class="img-fluid wp-post-image" alt="">
-                                      </a>
-                                  </div>
-                                  <div class="col-md-8 d-flex flex-column justify-content-between">
-                                      <h4 class="fs-20 fw-bold"><a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a></h4>
-                                      <ul class="d-flex flex-column">
-                                          <li class="p-0 m-0"><i class="fa-solid fa-location-dot"></i> TP.HCM</li>
-                                          <li class="p-0 m-0">Số lượng: 12</li>
-                                      </ul>
-                                      <a href="#" class="text-decoration-underline">
-                                          Mô tả công việc <i class="fa-solid fa-angles-right"></i>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4 col-6">
-                          <div class="item_career">
-                              <div class="row">
-                                  <div class="col-md-4">
-                                      <a href="#">
-                                          <img width="300" height="300" src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740" class="img-fluid wp-post-image" alt="">
-                                      </a>
-                                  </div>
-                                  <div class="col-md-8 d-flex flex-column justify-content-between">
-                                      <h4 class="fs-20 fw-bold"><a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a></h4>
-                                      <ul class="d-flex flex-column">
-                                          <li class="p-0 m-0"><i class="fa-solid fa-location-dot"></i> TP.HCM</li>
-                                          <li class="p-0 m-0">Số lượng: 12</li>
-                                      </ul>
-                                      <a href="#" class="text-decoration-underline">
-                                          Mô tả công việc <i class="fa-solid fa-angles-right"></i>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4 col-6">
-                          <div class="item_career">
-                              <div class="row">
-                                  <div class="col-md-4">
-                                      <a href="#">
-                                          <img width="300" height="300" src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740" class="img-fluid wp-post-image" alt="">
-                                      </a>
-                                  </div>
-                                  <div class="col-md-8 d-flex flex-column justify-content-between">
-                                      <h4 class="fs-20 fw-bold"><a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a></h4>
-                                      <ul class="d-flex flex-column">
-                                          <li class="p-0 m-0"><i class="fa-solid fa-location-dot"></i> TP.HCM</li>
-                                          <li class="p-0 m-0">Số lượng: 12</li>
-                                      </ul>
-                                      <a href="#" class="text-decoration-underline">
-                                          Mô tả công việc <i class="fa-solid fa-angles-right"></i>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4 col-6">
-                          <div class="item_career">
-                              <div class="row">
-                                  <div class="col-md-4">
-                                      <a href="#">
-                                          <img width="300" height="300" src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740" class="img-fluid wp-post-image" alt="">
-                                      </a>
-                                  </div>
-                                  <div class="col-md-8 d-flex flex-column justify-content-between">
-                                      <h4 class="fs-20 fw-bold"><a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a></h4>
-                                      <ul class="d-flex flex-column">
-                                          <li class="p-0 m-0"><i class="fa-solid fa-location-dot"></i> TP.HCM</li>
-                                          <li class="p-0 m-0">Số lượng: 12</li>
-                                      </ul>
-                                      <a href="#" class="text-decoration-underline">
-                                          Mô tả công việc <i class="fa-solid fa-angles-right"></i>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4 col-6">
-                          <div class="item_career">
-                              <div class="row">
-                                  <div class="col-md-4">
-                                      <a href="#">
-                                          <img width="300" height="300" src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740" class="img-fluid wp-post-image" alt="">
-                                      </a>
-                                  </div>
-                                  <div class="col-md-8 d-flex flex-column justify-content-between">
-                                      <h4 class="fs-20 fw-bold"><a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a></h4>
-                                      <ul class="d-flex flex-column">
-                                          <li class="p-0 m-0"><i class="fa-solid fa-location-dot"></i> TP.HCM</li>
-                                          <li class="p-0 m-0">Số lượng: 12</li>
-                                      </ul>
-                                      <a href="#" class="text-decoration-underline">
-                                          Mô tả công việc <i class="fa-solid fa-angles-right"></i>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4 col-6">
-                          <div class="item_career">
-                              <div class="row">
-                                  <div class="col-md-4">
-                                      <a href="#">
-                                          <img width="300" height="300" src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740" class="img-fluid wp-post-image" alt="">
-                                      </a>
-                                  </div>
-                                  <div class="col-md-8 d-flex flex-column justify-content-between">
-                                      <h4 class="fs-20 fw-bold"><a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a></h4>
-                                      <ul class="d-flex flex-column">
-                                          <li class="p-0 m-0"><i class="fa-solid fa-location-dot"></i> TP.HCM</li>
-                                          <li class="p-0 m-0">Số lượng: 12</li>
-                                      </ul>
-                                      <a href="#" class="text-decoration-underline">
-                                          Mô tả công việc <i class="fa-solid fa-angles-right"></i>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4 col-6">
-                          <div class="item_career">
-                              <div class="row">
-                                  <div class="col-md-4">
-                                      <a href="#">
-                                          <img width="300" height="300" src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740" class="img-fluid wp-post-image" alt="">
-                                      </a>
-                                  </div>
-                                  <div class="col-md-8 d-flex flex-column justify-content-between">
-                                      <h4 class="fs-20 fw-bold"><a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a></h4>
-                                      <ul class="d-flex flex-column">
-                                          <li class="p-0 m-0"><i class="fa-solid fa-location-dot"></i> TP.HCM</li>
-                                          <li class="p-0 m-0">Số lượng: 12</li>
-                                      </ul>
-                                      <a href="#" class="text-decoration-underline">
-                                          Mô tả công việc <i class="fa-solid fa-angles-right"></i>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4 col-6">
-                          <div class="item_career">
-                              <div class="row">
-                                  <div class="col-md-4">
-                                      <a href="#">
-                                          <img width="300" height="300" src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740" class="img-fluid wp-post-image" alt="">
-                                      </a>
-                                  </div>
-                                  <div class="col-md-8 d-flex flex-column justify-content-between">
-                                      <h4 class="fs-20 fw-bold"><a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a></h4>
-                                      <ul class="d-flex flex-column">
-                                          <li class="p-0 m-0"><i class="fa-solid fa-location-dot"></i> TP.HCM</li>
-                                          <li class="p-0 m-0">Số lượng: 12</li>
-                                      </ul>
-                                      <a href="#" class="text-decoration-underline">
-                                          Mô tả công việc <i class="fa-solid fa-angles-right"></i>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4 col-6">
-                          <div class="item_career">
-                              <div class="row">
-                                  <div class="col-md-4">
-                                      <a href="#">
-                                          <img width="300" height="300" src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740" class="img-fluid wp-post-image" alt="">
-                                      </a>
-                                  </div>
-                                  <div class="col-md-8 d-flex flex-column justify-content-between">
-                                      <h4 class="fs-20 fw-bold"><a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a></h4>
-                                      <ul class="d-flex flex-column">
-                                          <li class="p-0 m-0"><i class="fa-solid fa-location-dot"></i> TP.HCM</li>
-                                          <li class="p-0 m-0">Số lượng: 12</li>
-                                      </ul>
-                                      <a href="#" class="text-decoration-underline">
-                                          Mô tả công việc <i class="fa-solid fa-angles-right"></i>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
+                    <div class="col-md-4">
+                      <a href="#">
+                        <img
+                          width="300"
+                          height="300"
+                          src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740"
+                          class="img-fluid wp-post-image"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div
+                      class="col-md-8 d-flex flex-column justify-content-between"
+                    >
+                      <h4 class="fs-20 fw-bold">
+                        <a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a>
+                      </h4>
+                      <ul class="d-flex flex-column">
+                        <li class="p-0 m-0">
+                          <i class="fa-solid fa-location-dot"></i> TP.HCM
+                        </li>
+                        <li class="p-0 m-0">Số lượng: 12</li>
+                      </ul>
+                      <a href="#" class="text-decoration-underline">
+                        Mô tả công việc <i class="fa-solid fa-angles-right"></i>
+                      </a>
+                    </div>
                   </div>
+                </div>
               </div>
-              <div class="career_form mt-5 mb-5">
+              <div class="col-md-4 col-6">
+                <div class="item_career">
                   <div class="row">
-                      <div class="col-md-4">
-                          <div class="bg_form pe-5">
-                              <img src="https://img.freepik.com/free-photo/enroll-now-registration-membership-concept_53876-148078.jpg?t=st=1743413643~exp=1743417243~hmac=35adae5bc9128e9281b52ff8daba63c45c1785aafe8b2afdc4e25f4e68edc596&w=826" class="img-fluid" alt="" draggable="false">
-                          </div>
-                      </div>
-                      <div class="col-md-8">
-                          <div class="form_apply">
-
-                              <div class="wpcf7 js" id="wpcf7-f6513-o1" lang="en-US" dir="ltr">
-                                  <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-                                  <form action="/co-hoi-nghe-nghiep/#wpcf7-f6513-o1" method="post" class="wpcf7-form init" aria-label="Contact form" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
-                                      <h3 class="fs-20 fw-bold text-uppercase"><span>ỨNG TUYỂN NGAY</span>
-                                      </h3>
-                                      <div class="row">
-                                          <div class="col-md-6">
-                                              <p><label for="">Họ và Tên <span>*</span></label><br>
-                                                  <span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control mb-3" aria-required="true" aria-invalid="false" placeholder="Aa" value="" type="text" name="your-name"></span>
-                                              </p>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <p><label for="">Vị Trí Ứng Tuyển <span>*</span></label><br>
-                                                  <span class="wpcf7-form-control-wrap" data-name="your-position"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control mb-3" aria-required="true" aria-invalid="false" placeholder="Aa" value="" type="text" name="your-position"></span>
-                                              </p>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <p><label for="">Email <span>*</span></label><br>
-                                                  <span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control mb-3" aria-required="true" aria-invalid="false" placeholder="Aa" value="" type="email" name="your-email"></span>
-                                              </p>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <p><label for="">Điện Thoại <span>*</span></label><br>
-                                                  <span class="wpcf7-form-control-wrap" data-name="your-phone"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control mb-3" aria-required="true" aria-invalid="false" placeholder="Aa" value="" type="tel" name="your-phone"></span>
-                                              </p>
-                                          </div>
-                                          <div class="col-md-12">
-                                              <p><label for="">Nội Dung</label><br>
-                                                  <span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="4" maxlength="2000" class="wpcf7-form-control wpcf7-textarea form-control mb-3" aria-invalid="false" placeholder="Aa" name="your-message"></textarea></span>
-                                              </p>
-                                          </div>
-                                          <div class="col-md-4">
-                                              <div class="file_wrapper">
-                                                  <div class="d-flex align-items-center justify-content-center">
-                                                      <span class="file-name">Upload CV tại đây <i class="fa fa-upload"></i></span>
-                                                      <span class="wpcf7-form-control-wrap" data-name="your-cv"><input size="40" class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required" accept=".png,.docx,.pdf,.xlsx" aria-required="true" aria-invalid="false" type="file" name="your-cv"></span>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-8">
-                                              <p>
-                                                  <input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="GỬI HỒ SƠ">
-                                                  <span class="wpcf7-spinner"></span>
-                                              </p>
-                                          </div>
-                                          <div class="col-md-4">
-                                              <div class="mt-2">
-                                                  <div class="d-flex justify-content-center align-items-center">
-                                                      <a class="btn btn-download" href="https://www.centralcons.vn/wp-content/uploads/2023/05/BM-HR-003-V2.0-Ho-so-ung-tuyen.xlsx" download="download">Điền theo mẫu CV công ty <i class="fa fa-download"></i></a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div><div class="wpcf7-response-output" aria-hidden="true"></div>
-                                  </form>
-                              </div>
-                          </div>
-                      </div>
+                    <div class="col-md-4">
+                      <a href="#">
+                        <img
+                          width="300"
+                          height="300"
+                          src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740"
+                          class="img-fluid wp-post-image"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div
+                      class="col-md-8 d-flex flex-column justify-content-between"
+                    >
+                      <h4 class="fs-20 fw-bold">
+                        <a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a>
+                      </h4>
+                      <ul class="d-flex flex-column">
+                        <li class="p-0 m-0">
+                          <i class="fa-solid fa-location-dot"></i> TP.HCM
+                        </li>
+                        <li class="p-0 m-0">Số lượng: 12</li>
+                      </ul>
+                      <a href="#" class="text-decoration-underline">
+                        Mô tả công việc <i class="fa-solid fa-angles-right"></i>
+                      </a>
+                    </div>
                   </div>
+                </div>
               </div>
-              
+              <div class="col-md-4 col-6">
+                <div class="item_career">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <a href="#">
+                        <img
+                          width="300"
+                          height="300"
+                          src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740"
+                          class="img-fluid wp-post-image"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div
+                      class="col-md-8 d-flex flex-column justify-content-between"
+                    >
+                      <h4 class="fs-20 fw-bold">
+                        <a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a>
+                      </h4>
+                      <ul class="d-flex flex-column">
+                        <li class="p-0 m-0">
+                          <i class="fa-solid fa-location-dot"></i> TP.HCM
+                        </li>
+                        <li class="p-0 m-0">Số lượng: 12</li>
+                      </ul>
+                      <a href="#" class="text-decoration-underline">
+                        Mô tả công việc <i class="fa-solid fa-angles-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-6">
+                <div class="item_career">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <a href="#">
+                        <img
+                          width="300"
+                          height="300"
+                          src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740"
+                          class="img-fluid wp-post-image"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div
+                      class="col-md-8 d-flex flex-column justify-content-between"
+                    >
+                      <h4 class="fs-20 fw-bold">
+                        <a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a>
+                      </h4>
+                      <ul class="d-flex flex-column">
+                        <li class="p-0 m-0">
+                          <i class="fa-solid fa-location-dot"></i> TP.HCM
+                        </li>
+                        <li class="p-0 m-0">Số lượng: 12</li>
+                      </ul>
+                      <a href="#" class="text-decoration-underline">
+                        Mô tả công việc <i class="fa-solid fa-angles-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-6">
+                <div class="item_career">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <a href="#">
+                        <img
+                          width="300"
+                          height="300"
+                          src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740"
+                          class="img-fluid wp-post-image"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div
+                      class="col-md-8 d-flex flex-column justify-content-between"
+                    >
+                      <h4 class="fs-20 fw-bold">
+                        <a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a>
+                      </h4>
+                      <ul class="d-flex flex-column">
+                        <li class="p-0 m-0">
+                          <i class="fa-solid fa-location-dot"></i> TP.HCM
+                        </li>
+                        <li class="p-0 m-0">Số lượng: 12</li>
+                      </ul>
+                      <a href="#" class="text-decoration-underline">
+                        Mô tả công việc <i class="fa-solid fa-angles-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-6">
+                <div class="item_career">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <a href="#">
+                        <img
+                          width="300"
+                          height="300"
+                          src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740"
+                          class="img-fluid wp-post-image"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div
+                      class="col-md-8 d-flex flex-column justify-content-between"
+                    >
+                      <h4 class="fs-20 fw-bold">
+                        <a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a>
+                      </h4>
+                      <ul class="d-flex flex-column">
+                        <li class="p-0 m-0">
+                          <i class="fa-solid fa-location-dot"></i> TP.HCM
+                        </li>
+                        <li class="p-0 m-0">Số lượng: 12</li>
+                      </ul>
+                      <a href="#" class="text-decoration-underline">
+                        Mô tả công việc <i class="fa-solid fa-angles-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-6">
+                <div class="item_career">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <a href="#">
+                        <img
+                          width="300"
+                          height="300"
+                          src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740"
+                          class="img-fluid wp-post-image"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div
+                      class="col-md-8 d-flex flex-column justify-content-between"
+                    >
+                      <h4 class="fs-20 fw-bold">
+                        <a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a>
+                      </h4>
+                      <ul class="d-flex flex-column">
+                        <li class="p-0 m-0">
+                          <i class="fa-solid fa-location-dot"></i> TP.HCM
+                        </li>
+                        <li class="p-0 m-0">Số lượng: 12</li>
+                      </ul>
+                      <a href="#" class="text-decoration-underline">
+                        Mô tả công việc <i class="fa-solid fa-angles-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-6">
+                <div class="item_career">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <a href="#">
+                        <img
+                          width="300"
+                          height="300"
+                          src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740"
+                          class="img-fluid wp-post-image"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div
+                      class="col-md-8 d-flex flex-column justify-content-between"
+                    >
+                      <h4 class="fs-20 fw-bold">
+                        <a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a>
+                      </h4>
+                      <ul class="d-flex flex-column">
+                        <li class="p-0 m-0">
+                          <i class="fa-solid fa-location-dot"></i> TP.HCM
+                        </li>
+                        <li class="p-0 m-0">Số lượng: 12</li>
+                      </ul>
+                      <a href="#" class="text-decoration-underline">
+                        Mô tả công việc <i class="fa-solid fa-angles-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-6">
+                <div class="item_career">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <a href="#">
+                        <img
+                          width="300"
+                          height="300"
+                          src="https://img.freepik.com/free-photo/smiling-manual-worker-holding-yellow-hardhat_329181-1680.jpg?t=st=1743412971~exp=1743416571~hmac=e8bc846415c4a7290ad516cd66a676eb559d317fe0ce6b50aa9dbf9988a365ba&w=740"
+                          class="img-fluid wp-post-image"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div
+                      class="col-md-8 d-flex flex-column justify-content-between"
+                    >
+                      <h4 class="fs-20 fw-bold">
+                        <a href="#">GIÁM SÁT XÂY DỰNG (QA/QC)</a>
+                      </h4>
+                      <ul class="d-flex flex-column">
+                        <li class="p-0 m-0">
+                          <i class="fa-solid fa-location-dot"></i> TP.HCM
+                        </li>
+                        <li class="p-0 m-0">Số lượng: 12</li>
+                      </ul>
+                      <a href="#" class="text-decoration-underline">
+                        Mô tả công việc <i class="fa-solid fa-angles-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="career_form mt-5 mb-5">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="bg_form pe-5">
+                  <img
+                    src="https://img.freepik.com/free-photo/enroll-now-registration-membership-concept_53876-148078.jpg?t=st=1743413643~exp=1743417243~hmac=35adae5bc9128e9281b52ff8daba63c45c1785aafe8b2afdc4e25f4e68edc596&w=826"
+                    class="img-fluid"
+                    alt=""
+                    draggable="false"
+                  />
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="form_apply">
+                  <div
+                    class="wpcf7 js"
+                    id="wpcf7-f6513-o1"
+                    lang="en-US"
+                    dir="ltr"
+                  >
+                    <div class="screen-reader-response">
+                      <p
+                        role="status"
+                        aria-live="polite"
+                        aria-atomic="true"
+                      ></p>
+                      <ul></ul>
+                    </div>
+                    <form
+                      action="/co-hoi-nghe-nghiep/#wpcf7-f6513-o1"
+                      method="post"
+                      class="wpcf7-form init"
+                      aria-label="Contact form"
+                      enctype="multipart/form-data"
+                      novalidate="novalidate"
+                      data-status="init"
+                    >
+                      <h3 class="fs-20 fw-bold text-uppercase">
+                        <span>ỨNG TUYỂN NGAY</span>
+                      </h3>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>
+                            <label for="">Họ và Tên <span>*</span></label
+                            ><br />
+                            <span
+                              class="wpcf7-form-control-wrap"
+                              data-name="your-name"
+                              ><input
+                                size="40"
+                                maxlength="400"
+                                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control mb-3"
+                                aria-required="true"
+                                aria-invalid="false"
+                                placeholder="Aa"
+                                value=""
+                                type="text"
+                                name="your-name"
+                            /></span>
+                          </p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>
+                            <label for="">Vị Trí Ứng Tuyển <span>*</span></label
+                            ><br />
+                            <span
+                              class="wpcf7-form-control-wrap"
+                              data-name="your-position"
+                              ><input
+                                size="40"
+                                maxlength="400"
+                                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control mb-3"
+                                aria-required="true"
+                                aria-invalid="false"
+                                placeholder="Aa"
+                                value=""
+                                type="text"
+                                name="your-position"
+                            /></span>
+                          </p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>
+                            <label for="">Email <span>*</span></label
+                            ><br />
+                            <span
+                              class="wpcf7-form-control-wrap"
+                              data-name="your-email"
+                              ><input
+                                size="40"
+                                maxlength="400"
+                                class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control mb-3"
+                                aria-required="true"
+                                aria-invalid="false"
+                                placeholder="Aa"
+                                value=""
+                                type="email"
+                                name="your-email"
+                            /></span>
+                          </p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>
+                            <label for="">Điện Thoại <span>*</span></label
+                            ><br />
+                            <span
+                              class="wpcf7-form-control-wrap"
+                              data-name="your-phone"
+                              ><input
+                                size="40"
+                                maxlength="400"
+                                class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control mb-3"
+                                aria-required="true"
+                                aria-invalid="false"
+                                placeholder="Aa"
+                                value=""
+                                type="tel"
+                                name="your-phone"
+                            /></span>
+                          </p>
+                        </div>
+                        <div class="col-md-12">
+                          <p>
+                            <label for="">Nội Dung</label><br />
+                            <span
+                              class="wpcf7-form-control-wrap"
+                              data-name="your-message"
+                            >
+                              <textarea
+                                cols="40"
+                                rows="4"
+                                maxlength="2000"
+                                class="wpcf7-form-control wpcf7-textarea form-control mb-3"
+                                aria-invalid="false"
+                                placeholder="Aa"
+                                name="your-message"
+                              ></textarea>
+                            </span>
+                          </p>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="file_wrapper">
+                            <div
+                              class="d-flex align-items-center justify-content-center"
+                            >
+                              <span class="file-name"
+                                >Upload CV tại đây <i class="fa fa-upload"></i
+                              ></span>
+                              <span
+                                class="wpcf7-form-control-wrap"
+                                data-name="your-cv"
+                                ><input
+                                  size="40"
+                                  class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required"
+                                  accept=".png,.docx,.pdf,.xlsx"
+                                  aria-required="true"
+                                  aria-invalid="false"
+                                  type="file"
+                                  name="your-cv"
+                              /></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <p>
+                            <input
+                              class="wpcf7-form-control wpcf7-submit has-spinner"
+                              type="submit"
+                              value="GỬI HỒ SƠ"
+                            />
+                            <span class="wpcf7-spinner"></span>
+                          </p>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="mt-2">
+                            <div
+                              class="d-flex justify-content-center align-items-center"
+                            >
+                              <a
+                                class="btn btn-download"
+                                href="https://www.centralcons.vn/wp-content/uploads/2023/05/BM-HR-003-V2.0-Ho-so-ung-tuyen.xlsx"
+                                download="download"
+                                >Điền theo mẫu CV công ty
+                                <i class="fa fa-download"></i
+                              ></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="wpcf7-response-output"
+                        aria-hidden="true"
+                      ></div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  </main>
-</body>
+    </main>
+  </body>
 </html>
