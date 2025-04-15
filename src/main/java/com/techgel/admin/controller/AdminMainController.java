@@ -35,6 +35,9 @@ public class AdminMainController {
     private final AboutUsLicenseCertificateItemsService aboutUsLicenseCertificateItemsService;
     private final AboutUsClientPartnerService aboutUsClientPartnerService;
     private final AboutUsClientPartnerItemsService aboutClientPartnerItemsService;
+    private final WhatWeDoServiceService whatWeDoServiceService;
+    private final WhatWeDoOurBusinessLineService whatWeDoOurBusinessLineService;
+    private final WhatWeDoServiceItemsService whatWeDoServiceItemsService;
 
     @GetMapping("")
     public String viewWebAdmin(){
@@ -186,12 +189,6 @@ public class AdminMainController {
         return String.format("redirect:/webadmin/home/carousel/edit?id=%s", carousel.getId());
     }
 
-    @GetMapping("/clients-partners")
-    public String viewClientsPartners(Model model){
-        List<Carousel> carousels = carouselService.getAll();
-        model.addAttribute("carousels", carousels);
-        return "admin/clients-partners";
-    }
 
     @GetMapping("/home/about-us")
     public String homeAboutUs(Model model){
@@ -896,5 +893,183 @@ public class AdminMainController {
 
         if(action.equals("save")) return String.format("redirect:/webadmin/about-us/clients-partners-items?id=%s", aboutUsClientPartnerItems.getAboutUsClientPartner().getId());
         return String.format("redirect:/webadmin/about-us/clients-partners-items/edit?parentId=%s&id=%s", aboutUsClientPartnerItems.getAboutUsClientPartner().getId(), aboutUsClientPartnerItems.getId());
+    }
+
+    @GetMapping("/what-we-do/our-business-lines")
+    public String whatWeDoOurBusinessLine(Model model){
+        WhatWeDoOurBusinessLine whatWeDoOurBusinessLine;
+
+        if(whatWeDoOurBusinessLineService.getAll().isEmpty())
+            whatWeDoOurBusinessLine = whatWeDoOurBusinessLineService.update(new WhatWeDoOurBusinessLine("Lĩnh vực hoạt động", "TECHGEL hoạt động trong nhiều lĩnh vực khác nhau", "Our business lines", "TECHGEL operates in various fields"));
+        else whatWeDoOurBusinessLine = whatWeDoOurBusinessLineService.getAll().get(0);
+
+        List<WhatWeDoService> whatWeDoServices = whatWeDoServiceService.getAll();
+
+        model.addAttribute("whatWeDoServices", whatWeDoServices);
+        model.addAttribute("whatWeDoOurBusinessLine", whatWeDoOurBusinessLine);
+
+        return "admin/what-we-do/our-business-line";
+    }
+
+    @GetMapping("/what-we-do/our-business-lines/edit")
+    public String whatWeDoOurBusinessLineEdit(Model model, @RequestParam Long id) {
+        try {
+            WhatWeDoOurBusinessLine whatWeDoOurBusinessLine = whatWeDoOurBusinessLineService.getById(id);
+            if (whatWeDoOurBusinessLine != null) {
+                model.addAttribute("whatWeDoOurBusinessLine", whatWeDoOurBusinessLine);
+            } else throw new Exception();
+        } catch (Exception e) {
+            return "redirect:/webadmin";
+        }
+        return "admin/what-we-do/our-business-line_edit";
+    }
+
+    @PostMapping("/what-we-do/our-business-lines/edit")
+    public String saveWhatWeDoOurBusinessLine(RedirectAttributes redirectAttributes,
+                                           @RequestParam String action,
+                                           @Valid WhatWeDoOurBusinessLine whatWeDoOurBusinessLine,
+                                           BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("ourBusiness_errors", errors);
+                redirectAttributes.addFlashAttribute("ourBusiness_message", "Xãy ra lỗi");
+            }else {
+                whatWeDoOurBusinessLineService.update(whatWeDoOurBusinessLine);
+                redirectAttributes.addFlashAttribute("ourBusiness_message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("ourBusiness_message", "Xãy ra lỗi");
+            return "redirect:/webadmin/what-we-do/our-business-lines";
+        }
+
+        if(action.equals("save")) return "redirect:/webadmin/what-we-do/our-business-lines";
+        return String.format("redirect:/webadmin/what-we-do/our-business-lines/edit?id=%s", whatWeDoOurBusinessLine.getId());
+    }
+
+    @GetMapping("/what-we-do/our-business-lines/service/create")
+    public String whatWeDoOurBusinessLineServiceSave(Model model){
+        model.addAttribute("whatWeDoService", new WhatWeDoService());
+        return "admin/what-we-do/service_edit";
+    }
+
+    @GetMapping("/what-we-do/our-business-lines/service/edit")
+    public String whatWeDoOurBusinessLineServiceEdit(Model model, @RequestParam Long id){
+        try{
+            WhatWeDoService whatWeDoService = whatWeDoServiceService.getById(id);
+            if(whatWeDoService != null){
+                model.addAttribute("whatWeDoService", whatWeDoService);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/what-we-do/service_edit";
+    }
+
+    @PostMapping("/what-we-do/our-business-lines/service/edit")
+    public String saveWhatWeDoOurBusinessLineService(RedirectAttributes redirectAttributes,
+                                           @RequestParam String action,
+                                           @RequestParam(name = "image-delete", required = false) boolean image_delete,
+                                           @RequestParam(name = "image-popup-delete", required = false) boolean image_popup_delete,
+                                           @Valid WhatWeDoService whatWeDoService,
+                                           BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("service_errors", errors);
+                redirectAttributes.addFlashAttribute("service_message", "Xãy ra lỗi");
+            }else {
+                if(image_delete) whatWeDoService.setImage_url(null);
+                if(image_popup_delete) whatWeDoService.setImage_popup_url(null);
+                whatWeDoServiceService.update(whatWeDoService);
+                redirectAttributes.addFlashAttribute("service_message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("service_message", "Xãy ra lỗi");
+            return "redirect:/webadmin/what-we-do/our-business-lines";
+        }
+
+        if(action.equals("save")) return "redirect:/webadmin/what-we-do/our-business-lines";
+        return String.format("redirect:/webadmin/what-we-do/our-business-lines/service/edit?id=%s", whatWeDoService.getId());
+    }
+
+    @GetMapping("/what-we-do/our-business-lines/service-items")
+    public String whatWeDoOurBusinessLineServiceList(Model model, @RequestParam Long id){
+        try{
+            WhatWeDoService whatWeDoService = whatWeDoServiceService.getById(id);
+            if(whatWeDoService != null){
+                List<WhatWeDoServiceItems> whatWeDoServiceItems = whatWeDoServiceItemsService.getAllByWhatWeDoServiceId(id);
+
+                model.addAttribute("whatWeDoService", whatWeDoService);
+                model.addAttribute("whatWeDoServiceItems", whatWeDoServiceItems);
+
+                return "admin/what-we-do/service-items";
+            }
+        }catch (Exception e){
+            return "redirect:/webadmin";
+        }
+
+        return "redirect:/webadmin/what-we-do/our-business-lines";
+    }
+
+    @GetMapping("/what-we-do/our-business-lines/service-items/create")
+    public String whatWeDoOurBusinessLineServiceItemSave(Model model, @RequestParam Long parentId){
+        WhatWeDoService whatWeDoService = whatWeDoServiceService.getById(parentId);
+        if(whatWeDoService != null){
+            model.addAttribute("parentId", parentId);
+            model.addAttribute("whatWeDoService", whatWeDoService);
+            model.addAttribute("whatWeDoServiceItems", new WhatWeDoServiceItems());
+            return "admin/what-we-do/service-items_edit";
+        }
+        return "redirect:/what-we-do/our-business-lines";
+    }
+
+    @PostMapping("/what-we-do/our-business-lines/service-items/edit")
+    public String saveWhatWeDoServiceItem(RedirectAttributes redirectAttributes,
+                                               @RequestParam String action,
+                                               @Valid WhatWeDoServiceItems whatWeDoServiceItems,
+                                               BindingResult result){
+
+        try{
+            if(result.hasErrors()){
+                Map<String, String> errors = new HashMap<>();
+                result.getFieldErrors().forEach(error -> {
+                    errors.put(error.getField(), error.getDefaultMessage());
+                });
+                redirectAttributes.addFlashAttribute("errors", errors);
+                redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            }else {
+                whatWeDoServiceItemsService.update(whatWeDoServiceItems);
+                redirectAttributes.addFlashAttribute("message", "Chỉnh sửa thành công!");
+            }
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("message", "Xãy ra lỗi");
+            return "redirect:/webadmin/what-we-do/our-business-lines/service-items";
+        }
+
+        if(action.equals("save")) return String.format("redirect:/webadmin/what-we-do/our-business-lines/service-items?id=%s", whatWeDoServiceItems.getWhatWeDoService().getId());
+        return String.format("redirect:/webadmin/what-we-do/our-business-lines/service-items/edit?parentId=%s&id=%s", whatWeDoServiceItems.getWhatWeDoService().getId(), whatWeDoServiceItems.getId());
+    }
+
+    @GetMapping("/what-we-do/our-business-lines/service-items/edit")
+    public String WhatWeDoServiceItemEdit(Model model, @RequestParam Long id, @RequestParam Long parentId){
+        try{
+            WhatWeDoServiceItems whatWeDoServiceItems = whatWeDoServiceItemsService.getByIdAndParentId(id, parentId);
+            if(whatWeDoServiceItems != null){
+                model.addAttribute("whatWeDoService", whatWeDoServiceService.getById(parentId));
+                model.addAttribute("whatWeDoServiceItems", whatWeDoServiceItems);
+            }else throw new Exception();
+        }catch(Exception e){
+            return "redirect:/webadmin";
+        }
+        return "admin/what-we-do/service-items_edit";
     }
 }

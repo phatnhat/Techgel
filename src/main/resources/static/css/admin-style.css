@@ -648,3 +648,23 @@ video {
     animation:c1 1s linear infinite alternate;
 }
 @keyframes c1 {to{opacity: 0}}
+
+.note-editable ul{
+    list-style: disc !important;
+    list-style-position: inside !important;
+}
+
+.note-editable ol {
+    list-style: decimal !important;
+    list-style-position: inside !important;
+}
+
+#emoji-picker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}

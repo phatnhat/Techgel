@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{admin/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main class="content-wrapper">
+    <div class="content-header clearfix" style="padding: 15px 1rem;">
+        <h3 class="float-left">
+            Năng lực thi công / Lĩnh vực hoạt động
+        </h3>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <div class="cards-group">
+                    <div th:if="${ourBusiness_errors}" th:each="error: ${ourBusiness_errors}" class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+                        <strong>[[${ ourBusiness_message }]]!</strong> [[${ error.value }]]
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div th:if="${ourBusiness_errors == null and ourBusiness_message != null}" class="alert alert-success alert-dismissible fade m-0" role="alert">
+                        <strong>[[${ ourBusiness_message }]]!</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-body">
+                            <div class="dt-container dt-bootstrap4 dt-empty-footer">
+                                <div class="d-md-flex justify-content-between align-items-center col-12 dt-layout-full col-md">
+                                    <table class="table table-bordered table-hover table-striped dataTable" style="width: 100%;">
+                                        <thead>
+                                        <tr>
+                                            <th data-dt-column="1" class="text-center dt-orderable-none" rowspan="0" colspan="1">
+                                                <div class="dt-scroll-sizing">
+                                                    <span class="dt-column-title">Tiêu đề</span>
+                                                    <span class="dt-column-order"></span>
+                                                </div>
+                                            </th>
+                                            <th class="text-center dt-orderable-none" data-dt-column="1" rowspan="1" colspan="1">
+                                                <div class="dt-scroll-sizing">
+                                                    <span class="dt-column-title">Tiêu đề phụ</span>
+                                                    <span class="dt-column-order"></span>
+                                                </div>
+                                            </th>
+                                            <th class="text-center button-column dt-orderable-none" data-dt-column="4" rowspan="3" colspan="1">
+                                                <div class="dt-scroll-sizing">
+                                                    <span class="dt-column-title">Hành động</span>
+                                                    <span class="dt-column-order"></span>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody >
+                                        <tr th:each="bl: ${whatWeDoOurBusinessLine}">
+                                            <td class="text-center dt-type-numeric">[[${bl.title_vi}]]</td>
+                                            <td class="text-center dt-type-numeric">[[${bl.subtitle_vi}]]</td>
+                                            <td class="button-column">
+                                                <a class="btn btn-default" th:href="@{/webadmin/what-we-do/our-business-lines/edit?id={id}(id=${bl.id})}">
+                                                    <i class="fas fa-pencil"></i>&nbsp;Edit</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="float-right">
+                <a class="btn btn-primary" th:href="@{/webadmin/what-we-do/our-business-lines/service/create}">
+                    <i class="fas fa-square-plus"></i>
+                    Add new
+                </a>
+            </div>
+            <div class="form-horizontal" style="clear: both;">
+                <div class="cards-group">
+                    <div th:if="${service_errors}" th:each="error: ${service_errors}" class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+                        <strong>[[${ service_message }]]!</strong> [[${ error.value }]]
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div th:if="${service_errors == null and service_message != null}" class="alert alert-success alert-dismissible fade m-0" role="alert">
+                        <strong>[[${ service_message }]]!</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-body">
+                            <div class="dt-container dt-bootstrap4 dt-empty-footer">
+                                <div class="d-md-flex justify-content-between align-items-center col-12 dt-layout-full col-md">
+                                    <table class="table table-bordered table-hover table-striped dataTable" style="width: 100%;">
+                                        <thead>
+                                        <tr>
+                                            <th data-dt-column="1" class="text-center dt-orderable-none" rowspan="0" colspan="1">
+                                                <div class="dt-scroll-sizing">
+                                                    <span class="dt-column-title">Ảnh</span>
+                                                    <span class="dt-column-order"></span>
+                                                </div>
+                                            </th>
+                                            <th class="text-center dt-orderable-none" data-dt-column="1" rowspan="1" colspan="1">
+                                                <div class="dt-scroll-sizing">
+                                                    <span class="dt-column-title">Tiêu đề</span>
+                                                    <span class="dt-column-order"></span>
+                                                </div>
+                                            </th>
+                                            <th class="text-center dt-orderable-none" data-dt-column="1" rowspan="1" colspan="1">
+                                                <div class="dt-scroll-sizing">
+                                                    <span class="dt-column-title">Thứ tự hiển thị</span>
+                                                    <span class="dt-column-order"></span>
+                                                </div>
+                                            </th>
+                                            <th class="text-center button-column dt-orderable-none" data-dt-column="4" rowspan="3" colspan="1">
+                                                <div class="dt-scroll-sizing">
+                                                    <span class="dt-column-title">Hành động</span>
+                                                    <span class="dt-column-order"></span>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody >
+                                        <tr th:each="whatWeDoService: ${whatWeDoServices}">
+                                            <td class="text-center">
+                                                <img th:src="'/uploads/' + ${whatWeDoService.image_url}" alt="" width="100">
+                                            </td>
+                                            <td class="text-center dt-type-numeric">[[${whatWeDoService.title_vi}]]</td>
+                                            <td class="text-center dt-type-numeric">[[${whatWeDoService.displayOrder}]]</td>
+                                            <td class="button-column">
+                                                <a class="btn btn-outline-info" th:href="@{/webadmin/what-we-do/our-business-lines/service-items?id={id}(id=${whatWeDoService.id})}">
+                                                    <i class="fas fa-list"></i>&nbsp;List
+                                                </a>
+                                                <a class="btn btn-default" th:href="@{/webadmin/what-we-do/our-business-lines/service/edit?id={id}(id=${whatWeDoService.id})}">
+                                                    <i class="fas fa-pencil"></i>&nbsp;Edit</a>
+                                                <button th:data-id="${whatWeDoService.id}" data-type="whatWeDo-service" th:data-image_url="${whatWeDoService.image_url}" th:data-image_popup_url="${whatWeDoService.image_popup_url}" id="delete-whatWeDo-service" type="button" class="btn btn-danger btn-delete-whatWeDo-service" data-toggle="modal" data-target="#delete-action-confirmation">
+                                                    <i class="far fa-trash-can"></i>
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <th:block th:include="~{admin/fragments :: delete_modal}"></th:block>
+
+</main>
+</body>
+</html>
