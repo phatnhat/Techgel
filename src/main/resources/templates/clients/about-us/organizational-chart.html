@@ -1,92 +1,147 @@
 <!DOCTYPE html>
 <html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="content-wrapper">
-        <style>
-            .breadcrumb-bg {
-                background-image: url(https://img.freepik.com/free-photo/business-people-partnership-support-team-urban-scene-concept_53876-144834.jpg?t=st=1743404958~exp=1743408558~hmac=83189300f44b2cb94aa41c6bbef03d7802e1c4e7fb1dbcb160b614b54ba4bccb&w=1380);
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: calc(100vh - 80px);
-            }
-        </style>
+      <style>
+        .breadcrumb-bg {
+          background-image: url("[[@{/imgs/banners/orgchart.jpg}]]");
+        }
+      </style>
 
-        <div class="breadcrumb-area bg_image breadcrumb-bg">
-            <div id="brxe-oubmqr" class="brxe-container">
-                <div id="brxe-twzaik" class="brxe-block">
-                    <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline">
-                        <h1><span class="uni-text-outline">VỀ TECHGEL<br></span>SƠ ĐỒ TỔ CHỨC</h1>
-                    </div>
-                </div>
-                <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
-                    <div id="brxe-rqhadm" class="brxe-text-basic"news>Cuộn chuột</div>
-                    <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
-                </a>
+      <div class="breadcrumb-area bg_image breadcrumb-bg">
+        <div id="brxe-oubmqr" class="brxe-container">
+          <div id="brxe-twzaik" class="brxe-block small-text-shadow">
+            <div
+              id="brxe-naxryb"
+              class="brxe-text uni-text-outline-white uni-text-outline"
+            >
+              <h1 class="small-text-shadow split-collab">SƠ ĐỒ TỔ CHỨC</h1>
             </div>
+          </div>
+          <a
+            id="brxe-ygpexj"
+            href="#next"
+            data-brx-anchor="true"
+            class="brxe-block small-text-shadow"
+          >
+            <div id="brxe-rqhadm" class="brxe-text-basic" news>Cuộn chuột</div>
+            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+          </a>
         </div>
+      </div>
 
-        <div id="next" class="about-organizational tmp-section-gap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-head pb-3">
-                            <div class="section-sub-title center-title">
-                                <img th:src="@{/imgs/section-custom-menubar.png}" alt="Corporate_service">
-                                <span class="subtitle">TECHGEL</span>
-                            </div>
-                            <h2 class="title split-collab" style="opacity: 0;">
-                              <span th:each="t: ${'Sơ đồ tổ chức'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                              </span>
-                            </h2>
-                        </div>
-                    </div>
+      <div id="next" class="about-organizational tmp-section-gap">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-head pb-3">
+                <div class="section-sub-title center-title">
+                  <img
+                    th:src="@{/imgs/section-custom-menubar.png}"
+                    alt="Corporate_service"
+                  />
+                  <span class="subtitle">TECHGEL</span>
                 </div>
-                <div class="row justify-content-center align-items-center" id="gallery-organizational" style="gap:10px;">
-                    <div class="col-md-4">
-                        <div>
-                            <div class="img_shadow mb-md-5 mb-3 px-5 px-md-0">
-                                <a data-pswp-width="2500" data-pswp-height="1780" data-sal-delay="150" data-sal="slide-right" data-sal-duration="800" th:href="@{/imgs/organizational-page-0001.jpg}" target="_blank" class="d-flex justify-content-center">
-                                    <img class="img-fluid" th:src="@{/imgs/organizational-page-0001.jpg}" alt="" draggable="false"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div>
-                            <div class="img_shadow mb-md-5 mb-3 px-5 px-md-0">
-                                <a data-pswp-width="2500" data-pswp-height="1780" data-sal-delay="150" data-sal="slide-left" data-sal-duration="800" th:href="@{/imgs/organizational-page-0002.jpg}" target="_blank" class="d-flex justify-content-center">
-                                    <img class="img-fluid" th:src="@{/imgs/organizational-page-0002.jpg}" alt="" draggable="false"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a th:href="@{/files/Sơ đồ tổ chức.pdf}" download class="btn-download">Download PDF</a>
-                </div>
+                <h2 class="title split-collab" style="opacity: 0">
+                  <span
+                    th:each="t: ${'Sơ đồ tổ chức'.toCharArray()}"
+                    style="
+                      position: relative;
+                      display: inline-block;
+                      translate: none;
+                      rotate: none;
+                      scale: none;
+                      transform: translate(0px, 0px);
+                      opacity: 1;
+                      visibility: inherit;
+                    "
+                  >
+                    [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+                  </span>
+                </h2>
+              </div>
             </div>
+          </div>
+          <div
+            class="row justify-content-center align-items-center"
+            id="gallery-organizational"
+            style="gap: 10px"
+          >
+            <div class="col-md-4">
+              <div>
+                <div class="img_shadow mb-md-5 mb-3 px-5 px-md-0">
+                  <a
+                    data-pswp-width="2500"
+                    data-pswp-height="1780"
+                    data-sal-delay="150"
+                    data-sal="slide-right"
+                    data-sal-duration="800"
+                    th:href="@{/imgs/organizational-page-0001.jpg}"
+                    target="_blank"
+                    class="d-flex justify-content-center"
+                  >
+                    <img
+                      class="img-fluid"
+                      th:src="@{/imgs/organizational-page-0001.jpg}"
+                      alt=""
+                      draggable="false"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div>
+                <div class="img_shadow mb-md-5 mb-3 px-5 px-md-0">
+                  <a
+                    data-pswp-width="2500"
+                    data-pswp-height="1780"
+                    data-sal-delay="150"
+                    data-sal="slide-left"
+                    data-sal-duration="800"
+                    th:href="@{/imgs/organizational-page-0002.jpg}"
+                    target="_blank"
+                    class="d-flex justify-content-center"
+                  >
+                    <img
+                      class="img-fluid"
+                      th:src="@{/imgs/organizational-page-0002.jpg}"
+                      alt=""
+                      draggable="false"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <a
+              th:href="@{/files/Sơ đồ tổ chức.pdf}"
+              download
+              class="btn-download"
+              >Download PDF</a
+            >
+          </div>
         </div>
+      </div>
 
-        <script type='module'>
-            import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe-lightbox.esm.js';
-            const lightbox = new PhotoSwipeLightbox({
-                gallery: '#gallery-organizational',
-                children: 'a',
-                showHideAnimationType: 'zoom',
-                fitImagesInViewport: true,
-                imageScaleMethod: 'fit',
-                pswpModule: () => import('https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe.esm.js')
-            });
-            lightbox.init();
-        </script>
+      <script type="module">
+        import PhotoSwipeLightbox from "https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe-lightbox.esm.js";
+        const lightbox = new PhotoSwipeLightbox({
+          gallery: "#gallery-organizational",
+          children: "a",
+          showHideAnimationType: "zoom",
+          fitImagesInViewport: true,
+          imageScaleMethod: "fit",
+          pswpModule: () =>
+            import(
+              "https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe.esm.js"
+            ),
+        });
+        lightbox.init();
+      </script>
     </main>
-</body>
+  </body>
 </html>

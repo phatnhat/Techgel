@@ -1,282 +1,552 @@
 <!DOCTYPE html>
 <html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="content-wrapper" style="overflow: hidden">
-        <style>
-            .breadcrumb-bg {
-                background-image: url(https://img.freepik.com/free-photo/construction-works-frankfurt-downtown-germany_1268-20907.jpg?t=st=1743406235~exp=1743409835~hmac=f7fb0254a70b6b3dc2cfc5b3d15e63756f57979cbcb10a5d76424a7e25415f24&w=1380);
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: calc(100vh - 80px);
-            }
-            .line_img {
-                height: 10px;
-                background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center / auto 200%;
-                flex-grow: 1;
-            }
-        </style>
+      <style>
+        .breadcrumb-bg {
+          background-image: url(https://img.freepik.com/free-photo/construction-works-frankfurt-downtown-germany_1268-20907.jpg?t=st=1743406235~exp=1743409835~hmac=f7fb0254a70b6b3dc2cfc5b3d15e63756f57979cbcb10a5d76424a7e25415f24&w=1380);
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: calc(100vh - 80px);
+        }
+        .line_img {
+          height: 10px;
+          background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center /
+            auto 200%;
+          flex-grow: 1;
+        }
+      </style>
 
-        <div class="breadcrumb-area bg_image breadcrumb-bg">
-            <div id="brxe-oubmqr" class="brxe-container">
-                <div id="brxe-twzaik" class="brxe-block">
-                    <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline">
-                        <h1><span class="uni-text-outline"><br></span>DỰ ÁN</h1>
-                    </div>
+      <div class="breadcrumb-area bg_image breadcrumb-bg">
+        <div id="brxe-oubmqr" class="brxe-container">
+          <div id="brxe-twzaik" class="brxe-block small-text-shadow">
+            <div
+              id="brxe-naxryb"
+              class="brxe-text uni-text-outline-white uni-text-outline"
+            >
+              <h1>
+                <span class="uni-text-outline"><br /></span>DỰ ÁN
+              </h1>
+            </div>
+          </div>
+          <a
+            id="brxe-ygpexj"
+            href="#next"
+            data-brx-anchor="true"
+            class="brxe-block small-text-shadow"
+          >
+            <div id="brxe-rqhadm" class="brxe-text-basic">Cuộn chuột</div>
+            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="filter_projects py-md-2 py-2">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md">
+              <div class="d-md-flex justify-content-between align-items-center">
+                <ul>
+                  <li class="active">
+                    <a href="#">TẤT CẢ</a>
+                  </li>
+                  <li>
+                    <a href="#">NỔI BẬT</a>
+                  </li>
+                  <li>
+                    <a href="#">NĂNG LƯỢNG</a>
+                  </li>
+                  <li>
+                    <a href="#">HÀNG KHÔNG</a>
+                  </li>
+                  <li>
+                    <a href="#">CÔNG NGHIỆP</a>
+                  </li>
+                  <li>
+                    <a href="#">HẠ TẦNG GIAO THÔNG</a>
+                  </li>
+                  <li>
+                    <a href="#">DÂN DỤNG</a>
+                  </li>
+                  <li>
+                    <a href="#">CÔNG NGHỆ</a>
+                  </li>
+                </ul>
+                <div class="filter" id="filter_projects-btn">
+                  <a href="javascript:;" class="text-nowrap">
+                    <i class="fa fa-sliders" aria-hidden="true"></i> Lọc
+                  </a>
                 </div>
-                <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
-                    <div id="brxe-rqhadm" class="brxe-text-basic">Cuộn chuột</div>
-                    <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+              </div>
+            </div>
+            <div class="col-md-auto">
+              <div class="d-md-flex">
+                <a
+                  href="https://www.google.com/maps/d/u/0/viewer?mid=1vlXU4KhERW0P9IxlfkD5Ltnug1iy3lwL&amp;ll=15.484992582890763%2C106.48091650496168&amp;z=6"
+                  target="_blank"
+                >
+                  <i class="fa-solid fa-map-location-dot"></i>
+                  Map dự án
                 </a>
+              </div>
             </div>
+          </div>
         </div>
-
-        <div class="filter_projects py-md-2 py-2">
-            <div class="container">
+      </div>
+      <div class="filter_advance animate__animated animate__fadeIn">
+        <div class="container">
+          <form action="" method="get" class="py-4">
+            <div class="row align-items-center">
+              <div class="col-md">
                 <div class="row align-items-center">
-                    <div class="col-md">
-                        <div class="d-md-flex justify-content-between align-items-center">
-                            <ul>
-                                <li class="active">
-                                    <a href="#">TẤT CẢ</a>
-                                </li>
-                                <li>
-                                    <a href="#">NỔI BẬT</a>
-                                </li>
-                                <li>
-                                    <a href="#">NĂNG LƯỢNG</a>
-                                </li>
-                                <li>
-                                    <a href="#">HÀNG KHÔNG</a>
-                                </li>
-                                <li>
-                                    <a href="#">CÔNG NGHIỆP</a>
-                                </li>
-                                <li>
-                                    <a href="#">HẠ TẦNG GIAO THÔNG</a>
-                                </li>
-                                <li>
-                                    <a href="#">DÂN DỤNG</a>
-                                </li>
-                                <li>
-                                    <a href="#">CÔNG NGHỆ</a>
-                                </li>
-                            </ul>
-                            <div class="filter" id="filter_projects-btn">
-                                <a href="javascript:;" class="text-nowrap">
-                                    <i class="fa fa-sliders" aria-hidden="true"></i> Lọc                        </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-auto">
-                        <div class="d-md-flex">
-                            <a href="https://www.google.com/maps/d/u/0/viewer?mid=1vlXU4KhERW0P9IxlfkD5Ltnug1iy3lwL&amp;ll=15.484992582890763%2C106.48091650496168&amp;z=6" target="_blank">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                                Map dự án
-                            </a>
-                        </div>
-                    </div>
+                  <div class="col-md-2">
+                    <h4 class="fs-20 fw-bold">Năm</h4>
+                  </div>
+                  <div class="col-md-10">
+                    <ul>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="all_item_year"
+                          name="years[]"
+                          value="-1"
+                          id="py-all"
+                        />
+                        <label for="py-all">All</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_year"
+                          name="years[]"
+                          value="629"
+                          id="py-629"
+                        />
+                        <label for="py-629">2025</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          checked=""
+                          class="item_year"
+                          name="years[]"
+                          value="576"
+                          id="py-576"
+                        />
+                        <label for="py-576">2024</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_year"
+                          name="years[]"
+                          value="523"
+                          id="py-523"
+                        />
+                        <label for="py-523">2023</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_year"
+                          name="years[]"
+                          value="517"
+                          id="py-517"
+                        />
+                        <label for="py-517">2017</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_year"
+                          name="years[]"
+                          value="138"
+                          id="py-138"
+                        />
+                        <label for="py-138">2018</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_year"
+                          name="years[]"
+                          value="135"
+                          id="py-135"
+                        />
+                        <label for="py-135">2019</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_year"
+                          name="years[]"
+                          value="136"
+                          id="py-136"
+                        />
+                        <label for="py-136">2020</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_year"
+                          name="years[]"
+                          value="137"
+                          id="py-137"
+                        />
+                        <label for="py-137">2021</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_year"
+                          name="years[]"
+                          value="273"
+                          id="py-273"
+                        />
+                        <label for="py-273">2022</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-2">
+                    <h4 class="fs-20 fw-bold mt-3 mt-md-0">Khu vực</h4>
+                  </div>
+                  <div class="col-md-10">
+                    <ul>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="all_item_regions"
+                          name="regions[]"
+                          value="-1"
+                          id="pr-all"
+                        />
+                        <label for="pr-all">All</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_regions"
+                          name="regions[]"
+                          value="132"
+                          id="pr-132"
+                        />
+                        <label for="pr-132">Miền Bắc</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_regions"
+                          name="regions[]"
+                          value="133"
+                          id="pr-133"
+                        />
+                        <label for="pr-133">Miền Trung</label>
+                      </li>
+                      <li>
+                        <input
+                          type="checkbox"
+                          class="item_regions"
+                          name="regions[]"
+                          value="134"
+                          id="pr-134"
+                        />
+                        <label for="pr-134">Miền Nam</label>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+              </div>
+              <div class="col-md-auto">
+                <div class="mt-3 mt-md-0">
+                  <input type="reset" class="btn btn-reset" value="Đặt lại" />
+                  <input
+                    type="submit"
+                    class="btn btn-submit"
+                    value="Xác nhận"
+                  />
+                </div>
+              </div>
             </div>
+          </form>
         </div>
-        <div class="filter_advance animate__animated animate__fadeIn">
-            <div class="container">
-                <form action="" method="get" class="py-4">
-                    <div class="row align-items-center">
-                        <div class="col-md">
-                            <div class="row align-items-center">
-                                <div class="col-md-2">
-                                    <h4 class="fs-20 fw-bold">Năm</h4>
-                                </div>
-                                <div class="col-md-10">
-                                    <ul>
-                                        <li><input type="checkbox" class="all_item_year" name="years[]" value="-1" id="py-all"> <label for="py-all">All</label></li>
-                                        <li><input type="checkbox" class="item_year" name="years[]" value="629" id="py-629"> <label for="py-629">2025</label></li>
-                                        <li><input type="checkbox" checked="" class="item_year" name="years[]" value="576" id="py-576"> <label for="py-576">2024</label></li>
-                                        <li><input type="checkbox" class="item_year" name="years[]" value="523" id="py-523"> <label for="py-523">2023</label></li>
-                                        <li><input type="checkbox" class="item_year" name="years[]" value="517" id="py-517"> <label for="py-517">2017</label></li>
-                                        <li><input type="checkbox" class="item_year" name="years[]" value="138" id="py-138"> <label for="py-138">2018</label></li>
-                                        <li><input type="checkbox" class="item_year" name="years[]" value="135" id="py-135"> <label for="py-135">2019</label></li>
-                                        <li><input type="checkbox" class="item_year" name="years[]" value="136" id="py-136"> <label for="py-136">2020</label></li>
-                                        <li><input type="checkbox" class="item_year" name="years[]" value="137" id="py-137"> <label for="py-137">2021</label></li>
-                                        <li><input type="checkbox" class="item_year" name="years[]" value="273" id="py-273"> <label for="py-273">2022</label></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-2">
-                                    <h4 class="fs-20 fw-bold mt-3 mt-md-0">Khu vực</h4>
-                                </div>
-                                <div class="col-md-10">
-                                    <ul>
-                                        <li><input type="checkbox" class="all_item_regions" name="regions[]" value="-1" id="pr-all"> <label for="pr-all">All</label></li>
-                                        <li><input type="checkbox" class="item_regions" name="regions[]" value="132" id="pr-132"> <label for="pr-132">Miền Bắc</label></li>
-                                        <li><input type="checkbox" class="item_regions" name="regions[]" value="133" id="pr-133"> <label for="pr-133">Miền Trung</label></li>
-                                        <li><input type="checkbox" class="item_regions" name="regions[]" value="134" id="pr-134"> <label for="pr-134">Miền Nam</label></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-auto">
-                            <div class="mt-3 mt-md-0">
-                                <input type="reset" class="btn btn-reset" value="Đặt lại">
-                                <input type="submit" class="btn btn-submit" value="Xác nhận">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+      </div>
 
-        <div id="next" class="project-listing container py-5">
-            <div class="col-12 project-thumbnail">
-                <div class="grid">
-                    <div class="grid-sizer"></div>
-                    <div data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800" class="grid_item">
-                        <div class="grid_box">
-                            <div class="grid_pic">
-                                <picture>
-                                    <source srcset="https://www.vietnamairport.vn/uploads/users/3ca2050a3bf3de4a027e/images/danangairport/Danang_Airport_Overview.jpg" type="image/webp">
-                                    <img src="https://www.vietnamairport.vn/uploads/users/3ca2050a3bf3de4a027e/images/danangairport/Danang_Airport_Overview.jpg" alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA" title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA">
-                                </picture>
-                            </div>
-                            <div class="info">
-                                <div class="name">
-                                    <p><strong>International Passenger Termial - Da Nang Airport</strong></p>
-                                    <p> AHT </p>
-                                </div>
-                                <div class="province">Đà Nẵng</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800" class="grid_item">
-                        <div class="grid_box">
-                            <div class="grid_pic">
-                                <picture>
-                                    <source srcset="https://camranh.aero/sites/default/files/2018-08/cr-ptb-v2_qhkr_0.jpg" type="image/webp">
-                                    <img src="https://camranh.aero/sites/default/files/2018-08/cr-ptb-v2_qhkr_0.jpg" alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA" title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA">
-                                </picture>
-                            </div>
-                            <div class="info">
-                                <div class="name">
-                                    <p><strong>International Passenger Terminal - Cam Ranh Airport</strong></p>
-                                    <p> CRTC </p>
-                                </div>
-                                <div class="province">Cam Ranh - Khánh Hòa</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800" class="grid_item">
-                        <div class="grid_box">
-                            <div class="grid_pic">
-                                <picture>
-                                    <source srcset="https://www.trungnamgroup.com.vn/Data/Sites/1/media/h23.jpeg" type="image/webp">
-                                    <img src="https://www.trungnamgroup.com.vn/Data/Sites/1/media/h23.jpeg" alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA" title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA">
-                                </picture>
-                            </div>
-                            <div class="info">
-                                <div class="name">
-                                    <p><strong>Thai Hoa Power Wind Farm</strong></p>
-                                    <p> Tổng công ty Cảng hàng không Việt Nam (ACV) </p>
-                                </div>
-                                <div class="province">Bình Thuận</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800" class="grid_item">
-                        <div class="grid_box">
-                            <div class="grid_pic">
-                                <picture>
-                                    <source srcset="https://assets.ratedpower.com/1696239418-utility-scale-solar-plant-2.jpg?auto=format&dpr=0.32&w=4100" type="image/webp">
-                                    <img src="https://assets.ratedpower.com/1696239418-utility-scale-solar-plant-2.jpg?auto=format&dpr=0.32&w=4100" alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA" title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA">
-                                </picture>
-                            </div>
-                            <div class="info">
-                                <div class="name">
-                                    <p><strong>CU-JUT Solar Power Plant</strong></p>
-                                    <p> EVNCHP </p>
-                                </div>
-                                <div class="province">Dak-Nong</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800" class="grid_item">
-                        <div class="grid_box">
-                            <div class="grid_pic">
-                                <picture>
-                                    <source srcset="https://pecc2.com/vnt_upload/project/05_2021/thumbs/1500_13_Van_hanh_thuong_mai_Nha_may_Nhiet_dien_Duyen_Hai_3_Mo_rong_52020.jpg" type="image/webp">
-                                    <img src="https://pecc2.com/vnt_upload/project/05_2021/thumbs/1500_13_Van_hanh_thuong_mai_Nha_may_Nhiet_dien_Duyen_Hai_3_Mo_rong_52020.jpg" alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA" title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA">
-                                </picture>
-                            </div>
-                            <div class="info">
-                                <div class="name">
-                                    <p><strong>Duyen Hai 3 Extension Thermo Power Plant</strong></p>
-                                    <p> Black & Veatch </p>
-                                </div>
-                                <div class="province">Trà Vinh</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800" class="grid_item">
-                        <div class="grid_box">
-                            <div class="grid_pic">
-                                <picture>
-                                    <source srcset="https://aquariibd.com/wp-content/uploads/2024/05/15.jpg" type="image/webp">
-                                    <img src="https://aquariibd.com/wp-content/uploads/2024/05/15.jpg" alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA" title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA">
-                                </picture>
-                            </div>
-                            <div class="info">
-                                <div class="name">
-                                    <p><strong>Wastewater Treatment Plant Phnompenh</strong></p>
-                                    <p> Metawater </p>
-                                </div>
-                                <div class="province">Phnompenh, Cambodia</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800" class="grid_item">
-                        <div class="grid_box">
-                            <div class="grid_pic">
-                                <picture>
-                                    <source srcset="https://www.vinataba.com.vn/wp-content/uploads/2025/02/Hinh-mat-tien-cty-tlsg-2016_TVT_1894a-c-1-1.jpg" type="image/webp">
-                                    <img src="https://www.vinataba.com.vn/wp-content/uploads/2025/02/Hinh-mat-tien-cty-tlsg-2016_TVT_1894a-c-1-1.jpg" alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA" title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA">
-                                </picture>
-                            </div>
-                            <div class="info">
-                                <div class="name">
-                                    <p><strong>Sai Gon Tobacco Factory</strong></p>
-                                    <p> Vinataba </p>
-                                </div>
-                                <div class="province">Bình Chánh, TP.HCM</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-sal-delay="300" data-sal="zoom-in" data-sal-duration="800" class="grid_item">
-                        <div class="grid_box">
-                            <div class="grid_pic">
-                                <picture>
-                                    <source srcset="https://media.sojohotels.com/sojo-da-nang/48080f8fe8e80ad3834d1715065656487.png" type="image/webp">
-                                    <img src="https://media.sojohotels.com/sojo-da-nang/48080f8fe8e80ad3834d1715065656487.png" alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA" title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA">
-                                </picture>
-                            </div>
-                            <div class="info">
-                                <div class="name">
-                                    <p><strong>Da Nang Sojo Hotel</strong></p>
-                                    <p> MEP General </p>
-                                </div>
-                                <div class="province">Đà Nẵng</div>
-                            </div>
-                        </div>
-                    </div>
+      <div id="next" class="project-listing container py-5">
+        <div class="col-12 project-thumbnail">
+          <div class="grid">
+            <div class="grid-sizer"></div>
+            <div
+              data-sal-delay="300"
+              data-sal="zoom-in"
+              data-sal-duration="800"
+              class="grid_item"
+            >
+              <div class="grid_box">
+                <div class="grid_pic">
+                  <picture>
+                    <source
+                      srcset="
+                        https://www.vietnamairport.vn/uploads/users/3ca2050a3bf3de4a027e/images/danangairport/Danang_Airport_Overview.jpg
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="https://www.vietnamairport.vn/uploads/users/3ca2050a3bf3de4a027e/images/danangairport/Danang_Airport_Overview.jpg"
+                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                    />
+                  </picture>
                 </div>
+                <div class="info">
+                  <div class="name">
+                    <p>
+                      <strong
+                        >International Passenger Termial - Da Nang
+                        Airport</strong
+                      >
+                    </p>
+                    <p>AHT</p>
+                  </div>
+                  <div class="province">Đà Nẵng</div>
+                </div>
+              </div>
             </div>
+            <div
+              data-sal-delay="300"
+              data-sal="zoom-in"
+              data-sal-duration="800"
+              class="grid_item"
+            >
+              <div class="grid_box">
+                <div class="grid_pic">
+                  <picture>
+                    <source
+                      srcset="
+                        https://camranh.aero/sites/default/files/2018-08/cr-ptb-v2_qhkr_0.jpg
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="https://camranh.aero/sites/default/files/2018-08/cr-ptb-v2_qhkr_0.jpg"
+                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                    />
+                  </picture>
+                </div>
+                <div class="info">
+                  <div class="name">
+                    <p>
+                      <strong
+                        >International Passenger Terminal - Cam Ranh
+                        Airport</strong
+                      >
+                    </p>
+                    <p>CRTC</p>
+                  </div>
+                  <div class="province">Cam Ranh - Khánh Hòa</div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-sal-delay="300"
+              data-sal="zoom-in"
+              data-sal-duration="800"
+              class="grid_item"
+            >
+              <div class="grid_box">
+                <div class="grid_pic">
+                  <picture>
+                    <source
+                      srcset="
+                        https://www.trungnamgroup.com.vn/Data/Sites/1/media/h23.jpeg
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="https://www.trungnamgroup.com.vn/Data/Sites/1/media/h23.jpeg"
+                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                    />
+                  </picture>
+                </div>
+                <div class="info">
+                  <div class="name">
+                    <p><strong>Thai Hoa Power Wind Farm</strong></p>
+                    <p>Tổng công ty Cảng hàng không Việt Nam (ACV)</p>
+                  </div>
+                  <div class="province">Bình Thuận</div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-sal-delay="300"
+              data-sal="zoom-in"
+              data-sal-duration="800"
+              class="grid_item"
+            >
+              <div class="grid_box">
+                <div class="grid_pic">
+                  <picture>
+                    <source
+                      srcset="
+                        https://assets.ratedpower.com/1696239418-utility-scale-solar-plant-2.jpg?auto=format&dpr=0.32&w=4100
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="https://assets.ratedpower.com/1696239418-utility-scale-solar-plant-2.jpg?auto=format&dpr=0.32&w=4100"
+                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                    />
+                  </picture>
+                </div>
+                <div class="info">
+                  <div class="name">
+                    <p><strong>CU-JUT Solar Power Plant</strong></p>
+                    <p>EVNCHP</p>
+                  </div>
+                  <div class="province">Dak-Nong</div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-sal-delay="300"
+              data-sal="zoom-in"
+              data-sal-duration="800"
+              class="grid_item"
+            >
+              <div class="grid_box">
+                <div class="grid_pic">
+                  <picture>
+                    <source
+                      srcset="
+                        https://pecc2.com/vnt_upload/project/05_2021/thumbs/1500_13_Van_hanh_thuong_mai_Nha_may_Nhiet_dien_Duyen_Hai_3_Mo_rong_52020.jpg
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="https://pecc2.com/vnt_upload/project/05_2021/thumbs/1500_13_Van_hanh_thuong_mai_Nha_may_Nhiet_dien_Duyen_Hai_3_Mo_rong_52020.jpg"
+                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                    />
+                  </picture>
+                </div>
+                <div class="info">
+                  <div class="name">
+                    <p>
+                      <strong>Duyen Hai 3 Extension Thermo Power Plant</strong>
+                    </p>
+                    <p>Black & Veatch</p>
+                  </div>
+                  <div class="province">Trà Vinh</div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-sal-delay="300"
+              data-sal="zoom-in"
+              data-sal-duration="800"
+              class="grid_item"
+            >
+              <div class="grid_box">
+                <div class="grid_pic">
+                  <picture>
+                    <source
+                      srcset="
+                        https://aquariibd.com/wp-content/uploads/2024/05/15.jpg
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="https://aquariibd.com/wp-content/uploads/2024/05/15.jpg"
+                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                    />
+                  </picture>
+                </div>
+                <div class="info">
+                  <div class="name">
+                    <p><strong>Wastewater Treatment Plant Phnompenh</strong></p>
+                    <p>Metawater</p>
+                  </div>
+                  <div class="province">Phnompenh, Cambodia</div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-sal-delay="300"
+              data-sal="zoom-in"
+              data-sal-duration="800"
+              class="grid_item"
+            >
+              <div class="grid_box">
+                <div class="grid_pic">
+                  <picture>
+                    <source
+                      srcset="
+                        https://www.vinataba.com.vn/wp-content/uploads/2025/02/Hinh-mat-tien-cty-tlsg-2016_TVT_1894a-c-1-1.jpg
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="https://www.vinataba.com.vn/wp-content/uploads/2025/02/Hinh-mat-tien-cty-tlsg-2016_TVT_1894a-c-1-1.jpg"
+                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                    />
+                  </picture>
+                </div>
+                <div class="info">
+                  <div class="name">
+                    <p><strong>Sai Gon Tobacco Factory</strong></p>
+                    <p>Vinataba</p>
+                  </div>
+                  <div class="province">Bình Chánh, TP.HCM</div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-sal-delay="300"
+              data-sal="zoom-in"
+              data-sal-duration="800"
+              class="grid_item"
+            >
+              <div class="grid_box">
+                <div class="grid_pic">
+                  <picture>
+                    <source
+                      srcset="
+                        https://media.sojohotels.com/sojo-da-nang/48080f8fe8e80ad3834d1715065656487.png
+                      "
+                      type="image/webp"
+                    />
+                    <img
+                      src="https://media.sojohotels.com/sojo-da-nang/48080f8fe8e80ad3834d1715065656487.png"
+                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                    />
+                  </picture>
+                </div>
+                <div class="info">
+                  <div class="name">
+                    <p><strong>Da Nang Sojo Hotel</strong></p>
+                    <p>MEP General</p>
+                  </div>
+                  <div class="province">Đà Nẵng</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>

@@ -37,21 +37,39 @@
                 <i class="fa-solid fa-magnifying-glass searchbar-icon"></i>
               </div>
             </div>
-            <div class="lang-picker dropdown">
-              <form action="" method="get">
-                <!-- <button
-                  class="btn dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  style="outline: none; border: none; box-shadow: none"
-                >
-                <img th:src="@{/svg/vi_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />
-                  VI
-                </button> -->
+            <div class="actions-area">
+              <div class="lang-picker dropdown">
+                <form action="" method="get">
+                  <button
+                    id="current-theme"
+                    class="btn dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="outline: none; border: none; box-shadow: none"
+                  >
 
-              </form>
-            </div>
+                    <!-- <img th:src="@{/svg/sun.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />
+                    <span>Sáng</span>
+
+                    <img th:src="@{/svg/moon.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />
+                    <span>Tối</span> -->
+
+                    <!-- JS will inject the img and span here -->
+
+                  </button>
+                  <ul class="dropdown-menu theme">
+                    <li>
+                      <button id="theme-toggle-light" class="dropdown-item">
+                    <img th:src="@{/svg/sun.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />
+                    Sáng
+                      </button></li>
+                      <li><button id="theme-toggle-dark" class="dropdown-item">
+                    <img th:src="@{/svg/moon.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />
+                    Tối</li>
+                    </form>
+                  </div>
+                </div>
             <div class="button-borders">
               <a
                 th:href="@{/profile}"
@@ -62,7 +80,7 @@
             </div>
           </div>
           <div class="tmp-nav-area-one header--sticky sticky">
-            <div class="header-nav main-nav-one ">
+            <div class="header-nav main-nav-one menu-nav">
               <nav>
                 <ul class="parent-nav">
                   <li
@@ -91,7 +109,7 @@
 
               </nav>
             </div>
-                        <div class="header-nav main-nav-one">
+              <div class="header-nav main-nav-one language-nav">
               <nav>
                 <ul class="parent-nav">
                   <li>
@@ -122,9 +140,6 @@
                     </form>
                   </div>
                 </div>
-
-                
-
         </div>
       </header>
       <div id="side-hide">
