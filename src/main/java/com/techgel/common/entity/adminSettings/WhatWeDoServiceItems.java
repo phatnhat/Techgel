@@ -17,6 +17,7 @@ import lombok.Setter;
 public class WhatWeDoServiceItems extends BasedEntity {
     private String title_vi;
     private String title_en;
+    private String icon;
 
     @ManyToOne
     @JoinColumn(name = "what_we_do_service_id")
