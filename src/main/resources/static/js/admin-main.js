@@ -612,6 +612,67 @@ $(document).ready(function() {
         });
     }
 
+    const AboutUsClientPartnerItemsImageFilepond = FilePond.create(document.querySelector('#aboutUsClientPartnerItems-image-filepond'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#aboutUsClientPartnerItems-image-filepond').parent().attr("data-id"));
+                    formData.append('type', 'aboutUsClientPartnerItems-image');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='image_url']").val(response);
+                    return response;
+                }
+            },
+        },
+        acceptedFileTypes: ['image/*'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file ảnh',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file ảnh',
+        labelIdle: 'Kéo thả file ảnh hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const aboutUsClientPartnerItems_form = document.querySelector('#aboutUsClientPartnerItems-form');
+    if(aboutUsClientPartnerItems_form){
+        aboutUsClientPartnerItems_form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            try{
+                $('.loading-wrapper').show();
+
+                await Promise.all([
+                    AboutUsClientPartnerItemsImageFilepond.processFiles()
+                ]);
+
+                const form = e.target;
+
+                const isImageDelete = form.elements['image-delete'] ? form.elements['image-delete'].checked : false;
+
+                await Promise.all([
+                    isImageDelete ? FilePondDelete(form.elements['image_url'].value) : Promise.resolve()
+                ]);
+
+                const actionInput = document.createElement('input');
+                actionInput.type = 'hidden';
+                actionInput.name = 'action';
+                actionInput.value = document.activeElement.value;
+                form.appendChild(actionInput);
+
+                form.submit();
+            }catch(error){}
+
+            $('.loading-wrapper').hide();
+        });
+    }
+
+
 
     document.querySelectorAll('.btn-delete-carousel').forEach(button => {
         button.addEventListener('click', function() {
@@ -660,6 +721,26 @@ $(document).ready(function() {
         });
     });
     document.querySelectorAll('.btn-delete-license-certificate-items').forEach(button => {
+        button.addEventListener('click', function() {
+            var itemIdToDelete = this.getAttribute('data-id');
+            var parentId = this.getAttribute("data-parentId");
+            var image_url = this.getAttribute("data-image_url");
+            var type = this.getAttribute("data-type");
+            $("#delete-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
+            $("#delete-action-confirmation-submit-button").attr("data-parentId", parentId);
+            $("#delete-action-confirmation-submit-button").attr("data-image_url", image_url);
+            $("#delete-action-confirmation-submit-button").attr("data-type", type);
+        });
+    });
+    document.querySelectorAll('.btn-delete-client-partner').forEach(button => {
+        button.addEventListener('click', function() {
+            var itemIdToDelete = this.getAttribute('data-id');
+            var type = this.getAttribute("data-type");
+            $("#delete-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
+            $("#delete-action-confirmation-submit-button").attr("data-type", type);
+        });
+    });
+    document.querySelectorAll('.btn-delete-client-partner-items').forEach(button => {
         button.addEventListener('click', function() {
             var itemIdToDelete = this.getAttribute('data-id');
             var parentId = this.getAttribute("data-parentId");
@@ -822,6 +903,56 @@ $(document).ready(function() {
                     .then(response => {
                         if (response.ok) {
                             window.location.href = `/webadmin/about-us/licenses-certificates-items?id=${parentId}`;
+                        }
+                    });
+
+                $('#delete-action-confirmation').modal('toggle');
+            }catch (error) {}
+
+            $('.loading-wrapper').hide();
+
+            return false;
+        }
+        else if(type == 'client-partner'){
+            try{
+                $('.loading-wrapper').show();
+
+                let id = $(this).attr('data-id');
+
+                fetch(`/webadmin/about-us/clients-partners/delete/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = '/webadmin/about-us/clients-partners';
+                        }
+                    });
+
+                $('#delete-action-confirmation').modal('toggle');
+            }catch (error) {}
+
+            $('.loading-wrapper').hide();
+
+            return false;
+        }
+        else if(type == 'client-partner-items'){
+            try{
+                $('.loading-wrapper').show();
+
+                let id = $(this).attr('data-id');
+                let parentId = $(this).attr('data-parentId');
+                let form = new FormData()
+                form.append("image_url", $(this).attr("data-image_url"))
+
+                FilePondDelete($(this).attr("data-image_url"))
+
+                fetch(`/webadmin/about-us/clients-partners-items/delete/${id}`, {
+                    method: 'DELETE',
+                    body: form
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = `/webadmin/about-us/clients-partners-items?id=${parentId}`;
                         }
                     });
 
