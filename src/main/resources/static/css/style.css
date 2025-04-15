@@ -291,7 +291,8 @@ a {
 }
 
 .header-one .header-nav.main-nav-one {
-    margin-left: -0.75rem;
+    width: 100%;
+    place-items: center;
 }
 
 .header-one .header-nav li .nav-link:hover{
@@ -413,7 +414,7 @@ nav ul li.has-dropdown .submenu {
 }
 
 nav ul li.has-dropdown .submenu li a {
-    color: #1F1F25;
+    color: var(--black);
     font-weight: 600;
 }
 
@@ -735,14 +736,6 @@ nav ul li.has-dropdown:hover .submenu {
     z-index: 999;
 }
 
-.bg_image {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-
-
-
 .tmp-banner-area.bg_image.banner-one-height-control.tmp-section-gap::before {
     background-image: linear-gradient(rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0.3));
     position: absolute;
@@ -888,11 +881,6 @@ nav ul li.has-dropdown:hover .submenu {
     font-size: 1rem;
     line-height: 1.75rem;
     margin-bottom: 1.25rem;
-}
-.bg_image {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
 }
 
 .services-style--1 {
@@ -1649,10 +1637,13 @@ body a.read_more:hover {
 .ft-link li .single-contact {
     background-color: --neutralDark;
     border-radius: .3125rem;
-    padding: .625rem;
     display: flex;
     align-items: center;
     margin-bottom: 1.5625rem;
+    padding-top: .5rem;
+    min-width: 15rem;
+    max-width: 15rem;
+    justify-self: center;
 }
 
 .index-one .contact-inner .ft-link.ft-link-style-three li .single-contact .icon {
@@ -1819,7 +1810,6 @@ p.description {
 .single-news .news-inner {
     border-radius: .5rem;
     background: var(--white);
-    box-shadow: 0rem .125rem 1.25rem rgba(0, 0, 0, 0.1);
 }
 
 .single-news .news-inner .thumbnail {
@@ -1831,9 +1821,11 @@ p.description {
 
 .single-news .news-inner .thumbnail a img {
     width: 100%;
+    max-height: 18.75rem;
     transition: 0.5s;
-    min-height: 18.75rem;
+    min-height: 15rem;
     object-fit: cover;
+    object-position: center top;
 }
 
 .single-news .news-inner .thumbnail a:hover img {
@@ -1842,8 +1834,8 @@ p.description {
 
 .single-news .news-inner .thumbnail .pmt-news-meta {
     position: absolute;
-    top: 1.875rem;
-    left: 1.875rem;
+    top: 14.275rem;
+    left: .875rem;
 }
 
 .single-news .news-inner .thumbnail .pmt-news-meta .all-meta {
@@ -1875,35 +1867,13 @@ p.description {
 }
 
 .single-news .news-inner .news-content {
-    padding: .9375rem .9375rem 0 .9375rem;
+    padding: .9375rem;
     min-height: 18.625rem;
 }
 
 .single-news .news-inner .news-content .news-body .title-area {
     margin-bottom: .75rem;
     display: block;
-}
-
-.single-news .news-inner .news-content .news-body .title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin-top: .8125rem;
-    margin-bottom: .9375rem;
-    font-weight: 700;
-    position: relative;
-    display: inline;
-    background-image: -webkit-gradient(linear, left top, right top, from(currentColor), to(currentColor));
-    background-image: -webkit-linear-gradient(left, currentColor 0%, currentColor 100%);
-    background-image: -o-linear-gradient(left, currentColor 0%, currentColor 100%);
-    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
-    background-size: 0rem .0625rem;
-    background-position: 0rem 95%;
-    -webkit-transition: background-size 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
-    -o-transition: background-size 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
-    transition: background-size 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
-    padding: 0.1% 0rem;
-    background-repeat: no-repeat;
-    color: inherit;
 }
 
 .single-news .news-inner .news-content .news-body .description {
@@ -2055,7 +2025,7 @@ p.description {
 
 .copyright-area-one {
     padding: .625rem 0;
-    background: #353950;
+    background: var(--alwaysBlack);
 }
 
 .copyright-area-one {
@@ -2069,7 +2039,7 @@ p.description {
 
 .copyright-area-one p {
     margin: 0;
-    color: var(--white);
+    color: var(--alwaysWhite);
 }
 
 .copyright-area-one p a {
@@ -2077,7 +2047,7 @@ p.description {
 }
 
 .copyright-area-one .main-wrapper .term a {
-    color:#CCCCCC!important;
+    color:var(--alwaysGrey)!important;
     font-size: .75rem;
     font-weight: 300;
     line-height: 1.5;
@@ -2205,7 +2175,7 @@ p.description {
 }
 
 .single-card.card-horizontal .card-inner .content .content.content-without-bg .name {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 700;
     line-height: 1.0625rem;
     color: var(--black);
@@ -2214,7 +2184,7 @@ p.description {
 
 .single-card.card-horizontal .card-inner .content .content.content-without-bg .designation {
     font-size: 1rem;
-    color: var(--neutralPrimaryAlt);
+    color: var(--themePrimary);
     line-height: 1.3125rem;
     font-weight: 400;
     font-family: var(--font-secondary);
@@ -3066,7 +3036,7 @@ p.description {
 
 .news-area .menu-news {
     margin-bottom: 48px;
-    border-bottom: .0625rem solid #CCCCCC;
+    border-bottom: .0625rem solid var(--alwaysGrey);
 }
 
 
@@ -3135,9 +3105,9 @@ p.description {
     border-radius: 0 0 .5rem .5rem;
     padding: .3125rem;
     color: var(--black);
-    border-left: .0625rem solid #CCCCCC;
-    border-right: .0625rem solid #CCCCCC;
-    border-bottom: .0625rem solid #CCCCCC;
+    border-left: .0625rem solid var(--alwaysGrey);
+    border-right: .0625rem solid var(--alwaysGrey);
+    border-bottom: .0625rem solid var(--alwaysGrey);
 }
 
 .news-area .post-sidebar .item-post-sb .meta-post {
@@ -3145,12 +3115,13 @@ p.description {
     gap: 1.25rem;
     align-items: center;
     justify-content: center;
+    min-width: 18.125rem;
 }
 
 .news-area .post-sidebar .item-post-sb {
     display: flex;
     align-items: center;
-    border-top: .0625rem solid #CCCCCC;
+    border-top: .0625rem solid var(--alwaysGrey);
     padding-top: 8px;
     padding-bottom: 8px;
 }
@@ -3629,7 +3600,7 @@ p.description {
     margin: 0;
 }
 .menu_careers ul li:first-child a {
-    border-left: .0625rem solid #CCCCCC;
+    border-left: .0625rem solid var(--alwaysGrey);
 }
 .menu_careers ul li a {
     display: block;
@@ -3638,7 +3609,7 @@ p.description {
     text-transform: uppercase;
     position: relative;
     color: var(--neutralSecondary);
-    border-right: .0625rem solid #CCCCCC;
+    border-right: .0625rem solid var(--alwaysGrey);
 }
 .menu_careers ul li.current-menu-item a {
     background: #ffffff;
@@ -3673,7 +3644,7 @@ p.description {
 }
 .careers_page .list_careers .item_career {
     padding: 24px 0;
-    border-bottom: .0625rem solid #CCCCCC;
+    border-bottom: .0625rem solid var(--alwaysGrey);
 }
 .careers_page .career_form {
     background: #E9E9E9;
@@ -3735,7 +3706,7 @@ p.description {
     position: relative;
     height: 2.1875rem;
     width: 100%;
-    background: #CCCCCC;
+    background: var(--alwaysGrey);
     display: flex;
     align-items: center;
     padding: 0 16px;
@@ -3756,7 +3727,7 @@ p.description {
 .careers_page .career_form .form_apply .btn.btn-download {
     height: 2.1875rem;
     width: 100%;
-    background: #CCCCCC;
+    background: var(--alwaysGrey);
     display: flex;
     align-items: center;
     padding: 0 16px;
@@ -4557,7 +4528,7 @@ p.description {
     content: "";
     width: 1.875rem;
     height: .125rem;
-    background: #CCCCCC;
+    background: var(--alwaysGrey);
     bottom: 0;
     left: 0;
     -webkit-transition: all 0.5s ease;
