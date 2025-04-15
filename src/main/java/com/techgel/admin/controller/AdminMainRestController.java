@@ -20,6 +20,8 @@ public class AdminMainRestController {
     private final AboutUsLicenseCertificateItemsService aboutUsLicenseCertificateItemsService;
     private final AboutUsClientPartnerService aboutUsClientPartnerService;
     private final AboutUsClientPartnerItemsService aboutUsClientPartnerItemsService;
+    private final WhatWeDoServiceService whatWeDoServiceService;
+    private final WhatWeDoServiceItemsService whatWeDoServiceItemsService;
     private final GoogleDriveService googleDriveService;
 
     @DeleteMapping("/home/carousel/delete/{id}")
@@ -134,6 +136,36 @@ public class AdminMainRestController {
             AboutUsClientPartnerItems aboutUsClientPartnerItems = aboutUsClientPartnerItemsService.getById(id);
             if(aboutUsClientPartnerItems != null){
                 aboutUsClientPartnerItemsService.deleteById(id);
+            }else throw new Exception();
+        }catch (Exception e){
+            return ResponseEntity.internalServerError()
+                    .body("Lỗi khi xóa");
+        }
+
+        return ResponseEntity.ok("Delete successfully!");
+    }
+
+    @DeleteMapping("/what-we-do/our-business-lines/service-items/delete/{id}")
+    public ResponseEntity<String> deleteWhatWeDoOurBusinessLineServiceItems(@PathVariable Long id){
+        try{
+            WhatWeDoServiceItems whatWeDoServiceItems = whatWeDoServiceItemsService.getById(id);
+            if(whatWeDoServiceItems != null){
+                whatWeDoServiceItemsService.deleteById(id);
+            }else throw new Exception();
+        }catch (Exception e){
+            return ResponseEntity.internalServerError()
+                    .body("Lỗi khi xóa");
+        }
+
+        return ResponseEntity.ok("Delete successfully!");
+    }
+
+    @DeleteMapping("/what-we-do/our-business-lines/service/delete/{id}")
+    public ResponseEntity<String> deleteWhatWeDoOurBusinessLineService(@PathVariable Long id){
+        try{
+            WhatWeDoService whatWeDoService = whatWeDoServiceService.getById(id);
+            if(whatWeDoService != null){
+                whatWeDoServiceService.deleteById(id);
             }else throw new Exception();
         }catch (Exception e){
             return ResponseEntity.internalServerError()

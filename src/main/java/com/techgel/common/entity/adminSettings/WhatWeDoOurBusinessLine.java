@@ -19,7 +19,9 @@ public class WhatWeDoOurBusinessLine extends BasedEntity {
     private String subtitle_vi;
     private String subtitle_en;
     @Lob
-    private String general_introduction;
+    private String general_introduction_vi;
+    @Lob
+    private String general_introduction_en;
 
     public WhatWeDoOurBusinessLine(String title_vi, String title_en, String subtitle_vi, String subtitle_en) {
         this.title_vi = title_vi;
