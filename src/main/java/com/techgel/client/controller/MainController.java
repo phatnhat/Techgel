@@ -1,8 +1,6 @@
 package com.techgel.client.controller;
 
 import com.techgel.common.DTOs.SignatureProjectDTO;
-import com.techgel.common.entity.adminSettings.HomeNavigation;
-import com.techgel.common.service.HomeNavigationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +13,6 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 public class MainController {
-    final HomeNavigationService homeNavigationService;
 
     @GetMapping("")
     public String viewHomagePage(Model model){
@@ -114,6 +111,11 @@ public class MainController {
         return "clients/about-us/clients-partners";
     }
 
+    @GetMapping("/about-us/shareholder")
+    public String viewShareholder() {
+        return "clients/shareholder/shareholder";
+    }
+
     @GetMapping({"/projects", "/projects/{slug}"})
     public String viewProjects(@PathVariable(required = false) String slug){
         return "clients/projects";
@@ -147,16 +149,6 @@ public class MainController {
     @GetMapping("/news-details")
     public String viewNewsDetails() {
         return "clients/news/news-details";
-    }
-
-    @GetMapping("/investor/shareholder")
-    public String viewShareholder() {
-        return "clients/shareholder/shareholder";
-    }
-
-    @GetMapping("/investor/stock-info")
-    public String viewStockInfo() {
-        return "clients/shareholder/stock-info";
     }
 
     @GetMapping("/careers/job-opportunities")

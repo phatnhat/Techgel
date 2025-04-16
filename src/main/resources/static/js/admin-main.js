@@ -1,3 +1,48 @@
+$(document).ready(function() {
+    $('.summernote').summernote({
+        height: 500,
+        toolbar: [
+            ['fontname', ['fontname']],
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+            ['fontsize', ['fontsize', 'fontsizeunit']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video', 'hr']],
+            ['view', ['undo', 'redo', 'fullscreen', 'codeview']],
+          ],
+        fontNames: ['Arial', 'Arial Black'],
+        spellCheck: true,
+        }
+    );
+});
+
+$(document).ready(function() {
+    const pickerOptions = {onEmojiSelect: console.log}
+    const picker = new EmojiMart.Picker({
+        onEmojiSelect: (emoji) => {
+            let content = $("#service-items-icon").val() + emoji.native;
+            $("#service-items-icon").val(content)
+        }
+    })
+    document.getElementById("emoji-picker").appendChild(picker)
+    $('#service-items-icon').click((e) => {
+        e.stopPropagation();
+        $("#emoji-picker").show();
+    })
+    $("#service-items-icon-clear").click(e => {
+        console.log('hi')
+        $("#service-items-icon").val("");
+    })
+    $(document).click(function(e) {
+        if (!$(e.target).closest("#emoji-picker, #emoji-btn").length) {
+            $("#emoji-picker").hide();
+        }
+    });
+});
+
 FilePond.registerPlugin(
     FilePondPluginImagePreview,
     FilePondPluginImageEdit,
@@ -672,6 +717,95 @@ $(document).ready(function() {
         });
     }
 
+    const whatWeDoServiceImageFilepond = FilePond.create(document.querySelector('#whatWeDoService-image-filepond'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#whatWeDoService-image-filepond').parent().attr("data-id"));
+                    formData.append('type', 'whatWeDoService-image');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='image_url']").val(response);
+                    return response;
+                }
+            },
+        },
+        acceptedFileTypes: ['image/*'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file ảnh',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file ảnh',
+        labelIdle: 'Kéo thả file ảnh hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const whatWeDoServiceImagePopupFilepond = FilePond.create(document.querySelector('#whatWeDoService-image-popup-filepond'), {
+        instantUpload: false,
+        server: {
+            url: '/api/files',
+            process: {
+                url: '/upload',
+                method: 'POST',
+                ondata: (formData) => {
+                    formData.append('id', $('#whatWeDoService-image-popup-filepond').parent().attr("data-id"));
+                    formData.append('type', 'whatWeDoService-image-popup');
+                    return formData;
+                },
+                onload: (response) => {
+                    $("input[name='image_popup_url']").val(response);
+                    return response;
+                }
+            },
+        },
+        acceptedFileTypes: ['image/*'],
+        fileValidateTypeLabelExpectedTypes: 'Yêu cầu file ảnh',
+        labelFileTypeNotAllowed: 'File không hợp lệ. Vui lòng chọn file ảnh',
+        labelIdle: 'Kéo thả file ảnh hoặc <span class="filepond--label-action">Duyệt</span>',
+        fileValidateTypeDetectType: (source, type) =>
+            new Promise((resolve, reject) => {
+                resolve(type);
+            })
+    });
+    const whatWeDoService_form = document.querySelector('#whatWeDoService-form');
+    if(whatWeDoService_form){
+        whatWeDoService_form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            try{
+                $('.loading-wrapper').show();
+
+                await Promise.all([
+                    whatWeDoServiceImageFilepond.processFiles(),
+                    whatWeDoServiceImagePopupFilepond.processFiles(),
+                ]);
+
+                const form = e.target;
+
+                const isImageDelete = form.elements['image-delete'] ? form.elements['image-delete'].checked : false;
+                const isImagePopupDelete = form.elements['image-popup-delete'] ? form.elements['image-popup-delete'].checked : false;
+
+                await Promise.all([
+                    isImageDelete ? FilePondDelete(form.elements['image_url'].value) : Promise.resolve(),
+                    isImagePopupDelete ? FilePondDelete(form.elements['image_popup_url'].value) : Promise.resolve(),
+                ]);
+
+                const actionInput = document.createElement('input');
+                actionInput.type = 'hidden';
+                actionInput.name = 'action';
+                actionInput.value = document.activeElement.value;
+                form.appendChild(actionInput);
+
+                form.submit();
+            }catch(error){}
+
+            $('.loading-wrapper').hide();
+        });
+    }
 
 
     document.querySelectorAll('.btn-delete-carousel').forEach(button => {
@@ -752,7 +886,29 @@ $(document).ready(function() {
             $("#delete-action-confirmation-submit-button").attr("data-type", type);
         });
     });
-
+    document.querySelectorAll('.btn-delete-whatWeDo-service').forEach(button => {
+        button.addEventListener('click', function() {
+            var itemIdToDelete = this.getAttribute('data-id');
+            var type = this.getAttribute("data-type");
+            var image_url = this.getAttribute("data-image_url");
+            var image_popup_url = this.getAttribute("data-image_popup_url");
+            $("#delete-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
+            $("#delete-action-confirmation-submit-button").attr("data-image_url", image_url);
+            $("#delete-action-confirmation-submit-button").attr("data-image_popup_url", image_popup_url);
+            $("#delete-action-confirmation-submit-button").attr("data-type", type);
+        });
+    });
+    document.querySelectorAll('.btn-delete-whatWeDoService-items').forEach(button => {
+        button.addEventListener('click', function() {
+            var itemIdToDelete = this.getAttribute('data-id');
+            var parentId = this.getAttribute("data-parentId");
+            var type = this.getAttribute("data-type");
+            console.log(type)
+            $("#delete-action-confirmation-submit-button").attr("data-id", itemIdToDelete);
+            $("#delete-action-confirmation-submit-button").attr("data-parentId", parentId);
+            $("#delete-action-confirmation-submit-button").attr("data-type", type);
+        });
+    });
 
     $('#delete-action-confirmation-submit-button').bind('click', function () {
         let type = $(this).attr('data-type');
@@ -953,6 +1109,57 @@ $(document).ready(function() {
                     .then(response => {
                         if (response.ok) {
                             window.location.href = `/webadmin/about-us/clients-partners-items?id=${parentId}`;
+                        }
+                    });
+
+                $('#delete-action-confirmation').modal('toggle');
+            }catch (error) {}
+
+            $('.loading-wrapper').hide();
+
+            return false;
+        }
+        else if(type == 'whatWeDo-service'){
+            try{
+                $('.loading-wrapper').show();
+
+                let id = $(this).attr('data-id');
+                let form = new FormData();
+                form.append("image_url", $(this).attr("data-image_url"));
+                form.append("image_popup_url", $(this).attr("data-image_popup_url"));
+
+                FilePondDelete($(this).attr("data-image_url"));
+                FilePondDelete($(this).attr("data-image_popup_url"));
+
+                fetch(`/webadmin/what-we-do/our-business-lines/service/delete/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = '/webadmin/what-we-do/our-business-lines';
+                        }
+                    });
+
+                $('#delete-action-confirmation').modal('toggle');
+            }catch (error) {}
+
+            $('.loading-wrapper').hide();
+
+            return false;
+        }
+        else if(type == 'whatWeDo-service-items'){
+            try{
+                $('.loading-wrapper').show();
+
+                let id = $(this).attr('data-id');
+                let parentId = $(this).attr('data-parentId');
+
+                fetch(`/webadmin/what-we-do/our-business-lines/service-items/delete/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = `/webadmin/what-we-do/our-business-lines/service-items?id=${parentId}`;
                         }
                     });
 

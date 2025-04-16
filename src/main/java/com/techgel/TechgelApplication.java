@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EntityScan({"com.techgel.common.entity"})
-@EnableJpaAuditing
+//@EnableJpaAuditing
 public class TechgelApplication {
     public static void main(String[] args) {
         SpringApplication.run(TechgelApplication.class, args);

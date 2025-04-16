@@ -36,6 +36,9 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- summernote -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.css" rel="stylesheet">
+
     <link rel="stylesheet" th:href="@{/css/admin-style.css}" />
     <link rel="stylesheet" th:href="@{/css/admin-dashboard-style.css}" />
     <link rel="stylesheet" th:href="@{/css/_animations.css}" />
@@ -66,6 +69,7 @@
       <script
         src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"
       ></script>
+
       <script
         src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"
       ></script>
@@ -103,7 +107,11 @@
         src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"
       ></script>
 
-      <script th:src="@{/js/admin-main.js}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+        <script th:src="@{/js/admin-main.js}"></script>
     </th:block>
 
 

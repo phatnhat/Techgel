@@ -16,6 +16,9 @@ public class GlobalModelAttributes {
     public void addCommonAttributes(Model model) {
         List<Map<String, String>> navigations = new ArrayList<>();
         navigations.add(new HashMap<>(){{
+            put("Trang chủ", "/");
+        }});
+        navigations.add(new HashMap<>(){{
             put("Về Techgel", "/about-us/overview");
         }});
         navigations.add(new HashMap<>(){{
@@ -28,22 +31,23 @@ public class GlobalModelAttributes {
             put("Tin tức", "/news");
         }});
         navigations.add(new HashMap<>(){{
-            put("Cổ đông", "/investor/shareholder");
-        }});
-        navigations.add(new HashMap<>(){{
             put("Tuyển dụng", "/careers/job-opportunities");
         }});
         navigations.add(new HashMap<>(){{
             put("Liên hệ", "/contact-us");
         }});
 
+
+
         List<List<Map<String, String>>> test = new ArrayList<List<Map<String, String>>>();
+        test.add(new ArrayList<>());
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
                 put("Tổng quan", "/about-us/overview");
                 put("Sơ đồ tổ chức", "/about-us/organizational-chart");
                 put("Tầm nhìn giá trị cốt lõi", "/about-us/vision-mission-values");
                 put("Giấy phép & chứng chỉ", "/about-us/licenses-certificates");
+                put("Quan hệ cổ đông", "/about-us/shareholder");
                 put("Đối tác khách hàng", "/about-us/clients-partners");
             }});
         }});
@@ -57,7 +61,7 @@ public class GlobalModelAttributes {
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
                 put("Năng lượng", "/projects");
-                put("Hàng không", "/projects");
+                put("Nhà ga", "/projects");
                 put("Công nghiệp", "/projects");
                 put("Hạ tầng giao thông", "/projects");
                 put("Dân dụng", "/projects");
@@ -65,16 +69,6 @@ public class GlobalModelAttributes {
             }});
         }});
         test.add(new ArrayList<>());
-        test.add(new ArrayList<>(){{
-            add(new LinkedHashMap<>(){{
-//                put("Đại hội cổ đông", "shareholder");
-//                put("Báo cáo thường niên", "shareholder");
-//                put("Báo cáo tài chính", "shareholder");
-//                put("Công bố thông tin", "shareholder");
-                put("Quan hệ cổ đông", "/investor/shareholder");
-                put("Thông tin cổ phiếu", "/investor/stock-info");
-            }});
-        }});
         test.add(new ArrayList<>(){{
             add(new LinkedHashMap<>(){{
                 put("Cơ hội nghề nghiệp", "/careers/job-opportunities");

@@ -1,13 +1,6 @@
 package com.techgel.admin.controller;
 
-import com.techgel.admin.DriveFile;
 import com.techgel.admin.GoogleDriveService;
-import com.techgel.common.entity.adminSettings.Carousel;
-import com.techgel.common.entity.adminSettings.EProfile;
-import com.techgel.common.service.CarouselService;
-import com.techgel.common.service.EProfileService;
-import org.apache.commons.codec.digest.HmacUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,11 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @RestController
 @RequestMapping("/api/files")

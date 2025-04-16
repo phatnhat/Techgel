@@ -17,6 +17,7 @@ import java.util.List;
 public class WhatWeDoService extends BasedEntity {
     private String title_vi;
     private String title_en;
+    private int displayOrder;
     private String image_url;
     private String image_popup_url;
 
