@@ -1079,13 +1079,13 @@ div#brxe-rqhadm {
 
 .mobile-menu-main nav ul li a.main {
   padding: 12px 0 17px 0;
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 1px solid var(--black);
   cursor: pointer;
 }
 
 .mobile-menu-main nav ul li a {
   display: block;
-  color: #181010;
+  color: var(--black);
 }
 
 .metismenu .mm-collapse:not(.mm-show) {
@@ -1114,3 +1114,5 @@ div#brxe-rqhadm {
   pointer-events: none;
   cursor: pointer;
 }
+
+/*# sourceMappingURL=base.css.map */
