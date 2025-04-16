@@ -312,6 +312,7 @@ jQuery(window).on("scroll", function () {
     jQuery(".progress-wrap").removeClass("active-progress");
   }
 });
+
 $(document).on("click", ".progress-wrap", function (event) {
   event.preventDefault();
   jQuery("html, body").animate({ scrollTop: 0 }, 0);
