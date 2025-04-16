@@ -1,5 +1,6 @@
 package com.techgel.common.service.offline;
 
+import com.google.gson.JsonObject;
 import com.techgel.common.entity.adminSettings.HomeNavigation;
 import com.techgel.common.service.HomeNavigationService;
 
@@ -33,6 +34,11 @@ public class HomeNavigationOfflineService implements HomeNavigationService {
         navigations.add(new HashMap<>(){{
             put("Liên hệ", "/contact-us");
         }});
+
+//        JsonObject obj = new JsonObject();
+//        obj.add("name", "Alice");
+//        obj.put("age", 25);
+//        System.out.println(obj.toString());
 
         return null;
     }

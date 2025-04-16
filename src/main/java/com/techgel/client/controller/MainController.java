@@ -111,6 +111,11 @@ public class MainController {
         return "clients/about-us/clients-partners";
     }
 
+    @GetMapping("/about-us/shareholder")
+    public String viewShareholder() {
+        return "clients/shareholder/shareholder";
+    }
+
     @GetMapping({"/projects", "/projects/{slug}"})
     public String viewProjects(@PathVariable(required = false) String slug){
         return "clients/projects";
@@ -144,16 +149,6 @@ public class MainController {
     @GetMapping("/news-details")
     public String viewNewsDetails() {
         return "clients/news/news-details";
-    }
-
-    @GetMapping("/investor/shareholder")
-    public String viewShareholder() {
-        return "clients/shareholder/shareholder";
-    }
-
-    @GetMapping("/investor/stock-info")
-    public String viewStockInfo() {
-        return "clients/shareholder/stock-info";
     }
 
     @GetMapping("/careers/job-opportunities")
