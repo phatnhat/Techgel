@@ -1,10 +1,14 @@
 package com.techgel.client.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
-
-import java.util.*;
 
 @ControllerAdvice
 public class GlobalModelAttributes {
@@ -15,7 +19,7 @@ public class GlobalModelAttributes {
             put("Về Techgel", "/about-us/overview");
         }});
         navigations.add(new HashMap<>(){{
-            put("Năng lực thi công", "/what-we-do/our-business-lines");
+            put("Năng lực", "/what-we-do/our-business-lines");
         }});
         navigations.add(new HashMap<>(){{
             put("Dự án", "/projects");

@@ -1,16 +1,15 @@
 package com.techgel.admin;
 
-import com.techgel.common.entity.adminSettings.HomeNavigation;
-import com.techgel.common.repository.HomeNavigationRepository;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
-import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import com.techgel.common.entity.adminSettings.HomeNavigation;
+import com.techgel.common.repository.HomeNavigationRepository;
 
 @DataJpaTest(showSql = false)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
@@ -23,7 +22,7 @@ public class HomeNavigationRepositoryTests {
     public void testCreateHomeNavigation(){
         //HomeNavigation home = new HomeNavigation("Trang chủ", "Home", true, 1);
         HomeNavigation aboutUs = new HomeNavigation("Về Techgel", "About Techgel", true, 1, "/about-us");
-        HomeNavigation whatWeDo = new HomeNavigation("Năng lực thi công", "What we do", true, 2, "/what-we-do");
+        HomeNavigation whatWeDo = new HomeNavigation("Năng lực", "What we do", true, 2, "/what-we-do");
         HomeNavigation projects = new HomeNavigation("Dự án", "Projects", true, 3, "/projects");
         HomeNavigation blog = new HomeNavigation("Tin tức", "News", true, 4, "/news");
         HomeNavigation investor = new HomeNavigation("Cổ đông", "Investors", true, 4, "/investor");

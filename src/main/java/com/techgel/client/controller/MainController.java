@@ -24,7 +24,7 @@ public class MainController {
         List<String> banners = new ArrayList<>();
 
         banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-1.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-2.jpg");
+        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-soha.jpg");
         banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-3.jpg");
         banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-4.jpg");
         banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-5.jpg");
