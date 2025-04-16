@@ -1,4 +1,6 @@
-@import "variables";
+@use "variables";
+
+//sass src/main/resources/static/scss:src/main/resources/static/css --watch
 
 html {
   width: fit-content;
@@ -282,10 +284,6 @@ html[data-theme="dark"] .only-dark {
   .menu-nav {
     align-items: center;
     justify-content: center;
-
-    @media (max-width: 78.125rem) {
-      display: none;
-    }
   }
 
   .language-nav {
@@ -987,8 +985,10 @@ div#brxe-rqhadm {
   }
 
   .top-area {
+    background: linear-gradient(135deg, #ffffff 50%, #25247b 50%);
+    border-top: 5px solid #25247b;
+    border-bottom: 5px solid #25247b;
     padding: 1.875rem 1.25rem;
-    background: #b8b8b8;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1063,4 +1063,49 @@ div#brxe-rqhadm {
       }
     }
   }
+}
+
+
+.mobile-menu-main nav ul {
+  padding: 0 20px;
+  display: block;
+}
+.mobile-menu-main nav ul li.has-droupdown {
+  position: relative;
+}
+.mobile-menu-main nav ul li {
+  margin: 0;
+  padding: 0;
+}
+.mobile-menu-main nav ul li a.main {
+  padding: 12px 0 17px 0;
+  border-bottom: 1px solid #f3f3f3;
+  cursor: pointer;
+}
+.mobile-menu-main nav ul li a {
+  display: block;
+  color: #181010;
+}
+.metismenu .mm-collapse:not(.mm-show) {
+  display: none;
+}
+.mobile-menu-main nav ul li.has-droupdown ul li {
+  margin: 7px 0 !important;
+  border-bottom: 1px solid #f3f3f3;
+}
+.mobile-menu-main nav ul li.has-droupdown ul a {
+  padding: 10px 0;
+}
+.mobile-menu-main nav ul li.has-droupdown::after {
+  position: absolute;
+  content: "▼";
+  font-size: 16px;
+  right: 0;
+  font-weight: 400;
+  top: 5px;
+  padding: 8px 13px;
+  color: #fff;
+  background: var(--themePrimary) !important;
+  pointer-events: none;
+  cursor: pointer;
 }
