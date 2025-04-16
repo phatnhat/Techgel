@@ -397,14 +397,6 @@ html[data-theme=dark] .only-dark {
   align-items: center;
   justify-content: center;
 }
-<<<<<<< HEAD
-=======
-@media (max-width: 78.125rem) {
-  .tmp-header-area-start .menu-nav {
-    display: none;
-  }
-}
->>>>>>> bc24f9ddae28a390ac3c7ec5d9f31b2cea47ac3e
 .tmp-header-area-start .language-nav {
   justify-items: end;
 }
@@ -996,8 +988,10 @@ div#brxe-rqhadm {
   transform: translateX(0);
 }
 #side-hide .top-area {
+  background: linear-gradient(135deg, #ffffff 50%, #25247b 50%);
+  border-top: 5px solid #25247b;
+  border-bottom: 5px solid #25247b;
   padding: 1.875rem 1.25rem;
-  background: #b8b8b8;
   display: flex;
   align-items: center;
   justify-content: space-between;
