@@ -3,8 +3,8 @@
 
 :root {
   // 🌈 Theme Colors (Split Complementary: Red, Green, Blue)
-  --themePrimary: #da251a; 
-  --themeSecondary: #1a6fda; 
+  --themePrimary: #14245a;
+  --themeSecondary: #da251a; 
   --themeTertiary: #1ada85; 
 
   --themeDarker: #80110f;
@@ -15,11 +15,12 @@
   --themeLighter: #fad4d2;
   --themeLighterAlt: #fef2f2;
 
-  --secondaryDarker: #15478e;
-  --secondaryDark: #1a5cc2;
-  --secondaryLight: #5fa0ed;
-  --secondaryLighter: #cfe4fb;
-  --secondaryLighterAlt: #f2f8ff;
+--secondaryDarker:      #0f1a3f;  
+--secondaryDark:        #111f4f;  
+--themeSecondary:       #14245a; 
+--secondaryLight:       #3c5a96;  
+--secondaryLighter:     #9db5e1; 
+--secondaryLighterAlt:  #e6eefb;  
 
   --tertiaryDarker: #128458;
   --tertiaryDark: #16b176;
@@ -46,8 +47,8 @@
 
 :root[data-theme='dark'] {
   // 🌈 Brand Colors (Unchanged core hues)
-  --themePrimary:        #da251a;
-  --themeSecondary:      #1a6fda;
+  --themePrimary:        #0C4DA2; 
+  --themeSecondary:      #da251a;
   --themeTertiary:       #1ada85;
 
   // 🔴 Primary Red – Dark-friendly shades
@@ -60,11 +61,11 @@
   --themeLighterAlt:     #631713;
 
   // 🔵 Secondary Blue – Dark-friendly
-  --secondaryDarker:     #4987d1;
-  --secondaryDark:       #3174d8;
-  --secondaryLight:      #274f96;
-  --secondaryLighter:    #1f3b71;
-  --secondaryLighterAlt: #17284e;
+  --secondaryDarker:     #C7DEF7;
+  --secondaryDark:       #6CA1E0;
+  --secondaryLight:      #2A6CC1;
+  --secondaryLighter:    #0A4090;
+  --secondaryLighterAlt: #083573;
 
   // 🟢 Tertiary Green – Dark-friendly
   --tertiaryDarker:      #26c991;
