@@ -1,7 +1,6 @@
 package com.techgel.admin;
 
 import com.techgel.common.entity.adminSettings.EProfile;
-import com.techgel.common.entity.adminSettings.SEO;
 import com.techgel.common.repository.EProfileRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class EProfileRepositoryTests {
 
     @Test
     public void testCreateEBrochure(){
-        EProfile eProfile = new EProfile("Hồ sơ năng lực", "E-Profile", "", true, "", new SEO());
+        EProfile eProfile = new EProfile("Hồ sơ năng lực", "E-Profile", "", true, "");
         EProfile eProfileSaved = eProfileRepository.save(eProfile);
         assertThat(eProfileSaved.getId()).isGreaterThan(0);
     }

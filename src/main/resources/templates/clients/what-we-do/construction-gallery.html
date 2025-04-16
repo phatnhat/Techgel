@@ -1,228 +1,226 @@
 <!DOCTYPE html>
 <html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="content-wrapper" style="overflow: hidden">
-        <style>
-            .breadcrumb-bg {
-                background-image: url(https://img.freepik.com/free-photo/futuristic-business-scene-with-ultra-modern-ambiance_23-2151003773.jpg?t=st=1743405751~exp=1743409351~hmac=2b9dada125a9fc1d3c61eb2319f71a377993f051601c809cb8df8bc43cc4ce7a&w=1380);
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: calc(100vh - 80px);
-            }
+      <style>
+        .breadcrumb-bg {
+          background-image: url([[@{/imgs/banners/tech-field.jpg}]]);
+        }
 
-            .bg-1 {
-                background-image: url([[@{/imgs/bg-01.jpg}]]);
-            }
+        .bg-1 {
+          background-image: url([[@{/imgs/bg-01.jpg}]]);
+        }
 
-            .line_img {
-                height: 10px;
-                background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center / auto 200%;
-            }
-        </style>
+        .line_img {
+          height: 10px;
+          background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center /
+            auto 200%;
+        }
+      </style>
 
-        <div class="breadcrumb-area bg_image breadcrumb-bg">
-            <div id="brxe-oubmqr" class="brxe-container">
-                <div id="brxe-twzaik" class="brxe-block">
-                    <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline">
-                        <h1><span class="uni-text-outline">NĂNG LỰC THI CÔNG<br></span>HÌNH ẢNH THI CÔNG</h1>
-                    </div>
-                </div>
-                <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
-                    <div id="brxe-rqhadm" class="brxe-text-basic">Cuộn chuột</div>
-                    <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
-                </a>
+      <div class="breadcrumb-area bg_image breadcrumb-bg">
+        <div id="brxe-oubmqr" class="brxe-container">
+          <div id="brxe-twzaik" class="brxe-block small-text-shadow">
+            <div
+              id="brxe-naxryb"
+              class="brxe-text uni-text-outline-white uni-text-outline"
+            >
+              <h1>HÌNH ẢNH THI CÔNG</h1>
             </div>
+          </div>
+          <a
+            id="brxe-ygpexj"
+            href="#next"
+            data-brx-anchor="true"
+            class="brxe-block small-text-shadow"
+          >
+            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
+            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+          </a>
         </div>
+      </div>
 
-        <div id="next" class="filter_projects py-md-2 py-2">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md">
-                        <div class="d-md-flex justify-content-between align-items-center">
-                            <ul>
-                                <li class="active">
-                                    <a href="#">TẤT CẢ</a>
-                                </li>
-                                <li>
-                                    <a href="#">NĂNG LƯỢNG</a>
-                                </li>
-                                <li>
-                                    <a href="#">HÀNG KHÔNG</a>
-                                </li>
-                                <li>
-                                    <a href="#">CÔNG NGHIỆP</a>
-                                </li>
-                                <li>
-                                    <a href="#">HẠ TẦNG GIAO THÔNG</a>
-                                </li>
-                                <li>
-                                    <a href="#">DÂN DỤNG</a>
-                                </li>
-                                <li>
-                                    <a href="#">CÔNG NGHỆ</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+      <div id="next" class="filter_projects py-md-2 py-2">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md">
+              <div class="d-md-flex justify-content-between align-items-center">
+                <ul>
+                  <li class="active">
+                    <a href="#">TẤT CẢ</a>
+                  </li>
+                  <li>
+                    <a href="#">NĂNG LƯỢNG</a>
+                  </li>
+                  <li>
+                    <a href="#">HÀNG KHÔNG</a>
+                  </li>
+                  <li>
+                    <a href="#">CÔNG NGHIỆP</a>
+                  </li>
+                  <li>
+                    <a href="#">HẠ TẦNG GIAO THÔNG</a>
+                  </li>
+                  <li>
+                    <a href="#">DÂN DỤNG</a>
+                  </li>
+                  <li>
+                    <a href="#">CÔNG NGHỆ</a>
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <div class="construction-gallery p-5">
-            <div class="row">
-<!--                -->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4">-->
-<!--                    <div class="item_post" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
-<!--                    <div class="item_post">-->
-<!--                        <figure>-->
-<!--                            <a href="#">-->
-<!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
-<!--                            </a>-->
-<!--                        </figure>-->
-<!--                    </div>-->
-<!--                </div>-->
+      <div class="construction-gallery p-5">
+        <div class="row">
+          <!--                -->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4">-->
+          <!--                    <div class="item_post" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-md-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">-->
+          <!--                    <div class="item_post">-->
+          <!--                        <figure>-->
+          <!--                            <a href="#">-->
+          <!--                                <img class="img-fluid" src="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" alt="">-->
+          <!--                            </a>-->
+          <!--                        </figure>-->
+          <!--                    </div>-->
+          <!--                </div>-->
 
-<!--                <div ID="ngy2p" data-nanogallery2='{-->
-<!--                "thumbnailWidth": "auto",-->
-<!--                "thumbnailLabel": {-->
-<!--                  "position": "overImageOnBottom"-->
-<!--                },-->
-<!--                "thumbnailAlignment": "center",-->
-<!--                "thumbnailOpenImage": true,-->
-<!--                thumbnailHoverEffect2: "label_font-size_1em_1.5em|title_backgroundColor_rgba(255,255,255,0.34)_rgba(((84,132,12,0.8)|title_color_#000_#fff|image_scale_1.00_1.10_5000|image_rotateZ_0deg_4deg_5000"-->
-<!--              }'>-->
-<!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
-<!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
-<!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
-<!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
-<!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
-<!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
-<!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
-<!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
-<!--                </div>-->
+          <!--                <div ID="ngy2p" data-nanogallery2='{-->
+          <!--                "thumbnailWidth": "auto",-->
+          <!--                "thumbnailLabel": {-->
+          <!--                  "position": "overImageOnBottom"-->
+          <!--                },-->
+          <!--                "thumbnailAlignment": "center",-->
+          <!--                "thumbnailOpenImage": true,-->
+          <!--                thumbnailHoverEffect2: "label_font-size_1em_1.5em|title_backgroundColor_rgba(255,255,255,0.34)_rgba(((84,132,12,0.8)|title_color_#000_var(--white)|image_scale_1.00_1.10_5000|image_rotateZ_0deg_4deg_5000"-->
+          <!--              }'>-->
+          <!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
+          <!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
+          <!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
+          <!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
+          <!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
+          <!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
+          <!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
+          <!--                    <a href="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngthumb="https://img.freepik.com/free-photo/workers-examining-work_1122-970.jpg?t=st=1743148913~exp=1743152513~hmac=71ba4023dcfbba29bffc282c8f28f95f552af73f67b4cb3ffbd63ec9fac353e3&w=1380" data-ngdesc=""></a>-->
+          <!--                </div>-->
 
-
-                <div id="construction-nanogallery2"></div>
-
-            </div>
+          <div id="construction-nanogallery2"></div>
         </div>
-
+      </div>
     </main>
-</body>
+  </body>
 </html>

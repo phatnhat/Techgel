@@ -31,16 +31,11 @@ public class EProfile extends BasedEntity {
     private String image_url;
     private String file_url;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = true)
-    @JoinColumn(name = "seo_id")
-    private SEO seo;
-
-    public EProfile(String title_vi, String title_en, String image_url, boolean isPublished, String file_url, SEO seo) {
+    public EProfile(String title_vi, String title_en, String image_url, boolean isPublished, String file_url) {
         this.title_vi = title_vi;
         this.title_en = title_en;
         this.image_url = image_url;
         this.isPublished = isPublished;
         this.file_url = file_url;
-        this.seo = seo;
     }
 }

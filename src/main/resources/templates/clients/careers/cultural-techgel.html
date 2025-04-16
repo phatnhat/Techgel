@@ -1,154 +1,220 @@
 <!DOCTYPE html>
 <html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="content-wrapper">
-        <style>
-            .breadcrumb-bg {
-                background-image: url(https://img.freepik.com/free-photo/business-situation-job-interview-concept-job-seeker-present-resume-managers_1421-78.jpg?t=st=1743411161~exp=1743414761~hmac=ad7f4be4696c1044993e232e9a724f27b419528456c87b47a6ab825093a09e7f&w=1380);
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: calc(100vh - 80px);
-            }
-        </style>
+      <style>
+        .breadcrumb-bg {
+          background-image: url(https://img.freepik.com/free-photo/business-situation-job-interview-concept-job-seeker-present-resume-managers_1421-78.jpg?t=st=1743411161~exp=1743414761~hmac=ad7f4be4696c1044993e232e9a724f27b419528456c87b47a6ab825093a09e7f&w=1380);
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: calc(100vh - 80px);
+        }
+      </style>
 
-        <div class="breadcrumb-area bg_image breadcrumb-bg">
-            <div id="brxe-oubmqr" class="brxe-container">
-                <div id="brxe-twzaik" class="brxe-block">
-                    <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline">
-                        <h1><span class="uni-text-outline">TUYỂN DỤNG<br></span>VĂN HÓA TECHGEL</h1>
-                    </div>
-                </div>
-                <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
-                    <div id="brxe-rqhadm" class="brxe-text-basic">Cuộn chuột</div>
-                    <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
-                </a>
+      <div class="breadcrumb-area bg_image breadcrumb-bg">
+        <div id="brxe-oubmqr" class="brxe-container">
+          <div id="brxe-twzaik" class="brxe-block small-text-shadow">
+            <div
+              id="brxe-naxryb"
+              class="brxe-text uni-text-outline-white uni-text-outline"
+            >
+              <h1>
+                <span class="uni-text-outline">TUYỂN DỤNG<br /></span>VĂN HÓA
+                TECHGEL
+              </h1>
             </div>
+          </div>
+          <a
+            id="brxe-ygpexj"
+            href="#next"
+            data-brx-anchor="true"
+            class="brxe-block small-text-shadow"
+          >
+            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
+            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+          </a>
         </div>
+      </div>
 
-        <div id="next" class="hr_policies_page py-5">
-            <div class="container">
-                <h1 class="title split-collab" style="opacity: 1;">
-                  <span th:each="t: ${'Văn hóa TECHGEL'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                  </span>
-                </h1>
-                <hr>
-                <div class="post_cff mt-5">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="post_item mb-4">
-                                <div class="row gx-2 gx-md-3">
-                                    <div class="col-md-2 col-6">
-                                        <figure>
-                                            <a href="#">
-                                                <img width="720" height="450" src="https://img.freepik.com/free-vector/paper-style-core-values-background_23-2149079276.jpg?t=st=1743575010~exp=1743578610~hmac=2e61aacccd2103c7997571243e1fe72da11d764f19bd934621d7c6fe76062afc&w=1380" class="img-fluid wp-post-image" alt="" decoding="async" fetchpriority="high" draggable="false">                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-md-10 col-6">
-                                        <div class="post_info">
-                                            <h4 class="fs-16 fw-bold">
-                                                <a href="#">
-                                                    5 NGUYÊN TẮC PHÁT TRIỂN BỀN VỮNG TECHGEL                                                </a>
-                                            </h4>
-                                            <div class="d-none d-md-block">
-                                                <div class="post_cate cl-blue fw-bold fs-13">
-                                                    01/03/2025
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="post_item mb-4">
-                                <div class="row gx-2 gx-md-3">
-                                    <div class="col-md-2 col-6">
-                                        <figure>
-                                            <a href="#">
-                                                <img width="720" height="450" src="https://img.freepik.com/free-vector/paper-style-core-values-background_23-2149079276.jpg?t=st=1743575010~exp=1743578610~hmac=2e61aacccd2103c7997571243e1fe72da11d764f19bd934621d7c6fe76062afc&w=1380" class="img-fluid wp-post-image" alt="" decoding="async" fetchpriority="high" draggable="false">                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-md-10 col-6">
-                                        <div class="post_info">
-                                            <h4 class="fs-16 fw-bold">
-                                                <a href="#">
-                                                    5 NGUYÊN TẮC PHÁT TRIỂN BỀN VỮNG TECHGEL                                                </a>
-                                            </h4>
-                                            <div class="d-none d-md-block">
-                                                <div class="post_cate cl-blue fw-bold fs-13">
-                                                    01/03/2025
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="post_item mb-4">
-                                <div class="row gx-2 gx-md-3">
-                                    <div class="col-md-2 col-6">
-                                        <figure>
-                                            <a href="#">
-                                                <img width="720" height="450" src="https://img.freepik.com/free-vector/paper-style-core-values-background_23-2149079276.jpg?t=st=1743575010~exp=1743578610~hmac=2e61aacccd2103c7997571243e1fe72da11d764f19bd934621d7c6fe76062afc&w=1380" class="img-fluid wp-post-image" alt="" decoding="async" fetchpriority="high" draggable="false">                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-md-10 col-6">
-                                        <div class="post_info">
-                                            <h4 class="fs-16 fw-bold">
-                                                <a href="#">
-                                                    5 NGUYÊN TẮC PHÁT TRIỂN BỀN VỮNG TECHGEL                                                </a>
-                                            </h4>
-                                            <div class="d-none d-md-block">
-                                                <div class="post_cate cl-blue fw-bold fs-13">
-                                                    01/03/2025
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="post_item mb-4">
-                                <div class="row gx-2 gx-md-3">
-                                    <div class="col-md-2 col-6">
-                                        <figure>
-                                            <a href="#">
-                                                <img width="720" height="450" src="https://img.freepik.com/free-vector/paper-style-core-values-background_23-2149079276.jpg?t=st=1743575010~exp=1743578610~hmac=2e61aacccd2103c7997571243e1fe72da11d764f19bd934621d7c6fe76062afc&w=1380" class="img-fluid wp-post-image" alt="" decoding="async" fetchpriority="high" draggable="false">                                            </a>
-                                        </figure>
-                                    </div>
-                                    <div class="col-md-10 col-6">
-                                        <div class="post_info">
-                                            <h4 class="fs-16 fw-bold">
-                                                <a href="#">
-                                                    5 NGUYÊN TẮC PHÁT TRIỂN BỀN VỮNG TECHGEL                                                </a>
-                                            </h4>
-                                            <div class="d-none d-md-block">
-                                                <div class="post_cate cl-blue fw-bold fs-13">
-                                                    01/03/2025
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+      <div id="next" class="hr_policies_page py-5">
+        <div class="container">
+          <h1 class="title split-collab" style="opacity: 1">
+            <span
+              th:each="t: ${'Văn hóa TECHGEL'.toCharArray()}"
+              style="
+                position: relative;
+                display: inline-block;
+                translate: none;
+                rotate: none;
+                scale: none;
+                transform: translate(0px, 0px);
+                opacity: 1;
+                visibility: inherit;
+              "
+            >
+              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+            </span>
+          </h1>
+          <hr />
+          <div class="post_cff mt-5">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="post_item mb-4">
+                  <div class="row gx-2 gx-md-3">
+                    <div class="col-md-2 col-6">
+                      <figure>
+                        <a href="#">
+                          <img
+                            width="720"
+                            height="450"
+                            src="https://img.freepik.com/free-vector/paper-style-core-values-background_23-2149079276.jpg?t=st=1743575010~exp=1743578610~hmac=2e61aacccd2103c7997571243e1fe72da11d764f19bd934621d7c6fe76062afc&w=1380"
+                            class="img-fluid wp-post-image"
+                            alt=""
+                            decoding="async"
+                            fetchpriority="high"
+                            draggable="false"
+                          />
+                        </a>
+                      </figure>
                     </div>
+                    <div class="col-md-10 col-6">
+                      <div class="post_info">
+                        <h4 class="fs-16 fw-bold">
+                          <a href="#">
+                            5 NGUYÊN TẮC PHÁT TRIỂN BỀN VỮNG TECHGEL
+                          </a>
+                        </h4>
+                        <div class="d-none d-md-block">
+                          <div class="post_cate cl-blue fw-bold fs-13">
+                            01/03/2025
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="col-md-12">
+                <div class="post_item mb-4">
+                  <div class="row gx-2 gx-md-3">
+                    <div class="col-md-2 col-6">
+                      <figure>
+                        <a href="#">
+                          <img
+                            width="720"
+                            height="450"
+                            src="https://img.freepik.com/free-vector/paper-style-core-values-background_23-2149079276.jpg?t=st=1743575010~exp=1743578610~hmac=2e61aacccd2103c7997571243e1fe72da11d764f19bd934621d7c6fe76062afc&w=1380"
+                            class="img-fluid wp-post-image"
+                            alt=""
+                            decoding="async"
+                            fetchpriority="high"
+                            draggable="false"
+                          />
+                        </a>
+                      </figure>
+                    </div>
+                    <div class="col-md-10 col-6">
+                      <div class="post_info">
+                        <h4 class="fs-16 fw-bold">
+                          <a href="#">
+                            5 NGUYÊN TẮC PHÁT TRIỂN BỀN VỮNG TECHGEL
+                          </a>
+                        </h4>
+                        <div class="d-none d-md-block">
+                          <div class="post_cate cl-blue fw-bold fs-13">
+                            01/03/2025
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="post_item mb-4">
+                  <div class="row gx-2 gx-md-3">
+                    <div class="col-md-2 col-6">
+                      <figure>
+                        <a href="#">
+                          <img
+                            width="720"
+                            height="450"
+                            src="https://img.freepik.com/free-vector/paper-style-core-values-background_23-2149079276.jpg?t=st=1743575010~exp=1743578610~hmac=2e61aacccd2103c7997571243e1fe72da11d764f19bd934621d7c6fe76062afc&w=1380"
+                            class="img-fluid wp-post-image"
+                            alt=""
+                            decoding="async"
+                            fetchpriority="high"
+                            draggable="false"
+                          />
+                        </a>
+                      </figure>
+                    </div>
+                    <div class="col-md-10 col-6">
+                      <div class="post_info">
+                        <h4 class="fs-16 fw-bold">
+                          <a href="#">
+                            5 NGUYÊN TẮC PHÁT TRIỂN BỀN VỮNG TECHGEL
+                          </a>
+                        </h4>
+                        <div class="d-none d-md-block">
+                          <div class="post_cate cl-blue fw-bold fs-13">
+                            01/03/2025
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="post_item mb-4">
+                  <div class="row gx-2 gx-md-3">
+                    <div class="col-md-2 col-6">
+                      <figure>
+                        <a href="#">
+                          <img
+                            width="720"
+                            height="450"
+                            src="https://img.freepik.com/free-vector/paper-style-core-values-background_23-2149079276.jpg?t=st=1743575010~exp=1743578610~hmac=2e61aacccd2103c7997571243e1fe72da11d764f19bd934621d7c6fe76062afc&w=1380"
+                            class="img-fluid wp-post-image"
+                            alt=""
+                            decoding="async"
+                            fetchpriority="high"
+                            draggable="false"
+                          />
+                        </a>
+                      </figure>
+                    </div>
+                    <div class="col-md-10 col-6">
+                      <div class="post_info">
+                        <h4 class="fs-16 fw-bold">
+                          <a href="#">
+                            5 NGUYÊN TẮC PHÁT TRIỂN BỀN VỮNG TECHGEL
+                          </a>
+                        </h4>
+                        <div class="d-none d-md-block">
+                          <div class="post_cate cl-blue fw-bold fs-13">
+                            01/03/2025
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-
+      </div>
     </main>
-</body>
+  </body>
 </html>

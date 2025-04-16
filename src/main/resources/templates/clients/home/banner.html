@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
-    <div th:fragment="banner">
-        <div class="tmp-banner-swiper-one-area">
-            <div class="swiper mySwiper-banner-one swiper-initialized swiper-horizontal swiper-backface-hidden">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" th:each="banner, iter: ${banners}">
-                        <div th:class="'tmp-banner-area bg_image banner-one-height-control tmp-section-gap ' + 'bg_image-' + ${iter.index+1}"
-                            th:style="'background: url(' + @{${banner}} + ');background-size:100% 100%;background-repeat:no-repeat;'">
-                            <div class="shape-image-banner-one">
-<!--                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/01.png" alt="banner" class="one">-->
-<!--                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/02.png" alt="banner" class="two">-->
-<!--                                <img src="https://themes-park.net/product/html/bizper/assets/images/banner/shape/03.png" alt="banner" class="three">-->
-                            </div>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xl-9">
-                                        <div class="banner-one-main-wrapper">
-                                            <div class="inner">
-                                                <h1 class="title">TECHGEL</h1>
-                                                <span class="sub-title">SỰ TRỞ LẠI SAU THỜI GIAN KHỦNG HOẢNG</span>
-                                                <div class="button-area-banner-one">
-                                                    <a href="service.html" class="tmp-btn btn-primary">Xem chi tiết</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+  </head>
+  <body>
+    <div th:fragment="banner" class="tmp-banner-swiper-one-area">
+      <div
+        class="swiper mySwiper-banner-one swiper-initialized swiper-horizontal swiper-backface-hidden"
+      >
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" th:each="banner, iter: ${banners}">
+            <div
+              th:class="'tmp-banner-area bg_image banner-one-height-control tmp-section-gap ' + 'bg_image-' + ${iter.index+1}"
+              th:style="'background: url(' + @{${banner}} + ');'"
+            >
+              <div class="shape-image-banner-one"></div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-xl-9">
+                    <div class="banner-one-main-wrapper">
+                      <div class="banner-box">
+                        <div class="overlay"></div>
+                        <div class="inner">
+                          <h3 class="title">NHÀ CHỜ T3 TÂN SƠN NHẤT</h3>
+                          <span class="sub-title"
+                            >Khánh thành: Ngày 30/04/2025.</span
+                          >
+                          <span class="sub-title"
+                            >Dịch vụ: MEP và Kiot checkin.</span
+                          >
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+              </div>
             </div>
+          </div>
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

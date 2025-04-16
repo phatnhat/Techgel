@@ -267,7 +267,7 @@ video {
     --tw-numeric-fraction: ;
     --tw-ring-inset: ;
     --tw-ring-offset-width: 0px;
-    --tw-ring-offset-color: #fff;
+    --tw-ring-offset-color: var(--white);
     --tw-ring-color: rgb(59 130 246 / 0.5);
     --tw-ring-offset-shadow: 0 0 #0000;
     --tw-ring-shadow: 0 0 #0000;
@@ -299,7 +299,7 @@ video {
     --tw-numeric-fraction: ;
     --tw-ring-inset: ;
     --tw-ring-offset-width: 0px;
-    --tw-ring-offset-color: #fff;
+    --tw-ring-offset-color: var(--white);
     --tw-ring-color: rgb(59 130 246 / 0.5);
     --tw-ring-offset-shadow: 0 0 #0000;
     --tw-ring-shadow: 0 0 #0000;
@@ -601,3 +601,70 @@ video {
 }
 
 
+.loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+.loading::before{
+    content: "";
+    position: absolute;
+    background: #7a7b7c;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+}
+.loading .shapes-4 {
+    width: 40px;
+    height: 40px;
+    color:#f03355;
+    background:
+            conic-gradient(from  -45deg at top    20px left 50% ,#0000 ,currentColor 1deg 90deg,#0000 91deg),
+            conic-gradient(from   45deg at right  20px top  50% ,#0000 ,currentColor 1deg 90deg,#0000 91deg),
+            conic-gradient(from  135deg at bottom 20px left 50% ,#0000 ,currentColor 1deg 90deg,#0000 91deg),
+            conic-gradient(from -135deg at left   20px top  50% ,#0000 ,currentColor 1deg 90deg,#0000 91deg);
+    animation: sh4 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+@keyframes sh4 {
+    50%  {width:60px;height: 60px;transform: rotate(180deg)}
+    100% {transform: rotate(360deg)}
+}
+
+.loading .classic-1:before {
+    content:"Loading...";
+    color: white;
+}
+.loading .classic-1 {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+    animation:c1 1s linear infinite alternate;
+}
+@keyframes c1 {to{opacity: 0}}
+
+.note-editable ul{
+    list-style: disc !important;
+    list-style-position: inside !important;
+}
+
+.note-editable ol {
+    list-style: decimal !important;
+    list-style-position: inside !important;
+}
+
+#emoji-picker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}

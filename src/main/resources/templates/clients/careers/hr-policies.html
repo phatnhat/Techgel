@@ -1,172 +1,352 @@
 <!DOCTYPE html>
 <html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="content-wrapper">
-        <style>
-            .breadcrumb-bg {
-                background-image: url(https://img.freepik.com/free-photo/business-situation-job-interview-concept-job-seeker-present-resume-managers_1421-78.jpg?t=st=1743411161~exp=1743414761~hmac=ad7f4be4696c1044993e232e9a724f27b419528456c87b47a6ab825093a09e7f&w=1380);
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: calc(100vh - 80px);
-            }
-        </style>
+      <style>
+        .breadcrumb-bg {
+          background-image: url([[@{/imgs/banners/job-interview.jpg}]]);
+        }
+      </style>
 
-        <div class="breadcrumb-area bg_image breadcrumb-bg">
-            <div id="brxe-oubmqr" class="brxe-container">
-                <div id="brxe-twzaik" class="brxe-block">
-                    <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline">
-                        <h1><span class="uni-text-outline">TUYỂN DỤNG<br></span>CHÍNH SÁCH NHÂN SỰ</h1>
-                    </div>
-                </div>
-                <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
-                    <div id="brxe-rqhadm" class="brxe-text-basic">Cuộn chuột</div>
-                    <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
-                </a>
+      <div class="breadcrumb-area bg_image breadcrumb-bg">
+        <div id="brxe-oubmqr" class="brxe-container">
+          <div id="brxe-twzaik" class="brxe-block small-text-shadow">
+            <div
+              id="brxe-naxryb"
+              class="brxe-text uni-text-outline-white uni-text-outline"
+            >
+              <h1>
+                <span class="uni-text-outline">TUYỂN DỤNG<br /></span>CHÍNH SÁCH
+                NHÂN SỰ
+              </h1>
             </div>
+          </div>
+          <a
+            id="brxe-ygpexj"
+            href="#next"
+            data-brx-anchor="true"
+            class="brxe-block small-text-shadow"
+          >
+            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
+            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+          </a>
         </div>
+      </div>
 
-        <div id="next" class="hr_policies_page py-5">
-            <div class="container">
-                <h1 class="title split-collab" style="opacity: 1;">
-                  <span th:each="t: ${'Chính sách nhân sự'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                  </span>
-                </h1>
-                <hr>
-                <div class="mt-5" style="background:#1D1E33;">
-                    <div class="row gx-0 align-items-center">
-                        <div class="col-md-7">
-                            <img src="https://img.freepik.com/free-photo/construction-tall-concrete-pylon-bridge-using-tower-crane_1112-1141.jpg?t=st=1743562641~exp=1743566241~hmac=c9f3ec2693d1d6a3d4d36e0d77567d66ee3f60bbd08232d17cb2e49f75827957&w=1380" class="img-fluid" alt="">
-                        </div>
-                        <div class="col-md-5">
-                            <div class="p-4 text-justify">
-                                <p class="p1 text-white text-center">Việc tuyển chọn nguồn đội ngũ nhân sự chất lượng, đáp ứng yêu cầu công việc góp phần thực hiện mục tiêu và định hướng phát triển Công ty là mục tiêu hàng đầu trong hoạt động nhân sự:
-                                    <br><br>
-                                    Quy trình tuyển dụng được thực hiện một cách bài bản, đảm bảo tính minh bạch, thống nhất trong tiêu chí tuyển dụng nhằm lựa chọn ra những ứng viên phù hợp cả về năng lực chuyên môn, kỹ năng, thái độ. Bên cạnh đó, công tác xây dựng thương hiệu tuyển dụng thông qua việc ký kết hợp tác chiến lược với các trường đại học uy tín trong nước cũng được Công ty đặt ưu tiên hàng đầu. Bằng việc triển khai các chương trình thực tập, trao học bổng, tổ chức các buổi hội thảo chuyên đề,… TECHGEL tìm kiếm và chọn ra những ứng viên đầu vào chất lượng, phù hợp với tiêu chí tuyển dụng và văn hóa Công ty.</p>
-                            </div>
-                        </div>
-                    </div>
+      <div id="next" class="hr_policies_page py-5">
+        <div class="container">
+          <h1 class="title split-collab" style="opacity: 1">
+            <span>CHÍNH SÁCH NHÂN SỰ</span>
+          </h1>
+          <hr />
+          <div class="mt-5" style="background: --neutralDark">
+            <div class="row gx-0 align-items-center">
+              <div class="col-md-7">
+                <img
+                  src="https://img.freepik.com/free-photo/construction-tall-concrete-pylon-bridge-using-tower-crane_1112-1141.jpg?t=st=1743562641~exp=1743566241~hmac=c9f3ec2693d1d6a3d4d36e0d77567d66ee3f60bbd08232d17cb2e49f75827957&w=1380"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="col-md-5">
+                <div class="p-4 text-justify">
+                  <p class="p1 text-white text-center">
+                    Việc tuyển chọn nguồn đội ngũ nhân sự chất lượng, đáp ứng
+                    yêu cầu công việc góp phần thực hiện mục tiêu và định hướng
+                    phát triển Công ty là mục tiêu hàng đầu trong hoạt động nhân
+                    sự: <br /><br />
+                    Quy trình tuyển dụng được thực hiện một cách bài bản, đảm
+                    bảo tính minh bạch, thống nhất trong tiêu chí tuyển dụng
+                    nhằm lựa chọn ra những ứng viên phù hợp cả về năng lực
+                    chuyên môn, kỹ năng, thái độ. Bên cạnh đó, công tác xây dựng
+                    thương hiệu tuyển dụng thông qua việc ký kết hợp tác chiến
+                    lược với các trường đại học uy tín trong nước cũng được Công
+                    ty đặt ưu tiên hàng đầu. Bằng việc triển khai các chương
+                    trình thực tập, trao học bổng, tổ chức các buổi hội thảo
+                    chuyên đề,… TECHGEL tìm kiếm và chọn ra những ứng viên đầu
+                    vào chất lượng, phù hợp với tiêu chí tuyển dụng và văn hóa
+                    Công ty.
+                  </p>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <div class="hr-policies-void">
-            <div class="crop">
-                <ul id="card-list" style="--count: 6;">
-                    <li><div class="card-item"><a href=""><span class="model-name">CHÍNH SÁCH THĂNG TIẾN VÀ LUÂN CHUYỂN NHÂN SỰ</span><span>Lorem Ipsum is simply dummy text of the printing</span></a></div></li>
-                    <li><div class="card-item"><a href=""><span class="model-name">CHÍNH SÁCH ĐÀO TẠO</span><span>Lorem Ipsum is simply dummy text of the printing</span></a></div></li>
-                    <li><div class="card-item"><a href=""><span class="model-name">CHÍNH SÁCH LƯƠNG – THƯỞNG</span><span>Lorem Ipsum is simply dummy text of the printing</span></a></div></li>
-                    <li><div class="card-item"><a href=""><span class="model-name">HỆ THỐNG LƯƠNG THƯỞNG CẠNH TRANH</span><span>Lorem Ipsum is simply dummy text of the printing</span></a></div></li>
-                    <li><div class="card-item"><a href=""><span class="model-name">CHÍNH SÁCH PHÚC LỢI, ĐÃI NGỘ</span><span>Lorem Ipsum is simply dummy text of the printing</span></a></div></li>
-                    <li><div class="card-item"><a href=""><span class="model-name">CHÍNH SÁCH BẢO HIỂM, SỨC KHỎE</span><span>Lorem Ipsum is simply dummy text of the printing</span></a></div></li>
-                </ul>
-                <div class="last-circle"></div>
-                <div class="second-circle"></div>
-            </div>
-            <div class="mask d-flex justify-content-center align-items-center">
-
-                <p class="p-5 text-center" style="font-size:20px;line-height: 25px;">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                </p>
-
-                <div class="center-circle"></div>
-            </div>
+      <div class="hr-policies-void">
+        <div class="crop">
+          <ul id="card-list" style="--count: 6">
+            <li>
+              <div class="card-item">
+                <a href=""
+                  ><span class="model-name"
+                    >CHÍNH SÁCH THĂNG TIẾN VÀ LUÂN CHUYỂN NHÂN SỰ</span
+                  ><span
+                    >Lorem Ipsum is simply dummy text of the printing</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="card-item">
+                <a href=""
+                  ><span class="model-name">CHÍNH SÁCH ĐÀO TẠO</span
+                  ><span
+                    >Lorem Ipsum is simply dummy text of the printing</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="card-item">
+                <a href=""
+                  ><span class="model-name">CHÍNH SÁCH LƯƠNG – THƯỞNG</span
+                  ><span
+                    >Lorem Ipsum is simply dummy text of the printing</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="card-item">
+                <a href=""
+                  ><span class="model-name"
+                    >HỆ THỐNG LƯƠNG THƯỞNG CẠNH TRANH</span
+                  ><span
+                    >Lorem Ipsum is simply dummy text of the printing</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="card-item">
+                <a href=""
+                  ><span class="model-name">CHÍNH SÁCH PHÚC LỢI, ĐÃI NGỘ</span
+                  ><span
+                    >Lorem Ipsum is simply dummy text of the printing</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="card-item">
+                <a href=""
+                  ><span class="model-name">CHÍNH SÁCH BẢO HIỂM, SỨC KHỎE</span
+                  ><span
+                    >Lorem Ipsum is simply dummy text of the printing</span
+                  ></a
+                >
+              </div>
+            </li>
+          </ul>
+          <div class="last-circle"></div>
+          <div class="second-circle"></div>
         </div>
+        <div class="mask d-flex justify-content-center align-items-center">
+          <p class="p-5 text-center" style="font-size: 20px; line-height: 25px">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum
+          </p>
 
-        <div class="career_development_page pt-5">
-            <div class="container">
-                <h1 class="title split-collab" style="opacity: 1;">
-                  <span th:each="t: ${'Phát triển nguồn nhân lực'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                  </span>
-                </h1>
-                <hr>
-                <div class="mt-5">
-                    <div class="row gx-md-5 d-flex align-items-center-justify-content-center">
-                        <div class="col-md-4 col-8 order-md-1 d-flex align-items-center">
-                            <div class="img_mep mb-3">
-                                <img th:src="@{/imgs/logo.jpg}" class="img-fluid" alt="" draggable="false">
-                            </div>
-                        </div>
-                        <div class="col-md-4 order-md-0">
-                            <h3 class="mb-4 text-uppercase" style="font-weight:700;color:var(--color-primary);">Công tác đào tạo <br> Phát triển nguồn nhân lực</h3>
-                            <div class="text-justify">
-                                Chúng tôi sử dụng nguồn lực &amp; phải biết chắc chắn rằng công việc và con người phải phù hợp, từ đó thúc đẩy sự phát triển tốt nhất của mỗi cá nhân. Vì vậy, đào tạo nội bộ là quy trình bắt buộc không chỉ dành riêng cho các nhân sự mới. Trong quá trình làm việc, tất cả các nhân viên đều có cơ hội bồi dưỡng kiến thức chuyên môn với các chuyên gia được mời đến tận nơi hoặc được tài trợ học bổng toàn phần cho các khóa học khác.
-                            </div>
-                        </div>
-                        <div class="col-md-4 order-md-2">
-                            <h3 class="fs-40 d-none d-md-block cl-orange fw-bold mb-4">&nbsp;</h3>
-                            <div class="text-justify mb-3">
-                                Phát triển nguồn nhân lực là điều kiện quyết định để doanh nghiệp có thể tồn tại và phát triển trong nền kinh tế thị trường như hiện nay. Phát triển nguồn nhân lực giúp người lao động tự tin, tạo cho họ cảm giác yên tâm làm việc, gắn bó với Công ty, đem hết khả năng của mình phục vụ cho tổ chức, coi sự phát triển lớn mạnh của Công ty là sự phát triển của bản thân mỗi người.                        </div>
-                            <a href="" class="read_more">Tham gia với chúng tôi</a>
-                        </div>
-                    </div>
+          <div class="center-circle"></div>
+        </div>
+      </div>
+
+      <div class="career_development_page pt-5">
+        <div class="container">
+          <h1 class="title split-collab" style="opacity: 1">
+            <span
+              th:each="t: ${'Phát triển nguồn nhân lực'.toCharArray()}"
+              style="
+                position: relative;
+                display: inline-block;
+                translate: none;
+                rotate: none;
+                scale: none;
+                transform: translate(0px, 0px);
+                opacity: 1;
+                visibility: inherit;
+              "
+            >
+              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
+            </span>
+          </h1>
+          <hr />
+          <div class="mt-5">
+            <div
+              class="row gx-md-5 d-flex align-items-center-justify-content-center"
+            >
+              <div class="col-md-4 col-8 order-md-1 d-flex align-items-center">
+                <div class="img_mep mb-3">
+                  <img
+                    th:src="@{/imgs/logo.jpg}"
+                    class="img-fluid"
+                    alt=""
+                    draggable="false"
+                  />
                 </div>
-            </div>
-            <div class="objectives py-5 mt-5">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <div class="mb-5 text-center" style="color:var(--color-primary);font-weight:700;font-size:20px;">
-                                Việc đào tạo giúp cho các cán bộ được đào tạo không chỉ vận dụng kiến thức vào thực tế một cách hiệu quả mà còn xác định được lộ trình phát triển phù hợp với mục tiêu phát triển của Công ty.                        </div>
-                        </div>
-                    </div>
-                    <div class="row gx-0">
-                        <div class="col-md-4">
-                            <div class="traning_step">
-                                <div class="background" style="background-image: url(https://www.centralcons.vn/wp-content/uploads/2021/12/bg-step.jpg)"></div>
-                                <div class="inner">
-                                    <div class="img">
-                                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/step1.png" class="img-fluid" alt="" draggable="false">
-                                    </div>
-                                    <div class="num fs-30 fw-bold">01</div>
-                                    <div class="text-justify">
-                                        Hoạt động đào tạo vừa giúp CBNV đã được đào tạo áp dụng hiệu quả vào công việc thực tế, vừa giúp CBNV có thể xác định được lộ trình phát triển của bản thân phù hợp với mục tiêu phát triển của Công ty.                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="traning_step">
-                                <div class="background" style="background-image: url(https://www.centralcons.vn/wp-content/uploads/2021/12/bg-step.jpg)"></div>
-                                <div class="inner">
-                                    <div class="img">
-                                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/step2.png" class="img-fluid" alt="" draggable="false">
-                                    </div>
-                                    <div class="num fs-30 fw-bold">02</div>
-                                    <div class="text-justify">
-                                        TECHGEL xây dựng một hệ thống đánh giá công việc công tâm, khách quan nhằm tạo điều kiện tối đa cho việc nâng cao hiệu quả năng suất lao động và phát triển đối với các cá nhân được quy hoạch lên Quản lý cấp trung; Lãnh đạo kế thừa. Qua đó, nhằm tạo điều kiện để tất cả CBNV đều có cơ hội thăng tiến bình đẳng tại Công ty.                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="traning_step">
-                                <div class="background" style="background-image: url(https://www.centralcons.vn/wp-content/uploads/2021/12/bg-step.jpg)"></div>
-                                <div class="inner">
-                                    <div class="img">
-                                        <img src="https://www.centralcons.vn/wp-content/uploads/2021/11/step3.png" class="img-fluid" alt="" draggable="false">
-                                    </div>
-                                    <div class="num fs-30 fw-bold">03</div>
-                                    <div class="text-justify">
-                                        Tất cả CBNV sau khi ký hợp đồng lao động có thời hạn với Công ty sẽ được tham dự các lớp đào tạo nghiệp vụ ngắn hạn, trung hạn theo kế hoạch đào tạo hàng năm hoặc đào tạo đột xuất theo yêu cầu cấp thiết của mỗi đơn vị.                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-3 mb-md-5">
-                        <a th:href="@{/job-opportunities}" class="read_more">Tham gia với chúng tôi</a>
-                    </div>
+              </div>
+              <div class="col-md-4 order-md-0">
+                <h3
+                  class="mb-4 text-uppercase"
+                  style="font-weight: 700; color: var(--themePrimary)"
+                >
+                  Công tác đào tạo <br />
+                  Phát triển nguồn nhân lực
+                </h3>
+                <div class="text-justify">
+                  Chúng tôi sử dụng nguồn lực &amp; phải biết chắc chắn rằng
+                  công việc và con người phải phù hợp, từ đó thúc đẩy sự phát
+                  triển tốt nhất của mỗi cá nhân. Vì vậy, đào tạo nội bộ là quy
+                  trình bắt buộc không chỉ dành riêng cho các nhân sự mới. Trong
+                  quá trình làm việc, tất cả các nhân viên đều có cơ hội bồi
+                  dưỡng kiến thức chuyên môn với các chuyên gia được mời đến tận
+                  nơi hoặc được tài trợ học bổng toàn phần cho các khóa học
+                  khác.
                 </div>
+              </div>
+              <div class="col-md-4 order-md-2">
+                <h3 class="fs-40 d-none d-md-block cl-orange fw-bold mb-4">
+                  &nbsp;
+                </h3>
+                <div class="text-justify mb-3">
+                  Phát triển nguồn nhân lực là điều kiện quyết định để doanh
+                  nghiệp có thể tồn tại và phát triển trong nền kinh tế thị
+                  trường như hiện nay. Phát triển nguồn nhân lực giúp người lao
+                  động tự tin, tạo cho họ cảm giác yên tâm làm việc, gắn bó với
+                  Công ty, đem hết khả năng của mình phục vụ cho tổ chức, coi sự
+                  phát triển lớn mạnh của Công ty là sự phát triển của bản thân
+                  mỗi người.
+                </div>
+                <a href="" class="read_more">Tham gia với chúng tôi</a>
+              </div>
             </div>
+          </div>
         </div>
+        <div class="objectives py-5 mt-5">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-10">
+                <div
+                  class="mb-5 text-center"
+                  style="
+                    color: var(--themePrimary);
+                    font-weight: 700;
+                    font-size: 20px;
+                  "
+                >
+                  Việc đào tạo giúp cho các cán bộ được đào tạo không chỉ vận
+                  dụng kiến thức vào thực tế một cách hiệu quả mà còn xác định
+                  được lộ trình phát triển phù hợp với mục tiêu phát triển của
+                  Công ty.
+                </div>
+              </div>
+            </div>
+            <div class="row gx-0">
+              <div class="col-md-4">
+                <div class="traning_step">
+                  <div
+                    class="background"
+                    style="
+                      background-image: url(https://www.centralcons.vn/wp-content/uploads/2021/12/bg-step.jpg);
+                    "
+                  ></div>
+                  <div class="inner">
+                    <div class="img">
+                      <img
+                        src="https://www.centralcons.vn/wp-content/uploads/2021/11/step1.png"
+                        class="img-fluid"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                    <div class="num fs-30 fw-bold">01</div>
+                    <div class="text-justify">
+                      Hoạt động đào tạo vừa giúp CBNV đã được đào tạo áp dụng
+                      hiệu quả vào công việc thực tế, vừa giúp CBNV có thể xác
+                      định được lộ trình phát triển của bản thân phù hợp với mục
+                      tiêu phát triển của Công ty.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="traning_step">
+                  <div
+                    class="background"
+                    style="
+                      background-image: url(https://www.centralcons.vn/wp-content/uploads/2021/12/bg-step.jpg);
+                    "
+                  ></div>
+                  <div class="inner">
+                    <div class="img">
+                      <img
+                        src="https://www.centralcons.vn/wp-content/uploads/2021/11/step2.png"
+                        class="img-fluid"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                    <div class="num fs-30 fw-bold">02</div>
+                    <div class="text-justify">
+                      TECHGEL xây dựng một hệ thống đánh giá công việc công tâm,
+                      khách quan nhằm tạo điều kiện tối đa cho việc nâng cao
+                      hiệu quả năng suất lao động và phát triển đối với các cá
+                      nhân được quy hoạch lên Quản lý cấp trung; Lãnh đạo kế
+                      thừa. Qua đó, nhằm tạo điều kiện để tất cả CBNV đều có cơ
+                      hội thăng tiến bình đẳng tại Công ty.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="traning_step">
+                  <div
+                    class="background"
+                    style="
+                      background-image: url(https://www.centralcons.vn/wp-content/uploads/2021/12/bg-step.jpg);
+                    "
+                  ></div>
+                  <div class="inner">
+                    <div class="img">
+                      <img
+                        src="https://www.centralcons.vn/wp-content/uploads/2021/11/step3.png"
+                        class="img-fluid"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                    <div class="num fs-30 fw-bold">03</div>
+                    <div class="text-justify">
+                      Tất cả CBNV sau khi ký hợp đồng lao động có thời hạn với
+                      Công ty sẽ được tham dự các lớp đào tạo nghiệp vụ ngắn
+                      hạn, trung hạn theo kế hoạch đào tạo hàng năm hoặc đào tạo
+                      đột xuất theo yêu cầu cấp thiết của mỗi đơn vị.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-3 mb-md-5">
+              <a th:href="@{/job-opportunities}" class="read_more"
+                >Tham gia với chúng tôi</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>

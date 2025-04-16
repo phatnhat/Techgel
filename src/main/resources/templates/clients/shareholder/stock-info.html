@@ -1,231 +1,236 @@
 <!DOCTYPE html>
 <html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
-  <main class="content-wrapper">
-    <style>
-      .breadcrumb-bg {
-            background-image: url(https://img.freepik.com/free-vector/gradient-stock-market-concept_23-2149215737.jpg?t=st=1743407545~exp=1743411145~hmac=2133160c1b7cb9ec2318068c890951d0cef46f871f34679dafd5ea23121d0b12&w=1380);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: calc(100vh - 80px);
-      }
+  </head>
+  <body>
+    <main class="content-wrapper">
+      <style>
+        .breadcrumb-bg {
+          background-image: url([[@{/imgs/banners/stock-market.webp}]]);
+        }
 
-      .bg-1 {
-        background-image: url([[@{/imgs/bg-01.jpg}]]);
-      }
+        .bg-1 {
+          background-image: url([[@{/imgs/bg-01.jpg}]]);
+        }
 
-      .line_img {
-        height: 10px;
-        background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center / auto 200%;
-      }
-    </style>
+        .line_img {
+          height: 10px;
+          background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center /
+            auto 200%;
+        }
+      </style>
 
       <div class="breadcrumb-area bg_image breadcrumb-bg">
-<!--                      <div class="breadcrumb-inner text-center">-->
-<!--                          <h1 class="title split-collab" style="opacity: 0;">-->
-<!--                              <span th:each="t: ${'Quan hệ cổ đông'.toCharArray()}" style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">-->
-<!--                                  [[${ #strings.replace(t, ' ', '&nbsp;') }]]-->
-<!--                              </span>-->
-<!--                          </h1>-->
-<!--                          <ul class="page-list">-->
-<!--                              <li class="tmp-breadcrumb-item"><a href="/">Trang chủ</a></li>-->
-<!--                              <li class="icon"><i class="fa-solid fa-angle-right"></i></li>-->
-<!--                              <li class="tmp-breadcrumb-item active">Quan hệ cổ đông</li>-->
-<!--                          </ul>-->
-<!--                          <div class="circle-1"></div>-->
-<!--                      </div>-->
-          <div id="brxe-oubmqr" class="brxe-container">
-              <div id="brxe-twzaik" class="brxe-block">
-                  <div id="brxe-naxryb" class="brxe-text uni-text-outline-white uni-text-outline">
-                      <h1><span class="uni-text-outline">CỔ ĐÔNG<br></span>THÔNG TIN CỔ PHIẾU</h1>
-                  </div>
-              </div>
-              <a id="brxe-ygpexj" href="#next" data-brx-anchor="true" class="brxe-block">
-                  <div id="brxe-rqhadm" class="brxe-text-basic">Cuộn chuột</div>
-                  <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
-              </a>
+        <div id="brxe-oubmqr" class="brxe-container">
+          <div id="brxe-twzaik" class="brxe-block small-text-shadow">
+            <div
+              id="brxe-naxryb"
+              class="brxe-text uni-text-outline-white uni-text-outline"
+            >
+              <h1>
+                <span class="uni-text-outline">CỔ ĐÔNG<br /></span>THÔNG TIN CỔ
+                PHIẾU
+              </h1>
+            </div>
           </div>
+          <a
+            id="brxe-ygpexj"
+            href="#next"
+            data-brx-anchor="true"
+            class="brxe-block small-text-shadow"
+          >
+            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
+            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
       </div>
 
-      <div id="next" class="tmp-service-section tmp-section-gap stock-info-area">
-          <div class="container">
-<!--              <div class="row">-->
-<!--                  <div class="col-lg-12">-->
-<!--                      <div class="section-head pb-3">-->
-<!--                          <div class="section-sub-title center-title">-->
-<!--                              <img th:src="@{imgs/section-custom-menubar.png}" alt="Corporate_service">-->
-<!--                              <span class="subtitle">Thông tin chung về cổ phiếu</span>-->
-<!--                          </div>-->
-<!--                      </div>-->
-<!--                  </div>-->
-<!--              </div>-->
-<!--              <div class="row">-->
-<!--                  <div class="col-lg-12">-->
-<!--                      <table class="stock-info-table">-->
-<!--                          <tbody>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Tên tiếng Việt</td>-->
-<!--                              <td class="info-value"><strong>Công ty CP Kỹ thuật Công nghệ Sài Gòn</strong></td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Tên tiếng Anh</td>-->
-<!--                              <td class="info-value">Saigon Technology Engineering Joint Stock Company</td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Tên viết tắt</td>-->
-<!--                              <td class="info-value">TECHGEL</td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Vốn điều lệ</td>-->
-<!--                              <td class="info-value highlight">506.819.270.000 <span class="currency">VND</span></td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Địa chỉ</td>-->
-<!--                              <td class="info-value">30 Phan Chu Trinh, Phường 2, Quận Bình Thạnh, Thành phố Hồ Chí Minh</td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Điện thoại</td>-->
-<!--                              <td class="info-value contact">028 3510 7030</td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Website</td>-->
-<!--                              <td class="info-value"><a href="https://techgel.com.vn/" target="_blank" class="website-link">www.techgel.com.vn</a></td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Tên chứng khoán</td>-->
-<!--                              <td class="info-value">Cổ phiếu Công ty CP Kỹ thuật Công nghệ Sài Gòn</td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Mã cổ phiếu</td>-->
-<!--                              <td class="info-value stock-code">TGL</td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Sàn giao dịch</td>-->
-<!--                              <td class="info-value exchange">HOSE</td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Số lượng cổ phiếu niêm yết</td>-->
-<!--                              <td class="info-value highlight">50.602.094 <span class="unit">cổ phiếu</span></td>-->
-<!--                          </tr>-->
-<!--                          <tr>-->
-<!--                              <td class="info-label">Số lượng cổ phiếu lưu hành</td>-->
-<!--                              <td class="info-value highlight">50.681.927 <span class="unit">cổ phiếu</span></td>-->
-<!--                          </tr>-->
-<!--                          </tbody>-->
-<!--                      </table>-->
-<!--                  </div>-->
-<!--              </div>-->
+      <div
+        id="next"
+        class="tmp-service-section tmp-section-gap stock-info-area"
+      >
+        <div class="container">
+          <!--              <div class="row">-->
+          <!--                  <div class="col-lg-12">-->
+          <!--                      <div class="section-head pb-3">-->
+          <!--                          <div class="section-sub-title center-title">-->
+          <!--                              <img th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}" alt="Corporate_service">-->
+          <!--                              <span class="subtitle">Thông tin chung về cổ phiếu</span>-->
+          <!--                          </div>-->
+          <!--                      </div>-->
+          <!--                  </div>-->
+          <!--              </div>-->
+          <!--              <div class="row">-->
+          <!--                  <div class="col-lg-12">-->
+          <!--                      <table class="stock-info-table">-->
+          <!--                          <tbody>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Tên tiếng Việt</td>-->
+          <!--                              <td class="info-value"><strong>Công ty CP Kỹ thuật Công nghệ Sài Gòn</strong></td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Tên tiếng Anh</td>-->
+          <!--                              <td class="info-value">Saigon Technology Engineering Joint Stock Company</td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Tên viết tắt</td>-->
+          <!--                              <td class="info-value">TECHGEL</td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Vốn điều lệ</td>-->
+          <!--                              <td class="info-value highlight">506.819.270.000 <span class="currency">VND</span></td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Địa chỉ</td>-->
+          <!--                              <td class="info-value">30 Phan Chu Trinh, Phường 2, Quận Bình Thạnh, Thành phố Hồ Chí Minh</td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Điện thoại</td>-->
+          <!--                              <td class="info-value contact">028 3510 7030</td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Website</td>-->
+          <!--                              <td class="info-value"><a href="https://techgel.com.vn/" target="_blank" class="website-link">www.techgel.com.vn</a></td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Tên chứng khoán</td>-->
+          <!--                              <td class="info-value">Cổ phiếu Công ty CP Kỹ thuật Công nghệ Sài Gòn</td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Mã cổ phiếu</td>-->
+          <!--                              <td class="info-value stock-code">TGL</td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Sàn giao dịch</td>-->
+          <!--                              <td class="info-value exchange">HOSE</td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Số lượng cổ phiếu niêm yết</td>-->
+          <!--                              <td class="info-value highlight">50.602.094 <span class="unit">cổ phiếu</span></td>-->
+          <!--                          </tr>-->
+          <!--                          <tr>-->
+          <!--                              <td class="info-label">Số lượng cổ phiếu lưu hành</td>-->
+          <!--                              <td class="info-value highlight">50.681.927 <span class="unit">cổ phiếu</span></td>-->
+          <!--                          </tr>-->
+          <!--                          </tbody>-->
+          <!--                      </table>-->
+          <!--                  </div>-->
+          <!--              </div>-->
 
-<!--              <div class="row mt-5">-->
-<!--                  <div class="col-lg-12">-->
-<!--                      <div class="section-head pb-3">-->
-<!--                          <div class="section-sub-title center-title">-->
-<!--                              <img th:src="@{imgs/section-custom-menubar.png}" alt="Corporate_service">-->
-<!--                              <span class="subtitle">Giá cổ phiếu</span>-->
-<!--                          </div>-->
-<!--                      </div>-->
-<!--                  </div>-->
-<!--              </div>-->
-<!--              <div class="row">-->
-<!--                  <div class="col-lg-12">-->
-<!--                      <table class="price-stock-table">-->
-<!--                          <tbody>-->
-<!--                          <tr>-->
-<!--                              <td class="main-price" rowspan="2">-->
-<!--                                  <div class="price-label">Giá đóng cửa</div>-->
-<!--                                  <div class="price-value positive">7.49</div>-->
-<!--                                  <div class="price-change">-->
-<!--                                      <span class="change-arrow">↑</span>-->
-<!--                                      <span class="change-value positive">+1.22%</span>-->
-<!--                                  </div>-->
-<!--                              </td>-->
+          <!--              <div class="row mt-5">-->
+          <!--                  <div class="col-lg-12">-->
+          <!--                      <div class="section-head pb-3">-->
+          <!--                          <div class="section-sub-title center-title">-->
+          <!--                              <img th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}" alt="Corporate_service">-->
+          <!--                              <span class="subtitle">Giá cổ phiếu</span>-->
+          <!--                          </div>-->
+          <!--                      </div>-->
+          <!--                  </div>-->
+          <!--              </div>-->
+          <!--              <div class="row">-->
+          <!--                  <div class="col-lg-12">-->
+          <!--                      <table class="price-stock-table">-->
+          <!--                          <tbody>-->
+          <!--                          <tr>-->
+          <!--                              <td class="main-price" rowspan="2">-->
+          <!--                                  <div class="price-label">Giá đóng cửa</div>-->
+          <!--                                  <div class="price-value positive">7.49</div>-->
+          <!--                                  <div class="price-change">-->
+          <!--                                      <span class="change-arrow">↑</span>-->
+          <!--                                      <span class="change-value positive">+1.22%</span>-->
+          <!--                                  </div>-->
+          <!--                              </td>-->
 
-<!--                              <td class="metric">-->
-<!--                                  <div class="metric-title">Thay đổi</div>-->
-<!--                                  <div class="metric-value positive">1.22%</div>-->
-<!--                              </td>-->
+          <!--                              <td class="metric">-->
+          <!--                                  <div class="metric-title">Thay đổi</div>-->
+          <!--                                  <div class="metric-value positive">1.22%</div>-->
+          <!--                              </td>-->
 
-<!--                              <td class="metric">-->
-<!--                                  <div class="metric-title">Mở cửa</div>-->
-<!--                                  <div class="metric-value">7.31</div>-->
-<!--                              </td>-->
+          <!--                              <td class="metric">-->
+          <!--                                  <div class="metric-title">Mở cửa</div>-->
+          <!--                                  <div class="metric-value">7.31</div>-->
+          <!--                              </td>-->
 
-<!--                              <td class="metric">-->
-<!--                                  <div class="metric-title">Cao nhất</div>-->
-<!--                                  <div class="metric-value">7.60</div>-->
-<!--                              </td>-->
+          <!--                              <td class="metric">-->
+          <!--                                  <div class="metric-title">Cao nhất</div>-->
+          <!--                                  <div class="metric-value">7.60</div>-->
+          <!--                              </td>-->
 
-<!--                              <td class="metric highlight">-->
-<!--                                  <div class="metric-title">Cao nhất 52 tuần</div>-->
-<!--                                  <div class="metric-value">8.25</div>-->
-<!--                              </td>-->
+          <!--                              <td class="metric highlight">-->
+          <!--                                  <div class="metric-title">Cao nhất 52 tuần</div>-->
+          <!--                                  <div class="metric-value">8.25</div>-->
+          <!--                              </td>-->
 
-<!--                              <td class="metric">-->
-<!--                                  <div class="metric-title">GD ròng NĐTNN</div>-->
-<!--                                  <div class="metric-value positive">5.000</div>-->
-<!--                              </td>-->
-<!--                          </tr>-->
+          <!--                              <td class="metric">-->
+          <!--                                  <div class="metric-title">GD ròng NĐTNN</div>-->
+          <!--                                  <div class="metric-value positive">5.000</div>-->
+          <!--                              </td>-->
+          <!--                          </tr>-->
 
-<!--                          <tr>-->
-<!--                              <td class="metric">-->
-<!--                                  <div class="metric-title">Khối lượng</div>-->
-<!--                                  <div class="metric-value volume">280.600</div>-->
-<!--                              </td>-->
+          <!--                          <tr>-->
+          <!--                              <td class="metric">-->
+          <!--                                  <div class="metric-title">Khối lượng</div>-->
+          <!--                                  <div class="metric-value volume">280.600</div>-->
+          <!--                              </td>-->
 
-<!--                              <td class="metric">-->
-<!--                                  <div class="metric-title">Giá tham chiếu</div>-->
-<!--                                  <div class="metric-value">7.40</div>-->
-<!--                              </td>-->
+          <!--                              <td class="metric">-->
+          <!--                                  <div class="metric-title">Giá tham chiếu</div>-->
+          <!--                                  <div class="metric-value">7.40</div>-->
+          <!--                              </td>-->
 
-<!--                              <td class="metric">-->
-<!--                                  <div class="metric-title">Thấp nhất</div>-->
-<!--                                  <div class="metric-value">7.25</div>-->
-<!--                              </td>-->
+          <!--                              <td class="metric">-->
+          <!--                                  <div class="metric-title">Thấp nhất</div>-->
+          <!--                                  <div class="metric-value">7.25</div>-->
+          <!--                              </td>-->
 
-<!--                              <td class="metric highlight">-->
-<!--                                  <div class="metric-title">Thấp nhất 52 tuần</div>-->
-<!--                                  <div class="metric-value">4.61</div>-->
-<!--                              </td>-->
+          <!--                              <td class="metric highlight">-->
+          <!--                                  <div class="metric-title">Thấp nhất 52 tuần</div>-->
+          <!--                                  <div class="metric-value">4.61</div>-->
+          <!--                              </td>-->
 
-<!--                              <td class="metric">-->
-<!--                                  <div class="metric-title">Room NN còn lại</div>-->
-<!--                                  <div class="metric-value empty">-</div>-->
-<!--                              </td>-->
-<!--                          </tr>-->
-<!--                          </tbody>-->
-<!--                      </table>-->
-<!--                  </div>-->
-<!--              </div>-->
+          <!--                              <td class="metric">-->
+          <!--                                  <div class="metric-title">Room NN còn lại</div>-->
+          <!--                                  <div class="metric-value empty">-</div>-->
+          <!--                              </td>-->
+          <!--                          </tr>-->
+          <!--                          </tbody>-->
+          <!--                      </table>-->
+          <!--                  </div>-->
+          <!--              </div>-->
 
-              <div class="row mt-5">
-                  <div class="col-lg-12">
-                      <div class="section-head pb-3">
-                          <div class="section-sub-title center-title">
-                              <img th:src="@{imgs/section-custom-menubar.png}" alt="Corporate_service">
-                              <span class="subtitle">Biểu đồ giao dịch cổ phiếu</span>
-                          </div>
-                      </div>
-                  </div>
+          <div class="row mt-5">
+            <div class="col-lg-12">
+              <div class="section-head pb-3">
+                <div class="section-sub-title center-title">
+                  <img
+                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    alt="Corporate_service"
+                  />
+                  <span class="subtitle">Biểu đồ giao dịch cổ phiếu</span>
+                </div>
               </div>
-
-              <div class="row">
-                  <div class="col-lg-12">
-                      <div id="chart_stock" style="background: none">
-                          <iframe style="width: 100%;height: 650px" src="https://liveboard.cafef.vn/ptkt?symbol=PHC" frameborder="0" bis_size="{&quot;x&quot;:175,&quot;y&quot;:1677,&quot;w&quot;:1177,&quot;h&quot;:650,&quot;abs_x&quot;:175,&quot;abs_y&quot;:1677}" bis_id="fr_z79f6dtiryoth7a1ucp0wl" bis_depth="0" bis_chainid="1"></iframe>
-                      </div>
-                  </div>
-              </div>
+            </div>
           </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="chart_stock" style="background: none">
+                <iframe
+                  style="width: 100%; height: 650px"
+                  src="https://liveboard.cafef.vn/ptkt?symbol=PHC"
+                  frameborder="0"
+                  bis_size='{"x":175,"y":1677,"w":1177,"h":650,"abs_x":175,"abs_y":1677}'
+                  bis_id="fr_z79f6dtiryoth7a1ucp0wl"
+                  bis_depth="0"
+                  bis_chainid="1"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  </main>
-</body>
+    </main>
+  </body>
 </html>
