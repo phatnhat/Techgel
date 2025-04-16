@@ -1,8 +1,6 @@
 package com.techgel.client.controller;
 
 import com.techgel.common.DTOs.SignatureProjectDTO;
-import com.techgel.common.entity.adminSettings.HomeNavigation;
-import com.techgel.common.service.HomeNavigationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +13,6 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 public class MainController {
-    final HomeNavigationService homeNavigationService;
 
     @GetMapping("")
     public String viewHomagePage(Model model){

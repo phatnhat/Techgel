@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TechgelUserDetailsService implements UserDetailsService {
-    @Autowired
+    @Autowired(required = false)
     private UserRepository userRepository;
 
     @Override

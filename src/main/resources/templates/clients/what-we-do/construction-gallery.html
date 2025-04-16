@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
   <head>
     <meta charset="UTF-8" />
     <title>Title</title>
   </head>
   <body>
     <main class="content-wrapper" style="overflow: hidden">
+      <style>
+        .breadcrumb-bg {
+          background-image: url([[@{/imgs/banners/tech-field.jpg}]]);
+        }
+
+        .bg-1 {
+          background-image: url([[@{/imgs/bg-01.jpg}]]);
+        }
+
+        .line_img {
+          height: 10px;
+          background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center /
+            auto 200%;
+        }
+      </style>
+
       <div class="breadcrumb-area bg_image breadcrumb-bg">
         <div id="brxe-oubmqr" class="brxe-container">
           <div id="brxe-twzaik" class="brxe-block small-text-shadow">
