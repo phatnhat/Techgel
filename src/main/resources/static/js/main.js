@@ -102,17 +102,26 @@ function stickyNavBelowHeader() {
 
 // Phat's code
 
-$(document).on("click", "#side-collups", function () {
+$('#mobile-menu-active').metisMenu();
+$(document).on("click", "#side-collups, #side-collups-nav", function (e) {
+  if(this.id === 'side-collups'){
+      $('#side-hide .body').show();
+      $('#side-hide .mobile-menu-main').hide();
+  } else{
+    $('#side-hide .body').hide();
+    $('#side-hide .mobile-menu-main').show();
+  }
+
   $("#side-hide").addClass("show");
   $("#overlay_every-where").addClass("bgshow");
 
-  $(this).removeClass("display");
+  $('#side-collups').removeClass("display");
 });
+
 $(document).on("click", "#close-slide__main", function () {
   $("#side-hide").removeClass("show");
   $("#overlay_every-where").removeClass("bgshow");
   $("#side-collups").addClass("display");
-  console.log($("#side-collups"));
 });
 $(document).on("click", "#overlay_every-where", function () {
   $("#side-hide").removeClass("show");

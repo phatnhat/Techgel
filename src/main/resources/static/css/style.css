@@ -41,7 +41,9 @@ body::before {
 .mt--50 {
     margin-top: 50px !important;
 }
-
+.tmp-side-hide-area {
+    display: none;
+}
 .progress-wrap {
     position: fixed;
     right: 30px;
@@ -371,8 +373,8 @@ nav ul li.has-dropdown a.nav-link::before {
     gap: 20px;
 }
 
-#side-collups {
-    opacity: 0;
+#side-collups-nav {
+    display: none;
 }
 #side-collups.display {
     position: fixed;
@@ -426,6 +428,9 @@ nav ul li.has-dropdown a.nav-link::before {
     text-decoration: none;
     color: black;
 }
+
+
+
 
 
 
