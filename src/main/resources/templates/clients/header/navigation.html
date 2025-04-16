@@ -88,24 +88,23 @@
               <nav>
                 <ul class="parent-nav">
                   <li
-                    th:each="n, i: ${testNavigations}"
-                    th:class="${not subnavigations[i.index].isEmpty() ? 'has-dropdown' : ''}">
+                          th:each="n, i: ${homeNavigations}"
+                          th:class="${not n.getChildrens.isEmpty() ? 'has-dropdown' : ''}">
                     <a
-                      th:href="@{${n.entrySet()[0].value}}"
-                      class="nav-link d-flex justify-content-center align-items-center"
+                            th:href="@{${n.slug}}"
+                            class="nav-link d-flex justify-content-center align-items-center"
                     >
                       <span class="rolling-text">
                         <div class="block">
-                          <span>[[${#strings.toUpperCase(n.entrySet()[0].key)}]]</span>
+                          <span>[[${#strings.toUpperCase(n.title_vi)}]]</span>
                         </div>
                       </span>
                     </a>
-                    <ul class="submenu" th:if="${not subnavigations[i.index].isEmpty()}">
-                      <th:block th:each="subs : ${subnavigations[i.index]}">
-                        <li th:each="sub : ${subs.entrySet()}">
-                          <a th:href="@{${sub.value}}">[[${sub.key}]]</a>
-                        </li>
-                      </th:block>
+                    <ul class="submenu" th:if="${not n.getChildrens.isEmpty()}">
+                      <li th:each="sub : ${n.getChildrens}">
+                        <a th:href="@{${sub.slug}}"
+                        >[[${sub.title_vi}]]</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>

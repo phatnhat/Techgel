@@ -3,6 +3,7 @@ package com.techgel.common.service.impl;
 import com.techgel.common.entity.adminSettings.HomeNavigation;
 import com.techgel.common.repository.HomeNavigationRepository;
 import com.techgel.common.service.HomeNavigationService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Sort;
@@ -11,10 +12,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 @Profile("online")
 public class HomeNavigationServiceImpl implements HomeNavigationService {
-    @Autowired
-    HomeNavigationRepository homeNavigationRepository;
+    private final HomeNavigationRepository homeNavigationRepository;
 
     public List<HomeNavigation> getAll(){
         return homeNavigationRepository.findAll(Sort.by(Sort.Direction.ASC, "displayOrder"));
@@ -29,7 +30,7 @@ public class HomeNavigationServiceImpl implements HomeNavigationService {
     }
 
     public HomeNavigation getById(Long id){
-        return homeNavigationRepository.findById(id).get();
+        return homeNavigationRepository.findById(id).orElse(null);
     }
 
     public void update(HomeNavigation homeNavigation){
