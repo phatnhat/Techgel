@@ -1,5 +1,7 @@
 @use "variables";
 
+//sass src/main/resources/static/scss:src/main/resources/static/css --watch
+
 html {
   width: fit-content;
   font-size: 16px;
@@ -276,13 +278,6 @@ html[data-theme="dark"] .only-dark {
   .menu-nav {
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-=======
-
-    @media (max-width: 78.125rem) {
-      display: none;
-    }
->>>>>>> bc24f9ddae28a390ac3c7ec5d9f31b2cea47ac3e
   }
 
   .language-nav {
@@ -970,15 +965,10 @@ div#brxe-rqhadm {
   }
 
   .top-area {
-<<<<<<< HEAD
-    padding: 30px 20px;
     background: linear-gradient(135deg, #ffffff 50%, #25247b 50%);
     border-top: 5px solid #25247b;
     border-bottom: 5px solid #25247b;
-=======
     padding: 1.875rem 1.25rem;
-    background: #b8b8b8;
->>>>>>> bc24f9ddae28a390ac3c7ec5d9f31b2cea47ac3e
     display: flex;
     align-items: center;
     justify-content: space-between;
