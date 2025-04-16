@@ -9,8 +9,7 @@
 
       <header
         class="tmp-header-area-start header-one position-relative"
-        style="z-index: 999"
-      >
+        style="z-index: 999">
         <div class="main-header-one-wrapper">
           <div class="header-mida-area">
             <div class="logo-area-start">
@@ -80,11 +79,15 @@
             </div>
           </div>
           <div class="tmp-nav-area-one header--sticky sticky">
+            <div class="logo-md-sm-device">
+              <a href="/" class="logo">
+                <img height="30" th:src="@{/imgs/logos/logo.jpg}" alt="corporate_business-logo">
+              </a>
+            </div>
             <div class="header-nav main-nav-one menu-nav">
               <nav>
                 <ul class="parent-nav">
                   <li
-
                     th:each="n, i: ${testNavigations}"
                     th:class="${not subnavigations[i.index].isEmpty() ? 'has-dropdown' : ''}">
                     <a
@@ -109,13 +112,14 @@
 
               </nav>
             </div>
-              <div class="header-nav main-nav-one language-nav">
-              <nav>
-                <ul class="parent-nav">
-                  <li>
-
-                  </li>
             <div class="actions-area">
+              <div class="tmp-side-collups-area" id="side-collups-nav">
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                  <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                  <rect width="20" height="2" fill="#1F1F25"></rect>
+                </svg>
+              </div>
               <div class="lang-picker dropdown">
                 <form action="" method="get">
                   <button
@@ -129,65 +133,27 @@
                     VI
                   </button>
                   <ul class="dropdown-menu">
-                    <li>
-                      <button class="dropdown-item" lang="vi" type="submit">
-                    <img th:src="@{/svg/vi_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />
-                    VI
-                      </button></li>
-                      <li><button class="dropdown-item" lang="vi" type="submit">
-                    <img th:src="@{/svg/en-US_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />
-                    EN - US</li>
-                    </form>
-                  </div>
-                </div>
-        </div>
-      </header>
-      <div id="side-hide">
-        <div class="top-area">
-          <a href="../index.html" class="logo-area">
-            <img th:src="@{/imgs/logo.jpg}" alt="Techgel Logo" />
-          </a>
-          <div class="close-icon-area">
-            <div id="close-slide__main">
-              <i class="fa-solid fa-x"></i>
+                      <li>
+                        <button class="dropdown-item" lang="vi" type="submit">
+                          <img th:src="@{/svg/vi_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" /> VI
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item" lang="vi" type="submit">
+                          <img th:src="@{/svg/en-US_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />EN - US
+                        </button>
+                      </li>
+                  </ul>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-        <div class="body">
-            
-            <div class="actions-area">
-              <div class="lang-picker dropdown">
-                <form action="" method="get">
-                  <button
-                    class="btn dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    style="outline: none; border: none; box-shadow: none"
-                  >
-                    <img th:src="@{/svg/vi_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />
-                    VI
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <button class="dropdown-item" lang="vi" type="submit">
-                    <img th:src="@{/svg/vi_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />
-                    VI
-                      </button></li>
-                      <li><button class="dropdown-item" lang="vi" type="submit">
-                    <img th:src="@{/svg/en-US_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />
-                    EN - US</li>
-                    </form>
-                  </div>
-                </div>
-
-        </div>
-      </div>
+      </header>
       <div
         id="overlay_every-where"
         data-tmp-cursor="md text-black dark:text-white opacity-10"
-        data-tmp-cursor-icon="fa-regular fa-x fa-fw"
-      ></div>
+        data-tmp-cursor-icon="fa-regular fa-x fa-fw"></div>
     </div>
   </body>
 </html>

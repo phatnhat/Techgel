@@ -1,0 +1,38 @@
+@media only screen and (max-width: 767px) {
+    .tmp-header-area-start.header-one .header-mida-area {
+        display: none;
+    }
+
+    #side-collups-nav {
+        display: block;
+    }
+
+    .header-one .tmp-nav-area-one {
+        top: 0;
+        padding: 15px 20px;
+    }
+
+    .header-one .logo-md-sm-device {
+        display: block;
+    }
+
+    .header-one .header-nav.main-nav-one {
+        display: none;
+    }
+
+    .header-one .actions-area > .tmp-side-hide-area {
+        display: block;
+    }
+
+    .header-one .actions-area > .lang-picker {
+        display: none;
+    }
+
+    .mySwiper-banner-one {
+        max-height: calc(100vh - 15px);
+    }
+
+    .tmp-header-area-start {
+        height: 0;
+    }
+}
