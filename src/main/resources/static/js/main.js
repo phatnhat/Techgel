@@ -2,24 +2,25 @@ const userTheme = localStorage.getItem("theme") || "light"; // fallback
 console.log(userTheme);
 const html = document.documentElement;
 html.setAttribute("data-theme", userTheme);
-const $themeBtn = $("#current-theme");
+const $themeBtn = $("#theme-toggle");
 if (userTheme === "dark") {
-  $themeBtn.html(`
-        <img src="/svg/moon.svg" alt="Moon Icon" width="45" height="35" class="pe-3" />
-        <span>Tối</span>
-      `);
+  $themeBtn.prop('checked', true)
 } else {
-  $themeBtn.html(`
-        <img src="/svg/sun.svg" alt="Sun Icon" width="45" height="35" class="pe-3" />
-        <span>Sáng</span>
-      `);
+  $themeBtn.prop('checked', false)
 }
 
 $(document).ready(function () {
   addSplitCollabAnimation();
   addStickyNav();
   initThemeToggle();
+  langToggle();
 });
+
+function langToggle(){
+  $(".lang-flag").click(function(){
+    $(".language-dropdown").toggleClass("open");
+  });
+}
 
 // Functionality
 function initThemeToggle() {
