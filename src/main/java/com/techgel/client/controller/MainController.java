@@ -22,6 +22,19 @@ import java.util.stream.Stream;
 @Controller
 @RequiredArgsConstructor
 public class MainController {
+    private final CarouselService carouselService;
+    private final HomeAboutUsService homeAboutUsService;
+    private final HomeStatisticService homeStatisticService;
+    private final HomeStatisticItemsService homeStatisticItemsService;
+    private final HomeOurBusinessLineService homeOurBusinessLineService;
+    private final WhatWeDoServiceService whatWeDoServiceService;
+    private final AboutUsIntroduceService aboutUsIntroduceService;
+    private final EProfileService eProfileService;
+    private final AboutUsTestimonialService aboutUsTestimonialService;
+    private final AboutUsTestimonialItemsService aboutUsTestimonialItemsService;
+    private final AboutUsOrganizationalService aboutUsOrganizationalService;
+    private final AboutUsOrganizationalChartItemsService aboutUsOrganizationalChartItemsService;
+    private final AboutUsLicenseCertificateService aboutUsLicenseCertificateService;
 
     List<NewsDTO> trainingNewsList = List.of(
             new NewsDTO(
@@ -426,75 +439,92 @@ public class MainController {
     @GetMapping("")
     public String viewHomagePage(Model model) {
 
-        // Banners
-        List<String> banners = new ArrayList<>();
-
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-1.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-soha.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-3.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-4.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-5.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-6.jpg");
-
-        model.addAttribute("banners", banners);
+        List<Carousel> banners = carouselService.getAll();
+        HomeAboutUs homeAboutUs = homeAboutUsService.getById(1L);
+        HomeStatistic homeStatistic = homeStatisticService.getById(1L);
+        List<HomeStatisticItems> homeStatisticItems = homeStatisticItemsService.getAll();
+        HomeOurBusinessLine homeOurBusinessLine = homeOurBusinessLineService.getById(1L);
+        List<WhatWeDoService> whatWeDoServices = whatWeDoServiceService.getAll();
 
         // Signature Projects
         List<SignatureProjectDTO> signatureProjectsCarousel = List.of(
-                new SignatureProjectDTO(
-                        "Nhà ga T3 Sân bay Tân Sơn Nhất",
-                        "https://lh3.googleusercontent.com/OGs3rJJO8ojjjYhRTIxKtgrseMDz_m5cgEYJOk74MeVZl3BGB58b7JCxOqPpZqKHXznUeBWpkm0sa4Tjf0JyU4_lA0VzkREBtXf8ZKCs1GMVETrr_gkDke74WeaoDEB6h2_dGMMALgSBT_FtW6oGFftVaYIhky4S38GxuY0ls8bzSC-MH_7l0PhUAPtIMuGh",
-                        "Cảng hàng không Việt Nam",
-                        "Quận Tân Bình",
-                        "Tổng thầu MEP",
-                        "/projects/t3-terminal"),
-                new SignatureProjectDTO(
-                        "Dwight School",
-                        "/imgs/projects/dwight-school-1.jpg",
-                        "Dwight School Hanoi",
-                        "Hà Nội",
-                        "Tổng thầy MEPF",
-                        "/projects/solar-recycling"),
-                new SignatureProjectDTO(
-                        "Điện gió Thái Hòa",
-                        "/imgs/projects/thai_hoa_power_wind_farm.jpg",
-                        "Tập đoàn Thái Bình Dương",
-                        "39C7, Hòa Thắng, Bắc Bình, Bình Thuận",
-                        "Trạm biến áp 220kV, trạm chuyển mạch, đường dây truyền tải cáp ngầm 22KV",
-                        "/projects/solar-recycling"),
-                new SignatureProjectDTO(
-                        "TTI",
-                        "https://newtecons.vn/wp-content/uploads/2023/06/1.-Southwest-conrner-1536x864.png",
-                        "EVN",
-                        "Đường 27, khu công nghiệp Việt Nam, xã Vĩnh Tân, TP. Tân Uyên, tỉnh Bình Dương",
-                        "Tổng thầu MEP",
-                        "/projects/solar-recycling"),
-                new SignatureProjectDTO(
-                        "Golden Hotel Đà Lạt",
-                        "/imgs/projects/golden-da-lat.webp",
-                        "Công ty Cổ phần Golden City",
-                        "Đà Lạt, Lâm Đồng",
-                        "Tổng thầu MEP",
-                        "/projects/solar-recycling"));
+      new SignatureProjectDTO(
+              "Nhà ga T3 Sân bay Tân Sơn Nhất",
+              "https://lh3.googleusercontent.com/OGs3rJJO8ojjjYhRTIxKtgrseMDz_m5cgEYJOk74MeVZl3BGB58b7JCxOqPpZqKHXznUeBWpkm0sa4Tjf0JyU4_lA0VzkREBtXf8ZKCs1GMVETrr_gkDke74WeaoDEB6h2_dGMMALgSBT_FtW6oGFftVaYIhky4S38GxuY0ls8bzSC-MH_7l0PhUAPtIMuGh",
+              "Cảng hàng không Việt Nam",
+              "Quận Tân Bình",
+              "Tổng thầu MEP",
+              "/projects/t3-terminal"),
+      new SignatureProjectDTO(
+              "Dwight School",
+              "/imgs/projects/dwight-school-1.jpg",
+              "Dwight School Hanoi",
+              "Hà Nội",
+              "Tổng thầy MEPF",
+              "/projects/solar-recycling"),
+      new SignatureProjectDTO(
+              "Điện gió Thái Hòa",
+              "/imgs/projects/thai_hoa_power_wind_farm.jpg",
+              "Tập đoàn Thái Bình Dương",
+              "39C7, Hòa Thắng, Bắc Bình, Bình Thuận",
+              "Trạm biến áp 220kV, trạm chuyển mạch, đường dây truyền tải cáp ngầm 22KV",
+              "/projects/solar-recycling"),
+      new SignatureProjectDTO(
+              "TTI",
+              "https://newtecons.vn/wp-content/uploads/2023/06/1.-Southwest-conrner-1536x864.png",
+              "EVN",
+              "Đường 27, khu công nghiệp Việt Nam, xã Vĩnh Tân, TP. Tân Uyên, tỉnh Bình Dương",
+              "Tổng thầu MEP",
+              "/projects/solar-recycling"),
+      new SignatureProjectDTO(
+              "Golden Hotel Đà Lạt",
+              "/imgs/projects/golden-da-lat.webp",
+              "Công ty Cổ phần Golden City",
+              "Đà Lạt, Lâm Đồng",
+              "Tổng thầu MEP",
+              "/projects/solar-recycling"));
 
+
+        model.addAttribute("banners", banners);
+        model.addAttribute("homeAboutUs", homeAboutUs);
+        model.addAttribute("homeStatistic", homeStatistic);
+        model.addAttribute("homeStatisticItems", homeStatisticItems);
+        model.addAttribute("homeOurBusinessLine", homeOurBusinessLine);
+        model.addAttribute("whatWeDoServices", whatWeDoServices);
         model.addAttribute("signatureProjects", signatureProjectsCarousel);
         model.addAttribute("partnershipLogos", partnershipLogoList);
 
         return "clients/home/home";
     }
-
+    
     @GetMapping("/profile")
-    public String viewBrochure() {
+    public String viewEProfile(){
         return "clients/profile";
     }
 
-    @GetMapping({ "/about-us", "/about-us/overview" })
-    public String viewIntroduce(Model model) {
+    @GetMapping({"/about-us", "/about-us/overview"})
+    public String viewIntroduce(Model model){
+        AboutUsIntroduce aboutUsIntroduce = aboutUsIntroduceService.getById(1L);
+        EProfile eProfile = eProfileService.getById(1L);
+        AboutUsTestimonial aboutUsTestimonial = aboutUsTestimonialService.getById(1L);
+        List<AboutUsTestimonialItems> aboutUsTestimonialItems = aboutUsTestimonialItemsService.getAll();
+
+        model.addAttribute("aboutUsIntroduce", aboutUsIntroduce);
+        model.addAttribute("eProfile", eProfile);
+        model.addAttribute("aboutUsTestimonial", aboutUsTestimonial);
+        model.addAttribute("aboutUsTestimonialItems", aboutUsTestimonialItems);
         model.addAttribute("partnershipLogos", partnershipLogoList);
+
         return "clients/about-us/introduce";
     }
 
     @GetMapping("/about-us/organizational-chart")
-    public String viewOrganizationalChart() {
+    public String viewOrganizationalChart(Model model){
+        AboutUsOrganizationalChart aboutUsOrganizationalChart = aboutUsOrganizationalService.getById(1L);
+        List<AboutUsOrganizationalChartItems> aboutUsOrganizationalChartItems = aboutUsOrganizationalChartItemsService.getAll();
+        model.addAttribute("aboutUsOrganizationalChart", aboutUsOrganizationalChart);
+        model.addAttribute("aboutUsOrganizationalChartItems", aboutUsOrganizationalChartItems);
+
         return "clients/about-us/organizational-chart";
     }
 
@@ -504,7 +534,10 @@ public class MainController {
     }
 
     @GetMapping("/about-us/licenses-certificates")
-    public String viewLicensesCertificates() {
+    public String viewLicensesCertificates(Model model){
+        List<AboutUsLicenseCertificate> aboutUsLicenseCertificates = aboutUsLicenseCertificateService.getAll();
+        model.addAttribute("aboutUsLicenseCertificates", aboutUsLicenseCertificates);
+
         return "clients/about-us/licenses-certificates";
     }
 

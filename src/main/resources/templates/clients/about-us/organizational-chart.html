@@ -30,7 +30,7 @@
             data-brx-anchor="true"
             class="brxe-block small-text-shadow"
           >
-            <div id="brxe-rqhadm" class="brxe-text-basic" news>Xem thêm</div>
+            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
             <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
           </a>
         </div>
@@ -43,27 +43,15 @@
               <div class="section-head pb-3">
                 <div class="section-sub-title center-title">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
-                    alt="Corporate_service"
+                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    alt="TECHGEL"
                   />
-                  <span class="subtitle">TECHGEL</span>
+                  <span class="subtitle">[[${ aboutUsOrganizationalChart.subtitle_vi }]]</span>
                 </div>
-                <h2 class="title split-collab-chars" style="opacity: 0">
-                  <span
-                    th:each="t: ${'Sơ đồ tổ chức'.toCharArray()}"
-                    style="
-                      position: relative;
-                      display: inline-block;
-                      translate: none;
-                      rotate: none;
-                      scale: none;
-                      transform: translate(0px, 0px);
-                      opacity: 1;
-                      visibility: inherit;
-                    "
-                  >
-                    [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                  </span>
+
+                <h2 class="title split-collab" style="opacity: 0">
+                  [[${aboutUsOrganizationalChart.title_vi}]]
+
                 </h2>
               </div>
             </div>
@@ -73,29 +61,7 @@
             id="gallery-organizational"
             style="gap: 10px"
           >
-            <div class="col-md-4">
-              <div>
-                <div class="img_shadow mb-md-5 mb-3 px-5 px-md-0">
-                  <a
-                    data-pswp-width="2500"
-                    data-pswp-height="1780"
-                    data-sal-delay="150"
-                    data-sal="slide-right"
-                    data-sal-duration="800"
-                    th:href="@{/imgs/organizational-page-0001.jpg}"
-                    target="_blank"
-                    class="d-flex justify-content-center"
-                  >
-                    <img
-                      class="img-fluid"
-                      th:src="@{/imgs/organizational-page-0001.jpg}"
-                      alt=""
-                      draggable="false"
-                  /></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
+            <div th:each="item: ${aboutUsOrganizationalChartItems}" class="col-md-4">
               <div>
                 <div class="img_shadow mb-md-5 mb-3 px-5 px-md-0">
                   <a
@@ -104,15 +70,14 @@
                     data-sal-delay="150"
                     data-sal="slide-left"
                     data-sal-duration="800"
-                    th:href="@{/imgs/organizational-page-0002.jpg}"
+                    th:href="@{${item.image_url}}"
                     target="_blank"
                     class="d-flex justify-content-center"
                   >
                     <img
                       class="img-fluid"
-                      th:src="@{/imgs/organizational-page-0002.jpg}"
-                      alt=""
-                      draggable="false"
+                      th:src="@{${item.image_url}}"
+                      alt="Techgel organizational-chart"
                   /></a>
                 </div>
               </div>
@@ -120,7 +85,7 @@
           </div>
           <div class="text-center">
             <a
-              th:href="@{/files/Sơ đồ tổ chức.pdf}"
+              th:href="@{${aboutUsOrganizationalChart.file_url}}"
               download
               class="btn-download"
               >Download PDF</a

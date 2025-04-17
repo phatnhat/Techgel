@@ -40,7 +40,7 @@
             data-brx-anchor="true"
             class="brxe-block small-text-shadow"
           >
-            <div id="brxe-rqhadm" class="brxe-text-basic" news>Xem thêm</div>
+            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
             <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
           </a>
         </div>
@@ -57,10 +57,12 @@
                       th:src="@{/imgs/small-icons/section-custom-menubar.png}"
                       alt="Corporate_service"
                     />
-                    <span class="subtitle">VỀ CHÚNG TÔI</span>
+                    <span class="subtitle">[[${ aboutUsIntroduce.subtitle_vi }]]</span>
                   </div>
-                  <h2 class="title split-collab-chars" data-text="TECHGEL">
-                    TECHGEL
+
+                  <h2 class="title split-collab">
+                    [[${ aboutUsIntroduce.title_vi }]]
+
                   </h2>
                 </div>
                 <p
@@ -69,14 +71,7 @@
                   data-sal="slide-up"
                   data-sal-duration="800"
                 >
-                  Công ty CP Kỹ thuật Công nghệ Sài Gòn (TECHGEL) là một trong
-                  những đơn vị hàng đầu tại Việt Nam trong lĩnh vực thiết kế,
-                  cung cấp và lắp đặt hệ thống điện, hàng không, công nghiệp,
-                  dân dụng, hạ tầng & công nghệ. Với hơn 25 năm kinh nghiệm,
-                  TECHGEL đã khẳng định được vị thế của mình trên thị trường và
-                  mang đến cho khách hàng những giải pháp toàn diện, tiên tiến,
-                  hiệu quả và bền vững, đạt tiêu chuẩn hàng đầu quốc tế & trong
-                  nước.
+                  [[${ aboutUsIntroduce.content_vi }]]
                 </p>
             </div>
             <div class="col-lg-6">
@@ -86,8 +81,8 @@
                 data-sal-delay="200"
                 data-sal="slide-up"
                 data-sal-duration="800"
-                src="https://techgel.com.vn/wp-content/uploads/2023/08/gioi-thieu-Cong-Ty-Cp-Ky-Thuat-Cong-Nghe-Sai-Gon.png"
-                alt=""
+                th:src="@{${aboutUsIntroduce.image_url}}"
+                alt="Techgel"
               />
               </div>
               <div
@@ -99,15 +94,13 @@
                   data-sal-duration="800"
                   class="secondary-color"
                 >
-                  Kỹ thuật Công nghệ Sài Gòn
+                  [[${ aboutUsIntroduce.image_title_vi }]]
                 </h2>
                 <i
                   data-sal-delay="200"
                   data-sal="slide-right"
                   data-sal-duration="800"
-                  >Công nghệ tiên phong, kiến tạo nền tảng vững chắc cho mọi
-                  công trình</i
-                >
+                  >[[${ aboutUsIntroduce.image_subtitle_vi }]]</i>
               </div>
             </div>
           </div>
@@ -121,14 +114,16 @@
               <div class="section-head pb-3">
                 <div class="section-sub-title center-title">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
-                    alt="Corporate_service"
+                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    alt="Techgel"
+                     
                   />
-                  <span class="subtitle">E-PROFILE</span>
+                  <span class="subtitle">[[${ eProfile.title_en }]]</span>
                 </div>
-                <div class="pt-3"></div>
-                <h2 class="title split-collab-chars" style="opacity: 0">
-                  HỒ SƠ NĂNG LỰC
+
+                <h2 class="title split-collab" style="opacity: 0">
+                  [[${ eProfile.title_vi }]]
+                  
                 </h2>
               </div>
             </div>
@@ -148,14 +143,11 @@
                     <img
                       class="img-fluid"
                       th:src="@{${eProfile.image_url}}"
-                      alt=""
-                      draggable="false"
+                      alt="Techgel Profile"
                   /></a>
                 </div>
                 <div class="text-center">
-                  <a th:href="@{/profile}" target="_blank" class="btn-brochure"
-                    >e-Profile</a
-                 >
+                  <a th:href="@{/profile}" target="_blank" class="btn-brochure">e-Profile</a>
                 </div>
               </div>
             </div>
@@ -172,15 +164,17 @@
                   <div class="section-head text-align-left">
                     <div class="section-sub-title">
                       <img
-                        th:src="@{/imgs/small-icons/section-custom-menubar.png}"
-                        alt="Corporate_service"
+
+                        th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                        alt="Techgel"
                       />
                       <span class="subtitle"
-                        >Khách hàng đã nói gì về chúng tôi?</span
+                        >[[${ aboutUsTestimonial.subtitle_vi }]]</span
                       >
                     </div>
-                    <h2 class="recommendation-section pt-3 title split-collab-words" style="opacity: 1">
-                      <span class="primary-color pt-3">CẢM NHẬN KHÁCH HÀNG</span>
+
+                    <h2 class="title split-collab" style="opacity: 1">
+                      <span class="always-black">[[${ aboutUsTestimonial.title_vi }]]</span>
                     </h2>
                   </div>
                   <div class="button-next-prev">
@@ -197,104 +191,23 @@
                     class="swiper-container-style-two swiper-initialized swiper-horizontal swiper-backface-hidden"
                   >
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide">
+                      
+                      <div th:each="item :${aboutUsTestimonialItems}" class="swiper-slide">
                         <div class="single-card card-horizontal">
                           <div class="card-inner">
                             <div class="content">
-                              <div class="rating rating-style-three">
-                                <div class="stars-group">
-                                  <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                  </div>
-                                </div>
-                              </div>
                               <p class="description">
-Tôi đã liên hệ hợp tác với Công ty  để triển khai dự án lắp đặt hệ thống điện mặt trời cho doanh nghiệp của tôi để giảm bớt tiền điện cho doanh nghiệp. Tôi rất hài lòng về sản phẩm và sự chuyên nghiệp trong cách làm việc của Techgel.                              </p>
-                              <div class="content content-without-bg">
-                                <div class="name">Mr. Truyền, Thủ Đức</div>
-                                <div class="designation">CEO &amp; Founder</div>
-                              </div>
-                            </div>
-                            <div class="thumbnail">
-                              <img
-                                th:src="@{/imgs/recommendations/mrtruyen.png}"
-                                alt="testimonial"
-
-                              />
-                              <div class="icon icon-quote">
-                                <i class="fa-solid fa-quote-left"></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="single-card card-horizontal">
-                          <div class="card-inner">
-                            <div class="content">
-                              <div class="rating rating-style-three">
-                                <div class="stars-group">
-                                  <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                  </div>
-                                </div>
-                              </div>
-                              <p class="description">
-                                Hệ thống ngay sau khi lắp đặt đã đi vào hoạt động ổn định. Dòng điện tổng hợp được từ ánh sáng mặt trời đã hòa vào lưới phục vụ nhu cầu sử dụng của gia đình tôi. Có những tấm pin, tôi cảm thấy nhà mát mẻ hơn do tác dụng chống nóng rất đặc biệt của nó
-                              </p>
-
-                              <div class="content content-without-bg">
-                                <div class="name">Mr. Thế, Bình Tân</div>
-                                <div class="designation">CEO</div>
-                              </div>
-                            </div>
-                            <div class="thumbnail">
-                              <img
-                                th:src="@{/imgs/recommendations/mrthe.png}"
-                                alt="mrthe-image"
-                              />
-                              <div class="icon icon-quote">
-                                <i class="fa-solid fa-quote-left"></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="single-card card-horizontal">
-                          <div class="card-inner">
-                            <div class="content">
-                              <div class="rating rating-style-three">
-                                <div class="stars-group">
-                                  <div class="star">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                  </div>
-                                </div>
-                              </div>
-                              <p class="description">
-                                Tôi có nhờ bên TECHGEL lắp đặt hệ thống cơ điện lạnh cho terminal T3 và tôi cảm thấy rất chất lượng. Đội ngũ làm việc cực kì năng động, chuyên nghiệp với quy trình rõ ràng và hiệu quả khiến cho việc khánh thành ngày 30/4 thuận lợi hơn bao giờ hết.
+                                [[${ item.description_vi }]]
                               </p>
                               <div class="content content-without-bg">
-                                <div class="name">Lê Mạnh Hùng</div>
-                                <div class="designation">CEO ACV</div>
+                                <div class="name">[[${ item.name_vi }]]</div>
+                                <div class="designation">[[${ item.designation_vi }]]</div>
                               </div>
                             </div>
                             <div class="thumbnail">
                               <img
-                                th:src="@{/imgs/recommendations/lemanhhung.jpg}"
-                                alt="mrhung-image"
+                                th:src="@{${item.thumbnail_url}}"
+                                alt="Techgel"
                               />
                               <div class="icon icon-quote">
                                 <i class="fa-solid fa-quote-left"></i>

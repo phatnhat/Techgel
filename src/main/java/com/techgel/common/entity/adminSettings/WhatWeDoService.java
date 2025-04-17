@@ -23,4 +23,13 @@ public class WhatWeDoService extends BasedEntity {
 
     @OneToMany(mappedBy = "whatWeDoService", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<WhatWeDoServiceItems> whatWeDoServiceItems = new ArrayList<>();
+
+    public WhatWeDoService(Long id, String title_vi, String title_en, int displayOrder, String image_url, String image_popup_url) {
+        super(id);
+        this.title_vi = title_vi;
+        this.title_en = title_en;
+        this.displayOrder = displayOrder;
+        this.image_url = image_url;
+        this.image_popup_url = image_popup_url;
+    }
 }

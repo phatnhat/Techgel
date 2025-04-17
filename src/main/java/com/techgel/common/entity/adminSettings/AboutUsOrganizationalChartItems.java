@@ -16,4 +16,10 @@ import org.checkerframework.checker.index.qual.SearchIndexBottom;
 public class AboutUsOrganizationalChartItems extends BasedEntity {
     private String image_url;
     private int displayOrder;
+
+    public AboutUsOrganizationalChartItems(Long id, String image_url, int displayOrder) {
+        super(id);
+        this.image_url = image_url;
+        this.displayOrder = displayOrder;
+    }
 }
