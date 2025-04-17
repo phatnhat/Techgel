@@ -25,16 +25,27 @@ $(document).ready(function () {
 function initThemeToggle() {
   const html = document.documentElement;
 
-  $("#theme-toggle-light").on("click", function () {
-    console.log("click");
-    html.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light");
+  // $("#theme-toggle-light").on("click", function () {
+  //   console.log("click");
+  //   html.setAttribute("data-theme", "light");
+  //   localStorage.setItem("theme", "light");
+  // });
+  //
+  // $("#theme-toggle-dark").on("click", function () {
+  //   html.setAttribute("data-theme", "dark");
+  //   localStorage.setItem("theme", "dark");
+  // });
+
+  $("#theme-toggle").on("click", function () {
+    if(this.checked){
+        html.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+    }else{
+        html.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+    }
   });
 
-  $("#theme-toggle-dark").on("click", function () {
-    html.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");
-  });
 }
 
 function addStickyNav() {

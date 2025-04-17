@@ -1,6 +1,8 @@
 package com.techgel.client.settings;
 
+import com.techgel.common.entity.adminSettings.EProfile;
 import com.techgel.common.entity.adminSettings.HomeNavigation;
+import com.techgel.common.service.EProfileService;
 import com.techgel.common.service.HomeNavigationService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,18 +21,13 @@ public class SettingsFilter implements Filter {
             new HashSet<>(Arrays.asList(".html", ".jsp", ".js", ".css", ".jpg", ".png", ".ico"));
 
     private final HomeNavigationService homeNavigationService;
+    private final EProfileService eProfileService;
 
     @Autowired(required = false)
-    public SettingsFilter(HomeNavigationService homeNavigationService) {
+    public SettingsFilter(HomeNavigationService homeNavigationService, EProfileService eProfileService) {
         this.homeNavigationService = homeNavigationService;
+        this.eProfileService = eProfileService;
     }
-//    private final EProfileService eProfileService;
-
-//    @Autowired(required = false)
-//    public SettingsFilter(HomeNavigationService homeNavigationService, EProfileService eProfileService) {
-//        this.homeNavigationService = homeNavigationService;
-//        this.eProfileService = eProfileService;
-//    }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -38,11 +35,11 @@ public class SettingsFilter implements Filter {
         String url = servletRequest.getRequestURL().toString();
 
         List<HomeNavigation> homeNavigations = homeNavigationService.getParents();
-//        EProfile eProfile = eProfileService.getById(1L);
+        EProfile eProfile = eProfileService.getById(1L);
 
         if(!hasNotAllowedExtension(url) && !hasNotAllowedPath(url)){
             request.setAttribute("homeNavigations", homeNavigations);
-//            request.setAttribute("eProfile", eProfile);
+            request.setAttribute("eProfile", eProfile);
         }else{
             chain.doFilter(request, response);
             return;

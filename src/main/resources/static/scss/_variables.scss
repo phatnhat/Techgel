@@ -15,6 +15,7 @@
   --themeLighter: #fad4d2;
   --themeLighterAlt: #fef2f2;
 
+
   --secondaryDarker: #0f1a3f;
   --secondaryDark: #111f4f;
   --secondaryLight: #3c5a96;
@@ -42,6 +43,10 @@
   --neutralLight: #edebe9;
   --neutralLighter: #f3f2f1;
   --neutralLighterAlt: #faf9f8;
+
+  --hue: 223;
+  --trans-dur: 0.6s;
+  --trans-timing: cubic-bezier(0.65,0,0.35,1);
 }
 
 :root[data-theme="dark"] {

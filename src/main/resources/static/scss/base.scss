@@ -1078,13 +1078,14 @@ div#brxe-rqhadm {
   padding: 0;
 }
 .mobile-menu-main nav ul li a.main {
+
   padding: .75rem 0 1.0625rem 0;
   border-bottom: .0625rem solid #f3f3f3;
   cursor: pointer;
 }
 .mobile-menu-main nav ul li a {
   display: block;
-  color: #181010;
+  color: var(--black);
 }
 .metismenu .mm-collapse:not(.mm-show) {
   display: none;
