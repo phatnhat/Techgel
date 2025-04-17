@@ -4,8 +4,8 @@
 :root {
   // 🌈 Theme Colors (Split Complementary: Red, Green, Blue)
   --themePrimary: #14245a;
-  --themeSecondary: #da251a; 
-  --themeTertiary: #1ada85; 
+  --themeSecondary: #da251a;
+  --themeTertiary: #1ada85;
 
   --themeDarker: #80110f;
   --themeDark: #b11a14;
@@ -15,12 +15,11 @@
   --themeLighter: #fad4d2;
   --themeLighterAlt: #fef2f2;
 
---secondaryDarker:      #0f1a3f;  
---secondaryDark:        #111f4f;  
---themeSecondary:       #14245a; 
---secondaryLight:       #3c5a96;  
---secondaryLighter:     #9db5e1; 
---secondaryLighterAlt:  #e6eefb;  
+  --secondaryDarker: #0f1a3f;
+  --secondaryDark: #111f4f;
+  --secondaryLight: #3c5a96;
+  --secondaryLighter: #9db5e1;
+  --secondaryLighterAlt: #e6eefb;
 
   --tertiaryDarker: #128458;
   --tertiaryDark: #16b176;
@@ -45,74 +44,73 @@
   --neutralLighterAlt: #faf9f8;
 }
 
-:root[data-theme='dark'] {
+:root[data-theme="dark"] {
   // 🌈 Brand Colors (Unchanged core hues)
-  --themePrimary:        #0C4DA2; 
-  --themeSecondary:      #da251a;
-  --themeTertiary:       #1ada85;
+  --themePrimary: #0c4da2;
+  --themeSecondary: #da251a;
+  --themeTertiary: #1ada85;
 
   // 🔴 Primary Red – Dark-friendly shades
-  --themeDarker:         #e34b3c;
-  --themeDark:           #d63c2e;
-  --themeDarkAlt:        #c23226;
+  --themeDarker: #e34b3c;
+  --themeDark: #d63c2e;
+  --themeDarkAlt: #c23226;
 
-  --themeLight:          #94261e;
-  --themeLighter:        #7c1d18;
-  --themeLighterAlt:     #631713;
+  --themeLight: #94261e;
+  --themeLighter: #7c1d18;
+  --themeLighterAlt: #631713;
 
   // 🔵 Secondary Blue – Dark-friendly
-  --secondaryDarker:     #C7DEF7;
-  --secondaryDark:       #6CA1E0;
-  --secondaryLight:      #2A6CC1;
-  --secondaryLighter:    #0A4090;
+  --secondaryDarker: #c7def7;
+  --secondaryDark: #6ca1e0;
+  --secondaryLight: #2a6cc1;
+  --secondaryLighter: #0a4090;
   --secondaryLighterAlt: #083573;
 
   // 🟢 Tertiary Green – Dark-friendly
-  --tertiaryDarker:      #26c991;
-  --tertiaryDark:        #1cb87d;
-  --tertiaryLight:       #107652;
-  --tertiaryLighter:     #0c5b3f;
-  --tertiaryLighterAlt:  #083f2c;
+  --tertiaryDarker: #26c991;
+  --tertiaryDark: #1cb87d;
+  --tertiaryLight: #107652;
+  --tertiaryLighter: #0c5b3f;
+  --tertiaryLighterAlt: #083f2c;
 
   // ⚫ Base: Reversed
-  --black:               #ffffff;
-  --white:               #121212;
+  --black: #ffffff;
+  --white: #121212;
 
   // 🎨 Neutral Shades (dark-optimized)
-  --neutralDark:             #fafafa;
-  --neutralPrimary:          #d4d4d4;
-  --neutralPrimaryAlt:       #c2c2c2;
-  --neutralSecondary:        #a0a0a0;
-  --neutralTertiary:         #7d7d7d;
-  --neutralTertiaryAlt:      #5e5e5e;
-  --neutralQuaternaryAlt:    #434343;
-  --neutralLight:            #2d2d2d;
-  --neutralLighter:          #1e1e1e;
-  --neutralLighterAlt:       #151515;
+  --neutralDark: #fafafa;
+  --neutralPrimary: #d4d4d4;
+  --neutralPrimaryAlt: #c2c2c2;
+  --neutralSecondary: #a0a0a0;
+  --neutralTertiary: #7d7d7d;
+  --neutralTertiaryAlt: #5e5e5e;
+  --neutralQuaternaryAlt: #434343;
+  --neutralLight: #2d2d2d;
+  --neutralLighter: #1e1e1e;
+  --neutralLighterAlt: #151515;
 }
 
 :root {
   --alwaysWhite: #ffffff;
   --alwaysBlack: #000000;
   --alwaysPink: #f4b6b3;
-  --alwaysGrey: #CCCCCC;
+  --alwaysGrey: #cccccc;
 
   --swiper-theme-color: var(--themeTertiary);
 
   --font-size-base: 1rem;
 
-  --font-size-h1: 64px;   //
-  --font-size-h2: 56px;
-  --font-size-h3: 48px;
-  --font-size-h4: 40px;
-  --font-size-h5: 32px;
-  --font-size-h6: 24px;
-
+  --font-size-h1: 64px; 
+  --font-size-h2: 54px;
+  --font-size-h3: 34px;
+  --font-size-h4: 24px;
+  --font-size-h5: 14px;
+  --font-size-h6: 4px;
 
   /* Paragraphs */
-  --font-size-p: 16px;             // 1rem
-  --font-size-p-bold: 18px;    // 1.125rem
-  --font-size-p-small: 14px;   // .875rem
+  --font-size-p: 16px; // 1rem
+  --font-size-p-bold: 18px; // 1.125rem
+  --font-size-p-small: 14px; // .875rem
   --font-size-p-small-bold: 14px;
 
   /* Font weights */
@@ -121,8 +119,8 @@
   --font-weight-regular: 400;
   --font-weight-light: 300;
 
-    // Fonts (can remain the same)
-  --font-primary: 'Roboto', sans-serif;
+  // Fonts (can remain the same)
+  --font-primary: "Roboto", sans-serif;
   --font-secondary: "Manrope", sans-serif;
 }
 
@@ -197,5 +195,3 @@
 .h6 {
   font-size: var(--font-size-h6);
 }
-
-
