@@ -113,7 +113,7 @@ public class MainController {
         model.addAttribute("aboutUsTestimonial", aboutUsTestimonial);
         model.addAttribute("aboutUsTestimonialItems", aboutUsTestimonialItems);
 
-        return "clients/about-us/overview";
+        return "clients/about-us/introduce";
     }
 
     @GetMapping("/about-us/organizational-chart")
