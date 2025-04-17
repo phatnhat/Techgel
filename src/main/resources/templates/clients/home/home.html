@@ -119,7 +119,7 @@
                     />
                     <span class="subtitle">VỀ CHÚNG TÔI</span>
                   </div>
-                  <h2 class="title split-collab" style="opacity: 1">
+                  <h2 class="title split-collab-chars" style="opacity: 1">
                     <span>TECHGEL</span>
                     </span>
                   </h2>
@@ -156,14 +156,14 @@
               />
               <span class="subtitle">Doanh nghiệp xuất sắc</span>
             </div>
-            <h2 class="title split-collab">Top 500 tại Việt Nam</h2>
+            <h2 class="title split-collab-words">Top 500 tại Việt Nam</h2>
           </div>
         </div>
       </div>
       <div class="counter_animation">
         <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
           <div class="count-box counter-style-4 text-center">
-            <h5 class="counter-title">DỰ ÁN THI CÔNG</h5>
+            <h3 class="counter-title">DỰ ÁN THI CÔNG</h3>
             <div>
               <h3 class="title animated fadeIn">
                 <span class="counter animated fadeInDownBig property-number">100</span>+
@@ -173,7 +173,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
           <div class="count-box counter-style-4 text-center">
-            <h5 class="counter-title">TỔNG TÀI SẢN</h5>
+            <h3 class="counter-title">TỔNG TÀI SẢN</h3>
             <div>
               <h3 class="title animated fadeIn">
                 <span class="counter animated fadeInDownBig property-number">1.754</span>tỷ
@@ -184,7 +184,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
           <div class="count-box counter-style-4 text-center">
-            <h5 class="counter-title">TỔNG SỐ NHÂN VIÊN</h5>
+            <h3 class="counter-title">TỔNG SỐ NHÂN VIÊN</h3>
             <div>
               <h3 class="title animated fadeIn">
                 <span class="counter animated fadeInDownBig property-number">450</span>+
@@ -194,7 +194,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
           <div class="count-box counter-style-4 text-center">
-            <h5 class="counter-title">LỰC LƯỢNG THI CÔNG</h5>
+            <h3 class="counter-title">LỰC LƯỢNG THI CÔNG</h3>
             <div>
               <h3 class="title animated fadeIn">
                 <span class="counter animated fadeInDownBig property-number">1.000</span>+
@@ -225,7 +225,7 @@
                   />
                   <span>Lĩnh vực hoạt động</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 1">
+                <h2 class="title split-collab-chars" style="opacity: 1">
                   <span>
                     Lĩnh vực chuyên ngành
                   </span>
@@ -410,7 +410,7 @@
                   />
                   <span class="subtitle">Lĩnh vực hoạt động</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 1">
+                <h2 class="title split-collab-chars" style="opacity: 1">
                   <span>
                     Lĩnh vực chuyên ngành
                   </span>
@@ -601,7 +601,7 @@
                   />
                   <span class="subtitle">Dự án</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 1">
+                <h2 class="title split-collab-chars" style="opacity: 1">
                   <span>Dự án tiêu biểu</span>
                 </h2>
               </div>
@@ -883,7 +883,7 @@
                   />
                   <span class="subtitle">QUESTION AND ANSWERS</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 1">
+                <h2 class="title split-collab-chars" style="opacity: 1">
                   <span
                     th:each="t: ${'Frequency Asked Questions'.toCharArray()}"
                     style="
@@ -1039,7 +1039,7 @@
                   />
                   <span>ĐỘI NGŨ CHUYÊN GIA</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 1">
+                <h2 class="title split-collab-chars" style="opacity: 1">
                   <span
                     th:each="t: ${'Gặp gỡ đội ngũ chuyên gia của chúng tôi'.toCharArray()}"
                     style="
@@ -1356,7 +1356,7 @@
                   />
                   <span class="subtitle">Đối tác và khách hàng</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 0">
+                <h2 class="title split-collab-chars" style="opacity: 0">
                   <span
                     th:each="t: ${''.toCharArray()}"
                     style="
@@ -1459,7 +1459,7 @@
                   />
                   <span class="subtitle">Đối tác và khách hàng</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 0">
+                <h2 class="title split-collab-chars" style="opacity: 0">
                   <span
                     th:each="t: ${''.toCharArray()}"
                     style="
@@ -1480,133 +1480,13 @@
             </div>
           </div>
           <div class="partner-area-slider">
-            <div class="slide-track">
-              <div class="slide">
+              <div class="slide-track">
+               <div th:each="logo : ${partnershipLogos}" class="slide">
                 <img
-                  src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png"
+                  th:src="${logo.imageUrl}"
                   width="100"
                   class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://sangphatwater.com/upload/images/logo-vikoda.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="	https://techgel.com.vn/wp-content/uploads/2023/08/67.jpg"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/75rem-Coca-Cola_logo.svg.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://sangphatwater.com/upload/images/logo-vikoda.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="	https://techgel.com.vn/wp-content/uploads/2023/08/67.jpg"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/75rem-Coca-Cola_logo.svg.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
+                  th:alt="${logo.altText}"
                 />
               </div>
             </div>
