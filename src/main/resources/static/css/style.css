@@ -979,10 +979,11 @@ nav ul li.has-dropdown a.nav-link::before {
 .services-content.services-content-style-1 .title {
     font-size: 27px;
     font-weight: 800;
-    /*line-height: 45px;*/
     margin-top: 0px;
     margin-bottom: 0;
     text-transform: uppercase;
+    text-wrap: wrap;
+    width: 20rem;
 }
 
 .services-content.services-content-style-1 .description {
@@ -4504,3 +4505,6 @@ body:has(.switch__input:checked) {
     width: 1px;
     height: 1px;
 }
+
+
+/* Lang selector */

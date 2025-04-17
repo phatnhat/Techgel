@@ -24,4 +24,16 @@ public class AboutUsTestimonialItems extends BasedEntity {
     private String designation_en;
     private String thumbnail_url;
     private int displayOrder;
+
+    public AboutUsTestimonialItems(Long id, String description_vi, String description_en, String name_vi, String name_en, String designation_vi, String designation_en, String thumbnail_url, int displayOrder) {
+        super(id);
+        this.description_vi = description_vi;
+        this.description_en = description_en;
+        this.name_vi = name_vi;
+        this.name_en = name_en;
+        this.designation_vi = designation_vi;
+        this.designation_en = designation_en;
+        this.thumbnail_url = thumbnail_url;
+        this.displayOrder = displayOrder;
+    }
 }

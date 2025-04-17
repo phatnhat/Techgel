@@ -13,7 +13,7 @@
           <div class="swiper-slide" th:each="banner, iter: ${banners}">
             <div
               th:class="'tmp-banner-area bg_image banner-one-height-control tmp-section-gap ' + 'bg_image-' + ${iter.index+1}"
-              th:style="'background: url(' + @{${banner}} + ');'"
+              th:style="'background: url(' + ${banner.image_url} + ');'"
             >
               <div class="shape-image-banner-one"></div>
               <div class="container">
@@ -23,13 +23,7 @@
                       <div class="banner-box">
                         <div class="overlay"></div>
                         <div class="inner">
-                          <h3 class="title">NHÀ CHỜ T3 TÂN SƠN NHẤT</h3>
-                          <span class="sub-title"
-                            >Khánh thành: Ngày 30/04/2025.</span
-                          >
-                          <span class="sub-title"
-                            >Dịch vụ: MEP và Kiot checkin.</span
-                          >
+                          <th:block th:utext="${banner.description}"></th:block>
                         </div>
                       </div>
                     </div>

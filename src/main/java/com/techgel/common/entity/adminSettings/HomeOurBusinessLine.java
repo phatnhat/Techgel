@@ -11,21 +11,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "home_statistics")
-public class HomeStatistic extends BasedEntity {
+@Table(name = "home_our_business_line")
+public class HomeOurBusinessLine extends BasedEntity {
     private String title_vi;
     private String title_en;
     private String subtitle_vi;
     private String subtitle_en;
 
-    public HomeStatistic(String title_vi, String title_en, String subtitle_vi, String subtitle_en) {
-        this.title_vi = title_vi;
-        this.title_en = title_en;
-        this.subtitle_vi = subtitle_vi;
-        this.subtitle_en = subtitle_en;
-    }
-
-    public HomeStatistic(Long id, String title_vi, String title_en, String subtitle_vi, String subtitle_en) {
+    public HomeOurBusinessLine(Long id, String title_vi, String title_en, String subtitle_vi, String subtitle_en) {
         super(id);
         this.title_vi = title_vi;
         this.title_en = title_en;

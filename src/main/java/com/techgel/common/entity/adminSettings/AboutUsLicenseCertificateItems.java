@@ -36,4 +36,13 @@ public class AboutUsLicenseCertificateItems extends BasedEntity {
         this.title_en = title_en;
         this.image_url = image_url;
     }
+
+    public AboutUsLicenseCertificateItems(Long id, String title_vi, String title_en, String image_url, int displayOrder, AboutUsLicenseCertificate aboutUsLicenseCertificate) {
+        super(id);
+        this.title_vi = title_vi;
+        this.title_en = title_en;
+        this.image_url = image_url;
+        this.displayOrder = displayOrder;
+        this.aboutUsLicenseCertificate = aboutUsLicenseCertificate;
+    }
 }

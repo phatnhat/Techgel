@@ -1,33 +1,42 @@
 package com.techgel.client.controller;
 
 import com.techgel.common.DTOs.SignatureProjectDTO;
+import com.techgel.common.entity.adminSettings.*;
+import com.techgel.common.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 public class MainController {
+    private final CarouselService carouselService;
+    private final HomeAboutUsService homeAboutUsService;
+    private final HomeStatisticService homeStatisticService;
+    private final HomeStatisticItemsService homeStatisticItemsService;
+    private final HomeOurBusinessLineService homeOurBusinessLineService;
+    private final WhatWeDoServiceService whatWeDoServiceService;
+    private final AboutUsIntroduceService aboutUsIntroduceService;
+    private final EProfileService eProfileService;
+    private final AboutUsTestimonialService aboutUsTestimonialService;
+    private final AboutUsTestimonialItemsService aboutUsTestimonialItemsService;
+    private final AboutUsOrganizationalService aboutUsOrganizationalService;
+    private final AboutUsOrganizationalChartItemsService aboutUsOrganizationalChartItemsService;
+    private final AboutUsLicenseCertificateService aboutUsLicenseCertificateService;
 
     @GetMapping("")
     public String viewHomagePage(Model model){
 
-        // Banners
-        List<String> banners = new ArrayList<>();
-
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-1.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-soha.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-3.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-4.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-5.jpg");
-        banners.add("/imgs/news/nha-ga-t3-tt/nha-ga-t3-tt-6.jpg");
-
-        model.addAttribute("banners", banners);
+        List<Carousel> banners = carouselService.getAll();
+        HomeAboutUs homeAboutUs = homeAboutUsService.getById(1L);
+        HomeStatistic homeStatistic = homeStatisticService.getById(1L);
+        List<HomeStatisticItems> homeStatisticItems = homeStatisticItemsService.getAll();
+        HomeOurBusinessLine homeOurBusinessLine = homeOurBusinessLineService.getById(1L);
+        List<WhatWeDoService> whatWeDoServices = whatWeDoServiceService.getAll();
 
         // Signature Projects
         List<SignatureProjectDTO> signatureProjectsCarousel = List.of(
@@ -73,7 +82,13 @@ public class MainController {
         )
         );
         
-        
+
+        model.addAttribute("banners", banners);
+        model.addAttribute("homeAboutUs", homeAboutUs);
+        model.addAttribute("homeStatistic", homeStatistic);
+        model.addAttribute("homeStatisticItems", homeStatisticItems);
+        model.addAttribute("homeOurBusinessLine", homeOurBusinessLine);
+        model.addAttribute("whatWeDoServices", whatWeDoServices);
         model.addAttribute("signatureProjects", signatureProjectsCarousel);
 
         return "clients/home/home";
@@ -82,17 +97,32 @@ public class MainController {
 
 
     @GetMapping("/profile")
-    public String viewBrochure(){
+    public String viewEProfile(){
         return "clients/profile";
     }
 
     @GetMapping({"/about-us", "/about-us/overview"})
-    public String viewIntroduce(){
-        return "clients/about-us/introduce";
+    public String viewIntroduce(Model model){
+        AboutUsIntroduce aboutUsIntroduce = aboutUsIntroduceService.getById(1L);
+        EProfile eProfile = eProfileService.getById(1L);
+        AboutUsTestimonial aboutUsTestimonial = aboutUsTestimonialService.getById(1L);
+        List<AboutUsTestimonialItems> aboutUsTestimonialItems = aboutUsTestimonialItemsService.getAll();
+
+        model.addAttribute("aboutUsIntroduce", aboutUsIntroduce);
+        model.addAttribute("eProfile", eProfile);
+        model.addAttribute("aboutUsTestimonial", aboutUsTestimonial);
+        model.addAttribute("aboutUsTestimonialItems", aboutUsTestimonialItems);
+
+        return "clients/about-us/overview";
     }
 
     @GetMapping("/about-us/organizational-chart")
-    public String viewOrganizationalChart(){
+    public String viewOrganizationalChart(Model model){
+        AboutUsOrganizationalChart aboutUsOrganizationalChart = aboutUsOrganizationalService.getById(1L);
+        List<AboutUsOrganizationalChartItems> aboutUsOrganizationalChartItems = aboutUsOrganizationalChartItemsService.getAll();
+        model.addAttribute("aboutUsOrganizationalChart", aboutUsOrganizationalChart);
+        model.addAttribute("aboutUsOrganizationalChartItems", aboutUsOrganizationalChartItems);
+
         return "clients/about-us/organizational-chart";
     }
 
@@ -102,7 +132,10 @@ public class MainController {
     }
 
     @GetMapping("/about-us/licenses-certificates")
-    public String viewLicensesCertificates(){
+    public String viewLicensesCertificates(Model model){
+        List<AboutUsLicenseCertificate> aboutUsLicenseCertificates = aboutUsLicenseCertificateService.getAll();
+        model.addAttribute("aboutUsLicenseCertificates", aboutUsLicenseCertificates);
+
         return "clients/about-us/licenses-certificates";
     }
 

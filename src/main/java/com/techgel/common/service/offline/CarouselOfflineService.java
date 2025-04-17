@@ -1,5 +1,6 @@
 package com.techgel.common.service.offline;
 
+import com.techgel.client.StaticData;
 import com.techgel.common.entity.adminSettings.Carousel;
 import com.techgel.common.repository.CarouselRepository;
 import com.techgel.common.service.CarouselService;
@@ -14,18 +15,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CarouselOfflineService implements CarouselService {
     public List<Carousel> getAll(){
-        return carouselRepository.findAll();
+        return StaticData.carouselsData();
     }
 
     public Carousel getById(Long id){
-        return carouselRepository.findById(id).orElse(null);
+        return this.getAll().stream().filter(carousel -> carousel.getId().equals(id)).findFirst().orElse(null);
     }
 
-    public void update(Carousel carousel){
-        carouselRepository.save(carousel);
-    }
+    public void update(Carousel carousel){}
 
-    public void deleteById(Long id){
-        carouselRepository.deleteById(id);
-    }
+    public void deleteById(Long id){}
 }

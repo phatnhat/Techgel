@@ -51,6 +51,8 @@ public class HomeNavigation extends BasedEntity {
 
     private String slug;
 
+    private String banner_url;
+
     public HomeNavigation(Long id) {
         this.id = id;
     }
@@ -63,13 +65,14 @@ public class HomeNavigation extends BasedEntity {
         this.slug = slug;
     }
 
-    public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder, HomeNavigation parent, String slug) {
+    public HomeNavigation(String title_vi, String title_en, boolean isPublished, int displayOrder, HomeNavigation parent, String slug, String banner_url) {
         this.title_vi = title_vi;
         this.title_en = title_en;
         this.isPublished = isPublished;
         this.displayOrder = displayOrder;
         this.parent = parent;
         this.slug = slug;
+        this.banner_url = banner_url;
     }
 
     public List<HomeNavigation> getChildrens(){
