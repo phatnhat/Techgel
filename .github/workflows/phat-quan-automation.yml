@@ -1,0 +1,33 @@
+name: Auto PR + Merge Between quan and phat
+
+on:
+  push:
+    branches:
+      - quan
+      - phat
+
+jobs:
+  auto-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set source and target branches
+        id: set-branches
+        run: |
+          if [[ "${GITHUB_REF##*/}" == "quan" ]]; then
+            echo "target=phat" >> $GITHUB_OUTPUT
+          else
+            echo "target=quan" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: ${{ github.ref_name }}
+          destination_branch: ${{ steps.set-branches.outputs.target }}
+          pr_title: "Auto-merge: ${{ github.ref_name }} → ${{ steps.set-branches.outputs.target }}"
+          pr_body: "This PR was automatically created by GitHub Actions"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          auto_merge: true
