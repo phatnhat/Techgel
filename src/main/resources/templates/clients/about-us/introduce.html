@@ -9,14 +9,7 @@
       <style>
         .breadcrumb-bg {
           background-image: url(https://cdn.pixabay.com/photo/2020/01/29/20/24/building-4803602_1280.jpg);
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: calc(100vh - 80px);
+
         }
 
         .bg-1 {
@@ -36,7 +29,7 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1 class="small-text-shadow split-collab">
+              <h1 class="small-text-shadow split-collab-chars">
                 TỔNG QUAN
               </h1>
             </div>
@@ -61,13 +54,15 @@
                 <div class="section-head text-align-left section-head-one-side">
                   <div class="section-sub-title">
                     <img
-                      th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                      th:src="@{/imgs/small-icons/section-custom-menubar.png}"
                       alt="Corporate_service"
                     />
                     <span class="subtitle">[[${ aboutUsIntroduce.subtitle_vi }]]</span>
                   </div>
+
                   <h2 class="title split-collab">
                     [[${ aboutUsIntroduce.title_vi }]]
+
                   </h2>
                 </div>
                 <p
@@ -97,6 +92,7 @@
                   data-sal-delay="200"
                   data-sal="slide-left"
                   data-sal-duration="800"
+                  class="secondary-color"
                 >
                   [[${ aboutUsIntroduce.image_title_vi }]]
                 </h2>
@@ -120,11 +116,14 @@
                   <img
                     th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                     alt="Techgel"
+                     
                   />
                   <span class="subtitle">[[${ eProfile.title_en }]]</span>
                 </div>
+
                 <h2 class="title split-collab" style="opacity: 0">
                   [[${ eProfile.title_vi }]]
+                  
                 </h2>
               </div>
             </div>
@@ -165,6 +164,7 @@
                   <div class="section-head text-align-left">
                     <div class="section-sub-title">
                       <img
+
                         th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                         alt="Techgel"
                       />
@@ -172,6 +172,7 @@
                         >[[${ aboutUsTestimonial.subtitle_vi }]]</span
                       >
                     </div>
+
                     <h2 class="title split-collab" style="opacity: 1">
                       <span class="always-black">[[${ aboutUsTestimonial.title_vi }]]</span>
                     </h2>
@@ -190,6 +191,7 @@
                     class="swiper-container-style-two swiper-initialized swiper-horizontal swiper-backface-hidden"
                   >
                     <div class="swiper-wrapper">
+                      
                       <div th:each="item :${aboutUsTestimonialItems}" class="swiper-slide">
                         <div class="single-card card-horizontal">
                           <div class="card-inner">
@@ -232,12 +234,12 @@
               <div class="section-head pb-3">
                 <div class="section-sub-title center-title">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
                     alt="Corporate_service"
                   />
                   <span class="subtitle">Đối tác và khách hàng</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 0">
+                <h2 class="title split-collab-chars" style="opacity: 0">
                   <span
                     th:each="t: ${''.toCharArray()}"
                     style="
@@ -259,132 +261,12 @@
           </div>
           <div class="partner-area-slider">
             <div class="slide-track">
-              <div class="slide">
+               <div th:each="logo : ${partnershipLogos}" class="slide">
                 <img
-                  src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png"
+                  th:src="${logo.imageUrl}"
                   width="100"
                   class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://sangphatwater.com/upload/images/logo-vikoda.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="	https://techgel.com.vn/wp-content/uploads/2023/08/67.jpg"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://sangphatwater.com/upload/images/logo-vikoda.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="	https://techgel.com.vn/wp-content/uploads/2023/08/67.jpg"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
+                  th:alt="${logo.altText}"
                 />
               </div>
             </div>

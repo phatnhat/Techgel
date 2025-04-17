@@ -10,7 +10,8 @@ if (userTheme === "dark") {
 }
 
 $(document).ready(function () {
-  addSplitCollabAnimation();
+  addSplitCollabAnimation("chars");
+  addSplitCollabAnimation("words");
   addStickyNav();
   initThemeToggle();
   langToggle();
@@ -25,18 +26,6 @@ function langToggle(){
 // Functionality
 function initThemeToggle() {
   const html = document.documentElement;
-
-  // $("#theme-toggle-light").on("click", function () {
-  //   console.log("click");
-  //   html.setAttribute("data-theme", "light");
-  //   localStorage.setItem("theme", "light");
-  // });
-  //
-  // $("#theme-toggle-dark").on("click", function () {
-  //   html.setAttribute("data-theme", "dark");
-  //   localStorage.setItem("theme", "dark");
-  // });
-
   $("#theme-toggle").on("click", function () {
     if(this.checked){
         html.setAttribute("data-theme", "dark");
@@ -67,25 +56,25 @@ function addStickyNav() {
 }
 
 function addSplitCollabAnimation(type = "chars") {
-  $(".split-collab").each(function () {
+  $(".split-collab-" + type).each(function () {
     const $el = $(this);
 
     const split = new SplitText($el, {
       type: type,
     });
 
-    const letters = split.chars;
+    const targets = split[type]; // Dynamically get split.chars, split.words, or split.lines
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: $el,
         start: "top 85%",
-        once: true, // only run once
-        onEnter: () => $el.removeClass("split-collab"), // ✅ FIXED: remove class (no dot)
+        once: true,
+        onEnter: () => $el.removeClass("split-collab-" + type),
       },
     });
 
-    tl.set($el, { opacity: 1 }).from(letters, {
+    tl.set($el, { opacity: 1 }).from(targets, {
       duration: 0.5,
       autoAlpha: 0,
       x: 50,

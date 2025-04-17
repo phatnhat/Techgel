@@ -32,6 +32,14 @@ h6 {
   font-size: var(--font-size-h6) !important;
 }
 
+.primary-color {
+  color: var(--themePrimary);
+}
+
+.secondary-color {
+  color: var(--themeSecondary);
+}
+
 .small-text-shadow {
   text-shadow: 8.4px 7.2px 8px rgba(218, 37, 26, 6.6);
 }
@@ -297,8 +305,8 @@ html[data-theme="dark"] .only-dark {
 
   &.header-one {
     background-color: var(--white);
-    border-bottom: 1.5008px solid var(--themeSecondary);
-    box-shadow: 0px 7px 18px var(--themeSecondary);
+    border-bottom: 1.5008px solid var(--themePrimary);
+    box-shadow: 0px 7px 18px var(--themePrimary);
 
     .header-mida-area {
       display: flex;
@@ -510,10 +518,10 @@ nav ul li.has-dropdown .submenu li a {
 
   background: var(--white);
   border-radius: 0 0 .45rem .45rem;
-  border-left: 7px solid var(--themeSecondary);
-  border-right: 7px solid var(--themeSecondary);
-  border-bottom: 1.5008px solid var(--themeSecondary);
-  box-shadow: 0 7px 18px var(--themeSecondary);
+  border-left: 7px solid var(--themePrimary);
+  border-right: 7px solid var(--themePrimary);
+  border-bottom: 1.5008px solid var(--themePrimary);
+  box-shadow: 0 7px 18px var(--themePrimary);
 
   transition: all 0.3s ease;
 
@@ -527,7 +535,7 @@ nav ul li.has-dropdown .submenu li a {
 
 // dropdown nav
 nav ul li.has-dropdown .submenu {
-  min-width: 230px;
+  min-width: 230px; 
   height: auto;
   position: absolute;
   top: 127%;
@@ -571,7 +579,7 @@ nav ul li.has-dropdown:hover .submenu {
 }
 
 .counter__anim {
-  padding: 45px;
+  padding: 1.5rem;
   width: fit-content;
 }
 
@@ -602,7 +610,7 @@ nav ul li.has-dropdown:hover .submenu {
     margin-top: .5rem;
     font-weight: var(--font-weight-regular);
     font-size: clamp(1rem, 2vw, 1.5rem);
-    color: var(--secondaryDarker);
+    color: var(--themePrimary);
   }
 
   .title {
@@ -616,7 +624,7 @@ nav ul li.has-dropdown:hover .submenu {
 
     span {
       display: inline-block;
-      color: var(--themePrimary);
+      color: var(--themeSecondary);
     }
   }
 }
@@ -952,7 +960,11 @@ nav ul li.has-dropdown:hover .submenu {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 5rem) ;
+
+  @media (max-width: 768px) {
+    height: 100vh ;
+  }
 }
 
 // Cuon chuot
@@ -1078,8 +1090,9 @@ div#brxe-rqhadm {
   padding: 0;
 }
 .mobile-menu-main nav ul li a.main {
+
   padding: 12px 0 17px 0;
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid #f3f3f3;
   cursor: pointer;
 }
 .mobile-menu-main nav ul li a {
