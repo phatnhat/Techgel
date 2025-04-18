@@ -1,8 +1,7 @@
 package com.techgel.common.service.offline;
 
-import com.techgel.client.StaticData;
+import com.techgel.StaticData.CarouselsData;
 import com.techgel.common.entity.adminSettings.Carousel;
-import com.techgel.common.repository.CarouselRepository;
 import com.techgel.common.service.CarouselService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
@@ -15,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CarouselOfflineService implements CarouselService {
     public List<Carousel> getAll(){
-        return StaticData.carouselsData();
+        return CarouselsData.get();
     }
 
     public Carousel getById(Long id){

@@ -1,8 +1,7 @@
 package com.techgel.common.service.offline;
 
-import com.techgel.client.StaticData;
+import com.techgel.StaticData.WhatWeDoServiceData;
 import com.techgel.common.entity.adminSettings.WhatWeDoService;
-import com.techgel.common.repository.WhatWeDoServiceRepository;
 import com.techgel.common.service.WhatWeDoServiceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
@@ -15,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class WhatWeDoServiceOfflineService implements WhatWeDoServiceService {
     public List<WhatWeDoService> getAll(){
-        return StaticData.whatWeDoServiceData();
+        return WhatWeDoServiceData.get();
     }
 
     public WhatWeDoService getById(Long id){

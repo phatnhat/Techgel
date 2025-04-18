@@ -126,7 +126,7 @@ body::before {
 .progress-wrap svg {
     color: var(--themePrimary);
     border-radius: 50%;
-    background: var(--black);
+    background: var(--white);
 }
 .progress-wrap svg.progress-circle path {
     stroke: var(--themePrimary);

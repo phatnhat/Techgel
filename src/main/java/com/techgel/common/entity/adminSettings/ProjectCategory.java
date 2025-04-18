@@ -1,5 +1,6 @@
 package com.techgel.common.entity.adminSettings;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.techgel.common.entity.BasedEntity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -8,6 +9,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,8 @@ public class ProjectCategory extends BasedEntity {
     private String slug;
     private int displayOrder;
 
+    @JsonManagedReference
+    @ToString.Exclude
     @OneToMany(mappedBy = "aboutUsClientPartner", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AboutUsClientPartnerItems> aboutUsClientPartnerItems = new ArrayList<>();
 
