@@ -453,52 +453,12 @@ public class MainController {
         HomeOurBusinessLine homeOurBusinessLine = homeOurBusinessLineService.getById(1L);
         List<WhatWeDoService> whatWeDoServices = whatWeDoServiceService.getAll();
 
-        // Signature Projects
-        List<SignatureProjectDTO> signatureProjectsCarousel = List.of(
-      new SignatureProjectDTO(
-              "Nhà ga T3 Sân bay Tân Sơn Nhất",
-              "https://lh3.googleusercontent.com/OGs3rJJO8ojjjYhRTIxKtgrseMDz_m5cgEYJOk74MeVZl3BGB58b7JCxOqPpZqKHXznUeBWpkm0sa4Tjf0JyU4_lA0VzkREBtXf8ZKCs1GMVETrr_gkDke74WeaoDEB6h2_dGMMALgSBT_FtW6oGFftVaYIhky4S38GxuY0ls8bzSC-MH_7l0PhUAPtIMuGh",
-              "Cảng hàng không Việt Nam",
-              "Quận Tân Bình",
-              "Tổng thầu MEP",
-              "/projects/t3-terminal"),
-      new SignatureProjectDTO(
-              "Dwight School",
-              "/imgs/projects/dwight-school-1.jpg",
-              "Dwight School Hanoi",
-              "Hà Nội",
-              "Tổng thầy MEPF",
-              "/projects/solar-recycling"),
-      new SignatureProjectDTO(
-              "Điện gió Thái Hòa",
-              "/imgs/projects/thai_hoa_power_wind_farm.jpg",
-              "Tập đoàn Thái Bình Dương",
-              "39C7, Hòa Thắng, Bắc Bình, Bình Thuận",
-              "Trạm biến áp 220kV, trạm chuyển mạch, đường dây truyền tải cáp ngầm 22KV",
-              "/projects/solar-recycling"),
-      new SignatureProjectDTO(
-              "TTI",
-              "https://newtecons.vn/wp-content/uploads/2023/06/1.-Southwest-conrner-1536x864.png",
-              "EVN",
-              "Đường 27, khu công nghiệp Việt Nam, xã Vĩnh Tân, TP. Tân Uyên, tỉnh Bình Dương",
-              "Tổng thầu MEP",
-              "/projects/solar-recycling"),
-      new SignatureProjectDTO(
-              "Golden Hotel Đà Lạt",
-              "/imgs/projects/golden-da-lat.webp",
-              "Công ty Cổ phần Golden City",
-              "Đà Lạt, Lâm Đồng",
-              "Tổng thầu MEP",
-              "/projects/solar-recycling"));
-
-
         model.addAttribute("banners", banners);
         model.addAttribute("homeAboutUs", homeAboutUs);
         model.addAttribute("homeStatistic", homeStatistic);
         model.addAttribute("homeStatisticItems", homeStatisticItems);
         model.addAttribute("homeOurBusinessLine", homeOurBusinessLine);
         model.addAttribute("whatWeDoServices", whatWeDoServices);
-        model.addAttribute("signatureProjects", signatureProjectsCarousel);
         model.addAttribute("partnershipLogos", partnershipLogoList);
 
         return "clients/home/home";
@@ -567,12 +527,15 @@ public class MainController {
 
         List<Project> projects = null;
 
-        if(slug != null){
-            projects = projectService.getAllByProjectCategorySlug(slug);
-        }else{
+        if(slug == null) {
             projects = projectService.getAll();
+        }else if(slug.equals("featured")){
+            projects = projectService.getAllByFeaturedIsTrue();
+        }else{
+            projects = projectService.getAllByProjectCategorySlug(slug);
         }
 
+        model.addAttribute("slug", slug);
         model.addAttribute("currentYear", Year.now().getValue());
         model.addAttribute("regions", ProjectRegions.values());
         model.addAttribute("projects", projects);

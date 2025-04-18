@@ -30,6 +30,10 @@ public class ProjectServiceImpl implements ProjectService {
         return projectRepository.findAllByProjectCategorySlug(slug);
     }
 
+    public List<Project> getAllByFeaturedIsTrue() {
+        return projectRepository.findAllByFeaturedIsTrue();
+    }
+
     public Project update(Project project){
         return projectRepository.save(project);
     }

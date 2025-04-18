@@ -29,7 +29,7 @@ public class Project extends BasedEntity {
     private int year;
     @Enumerated(EnumType.STRING)
     private String region;
-    private boolean isOutstanding;
+    private boolean isFeatured;
 
     @ManyToOne
     @JoinColumn(name = "project_category_id")
@@ -39,7 +39,7 @@ public class Project extends BasedEntity {
         super(id);
     }
 
-    public Project(Long id, String title_vi, String title_en, String client_name_vi, String client_name_en, String location_vi, String location_en, String scope_of_word_vi, String scope_of_word_en, String time_vi, String time_en, String description_vi, String description_en, String image_url, int year, String region, boolean isOutstanding, ProjectCategory projectCategory) {
+    public Project(Long id, String title_vi, String title_en, String client_name_vi, String client_name_en, String location_vi, String location_en, String scope_of_word_vi, String scope_of_word_en, String time_vi, String time_en, String description_vi, String description_en, String image_url, int year, String region, boolean isFeatured, ProjectCategory projectCategory) {
         super(id);
         this.title_vi = title_vi;
         this.title_en = title_en;
@@ -56,7 +56,7 @@ public class Project extends BasedEntity {
         this.image_url = image_url;
         this.year = year;
         this.region = region;
-        this.isOutstanding = isOutstanding;
+        this.isFeatured = isFeatured;
         this.projectCategory = projectCategory;
     }
 }

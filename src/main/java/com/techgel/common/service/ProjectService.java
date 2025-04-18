@@ -9,6 +9,7 @@ public interface ProjectService {
     List<Project> getAll();
     Project getById(Long id);
     List<Project> getAllByProjectCategorySlug(String slug);
+    List<Project> getAllByFeaturedIsTrue();
     Project update(Project project);
     void deleteById(Long id);
 }
