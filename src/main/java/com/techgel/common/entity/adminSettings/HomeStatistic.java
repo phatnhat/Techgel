@@ -24,4 +24,12 @@ public class HomeStatistic extends BasedEntity {
         this.subtitle_vi = subtitle_vi;
         this.subtitle_en = subtitle_en;
     }
+
+    public HomeStatistic(Long id, String title_vi, String title_en, String subtitle_vi, String subtitle_en) {
+        super(id);
+        this.title_vi = title_vi;
+        this.title_en = title_en;
+        this.subtitle_vi = subtitle_vi;
+        this.subtitle_en = subtitle_en;
+    }
 }

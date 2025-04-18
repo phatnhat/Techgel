@@ -8,15 +8,7 @@
     <main class="content-wrapper">
       <style>
         .breadcrumb-bg {
-          background-image: url(https://img.freepik.com/free-photo/business-situation-job-interview-concept-job-seeker-present-resume-managers_1421-78.jpg?t=st=1743411161~exp=1743414761~hmac=ad7f4be4696c1044993e232e9a724f27b419528456c87b47a6ab825093a09e7f&w=1380);
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: calc(100vh - 80px);
+          background-image: url([[@{/imgs/banners/culture-banners.jpeg}]]);
         }
       </style>
 
@@ -47,22 +39,8 @@
 
       <div id="next" class="hr_policies_page py-5">
         <div class="container">
-          <h1 class="title split-collab" style="opacity: 1">
-            <span
-              th:each="t: ${'Văn hóa TECHGEL'.toCharArray()}"
-              style="
-                position: relative;
-                display: inline-block;
-                translate: none;
-                rotate: none;
-                scale: none;
-                transform: translate(0px, 0px);
-                opacity: 1;
-                visibility: inherit;
-              "
-            >
-              [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-            </span>
+          <h1 class="title split-collab-chars" style="opacity: 1">
+            Văn hóa TECHGEL
           </h1>
           <hr />
           <div class="post_cff mt-5">

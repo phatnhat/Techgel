@@ -39,20 +39,6 @@
 
       <div th:replace="~{clients/home/banner :: banner}"></div>
 
-      <div
-        class="d-flex flex-column justify-content-center align-items-center d-none"
-      >
-        <div class="words word-1">
-          <span>T</span>
-          <span>E</span>
-          <span>C</span>
-          <span>H</span>
-          <span>G</span>
-          <span>E</span>
-          <span>L</span>
-        </div>
-      </div>
-
       <!-- About -->
       <div class="about-area tmp-section-gap about-style-one">
         <div class="container">
@@ -61,31 +47,31 @@
               <div class="about-thumbnails">
                 <div class="thumbnail">
                   <img
-                    th:src="@{/imgs/home/mer-adv.jpg}"
+                    th:src="${homeAboutUs.image_url_1}"
                     style="
                       height: 36.875rem;
                       width: 25.625rem;
                       object-fit: cover;
                       border-radius: .625rem;
                     "
-                    alt="corporate_business"
+                    alt="Techgel"
                   />
                   <div class="image-two">
                     <img
-                      th:src="@{/imgs/news/nha-ga-t3-tt/khanh-thanh-t3-2.png}"
+                      th:src="${homeAboutUs.image_url_2}"
                       style="
                         height: 17.5rem;
                         width: 11.875rem;
                         object-fit: cover;
                         border-radius: .625rem;
                       "
-                      alt="san-bay-t3"
+                      alt="Techgel"
                     />
                   </div>
                   <div class="image-three animated">
                     <img
                       class=""
-                      th:src="@{/imgs/news/nha-ga-t3-tt/nha-ga-t3-soha.jpg}"
+                      th:src="${homeAboutUs.image_url_3}"
                       style="
                         height: 12.5rem;
                         width: 25.625rem;
@@ -96,14 +82,14 @@
                           -1.875rem 1.875rem 0rem rgba(33, 33, 33, 0.4),
                           -2.5rem 2.5rem 0rem rgba(33, 33, 33, 0.1);
                       "
-                      alt="corporate_business"
+                      alt="Techgel"
                     />
                   </div>
                   <div class="square"></div>
                   <div class="flower">
                     <img
-                      th:src="@{https://themes-park.net/product/html/bizper/assets/images/about/flower.png}"
-                      alt="Corporate_Business"
+                      th:src="@{/imgs/flower.png}"
+                      alt="Techgel"
                     />
                   </div>
                 </div>
@@ -115,12 +101,14 @@
                   <div class="section-sub-title">
                     <img
                       th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                      alt="Corporate_service"
+                      alt="Techgel"
                     />
-                    <span class="subtitle">VỀ CHÚNG TÔI</span>
+                    <span class="subtitle">[[${homeAboutUs.title_vi}]]</span>
                   </div>
+
                   <h2 class="title split-collab" style="opacity: 1">
-                    <span>TECHGEL</span>
+                    <span>[[${homeAboutUs.subtitle_vi}]]</span>
+
                     </span>
                   </h2>
                 </div>
@@ -130,14 +118,7 @@
                   data-sal="slide-up"
                   data-sal-duration="800"
                 >
-                  Công ty CP Kỹ thuật Công nghệ Sài Gòn (TECHGEL) là một trong
-                  những đơn vị hàng đầu tại Việt Nam trong lĩnh vực thiết kế,
-                  cung cấp và lắp đặt hệ thống điện, hàng không, công nghiệp,
-                  dân dụng, hạ tầng & công nghệ. Với hơn 25 năm kinh nghiệm,
-                  TECHGEL đã khẳng định được vị thế của mình trên thị trường và
-                  mang đến cho khách hàng những giải pháp toàn diện, tiên tiến,
-                  hiệu quả và bền vững, đạt tiêu chuẩn hàng đầu quốc tế & trong
-                  nước.
+                  [[${homeAboutUs.content_vi}]]
                 </p>
               </div>
             </div>
@@ -151,248 +132,33 @@
           <div class="section-head">
             <div class="section-sub-title center-title">
               <img
-                th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                th:src="@{/imgs/small-icons/section-custom-menubar.png}"
                 alt="Corporate_service"
               />
-              <span class="subtitle">Doanh nghiệp xuất sắc</span>
+              <span class="subtitle">[[${ homeStatistic.title_vi }]]</span>
             </div>
-            <h2 class="title split-collab">Top 500 tại Việt Nam</h2>
+
+            <h2 class="title split-collab">[[${ homeStatistic.subtitle_vi }]]</h2>
+
           </div>
         </div>
       </div>
       <div class="counter_animation">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
-          <div class="count-box counter-style-4 text-center">
-            <h5 class="counter-title">DỰ ÁN THI CÔNG</h5>
-            <div>
-              <h3 class="title animated fadeIn">
-                <span class="counter animated fadeInDownBig property-number">100</span>+
-              </h3>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
-          <div class="count-box counter-style-4 text-center">
-            <h5 class="counter-title">TỔNG TÀI SẢN</h5>
-            <div>
-              <h3 class="title animated fadeIn">
-                <span class="counter animated fadeInDownBig property-number">1.754</span>tỷ
-              </h3>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
+        <div th:each="item: ${homeStatisticItems}" class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
           <div class="count-box counter-style-4 text-center">
-            <h5 class="counter-title">TỔNG SỐ NHÂN VIÊN</h5>
+            <h5 class="counter-title">[[${ item.title_vi }]]</h5>
+
             <div>
               <h3 class="title animated fadeIn">
-                <span class="counter animated fadeInDownBig property-number">450</span>+
-              </h3>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
-          <div class="count-box counter-style-4 text-center">
-            <h5 class="counter-title">LỰC LƯỢNG THI CÔNG</h5>
-            <div>
-              <h3 class="title animated fadeIn">
-                <span class="counter animated fadeInDownBig property-number">1.000</span>+
+                <span class="counter animated fadeInDownBig property-number">[[${ item.counter }]]</span>[[${ item.unit_vi }]]
               </h3>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Service -->
-      <div
-        class="tmp-services-area services-style--1 background-image-services bg_image tmp-section-gap"
-        style="display: none"
-      >
-        <div class="container">
-          <div class="row">
-            <div
-              class="col-lg-12"
-              data-sal-delay="150"
-              data-sal="slide-up"
-              data-sal-duration="800"
-            >
-              <div class="section-head">
-                <div class="section-sub-title center-title">
-                  <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                    alt="Business_Consulting_services"
-                  />
-                  <span>Lĩnh vực hoạt động</span>
-                </div>
-                <h2 class="title split-collab" style="opacity: 1">
-                  <span>
-                    Lĩnh vực chuyên ngành
-                  </span>
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div
-            class="d-flex justify-content-center flex-wrap"
-            style="gap: 1.25rem"
-          >
-            <div class="" style="width: 21.875rem">
-              <div class="single-services service-style-one">
-                <div class="services-inner with-shadow card-bg-color">
-                  <div class="thumbnail">
-                    <img
-                      th:src="@{/imgs/services-icon-1.png}"
-                      alt="Business consulting services"
-                    />
-                  </div>
-                  <div class="services-content">
-                    <a href="service-details.html">
-                      <h5 class="title">Năng lượng</h5>
-                    </a>
-                    <p class="desctiption">Nội dung 1 <br /><br /><br /></p>
-                    <a href="service-details.html" class="icon angle-roted">
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                  </div>
-                  <div class="number">
-                    <img
-                      th:src="@{/imgs/number-01.png}"
-                      alt="Business Consulting number"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="" style="width: 21.875rem">
-              <div class="single-services service-style-one">
-                <div class="services-inner with-shadow card-bg-color">
-                  <div class="thumbnail">
-                    <img
-                      th:src="@{/imgs/services-icon-2.png}"
-                      alt="Business consulting services"
-                    />
-                  </div>
-                  <div class="services-content">
-                    <a href="service-details.html">
-                      <h5 class="title">Công nghệ</h5>
-                    </a>
-                    <p class="desctiption">Nội dung 2 <br /><br /><br /></p>
-                    <a href="service-details.html" class="icon angle-roted">
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                  </div>
-                  <div class="number">
-                    <img
-                      th:src="@{/imgs/number-02.png}"
-                      alt="Business Consulting number"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="" style="width: 21.875rem">
-              <div class="single-services service-style-one">
-                <div class="services-inner with-shadow card-bg-color">
-                  <div class="thumbnail">
-                    <img
-                      th:src="@{/imgs/services-icon-3.png}"
-                      alt="Business consulting services"
-                    />
-                  </div>
-                  <div class="services-content">
-                    <a href="service-details.html">
-                      <h5 class="title">Công nghiệp</h5>
-                    </a>
-                    <p class="desctiption">Nội dung 3 <br /><br /><br /></p>
-                    <a href="service-details.html" class="icon angle-roted">
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                  </div>
-                  <div class="number">
-                    <img
-                      th:src="@{/imgs/number-03.png}"
-                      alt="Business Consulting number"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="" style="width: 21.875rem">
-              <div class="single-services service-style-one">
-                <div class="services-inner with-shadow card-bg-color">
-                  <div class="thumbnail">
-                    <img
-                      th:src="@{/imgs/services-icon-3.png}"
-                      alt="Business consulting services"
-                    />
-                  </div>
-                  <div class="services-content">
-                    <a href="service-details.html">
-                      <h5 class="title">Công trình xây dựng</h5>
-                    </a>
-                    <p class="desctiption">Nội dung 3 <br /><br /><br /></p>
-                    <a href="service-details.html" class="icon angle-roted">
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                  </div>
-                  <div class="number">
-                    <img
-                      th:src="@{/imgs/number-03.png}"
-                      alt="Business Consulting number"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="" style="width: 21.875rem">
-              <div class="single-services service-style-one">
-                <div class="services-inner with-shadow card-bg-color">
-                  <div class="thumbnail">
-                    <img
-                      th:src="@{/imgs/services-icon-3.png}"
-                      alt="Business consulting services"
-                    />
-                  </div>
-                  <div class="services-content">
-                    <a href="service-details.html">
-                      <h5 class="title">Hạ tầng</h5>
-                    </a>
-                    <p class="desctiption">Nội dung 3 <br /><br /><br /></p>
-                    <a href="service-details.html" class="icon angle-roted">
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                  </div>
-                  <div class="number">
-                    <img
-                      th:src="@{/imgs/number-03.png}"
-                      alt="Business Consulting number"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="services-bottom">
-                <div class="services-bottom-inner">
-                  <p class="description">
-                    Sự thành công của chúng tôi với tư cách là nhà tư vấn sẽ phụ
-                    thuộc vào tính đúng đắn cốt yếu của lời khuyên.
-                  </p>
-                  <p class="description">
-                    Bạn muốn tìm hiểu thêm về chúng tôi?
-                    <button class="btn-simple">Bấm vào đây</button>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service process -->
+      <!-- Field of activity -->
       <div class="tpm-services-process-area tmp-section-gap">
         <div class="container">
           <div
@@ -405,14 +171,14 @@
               <div class="section-head">
                 <div class="section-sub-title center-title">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
                     alt="Corporate_service"
                   />
-                  <span class="subtitle">Lĩnh vực hoạt động</span>
+                  <span class="subtitle">[[${ homeOurBusinessLine.title_vi }]]</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 1">
+                <h2 class="title split-collab-chars" style="opacity: 1">
                   <span>
-                    Lĩnh vực chuyên ngành
+                    [[${ homeOurBusinessLine.subtitle_vi }]]
                   </span>
                 </h2>
               </div>
@@ -420,170 +186,32 @@
           </div>
           <div
             class="d-flex justify-content-center align-items-center flex-wrap"
-            style="row-gap: 48px"
-          >
-            <div
+            style="row-gap: 48px">
+            <div th:each="service, iter: ${whatWeDoServices}"
               class="single-services"
               data-sal-delay="250"
               data-sal="slide-up"
-              data-sal-duration="800"
-            >
+              data-sal-duration="800">
               <div class="services-inner">
                 <div
-                  class="thumbnail thumbnail-rounded border-top-left hover-animation"
-                >
+                  class="thumbnail thumbnail-rounded border-top-left hover-animation">
                   <a href="#">
                     <img
-                      th:src="@{/imgs/solar_energy.jpg}"
-                      alt="Business consulting services"
+                      th:src="@{${service.image_url}}"
+                      th:alt="${service.title_vi}"
                     />
                   </a>
                   <div class="number-bg-round">
-                    <span>01</span>
+                    <span>0[[${ iter.index + 1 }]]</span>
                   </div>
                 </div>
                 <div
-                  class="services-content services-content-style-1 text-center"
-                >
-                  <h5 class="title">Năng lượng</h5>
+                  class="services-content services-content-style-1 text-center">
+                  <h5 class="title">[[${ service.title_vi }]]</h5>
                 </div>
               </div>
             </div>
-            <div
-              class="single-services"
-              data-sal-delay="350"
-              data-sal="slide-up"
-              data-sal-duration="800"
-            >
-              <div class="services-inner">
-                <div
-                  class="thumbnail thumbnail-rounded border-top-left hover-animation"
-                >
-                  <a href="#">
-                    <img
-                      src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-637243664-1520356722.jpg?resize=640:*"
-                      alt="Business consulting services"
-                    />
-                  </a>
-                  <div class="number-bg-round">
-                    <span>02</span>
-                  </div>
-                </div>
-                <div
-                  class="services-content services-content-style-1 text-center"
-                >
-                  <h5 class="title">Hàng không</h5>
-                </div>
-              </div>
-            </div>
-            <div
-              class="single-services"
-              data-sal-delay="450"
-              data-sal="slide-up"
-              data-sal-duration="800"
-            >
-              <div class="services-inner">
-                <div
-                  class="thumbnail thumbnail-rounded border-top-left hover-animation"
-                >
-                  <a href="#">
-                    <img
-                      src="https://d2csxpduxe849s.cloudfront.net/media/E32629C6-9347-4F84-81FEAEF7BFA342B3/9808C26F-5279-436F-93604EB4D94925E4/WebsiteJpg_XL-FIENG_Main%20Visual_Cyan.jpg"
-                      alt="Business consulting services"
-                    />
-                  </a>
-                  <div class="number-bg-round">
-                    <span>03</span>
-                  </div>
-                </div>
-                <div
-                  class="services-content services-content-style-1 text-center"
-                >
-                  <h5 class="title">Công nghiệp</h5>
-                </div>
-              </div>
-            </div>
-            <div class="single-services">
-              <div
-                class="services-inner"
-                data-sal-delay="250"
-                data-sal="slide-up"
-                data-sal-duration="800"
-              >
-                <div
-                  class="thumbnail thumbnail-rounded border-top-left hover-animation"
-                >
-                  <a href="#">
-                    <img
-                      src="https://5.imimg.com/data5/SELLER/Default/2024/7/436040572/KV/MD/QU/26343654/building-construction-services-500x500.jpeg"
-                      alt="Business consulting services"
-                    />
-                  </a>
-                  <div class="number-bg-round">
-                    <span>04</span>
-                  </div>
-                </div>
-                <div
-                  class="services-content services-content-style-1 text-center"
-                >
-                  <h5 class="title">Dân dụng</h5>
-                </div>
-              </div>
-            </div>
-            <div
-              class="single-services"
-              data-sal-delay="350"
-              data-sal="slide-up"
-              data-sal-duration="800"
-            >
-              <div class="services-inner">
-                <div
-                  class="thumbnail thumbnail-rounded border-top-left hover-animation"
-                >
-                  <a href="#">
-                    <img
-                      src="https://www.letsbuild.com/wp-content/uploads/2023/07/types-of-infrastructure.jpeg"
-                      alt="Business consulting services"
-                    />
-                  </a>
-                  <div class="number-bg-round">
-                    <span>05</span>
-                  </div>
-                </div>
-                <div
-                  class="services-content services-content-style-1 text-center"
-                >
-                  <h5 class="title">Hạ tầng giao thông</h5>
-                </div>
-              </div>
-            </div>
-            <div
-              class="single-services"
-              data-sal-delay="450"
-              data-sal="slide-up"
-              data-sal-duration="800"
-            >
-              <div class="services-inner">
-                <div
-                  class="thumbnail thumbnail-rounded border-top-left hover-animation"
-                >
-                  <a href="#">
-                    <img
-                      src="https://cdn.britannica.com/84/203584-131-357FBE7D/speed-internet-technology-background.jpg"
-                      alt="Business consulting services"
-                    />
-                  </a>
-                  <div class="number-bg-round">
-                    <span>06</span>
-                  </div>
-                </div>
-                <div
-                  class="services-content services-content-style-1 text-center"
-                >
-                  <h5 class="title">Công nghệ</h5>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -596,12 +224,12 @@
               <div class="section-head color-white">
                 <div class="section-sub-title center-title">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
                     alt="Corporate_service"
                   />
                   <span class="subtitle">Dự án</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 1">
+                <h2 class="title split-collab-chars" style="opacity: 1">
                   <span>Dự án tiêu biểu</span>
                 </h2>
               </div>
@@ -610,259 +238,48 @@
         </div>
         <div class="container-full">
           <div class="slider_projects">
-            <!-- <div class="item slick-slide">
+            <div class="item slick-slide" th:each="project : ${signatureProjects}">
               <div class="wrapper">
-                <a href="#"></a>
+                <a th:href="@{${project.detailUrl}}"></a>
                 <figure>
-                  <img
-                    src="https://lh3.googleusercontent.com/OGs3rJJO8ojjjYhRTIxKtgrseMDz_m5cgEYJOk74MeVZl3BGB58b7JCxOqPpZqKHXznUeBWpkm0sa4Tjf0JyU4_lA0VzkREBtXf8ZKCs1GMVETrr_gkDke74WeaoDEB6h2_dGMMALgSBT_FtW6oGFftVaYIhky4S38GxuY0ls8bzSC-MH_7l0PhUAPtIMuGh"
-                    class="img-fluid"
-                    alt=""
-                    draggable="false"
-                  />
+                  <img th:src="@{${project.imageUrl}}"
+                       class="img-fluid"
+                       alt=""
+                       draggable="false" />
                 </figure>
-                <div class="meta_info">
-                  <h4 class="fs-20 fw-bold text-uppercase">
-                    Nhà ga hành khách T3 tại Cảng hàng không quốc tế Tân Sơn
-                    Nhất
-                  </h4>
-                  <div class="detail_info">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>Khách hàng</td>
-                            <td>Nội dung</td>
-                          </tr>
-                          <tr>
-                            <td>Vị trí</td>
-                            <td>Nội dung</td>
-                          </tr>
-                          <tr>
-                            <td>Phạm vi công việc</td>
-                            <td>Nội dung</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <a href="#" class="read_more" tabindex="-1"
-                      >Xem thêm
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item slick-slide">
-              <div class="wrapper">
-                <a href="#"></a>
-                <figure>
-                  <img
-                    src="https://vi.enpower.vn/wp-content/uploads/sites/2/2021/11/Thai-Hoa-01-1160x653.jpg"
-                    class="img-fluid"
-                    alt=""
-                    draggable="false"
-                  />
-                </figure>
-                <div class="meta_info">
-                  <h4 class="fs-20 fw-bold text-uppercase">
-                    Nhà máy điện gió Thái Hòa
-                  </h4>
-                  <div class="detail_info">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>Khách hàng</td>
-                            <td>Nội dung</td>
-                          </tr>
-                          <tr>
-                            <td>Vị trí</td>
-                            <td>Nội dung</td>
-                          </tr>
-                          <tr>
-                            <td>Phạm vi công việc</td>
-                            <td>Nội dung</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <a href="#" class="read_more" tabindex="-1"
-                      >Xem thêm
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item slick-slide">
-              <div class="wrapper">
-                <a href="#"></a>
-                <figure>
-                  <img
-                    src="https://techgel.com.vn/wp-content/uploads/2023/08/techtronic-industries-invests-an-additional-dollar650-m.jpeg"
-                    class="img-fluid"
-                    alt=""
-                    draggable="false"
-                  />
-                </figure>
-                <div class="meta_info">
-                  <h4 class="fs-20 fw-bold text-uppercase">
-                    Nhà máy Sản xuất Dụng cụ TTI
-                  </h4>
-                  <div class="detail_info">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>Khách hàng</td>
-                            <td>Nội dung</td>
-                          </tr>
-                          <tr>
-                            <td>Vị trí</td>
-                            <td>Nội dung</td>
-                          </tr>
-                          <tr>
-                            <td>Phạm vi công việc</td>
-                            <td>Nội dung</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <a href="#" class="read_more" tabindex="-1"
-                      >Xem thêm
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item slick-slide">
-              <div class="wrapper">
-                <a href="#"></a>
-                <figure>
-                  <img
-                    src="https://techgel.com.vn/wp-content/uploads/2023/08/word-image-267-1.png"
-                    class="img-fluid"
-                    alt=""
-                    draggable="false"
-                  />
-                </figure>
-                <div class="meta_info">
-                  <h4 class="fs-20 fw-bold text-uppercase">
-                    Khách sạn 5 sao Golden Đà Lạt
-                  </h4>
-                  <div class="detail_info">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>Khách hàng</td>
-                            <td>Nội dung</td>
-                          </tr>
-                          <tr>
-                            <td>Vị trí</td>
-                            <td>Nội dung</td>
-                          </tr>
-                          <tr>
-                            <td>Phạm vi công việc</td>
-                            <td>Nội dung</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <a href="#" class="read_more" tabindex="-1"
-                      >Xem thêm
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item slick-slide">
-              <div class="wrapper">
-                <a href="#"></a>
-                <figure>
-                  <img
-                    src="https://techgel.com.vn/wp-content/uploads/2023/08/bitexco-bat-tay-he-thong-giao-duc-dwight-phat-tr.jpeg"
-                    class="img-fluid"
-                    alt=""
-                    draggable="false"
-                  />
-                </figure>
-                <div class="meta_info">
-                  <h4 class="fs-20 fw-bold text-uppercase">
-                    Trường học Quốc tế Dwight School
-                  </h4>
-                  <div class="detail_info">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>Khách hàng</td>
-                            <td>Nội dung</td>
-                          </tr>
-                          <tr>
-                            <td>Vị trí</td>
-                            <td>Nội dung</td>
-                          </tr>
-                          <tr>
-                            <td>Phạm vi công việc</td>
-                            <td>Nội dung</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <a href="#" class="read_more" tabindex="-1"
-                      >Xem thêm
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-<div class="item slick-slide" th:each="project : ${signatureProjects}">
-  <div class="wrapper">
-    <a th:href="@{${project.detailUrl}}"></a>
-    <figure>
-      <img th:src="@{${project.imageUrl}}"
-           class="img-fluid"
-           alt=""
-           draggable="false" />
-    </figure>
 
-    <div class="meta_info">
-      <h4 class="fs-20 fw-bold">
-        [[${project.title}]]
-      </h4>
+                <div class="meta_info">
+                  <h4 class="fs-20 fw-bold">
+                    [[${project.title}]]
+                  </h4>
 
-      <div class="detail_info">
-        <div class="table-responsive">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td>Khách hàng</td>
-                <td>[[${project.client}]]</td>
-              </tr>
-              <tr>
-                <td>Vị trí</td>
-                <td>[[${project.location}]]</td>
-              </tr>
-              <tr>
-                <td>Phạm vi công việc</td>
-                <td>[[${project.scope}]]</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                  <div class="detail_info">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>Khách hàng</td>
+                            <td>[[${project.client}]]</td>
+                          </tr>
+                          <tr>
+                            <td>Vị trí</td>
+                            <td>[[${project.location}]]</td>
+                          </tr>
+                          <tr>
+                            <td>Phạm vi công việc</td>
+                            <td>[[${project.scope}]]</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
 
-        <a th:href="@{${project.detailUrl}}" class="read_more" tabindex="-1">
-          Xem thêm <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+                    <a th:href="@{${project.detailUrl}}" class="read_more" tabindex="-1">
+                      Xem thêm <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -878,12 +295,12 @@
               <div class="section-head">
                 <div class="section-sub-title center-title">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
                     alt="Corporate_service"
                   />
                   <span class="subtitle">QUESTION AND ANSWERS</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 1">
+                <h2 class="title split-collab-chars" style="opacity: 1">
                   <span
                     th:each="t: ${'Frequency Asked Questions'.toCharArray()}"
                     style="
@@ -1034,12 +451,12 @@
               <div class="section-head">
                 <div class="section-sub-title center-title">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
                     alt="Corporate services"
                   />
                   <span>ĐỘI NGŨ CHUYÊN GIA</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 1">
+                <h2 class="title split-collab-chars" style="opacity: 1">
                   <span
                     th:each="t: ${'Gặp gỡ đội ngũ chuyên gia của chúng tôi'.toCharArray()}"
                     style="
@@ -1351,12 +768,12 @@
               <div class="section-head pb-3">
                 <div class="section-sub-title center-title">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
                     alt="Corporate_service"
                   />
                   <span class="subtitle">Đối tác và khách hàng</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 0">
+                <h2 class="title split-collab-chars" style="opacity: 0">
                   <span
                     th:each="t: ${''.toCharArray()}"
                     style="
@@ -1454,12 +871,12 @@
               <div class="section-head pb-3">
                 <div class="section-sub-title center-title">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
                     alt="Corporate_service"
                   />
                   <span class="subtitle">Đối tác và khách hàng</span>
                 </div>
-                <h2 class="title split-collab" style="opacity: 0">
+                <h2 class="title split-collab-chars" style="opacity: 0">
                   <span
                     th:each="t: ${''.toCharArray()}"
                     style="
@@ -1480,133 +897,13 @@
             </div>
           </div>
           <div class="partner-area-slider">
-            <div class="slide-track">
-              <div class="slide">
+              <div class="slide-track">
+               <div th:each="logo : ${partnershipLogos}" class="slide">
                 <img
-                  src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png"
+                  th:src="${logo.imageUrl}"
                   width="100"
                   class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://sangphatwater.com/upload/images/logo-vikoda.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="	https://techgel.com.vn/wp-content/uploads/2023/08/67.jpg"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/75rem-Coca-Cola_logo.svg.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://sangphatwater.com/upload/images/logo-vikoda.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="	https://techgel.com.vn/wp-content/uploads/2023/08/67.jpg"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/75rem-Coca-Cola_logo.svg.png"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp"
-                  width="100"
-                  class="img-fluid"
-                  alt=""
+                  th:alt="${logo.altText}"
                 />
               </div>
             </div>

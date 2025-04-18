@@ -17,4 +17,12 @@ import lombok.Setter;
 public class Carousel extends BasedEntity {
     private int displayOrder;
     private String image_url;
+    private String description;
+
+    public Carousel(Long id, int displayOrder, String image_url, String description) {
+        super(id);
+        this.displayOrder = displayOrder;
+        this.image_url = image_url;
+        this.description = description;
+    }
 }

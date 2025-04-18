@@ -32,9 +32,8 @@
             id="brxe-ygpexj"
             href="#next"
             data-brx-anchor="true"
-            class="brxe-block small-text-shadow"
-          >
-            <div id="brxe-rqhadm" class="brxe-text-basic" news>Xem thêm</div>
+            class="brxe-block small-text-shadow">
+            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
             <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
           </a>
         </div>
@@ -42,218 +41,49 @@
 
       <div id="next" class="about-lc tmp-section-gap">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-head pb-3">
-                <h2
-                  class="title split-collab d-flex align-items-center justify-content-center"
-                  style="opacity: 0; gap: 30px"
-                >
-                  <div class="line_img"></div>
-                  <div>
-                    <span
-                      th:each="t: ${'Giấy phép'.toCharArray()}"
-                      style="
-                        position: relative;
-                        display: inline-block;
-                        translate: none;
-                        rotate: none;
-                        scale: none;
-                        transform: translate(0px, 0px);
-                        opacity: 1;
-                        visibility: inherit;
-                      "
-                    >
-                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                    </span>
-                  </div>
-                  <div class="line_img"></div>
-                </h2>
+          <th:block th:each="aboutUsLicenseCertificate: ${aboutUsLicenseCertificates}">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-head pb-3">
+                  <h2
+                    class="title split-collab-chars d-flex align-items-center justify-content-center"
+                    style="gap: 30px"
+                  >
+                    <div class="line_img"></div>
+                    <div>
+                      <span>
+                        [[${aboutUsLicenseCertificate.title_vi}]]
+                      </span>
+                    </div>
+                    <div class="line_img"></div>
+                  </h2>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="mt-5 mb-md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-3 col-6">
-                <div class="item_cert">
-                  <figure>
-                    <a
-                      th:href="@{/files/1.-GIAY-PHEP-DKKD-TECHGEL-05.04.2023.pdf}"
-                      target="_blank"
-                    >
-                      <img
-                        th:src="@{/imgs/licenses-certificates/licenses1.png}"
-                        class="img-fluid"
-                        alt=""
-                        draggable="false"
-                      />
-                    </a>
-                  </figure>
-                  <div class="text-center">
-                    TECHGEL Business Registration License 05.04.2023
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-6">
-                <div class="item_cert">
-                  <figure>
-                    <a
-                      th:href="@{/files/4.-Giay-phep-TK-GS-Thi-cong-PCCC.pdf}"
-                      target="_blank"
-                    >
-                      <img
-                        th:src="@{/imgs/licenses-certificates/licenses2.png}"
-                        class="img-fluid"
-                        alt=""
-                        draggable="false"
-                      />
-                    </a>
-                  </figure>
-                  <div class="text-center">
-                    Design, Supervision, and Fire Protection Construction
-                    License
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-6">
-                <div class="item_cert">
-                  <figure>
-                    <a
-                      th:href="@{/files/5.-Giay-phep-hoat-dong-Dien-Luc-Thiet-ke-Giam-sat.pdf}"
-                      target="_blank"
-                    >
-                      <img
-                        th:src="@{/imgs/licenses-certificates/licenses3.jpg}"
-                        class="img-fluid"
-                        alt=""
-                        draggable="false"
-                      />
-                    </a>
-                  </figure>
-                  <div class="text-center">
-                    Electricity Operation License – Design and Supervision
+            <div class="mt-5 mb-md-5">
+              <div class="row justify-content-center">
+                <div th:each="item: ${aboutUsLicenseCertificate.getAboutUsLicenseCertificateItems()}" class="col-md-3 col-6">
+                  <div class="item_cert">
+                    <figure>
+                      <a
+                        th:href="@{${item.getImage_url()}}"
+                        target="_blank"
+                      >
+                        <img
+                          th:src="@{${item.getImage_url()}}"
+                          class="img-fluid"
+                          th:alt="${item.title_vi}"
+                        />
+                      </a>
+                    </figure>
+                    <div class="text-center">
+                      [[${ item.title_vi }]]
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-head pb-3">
-                <h2
-                  class="title split-collab d-flex align-items-center justify-content-center"
-                  style="opacity: 0; gap: 30px"
-                >
-                  <div class="line_img"></div>
-                  <div>
-                    <span
-                      th:each="t: ${'Chứng chỉ'.toCharArray()}"
-                      style="
-                        position: relative;
-                        display: inline-block;
-                        translate: none;
-                        rotate: none;
-                        scale: none;
-                        transform: translate(0px, 0px);
-                        opacity: 1;
-                        visibility: inherit;
-                      "
-                    >
-                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                    </span>
-                  </div>
-                  <div class="line_img"></div>
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div class="mt-5 mb-md-5">
-            <div class="row justify-content-center" id="gallery-certificate">
-              <div class="col-md-3 col-6">
-                <div class="item_cert">
-                  <figure>
-                    <a
-                      data-pswp-width="1500"
-                      data-pswp-height="2000"
-                      th:href="@{/imgs/licenses-certificates/certificate1.png}"
-                    >
-                      <img
-                        th:src="@{/imgs/licenses-certificates/certificate1.png}"
-                        class="img-fluid"
-                        alt=""
-                      />
-                    </a>
-                  </figure>
-                  <div class="text-center">
-                    Construction Operation Capacity Certificate – Energy Sector,
-                    Technical Infrastructure
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-6">
-                <div class="item_cert">
-                  <figure>
-                    <a
-                      data-pswp-width="1500"
-                      data-pswp-height="2000"
-                      th:href="@{/imgs/licenses-certificates/certificate2.png}"
-                    >
-                      <img
-                        th:src="@{/imgs/licenses-certificates/certificate2.png}"
-                        class="img-fluid"
-                        alt=""
-                        draggable="false"
-                      />
-                    </a>
-                  </figure>
-                  <div class="text-center">ISO certificate 9001 - Techgel</div>
-                </div>
-              </div>
-              <div class="col-md-3 col-6">
-                <div class="item_cert">
-                  <figure>
-                    <a
-                      data-pswp-width="1500"
-                      data-pswp-height="2000"
-                      th:href="@{/imgs/licenses-certificates/certificate3.png}"
-                    >
-                      <img
-                        th:src="@{/imgs/licenses-certificates/certificate3.png}"
-                        class="img-fluid"
-                        alt=""
-                        draggable="false"
-                      />
-                    </a>
-                  </figure>
-                  <div class="text-center">
-                    ISO certificate E 14001 -V Techgel
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-6">
-                <div class="item_cert">
-                  <figure>
-                    <a
-                      data-pswp-width="1500"
-                      data-pswp-height="2000"
-                      th:href="@{/imgs/licenses-certificates/certificate4.png}"
-                    >
-                      <img
-                        th:src="@{/imgs/licenses-certificates/certificate4.png}"
-                        class="img-fluid"
-                        alt=""
-                        draggable="false"
-                      />
-                    </a>
-                  </figure>
-                  <div class="text-center">
-                    ISO certificate -OHS - 45001-V Techgel
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </th:block>
         </div>
       </div>
 

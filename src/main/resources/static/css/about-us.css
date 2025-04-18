@@ -1,0 +1,30 @@
+@media (max-width: 1000px) {
+  .recommendation-section {
+    padding-bottom: 3rem;
+  }
+  .testimonials-button-area .swiper-button-next {
+    top: 8.55rem;
+  }
+  .testimonials-button-area .swiper-button-prev {
+    top: 8.55rem;
+  }
+}
+@media (max-width: 768px) {
+  .testimonials-button-area .swiper-button-next {
+    top: 11.55rem;
+  }
+  .testimonials-button-area .swiper-button-prev {
+    top: 11.55rem;
+  }
+}
+@media (max-width: 500px) {
+  .card-inner {
+    flex-direction: column;
+    height: 100%;
+  }
+  .content.content-without-bg {
+    padding-bottom: 25px;
+  }
+}
+
+/*# sourceMappingURL=about-us.css.map */
