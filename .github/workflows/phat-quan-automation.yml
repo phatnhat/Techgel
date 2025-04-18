@@ -5,6 +5,7 @@ on:
     branches:
       - quan
       - phat
+  workflow_dispatch:  # ✅ Manual trigger from GitHub UI
 
 jobs:
   auto-pr:
