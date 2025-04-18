@@ -522,7 +522,9 @@ public class MainController {
     }
 
     @GetMapping({ "/projects", "/projects/{slug}" })
-    public String viewProjects(Model model, @PathVariable(required = false) String slug) {
+    public String viewProjects(Model model, @PathVariable(required = false) String slug,
+                               @RequestParam(name = "years[]", required = false) List<Integer> years,
+                               @RequestParam(name = "regions[]", required = false) List<String> regions) {
         List<ProjectCategory> projectCategories = projectCategoryService.getAll();
 
         List<Project> projects = null;
@@ -535,12 +537,38 @@ public class MainController {
             projects = projectService.getAllByProjectCategorySlug(slug);
         }
 
+        if(years != null){
+            projects = projects.stream().filter(project ->
+                    project != null &&
+                    years.contains(project.getYear()))
+                    .collect(Collectors.toList());
+        }
+        if(regions != null){
+            projects = projects.stream().filter(project ->
+                            project != null &&
+                            project.getRegion() != null &
+                            regions.contains(project.getRegion()))
+                    .collect(Collectors.toList());
+        }
+
         model.addAttribute("slug", slug);
+        model.addAttribute("years_checked", years);
+        model.addAttribute("regions_checked", regions);
         model.addAttribute("currentYear", Year.now().getValue());
         model.addAttribute("regions", ProjectRegions.values());
         model.addAttribute("projects", projects);
         model.addAttribute("projectCategories", projectCategories);
-        return "clients/projects";
+
+        return "clients/projects/projects";
+    }
+
+    @GetMapping("/project_details/{projectId}")
+    public String viewProjectDetails(Model model, @PathVariable Long projectId){
+        Project project = projectService.getById(projectId);
+
+        model.addAttribute("project", project);
+
+        return "clients/projects/project_details";
     }
 
     @GetMapping("/what-we-do/our-business-lines")

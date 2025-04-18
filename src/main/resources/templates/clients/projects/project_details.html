@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{clients/index :: dynamic(~{::main})}">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <main class="content-wrapper" style="overflow: hidden">
+      <div class="project-banner">
+        <img th:src="@{${project.image_url}}" class="img-fluid" th:alt="${project.title_vi}">
+        <div class="meta-info">
+          <div class="container">
+            <div class="meta-inner">
+              <h3 class="title fw-bold text-uppercase split-collab-words">
+                  [[${ project.title_vi }]]
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-detail pb-5">
+        <div class="project-info mb-md-5 mb-4">
+          <div class="container">
+            <div class="row gx-0">
+              <div class="col-md-3">
+                <div class="item">
+                  <h5 class="fw-bold text-uppercase split-collab-chars">Khách hàng</h5>
+                  <div>
+                    [[${ project.client_name_vi }]]
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="item">
+                  <h5 class="fw-bold text-uppercase split-collab-chars">Địa điểm</h5>
+                  <div>
+                    [[${ project.location_vi }]]
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="item">
+                  <h5 class="fw-bold text-uppercase split-collab-chars">Phạm vi công việc</h5>
+                  <div>
+                    [[${ project.scope_of_work_vi }]]
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="item">
+                  <h5 class="fw-bold text-uppercase split-collab-chars">Thời gian</h5>
+                  <div>
+                    [[${ project.time_vi  }]]
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-10">
+              <h2 class="fs-50 fw-bold text-center">
+                [[${ project.title_vi }]]
+              </h2>
+              <div class="description mb-md-5 mb-4 text-center">
+                <p>[[${ project.description_vi }]]</p>
+              </div>
+            </div>
+          </div>
+          <div class="title_section" th:if="${not project.getProjectImageList().isEmpty()}">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <h3 class="primary-color"><span>Ảnh dự án</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="overview_wrapper">
+
+            <div class="slider_overview">
+              <div class="item slick-slide" th:each="projectImage : ${project.getProjectImageList()}">
+                <figure>
+                  <a th:href="@{${projectImage.image_url}}" data-fancybox="overview">
+                    <img th:src="@{${projectImage.image_url}}" class="img-fluid" th:alt="${project.title_vi}">
+                  </a>
+                </figure>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
