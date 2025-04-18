@@ -1,8 +1,7 @@
 package com.techgel.common.service.offline;
 
-import com.techgel.client.StaticData;
+import com.techgel.StaticData.HomeOurBusinessLineData;
 import com.techgel.common.entity.adminSettings.HomeOurBusinessLine;
-import com.techgel.common.repository.HomeOurBusinessLineRepository;
 import com.techgel.common.service.HomeOurBusinessLineService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
@@ -15,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class HomeOurBusinessLineOfflineService implements HomeOurBusinessLineService {
     public List<HomeOurBusinessLine> getAll(){
-        return StaticData.homeOurBusinessLineData();
+        return HomeOurBusinessLineData.get();
     }
 
     public HomeOurBusinessLine getById(Long id){

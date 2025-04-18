@@ -1,8 +1,7 @@
 package com.techgel.common.service.offline;
 
-import com.techgel.client.StaticData;
+import com.techgel.StaticData.AboutUsOrganizationalChartData;
 import com.techgel.common.entity.adminSettings.AboutUsOrganizationalChart;
-import com.techgel.common.repository.AboutUsOrganizationalChartRepository;
 import com.techgel.common.service.AboutUsOrganizationalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
@@ -15,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AboutUsOrganizationalOfflineService implements AboutUsOrganizationalService {
     public List<AboutUsOrganizationalChart> getAll(){
-        return StaticData.aboutUsOrganizationalChartData();
+        return AboutUsOrganizationalChartData.get();
     }
 
     public AboutUsOrganizationalChart getById(Long id){

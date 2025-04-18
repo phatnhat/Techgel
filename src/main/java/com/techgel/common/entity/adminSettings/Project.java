@@ -1,11 +1,14 @@
 package com.techgel.common.entity.adminSettings;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.techgel.common.entity.BasedEntity;
 import com.techgel.common.entity.enums.ProjectRegions;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +38,12 @@ public class Project extends BasedEntity {
     private boolean isFeatured;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "project_category_id")
     private ProjectCategory projectCategory;
 
+    @JsonManagedReference
+    @ToString.Exclude
     @OneToMany(mappedBy = "project")
     private List<ProjectImage> projectImageList = new ArrayList<>();
 

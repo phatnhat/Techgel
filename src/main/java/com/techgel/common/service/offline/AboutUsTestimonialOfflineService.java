@@ -1,10 +1,8 @@
 package com.techgel.common.service.offline;
 
-import com.techgel.client.StaticData;
+import com.techgel.StaticData.AboutUsTestimonialData;
 import com.techgel.common.entity.adminSettings.AboutUsTestimonial;
-import com.techgel.common.repository.AboutUsTestimonialRepository;
 import com.techgel.common.service.AboutUsTestimonialService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +12,7 @@ import java.util.List;
 @Profile("offline")
 public class AboutUsTestimonialOfflineService implements AboutUsTestimonialService {
     public List<AboutUsTestimonial> getAll(){
-        return StaticData.aboutUsTestimonialData();
+        return AboutUsTestimonialData.get();
     }
 
     public AboutUsTestimonial getById(Long id){
