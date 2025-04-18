@@ -1,10 +1,12 @@
 package com.techgel.client.controller;
 
 import com.techgel.common.DTOs.SignatureProjectDTO;
+import com.techgel.common.entity.adminSettings.*;
 import com.techgel.common.entity.enums.NewsType;
 import com.techgel.common.DTOs.LogoDTO;
 import com.techgel.common.DTOs.NewsDTO;
 
+import com.techgel.common.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +37,9 @@ public class MainController {
     private final AboutUsOrganizationalService aboutUsOrganizationalService;
     private final AboutUsOrganizationalChartItemsService aboutUsOrganizationalChartItemsService;
     private final AboutUsLicenseCertificateService aboutUsLicenseCertificateService;
+    private final AboutUsClientPartnerService aboutUsClientPartnerService;
+    private final ProjectCategoryService projectCategoryService;
+    private final ProjectService projectService;
 
     List<NewsDTO> trainingNewsList = List.of(
             new NewsDTO(
@@ -543,64 +548,9 @@ public class MainController {
 
     @GetMapping("/about-us/clients-partners")
     public String viewClientsPartners(Model model) {
-        // Logos
-        List<LogoDTO> clientLogoList = List.of(
-                new LogoDTO("p01", "Lotte Mart", "/imgs/logos/partnership-logos/lottemart-logo.png", "Lotte Mart Logo",
-                        1),
-                new LogoDTO("p02", "Bộ Ngoại Giao", "/imgs/logos/partnership-logos/bongoaigiao-logo.png",
-                        "Bộ Ngoại Giao Logo", 2),
-                new LogoDTO("p03", "Dwight School Hanoi", "/imgs/logos/partnership-logos/dwight-logo.png",
-                        "Dwight School Ha Noi Logo", 3),
-                new LogoDTO("p04", "AEFE", "/imgs/logos/partnership-logos/aefe-logo.png", "AEFE Logo", 4),
-                new LogoDTO("p05", "The Sun Avenue", "/imgs/logos/partnership-logos/thesunavenue-logo.png",
-                        "The Sun Avenue Logo", 5),
-                new LogoDTO("p06", "Hoa Phat", "/imgs/logos/partnership-logos/hoaphat-logo.png", "Hoa Phat Logo", 6),
-                new LogoDTO("p07", "Kim Long Nam", "/imgs/logos/partnership-logos/kimlongnam-logo.png",
-                        "Kim Long Nam Logo", 7),
-                new LogoDTO("p08", "Hateco", "/imgs/logos/partnership-logos/hateco-logo.png", "Hateco Logo", 8),
-                new LogoDTO("p09", "BRG Group", "/imgs/logos/partnership-logos/brggroup-logo.png", "BRG Group Logo", 9),
-                new LogoDTO("p10", "Gamuda", "/imgs/logos/partnership-logos/gamuda-logo.png", "Gamuda Logo", 10),
-                new LogoDTO("p11", "Masterise Homes", "/imgs/logos/partnership-logos/masterisehomes-logo.png",
-                        "Masterise Homes Logo", 11),
-                new LogoDTO("p12", "Hoa Lam", "/imgs/logos/partnership-logos/hoalam-logo.png", "Hoa Lam Logo", 12),
-                new LogoDTO("p13", "Becamex", "/imgs/logos/partnership-logos/becamex-logo.png", "Becamex Logo", 13),
-                new LogoDTO("p14", "Crowne Plaza", "/imgs/logos/partnership-logos/crowne-logo.png", "Crowne Plaza Logo",
-                        14),
-                new LogoDTO("p15", "Constrexim", "/imgs/logos/partnership-logos/constrexim.png", "Constrexim Logo", 15),
-                new LogoDTO("p16", "Kenton Node", "/imgs/logos/partnership-logos/kentonnode-logo.png",
-                        "Kenton Node Logo", 16),
-                new LogoDTO("p17", "Pearl", "/imgs/logos/partnership-logos/pearl-logo.png", "Pearl Logo", 17),
-                new LogoDTO("p18", "Novaland", "/imgs/logos/partnership-logos/novaland-logo.png", "Novaland Logo", 18),
-                new LogoDTO("p19", "Sojo", "/imgs/logos/partnership-logos/sojo-logo.png", "Sojo Logo", 19),
-                new LogoDTO("p20", "JW Marriott", "/imgs/logos/partnership-logos/jwmarriot-logo.png",
-                        "JW Marriott Logo", 20),
-                new LogoDTO("p21", "BB Group", "/imgs/logos/partnership-logos/bbgroup-logo.png", "BB Group Logo", 21),
-                new LogoDTO("p22", "APEC Mandala Vietnam", "/imgs/logos/partnership-logos/apecmandalavietnam-logo.png",
-                        "APEC Mandala Vietnam Logo", 22),
-                new LogoDTO("p23", "Palm Garden Resort", "/imgs/logos/partnership-logos/palmgardenresort-logo.png",
-                        "Palm Garden Resort Logo", 23),
-                new LogoDTO("p24", "Flamingo", "/imgs/logos/partnership-logos/flamingo-logo.png", "Flamingo Logo", 24),
-                new LogoDTO("p25", "SSSG", "/imgs/logos/partnership-logos/sssg-logo.png", "SSSG Logo", 25),
-                new LogoDTO("p26", "Vinataba", "/imgs/logos/partnership-logos/vinataba-logo.png", "Vinataba Logo", 26),
-                new LogoDTO("p27", "Deltech", "/imgs/logos/partnership-logos/deltech-logo.png", "Deltech Logo", 27),
-                new LogoDTO("p28", "Schneider", "/imgs/logos/partnership-logos/schneider-logo.png", "Schneider Logo",
-                        28),
-                new LogoDTO("p29", "TTI", "/imgs/logos/partnership-logos/tti-logo.png", "TTI Logo", 29),
-                new LogoDTO("p30", "Metawater", "/imgs/logos/partnership-logos/metawater-logo.png", "Metawater Logo",
-                        30),
-                new LogoDTO("p31", "Black & Veatch", "/imgs/logos/partnership-logos/black&veatch-logo.png",
-                        "Black & Veatch Logo", 31),
-                new LogoDTO("p32", "EVN", "/imgs/logos/partnership-logos/evn-logo.png", "EVN Logo", 32),
-                new LogoDTO("p33", "Nexif", "/imgs/logos/partnership-logos/nexif-logo.png", "Nexif Logo", 33),
-                new LogoDTO("p34", "Pacific", "/imgs/logos/partnership-logos/pacific-logo.png", "Pacific Logo", 34),
-                new LogoDTO("p35", "VATM", "/imgs/logos/partnership-logos/vatm-logo.png", "VATM Logo", 35),
-                new LogoDTO("p36", "AHT", "/imgs/logos/partnership-logos/aht-logo.png", "AHT Logo", 36),
-                new LogoDTO("p37", "Vingroup", "/imgs/logos/partnership-logos/vingroup-logo.png", "Vingroup Logo", 37),
-                new LogoDTO("p43", "Coca-Cola", "/imgs/logos/partnership-logos/cocacola-logo.webp", "Coca-Cola Logo",
-                        43));
+        List<AboutUsClientPartner> aboutUsClientPartners = aboutUsClientPartnerService.getAll();
+        model.addAttribute("aboutUsClientPartners", aboutUsClientPartners);
 
-        model.addAttribute("partnershipLogos", partnershipLogoList);
-        model.addAttribute("clientLogos", clientLogoList);
         return "clients/about-us/clients-partners";
     }
 
@@ -610,7 +560,11 @@ public class MainController {
     }
 
     @GetMapping({ "/projects", "/projects/{slug}" })
-    public String viewProjects(@PathVariable(required = false) String slug) {
+    public String viewProjects(Model model, @PathVariable(required = false) String slug) {
+        List<ProjectCategory> projectCategories = projectCategoryService.getAll();
+        if(!slug.isBlank()){}
+
+        model.addAttribute("projectCategories", projectCategories);
         return "clients/projects";
     }
 

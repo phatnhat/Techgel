@@ -38,4 +38,14 @@ public class AboutUsClientPartnerItems extends BasedEntity {
         this.title_en = title_en;
         this.image_url = image_url;
     }
+
+    public AboutUsClientPartnerItems(Long id, String title_vi, String title_en, String link, String image_url, int displayOrder, AboutUsClientPartner aboutUsClientPartner) {
+        super(id);
+        this.title_vi = title_vi;
+        this.title_en = title_en;
+        this.link = link;
+        this.image_url = image_url;
+        this.displayOrder = displayOrder;
+        this.aboutUsClientPartner = aboutUsClientPartner;
+    }
 }

@@ -2377,7 +2377,7 @@ p.description {
 }
 
 .filter_projects {
-    background: --neutralDark;
+    background: var(--neutralDark);
     color: #ffffff;
 }
 
@@ -2391,16 +2391,16 @@ p.description {
 }
 
 .filter_projects ul li.active a {
-    color: var(--themePrimary);
+    color: var(--themeSecondary);
 }
 
 .filter_projects .filter {
-    border-right: .0625rem solid #ffffff;
+    border-right: .0625rem solid var(--white);
     padding-right: 24px;
 }
 
 .filter_projects a {
-    color: #ffffff;
+    color: var(--white);
 }
 
 .filter_advance {
