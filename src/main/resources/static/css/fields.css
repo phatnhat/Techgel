@@ -1,0 +1,23 @@
+.business-line.paragraph, .business-line.list {
+  color: var(--alwaysBlack);
+}
+
+.business-line-quality-icon.wrapper {
+  color: var(--alwaysBlack);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.business-line-quality-icon.icon {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: fit-content;
+}
+.business-line-quality-icon img {
+  width: 70px;
+  height: 70px;
+}
+
+/*# sourceMappingURL=fields.css.map */
