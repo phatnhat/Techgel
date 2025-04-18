@@ -1,10 +1,8 @@
 package com.techgel.common.service.offline;
 
-import com.techgel.client.StaticData;
+import com.techgel.StaticData.AboutUsLicenseCertificateData;
 import com.techgel.common.entity.adminSettings.AboutUsLicenseCertificate;
-import com.techgel.common.repository.AboutUsLicenseCertificateRepository;
 import com.techgel.common.service.AboutUsLicenseCertificateService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +12,7 @@ import java.util.List;
 @Profile("offline")
 public class AboutUsLicenseCertificateOfflineService implements AboutUsLicenseCertificateService {
     public List<AboutUsLicenseCertificate> getAll(){
-        return StaticData.aboutUsLicenseCertificateData();
+        return AboutUsLicenseCertificateData.get();
     }
 
     public AboutUsLicenseCertificate getById(Long id){

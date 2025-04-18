@@ -1,6 +1,6 @@
 package com.techgel.common.service.offline;
 
-import com.techgel.client.StaticData;
+import com.techgel.StaticData.HomeNavigationData;
 import com.techgel.common.entity.adminSettings.HomeNavigation;
 import com.techgel.common.service.HomeNavigationService;
 import org.springframework.context.annotation.Profile;
@@ -13,7 +13,7 @@ import java.util.*;
 public class HomeNavigationOfflineService implements HomeNavigationService {
     @Override
     public List<HomeNavigation> getAll() {
-        return StaticData.homeNavigationData();
+        return HomeNavigationData.get();
     }
 
     @Override

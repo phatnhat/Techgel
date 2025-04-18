@@ -1,6 +1,6 @@
 package com.techgel.common.service.offline;
 
-import com.techgel.client.StaticData;
+import com.techgel.StaticData.EProfileData;
 import com.techgel.common.entity.adminSettings.EProfile;
 import com.techgel.common.service.EProfileService;
 import lombok.RequiredArgsConstructor;
@@ -16,12 +16,12 @@ import java.util.List;
 public class EProfileOfflineService implements EProfileService {
 
     public EProfile getById(Long id){
-        return StaticData.eProfileData();
+        return EProfileData.get();
     }
 
     public List<EProfile> getAll(){
         return new ArrayList<>(){{
-            add(StaticData.eProfileData());
+            add(EProfileData.get());
         }};
     }
 

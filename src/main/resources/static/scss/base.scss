@@ -736,21 +736,23 @@ nav ul li.has-dropdown:hover .submenu {
   .swiper-button-prev,
   .swiper-button-next {
     &::after {
-      height: 65px;
-      min-width: 65px;
-      background: var(--themeSecondary);
-      border: 1px solid var(--black);
+      height: 4.0625rem;
+      min-width: 4.0625rem;
+      background: var(--themePrimary);
+      border: .0625rem solid var(--black);
+
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
-      color: var(--black);
+      font-size: 1.375rem;
+      color: var(--white);
+
       transition: 0.3s;
     }
 
     &:hover::after {
-      background: var(--themePrimary);
+      background: var(--themeSecondary);
       color: var(--white);
       transform: scale(1.1);
       border: 1px solid transparent;
