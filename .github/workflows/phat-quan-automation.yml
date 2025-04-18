@@ -7,10 +7,19 @@ on:
         description: "Branch to merge from"
         required: true
         default: "quan"
+        type: choice
+        options:
+          - quan
+          - phat
+
       target_branch:
         description: "Branch to merge into"
         required: true
         default: "phat"
+        type: choice
+        options:
+          - phat
+          - quan
 
 jobs:
   auto-pr:
@@ -25,14 +34,4 @@ jobs:
         with:
           source_branch: ${{ github.event.inputs.source_branch }}
           destination_branch: ${{ github.event.inputs.target_branch }}
-          pr_title: "Auto-merge: ${{ github.event.inputs.source_branch }} → ${{ github.event.inputs.target_branch }}"
-          pr_body: "This PR was automatically created via manual dispatch."
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Enable Auto-Merge
-        if: ${{ steps.create_pr.outputs.pull_request_number != '' }}
-        uses: peter-evans/enable-pull-request-automerge@v2
-        with:
-          pull-request-number: ${{ steps.create_pr.outputs.pull_request_number }}
-          merge-method: merge
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Auto-merge: ${{_
