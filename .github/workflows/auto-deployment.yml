@@ -1,0 +1,33 @@
+name: Auto Merge to main at 3 PM (Vietnam)
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # 8:00 UTC = 15:00 Vietnam time
+  workflow_dispatch:      # Optional: allow manual run
+
+jobs:
+  auto-merge-to-main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v3
+
+      - name: Get current branch name
+        id: get_branch
+        run: echo "branch_name=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+
+      - name: Skip if already on main
+        if: ${{ steps.get_branch.outputs.branch_name == 'main' }}
+        run: echo "Already on main, skipping merge"
+
+      - name: Create Pull Request to main
+        if: ${{ steps.get_branch.outputs.branch_name != 'main' }}
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: ${{ steps.get_branch.outputs.branch_name }}
+          destination_branch: main
+          pr_title: "Auto merge: ${{ steps.get_branch.outputs.branch_name }} → main"
+          pr_body: "GitHub Actions automatically created this PR at 3 PM Vietnam time."
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          auto_merge: true
