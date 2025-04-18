@@ -135,7 +135,7 @@
                           value="132"
                           id="pr-132"
                         />
-                        <label for="pr-132">[[${region}]]</label>
+                        <label for="pr-132">[[${region.getVietnameseName()}]]</label>
                       </li>
                     </ul>
                   </div>
@@ -160,266 +160,35 @@
         <div class="col-12 project-thumbnail">
           <div class="grid">
             <div class="grid-sizer"></div>
-            <div
+
+            <div th:each="project: ${projects}"
               data-sal-delay="300"
               data-sal="zoom-in"
               data-sal-duration="800"
-              class="grid_item"
-            >
+              class="grid_item">
               <div class="grid_box">
                 <div class="grid_pic">
                   <picture>
-                    <source
-                      srcset="
-                        https://www.vietnamairport.vn/uploads/users/3ca2050a3bf3de4a027e/images/danangairport/Danang_Airport_Overview.jpg
-                      "
-                      type="image/webp"
-                    />
+                    <source th:srcset="@{${project.image_url}}" type="image/webp"/>
                     <img
-                      src="https://www.vietnamairport.vn/uploads/users/3ca2050a3bf3de4a027e/images/danangairport/Danang_Airport_Overview.jpg"
-                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
+                      th:src="@{${project.image_url}}"
+                      th:alt="${project.title_vi}"
+                      th:title="${project.title_vi}"
                     />
                   </picture>
                 </div>
                 <div class="info">
                   <div class="name">
                     <p>
-                      <strong
-                        >International Passenger Termial - Da Nang
-                        Airport</strong
-                      >
+                      <strong>[[${ project.title_vi }]]</strong>
                     </p>
-                    <p>AHT</p>
+                    <p>[[${ project.client_name_vi }]]</p>
                   </div>
-                  <div class="province">Đà Nẵng</div>
+                  <div class="province">[[${ project.location_vi }]]</div>
                 </div>
               </div>
             </div>
-            <div
-              data-sal-delay="300"
-              data-sal="zoom-in"
-              data-sal-duration="800"
-              class="grid_item"
-            >
-              <div class="grid_box">
-                <div class="grid_pic">
-                  <picture>
-                    <source
-                      srcset="
-                        https://camranh.aero/sites/default/files/2018-08/cr-ptb-v2_qhkr_0.jpg
-                      "
-                      type="image/webp"
-                    />
-                    <img
-                      src="https://camranh.aero/sites/default/files/2018-08/cr-ptb-v2_qhkr_0.jpg"
-                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                    />
-                  </picture>
-                </div>
-                <div class="info">
-                  <div class="name">
-                    <p>
-                      <strong
-                        >International Passenger Terminal - Cam Ranh
-                        Airport</strong
-                      >
-                    </p>
-                    <p>CRTC</p>
-                  </div>
-                  <div class="province">Cam Ranh - Khánh Hòa</div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-sal-delay="300"
-              data-sal="zoom-in"
-              data-sal-duration="800"
-              class="grid_item"
-            >
-              <div class="grid_box">
-                <div class="grid_pic">
-                  <picture>
-                    <source
-                      srcset="
-                        https://www.trungnamgroup.com.vn/Data/Sites/1/media/h23.jpeg
-                      "
-                      type="image/webp"
-                    />
-                    <img
-                      src="https://www.trungnamgroup.com.vn/Data/Sites/1/media/h23.jpeg"
-                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                    />
-                  </picture>
-                </div>
-                <div class="info">
-                  <div class="name">
-                    <p><strong>Thai Hoa Power Wind Farm</strong></p>
-                    <p>Tổng công ty Cảng hàng không Việt Nam (ACV)</p>
-                  </div>
-                  <div class="province">Bình Thuận</div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-sal-delay="300"
-              data-sal="zoom-in"
-              data-sal-duration="800"
-              class="grid_item"
-            >
-              <div class="grid_box">
-                <div class="grid_pic">
-                  <picture>
-                    <source
-                      srcset="
-                        https://assets.ratedpower.com/1696239418-utility-scale-solar-plant-2.jpg?auto=format&dpr=0.32&w=4100
-                      "
-                      type="image/webp"
-                    />
-                    <img
-                      src="https://assets.ratedpower.com/1696239418-utility-scale-solar-plant-2.jpg?auto=format&dpr=0.32&w=4100"
-                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                    />
-                  </picture>
-                </div>
-                <div class="info">
-                  <div class="name">
-                    <p><strong>CU-JUT Solar Power Plant</strong></p>
-                    <p>EVNCHP</p>
-                  </div>
-                  <div class="province">Dak-Nong</div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-sal-delay="300"
-              data-sal="zoom-in"
-              data-sal-duration="800"
-              class="grid_item"
-            >
-              <div class="grid_box">
-                <div class="grid_pic">
-                  <picture>
-                    <source
-                      srcset="
-                        https://pecc2.com/vnt_upload/project/05_2021/thumbs/1500_13_Van_hanh_thuong_mai_Nha_may_Nhiet_dien_Duyen_Hai_3_Mo_rong_52020.jpg
-                      "
-                      type="image/webp"
-                    />
-                    <img
-                      src="https://pecc2.com/vnt_upload/project/05_2021/thumbs/1500_13_Van_hanh_thuong_mai_Nha_may_Nhiet_dien_Duyen_Hai_3_Mo_rong_52020.jpg"
-                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                    />
-                  </picture>
-                </div>
-                <div class="info">
-                  <div class="name">
-                    <p>
-                      <strong>Duyen Hai 3 Extension Thermo Power Plant</strong>
-                    </p>
-                    <p>Black & Veatch</p>
-                  </div>
-                  <div class="province">Trà Vinh</div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-sal-delay="300"
-              data-sal="zoom-in"
-              data-sal-duration="800"
-              class="grid_item"
-            >
-              <div class="grid_box">
-                <div class="grid_pic">
-                  <picture>
-                    <source
-                      srcset="
-                        https://aquariibd.com/wp-content/uploads/2024/05/15.jpg
-                      "
-                      type="image/webp"
-                    />
-                    <img
-                      src="https://aquariibd.com/wp-content/uploads/2024/05/15.jpg"
-                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                    />
-                  </picture>
-                </div>
-                <div class="info">
-                  <div class="name">
-                    <p><strong>Wastewater Treatment Plant Phnompenh</strong></p>
-                    <p>Metawater</p>
-                  </div>
-                  <div class="province">Phnompenh, Cambodia</div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-sal-delay="300"
-              data-sal="zoom-in"
-              data-sal-duration="800"
-              class="grid_item"
-            >
-              <div class="grid_box">
-                <div class="grid_pic">
-                  <picture>
-                    <source
-                      srcset="
-                        https://www.vinataba.com.vn/wp-content/uploads/2025/02/Hinh-mat-tien-cty-tlsg-2016_TVT_1894a-c-1-1.jpg
-                      "
-                      type="image/webp"
-                    />
-                    <img
-                      src="https://www.vinataba.com.vn/wp-content/uploads/2025/02/Hinh-mat-tien-cty-tlsg-2016_TVT_1894a-c-1-1.jpg"
-                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                    />
-                  </picture>
-                </div>
-                <div class="info">
-                  <div class="name">
-                    <p><strong>Sai Gon Tobacco Factory</strong></p>
-                    <p>Vinataba</p>
-                  </div>
-                  <div class="province">Bình Chánh, TP.HCM</div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-sal-delay="300"
-              data-sal="zoom-in"
-              data-sal-duration="800"
-              class="grid_item"
-            >
-              <div class="grid_box">
-                <div class="grid_pic">
-                  <picture>
-                    <source
-                      srcset="
-                        https://media.sojohotels.com/sojo-da-nang/48080f8fe8e80ad3834d1715065656487.png
-                      "
-                      type="image/webp"
-                    />
-                    <img
-                      src="https://media.sojohotels.com/sojo-da-nang/48080f8fe8e80ad3834d1715065656487.png"
-                      alt="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                      title="Dự án mở rộng nhà ga T2 tại sân bay quốc tế JNIA"
-                    />
-                  </picture>
-                </div>
-                <div class="info">
-                  <div class="name">
-                    <p><strong>Da Nang Sojo Hotel</strong></p>
-                    <p>MEP General</p>
-                  </div>
-                  <div class="province">Đà Nẵng</div>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
