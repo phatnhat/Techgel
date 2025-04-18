@@ -6,6 +6,7 @@ import com.techgel.common.entity.enums.NewsType;
 import com.techgel.common.DTOs.LogoDTO;
 import com.techgel.common.DTOs.NewsDTO;
 
+import com.techgel.common.entity.enums.ProjectRegions;
 import com.techgel.common.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -562,8 +564,18 @@ public class MainController {
     @GetMapping({ "/projects", "/projects/{slug}" })
     public String viewProjects(Model model, @PathVariable(required = false) String slug) {
         List<ProjectCategory> projectCategories = projectCategoryService.getAll();
-        if(!slug.isBlank()){}
 
+        List<Project> projects = null;
+
+        if(slug != null){
+            projects = projectService.getAllByProjectCategorySlug(slug);
+        }else{
+            projects = projectService.getAll();
+        }
+
+        model.addAttribute("currentYear", Year.now().getValue());
+        model.addAttribute("regions", ProjectRegions.values());
+        model.addAttribute("projects", projects);
         model.addAttribute("projectCategories", projectCategories);
         return "clients/projects";
     }

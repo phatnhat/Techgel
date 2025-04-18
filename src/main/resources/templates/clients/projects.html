@@ -49,13 +49,13 @@
               <div class="d-md-flex justify-content-between align-items-center">
                 <ul>
                   <li class="active">
-                    <a href="#">TẤT CẢ</a>
+                    <a class="text-uppercase" th:href="@{/projects}">Tất cả</a>
                   </li>
                   <li>
-                    <a href="#">NỔI BẬT</a>
+                    <a class="text-uppercase" href="#">Nổi bật</a>
                   </li>
-                  <li th:each="">
-                    <a href="#">NĂNG LƯỢNG</a>
+                  <li th:each="category: ${projectCategories}">
+                    <a class="text-uppercase" th:href="@{'/projects/' + ${category.slug}}">[[${ category.name_vi }]]</a>
                   </li>
                 </ul>
                 <div class="filter" id="filter_projects-btn">
@@ -68,7 +68,7 @@
             <div class="col-md-auto">
               <div class="d-md-flex">
                 <a
-                  href="https://www.google.com/maps/d/u/0/viewer?mid=1vlXU4KhERW0P9IxlfkD5Ltnug1iy3lwL&amp;ll=15.484992582890763%2C106.48091650496168&amp;z=6"
+                  href=""
                   target="_blank"
                 >
                   <i class="fa-solid fa-map-location-dot"></i>
@@ -100,7 +100,7 @@
                         />
                         <label for="py-all">All</label>
                       </li>
-                      <li>
+                      <li th:each="year: ${#numbers.sequence(2022, currentYear)}">
                         <input
                           type="checkbox"
                           class="item_year"
@@ -108,88 +108,7 @@
                           value="629"
                           id="py-629"
                         />
-                        <label for="py-629">2025</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          checked=""
-                          class="item_year"
-                          name="years[]"
-                          value="576"
-                          id="py-576"
-                        />
-                        <label for="py-576">2024</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          class="item_year"
-                          name="years[]"
-                          value="523"
-                          id="py-523"
-                        />
-                        <label for="py-523">2023</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          class="item_year"
-                          name="years[]"
-                          value="517"
-                          id="py-517"
-                        />
-                        <label for="py-517">2017</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          class="item_year"
-                          name="years[]"
-                          value="138"
-                          id="py-138"
-                        />
-                        <label for="py-138">2018</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          class="item_year"
-                          name="years[]"
-                          value="135"
-                          id="py-135"
-                        />
-                        <label for="py-135">2019</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          class="item_year"
-                          name="years[]"
-                          value="136"
-                          id="py-136"
-                        />
-                        <label for="py-136">2020</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          class="item_year"
-                          name="years[]"
-                          value="137"
-                          id="py-137"
-                        />
-                        <label for="py-137">2021</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          class="item_year"
-                          name="years[]"
-                          value="273"
-                          id="py-273"
-                        />
-                        <label for="py-273">2022</label>
+                        <label for="py-629">[[${year}]]</label>
                       </li>
                     </ul>
                   </div>
@@ -208,7 +127,7 @@
                         />
                         <label for="pr-all">All</label>
                       </li>
-                      <li>
+                      <li th:each="region: ${regions}">
                         <input
                           type="checkbox"
                           class="item_regions"
@@ -216,27 +135,7 @@
                           value="132"
                           id="pr-132"
                         />
-                        <label for="pr-132">Miền Bắc</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          class="item_regions"
-                          name="regions[]"
-                          value="133"
-                          id="pr-133"
-                        />
-                        <label for="pr-133">Miền Trung</label>
-                      </li>
-                      <li>
-                        <input
-                          type="checkbox"
-                          class="item_regions"
-                          name="regions[]"
-                          value="134"
-                          id="pr-134"
-                        />
-                        <label for="pr-134">Miền Nam</label>
+                        <label for="pr-132">[[${region}]]</label>
                       </li>
                     </ul>
                   </div>

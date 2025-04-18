@@ -26,6 +26,10 @@ public class ProjectServiceImpl implements ProjectService {
         return projectRepository.findById(id).orElse(null);
     }
 
+    public List<Project> getAllByProjectCategorySlug(String slug) {
+        return projectRepository.findAllByProjectCategorySlug(slug);
+    }
+
     public Project update(Project project){
         return projectRepository.save(project);
     }

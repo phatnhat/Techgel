@@ -92,7 +92,7 @@ public abstract class StaticData {
 
     public static List<WhatWeDoService> whatWeDoServiceData(){
         WhatWeDoService item1 = new WhatWeDoService(1L, "Năng lượng", "Energy", 1, "/imgs/solar_energy.jpg", "");
-        WhatWeDoService item2 = new WhatWeDoService(2L, "Công trình hàng không", "Aviation", 2, "https://hips.hearstapps.com/hmg-prod/images/gettyimages-637243664-1520356722.jpg?resize=640:*", "");
+        WhatWeDoService item2 = new WhatWeDoService(2L, "Công trình nhà ga", "Aviation", 2, "https://hips.hearstapps.com/hmg-prod/images/gettyimages-637243664-1520356722.jpg?resize=640:*", "");
         WhatWeDoService item3 = new WhatWeDoService(3L, "Công nghiệp", "Industry", 3, "https://d2csxpduxe849s.cloudfront.net/media/E32629…4925E4/WebsiteJpg_XL-FIENG_Main%20Visual_Cyan.jpg", "");
         WhatWeDoService item4 = new WhatWeDoService(4L, "Dân dụng", "Civil", 4, "https://5.imimg.com/data5/SELLER/Default/2024/7/43…43654/building-construction-services-500x500.jpeg", "");
         WhatWeDoService item5 = new WhatWeDoService(5L, "Hạ tầng giao thông", "Infrastructure", 5, "https://www.letsbuild.com/wp-content/uploads/2023/07/types-of-infrastructure.jpeg", "");
@@ -234,34 +234,37 @@ public abstract class StaticData {
     }
 
     public static List<ProjectCategory> projectCategoryData(){
-        ProjectCategory projectCategory1 = new ProjectCategory(1L, "Năng lượng", "Energy", 1);
-        ProjectCategory projectCategory2 = new ProjectCategory(2L, "Công trình nhà ga", "Aviation", 2);
-        ProjectCategory projectCategory3 = new ProjectCategory(3L, "Công nghiệp", "Industry", 3);
-        ProjectCategory projectCategory4 = new ProjectCategory(4L, "Dân dụng", "Civil", 4);
-        ProjectCategory projectCategory5 = new ProjectCategory(5L, "Hạ tầng giao thông", "Infrastructure", 5);
-        ProjectCategory projectCategory6 = new ProjectCategory(6L, "Công nghệ", "Technology", 6);
+        ProjectCategory projectCategory1 = new ProjectCategory(1L, "Năng lượng", "Energy", "energy", 1);
+        ProjectCategory projectCategory2 = new ProjectCategory(2L, "Công trình nhà ga", "Aviation", "aviation", 2);
+        ProjectCategory projectCategory3 = new ProjectCategory(3L, "Công nghiệp", "Industry", "industry", 3);
+        ProjectCategory projectCategory4 = new ProjectCategory(4L, "Dân dụng", "Civil", "civil", 4);
+        ProjectCategory projectCategory5 = new ProjectCategory(5L, "Hạ tầng giao thông", "Infrastructure", "infratructure", 5);
+        ProjectCategory projectCategory6 = new ProjectCategory(6L, "Công nghệ", "Technology", "technology", 6);
 
         return List.of(projectCategory1, projectCategory2, projectCategory3, projectCategory4, projectCategory5, projectCategory6);
     }
 
     public static List<Project> projectData(){
-        Project project1 = new Project(1L, "Nhà ga T3 Sân bay Tân Sơn Nhất", "", "Cảng hàng không Việt Nam", "", "Quận Tân Bình", "", "Tổng thầu MEP", "", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025", "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.", "", 2024, ProjectRegions.NORTH.name(), true, new ProjectCategory(1L));
-        Project project2 = new Project(2L, "Dwight School", "", "Dwight School Hanoi", "", "Hà Nội", "", "Tổng thầy MEPF", "", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025", "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.", "", 2024, ProjectRegions.NORTH.name(), true, new ProjectCategory(1L));
-        Project project3 = new Project(3L, "Điện gió Thái Hòa", "", "Tập đoàn Thái Bình Dương", "", "39C7, Hòa Thắng, Bắc Bình, Bình Thuận", "", "Trạm biến áp 220kV, trạm chuyển mạch, đường dây truyền tải cáp ngầm 22KV", "", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025", "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.", "", 2024, ProjectRegions.NORTH.name(), true, new ProjectCategory(2L));
-        Project project4 = new Project(4L, "TTI", "", "EVN", "", "Đường 27, khu công nghiệp Việt Nam, xã Vĩnh Tân, TP. Tân Uyên, tỉnh Bình Dương", "", "Tổng thầu MEP", "", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025", "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.", "", 2024, ProjectRegions.NORTH.name(), true, new ProjectCategory(3L));
-        Project project5 = new Project(5L, "Golden Hotel Đà Lạt", "", "Công ty Cổ phần Golden City", "", "Đà Lạt, Lâm Đồng", "", "Tổng thầu MEP", "", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025", "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.", "", 2024, ProjectRegions.NORTH.name(), true, new ProjectCategory(4L));
+        List<ProjectCategory> projectCategories = projectCategoryData();
+
+        Project project1 = new Project(1L, "Nhà ga T3 Sân bay Tân Sơn Nhất", "", "Cảng hàng không Việt Nam", "", "Quận Tân Bình", "", "Tổng thầu MEP", "", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025", "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.", "", 2024, ProjectRegions.NORTH.name(), true, projectCategories.stream().filter(projectCategory -> projectCategory.getId().equals(1L)).findFirst().orElse(null));
+        Project project2 = new Project(2L, "Dwight School", "", "Dwight School Hanoi", "", "Hà Nội", "", "Tổng thầy MEPF", "", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025", "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.", "", 2024, ProjectRegions.NORTH.name(), true, projectCategories.stream().filter(projectCategory -> projectCategory.getId().equals(1L)).findFirst().orElse(null));
+        Project project3 = new Project(3L, "Điện gió Thái Hòa", "", "Tập đoàn Thái Bình Dương", "", "39C7, Hòa Thắng, Bắc Bình, Bình Thuận", "", "Trạm biến áp 220kV, trạm chuyển mạch, đường dây truyền tải cáp ngầm 22KV", "", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025", "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.", "", 2024, ProjectRegions.NORTH.name(), true, projectCategories.stream().filter(projectCategory -> projectCategory.getId().equals(2L)).findFirst().orElse(null));
+        Project project4 = new Project(4L, "TTI", "", "EVN", "", "Đường 27, khu công nghiệp Việt Nam, xã Vĩnh Tân, TP. Tân Uyên, tỉnh Bình Dương", "", "Tổng thầu MEP", "", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025", "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.", "", 2024, ProjectRegions.NORTH.name(), true, projectCategories.stream().filter(projectCategory -> projectCategory.getId().equals(3L)).findFirst().orElse(null));
+        Project project5 = new Project(5L, "Golden Hotel Đà Lạt", "", "Công ty Cổ phần Golden City", "", "Đà Lạt, Lâm Đồng", "", "Tổng thầu MEP", "", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025", "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.", "", 2024, ProjectRegions.NORTH.name(), true, projectCategories.stream().filter(projectCategory -> projectCategory.getId().equals(4L)).findFirst().orElse(null));
 
         return List.of(project1, project2, project3, project4, project5);
     }
 
     public static List<ProjectImage> projectImageData(){
-        ProjectImage projectImage1 = new ProjectImage(1L, "/imgs/projects/dwight-school-1.jpg", new Project(2L));
-        ProjectImage projectImage2 = new ProjectImage(2L, "/imgs/projects/dwight-school-1.jpg", new Project(2L));
-        ProjectImage projectImage3 = new ProjectImage(3L, "/imgs/projects/dwight-school-1.jpg", new Project(2L));
+        List<Project> projects = projectData();
+        ProjectImage projectImage1 = new ProjectImage(1L, "/imgs/projects/dwight-school-1.jpg", projects.stream().filter(project -> project.getId().equals(2L)).findFirst().orElse(null));
+        ProjectImage projectImage2 = new ProjectImage(2L, "/imgs/projects/dwight-school-1.jpg", projects.stream().filter(project -> project.getId().equals(2L)).findFirst().orElse(null));
+        ProjectImage projectImage3 = new ProjectImage(3L, "/imgs/projects/dwight-school-1.jpg", projects.stream().filter(project -> project.getId().equals(2L)).findFirst().orElse(null));
 
-        ProjectImage projectImage4 = new ProjectImage(4L, "/imgs/projects/golden-da-lat.webp", new Project(5L));
-        ProjectImage projectImage5 = new ProjectImage(5L, "/imgs/projects/golden-da-lat.webp", new Project(5L));
-        ProjectImage projectImage6 = new ProjectImage(6L, "/imgs/projects/golden-da-lat.webp", new Project(5L));
+        ProjectImage projectImage4 = new ProjectImage(4L, "/imgs/projects/golden-da-lat.webp", projects.stream().filter(project -> project.getId().equals(5L)).findFirst().orElse(null));
+        ProjectImage projectImage5 = new ProjectImage(5L, "/imgs/projects/golden-da-lat.webp", projects.stream().filter(project -> project.getId().equals(5L)).findFirst().orElse(null));
+        ProjectImage projectImage6 = new ProjectImage(6L, "/imgs/projects/golden-da-lat.webp", projects.stream().filter(project -> project.getId().equals(5L)).findFirst().orElse(null));
 
         return List.of(projectImage1, projectImage2, projectImage3, projectImage4, projectImage5, projectImage6);
     }

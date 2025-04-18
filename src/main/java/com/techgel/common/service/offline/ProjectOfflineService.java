@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 @Profile("offline")
@@ -19,7 +21,11 @@ public class ProjectOfflineService implements ProjectService {
     }
 
     public Project getById(Long id){
-        return this.getAll().stream().filter(project -> project.getId().equals(id)).findFirst().orElse(null);
+        return this.getAll().stream().filter(project ->  project.getId().equals(id)).findFirst().orElse(null);
+    }
+
+    public List<Project> getAllByProjectCategorySlug(String slug) {
+        return this.getAll().stream().filter(project -> Objects.nonNull(project.getProjectCategory()) && project.getProjectCategory().getSlug().equals(slug)).collect(Collectors.toList());
     }
 
     public Project update(Project project){

@@ -20,6 +20,7 @@ import java.util.List;
 public class ProjectCategory extends BasedEntity {
     private String name_vi;
     private String name_en;
+    private String slug;
     private int displayOrder;
 
     @OneToMany(mappedBy = "aboutUsClientPartner", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -29,10 +30,11 @@ public class ProjectCategory extends BasedEntity {
         super(id);
     }
 
-    public ProjectCategory(Long id, String name_vi, String name_en, int displayOrder) {
+    public ProjectCategory(Long id, String name_vi, String name_en, String slug, int displayOrder) {
         super(id);
         this.name_vi = name_vi;
         this.name_en = name_en;
+        this.slug = slug;
         this.displayOrder = displayOrder;
     }
 }

@@ -8,6 +8,7 @@ import java.util.List;
 public interface ProjectService {
     List<Project> getAll();
     Project getById(Long id);
+    List<Project> getAllByProjectCategorySlug(String slug);
     Project update(Project project);
     void deleteById(Long id);
 }
