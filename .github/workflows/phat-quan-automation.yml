@@ -10,7 +10,7 @@ on:
         type: choice
         options:
           - quan
-          - phat
+          - current
 
       target_branch:
         description: "Branch to merge into"
@@ -18,7 +18,7 @@ on:
         default: "phat"
         type: choice
         options:
-          - phat
+          - current
           - quan
 
 jobs:
