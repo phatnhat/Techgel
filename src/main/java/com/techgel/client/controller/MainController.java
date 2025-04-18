@@ -1,8 +1,34 @@
 package com.techgel.client.controller;
 
 import com.techgel.common.DTOs.SignatureProjectDTO;
-import com.techgel.common.entity.adminSettings.*;
+
+import com.techgel.common.entity.adminSettings.AboutUsIntroduce;
+import com.techgel.common.entity.adminSettings.AboutUsLicenseCertificate;
+import com.techgel.common.entity.adminSettings.AboutUsOrganizationalChart;
+import com.techgel.common.entity.adminSettings.AboutUsOrganizationalChartItems;
+import com.techgel.common.entity.adminSettings.AboutUsTestimonial;
+import com.techgel.common.entity.adminSettings.AboutUsTestimonialItems;
+import com.techgel.common.entity.adminSettings.Carousel;
+import com.techgel.common.entity.adminSettings.EProfile;
+import com.techgel.common.entity.adminSettings.HomeAboutUs;
+import com.techgel.common.entity.adminSettings.HomeOurBusinessLine;
+import com.techgel.common.entity.adminSettings.HomeStatistic;
+import com.techgel.common.entity.adminSettings.HomeStatisticItems;
+import com.techgel.common.entity.adminSettings.WhatWeDoService;
 import com.techgel.common.entity.enums.NewsType;
+import com.techgel.common.service.AboutUsIntroduceService;
+import com.techgel.common.service.AboutUsLicenseCertificateService;
+import com.techgel.common.service.AboutUsOrganizationalChartItemsService;
+import com.techgel.common.service.AboutUsOrganizationalService;
+import com.techgel.common.service.AboutUsTestimonialItemsService;
+import com.techgel.common.service.AboutUsTestimonialService;
+import com.techgel.common.service.CarouselService;
+import com.techgel.common.service.EProfileService;
+import com.techgel.common.service.HomeAboutUsService;
+import com.techgel.common.service.HomeOurBusinessLineService;
+import com.techgel.common.service.HomeStatisticItemsService;
+import com.techgel.common.service.HomeStatisticService;
+import com.techgel.common.service.WhatWeDoServiceService;
 import com.techgel.common.DTOs.LogoDTO;
 import com.techgel.common.DTOs.NewsDTO;
 
@@ -593,80 +619,255 @@ public class MainController {
             return NewsType.valueOf(type.toUpperCase());
         } catch (IllegalArgumentException e) {
             return NewsType.PROJECT;
-        }
-    }
 
-    @GetMapping("/news")
-    public String getNewsPage(
-            @RequestParam(name = "type", defaultValue = "project") String type,
-            @RequestParam(name = "page", defaultValue = "1") int page,
-            Model model) {
-
-        NewsType selectedType = parseNewsType(type);
-
-        List<NewsDTO> allNews = Stream.of(projectNewsList, internalNewsList, trainingNewsList)
-                .flatMap(List::stream)
-                .filter(news -> news.getType() == selectedType)
-                .sorted(Comparator.comparing(NewsDTO::getPublishedAt).reversed())
-                .collect(Collectors.toList());
-
-        model.addAttribute("newsList", allNews);
-        model.addAttribute("type", type);
-
-        // sidebar news
-        List<NewsDTO> sidebarNews = allNews.size() > 4
-                ? allNews.subList(1, Math.min(4, allNews.size()))
-                : (allNews.size() > 1 ? allNews.subList(1, allNews.size()) : List.of());
-        model.addAttribute("sidebarNews", sidebarNews);
-        System.out.println("===== Project News List =====");
-        for (NewsDTO news : allNews) {
-            System.out.println(news.getTitle());
         }
 
-        // Pagination logic
-        List<NewsDTO> usableNews = allNews.size() > 4 ? allNews.subList(4, allNews.size()) : List.of();
-
-        int pageSize = 9;
-        int totalPages = (int) Math.ceil((double) usableNews.size() / pageSize);
-
-        // Avoid divide-by-zero and out-of-bounds
-        if (totalPages == 0) {
-            page = 1;
-        } else {
-            page = Math.max(1, Math.min(page, totalPages));
+        @GetMapping("/profile")
+        public String viewEProfile() {
+                return "clients/profile";
         }
 
-        int fromIndex = (page - 1) * pageSize;
-        int toIndex = Math.min(fromIndex + pageSize, usableNews.size());
+        @GetMapping({ "/about-us", "/about-us/overview" })
+        public String viewIntroduce(Model model) {
+                AboutUsIntroduce aboutUsIntroduce = aboutUsIntroduceService.getById(1L);
+                EProfile eProfile = eProfileService.getById(1L);
+                AboutUsTestimonial aboutUsTestimonial = aboutUsTestimonialService.getById(1L);
+                List<AboutUsTestimonialItems> aboutUsTestimonialItems = aboutUsTestimonialItemsService.getAll();
 
-        List<NewsDTO> paginatedNews = (fromIndex < toIndex)
-                ? usableNews.subList(fromIndex, toIndex)
-                : List.of(); // fallback empty
+                model.addAttribute("aboutUsIntroduce", aboutUsIntroduce);
+                model.addAttribute("eProfile", eProfile);
+                model.addAttribute("aboutUsTestimonial", aboutUsTestimonial);
+                model.addAttribute("aboutUsTestimonialItems", aboutUsTestimonialItems);
+                model.addAttribute("partnershipLogos", partnershipLogoList);
 
-        model.addAttribute("newsListPaged", paginatedNews);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", totalPages);
+                return "clients/about-us/introduce";
+        }
 
-        return "clients/news/news";
-    }
+        @GetMapping("/about-us/organizational-chart")
+        public String viewOrganizationalChart(Model model) {
+                AboutUsOrganizationalChart aboutUsOrganizationalChart = aboutUsOrganizationalService.getById(1L);
+                List<AboutUsOrganizationalChartItems> aboutUsOrganizationalChartItems = aboutUsOrganizationalChartItemsService
+                                .getAll();
+                model.addAttribute("aboutUsOrganizationalChart", aboutUsOrganizationalChart);
+                model.addAttribute("aboutUsOrganizationalChartItems", aboutUsOrganizationalChartItems);
 
-    @GetMapping("/news-details")
-    public String viewNewsDetails() {
-        return "clients/news/news-details";
-    }
+                return "clients/about-us/organizational-chart";
+        }
 
-    @GetMapping("/careers/job-opportunities")
-    public String viewJobOpportunities() {
-        return "clients/careers/job-opportunities";
-    }
+        @GetMapping("/about-us/vision-mission-values")
+        public String viewVisionMissionValues() {
+                return "clients/about-us/vision-mission-values";
+        }
 
-    @GetMapping("/careers/hr-policies")
-    public String viewHrPolicies() {
-        return "clients/careers/hr-policies";
-    }
+        @GetMapping("/about-us/licenses-certificates")
+        public String viewLicensesCertificates(Model model) {
+                List<AboutUsLicenseCertificate> aboutUsLicenseCertificates = aboutUsLicenseCertificateService.getAll();
+                model.addAttribute("aboutUsLicenseCertificates", aboutUsLicenseCertificates);
 
-    @GetMapping("/careers/cultural-techgel")
-    public String viewCulturalTechgel() {
-        return "clients/careers/cultural-techgel";
-    }
+                return "clients/about-us/licenses-certificates";
+        }
+
+        @GetMapping("/about-us/clients-partners")
+        public String viewClientsPartners(Model model) {
+                // Logos
+                List<LogoDTO> clientLogoList = List.of(
+                                new LogoDTO("p01", "Lotte Mart", "/imgs/logos/partnership-logos/lottemart-logo.png",
+                                                "Lotte Mart Logo",
+                                                1),
+                                new LogoDTO("p02", "Bộ Ngoại Giao",
+                                                "/imgs/logos/partnership-logos/bongoaigiao-logo.png",
+                                                "Bộ Ngoại Giao Logo", 2),
+                                new LogoDTO("p03", "Dwight School Hanoi",
+                                                "/imgs/logos/partnership-logos/dwight-logo.png",
+                                                "Dwight School Ha Noi Logo", 3),
+                                new LogoDTO("p04", "AEFE", "/imgs/logos/partnership-logos/aefe-logo.png", "AEFE Logo",
+                                                4),
+                                new LogoDTO("p05", "The Sun Avenue",
+                                                "/imgs/logos/partnership-logos/thesunavenue-logo.png",
+                                                "The Sun Avenue Logo", 5),
+                                new LogoDTO("p06", "Hoa Phat", "/imgs/logos/partnership-logos/hoaphat-logo.png",
+                                                "Hoa Phat Logo", 6),
+                                new LogoDTO("p07", "Kim Long Nam", "/imgs/logos/partnership-logos/kimlongnam-logo.png",
+                                                "Kim Long Nam Logo", 7),
+                                new LogoDTO("p08", "Hateco", "/imgs/logos/partnership-logos/hateco-logo.png",
+                                                "Hateco Logo", 8),
+                                new LogoDTO("p09", "BRG Group", "/imgs/logos/partnership-logos/brggroup-logo.png",
+                                                "BRG Group Logo", 9),
+                                new LogoDTO("p10", "Gamuda", "/imgs/logos/partnership-logos/gamuda-logo.png",
+                                                "Gamuda Logo", 10),
+                                new LogoDTO("p11", "Masterise Homes",
+                                                "/imgs/logos/partnership-logos/masterisehomes-logo.png",
+                                                "Masterise Homes Logo", 11),
+                                new LogoDTO("p12", "Hoa Lam", "/imgs/logos/partnership-logos/hoalam-logo.png",
+                                                "Hoa Lam Logo", 12),
+                                new LogoDTO("p13", "Becamex", "/imgs/logos/partnership-logos/becamex-logo.png",
+                                                "Becamex Logo", 13),
+                                new LogoDTO("p14", "Crowne Plaza", "/imgs/logos/partnership-logos/crowne-logo.png",
+                                                "Crowne Plaza Logo",
+                                                14),
+                                new LogoDTO("p15", "Constrexim", "/imgs/logos/partnership-logos/constrexim.png",
+                                                "Constrexim Logo", 15),
+                                new LogoDTO("p16", "Kenton Node", "/imgs/logos/partnership-logos/kentonnode-logo.png",
+                                                "Kenton Node Logo", 16),
+                                new LogoDTO("p17", "Pearl", "/imgs/logos/partnership-logos/pearl-logo.png",
+                                                "Pearl Logo", 17),
+                                new LogoDTO("p18", "Novaland", "/imgs/logos/partnership-logos/novaland-logo.png",
+                                                "Novaland Logo", 18),
+                                new LogoDTO("p19", "Sojo", "/imgs/logos/partnership-logos/sojo-logo.png", "Sojo Logo",
+                                                19),
+                                new LogoDTO("p20", "JW Marriott", "/imgs/logos/partnership-logos/jwmarriot-logo.png",
+                                                "JW Marriott Logo", 20),
+                                new LogoDTO("p21", "BB Group", "/imgs/logos/partnership-logos/bbgroup-logo.png",
+                                                "BB Group Logo", 21),
+                                new LogoDTO("p22", "APEC Mandala Vietnam",
+                                                "/imgs/logos/partnership-logos/apecmandalavietnam-logo.png",
+                                                "APEC Mandala Vietnam Logo", 22),
+                                new LogoDTO("p23", "Palm Garden Resort",
+                                                "/imgs/logos/partnership-logos/palmgardenresort-logo.png",
+                                                "Palm Garden Resort Logo", 23),
+                                new LogoDTO("p24", "Flamingo", "/imgs/logos/partnership-logos/flamingo-logo.png",
+                                                "Flamingo Logo", 24),
+                                new LogoDTO("p25", "SSSG", "/imgs/logos/partnership-logos/sssg-logo.png", "SSSG Logo",
+                                                25),
+                                new LogoDTO("p26", "Vinataba", "/imgs/logos/partnership-logos/vinataba-logo.png",
+                                                "Vinataba Logo", 26),
+                                new LogoDTO("p27", "Deltech", "/imgs/logos/partnership-logos/deltech-logo.png",
+                                                "Deltech Logo", 27),
+                                new LogoDTO("p28", "Schneider", "/imgs/logos/partnership-logos/schneider-logo.png",
+                                                "Schneider Logo",
+                                                28),
+                                new LogoDTO("p29", "TTI", "/imgs/logos/partnership-logos/tti-logo.png", "TTI Logo", 29),
+                                new LogoDTO("p30", "Metawater", "/imgs/logos/partnership-logos/metawater-logo.png",
+                                                "Metawater Logo",
+                                                30),
+                                new LogoDTO("p31", "Black & Veatch",
+                                                "/imgs/logos/partnership-logos/black&veatch-logo.png",
+                                                "Black & Veatch Logo", 31),
+                                new LogoDTO("p32", "EVN", "/imgs/logos/partnership-logos/evn-logo.png", "EVN Logo", 32),
+                                new LogoDTO("p33", "Nexif", "/imgs/logos/partnership-logos/nexif-logo.png",
+                                                "Nexif Logo", 33),
+                                new LogoDTO("p34", "Pacific", "/imgs/logos/partnership-logos/pacific-logo.png",
+                                                "Pacific Logo", 34),
+                                new LogoDTO("p35", "VATM", "/imgs/logos/partnership-logos/vatm-logo.png", "VATM Logo",
+                                                35),
+                                new LogoDTO("p36", "AHT", "/imgs/logos/partnership-logos/aht-logo.png", "AHT Logo", 36),
+                                new LogoDTO("p37", "Vingroup", "/imgs/logos/partnership-logos/vingroup-logo.png",
+                                                "Vingroup Logo", 37));
+
+                model.addAttribute("partnershipLogos", partnershipLogoList);
+                model.addAttribute("clientLogos", clientLogoList);
+                return "clients/about-us/clients-partners";
+        }
+
+        @GetMapping("/about-us/shareholder")
+        public String viewShareholder() {
+                return "clients/shareholder/shareholder";
+        }
+
+        @GetMapping({ "/projects", "/projects/{slug}" })
+        public String viewProjects(@PathVariable(required = false) String slug) {
+                return "clients/projects";
+        }
+
+        @GetMapping("/what-we-do/our-business-lines")
+        public String viewOurBusinessLines() {
+                return "clients/what-we-do/our-business-lines";
+        }
+
+        @GetMapping("/what-we-do/sustainable-development")
+        public String viewSustainableDevelopment() {
+                return "clients/what-we-do/sustainable-development";
+        }
+
+        @GetMapping("/what-we-do/gallery")
+        public String viewConstructionGallery() {
+                return "clients/what-we-do/construction-gallery";
+        }
+
+        @GetMapping("/contact-us")
+        public String viewContactUs() {
+                return "clients/contact-us";
+        }
+
+        private NewsType parseNewsType(String type) {
+                try {
+                        return NewsType.valueOf(type.toUpperCase());
+                } catch (IllegalArgumentException e) {
+                        return NewsType.PROJECT;
+                }
+        }
+
+        @GetMapping("/news")
+        public String getNewsPage(
+                        @RequestParam(name = "type", defaultValue = "project") String type,
+                        @RequestParam(name = "page", defaultValue = "1") int page,
+                        Model model) {
+
+                NewsType selectedType = parseNewsType(type);
+
+                List<NewsDTO> allNews = Stream.of(projectNewsList, internalNewsList, trainingNewsList)
+                                .flatMap(List::stream)
+                                .filter(news -> news.getType() == selectedType)
+                                .sorted(Comparator.comparing(NewsDTO::getPublishedAt).reversed())
+                                .collect(Collectors.toList());
+
+                model.addAttribute("newsList", allNews);
+                model.addAttribute("type", type);
+
+                // sidebar news
+                List<NewsDTO> sidebarNews = allNews.size() > 4
+                                ? allNews.subList(1, Math.min(4, allNews.size()))
+                                : (allNews.size() > 1 ? allNews.subList(1, allNews.size()) : List.of());
+                model.addAttribute("sidebarNews", sidebarNews);
+                System.out.println("===== Project News List =====");
+                for (NewsDTO news : allNews) {
+                        System.out.println(news.getTitle());
+                }
+
+                // Pagination logic
+                List<NewsDTO> usableNews = allNews.size() > 4 ? allNews.subList(4, allNews.size()) : List.of();
+
+                int pageSize = 9;
+                int totalPages = (int) Math.ceil((double) usableNews.size() / pageSize);
+
+                // Avoid divide-by-zero and out-of-bounds
+                if (totalPages == 0) {
+                        page = 1;
+                } else {
+                        page = Math.max(1, Math.min(page, totalPages));
+                }
+
+                int fromIndex = (page - 1) * pageSize;
+                int toIndex = Math.min(fromIndex + pageSize, usableNews.size());
+
+                List<NewsDTO> paginatedNews = (fromIndex < toIndex)
+                                ? usableNews.subList(fromIndex, toIndex)
+                                : List.of(); // fallback empty
+
+                model.addAttribute("newsListPaged", paginatedNews);
+                model.addAttribute("currentPage", page);
+                model.addAttribute("totalPages", totalPages);
+
+                return "clients/news/news";
+        }
+
+        @GetMapping("/news-details")
+        public String viewNewsDetails() {
+                return "clients/news/news-details";
+        }
+
+        @GetMapping("/careers/job-opportunities")
+        public String viewJobOpportunities() {
+                return "clients/careers/job-opportunities";
+        }
+
+        @GetMapping("/careers/hr-policies")
+        public String viewHrPolicies() {
+                return "clients/careers/hr-policies";
+        }
+
+        @GetMapping("/careers/cultural-techgel")
+        public String viewCulturalTechgel() {
+                return "clients/careers/cultural-techgel";
+        }
 }
