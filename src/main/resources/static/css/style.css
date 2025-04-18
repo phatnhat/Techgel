@@ -2377,7 +2377,7 @@ p.description {
 }
 
 .filter_projects {
-    background: var(--neutralDark);
+    background: var(--alwaysBlack);
     color: #ffffff;
 }
 
@@ -2400,11 +2400,11 @@ p.description {
 }
 
 .filter_projects a {
-    color: var(--white);
+    color: var(--alwaysWhite);
 }
 
 .filter_advance {
-    background: #E9E9E9;
+    background: var(--neutralTertiaryAlt);
     display: none;
 }
 
@@ -2423,7 +2423,7 @@ p.description {
 .filter_advance .btn-reset,
 .filter_advance .btn-submit{
     cursor: pointer;
-    background: --neutralDark;
+    background: var(--alwaysBlack);
     font-size: 1rem;
     font-weight: bold;
     color: #ffffff;
