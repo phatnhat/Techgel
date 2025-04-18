@@ -1,39 +1,35 @@
-name: Auto PR + Merge Between quan and phat
+name: Manual Auto PR (quan ⇄ phat)
 
 on:
-  push:
-    branches:
-      - quan
-      - phat
   workflow_dispatch:
+    inputs:
+      source_branch:
+        description: "Branch to merge from"
+        required: true
+        default: "quan"
+      target_branch:
+        description: "Branch to merge into"
+        required: true
+        default: "phat"
 
 jobs:
   auto-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Set source and target branches
-        id: set-branches
-        run: |
-          if [[ "${GITHUB_REF##*/}" == "quan" ]]; then
-            echo "target=phat" >> $GITHUB_OUTPUT
-          else
-            echo "target=quan" >> $GITHUB_OUTPUT
-          fi
 
       - name: Create Pull Request
         id: create_pr
         uses: repo-sync/pull-request@v2
         with:
-          source_branch: ${{ github.ref_name }}
-          destination_branch: ${{ steps.set-branches.outputs.target }}
-          pr_title: "Auto-merge: ${{ github.ref_name }} → ${{ steps.set-branches.outputs.target }}"
-          pr_body: "This PR was automatically created by GitHub Actions"
+          source_branch: ${{ github.event.inputs.source_branch }}
+          destination_branch: ${{ github.event.inputs.target_branch }}
+          pr_title: "Auto-merge: ${{ github.event.inputs.source_branch }} → ${{ github.event.inputs.target_branch }}"
+          pr_body: "This PR was automatically created via manual dispatch."
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Enable Auto-Merge on PR
+      - name: Enable Auto-Merge
         if: ${{ steps.create_pr.outputs.pull_request_number != '' }}
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
