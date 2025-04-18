@@ -5,7 +5,7 @@ on:
     branches:
       - quan
       - phat
-  workflow_dispatch:  # ✅ Manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
   auto-pr:
@@ -24,6 +24,7 @@ jobs:
           fi
 
       - name: Create Pull Request
+        id: create_pr
         uses: repo-sync/pull-request@v2
         with:
           source_branch: ${{ github.ref_name }}
@@ -31,4 +32,11 @@ jobs:
           pr_title: "Auto-merge: ${{ github.ref_name }} → ${{ steps.set-branches.outputs.target }}"
           pr_body: "This PR was automatically created by GitHub Actions"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          auto_merge: true
+
+      - name: Enable Auto-Merge on PR
+        if: ${{ steps.create_pr.outputs.pull_request_number != '' }}
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          pull-request-number: ${{ steps.create_pr.outputs.pull_request_number }}
+          merge-method: merge
+          github-token: ${{ secrets.GITHUB_TOKEN }}
