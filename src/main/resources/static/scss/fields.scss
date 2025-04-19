@@ -1,0 +1,29 @@
+// business-line
+.business-line {
+  &.paragraph,
+  &.list {
+    color: var(--alwaysBlack);
+  }
+}
+
+.business-line-quality-icon {
+  &.wrapper {
+  color: var(--alwaysBlack);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  }
+
+  &.icon {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: fit-content;
+  }
+  
+  img {
+    width: 70px;
+    height: 70px;
+  }
+}

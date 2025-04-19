@@ -11,7 +11,7 @@
           background-image: url([[@{/imgs/banners/vision-banner.jpg}]]);
         }
         .line_img {
-          height: 10px;
+          height: 0.625rem;
           background: url([[@{/imgs/stripe-title2.png}]]) repeat-x center center /
             auto 200%;
           flex-grow: 1;
@@ -47,7 +47,7 @@
               <div class="section-head pb-3">
                 <h2
                   class="title split-collab d-flex align-items-center justify-content-center"
-                  style="opacity: 0; gap: 30px"
+                  style="opacity: 0; gap: 1.875rem"
                 >
                   <div class="line_img"></div>
                   <div>
@@ -59,7 +59,7 @@
                         translate: none;
                         rotate: none;
                         scale: none;
-                        transform: translate(0px, 0px);
+                        transform: translate(0rem, 0rem);
                         opacity: 1;
                         visibility: inherit;
                       "
@@ -82,7 +82,7 @@
               >
                 <div class="col-md-8">
                   <img
-                    th:src="@{/imgs/vision.jpg}"
+                    th:src="@{/imgs/about/inaugurate.jpg}"
                     class="img-fluid"
                     alt=""
                     draggable="false"
@@ -96,16 +96,14 @@
                   data-sal="slide-right"
                   data-sal-duration="800"
                 >
-                  Trong suốt hơn 25 năm hoạt động, Techgel đã thực hiện thành
-                  công sứ mệnh thương hiệu – mang công nghệ sáng tạo đến với
-                  hoạt động kinh doanh của khách hàng. Tuy nhiên, với rất nhiều
-                  những đổi mới đã, đang và sẽ được khởi xướng hoặc phát triển
-                  trong giai đoạn sắp tới, việc thực hiện các chiến lược chuyển
-                  đổi kinh doanh là cực kì quan trọng và cấp thiết, đòi hỏi sự
-                  nắm bắt và cập nhật kịp thời cho quá trình chuyển giao kỹ
-                  thuật hiện đại. Tầm nhìn mới của Techgel là hỗ trợ khách hàng
-                  trong việc chuyển đổi số để theo đuổi, đón đầu và vượt qua sự
-                  phát triển công nghệ hiện tại.
+                  Trong hơn 25 năm phát triển, Techgel đã hoàn thành sứ mệnh đưa
+                  công nghệ sáng tạo vào hoạt động kinh doanh của khách hàng.
+                  Trước làn sóng đổi mới không ngừng, chiến lược chuyển đổi kinh
+                  doanh trở nên cấp thiết hơn bao giờ hết, đòi hỏi sự chủ động
+                  thích ứng và cập nhật kỹ thuật hiện đại. Với tầm nhìn mới,
+                  Techgel cam kết đồng hành cùng khách hàng trên hành trình
+                  chuyển đổi số – đón đầu, vượt qua và tận dụng các bước tiến
+                  công nghệ.
                 </div>
               </div>
             </div>
@@ -116,7 +114,7 @@
               <div class="section-head pb-3">
                 <h2
                   class="title split-collab d-flex align-items-center justify-content-center"
-                  style="opacity: 0; gap: 30px"
+                  style="opacity: 0; gap: 1.875rem"
                 >
                   <div class="line_img"></div>
                   <div>
@@ -128,7 +126,7 @@
                         translate: none;
                         rotate: none;
                         scale: none;
-                        transform: translate(0px, 0px);
+                        transform: translate(0rem, 0rem);
                         opacity: 1;
                         visibility: inherit;
                       "
@@ -151,7 +149,7 @@
               >
                 <div class="col-md-8">
                   <img
-                    th:src="@{/imgs/mission.jpg}"
+                    th:src="@{/imgs/about/quality-handshake.png}"
                     class="img-fluid"
                     alt=""
                     draggable="false"
@@ -179,25 +177,11 @@
               <div class="section-head pb-3">
                 <h2
                   class="title split-collab d-flex align-items-center justify-content-center"
-                  style="opacity: 0; gap: 30px"
+                  style="opacity: 0; gap: 1.875rem"
                 >
                   <div class="line_img"></div>
-                  <div>
-                    <span
-                      th:each="t: ${'GIÁ TRỊ CỐT LÕI'.toCharArray()}"
-                      style="
-                        position: relative;
-                        display: inline-block;
-                        translate: none;
-                        rotate: none;
-                        scale: none;
-                        transform: translate(0px, 0px);
-                        opacity: 1;
-                        visibility: inherit;
-                      "
-                    >
-                      [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                    </span>
+                  <div class="split-collab-words">
+                    <span>Giá Trị Cốt Lõi</span>
                   </div>
                   <div class="line_img"></div>
                 </h2>
@@ -215,7 +199,7 @@
                 >
                   <div class="item_img">
                     <img
-                      th:src="@{/imgs/standard-quality-control-collage-concept.jpg}"
+                      th:src="@{/imgs/about/technology.webp}"
                       class="img-fluid"
                       alt=""
                       draggable="false"
