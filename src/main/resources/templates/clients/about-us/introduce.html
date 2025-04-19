@@ -258,14 +258,15 @@
               </div>
             </div>
           </div>
-          <div class="partner-area-slider">
-            <div class="slide-track">
-               <div th:each="logo : ${partnershipLogos}" class="slide">
+          <div class="partner-area-slider" >
+              <div class="slide-track">
+               <div th:each="logo : ${aboutUsClientPartnerItems}" class="slide">
                 <img
-                  th:src="${logo.imageUrl}"
-                  width="100"
+                  th:src="${logo.getImage_url()}"
+                  width="200"
+                  height="200"
                   class="img-fluid"
-                  th:alt="${logo.altText}"
+                  th:alt="${logo.getTitle_vi()}"
                 />
               </div>
             </div>

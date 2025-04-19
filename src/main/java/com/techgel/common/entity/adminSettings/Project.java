@@ -51,8 +51,10 @@ public class Project extends BasedEntity {
         super(id);
     }
 
-
-    public Project(Long id, String title_vi, String title_en, String client_name_vi, String client_name_en, String location_vi, String location_en, String scope_of_work_vi, String scope_of_work_en, String time_vi, String time_en, String description_vi, String description_en, String image_url, int year, String region, boolean isFeatured, ProjectCategory projectCategory) {
+    public Project(Long id, String title_vi, String title_en, String client_name_vi, String client_name_en,
+            String location_vi, String location_en, String scope_of_work_vi, String scope_of_work_en, String time_vi,
+            String time_en, String description_vi, String description_en, String image_url, int year, String region,
+            boolean isFeatured, ProjectCategory projectCategory) {
         super(id);
         this.title_vi = title_vi;
         this.title_en = title_en;

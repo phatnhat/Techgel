@@ -3320,18 +3320,19 @@ p.description {
     }
 }
 .partner-area-slider {
-    background: white;
+    background: var(--alwaysWhite);
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-    height: 100px;
+    height: 9rem;
+    align-content: center;
     margin: auto;
     overflow: hidden;
     position: relative;
     width: 100%;
 }
 .partner-area-slider::before, .partner-area-slider::after {
-    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, white 0%, rgba(240, 209, 209, 0) 100%);
     content: "";
-    height: 100px;
+    height: 6.25rem;
     position: absolute;
     width: 200px;
     z-index: 2;
@@ -3349,7 +3350,8 @@ p.description {
     -webkit-animation: partner-slider-scroll 40s linear infinite;
     animation: partner-slider-scroll 40s linear infinite;
     display: flex;
-    width: calc(250px * 14);
+    width: calc(15.625rem * 50);
+    gap: 1.875rem
 }
 .partner-area-slider .slide {
     display: flex;

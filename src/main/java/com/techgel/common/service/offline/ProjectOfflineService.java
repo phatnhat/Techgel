@@ -16,29 +16,31 @@ import java.util.stream.Collectors;
 @Profile("offline")
 public class ProjectOfflineService implements ProjectService {
 
-    public List<Project> getAll(){
+    public List<Project> getAll() {
         return ProjectData.get();
     }
 
-    public Project getById(Long id){
+    public Project getById(Long id) {
         return this.getAll().stream()
-                .filter(project ->  project.getId().equals(id))
+                .filter(project -> project.getId().equals(id))
                 .findFirst().orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND, "Project not found"));
     }
 
     public List<Project> getAllByProjectCategorySlug(String slug) {
-        return this.getAll().stream().filter(project -> Objects.nonNull(project.getProjectCategory()) && project.getProjectCategory().getSlug().equals(slug)).collect(Collectors.toList());
+        return this.getAll().stream().filter(project -> Objects.nonNull(project.getProjectCategory())
+                && project.getProjectCategory().getSlug().equals(slug)).collect(Collectors.toList());
     }
 
     public List<Project> getAllByFeaturedIsTrue() {
         return this.getAll().stream().filter(Project::isFeatured).collect(Collectors.toList());
     }
 
-    public Project update(Project project){
+    public Project update(Project project) {
         return null;
     }
 
-    public void deleteById(Long id){}
+    public void deleteById(Long id) {
+    }
 
 }
