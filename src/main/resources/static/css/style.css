@@ -1633,7 +1633,8 @@ p.description {
 
 .single-news .news-inner .thumbnail a img {
     width: 100%;
-    max-height: 300px;
+    height: 100%;
+    max-height: 18.75rem;
     transition: 0.5s;
     min-height: 240px;
     object-fit: cover;
@@ -1646,8 +1647,8 @@ p.description {
 
 .single-news .news-inner .thumbnail .pmt-news-meta {
     position: absolute;
-    top: 228.4px;
-    left: 14px;
+    bottom: 10px;
+    left: .875rem;
 }
 
 .single-news .news-inner .thumbnail .pmt-news-meta .all-meta {
@@ -2716,7 +2717,8 @@ p.description {
     color: #202942;
 }
 
-.tmp-pagination-area-next-pev button:hover {
+.tmp-pagination-area-next-pev button:hover,
+.tmp-pagination-area-next-pev button.active{
     background: var(--themePrimary);
     color: var(--white);
 }

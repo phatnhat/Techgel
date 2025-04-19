@@ -42,6 +42,7 @@ public class MainController {
         private final AboutUsClientPartnerService aboutUsClientPartnerService;
         private final ProjectCategoryService projectCategoryService;
         private final ProjectService projectService;
+        private final NewsService newsService;
 
         List<NewsDTO> trainingNewsList = List.of(
                         new NewsDTO(
@@ -612,61 +613,37 @@ public class MainController {
 
         @GetMapping("/news")
         public String getNewsPage(
-                        @RequestParam(name = "type", defaultValue = "project") String type,
-                        @RequestParam(name = "page", defaultValue = "1") int page,
-                        Model model) {
+                @RequestParam(name = "type", defaultValue = "PROJECT") NewsType type,
+                @RequestParam(name = "page", defaultValue = "1") int page,
+                Model model) {
 
-                NewsType selectedType = parseNewsType(type);
+            int pageSize = 3;
+            Pageable pageable = PageRequest.of(page - 1, pageSize);
 
-                List<NewsDTO> allNews = Stream.of(projectNewsList, internalNewsList, trainingNewsList)
-                                .flatMap(List::stream)
-                                .filter(news -> news.getType() == selectedType)
-                                .sorted(Comparator.comparing(NewsDTO::getPublishedAt).reversed())
-                                .collect(Collectors.toList());
+            Page<News> allNews = newsService.getAllByType(type, pageable);
 
-                model.addAttribute("newsList", allNews);
-                model.addAttribute("type", type);
+            model.addAttribute("newsList", allNews);
+            model.addAttribute("currentType", type.name());
 
-                // sidebar news
-                List<NewsDTO> sidebarNews = allNews.size() > 4
-                                ? allNews.subList(1, Math.min(4, allNews.size()))
-                                : (allNews.size() > 1 ? allNews.subList(1, allNews.size()) : List.of());
-                model.addAttribute("sidebarNews", sidebarNews);
-                System.out.println("===== Project News List =====");
-                for (NewsDTO news : allNews) {
-                        System.out.println(news.getTitle());
-                }
+            model.addAttribute("newsListPaged", allNews);
+            model.addAttribute("currentPage", page);
+            model.addAttribute("totalPages", allNews.getTotalPages());
+            model.addAttribute("newsTypeList", NewsType.values());
 
-                // Pagination logic
-                List<NewsDTO> usableNews = allNews.size() > 4 ? allNews.subList(4, allNews.size()) : List.of();
-
-                int pageSize = 9;
-                int totalPages = (int) Math.ceil((double) usableNews.size() / pageSize);
-
-                // Avoid divide-by-zero and out-of-bounds
-                if (totalPages == 0) {
-                        page = 1;
-                } else {
-                        page = Math.max(1, Math.min(page, totalPages));
-                }
-
-                int fromIndex = (page - 1) * pageSize;
-                int toIndex = Math.min(fromIndex + pageSize, usableNews.size());
-
-                List<NewsDTO> paginatedNews = (fromIndex < toIndex)
-                                ? usableNews.subList(fromIndex, toIndex)
-                                : List.of(); // fallback empty
-
-                model.addAttribute("newsListPaged", paginatedNews);
-                model.addAttribute("currentPage", page);
-                model.addAttribute("totalPages", totalPages);
-
-                return "clients/news/news";
+            return "clients/news/news";
         }
 
-        @GetMapping("/news-details")
-        public String viewNewsDetails() {
-                return "clients/news/news-details";
+        @GetMapping("/news-details/{newsId}")
+        public String viewNewsDetails(Model model, @PathVariable long newsId) {
+            News news = newsService.getById(newsId);
+
+            List<News> relatedNews = newsService.getAllByType(news.getType(), PageRequest.of(0, 2)).stream().toList();
+
+            model.addAttribute("news", news);
+            model.addAttribute("relatedNews", relatedNews);
+            model.addAttribute("newsType", NewsType.values());
+
+            return "clients/news/news-details";
         }
 
         @GetMapping("/careers/job-opportunities")

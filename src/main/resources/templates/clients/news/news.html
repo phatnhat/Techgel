@@ -40,7 +40,7 @@
             data-brx-anchor="true"
             class="brxe-block small-text-shadow"
           >
-            <div id="brxe-rqhadm" class="brxe-text-basic" news>Xem thêm</div>
+            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
             <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
           </a>
         </div>
@@ -56,23 +56,13 @@
               <div class="col-md-6">
                 <ul class="menu-news-list">
                   <li
-                    th:classappend="${type == 'project'} ? 'current-menu-item'"
-                    class="menu-item"
+                      th:each="newType: ${newsTypeList}"
+                      th:classappend="${currentType == newType.name()} ? 'current-menu-item'"
+                      class="menu-item"
                   >
-                    <a th:href="@{/news(type='project')}">Tin dự án</a>
+                    <a th:href="@{/news(type=${newType.name()})}">[[${newType.getVietnameseName()}]]</a>
                   </li>
-                  <li
-                    th:classappend="${type == 'internal'} ? 'current-menu-item'"
-                    class="menu-item"
-                  >
-                    <a th:href="@{/news(type='internal')}">Hoạt động nội bộ</a>
-                  </li>
-                  <li
-                    th:classappend="${type == 'training'} ? 'current-menu-item'"
-                    class="menu-item"
-                  >
-                    <a th:href="@{/news(type='training')}">Hoạt động đào tạo</a>
-                  </li>
+
                 </ul>
               </div>
             </div>
@@ -83,28 +73,28 @@
                 class="col-md-8 align-middle border-right hide-border-responsive"
               >
                 <div
-                  th:if="${newsList != null and !newsList.isEmpty()}"
+                  th:if="${newsList.content != null and !newsList.content.isEmpty()}"
                   class="single-news"
                 >
                   <div class="news-inner row">
                     <div class="thumbnail col-md-7 p-0">
-                      <a href="#">
+                      <a th:href="@{'/news-details/' + ${newsList.content[0].id}}">
                         <img
-                          th:src="@{${newsList[0].imageUrl}}"
-                          th:alt="${newsList[0].title}"
+                          th:src="@{${newsList.content[0].image_url}}"
+                          th:alt="${newsList.content[0].title_vi}"
                         />
                       </a>
                       <div class="pmt-news-meta">
                         <ul class="all-meta">
                           <li class="date">
                             <span
-                              th:text="${#temporals.format(newsList[0].publishedAt, 'dd')}"
+                              th:text="${#temporals.format(newsList.content[0].updatedAt, 'dd')}"
                               >20</span
                             >
                           </li>
                           <li class="month">
                             <span
-                              th:text="'THÁNG ' + ${#temporals.format(newsList[0].publishedAt, 'M')}"
+                              th:text="'THÁNG ' + ${#temporals.format(newsList.content[0].updatedAt, 'M')}"
                               >THÁNG 1</span
                             >
                           </li>
@@ -116,19 +106,19 @@
                         <span class="name">Tin tức</span>
                         <span
                           class="designation"
-                          th:text="${type == 'project' ? 'Tin dự án' 
-                                          : (type == 'internal' ? 'Hoạt động nội bộ' 
-                                          : (type == 'training' ? 'Hoạt động đào tạo' : 'Khác'))}"
+                          th:text="${currentType == 'project' ? 'Tin dự án'
+                                          : (currentType == 'internal' ? 'Hoạt động nội bộ'
+                                          : (currentType == 'training' ? 'Hoạt động đào tạo' : 'Khác'))}"
                         >
                         </span>
                       </div>
                       <div class="news-body">
                         <a href="#" class="title-area">
-                          <h4 class="title" th:text="${newsList[0].title}">
+                          <h4 class="title" th:text="${newsList.content[0].title_vi}">
                             Tiêu đề
                           </h4>
                         </a>
-                        <p class="description" th:text="${newsList[0].summary}">
+                        <p class="description" th:text="${newsList.content[0].summary_vi}">
                           Tóm tắt...
                         </p>
                       </div>
@@ -145,21 +135,21 @@
               <div class="col-md-4">
                 <div class="post-sidebar">
                   <div
-                    th:if="${sidebarNews != null and !sidebarNews.isEmpty()}"
+                    th:if="${newsListPaged.content != null and !newsListPaged.content.isEmpty()}"
                   >
-                    <div class="item-post-sb" th:each="news : ${sidebarNews}">
+                    <div class="item-post-sb" th:each="news : ${newsListPaged.content}">
                       <div class="meta-post">
                         <div class="date-post">
                           <ul class="all-meta">
                             <li class="date">
                               <span
-                                th:text="${#temporals.format(news.publishedAt, 'dd')}"
+                                th:text="${#temporals.format(news.updatedAt, 'dd')}"
                                 >20</span
                               >
                             </li>
                             <li class="month">
                               <span
-                                th:text="'THÁNG ' + ${#temporals.format(news.publishedAt, 'M')}"
+                                th:text="'THÁNG ' + ${#temporals.format(news.updatedAt, 'M')}"
                                 >THÁNG 1</span
                               >
                             </li>
@@ -170,7 +160,7 @@
                             <h5 class="fs-16 fw-bold">
                               <a
                                 th:href="@{'/news-details/' + ${news.id}}"
-                                th:text="${news.title}"
+                                th:text="${news.title_vi}"
                                 >Tiêu đề tin tức</a
                               >
                             </h5>
@@ -198,29 +188,29 @@
           <div class="other-post">
             <h3>Các tin dự án khác</h3>
             <div class="row">
-              <div class="row" th:if="${newsListPaged}">
+              <div class="row" th:if="${newsListPaged.content}">
                 <div class="col-md-4 mb-5" th:each="news : ${newsListPaged}">
                   <div class="single-news">
                     <div class="news-inner">
                       <div class="thumbnail">
                         <a th:href="@{'/news-details/' + ${news.id}}">
                           <img
-                            th:src="@{${news.imageUrl}}"
-                            th:alt="${news.title}"
+                            th:src="@{${news.image_url}}"
+                            th:alt="${news.title_vi}"
                           />
                         </a>
                         <div class="pmt-news-meta">
                           <ul class="all-meta">
                             <li class="date">
                               <span
-                                th:text="${#temporals.format(news.publishedAt, 'dd')}"
-                                >20</span
+                                th:text="${#temporals.format(news.updatedAt, 'dd')}"
+                                ></span
                               >
                             </li>
                             <li class="month">
                               <span
-                                th:text="'THÁNG ' + ${#temporals.format(news.publishedAt, 'M')}"
-                                >THÁNG 1</span
+                                th:text="'THÁNG ' + ${#temporals.format(news.updatedAt, 'M')}"
+                                ></span
                               >
                             </li>
                           </ul>
@@ -231,7 +221,7 @@
                           <span class="name">Tin tức</span>
                           <span
                             class="designation"
-                            th:text="${type == 'project' ? 'Tin dự án' : (type == 'internal' ? 'Hoạt động nội bộ' : 'Hoạt động đào tạo')}"
+                            th:text="${currentType == 'project' ? 'Tin dự án' : (currentType == 'internal' ? 'Hoạt động nội bộ' : 'Hoạt động đào tạo')}"
                           ></span>
                         </div>
                         <div class="news-body">
@@ -239,11 +229,11 @@
                             th:href="@{'/news-details/' + ${news.id}}"
                             class="title-area"
                           >
-                            <h4 class="title" th:text="${news.title}">
+                            <h4 class="title" th:text="${news.title_vi}">
                               Tiêu đề
                             </h4>
                           </a>
-                          <p class="description" th:text="${news.summary}">
+                          <p class="description" th:text="${news.summary_vi}">
                             Tóm tắt...
                           </p>
                         </div>
@@ -270,7 +260,7 @@
               <!-- Prev Button -->
               <button
                 th:if="${currentPage > 1}"
-                th:attr="onclick=|window.location='@{/news(type=${type}, page=${currentPage - 1})}'|"
+                th:attr="onclick=|window.location='@{/news(type=${currentType}, page=${currentPage - 1})}'|"
               >
                 <i class="fa-solid fa-chevron-left"></i>
               </button>
@@ -280,13 +270,13 @@
                 th:each="i : ${#numbers.sequence(1, totalPages)}"
                 th:classappend="${i == currentPage} ? 'active'"
                 th:text="${i}"
-                th:attr="onclick=|window.location='@{/news(type=${type}, page=${i})}'|"
+                th:attr="onclick=|window.location='@{/news(type=${currentType}, page=${i})}'|"
               ></button>
 
               <!-- Next Button -->
               <button
                 th:if="${currentPage < totalPages}"
-                th:attr="onclick=|window.location='@{/news(type=${type}, page=${currentPage + 1})}'|"
+                th:attr="onclick=|window.location='@{/news(type=${currentType}, page=${currentPage + 1})}'|"
               >
                 <i class="fa-solid fa-chevron-right"></i>
               </button>

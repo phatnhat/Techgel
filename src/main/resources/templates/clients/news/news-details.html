@@ -19,190 +19,55 @@
               <div class="news-details-left-area border-bottom">
                 <div class="thumbnail-top">
                   <img
-                    src="https://themes-park.net/product/html/bizper/assets/images/blog/details/01.png"
-                    alt="Corporate_business"
+                    th:src="@{${news.image_url}}"
+                    th:alt="${news.title_vi}"
                   />
                 </div>
                 <div class="news-details-description">
-                  <div class="category-area">Tin tức / Tin dự án</div>
+                  <div class="category-area">Tin tức / [[${ news.type.getVietnameseName() }]]</div>
                   <h3 class="title split-collab-chars" style="opacity: 0">
-                    News title
+                    [[${ news.title_vi }]]
                   </h3>
-                  <p class="disc">New</p>
-                  <p class="disc">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                    irure dolor in reprehenderit in voluptate velit esse cillum
-                    dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Curabitur eget ornare quam. Sed
-                    sit amet sem sollicitudin, condiment diam sed.
-                  </p>
-                </div>
-                <div class="quote-area-blog-details">
-                  <i class="fa-solid fa-quote-left fa-lg"></i>
-                  <p class="disc">
-                    Rockling Devario deep sea bonefish cutthroat trout streamer
-                    fish kaluga sailback scorpionfish sand dab, turkeyfish
-                    golden loach sand diver. Leopard danio píntano bonnet mouth.
-                  </p>
-                  <span class="author">David Miller</span>
-                </div>
-                <div class="news-details-description">
-                  <p class="disc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum
-                    dolor sit amet, consectetur adipiscing elit. Curabitur eget
-                    ornare quam. Sed sit amet sem sollicitudin.
-                  </p>
-                  <div class="short-feature-news-details">
-                    <div class="single-feature">
-                      How will digital activities impact traditional
-                      manufacturing.
-                    </div>
-                    <div class="single-feature">
-                      I monitor my staff with software that takes screen.
-                    </div>
-                    <div class="single-feature">
-                      Minim veniam quis niacin sodium nostrud exer.
-                    </div>
-                    <div class="single-feature">
-                      Laoreet dolore magna niacin sodium glutimate.
-                    </div>
-                    <div class="single-feature">
-                      Narrow formal length my highly
-                    </div>
-                  </div>
-                  <p class="disc">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                    irure dolor in reprehenderit in voluptate velit esse cillum
-                    dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Curabitur eget ornare quam. Sed
-                    sit amet sem sollicitudin, condiment diam sed.
-                  </p>
-                </div>
-                <div class="row g-5">
-                  <div class="col-lg-6">
-                    <div class="thumbnail-50">
-                      <img
-                        src="https://themes-park.net/product/html/bizper/assets/images/blog/details/02.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="thumbnail-50">
-                      <img
-                        src="https://themes-park.net/product/html/bizper/assets/images/blog/details/03.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="news-details-description">
-                  <p class="disc">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                    irure dolor in reprehenderit in voluptate velit esse cillum
-                    dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Curabitur eget ornare quam. Sed
-                    sit amet sem sollicitudin, condiment diam sed.
-                  </p>
+                  <th:block th:utext="${news.content_vi}"></th:block>
                 </div>
               </div>
-              <div class="news-details-bottom-area mt--40">
+              <div class="news-details-bottom-area mt-5">
                 <div class="title-section mt-5">
                   <h3>Bài viết liên quan</h3>
                 </div>
                 <div class="other_post mt-4">
                   <div class="row">
-                    <div class="col-md-6">
+
+                    <div th:each="related: ${relatedNews}" class="col-md-6">
                       <div class="single-news">
                         <div class="news-inner">
                           <div class="thumbnail">
-                            <a href="news-details.html">
+                            <a th:href="@{'/news-details/' + ${related.id}}">
                               <img
-                                src="https://techgel.com.vn/wp-content/uploads/2025/03/tl.webp"
-                                alt="Business Consulting news"
+                                th:src="@{${related.image_url}}"
+                                th:alt="${related.title_vi}"
                               />
                             </a>
                             <div class="pmt-news-meta">
                               <ul class="all-meta">
-                                <li class="date"><span>20</span></li>
-                                <li class="month"><span>THÁNG 1</span></li>
+                                <li class="date"><span>[[${#temporals.format(news.updatedAt, 'dd')}]]</span></li>
+                                <li class="month"><span>Tháng [[${#temporals.format(news.updatedAt, 'M')}]]</span></li>
                               </ul>
                             </div>
                           </div>
                           <div class="news-content">
                             <div class="news-head">
                               <span class="name">Tin tức</span>
-                              <span class="designation">Hoạt động nội bộ</span>
+                              <span class="designation">[[${news.type.getVietnameseName()}]]</span>
                             </div>
                             <div class="news-body">
                               <a href="news-details.html" class="title-area">
                                 <h4 class="title">
-                                  TECHGEL – SỰ TRỞ LẠI MẠNH MẼ SAU KHỦNG HOẢNG
+                                  [[${ news.title_vi }]]
                                 </h4>
                               </a>
                               <p class="description">
-                                Sau một thời gian dài đối mặt với những thách
-                                thức lớn từ khủng hoảng thị trường, đại dịch
-                                COVID-19 và các vấn đề nội bộ, TECHGEL đã chính
-                                thức trở lại với diện mạo hoàn toàn mới, mạnh mẽ
-                                và đầy tham vọng. Với sự tiếp quản của hai nhà
-                                đầu tư lớn
-                              </p>
-                            </div>
-                            <a class="btn-read-more" href="news-details.html">
-                              <span class="read-more-text">Đọc thêm</span>
-                              <span class="read-more-icon"
-                                ><i class="fa-solid fa-arrow-right"></i
-                              ></span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="single-news">
-                        <div class="news-inner">
-                          <div class="thumbnail">
-                            <a href="news-details.html">
-                              <img
-                                src="https://techgel.com.vn/wp-content/uploads/2025/03/t3.png"
-                                alt="Business Consulting news"
-                              />
-                            </a>
-                            <div class="pmt-news-meta">
-                              <ul class="all-meta">
-                                <li class="date"><span>14</span></li>
-                                <li class="month"><span>MAY</span></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="news-content">
-                            <div class="news-head">
-                              <span class="name">Tin tức</span>
-                              <span class="designation">Tin dự án</span>
-                            </div>
-                            <div class="news-body">
-                              <a href="news-details.html" class="title-area">
-                                <h4 class="title">
-                                  TECHGEL – NHÀ GA T3 CẢNG HÀNG KHÔNG QUỐC TẾ
-                                  TÂN SƠN NHẤT
-                                </h4>
-                              </a>
-                              <p class="description">
-                                Thiết Kế, Cung Cấp & Lắp Đặt Hệ Thống Cơ Điện
-                                (MEPF) Cho Nhà Ga T3 – Cảng Hàng Không Quốc Tế
-                                Tân Sơn Nhất Giới Thiệu Dự Án Công ty Cổ phần
-                                Dịch vụ Hàng Không Taseco Sài Gòn (CĐT) đã hợp
-                                tác cùng Công ty Cổ phần Kỹ thuật Công nghệ Sài
-                                Gòn
+                                [[${ news.summary_vi }]]
                               </p>
                             </div>
 
@@ -229,16 +94,8 @@
                     <h3 class="title animated fadeIn">Danh mục tin tức</h3>
                   </div>
                   <div class="body">
-                    <a href="#" class="single-category">
-                      <p>Tin dự án</p>
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="#" class="single-category">
-                      <p>Hoạt động nội bộ</p>
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="#" class="single-category">
-                      <p>Hoạt động đào tạo</p>
+                    <a th:each="type: ${newsType}" th:href="@{'/news'(type=${type.name()})}" class="single-category">
+                      <p>[[${ type.getVietnameseName() }]]</p>
                       <i class="fa-solid fa-arrow-right"></i>
                     </a>
                   </div>
@@ -248,54 +105,21 @@
                     <h3 class="title animated fadeIn">Bài viết gần đây</h3>
                   </div>
                   <div class="body mt--50">
-                    <div class="single-news-recent-post-sidebar">
+
+                    <div th:each="recent, iter: ${recentNews}" th:if="${iter.index < 3}" class="single-news-recent-post-sidebar">
                       <a href="#" class="thumbnail">
                         <img
-                          src="https://themes-park.net/product/html/bizper/assets/images/blog/blog-4.jpg"
-                          alt="blog-Post"
+                          th:src="@{${recent.image_url}}"
+                          th:alt="${recent.title_vi}"
                         />
                         <div class="inner">
                           <span class="post-time">
                             <i class="fa-regular fa-clock"></i>
-                            12 THÁNG 1, 2023
+                            [[${#temporals.format(recent.updatedAt, 'dd/MM/yyyy')}]]
                           </span>
-                          <h6 class="title">
-                            Commanded household smallness delivered.
-                          </h6>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="single-news-recent-post-sidebar">
-                      <a href="#" class="thumbnail">
-                        <img
-                          src="https://themes-park.net/product/html/bizper/assets/images/blog/blog-5.jpg"
-                          alt="blog-Post"
-                        />
-                        <div class="inner">
-                          <span class="post-time">
-                            <i class="fa-regular fa-clock"></i>
-                            12 THÁNG 1, 2023
-                          </span>
-                          <h6 class="title">
-                            Future Plan &amp; Strategy for Construction
-                          </h6>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="single-news-recent-post-sidebar">
-                      <a href="#" class="thumbnail">
-                        <img
-                          src="https://themes-park.net/product/html/bizper/assets/images/blog/blog-6.jpg"
-                          alt="blog-Post"
-                        />
-                        <div class="inner">
-                          <span class="post-time">
-                            <i class="fa-regular fa-clock"></i>
-                            12 THÁNG 1, 2023
-                          </span>
-                          <h6 class="title">
-                            Melancholy particular devonshire alteration
-                          </h6>
+                          <h5 class="title">
+                            [[${ recent.title_vi }]]
+                          </h5>
                         </div>
                       </a>
                     </div>
