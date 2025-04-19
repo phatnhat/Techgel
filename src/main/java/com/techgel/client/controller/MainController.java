@@ -622,11 +622,9 @@ public class MainController {
     public String viewNewsDetails(Model model, @PathVariable long newsId) {
         News news = newsService.getById(newsId);
 
-        List<News> recentNews = newsService.getAll().stream().limit(3).toList();
         List<News> relatedNews = newsService.getAllByType(news.getType(), PageRequest.of(0, 2)).stream().toList();
 
         model.addAttribute("news", news);
-        model.addAttribute("recentNews", recentNews);
         model.addAttribute("relatedNews", relatedNews);
         model.addAttribute("newsType", NewsType.values());
 

@@ -94,7 +94,7 @@
                     <h3 class="title animated fadeIn">Danh mục tin tức</h3>
                   </div>
                   <div class="body">
-                    <a th:each="type: ${newsType}" href="#" class="single-category">
+                    <a th:each="type: ${newsType}" th:href="@{'/news'(type=${type.name()})}" class="single-category">
                       <p>[[${ type.getVietnameseName() }]]</p>
                       <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -106,7 +106,7 @@
                   </div>
                   <div class="body mt--50">
 
-                    <div th:each="recent: ${recentNews}" class="single-news-recent-post-sidebar">
+                    <div th:each="recent, iter: ${recentNews}" th:if="${iter.index < 3}" class="single-news-recent-post-sidebar">
                       <a href="#" class="thumbnail">
                         <img
                           th:src="@{${recent.image_url}}"
