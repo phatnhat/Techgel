@@ -27,7 +27,7 @@
                 >
                   <div class="logo">
                     <a
-                      href="index.html"
+                      href="/"
                       style="
                         color: white;
                         text-transform: uppercase;
@@ -67,20 +67,8 @@
                 <div class="single-footer-wrapper pl_md--0 pl_sm--0">
                   <h5 class="ft-title">Liên kết nhanh</h5>
                   <ul class="ft-link">
-                    <li>
-                      <a href="about.html">Về chúng tôi</a>
-                    </li>
-                    <li>
-                      <a href="team.html">Dự án</a>
-                    </li>
-                    <li>
-                      <a href="service.html">Tin tức</a>
-                    </li>
-                    <li>
-                      <a href="blog.html">Tuyển dụng</a>
-                    </li>
-                    <li>
-                      <a href="contact.html">Liên hệ</a>
+                    <li th:each="nav: ${homeNavigations}">
+                      <a th:href="@{${nav.slug}}">[[${nav.title_vi}]]</a>
                     </li>
                   </ul>
                 </div>
@@ -89,43 +77,25 @@
                 <div class="single-footer-wrapper pr--15">
                   <h5 class="ft-title">Bài viết gần đây</h5>
 
-                  <div class="single-post">
+                  <div th:each="recent, iter: ${recentNews}" class="single-post" th:if="${iter.index < 2}">
                     <div class="thumbnail">
                       <img
-                        src="https://themes-park.net/product/html/bizper/assets/images/footer/small-post.jpg"
-                        alt="Business_Corporate"
+                        th:src="@{${recent.image_url}}"
+                        th:alt="${recent.title_vi}"
                       />
                     </div>
                     <div class="content">
                       <div class="date">
                         <i class="fa-solid fa-calendar-days"></i
-                        ><span>12 Feb, 2022</span>
+                        ><span>[[${#temporals.format(recent.updatedAt, 'dd/MM/yyyy')}]]</span>
                       </div>
 
-                      <a href="blog-details.html">
-                        <h6 class="title">Nội dung 1</h6>
+                      <a th:href="@{'/news-details/' + ${recent.id}}">
+                        <h5 class="title">[[${ recent.title_vi }]]</h5>
                       </a>
                     </div>
                   </div>
 
-                  <div class="single-post">
-                    <div class="thumbnail">
-                      <img
-                        src="https://themes-park.net/product/html/bizper/assets/images/footer/small-post-2.jpg"
-                        alt="Business_Corporate"
-                      />
-                    </div>
-                    <div class="content">
-                      <div class="date">
-                        <i class="fa-solid fa-calendar-days"></i
-                        ><span>12 Feb, 2022</span>
-                      </div>
-
-                      <a href="blog-details.html">
-                        <h6 class="title">Nội dung 2</h6>
-                      </a>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div class="col-lg-3 col-md-6">
