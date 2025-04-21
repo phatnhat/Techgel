@@ -1638,7 +1638,7 @@ p.description {
     transition: 0.5s;
     min-height: 240px;
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
 }
 
 .single-news .news-inner .thumbnail a:hover img {

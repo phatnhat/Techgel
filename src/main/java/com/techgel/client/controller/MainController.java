@@ -9,6 +9,10 @@ import com.techgel.common.DTOs.NewsDTO;
 import com.techgel.common.entity.enums.ProjectRegions;
 import com.techgel.common.service.*;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,6 +47,7 @@ public class MainController {
         private final ProjectCategoryService projectCategoryService;
         private final ProjectService projectService;
         private final NewsService newsService;
+        private final CareerRecruitmentService careerRecruitmentService;
 
         List<NewsDTO> trainingNewsList = List.of(
                         new NewsDTO(
@@ -603,14 +608,6 @@ public class MainController {
                 return "clients/contact-us";
         }
 
-        private NewsType parseNewsType(String type) {
-                try {
-                        return NewsType.valueOf(type.toUpperCase());
-                } catch (IllegalArgumentException e) {
-                        return NewsType.PROJECT;
-                }
-        }
-
         @GetMapping("/news")
         public String getNewsPage(
                 @RequestParam(name = "type", defaultValue = "PROJECT") NewsType type,
@@ -647,7 +644,17 @@ public class MainController {
         }
 
         @GetMapping("/careers/job-opportunities")
-        public String viewJobOpportunities() {
+        public String viewJobOpportunities(Model model,
+                           @RequestParam(name = "page", defaultValue = "1") int page) {
+
+                int pageSize = 9;
+                Pageable pageable = PageRequest.of(page - 1, pageSize);
+
+                Page<CareerRecruitment> careerRecruitments = careerRecruitmentService.getAll(pageable);
+
+                model.addAttribute("careerRecruitments", careerRecruitments);
+                model.addAttribute("currentPage", page);
+                model.addAttribute("totalPages", careerRecruitments.getTotalPages());
                 return "clients/careers/job-opportunities";
         }
 

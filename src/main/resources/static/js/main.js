@@ -15,7 +15,18 @@ $(document).ready(function () {
   addStickyNav();
   initThemeToggle();
   langToggle();
+  recruitmentDetailsToggle();
 });
+
+function recruitmentDetailsToggle() {
+  $('[data-target="#recruitment-details-modal"]').on('click', function (e){
+    $('#recruitment-details-modal').attr('data-career', $(this).attr('data-career'));
+    $("#recruitment-details-modal").modal('toggle');
+  });
+  $('[data-dismiss="recruitment-details-modal"]').on('click', function(e){
+    $("#recruitment-details-modal").modal('hide');
+  })
+}
 
 function langToggle(){
   $(".lang-flag").click(function(){
@@ -231,7 +242,7 @@ $(document).ready(function () {
     nextArrow: '<div class="right_nav"><i class="fa fa-angle-right"></i></div>',
     responsive: [
       {
-        breakpoint: 991,
+        breakpoint: 1180,
         settings: {
           slidesToShow: 2,
           dots: true,

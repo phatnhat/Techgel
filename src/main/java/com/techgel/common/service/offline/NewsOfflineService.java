@@ -7,6 +7,7 @@ import com.techgel.common.entity.adminSettings.News;
 import com.techgel.common.entity.enums.NewsType;
 import com.techgel.common.service.EProfileService;
 import com.techgel.common.service.NewsService;
+import com.techgel.common.utils.PaginateList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;
@@ -38,29 +39,13 @@ public class NewsOfflineService implements NewsService {
         return NewsData.get();
     }
 
-    private <T> Page<T> paginateList(List<T> list, Pageable pageable) {
-        if (list == null || pageable == null) {
-            throw new IllegalArgumentException("Arguments cannot be null");
-        }
-
-        int total = list.size();
-        int start = (int) pageable.getOffset();
-        int end = Math.min((start + pageable.getPageSize()), total);
-
-        if (start > total) {
-            return new PageImpl<>(Collections.emptyList(), pageable, total);
-        }
-
-        return new PageImpl<>(list.subList(start, end), pageable, total);
-    }
-
     public Page<News> getAllByType(NewsType type, Pageable pageable){
         List<News> filtered = this.getAll().stream()
                 .filter(news -> news.getType().equals(type))
                 .sorted(Comparator.comparing(News::getUpdatedAt).reversed())
                 .collect(Collectors.toList());
 
-        return paginateList(filtered, pageable);
+        return PaginateList.page(filtered, pageable);
     }
 
     @Override
