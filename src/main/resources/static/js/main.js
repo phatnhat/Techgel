@@ -20,7 +20,16 @@ $(document).ready(function () {
 
 function recruitmentDetailsToggle() {
   $('[data-target="#recruitment-details-modal"]').on('click', function (e){
-    $('#recruitment-details-modal').attr('data-career', $(this).attr('data-career'));
+    $('#recruitment-details-modal').find('.title').html($(this).attr('data-title'));
+    $('#recruitment-details-modal').find('.wp-post-image').attr('src', $(this).attr('data-image_url'));
+    $('#recruitment-details-modal').find('.quantity').html($(this).attr('data-quantity'));
+    $('#recruitment-details-modal').find('.qualification').html($(this).attr('data-qualification'));
+    $('#recruitment-details-modal').find('.experience').html($(this).attr('data-experience'));
+    $('#recruitment-details-modal').find('.salary').html($(this).attr('data-salary'));
+    $('#recruitment-details-modal').find('.workplace').html($(this).attr('data-workplace'));
+    $('#recruitment-details-modal').find('.expiration_date').html($(this).attr('data-expiration_date'));
+    $('#recruitment-details-modal').find('.description').html($(this).attr('data-description'));
+
     $("#recruitment-details-modal").modal('toggle');
   });
   $('[data-dismiss="recruitment-details-modal"]').on('click', function(e){

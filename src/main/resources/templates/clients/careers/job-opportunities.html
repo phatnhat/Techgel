@@ -63,9 +63,9 @@
                     <div
                       class="col-md-8 d-flex flex-column justify-content-between"
                     >
-                      <h4 class="fs-20 fw-bold">
+                      <h5 class="fs-20 fw-bold">
                         <a href="#">[[${ career.title_vi }]]</a>
-                      </h4>
+                      </h5>
                       <ul class="d-flex flex-column">
                         <li class="p-0 m-0">
                           <i class="fa-solid fa-location-dot"></i> [[${ career.workplace_vi }]]
@@ -73,7 +73,15 @@
                         <li class="p-0 m-0">Số lượng: [[${ career.quantity }]]</li>
                       </ul>
                       <a type="button" class="text-decoration-underline"
-                         th:data-career="${career}"
+                         th:data-title="${career.title_vi}"
+                         th:data-image_url="${career.image_url}"
+                         th:data-quantity="${career.quantity}"
+                         th:data-qualification="${career.qualification_vi}"
+                         th:data-experience="${career.experience_vi}"
+                         th:data-salary="${career.salary_vi}"
+                         th:data-workplace="${career.workplace_vi}"
+                         th:data-expiration_date="${career.expiration_date}"
+                         th:data-description="${career.description_vi}"
                          data-toggle="modal" data-target="#recruitment-details-modal">
                         Mô tả công việc <i class="fa-solid fa-angles-right"></i>
                       </a>

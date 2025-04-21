@@ -28,11 +28,11 @@ public abstract class HomeNavigationData {
 
         HomeNavigation whatWeDo1 = new HomeNavigation("Lĩnh vực hoạt động", "6", true, 1, whatWeDo, "/what-we-do/our-business-lines", "/imgs/banners/tech-field.jpg");
         HomeNavigation whatWeDo3 = new HomeNavigation("Phát triển bền vững", "8", true, 3, whatWeDo, "/what-we-do/sustainable-development", "/imgs/banners/growth-sustain.jpg");
-        HomeNavigation whatWeDo4 = new HomeNavigation("Hình ảnh thi công", "9", true, 4, whatWeDo, "/what-we-do/gallery", "/imgs/banners/news-banner.jpg");
+        HomeNavigation whatWeDo4 = new HomeNavigation("Hình ảnh thi công", "9", false, 4, whatWeDo, "/what-we-do/gallery", "/imgs/banners/news-banner.jpg");
         whatWeDo.setChildren(Set.of(whatWeDo1, whatWeDo3, whatWeDo4).stream().sorted(Comparator.comparingInt(HomeNavigation::getDisplayOrder)).collect(Collectors.toCollection(LinkedHashSet::new)));
 
         HomeNavigation projects1 = new HomeNavigation("Năng lượng", "10", true, 1, projects, "/projects/energy", "/imgs/banners/building.jpg");
-        HomeNavigation projects2 = new HomeNavigation("Công trình hàng không", "11", true, 2, projects, "/projects/aviation", "/imgs/banners/building.jpg");
+        HomeNavigation projects2 = new HomeNavigation("Công trình nhà ga", "11", true, 2, projects, "/projects/aviation", "/imgs/banners/building.jpg");
         HomeNavigation projects3 = new HomeNavigation("Công nghiệp", "12", true, 3, projects, "/projects/industry", "/imgs/banners/building.jpg");
         HomeNavigation projects4 = new HomeNavigation("Dân dụng", "13", true, 4, projects, "/projects/civil", "/imgs/banners/building.jpg");
         HomeNavigation projects5 = new HomeNavigation("Hạ tầng giao thông", "14", true, 5, projects, "/projects/infrastructure", "/imgs/banners/building.jpg");

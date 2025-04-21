@@ -108,7 +108,7 @@
             </div>
             <div class="header-nav main-nav-one menu-nav">
               <nav>
-                <ul class="parent-nav">
+                <ul class="parent-nav flex-wrap justify-content-center">
                   <li
                           th:each="n, i: ${homeNavigations}"
                           th:class="${not n.getChildrens.isEmpty() ? 'has-dropdown' : ''}">
@@ -141,7 +141,7 @@
                   <rect width="20" height="2" fill="#1F1F25"></rect>
                 </svg>
               </div>
-              <div class="language-dropdown" id="lang-picker">
+              <div class="language-dropdown d-none" id="lang-picker">
 <!--                <form action="" method="get">-->
 <!--                  <button-->
 <!--                    class="btn dropdown-toggle"-->
