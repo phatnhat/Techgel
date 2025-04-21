@@ -67,115 +67,117 @@
               </div>
             </div>
           </div>
-          <div class="post-features mb-md-5">
-            <div class="row">
-              <div
-                class="col-md-8 align-middle border-right hide-border-responsive"
-              >
+          <th:block th:if="${not newsList.isEmpty()}">
+            <div class="post-features mb-md-5">
+              <div class="row">
                 <div
-                  th:if="${newsList.content != null and !newsList.content.isEmpty()}"
-                  class="single-news"
+                        class="col-md-8 align-middle border-right hide-border-responsive"
                 >
-                  <div class="news-inner row">
-                    <div class="thumbnail col-md-7 p-0">
-                      <a th:href="@{'/news-details/' + ${newsList.content[0].id}}">
-                        <img
-                          th:src="@{${newsList.content[0].image_url}}"
-                          th:alt="${newsList.content[0].title_vi}"
-                        />
-                      </a>
-                      <div class="pmt-news-meta">
-                        <ul class="all-meta">
-                          <li class="date">
-                            <span
-                              th:text="${#temporals.format(newsList.content[0].updatedAt, 'dd')}"
-                              >20</span
-                            >
-                          </li>
-                          <li class="month">
-                            <span
-                              th:text="'THÁNG ' + ${#temporals.format(newsList.content[0].updatedAt, 'M')}"
-                              >THÁNG 1</span
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="news-content col-md-5">
-                      <div class="news-head">
-                        <span class="name">Tin tức</span>
-                        <span
-                          class="designation"
-                          th:text="${currentType == 'project' ? 'Tin dự án'
-                                          : (currentType == 'internal' ? 'Hoạt động nội bộ'
-                                          : (currentType == 'training' ? 'Hoạt động đào tạo' : 'Khác'))}"
-                        >
-                        </span>
-                      </div>
-                      <div class="news-body">
-                        <a href="#" class="title-area">
-                          <h4 class="title" th:text="${newsList.content[0].title_vi}">
-                            Tiêu đề
-                          </h4>
-                        </a>
-                        <p class="description" th:text="${newsList.content[0].summary_vi}">
-                          Tóm tắt...
-                        </p>
-                      </div>
-                      <a class="btn-read-more" href="#">
-                        <span class="read-more-text">Đọc thêm</span>
-                        <span class="read-more-icon">
-                          <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="post-sidebar">
                   <div
-                    th:if="${newsListPaged.content != null and !newsListPaged.content.isEmpty()}"
+                          th:if="${newsList.content != null and !newsList.content.isEmpty()}"
+                          class="single-news"
                   >
-                    <div class="item-post-sb" th:each="news : ${newsListPaged.content}">
-                      <div class="meta-post">
-                        <div class="date-post">
+                    <div class="news-inner row">
+                      <div class="thumbnail col-md-7 p-0">
+                        <a th:href="@{'/news-details/' + ${newsList.content[0].id}}">
+                          <img
+                                  th:src="@{${newsList.content[0].image_url}}"
+                                  th:alt="${newsList.content[0].title_vi}"
+                          />
+                        </a>
+                        <div class="pmt-news-meta">
                           <ul class="all-meta">
                             <li class="date">
-                              <span
-                                th:text="${#temporals.format(news.updatedAt, 'dd')}"
-                                >20</span
-                              >
+                            <span
+                                    th:text="${#temporals.format(newsList.content[0].updatedAt, 'dd')}"
+                            >20</span
+                            >
                             </li>
                             <li class="month">
-                              <span
-                                th:text="'THÁNG ' + ${#temporals.format(news.updatedAt, 'M')}"
-                                >THÁNG 1</span
-                              >
+                            <span
+                                    th:text="'THÁNG ' + ${#temporals.format(newsList.content[0].updatedAt, 'M')}"
+                            >THÁNG 1</span
+                            >
                             </li>
                           </ul>
                         </div>
-                        <div class="post-info">
-                          <div class="post_info">
-                            <h5 class="fs-16 fw-bold">
-                              <a
-                                th:href="@{'/news-details/' + ${news.id}}"
-                                th:text="${news.title_vi}"
-                                >Tiêu đề tin tức</a
+                      </div>
+                      <div class="news-content col-md-5">
+                        <div class="news-head">
+                          <span class="name">Tin tức</span>
+                          <span
+                                  class="designation"
+                                  th:text="${currentType == 'project' ? 'Tin dự án'
+                                          : (currentType == 'internal' ? 'Hoạt động nội bộ'
+                                          : (currentType == 'training' ? 'Hoạt động đào tạo' : 'Khác'))}"
+                          >
+                        </span>
+                        </div>
+                        <div class="news-body">
+                          <a href="#" class="title-area">
+                            <h4 class="title" th:text="${newsList.content[0].title_vi}">
+                              Tiêu đề
+                            </h4>
+                          </a>
+                          <p class="description" th:text="${newsList.content[0].summary_vi}">
+                            Tóm tắt...
+                          </p>
+                        </div>
+                        <a class="btn-read-more" href="#">
+                          <span class="read-more-text">Đọc thêm</span>
+                          <span class="read-more-icon">
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="post-sidebar">
+                    <div
+                            th:if="${newsListPaged.content != null and !newsListPaged.content.isEmpty()}"
+                    >
+                      <div class="item-post-sb" th:each="news : ${newsListPaged.content}">
+                        <div class="meta-post">
+                          <div class="date-post">
+                            <ul class="all-meta">
+                              <li class="date">
+                              <span
+                                      th:text="${#temporals.format(news.updatedAt, 'dd')}"
+                              >20</span
                               >
-                            </h5>
-                            <a
-                              th:href="@{'/news-details/' + ${news.id}}"
-                              style="font-size: 12px"
-                            >
-                              <i>
-                                Xem thêm
-                                <i
-                                  style="font-size: 9px"
-                                  class="fa fa-angle-double-right"
-                                ></i>
-                              </i>
-                            </a>
+                              </li>
+                              <li class="month">
+                              <span
+                                      th:text="'THÁNG ' + ${#temporals.format(news.updatedAt, 'M')}"
+                              >THÁNG 1</span
+                              >
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="post-info">
+                            <div class="post_info">
+                              <h5 class="fs-16 fw-bold">
+                                <a
+                                        th:href="@{'/news-details/' + ${news.id}}"
+                                        th:text="${news.title_vi}"
+                                >Tiêu đề tin tức</a
+                                >
+                              </h5>
+                              <a
+                                      th:href="@{'/news-details/' + ${news.id}}"
+                                      style="font-size: 12px"
+                              >
+                                <i>
+                                  Xem thêm
+                                  <i
+                                          style="font-size: 9px"
+                                          class="fa fa-angle-double-right"
+                                  ></i>
+                                </i>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -184,104 +186,108 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="other-post">
-            <h3>Các tin dự án khác</h3>
-            <div class="row">
-              <div class="row" th:if="${newsListPaged.content}">
-                <div class="col-md-4 mb-5" th:each="news : ${newsListPaged}">
-                  <div class="single-news">
-                    <div class="news-inner">
-                      <div class="thumbnail">
-                        <a th:href="@{'/news-details/' + ${news.id}}">
-                          <img
-                            th:src="@{${news.image_url}}"
-                            th:alt="${news.title_vi}"
-                          />
-                        </a>
-                        <div class="pmt-news-meta">
-                          <ul class="all-meta">
-                            <li class="date">
-                              <span
-                                th:text="${#temporals.format(news.updatedAt, 'dd')}"
-                                ></span
-                              >
-                            </li>
-                            <li class="month">
-                              <span
-                                th:text="'THÁNG ' + ${#temporals.format(news.updatedAt, 'M')}"
-                                ></span
-                              >
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="news-content">
-                        <div class="news-head">
-                          <span class="name">Tin tức</span>
-                          <span
-                            class="designation"
-                            th:text="${currentType == 'project' ? 'Tin dự án' : (currentType == 'internal' ? 'Hoạt động nội bộ' : 'Hoạt động đào tạo')}"
-                          ></span>
-                        </div>
-                        <div class="news-body">
-                          <a
-                            th:href="@{'/news-details/' + ${news.id}}"
-                            class="title-area"
-                          >
-                            <h4 class="title" th:text="${news.title_vi}">
-                              Tiêu đề
-                            </h4>
+            <div class="other-post">
+              <h3>Các tin dự án khác</h3>
+              <div class="row">
+                <div class="row" th:if="${newsListPaged.content}">
+                  <div class="col-md-4 mb-5" th:each="news : ${newsListPaged}">
+                    <div class="single-news">
+                      <div class="news-inner">
+                        <div class="thumbnail">
+                          <a th:href="@{'/news-details/' + ${news.id}}">
+                            <img
+                                    th:src="@{${news.image_url}}"
+                                    th:alt="${news.title_vi}"
+                            />
                           </a>
-                          <p class="description" th:text="${news.summary_vi}">
-                            Tóm tắt...
-                          </p>
+                          <div class="pmt-news-meta">
+                            <ul class="all-meta">
+                              <li class="date">
+                              <span
+                                      th:text="${#temporals.format(news.updatedAt, 'dd')}"
+                              ></span
+                              >
+                              </li>
+                              <li class="month">
+                              <span
+                                      th:text="'THÁNG ' + ${#temporals.format(news.updatedAt, 'M')}"
+                              ></span
+                              >
+                              </li>
+                            </ul>
+                          </div>
                         </div>
-                        <a
-                          class="btn-read-more"
-                          th:href="@{'/news-details/' + ${news.id}}"
-                        >
-                          <span class="read-more-text">Đọc thêm</span>
-                          <span class="read-more-icon"
+                        <div class="news-content">
+                          <div class="news-head">
+                            <span class="name">Tin tức</span>
+                            <span
+                                    class="designation"
+                                    th:text="${currentType == 'project' ? 'Tin dự án' : (currentType == 'internal' ? 'Hoạt động nội bộ' : 'Hoạt động đào tạo')}"
+                            ></span>
+                          </div>
+                          <div class="news-body">
+                            <a
+                                    th:href="@{'/news-details/' + ${news.id}}"
+                                    class="title-area"
+                            >
+                              <h4 class="title" th:text="${news.title_vi}">
+                                Tiêu đề
+                              </h4>
+                            </a>
+                            <p class="description" th:text="${news.summary_vi}">
+                              Tóm tắt...
+                            </p>
+                          </div>
+                          <a
+                                  class="btn-read-more"
+                                  th:href="@{'/news-details/' + ${news.id}}"
+                          >
+                            <span class="read-more-text">Đọc thêm</span>
+                            <span class="read-more-icon"
                             ><i class="fa-solid fa-arrow-right"></i
-                          ></span>
-                        </a>
+                            ></span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div
-              class="tmp-pagination-area-next-pev mt--50"
-              th:if="${totalPages > 1}"
-            >
-              <!-- Prev Button -->
-              <button
-                th:if="${currentPage > 1}"
-                th:attr="onclick=|window.location='@{/news(type=${currentType}, page=${currentPage - 1})}'|"
+              <div
+                      class="tmp-pagination-area-next-pev mt--50"
+                      th:if="${totalPages > 1}"
               >
-                <i class="fa-solid fa-chevron-left"></i>
-              </button>
+                <!-- Prev Button -->
+                <button
+                        th:if="${currentPage > 1}"
+                        th:attr="onclick=|window.location='@{/news(type=${currentType}, page=${currentPage - 1})}'|"
+                >
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
 
-              <!-- Numbered Pages -->
-              <button
-                th:each="i : ${#numbers.sequence(1, totalPages)}"
-                th:classappend="${i == currentPage} ? 'active'"
-                th:text="${i}"
-                th:attr="onclick=|window.location='@{/news(type=${currentType}, page=${i})}'|"
-              ></button>
+                <!-- Numbered Pages -->
+                <button
+                        th:each="i : ${#numbers.sequence(1, totalPages)}"
+                        th:classappend="${i == currentPage} ? 'active'"
+                        th:text="${i}"
+                        th:attr="onclick=|window.location='@{/news(type=${currentType}, page=${i})}'|"
+                ></button>
 
-              <!-- Next Button -->
-              <button
-                th:if="${currentPage < totalPages}"
-                th:attr="onclick=|window.location='@{/news(type=${currentType}, page=${currentPage + 1})}'|"
-              >
-                <i class="fa-solid fa-chevron-right"></i>
-              </button>
+                <!-- Next Button -->
+                <button
+                        th:if="${currentPage < totalPages}"
+                        th:attr="onclick=|window.location='@{/news(type=${currentType}, page=${currentPage + 1})}'|"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+
             </div>
-          </div>
+          </th:block>
+          <th:block th:unless="${not newsList.isEmpty()}">
+            <h4 class="text-center">Không tìm thấy tin tức.</h4>
+          </th:block>
         </div>
       </div>
     </main>
