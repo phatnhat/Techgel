@@ -8,11 +8,13 @@ import com.techgel.common.DTOs.NewsDTO;
 
 import com.techgel.common.entity.enums.ProjectRegions;
 import com.techgel.common.service.*;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.time.LocalDateTime;
 import java.time.Year;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -50,7 +53,7 @@ public class MainController {
         private final CareerRecruitmentService careerRecruitmentService;
 
         @GetMapping("")
-        public String viewHomagePage(Model model) {
+        public String viewHomagePage(Model model, HttpServletRequest request) {
 
                 List<Carousel> banners = carouselService.getAll();
                 HomeAboutUs homeAboutUs = homeAboutUsService.getById(1L);
@@ -79,6 +82,8 @@ public class MainController {
                 // Get Featured projects
                 List<Project> featuredProjects = projectService.getAllByFeaturedIsTrue();
                 model.addAttribute("featuredProjects", featuredProjects);
+
+                Arrays.stream(request.getCookies()).toList().stream().forEach(e -> System.out.println(e.getName()));
 
                 return "clients/home/home";
         }
