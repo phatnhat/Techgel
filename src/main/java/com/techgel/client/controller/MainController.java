@@ -83,13 +83,11 @@ public class MainController {
                 List<Project> featuredProjects = projectService.getAllByFeaturedIsTrue();
                 model.addAttribute("featuredProjects", featuredProjects);
 
-                Arrays.stream(request.getCookies()).toList().stream().forEach(e -> System.out.println(e.getName()));
-
                 return "clients/home/home";
         }
 
         @GetMapping("/profile")
-        public String viewEProfile() {
+        public String viewEProfile(Model model) {
                 return "clients/profile";
         }
 
