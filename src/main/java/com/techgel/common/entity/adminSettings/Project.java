@@ -74,4 +74,9 @@ public class Project extends BasedEntity {
         this.isFeatured = isFeatured;
         this.projectCategory = projectCategory;
     }
+
+    public String getTitle(String lang){
+        if(lang.equalsIgnoreCase("vi")) return this.getTitle_vi();
+        return this.getTitle_en();
+    }
 }

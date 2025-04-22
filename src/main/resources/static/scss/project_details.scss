@@ -29,11 +29,9 @@
   .meta-info {
     position: absolute;
     bottom: 30px;
-    right: 0;
+    right: 0.5rem;
     color: var(--alwaysWhite);
     z-index: 1;
-    width: 40rem;
-    margin-right: 2rem;
 
     .meta-inner {
       position: relative;

@@ -9,6 +9,10 @@ if (userTheme === "dark") {
   $themeBtn.prop('checked', false)
 }
 
+const lang = localStorage.getItem("lang") || "vi";
+console.log(lang);
+html.setAttribute("lang", lang);
+
 $(document).ready(function () {
   addSplitCollabAnimation("chars");
   addSplitCollabAnimation("words");
@@ -46,7 +50,8 @@ function langToggle(){
 // Functionality
 function initThemeToggle() {
   const html = document.documentElement;
-  $("#theme-toggle").on("click", function () {
+  $(".switch__input").on("click", function () {
+    console.log('asf');
     if(this.checked){
         html.setAttribute("data-theme", "dark");
         localStorage.setItem("theme", "dark");

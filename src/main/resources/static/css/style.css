@@ -333,8 +333,6 @@ nav ul li.has-dropdown a.nav-link::before {
 .rolling-text {
     display: inline-block;
     overflow: hidden;
-    /*line-height: 30px;*/
-    /*height: 21px;*/
 }
 .rolling-text .block {
     min-width: max-content;
