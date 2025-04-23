@@ -315,15 +315,14 @@ html[data-theme=dark] .only-dark {
 }
 
 .primary-button {
-  min-width: 140px;
   font-family: var(--font-primary);
   color: var(--alwaysWhite);
   cursor: pointer;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.8px;
   border: 0.0625rem solid var(--black);
-  padding: 9.6px 32px;
+  padding: 5px 15px;
   background-color: var(--themePrimary);
   background-image: url("/svg/polygon_red.svg");
   background-size: 200%;
@@ -654,7 +653,6 @@ nav ul li.has-dropdown:hover .submenu {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   padding: 16px;
   text-align: -webkit-center;
 }
@@ -665,7 +663,6 @@ nav ul li.has-dropdown:hover .submenu {
 }
 
 .counter__anim {
-  padding: 24px;
   width: fit-content;
 }
 
@@ -958,6 +955,8 @@ nav ul li.has-dropdown:hover .submenu {
   line-height: 1.75rem;
   font-weight: 400;
   color: var(--black);
+  height: 200px;
+  overflow-y: auto;
 }
 .single-card.card-horizontal .card-inner .content.content-without-bg .name {
   font-size: 1.35rem;
@@ -983,7 +982,8 @@ nav ul li.has-dropdown:hover .submenu {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: 50vh;
+  position: relative;
 }
 @media (max-width: 48rem) {
   .breadcrumb-bg {

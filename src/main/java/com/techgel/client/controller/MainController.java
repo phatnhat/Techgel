@@ -61,6 +61,8 @@ public class MainController {
                 List<HomeStatisticItems> homeStatisticItems = homeStatisticItemsService.getAll();
                 HomeOurBusinessLine homeOurBusinessLine = homeOurBusinessLineService.getById(1L);
                 List<WhatWeDoService> whatWeDoServices = whatWeDoServiceService.getAll();
+                AboutUsTestimonial aboutUsTestimonial = aboutUsTestimonialService.getById(1L);
+                List<AboutUsTestimonialItems> aboutUsTestimonialItems = aboutUsTestimonialItemsService.getAll();
 
                 List<AboutUsClientPartner> aboutUsClientPartners = aboutUsClientPartnerService.getAll();
                 List<AboutUsClientPartnerItems> aboutUsClientPartnerItems = new ArrayList<AboutUsClientPartnerItems>();
@@ -77,6 +79,8 @@ public class MainController {
                 model.addAttribute("homeStatisticItems", homeStatisticItems);
                 model.addAttribute("homeOurBusinessLine", homeOurBusinessLine);
                 model.addAttribute("whatWeDoServices", whatWeDoServices);
+                model.addAttribute("aboutUsTestimonial", aboutUsTestimonial);
+                model.addAttribute("aboutUsTestimonialItems", aboutUsTestimonialItems);
 
                 model.addAttribute("aboutUsClientPartners", aboutUsClientPartners);
                 // Get Featured projects
@@ -147,6 +151,11 @@ public class MainController {
                 return "clients/about-us/clients-partners";
         }
 
+        @GetMapping("/about-us/cultural-techgel")
+        public String viewCulturalTechgel() {
+                return "clients/about-us/cultural-techgel";
+        }
+
         @GetMapping("/about-us/shareholder")
         public String viewShareholder() {
                 return "clients/shareholder/shareholder";
@@ -201,8 +210,21 @@ public class MainController {
         }
 
         @GetMapping({"/what-we-do", "/what-we-do/our-business-lines"})
-        public String viewOurBusinessLines() {
+        public String viewOurBusinessLines(Model model) {
+                HomeOurBusinessLine homeOurBusinessLine = homeOurBusinessLineService.getById(1L);
+                List<WhatWeDoService> whatWeDoServices = whatWeDoServiceService.getAll();
+
+                model.addAttribute("homeOurBusinessLine", homeOurBusinessLine);
+                model.addAttribute("whatWeDoServices", whatWeDoServices);
                 return "clients/what-we-do/our-business-lines";
+        }
+
+        @GetMapping({"/what-we-do/our-business-line-details"})
+        public String viewOurBusinessLineDetails(Model model, @RequestParam Long id){
+                WhatWeDoService whatWeDoService = whatWeDoServiceService.getById(id);
+
+                model.addAttribute("whatWeDoService", whatWeDoService);
+                return "clients/what-we-do/our-business-line-details";
         }
 
         @GetMapping("/what-we-do/sustainable-development")
@@ -273,10 +295,5 @@ public class MainController {
         @GetMapping("/careers/hr-policies")
         public String viewHrPolicies() {
                 return "clients/careers/hr-policies";
-        }
-
-        @GetMapping("/careers/cultural-techgel")
-        public String viewCulturalTechgel() {
-                return "clients/careers/cultural-techgel";
         }
 }

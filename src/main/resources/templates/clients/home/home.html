@@ -98,17 +98,16 @@
             <div class="col-lg-6">
               <div class="about-inner">
                 <div class="section-head text-align-left section-head-one-side">
-                  <div class="section-sub-title">
+                  <h4 class="section-sub-title split-collab-chars">
                     <img
+                      data-sal-delay="200"
+                      data-sal="fade"
+                      data-sal-duration="800"
                       th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                       alt="Techgel"
                     />
                     <span class="subtitle">[[${homeAboutUs.title_vi}]]</span>
-                  </div>
-
-                  <h2 class="title split-collab-chars" style="opacity: 1">
-                    <span>[[${homeAboutUs.subtitle_vi}]]</span>
-                  </h2>
+                  </h4>
                 </div>
                 <p
                   class="description"
@@ -124,33 +123,56 @@
         </div>
       </div>
 
-      <!-- counter up -->
-      <div class="tmp-counterup-area tmp-section-gap">
-        <div class="col-lg-12">
-          <div class="section-head">
-            <div class="section-sub-title center-title">
-              <img
-                th:src="@{/imgs/small-icons/section-custom-menubar.png}"
-                alt="Corporate_service"
-              />
-              <span class="subtitle">[[${ homeStatistic.title_vi }]]</span>
+      <!-- CEO Message -->
+      <div class="about-area tmp-section-gap" style="background:#3c5a96;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5">
+              <img th:src="@{/imgs/f6b7df27-225c-4d30-afbf-784868eec746.png}" alt="">
             </div>
-
-            <h2 class="title split-collab-chars">[[${ homeStatistic.subtitle_vi }]]</h2>
-
+            <div class="col-lg-7 text-white">
+              <div class="message-wrapper">
+                <h2 class="title">Thông điệp tổng giám đốc</h2>
+                <div class="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                <div class="name">Nguyễn Quốc Dũng</div>
+                <div class="position">Tổng giám đốc</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="counter_animation">
 
-        <div th:each="item: ${homeStatisticItems}" class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
-          <div class="count-box counter-style-4 text-center">
-            <h4 class="counter-title">[[${ item.title_vi }]]</h5>
-
-            <div>
-              <h3 class="title animated fadeIn">
-                <span class="counter animated fadeInDownBig property-number">[[${ item.counter }]]</span>[[${ item.unit_vi }]]
-              </h3>
+      <!-- counter up -->
+      <div class="tmp-counterup-area tmp-section-gap">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-head">
+                <h4 class="section-sub-title center-title split-collab-chars">
+                  <img
+                      data-sal-delay="200"
+                      data-sal="fade"
+                      data-sal-duration="800"
+                      th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                      alt="Techgel"
+                  />
+                  <span class="subtitle">[[${ homeStatistic.title_vi }]]</span>
+                </h4>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="counter_animation">
+                <div th:each="item: ${homeStatisticItems}" class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
+                  <div class="count-box counter-style-4 text-center">
+                    <h4 class="counter-title">[[${ item.title_vi }]]</h4>
+                      <div>
+                        <h3 class="title animated fadeIn">
+                          <span class="counter animated fadeInDownBig property-number">[[${ item.counter }]]</span>[[${ item.unit_vi }]]
+                        </h3>
+                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -159,26 +181,19 @@
       <!-- Field of activity -->
       <div class="tpm-services-process-area tmp-section-gap">
         <div class="container">
-          <div
-            class="row"
-            data-sal-delay="150"
-            data-sal="slide-up"
-            data-sal-duration="800"
-          >
+          <div class="row">
             <div class="col-lg-12">
               <div class="section-head">
-                <div class="section-sub-title center-title">
+                <h4 class="section-sub-title center-title split-collab-chars">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
-                    alt="Corporate_service"
+                    data-sal-delay="200"
+                    data-sal="fade"
+                    data-sal-duration="800"
+                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    alt="Techgel"
                   />
                   <span class="subtitle">[[${ homeOurBusinessLine.title_vi }]]</span>
-                </div>
-                <h2 class="title split-collab-chars" style="opacity: 1">
-                  <span>
-                    [[${ homeOurBusinessLine.subtitle_vi }]]
-                  </span>
-                </h2>
+                </h4>
               </div>
             </div>
           </div>
@@ -220,16 +235,16 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="section-head color-white">
-                <div class="section-sub-title center-title">
+                <h4 class="section-sub-title center-title split-collab-chars">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
-                    alt="Corporate_service"
+                    data-sal-delay="200"
+                    data-sal="fade"
+                    data-sal-duration="800"
+                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    alt="Techgel"
                   />
                   <span class="subtitle">Dự án</span>
-                </div>
-                <h2 class="title split-collab-chars" style="opacity: 1">
-                  <span>Dự án tiêu biểu</span>
-                </h2>
+                </h4>
               </div>
             </div>
           </div>
@@ -583,7 +598,7 @@
       </div>
 
       <!-- news -->
-      <div class="tmp-news-area tmp-section-gap news-area">
+      <div class="tmp-news-area tmp-section-gap news-area d-none">
         <div class="container">
           <div class="menu-news">
             <div class="d-flex flex-row align-items-center">
@@ -740,142 +755,91 @@
         </div>
       </div>
 
-      <!-- partners & clients -->
-      <div
-        class="tmp-partner-area background-partner d-none"
-        style="position: relative; padding: 50px 0"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-head pb-3">
-                <div class="section-sub-title center-title">
-                  <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
-                    alt="Corporate_service"
-                  />
-                  <span class="subtitle">Đối tác và khách hàng</span>
+      <!-- Testimonial -->
+      <div class="testimonial-with-brand">
+        <div class="testimonial-brand-area tmp-section-gapTop">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="testimonials-button-area">
+                  <div class="section-head text-align-left">
+                    <h4 class="section-sub-title split-collab-chars">
+                      <img
+                        data-sal-delay="200"
+                        data-sal="fade"
+                        data-sal-duration="800"
+                        th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                        alt="Techgel"
+                      />
+                      <span class="subtitle">[[${ aboutUsTestimonial.title_vi }]]</span>
+                    </h4>
+                  </div>
+                  <div class="button-next-prev">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
                 </div>
-                <h2 class="title split-collab-chars" style="opacity: 0">
-                  <span
-                    th:each="t: ${''.toCharArray()}"
-                    style="
-                      position: relative;
-                      display: inline-block;
-                      translate: none;
-                      rotate: none;
-                      scale: none;
-                      transform: translate(0px, 0px);
-                      opacity: 1;
-                      visibility: inherit;
-                    "
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="swiper-style-one tmp-section-gapBottom">
+                  <div
+                          class="swiper-container-style-two swiper-initialized swiper-horizontal swiper-backface-hidden"
                   >
-                    [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                  </span>
-                </h2>
+                    <div class="swiper-wrapper">
+
+                      <div th:each="item :${aboutUsTestimonialItems}" class="swiper-slide">
+                        <div class="single-card card-horizontal">
+                          <div class="card-inner">
+                            <div class="content">
+                              <p class="description">
+                                [[${ item.description_vi }]]
+                              </p>
+                              <div class="content content-without-bg">
+                                <div class="name">[[${ item.name_vi }]]</div>
+                                <div class="designation">[[${ item.designation_vi }]]</div>
+                              </div>
+                            </div>
+                            <div class="thumbnail">
+                              <img
+                                      th:src="@{${item.thumbnail_url}}"
+                                      alt="Techgel"
+                              />
+                              <div class="icon icon-quote">
+                                <i class="fa-solid fa-quote-left"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="d-flex flex-column justify-content-center"
-            style="gap: 20px"
-            data-sal-delay="150"
-            data-sal="slide-up"
-            data-sal-duration="800"
-          >
-            <div class="line_img"></div>
-            <div class="partner_slider">
-              <div class="item slick-slide">
-                <img
-                  src="https://gbindustrial.vn/thumbs/500x303x2/upload/photo/layer-1-5873.png"
-                  alt=""
-                  class="img-fluid"
-                />
-              </div>
-              <div class="item slick-slide">
-                <img
-                  src="https://eurowindow.org/wp-content/uploads/2022/06/cropped-1604051719173-Logo-Trang-ngang1.png"
-                  alt=""
-                  class="img-fluid"
-                />
-              </div>
-              <div class="item slick-slide">
-                <img
-                  src="https://cdn1.vieclam24h.vn/tvn/images/default/2022/03/31/images/164869105741.png"
-                  alt=""
-                  class="img-fluid"
-                />
-              </div>
-              <div class="item slick-slide">
-                <img
-                  src="https://incotecgroup.com/wp-content/uploads/2024/08/cropped-inco.png"
-                  alt=""
-                  class="img-fluid"
-                />
-              </div>
-              <div class="item slick-slide">
-                <img
-                  src="https://sangphatwater.com/upload/images/logo-vikoda.png"
-                  alt=""
-                  class="img-fluid"
-                />
-              </div>
-              <div class="item slick-slide">
-                <img
-                  src="https://www.thp.com.vn/wp-content/uploads/2017/01/cropped-thp.png"
-                  alt=""
-                  class="img-fluid"
-                />
-              </div>
-              <div class="item slick-slide">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png"
-                  alt=""
-                  class="img-fluid"
-                />
-              </div>
-              <div class="item slick-slide">
-                <img
-                  src="https://www.vihawa.com/wp-content/uploads/2024/01/logo-vinh-hao.webp"
-                  alt=""
-                  class="img-fluid"
-                />
-              </div>
-            </div>
-            <div class="line_img"></div>
           </div>
         </div>
       </div>
 
+
+      <!-- partners & clients -->
       <div class="tmp-partner-area" style="position: relative; padding: 50px 0">
         <div class="container-full">
           <div class="row">
             <div class="col-lg-12">
               <div class="section-head pb-3">
-                <div class="section-sub-title center-title">
+                <h4 class="section-sub-title center-title split-collab-chars">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
-                    alt="Corporate_service"
+                    data-sal-delay="200"
+                    data-sal="fade"
+                    data-sal-duration="800"
+                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    alt="Techgel"
                   />
                   <span class="subtitle">Đối tác và khách hàng</span>
-                </div>
-                <h2 class="title split-collab-chars" style="opacity: 0">
-                  <span
-                    th:each="t: ${''.toCharArray()}"
-                    style="
-                      position: relative;
-                      display: inline-block;
-                      translate: none;
-                      rotate: none;
-                      scale: none;
-                      transform: translate(0px, 0px);
-                      opacity: 1;
-                      visibility: inherit;
-                    "
-                  >
-                    [[${ #strings.replace(t, ' ', '&nbsp;') }]]
-                  </span>
-                </h2>
+                </h4>
               </div>
             </div>
           </div>

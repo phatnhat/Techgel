@@ -9,7 +9,7 @@
       <style>
         .bg-color-footer {
           background-color: var(--black);
-          background-image: url([[@{/imgs/footer-01.png}]]);
+          background-image: url([[@{/imgs/frame1.png}]]);
           background-size: cover;
           background-repeat: no-repeat;
         }
@@ -23,7 +23,7 @@
             <div class="row g-5">
               <div class="col-lg-4 col-md-6">
                 <div
-                  class="single-footer-wrapper border-right mr--20 hide-border-responsive"
+                  class="single-footer-wrapper mr--20 hide-border-responsive"
                 >
                   <div class="logo">
                     <a
@@ -34,15 +34,16 @@
                         font-size: 1.5625rem;
                       "
                     >
-                      <!--<img th:src="@{/imgs/logo-footer.png}" width="200" alt="Techgel Logo">-->
-                      Công ty CP Kỹ thuật Công nghệ Sài Gòn
+                      <img th:src="@{/imgs/logos/logo-white.png}" width="200" alt="Techgel Logo">
+                      <hr>
+                      <p>Công ty CP Kỹ thuật Công nghệ Sài Gòn</p>
                     </a>
                   </div>
                   <div class="day-time">
                     <div class="icon"><i class="fa-solid fa-clock"></i></div>
                     <div class="content">
-                      <div class="day">Thứ Hai - Thứ 7:</div>
-                      <div class="time">8:00 – 17:00</div>
+                      <div class="day">Thứ hai - Thứ sáu: 8:00 – 17:00</div>
+                      <div class="day">Thứ bảy: 8:00 – 12:00</div>
                     </div>
                   </div>
                   <ul
@@ -77,7 +78,7 @@
                       </a>
                     </li>
                   </ul>
-                  <div class="letter-wrapper">
+                  <div class="letter-wrapper d-none">
                     <a class="letter-image" th:href="@{/contact-us}">
                       <div class="animated-mail">
                         <div class="back-fold"></div>
@@ -98,8 +99,8 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-2 col-md-6">
-                <div class="single-footer-wrapper pl_md--0 pl_sm--0">
+              <div class="col-lg-4 col-md-6">
+                <div class="single-footer-wrapper d-flex flex-column align-items-center">
                   <h5 class="ft-title">Liên kết nhanh</h5>
                   <ul class="ft-link">
                     <li th:each="nav: ${homeNavigations}">
@@ -108,7 +109,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6">
+              <div class="col-lg-4 col-md-6 d-none">
                 <div class="single-footer-wrapper pr--15">
                   <h5 class="ft-title">Bài viết gần đây</h5>
 

@@ -5,7 +5,9 @@ import com.techgel.common.entity.adminSettings.WhatWeDoService;
 import com.techgel.common.service.WhatWeDoServiceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -18,7 +20,11 @@ public class WhatWeDoServiceOfflineService implements WhatWeDoServiceService {
     }
 
     public WhatWeDoService getById(Long id){
-        return this.getAll().stream().filter(whatWeDoService -> whatWeDoService.getId().equals(id)).findFirst().orElse(null);
+        return this.getAll().stream()
+                .filter(whatWeDoService -> whatWeDoService.getId().equals(id))
+                .findFirst()
+                .orElseThrow(() ->
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
     }
 
     public void deleteById(Long id){}
