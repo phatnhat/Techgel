@@ -105,6 +105,7 @@ body::before {
     opacity: 0;
     background: var(--themePrimary);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     left: 0;
     top: 0;
@@ -867,6 +868,19 @@ nav ul li.has-dropdown a.nav-link::before {
     }
 }
 
+@keyframes circle {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
 
 .thumbnail.thumbnail-rounded.border-top-left.hover-animation a {
     display: block;
@@ -942,6 +956,9 @@ nav ul li.has-dropdown a.nav-link::before {
     -webkit-animation-name: rotateme;
     -webkit-animation-duration: 20s;
     -webkit-animation-iteration-count: infinite;
+    animation-name: rotateme;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
 }
 
 .services-content {
@@ -3093,12 +3110,9 @@ p.description {
 #brxe-oubmqr {
     display: flex;
     height: 100%;
-<<<<<<< HEAD
     padding-bottom: 2em;
     width: 100vw;
-=======
-    width: 100%;
->>>>>>> 4c2140c707873ffb69a6cbaf4220f71eae48bbb0
+
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -3754,6 +3768,8 @@ p.description {
 }
 .shareholder-area .select select {
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     padding: 7px 40px 7px 12px;
     width: 100vw;
     border: 1px solid var(--white);
@@ -3954,6 +3970,7 @@ p.description {
 }
 .hr-policies-void .crop {
     -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1));
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1));
 }
 .hr-policies-void .mask {
     position: absolute;
