@@ -82,7 +82,7 @@
   --font-size-h2: 54px;
   --font-size-h3: 34px;
   --font-size-h4: 24px;
-  --font-size-h5: 14px;
+  --font-size-h5: 20px;
   --font-size-h6: 4px;
   /* Paragraphs */
   --font-size-p: 16px;
@@ -190,11 +190,9 @@
 .project-banner .meta-info {
   position: absolute;
   bottom: 30px;
-  right: 0;
+  right: 0.5rem;
   color: var(--alwaysWhite);
   z-index: 1;
-  width: 40rem;
-  margin-right: 2rem;
 }
 .project-banner .meta-info .meta-inner {
   position: relative;

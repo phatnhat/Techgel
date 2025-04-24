@@ -19,6 +19,8 @@ public class CareerRecruitment extends BasedEntity {
     private String title_vi;
     private String title_en;
     private int quantity;
+    private String salary_vi;
+    private String salary_en;
     private String qualification_vi;
     private String qualification_en;
     private String experience_vi;
@@ -32,11 +34,13 @@ public class CareerRecruitment extends BasedEntity {
     private String description_en;
     private String image_url;
 
-    public CareerRecruitment(Long id, String title_vi, String title_en, int quantity, String qualification_vi, String qualification_en, String experience_vi, String experience_en, String workplace_vi, String workplace_en, Date expiration_date, String description_vi, String description_en, String image_url) {
+    public CareerRecruitment(Long id, String title_vi, String title_en, int quantity, String salary_vi, String salary_en, String qualification_vi, String qualification_en, String experience_vi, String experience_en, String workplace_vi, String workplace_en, Date expiration_date, String description_vi, String description_en, String image_url) {
         super(id);
         this.title_vi = title_vi;
         this.title_en = title_en;
         this.quantity = quantity;
+        this.salary_vi = salary_vi;
+        this.salary_en = salary_en;
         this.qualification_vi = qualification_vi;
         this.qualification_en = qualification_en;
         this.experience_vi = experience_vi;

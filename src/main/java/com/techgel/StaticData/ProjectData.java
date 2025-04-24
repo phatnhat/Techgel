@@ -20,7 +20,7 @@ public abstract class ProjectData {
         ProjectImage projectImage6 = new ProjectImage(6L, "/imgs/projects/golden-da-lat.webp");
 
         return List.of(
-                new Project(1L, "INTERNATIONAL PASSENGER TERMINAL - DANANG AIRPORT", "", "AHT", "", "Thành phố Đà Nẵng",
+                new Project(1L, "INTERNATIONAL PASSENGER TERMINAL - DANANG AIRPORT", "asbasdf", "AHT", "", "Thành phố Đà Nẵng",
                         "", "Tổng thầu MEP", "47,000m2", "10/3/2024 ~ 20/4/2025", "10/3/2024 ~ 20/4/2025",
                         "Đại đô thị kiểu mẫu, văn minh, hiện đại; đa dạng về sản phẩm nhà ở, thương mại, dịch vụ được kiến tạo để trở thành một “Khu đô thị sinh thái trong mơ” với nhiều điểm nhấn trong thiết kế. Hứa hẹn, Dự Án sẽ trở thành nơi an cư lý tưởng dành cho người dân và điểm đến vui chơi – giải trí hấp dẫn bậc nhất Thủ đô.",
                         "", "/imgs/projects/Danang_Airport_Overview.jpg", 2025, ProjectRegions.NORTH.name(), true,
