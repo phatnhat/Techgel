@@ -25,9 +25,7 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1>
-                DỰ ÁN
-              </h1>
+              <h1 class="split-collab-words">DỰ ÁN</h1>
             </div>
           </div>
         </div>
@@ -129,14 +127,13 @@
 
       <div id="next" class="project-listing container py-5">
         <div class="col-12 project-thumbnail">
-          <div class="grid">
-            <div class="grid-sizer"></div>
+          <div class="grid row">
 
             <div th:each="project: ${projects}"
               data-sal-delay="300"
               data-sal="zoom-in"
               data-sal-duration="800"
-              class="grid_item">
+              class="grid_item col-lg-6">
               <a class="grid_box" th:href="@{'/project_details/' + ${project.id}}">
                 <div class="grid_pic">
                   <picture>

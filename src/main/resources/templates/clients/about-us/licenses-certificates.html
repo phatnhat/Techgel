@@ -25,7 +25,7 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1>GIẤY PHÉP & CHỨNG CHỈ</h1>
+              <h1 class="split-collab-words">GIẤY PHÉP & CHỨNG CHỈ</h1>
             </div>
           </div>
         </div>
@@ -37,22 +37,24 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="section-head p-0">
-                  <h4 class="section-sub-title center-title split-collab-chars">
-                    <img
-                        data-sal-delay="200"
-                        data-sal="fade"
-                        data-sal-duration="800"
-                        th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                        alt="Techgel"
-                    />
-                    <span class="subtitle">[[${ aboutUsLicenseCertificate.title_vi }]]</span>
+                  <h4 class="section-sub-title center-title split-collab-words">
+                    <span class="subtitle">
+                      <img
+                              data-sal-delay="200"
+                              data-sal="fade"
+                              data-sal-duration="800"
+                              th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                              alt="Techgel"
+                      />
+                      [[${ aboutUsLicenseCertificate.title_vi }]]</span>
                   </h4>
                 </div>
               </div>
             </div>
             <div class="mt-5 mb-md-5">
               <div class="row justify-content-center" id="gallery-certificate">
-                <div th:each="item: ${aboutUsLicenseCertificate.getAboutUsLicenseCertificateItems()}" class="col-md-3 col-6">
+                <div th:each="item: ${aboutUsLicenseCertificate.getAboutUsLicenseCertificateItems()}"
+                     class="col-lg-4">
                   <div class="item_cert"
                        data-sal-delay="200"
                        data-sal="zoom-in"

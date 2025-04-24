@@ -592,16 +592,6 @@ nav ul li.has-dropdown:hover .submenu {
   margin: -24px;
   text-align: center;
 
-  @media (max-width: 64rem) {
-    width: 288px;
-    height: 288px;
-  }
-
-  @media (max-width: 48rem) {
-    width: 224px;
-    height: 224px;
-  }
-
   .counter-title {
     margin-top: 8px;
     font-weight: var(--font-weight-regular);
@@ -623,10 +613,6 @@ nav ul li.has-dropdown:hover .submenu {
       color: var(--themeSecondary);
     }
   }
-}
-
-.property-number {
-  padding-right: 1rem;
 }
 
 // Hero Banner
@@ -899,8 +885,6 @@ nav ul li.has-dropdown:hover .submenu {
 .single-card.card-horizontal {
   .card-inner {
     display: flex;
-    height: 25rem;
-
     align-items: center;
     padding: 3.125rem;
     border-radius: .625rem;
@@ -1350,8 +1334,336 @@ div#brxe-rqhadm {
     }
     + {
       span {
-        margin-left: 0.3em;
+        margin-left: 0.2em;
       }
     }
+  }
+}
+
+
+/* CEO Message */
+.ceo-message-v2 {
+  position: relative;
+  max-width: 1400px;
+  margin: 5rem auto;
+  padding: 5rem 2rem;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 24px;
+  box-shadow:
+          0 30px 60px rgba(58, 123, 213, 0.1),
+          inset 0 0 0 1px rgba(255,255,255,0.8);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,210,255,0.03) 0%, rgba(58,123,213,0.01) 70%);
+    z-index: -1;
+    animation: rotateGradient 20s linear infinite;
+  }
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@keyframes rotateGradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.ceo-portrait-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+
+  .ceo-portrait {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    transform: perspective(1000px) rotateY(-5deg);
+    //box-shadow:
+    //        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    //        0 0 0 1px rgba(0,0,0,0.02);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    //background: linear-gradient(90deg, #FFF 50%, transparent 50%);
+
+    &:hover {
+      transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+
+      .glow-effect {
+        opacity: 0.6;
+      }
+
+      .hover-dots {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .portrait-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+
+    .glow-effect {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #3a7bd5 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      z-index: 1;
+    }
+
+    .hover-dots {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
+      background-image: radial-gradient(circle, #3a7bd5 1px, transparent 1px);
+      background-size: 15px 15px;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.6s ease;
+      z-index: 0;
+    }
+  }
+
+  .portrait-decor {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+
+    .decor-circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px dashed rgba(58, 123, 213, 0.4);
+      animation: rotate 30s linear infinite;
+    }
+
+    .decor-line {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #3a7bd5, transparent);
+      transform: rotate(-5deg);
+    }
+  }
+}
+.message-content {
+  flex: 1;
+  position: relative;
+
+  .section-header {
+    margin-bottom: 2.5rem;
+    position: relative;
+
+    .section-subtitle {
+      display: inline-block;
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      color: var(--themePrimary);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: rgba(58, 123, 213, 0.1);
+      padding: 8px 15px;
+      border-radius: 50px;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      color: #2c3e50;
+      margin: 0 0 1.5rem 0;
+      font-weight: 700;
+      position: relative;
+
+      .highlight-word {
+        color: var(--themePrimary);
+        position: relative;
+        display: inline-block;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 5px;
+          left: 0;
+          width: 100%;
+          height: 12px;
+          background: rgba(0, 210, 255, 0.3);
+          z-index: -1;
+          transform: skewY(-2deg);
+        }
+      }
+    }
+
+    .title-underline {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+      border-radius: 2px;
+    }
+  }
+
+  .message-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-left: 2rem;
+    border-left: 3px solid rgba(58, 123, 213, 0.2);
+
+    .quote-mark {
+      position: absolute;
+      top: -20px;
+      left: -10px;
+      font-size: 6rem;
+      color: rgba(58, 123, 213, 0.1);
+      font-family: Georgia, serif;
+      line-height: 1;
+      z-index: -1;
+    }
+  }
+}
+
+/* KHỐI CHỮ KÝ */
+.signature-block {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+
+  .signature-wrapper {
+    position: relative;
+    width: 180px;
+
+    .signature-img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+      position: relative;
+      z-index: 2;
+    }
+
+    .ink-effect {
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: rgba(58, 123, 213, 0.1);
+      border-radius: 50%;
+      filter: blur(5px);
+      z-index: 1;
+      animation: inkSpread 2s infinite alternate;
+    }
+  }
+
+  .ceo-info {
+    .ceo-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin: 0 0 5px 0;
+    }
+
+    .ceo-position {
+      font-size: 0.95rem;
+      color: #7f8c8d;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+/* CÁC YẾU TỐ TRANG TRÍ */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+
+  .floating-circle {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(0, 210, 255, 0.05);
+    border: 1px solid rgba(0, 210, 255, 0.1);
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .floating-triangle {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid rgba(58, 123, 213, 0.05);
+    animation: float 10s ease-in-out infinite 2s;
+    transform: rotate(15deg);
+  }
+}
+
+/* HIỆU ỨNG CHUYỂN ĐỘNG */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes inkSpread {
+  0% { transform: scaleX(0.9); opacity: 0.8; }
+  100% { transform: scaleX(1.1); opacity: 1; }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* HIỆU ỨNG KHI SCROLL */
+.ceo-message-v2 {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

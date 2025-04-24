@@ -18,7 +18,7 @@
                             id="brxe-naxryb"
                             class="brxe-text uni-text-outline-white uni-text-outline"
                     >
-                        <h1 class="text-uppercase">[[${ whatWeDoService.title_vi }]]</h1>
+                        <h1 class="text-uppercase split-collab-chars">[[${ whatWeDoService.title_vi }]]</h1>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,11 @@
                             </h4>
                         </div>
                         <ol th:style="'--length:' + ${whatWeDoService.getWhatWeDoServiceItems().size()}" role="list" class="core-fields my-5">
-                            <li th:each="subService, iter: ${whatWeDoService.getWhatWeDoServiceItems()}"
+                            <li
+                                data-sal-delay="200"
+                                data-sal="flip-down"
+                                data-sal-duration="800"
+                                th:each="subService, iter: ${whatWeDoService.getWhatWeDoServiceItems()}"
                                 th:style="'--i:' + ${iter.index + 1}"
                                 th:id="${subService.id}">
                                 <h4>[[${ subService.title_vi }]]</h4>

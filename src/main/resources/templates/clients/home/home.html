@@ -47,6 +47,9 @@
               <div class="about-thumbnails">
                 <div class="thumbnail">
                   <img
+                    data-sal-delay="300"
+                    data-sal="slide-right"
+                    data-sal-duration="800"
                     th:src="${homeAboutUs.image_url_1}"
                     style="
                       height: 590px;
@@ -58,6 +61,9 @@
                   />
                   <div class="image-two">
                     <img
+                      data-sal-delay="300"
+                      data-sal="slide-left"
+                      data-sal-duration="800"
                       th:src="${homeAboutUs.image_url_2}"
                       style="
                         height: 280px;
@@ -70,6 +76,9 @@
                   </div>
                   <div class="image-three animated">
                     <img
+                      data-sal-delay="300"
+                      data-sal="slide-up"
+                      data-sal-duration="800"
                       class=""
                       th:src="${homeAboutUs.image_url_3}"
                       style="
@@ -85,9 +94,15 @@
                       alt="Techgel"
                     />
                   </div>
-                  <div class="square"></div>
+                  <div class="square"
+                   data-sal-delay="400"
+                   data-sal="slide-up"
+                   data-sal-duration="800"></div>
                   <div class="flower">
                     <img
+                      data-sal-delay="300"
+                      data-sal="zoom-in"
+                      data-sal-duration="800"
                       th:src="@{/imgs/flower.png}"
                       alt="Techgel"
                     />
@@ -98,15 +113,16 @@
             <div class="col-lg-6">
               <div class="about-inner">
                 <div class="section-head text-align-left section-head-one-side">
-                  <h4 class="section-sub-title split-collab-chars">
-                    <img
-                      data-sal-delay="200"
-                      data-sal="fade"
-                      data-sal-duration="800"
-                      th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                      alt="Techgel"
-                    />
-                    <span class="subtitle">[[${homeAboutUs.title_vi}]]</span>
+                  <h4 class="section-sub-title split-collab-words">
+                    <span class="subtitle">
+                      <img
+                        data-sal-delay="200"
+                        data-sal="fade"
+                        data-sal-duration="800"
+                        th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                        alt="Techgel"
+                      />
+                      [[${homeAboutUs.title_vi}]]</span>
                   </h4>
                 </div>
                 <p
@@ -124,19 +140,62 @@
       </div>
 
       <!-- CEO Message -->
-      <div class="about-area tmp-section-gap" style="background:#3c5a96;">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5">
-              <img th:src="@{/imgs/f6b7df27-225c-4d30-afbf-784868eec746.png}" alt="">
-            </div>
-            <div class="col-lg-7 text-white">
-              <div class="message-wrapper">
-                <h2 class="title">Thông điệp tổng giám đốc</h2>
-                <div class="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                <div class="name">Nguyễn Quốc Dũng</div>
-                <div class="position">Tổng giám đốc</div>
+      <div class="ceo-message-area">
+        <div class="container-fluid">
+          <div class="ceo-message-v2 visible">
+            <div class="ceo-portrait-wrapper">
+              <div class="ceo-portrait">
+                <img src="/imgs/MUiM2Sx0ZtU 1.svg" alt="Techgel General Director" class="portrait-img"
+                     data-sal-delay="300"
+                     data-sal="zoom-in"
+                     data-sal-duration="800">
+                <div class="glow-effect"></div>
+                <div class="hover-dots"></div>
               </div>
+              <div class="portrait-decor d-none">
+                <div class="decor-circle"></div>
+                <div class="decor-line"></div>
+              </div>
+            </div>
+
+            <div class="message-content">
+              <div class="section-header">
+                <span class="section-subtitle split-collab-words">Thông điệp Tổng Giám Đốc</span>
+                <h2 class="section-title"
+                    data-sal-delay="300"
+                    data-sal="slide-right"
+                    data-sal-duration="800">"Kiến tạo giá trị
+                  <span class="highlight-word">bền vững</span>"
+                </h2>
+                <div class="title-underline"></div>
+              </div>
+
+              <div class="message-text"
+                   data-sal-delay="300"
+                   data-sal="flip-down"
+                   data-sal-duration="800">
+                <p>Chúng tôi cam kết xây dựng một doanh nghiệp phát triển bền vững, không chỉ vì lợi ích kinh tế mà còn vì trách nhiệm với cộng đồng và môi trường. Mỗi thành viên là một hạt nhân, cùng tạo nên sức mạnh tập thể không ngừng vươn xa.</p>
+                <div class="quote-mark">“</div>
+              </div>
+
+              <div class="signature-block">
+                <div class="signature-wrapper"
+                     data-sal-delay="300"
+                     data-sal="zoom-in"
+                     data-sal-duration="800">
+                  <img src="imgs/signature.png" alt="CEO Signature" class="signature-img">
+                  <div class="ink-effect"></div>
+                </div>
+                <div class="ceo-info">
+                  <p class="ceo-name split-collab-chars">Nguyễn Quốc Dũng</p>
+                  <p class="ceo-position split-collab-chars">Tổng giám đốc</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-elements">
+              <div class="floating-circle"></div>
+              <div class="floating-triangle"></div>
             </div>
           </div>
         </div>
@@ -148,15 +207,16 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="section-head">
-                <h4 class="section-sub-title center-title split-collab-chars">
-                  <img
+                <h4 class="section-sub-title center-title split-collab-words">
+                  <span class="subtitle">
+                    <img
                       data-sal-delay="200"
                       data-sal="fade"
                       data-sal-duration="800"
                       th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                       alt="Techgel"
-                  />
-                  <span class="subtitle">[[${ homeStatistic.title_vi }]]</span>
+                    />
+                    [[${ homeStatistic.title_vi }]]</span>
                 </h4>
               </div>
             </div>
@@ -184,15 +244,16 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="section-head">
-                <h4 class="section-sub-title center-title split-collab-chars">
-                  <img
-                    data-sal-delay="200"
-                    data-sal="fade"
-                    data-sal-duration="800"
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                    alt="Techgel"
-                  />
-                  <span class="subtitle">[[${ homeOurBusinessLine.title_vi }]]</span>
+                <h4 class="section-sub-title center-title split-collab-words">
+                  <span class="subtitle">
+                    <img
+                            data-sal-delay="200"
+                            data-sal="fade"
+                            data-sal-duration="800"
+                            th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                            alt="Techgel"
+                    />
+                    [[${ homeOurBusinessLine.title_vi }]]</span>
                 </h4>
               </div>
             </div>
@@ -236,14 +297,15 @@
             <div class="col-lg-12">
               <div class="section-head color-white">
                 <h4 class="section-sub-title center-title split-collab-chars">
-                  <img
-                    data-sal-delay="200"
-                    data-sal="fade"
-                    data-sal-duration="800"
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                    alt="Techgel"
-                  />
-                  <span class="subtitle">Dự án</span>
+                  <span class="subtitle">
+                    <img
+                            data-sal-delay="200"
+                            data-sal="fade"
+                            data-sal-duration="800"
+                            th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                            alt="Techgel"
+                    />
+                    Dự án</span>
                 </h4>
               </div>
             </div>
@@ -764,14 +826,15 @@
                 <div class="testimonials-button-area">
                   <div class="section-head text-align-left">
                     <h4 class="section-sub-title split-collab-chars">
-                      <img
-                        data-sal-delay="200"
-                        data-sal="fade"
-                        data-sal-duration="800"
-                        th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                        alt="Techgel"
-                      />
-                      <span class="subtitle">[[${ aboutUsTestimonial.title_vi }]]</span>
+                      <span class="subtitle">
+                        <img
+                                data-sal-delay="200"
+                                data-sal="fade"
+                                data-sal-duration="800"
+                                th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                                alt="Techgel"
+                        />
+                        [[${ aboutUsTestimonial.title_vi }]]</span>
                     </h4>
                   </div>
                   <div class="button-next-prev">
@@ -784,8 +847,7 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="swiper-style-one tmp-section-gapBottom">
-                  <div
-                          class="swiper-container-style-two swiper-initialized swiper-horizontal swiper-backface-hidden"
+                  <div class="swiper-container-style-two swiper-initialized swiper-horizontal swiper-backface-hidden"
                   >
                     <div class="swiper-wrapper">
 
@@ -830,15 +892,16 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="section-head pb-3">
-                <h4 class="section-sub-title center-title split-collab-chars">
-                  <img
-                    data-sal-delay="200"
-                    data-sal="fade"
-                    data-sal-duration="800"
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                    alt="Techgel"
-                  />
-                  <span class="subtitle">Đối tác và khách hàng</span>
+                <h4 class="section-sub-title center-title split-collab-words">
+
+                  <span class="subtitle">
+                    <img
+                          data-sal-delay="200"
+                          data-sal="fade"
+                          data-sal-duration="800"
+                          th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                          alt="Techgel"
+                  />Đối tác và khách hàng</span>
                 </h4>
               </div>
             </div>
