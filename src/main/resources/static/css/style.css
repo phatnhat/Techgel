@@ -1445,14 +1445,12 @@ body a.read_more:hover {
 }
 
 .ft-link li .single-contact {
-    /*background-color: var(--alwaysBlack);*/
+    background-color: var(--black);
     border-radius: 5px;
     display: flex;
     align-items: center;
     margin-bottom: 25px;
-    padding-top: 8px;
-
-    justify-self: flex-start;
+    padding: 10px;
 }
 
 .index-one .contact-inner .ft-link.ft-link-style-three li .single-contact .icon {
@@ -3123,9 +3121,29 @@ p.description {
     text-align: center;
 }
 .uni-text-outline-white h1 {
-    color: white;
-    line-height: 1.2;
-    font-family: "Lexend Deca", sans-serif;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 12em;
+    font-weight: 700;
+    color: var(--white);
+    text-shadow: 1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 5px 1px #919191,
+    1px 6px 1px #919191,
+    1px 7px 1px #919191,
+    1px 8px 1px #919191,
+    1px 9px 1px #919191,
+    1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
 }
 .uni-text-outline.brxe-text {
     font-weight: 700;
@@ -3418,7 +3436,6 @@ p.description {
     background-image: radial-gradient(circle at center, #899Dc4, #495D84);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -3481,19 +3498,25 @@ p.description {
     }
 }
 .sd-area .commit-page .text {
-    transform: translateY(30px);
+    /*transform: translateY(30px);*/
     opacity: 0;
     transition: all .3s ease;
     bottom: 0;
-    left: 5px;
+    left: 0;
     position: absolute;
     will-change: transform;
     color: var(--white);
-    text-shadow: 0 0 5px rgba(100, 100, 255, .6)
+    text-shadow: 0 0 5px rgba(100, 100, 255, .6);
+    font-weight: 500;
+    width: 100%;
+    background-image: linear-gradient(rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0.3));
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
+
 .sd-area .commit-page .lefter {
     transform: translateX(-60px) translateZ(-50px) rotateY(-10deg);
-    background-image: url(https://searefico.com/wp-content/uploads/2022/03/DSC_7869-e1647139730699-1024x857.png);
+    background-image: var(--bg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3501,7 +3524,7 @@ p.description {
 }
 .sd-area .commit-page .left {
     transform: translateX(-30px) translateZ(-25px) rotateY(-5deg);
-    background-image: url(https://img.freepik.com/free-photo/entrepreneurs-discussing-work-results-meeting_1163-5277.jpg?t=st=1743492145~exp=1743495745~hmac=8fae732bfc1cd07c7ff392748956fc7ca012b250d42393110462ebc2e873fe8f&w=740);
+    background-image: var(--bg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3518,7 +3541,7 @@ p.description {
 }
 .sd-area .commit-page .right {
     transform: translateX(30px) translateZ(-25px) rotateY(5deg);
-    background-image: url(https://searefico.com/wp-content/uploads/2022/03/businessmen-shaking-hands-during-meeting-1024x683.jpeg);
+    background-image: var(--bg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3526,7 +3549,7 @@ p.description {
 }
 .sd-area .commit-page .righter {
     transform: translateX(60px) translateZ(-50px) rotateY(10deg);
-    background-image: url(https://searefico.com/wp-content/uploads/2022/03/9175.png);
+    background-image: var(--bg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3672,33 +3695,36 @@ p.description {
     z-index: -1;
     bottom: .25rem;
 }
-@media (min-width: 40rem) {
-    .commit-page-details ul {
-        grid-template-columns: 1fr var(--line-w) 1fr;
-    }
-    .commit-page-details ul::before {
-        grid-column: 2;
-    }
-    .commit-page-details ul li:nth-child(odd) {
-        grid-column: 1;
-    }
-    .commit-page-details ul li:nth-child(even) {
-        grid-column: 3;
-    }
-    .commit-page-details ul li:nth-child(2) {
-        grid-row: 2/4;
-    }
-    .commit-page-details ul li:nth-child(odd) .date::before {
-        clip-path: polygon(0 0, 100% 0, 100% 100%);
-        left: 0;
-    }
-    .commit-page-details ul li:nth-child(odd) .date::after {
-        transform: translate(-50%, -50%);
-        left: calc(100% + var(--col-gap) + var(--line-w) / 2);
-    }
-    .commit-page-details ul li:nth-child(odd) .date {
-        border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
-    }
+
+.commit-page .mobile {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    display: none;
+}
+.commit-page .mobile .item {
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.commit-page .mobile .item span {
+    color: var(--white);
+    text-shadow: 0 0 5px rgba(100, 100, 255, .6);
+    font-weight: 500;
+    width: 100%;
+    background-image: linear-gradient(rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0.3));
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
 }
 
 
