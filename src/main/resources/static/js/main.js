@@ -9,6 +9,8 @@ if (userTheme === "dark") {
   $themeBtn.prop('checked', false)
 }
 
+fitty('.fit-text');
+
 const lang = localStorage.getItem("lang") || "vi";
 console.log(lang);
 html.setAttribute("lang", lang);
@@ -452,13 +454,21 @@ $(document).ready(function () {
 });
 
 /* Masonry */
-$(document).ready(function () {
-  var $grid = $(".grid").masonry({
-    itemSelector: ".grid_item",
-    columnWidth: ".grid-sizer",
-    percentPosition: true,
-    gutter: 15,
-  });
+// $(document).ready(function () {
+//   var $grid = $(".grid").masonry({
+//     itemSelector: ".grid_item",
+//     columnWidth: ".grid-sizer",
+//     percentPosition: true,
+//     gutter: 15,
+//   });
+//   imagesLoaded($(".grid")).on('progress', function() {
+//     $grid.layout();
+//   });
+// });
+
+/* Isotope */
+$(document).ready(function() {
+
 });
 
 /* Fancybox */
