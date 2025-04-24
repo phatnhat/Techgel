@@ -73,7 +73,7 @@ body::before {
     text-align: center;
     line-height: 46px;
     font-size: 16px;
-    color: var(--themePrimary);
+    color: var(--black);
     left: 0;
     top: 0;
     height: 46px;
@@ -333,8 +333,6 @@ nav ul li.has-dropdown a.nav-link::before {
 .rolling-text {
     display: inline-block;
     overflow: hidden;
-    /*line-height: 30px;*/
-    /*height: 21px;*/
 }
 .rolling-text .block {
     min-width: max-content;
@@ -716,7 +714,7 @@ nav ul li.has-dropdown a.nav-link::before {
 .section-head .section-sub-title {
     font-size: 16px;
     font-weight: 700;
-    color: var(--themeSecondary);
+    color: var(--themePrimary);
     text-transform: uppercase;
     margin-bottom: 5px;
     font-family: var(--font-secondary);
@@ -1447,15 +1445,14 @@ body a.read_more:hover {
 }
 
 .ft-link li .single-contact {
-    background-color: var(--alwaysBlack);
+    /*background-color: var(--alwaysBlack);*/
     border-radius: 5px;
     display: flex;
     align-items: center;
     margin-bottom: 25px;
     padding-top: 8px;
-    min-width: 240px;
-    max-width: 240px;
-    justify-self: center;
+
+    justify-self: flex-start;
 }
 
 .index-one .contact-inner .ft-link.ft-link-style-three li .single-contact .icon {
@@ -1856,7 +1853,7 @@ p.description {
 }
 
 .copyright-area-one p a {
-    color: var(--themePrimary);
+    color: var(--themeSecondary);
 }
 
 .copyright-area-one .main-wrapper .term a {
@@ -1937,6 +1934,9 @@ p.description {
     color: black!important;
 }
 
+.testimonial-with-brand {
+    background-image: url(/imgs/bg-01.jpg);
+}
 
 .testimonials-button-area {
     position: relative;
@@ -2515,6 +2515,11 @@ p.description {
             0 calc(100% + var(--cardsGap))
     );
     position: relative;
+    cursor: pointer;
+}
+.olcards li .content:hover{
+    background: var(--themeSecondary);
+    text-decoration: underline;
 }
 .olcards li .content::before {
     content: "";
@@ -3100,7 +3105,6 @@ p.description {
 #brxe-oubmqr {
     display: flex;
     height: 100%;
-    padding-bottom: 2em;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -4320,4 +4324,19 @@ body:has(.switch__input:checked) {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
+}
+
+.preview-image {
+    position: relative;
+}
+.preview-image:hover::before {
+    position: absolute;
+    content: "👁️‍🗨️";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+    background-image: linear-gradient(rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0.3));
 }

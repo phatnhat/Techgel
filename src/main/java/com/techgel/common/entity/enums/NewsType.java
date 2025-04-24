@@ -9,7 +9,7 @@ import lombok.ToString;
 public enum NewsType {
     PROJECT("Tin dự án", "News"),
     INTERNAL("Hoạt động nội bộ", "Internal activities"),
-    TRAINING("Hoạt động đào tạo", "Training activities");
+    TRAINING("Huấn luyện đào tạo", "Training activities");
 
     private final String vietnameseName;
     private final String englishName;

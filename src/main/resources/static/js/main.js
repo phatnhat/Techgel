@@ -9,6 +9,10 @@ if (userTheme === "dark") {
   $themeBtn.prop('checked', false)
 }
 
+const lang = localStorage.getItem("lang") || "vi";
+console.log(lang);
+html.setAttribute("lang", lang);
+
 $(document).ready(function () {
   addSplitCollabAnimation("chars");
   addSplitCollabAnimation("words");
@@ -20,7 +24,16 @@ $(document).ready(function () {
 
 function recruitmentDetailsToggle() {
   $('[data-target="#recruitment-details-modal"]').on('click', function (e){
-    $('#recruitment-details-modal').attr('data-career', $(this).attr('data-career'));
+    $('#recruitment-details-modal').find('.title').html($(this).attr('data-title'));
+    $('#recruitment-details-modal').find('.wp-post-image').attr('src', $(this).attr('data-image_url'));
+    $('#recruitment-details-modal').find('.quantity').html($(this).attr('data-quantity'));
+    $('#recruitment-details-modal').find('.qualification').html($(this).attr('data-qualification'));
+    $('#recruitment-details-modal').find('.experience').html($(this).attr('data-experience'));
+    $('#recruitment-details-modal').find('.salary').html($(this).attr('data-salary'));
+    $('#recruitment-details-modal').find('.workplace').html($(this).attr('data-workplace'));
+    $('#recruitment-details-modal').find('.expiration_date').html($(this).attr('data-expiration_date'));
+    $('#recruitment-details-modal').find('.description').html($(this).attr('data-description'));
+
     $("#recruitment-details-modal").modal('toggle');
   });
   $('[data-dismiss="recruitment-details-modal"]').on('click', function(e){
@@ -37,7 +50,8 @@ function langToggle(){
 // Functionality
 function initThemeToggle() {
   const html = document.documentElement;
-  $("#theme-toggle").on("click", function () {
+  $(".switch__input").on("click", function () {
+    console.log('asf');
     if(this.checked){
         html.setAttribute("data-theme", "dark");
         localStorage.setItem("theme", "dark");
@@ -447,6 +461,11 @@ $(document).ready(function () {
   });
 });
 
+/* Fancybox */
+$(document).ready(function(){
+  Fancybox.bind("[data-fancybox]", {});
+})
+
 /* Nanogallery2 */
 $(document).ready(function () {
   $("#construction-nanogallery2").nanogallery2({
@@ -548,7 +567,6 @@ $(document).ready(function () {
         srct: "https://img.freepik.com/free-photo/building-construction-worker-site-with-architect_23-2149124266.jpg?t=st=1743155407~exp=1743159007~hmac=5edb90c7b809f71e3cb7659d7b8a340b70601ab58794099fe6377caaa2be167e&w=1380",
       },
     ],
-    itemsBaseURL: "http://nanogallery2.nanostudio.org/samples/",
     locationHash: false,
 
     thumbnailWidth: "auto",
@@ -556,7 +574,7 @@ $(document).ready(function () {
 
     // hover effects
     thumbnailHoverEffect2:
-      "label_font-size_1em_1.5em|title_backgroundColor_rgba(255,255,255,0.34)_rgba(((84,132,12,0.8)|title_color_#000_var(--white)|image_scale_1.00_1.10_5000|image_rotateZ_0deg_4deg_5000",
+      "image_scale_1.00_1.10_5000|image_rotateZ_0deg_4deg_5000",
   });
 });
 

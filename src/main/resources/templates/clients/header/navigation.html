@@ -38,17 +38,34 @@
 <!--            </div>-->
               <div>
                 <p class="title-heading">
-                    <span data-text="T">T</span>
-                    <span data-text="E">E</span>
+
                     <span data-text="C">C</span>
-                    <span data-text="H">H</span>
+                    <span data-text="Ô">Ô</span>
+                    <span data-text="N">N</span>
                     <span data-text="G">G</span>
-                    <span data-text="E">E</span>
-                    <span data-text="L">L</span>
+                    <span data-text="T">T</span>
+                    <span data-text="Y">Y</span>
+                    <span data-text="C">C</span>
+                    <span data-text="P">P</span>
+                    <span data-text="K">K</span>
+                    <span data-text="Ỹ">Ỹ</span>
+                    <span data-text="T">T</span>
+                    <span data-text="H">H</span>
+                    <span data-text="U">U</span>
+                    <span data-text="Ậ">Ậ</span>
+                    <span data-text="T">T</span>
+                    <span data-text="C">C</span>
+                    <span data-text="Ô">Ô</span>
+                    <span data-text="N">N</span>
+                    <span data-text="G">G</span>
+                    <span data-text="N">N</span>
+                    <span data-text="G">G</span>
+                    <span data-text="H">H</span>
+                    <span data-text="Ệ">Ệ</span>
                 </p>
             </div>
 
-            <div class="d-flex" style="gap:20px;">
+            <div class="d-flex align-items-center" style="gap:20px;">
               <div class="actions-area">
                 <svg display="none">
                   <symbol id="light" viewBox="0 0 24 24">
@@ -69,7 +86,7 @@
                   </symbol>
                 </svg>
                 <label class="switch">
-                  <input id="theme-toggle" class="switch__input" type="checkbox" role="switch" name="dark" />
+                  <input class="switch__input theme-toggle" type="checkbox" role="switch" name="dark" />
                   <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
                     <use href="#light" />
                   </svg>
@@ -108,7 +125,7 @@
             </div>
             <div class="header-nav main-nav-one menu-nav">
               <nav>
-                <ul class="parent-nav">
+                <ul class="parent-nav flex-wrap justify-content-center">
                   <li
                           th:each="n, i: ${homeNavigations}"
                           th:class="${not n.getChildrens.isEmpty() ? 'has-dropdown' : ''}">
@@ -141,7 +158,7 @@
                   <rect width="20" height="2" fill="#1F1F25"></rect>
                 </svg>
               </div>
-              <div class="language-dropdown" id="lang-picker">
+              <div class="language-dropdown d-none" id="lang-picker">
 <!--                <form action="" method="get">-->
 <!--                  <button-->
 <!--                    class="btn dropdown-toggle"-->
@@ -171,10 +188,14 @@
                 </label>
                 <ul class="lang-list">
                   <li class="lang lang-en selected" title="VI">
-                    <span class="flag"></span>
+                    <a href="">
+                      <span class="flag"></span>
+                    </a>
                   </li>
                   <li class="lang lang-en" title="EN">
-                    <span class="flag"></span>
+                    <a href="">
+                      <span class="flag"></span>
+                    </a>
                   </li>
                 </ul>
               </div>

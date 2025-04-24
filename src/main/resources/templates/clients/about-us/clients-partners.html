@@ -27,15 +27,6 @@
               <h1>ĐỐI TÁC & KHÁCH HÀNG</h1>
             </div>
           </div>
-          <a
-            id="brxe-ygpexj"
-            href="#next"
-            data-brx-anchor="true"
-            class="brxe-block small-text-shadow"
-          >
-            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
-            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
-          </a>
         </div>
       </div>
 
@@ -43,15 +34,17 @@
         <div class="container" th:each="aboutUsClientPartner, iter: ${aboutUsClientPartners}" th:classappend="${iter.index != 0 ? 'mt-5' : ''}">
           <div class="row">
             <div class="col-lg-12">
-              <div class="section-head pb-3">
-                <h2
-                  class="title split-collab-chars d-flex align-items-center justify-content-center"
-                  style="opacity: 0; gap: 1.875rem"
-                >
-                  <div class="line_img"></div>
-                  <span>[[${ aboutUsClientPartner.title_vi }]]</span>
-                  <div class="line_img"></div>
-                </h2>
+              <div class="section-head p-0">
+                <h4 class="section-sub-title center-title split-collab-chars">
+                  <img
+                      data-sal-delay="200"
+                      data-sal="fade"
+                      data-sal-duration="800"
+                      th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                      alt="Techgel"
+                  />
+                  <span class="subtitle">[[${ aboutUsClientPartner.title_vi }]]</span>
+                </h4>
               </div>
             </div>
           </div>

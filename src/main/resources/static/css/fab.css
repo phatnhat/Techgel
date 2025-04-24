@@ -82,7 +82,7 @@
   --font-size-h2: 54px;
   --font-size-h3: 34px;
   --font-size-h4: 24px;
-  --font-size-h5: 14px;
+  --font-size-h5: 20px;
   --font-size-h6: 4px;
   /* Paragraphs */
   --font-size-p: 16px;
@@ -213,8 +213,8 @@
   position: absolute;
   bottom: -1rem;
   left: -1rem;
-  width: 4rem;
-  height: 4rem;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: var(--themePrimary);
   box-shadow: 0px 5px 20px #81a4f1;
@@ -243,8 +243,8 @@
 
 .fab-dots {
   position: absolute;
-  height: 8px;
-  width: 8px;
+  height: 4px;
+  width: 4px;
   background-color: var(--alwaysWhite);
   border-radius: 50%;
   top: 50%;
