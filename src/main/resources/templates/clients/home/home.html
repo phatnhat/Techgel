@@ -94,10 +94,12 @@
                       alt="Techgel"
                     />
                   </div>
-                  <div class="square"
-                   data-sal-delay="400"
-                   data-sal="slide-up"
-                   data-sal-duration="800"></div>
+                  <div
+                    class="square"
+                    data-sal-delay="400"
+                    data-sal="slide-up"
+                    data-sal-duration="800"
+                  ></div>
                   <div class="flower">
                     <img
                       data-sal-delay="300"
@@ -122,7 +124,8 @@
                         th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                         alt="Techgel"
                       />
-                      [[${homeAboutUs.title_vi}]]</span>
+                      [[${homeAboutUs.title_vi}]]</span
+                    >
                   </h4>
                 </div>
                 <p
@@ -145,10 +148,14 @@
           <div class="ceo-message-v2 visible">
             <div class="ceo-portrait-wrapper">
               <div class="ceo-portrait">
-                <img src="/imgs/MUiM2Sx0ZtU 1.svg" alt="Techgel General Director" class="portrait-img"
-                     data-sal-delay="300"
-                     data-sal="zoom-in"
-                     data-sal-duration="800">
+                <img
+                  src="/imgs/MUiM2Sx0ZtU 1.svg"
+                  alt="Techgel General Director"
+                  class="portrait-img"
+                  data-sal-delay="300"
+                  data-sal="zoom-in"
+                  data-sal-duration="800"
+                />
                 <div class="glow-effect"></div>
                 <div class="hover-dots"></div>
               </div>
@@ -160,30 +167,48 @@
 
             <div class="message-content">
               <div class="section-header">
-                <span class="section-subtitle split-collab-words">Thông điệp Tổng Giám Đốc</span>
-                <h2 class="section-title"
-                    data-sal-delay="300"
-                    data-sal="slide-right"
-                    data-sal-duration="800">"Kiến tạo giá trị
+                <span class="section-subtitle split-collab-words"
+                  >Thông điệp Tổng Giám Đốc</span
+                >
+                <h2
+                  class="section-title"
+                  data-sal-delay="300"
+                  data-sal="slide-right"
+                  data-sal-duration="800"
+                >
+                  "Kiến tạo giá trị
                   <span class="highlight-word">bền vững</span>"
                 </h2>
                 <div class="title-underline"></div>
               </div>
 
-              <div class="message-text"
-                   data-sal-delay="300"
-                   data-sal="flip-down"
-                   data-sal-duration="800">
-                <p>Chúng tôi cam kết xây dựng một doanh nghiệp phát triển bền vững, không chỉ vì lợi ích kinh tế mà còn vì trách nhiệm với cộng đồng và môi trường. Mỗi thành viên là một hạt nhân, cùng tạo nên sức mạnh tập thể không ngừng vươn xa.</p>
+              <div
+                class="message-text"
+                data-sal-delay="300"
+                data-sal="flip-down"
+                data-sal-duration="800"
+              >
+                <p>
+                  Chúng tôi cam kết xây dựng một doanh nghiệp phát triển bền
+                  vững, không chỉ vì lợi ích kinh tế mà còn vì trách nhiệm với
+                  cộng đồng và môi trường. Mỗi thành viên là một hạt nhân, cùng
+                  tạo nên sức mạnh tập thể không ngừng vươn xa.
+                </p>
                 <div class="quote-mark">“</div>
               </div>
 
               <div class="signature-block">
-                <div class="signature-wrapper"
-                     data-sal-delay="300"
-                     data-sal="zoom-in"
-                     data-sal-duration="800">
-                  <img src="imgs/signature.png" alt="CEO Signature" class="signature-img">
+                <div
+                  class="signature-wrapper"
+                  data-sal-delay="300"
+                  data-sal="zoom-in"
+                  data-sal-duration="800"
+                >
+                  <img
+                    src="imgs/signature.png"
+                    alt="CEO Signature"
+                    class="signature-img"
+                  />
                   <div class="ink-effect"></div>
                 </div>
                 <div class="ceo-info">
@@ -216,20 +241,27 @@
                       th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                       alt="Techgel"
                     />
-                    [[${ homeStatistic.title_vi }]]</span>
+                    [[${ homeStatistic.title_vi }]]</span
+                  >
                 </h4>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="counter_animation">
-                <div th:each="item: ${homeStatisticItems}" class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
+                <div
+                  th:each="item: ${homeStatisticItems}"
+                  class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim"
+                >
                   <div class="count-box counter-style-4 text-center">
                     <h4 class="counter-title">[[${ item.title_vi }]]</h4>
-                      <div>
-                        <h3 class="title animated fadeIn">
-                          <span class="counter animated fadeInDownBig property-number">[[${ item.counter }]]</span>[[${ item.unit_vi }]]
-                        </h3>
-                      </div>
+                    <div>
+                      <h3 class="title animated fadeIn">
+                        <span
+                          class="counter animated fadeInDownBig property-number"
+                          >[[${ item.counter }]]</span
+                        >[[${ item.unit_vi }]]
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -247,28 +279,33 @@
                 <h4 class="section-sub-title center-title split-collab-words">
                   <span class="subtitle">
                     <img
-                            data-sal-delay="200"
-                            data-sal="fade"
-                            data-sal-duration="800"
-                            th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                            alt="Techgel"
+                      data-sal-delay="200"
+                      data-sal="fade"
+                      data-sal-duration="800"
+                      th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                      alt="Techgel"
                     />
-                    [[${ homeOurBusinessLine.title_vi }]]</span>
+                    [[${ homeOurBusinessLine.title_vi }]]</span
+                  >
                 </h4>
               </div>
             </div>
           </div>
           <div
             class="d-flex justify-content-center align-items-center flex-wrap"
-            style="row-gap: 3rem">
-            <div th:each="service, iter: ${whatWeDoServices}"
+            style="row-gap: 3rem"
+          >
+            <div
+              th:each="service, iter: ${whatWeDoServices}"
               class="single-services"
               data-sal-delay="250"
               data-sal="slide-up"
-              data-sal-duration="800">
+              data-sal-duration="800"
+            >
               <div class="services-inner">
                 <div
-                  class="thumbnail thumbnail-rounded border-top-left hover-animation">
+                  class="thumbnail thumbnail-rounded border-top-left hover-animation"
+                >
                   <a href="#">
                     <img
                       th:src="@{${service.image_url}}"
@@ -280,12 +317,12 @@
                   </div>
                 </div>
                 <div
-                  class="services-content services-content-style-1 text-center">
+                  class="services-content services-content-style-1 text-center"
+                >
                   <h5 class="title">[[${ service.title_vi }]]</h5>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -299,13 +336,14 @@
                 <h4 class="section-sub-title center-title split-collab-chars">
                   <span class="subtitle">
                     <img
-                            data-sal-delay="200"
-                            data-sal="fade"
-                            data-sal-duration="800"
-                            th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                            alt="Techgel"
+                      data-sal-delay="200"
+                      data-sal="fade"
+                      data-sal-duration="800"
+                      th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                      alt="Techgel"
                     />
-                    Dự án</span>
+                    Dự án Nổi Bật</span
+                  >
                 </h4>
               </div>
             </div>
@@ -313,20 +351,23 @@
         </div>
         <div class="container-full">
           <div class="slider_projects">
-            <div class="item slick-slide" th:each="project : ${featuredProjects}">
+            <div
+              class="item slick-slide"
+              th:each="project : ${featuredProjects}"
+            >
               <div class="wrapper">
                 <a th:href="@{'/project_details/' + ${project.getId()}}"></a>
                 <figure>
-                  <img th:src="@{${project.getImage_url()}}"
-                       class="img-fluid"
-                       alt=""
-                       draggable="false" />
+                  <img
+                    th:src="@{${project.getImage_url()}}"
+                    class="img-fluid"
+                    alt=""
+                    draggable="false"
+                  />
                 </figure>
 
                 <div class="meta_info">
-                  <h4 class="fs-20 fw-bold">
-                    [[${project.getTitle_vi()}]]
-                  </h4>
+                  <h4 class="fs-20 fw-bold">[[${project.getTitle_vi()}]]</h4>
 
                   <div class="detail_info">
                     <div class="table-responsive">
@@ -348,8 +389,13 @@
                       </table>
                     </div>
 
-                    <a th:href="@{${project.getTitle_en()}}" class="read_more" tabindex="-1">
-                      Xem thêm <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <a
+                      th:href="@{${project.getTitle_en()}}"
+                      class="read_more"
+                      tabindex="-1"
+                    >
+                      Xem thêm
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                   </div>
                 </div>
@@ -375,9 +421,7 @@
                   />
                   <span class="subtitle">QUESTION AND ANSWERS</span>
                 </div>
-                <h2 class="title split-collab-chars" style="opacity: 1">
-                  FAQ
-                </h2>
+                <h2 class="title split-collab-chars" style="opacity: 1">FAQ</h2>
               </div>
             </div>
           </div>
@@ -551,7 +595,7 @@
                   data-tmp-cursor="lg transparent fw-bold"
                   data-tmp-cursor-text="View Details"
                 >
-                  <img th:src="@{/imgs/IMG_6797.JPG}" alt="Corporate team" />
+                  <!-- <img th:src="@{/imgs/IMG_6797.JPG}" alt="Corporate team" /> -->
                 </a>
                 <div class="content">
                   <div class="team-name content-with-bg">
@@ -665,7 +709,7 @@
           <div class="menu-news">
             <div class="d-flex flex-row align-items-center">
               <div class="col-md-6">
-                <h3 class="fs-40 fw-bold news-title ">Tin tức</h3>
+                <h3 class="fs-40 fw-bold news-title">Tin tức</h3>
               </div>
               <div class="col-md-6 margin-left-auto">
                 <ul class="menu-news-list">
@@ -678,141 +722,141 @@
               </div>
             </div>
           </div>
-<!--          <div class="post-features mb-md-5">-->
-<!--            <div class="row">-->
-<!--              <div class="col-lg-7 align-middle border-right hide-border-responsive border-grey">-->
-<!--                <div class="single-news">-->
-<!--                  <div class="news-inner row">-->
-<!--                    <div class="thumbnail col-lg-7 p-0">-->
-<!--                      <a href="#">-->
-<!--                        <img-->
-<!--                      th:src="@{/imgs/news/8-03-25/8-03-25-1.png}"-->
-<!--                          alt="8-03-25-1"-->
-<!--                        />-->
-<!--                      </a>-->
-<!--                      <div class="pmt-news-meta">-->
-<!--                        <ul class="all-meta">-->
-<!--                          <li class="date"><span>20</span></li>-->
-<!--                          <li class="month"><span>THÁNG 1</span></li>-->
-<!--                        </ul>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                    <div class="news-content col-lg-5">-->
-<!--                      <div class="news-head">-->
-<!--                        <span class="name">Tin tức</span>-->
-<!--                        <span class="designation">Tin dự án</span>-->
-<!--                      </div>-->
-<!--                      <div class="news-body">-->
-<!--                        <a href="news-details.html" class="title-area">-->
-<!--                          <h4 class="title">-->
-<!--                            Techgel mừng ngày quốc tế phụ nữ 8/3-->
-<!--                          </h4>-->
-<!--                        </a>-->
-<!--                        <p class="description">-->
-<!--                          Để chào mừng ngày lễ 8/3, Công ty Cổ phần Kỹ thuật Công nghệ Sài Gòn Techgel đã tổ chức buổi lễ dành riêng cho chị em nhằm tri ân những cống hiến của phái đẹp.-->
-<!--                        </p>-->
-<!--                      </div>-->
-<!--                      <a class="btn-read-more" href="news-details.html">-->
-<!--                        <span class="read-more-text">Đọc thêm</span>-->
-<!--                        <span class="read-more-icon"-->
-<!--                          ><i class="fa-solid fa-arrow-right"></i-->
-<!--                        ></span>-->
-<!--                      </a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="post-sidebar col-lg-5">-->
-<!--                  <div class="item-post-sb">-->
-<!--                    <div class="meta-post">-->
-<!--                      <div class="date-post">-->
-<!--                        <ul class="all-meta">-->
-<!--                          <li class="date"><span>20</span></li>-->
-<!--                          <li class="month"><span>THÁNG 1</span></li>-->
-<!--                        </ul>-->
-<!--                      </div>-->
-<!--                      <div class="post-info">-->
-<!--                        <div class="post_info">-->
-<!--                          <h5 class="fs-16 fw-bold">-->
-<!--                            <a href="#"-->
-<!--                              >TECHGEL – SỰ TRỞ LẠI MẠNH MẼ SAU KHỦNG HOẢNG</a-->
-<!--                            >-->
-<!--                          </h5>-->
-<!--                          <a href="#" style="font-size: 12px"-->
-<!--                            ><i-->
-<!--                              >Xem thêm-->
-<!--                              <i-->
-<!--                                style="font-size: 9px"-->
-<!--                                class="fa fa-angle-double-right"-->
-<!--                              ></i-->
-<!--                            ></i>-->
-<!--                          </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  -->
-<!--                </div>-->
-<!--                <div class="item-post-sb">-->
-<!--                    <div class="meta-post">-->
-<!--                      <div class="date-post">-->
-<!--                        <ul class="all-meta">-->
-<!--                          <li class="date"><span>20</span></li>-->
-<!--                          <li class="month"><span>THÁNG 1</span></li>-->
-<!--                        </ul>-->
-<!--                      </div>-->
-<!--                      <div class="post-info">-->
-<!--                        <div class="post_info">-->
-<!--                          <h5 class="fs-16 fw-bold">-->
-<!--                            <a href="#"-->
-<!--                              >TECHGEL – NHÀ GA HÀNH KHÁCH T3 SÂN BAY TÂN-->
-<!--                              SƠN NHẤT</a-->
-<!--                            >-->
-<!--                          </h5>-->
-<!--                          <a href="#" style="font-size: 12px"-->
-<!--                            ><i-->
-<!--                              >Xem thêm-->
-<!--                              <i-->
-<!--                                style="font-size: 9px"-->
-<!--                                class="fa fa-angle-double-right"-->
-<!--                              ></i-->
-<!--                            ></i>-->
-<!--                          </a>-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div class="item-post-sb">-->
-<!--                    <div class="meta-post">-->
-<!--                      <div class="date-post">-->
-<!--                        <ul class="all-meta">-->
-<!--                          <li class="date"><span>20</span></li>-->
-<!--                          <li class="month"><span>THÁNG 1</span></li>-->
-<!--                        </ul>-->
-<!--                      </div>-->
-<!--                      <div class="post-info">-->
-<!--                        <div class="post_info">-->
-<!--                          <h5 class="fs-16 fw-bold">-->
-<!--                            <a href="#"-->
-<!--                              >Tái Chế Pin Mặt Trời: Quy Trình Tái Chế và Lợi-->
-<!--                              Ích</a-->
-<!--                            >-->
-<!--                          </h5>-->
-<!--                          <a href="#" style="font-size: 12px"-->
-<!--                            ><i-->
-<!--                              >Xem thêm-->
-<!--                              <i-->
-<!--                                style="font-size: 9px"-->
-<!--                                class="fa fa-angle-double-right"-->
-<!--                              ></i-->
-<!--                            ></i>-->
-<!--                          </a>-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
+          <!--          <div class="post-features mb-md-5">-->
+          <!--            <div class="row">-->
+          <!--              <div class="col-lg-7 align-middle border-right hide-border-responsive border-grey">-->
+          <!--                <div class="single-news">-->
+          <!--                  <div class="news-inner row">-->
+          <!--                    <div class="thumbnail col-lg-7 p-0">-->
+          <!--                      <a href="#">-->
+          <!--                        <img-->
+          <!--                      th:src="@{/imgs/news/8-03-25/8-03-25-1.png}"-->
+          <!--                          alt="8-03-25-1"-->
+          <!--                        />-->
+          <!--                      </a>-->
+          <!--                      <div class="pmt-news-meta">-->
+          <!--                        <ul class="all-meta">-->
+          <!--                          <li class="date"><span>20</span></li>-->
+          <!--                          <li class="month"><span>THÁNG 1</span></li>-->
+          <!--                        </ul>-->
+          <!--                      </div>-->
+          <!--                    </div>-->
+          <!--                    <div class="news-content col-lg-5">-->
+          <!--                      <div class="news-head">-->
+          <!--                        <span class="name">Tin tức</span>-->
+          <!--                        <span class="designation">Tin dự án</span>-->
+          <!--                      </div>-->
+          <!--                      <div class="news-body">-->
+          <!--                        <a href="news-details.html" class="title-area">-->
+          <!--                          <h4 class="title">-->
+          <!--                            Techgel mừng ngày quốc tế phụ nữ 8/3-->
+          <!--                          </h4>-->
+          <!--                        </a>-->
+          <!--                        <p class="description">-->
+          <!--                          Để chào mừng ngày lễ 8/3, Công ty Cổ phần Kỹ thuật Công nghệ Sài Gòn Techgel đã tổ chức buổi lễ dành riêng cho chị em nhằm tri ân những cống hiến của phái đẹp.-->
+          <!--                        </p>-->
+          <!--                      </div>-->
+          <!--                      <a class="btn-read-more" href="news-details.html">-->
+          <!--                        <span class="read-more-text">Đọc thêm</span>-->
+          <!--                        <span class="read-more-icon"-->
+          <!--                          ><i class="fa-solid fa-arrow-right"></i-->
+          <!--                        ></span>-->
+          <!--                      </a>-->
+          <!--                    </div>-->
+          <!--                  </div>-->
+          <!--                </div>-->
+          <!--              </div>-->
+          <!--              <div class="post-sidebar col-lg-5">-->
+          <!--                  <div class="item-post-sb">-->
+          <!--                    <div class="meta-post">-->
+          <!--                      <div class="date-post">-->
+          <!--                        <ul class="all-meta">-->
+          <!--                          <li class="date"><span>20</span></li>-->
+          <!--                          <li class="month"><span>THÁNG 1</span></li>-->
+          <!--                        </ul>-->
+          <!--                      </div>-->
+          <!--                      <div class="post-info">-->
+          <!--                        <div class="post_info">-->
+          <!--                          <h5 class="fs-16 fw-bold">-->
+          <!--                            <a href="#"-->
+          <!--                              >TECHGEL – SỰ TRỞ LẠI MẠNH MẼ SAU KHỦNG HOẢNG</a-->
+          <!--                            >-->
+          <!--                          </h5>-->
+          <!--                          <a href="#" style="font-size: 12px"-->
+          <!--                            ><i-->
+          <!--                              >Xem thêm-->
+          <!--                              <i-->
+          <!--                                style="font-size: 9px"-->
+          <!--                                class="fa fa-angle-double-right"-->
+          <!--                              ></i-->
+          <!--                            ></i>-->
+          <!--                          </a>-->
+          <!--                        </div>-->
+          <!--                    </div>-->
+          <!--                  </div>-->
+          <!--                  -->
+          <!--                </div>-->
+          <!--                <div class="item-post-sb">-->
+          <!--                    <div class="meta-post">-->
+          <!--                      <div class="date-post">-->
+          <!--                        <ul class="all-meta">-->
+          <!--                          <li class="date"><span>20</span></li>-->
+          <!--                          <li class="month"><span>THÁNG 1</span></li>-->
+          <!--                        </ul>-->
+          <!--                      </div>-->
+          <!--                      <div class="post-info">-->
+          <!--                        <div class="post_info">-->
+          <!--                          <h5 class="fs-16 fw-bold">-->
+          <!--                            <a href="#"-->
+          <!--                              >TECHGEL – NHÀ GA HÀNH KHÁCH T3 SÂN BAY TÂN-->
+          <!--                              SƠN NHẤT</a-->
+          <!--                            >-->
+          <!--                          </h5>-->
+          <!--                          <a href="#" style="font-size: 12px"-->
+          <!--                            ><i-->
+          <!--                              >Xem thêm-->
+          <!--                              <i-->
+          <!--                                style="font-size: 9px"-->
+          <!--                                class="fa fa-angle-double-right"-->
+          <!--                              ></i-->
+          <!--                            ></i>-->
+          <!--                          </a>-->
+          <!--                        </div>-->
+          <!--                      </div>-->
+          <!--                    </div>-->
+          <!--                  </div>-->
+          <!--                  <div class="item-post-sb">-->
+          <!--                    <div class="meta-post">-->
+          <!--                      <div class="date-post">-->
+          <!--                        <ul class="all-meta">-->
+          <!--                          <li class="date"><span>20</span></li>-->
+          <!--                          <li class="month"><span>THÁNG 1</span></li>-->
+          <!--                        </ul>-->
+          <!--                      </div>-->
+          <!--                      <div class="post-info">-->
+          <!--                        <div class="post_info">-->
+          <!--                          <h5 class="fs-16 fw-bold">-->
+          <!--                            <a href="#"-->
+          <!--                              >Tái Chế Pin Mặt Trời: Quy Trình Tái Chế và Lợi-->
+          <!--                              Ích</a-->
+          <!--                            >-->
+          <!--                          </h5>-->
+          <!--                          <a href="#" style="font-size: 12px"-->
+          <!--                            ><i-->
+          <!--                              >Xem thêm-->
+          <!--                              <i-->
+          <!--                                style="font-size: 9px"-->
+          <!--                                class="fa fa-angle-double-right"-->
+          <!--                              ></i-->
+          <!--                            ></i>-->
+          <!--                          </a>-->
+          <!--                        </div>-->
+          <!--                      </div>-->
+          <!--                    </div>-->
+          <!--                  </div>-->
+          <!--              </div>-->
+          <!--            </div>-->
+          <!--          </div>-->
           <h4 class="text-center">Không tìm thấy tin tức.</h4>
         </div>
       </div>
@@ -828,13 +872,14 @@
                     <h4 class="section-sub-title split-collab-chars">
                       <span class="subtitle">
                         <img
-                                data-sal-delay="200"
-                                data-sal="fade"
-                                data-sal-duration="800"
-                                th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                                alt="Techgel"
+                          data-sal-delay="200"
+                          data-sal="fade"
+                          data-sal-duration="800"
+                          th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                          alt="Techgel"
                         />
-                        [[${ aboutUsTestimonial.title_vi }]]</span>
+                        [[${ aboutUsTestimonial.title_vi }]]</span
+                      >
                     </h4>
                   </div>
                   <div class="button-next-prev">
@@ -847,11 +892,14 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="swiper-style-one tmp-section-gapBottom">
-                  <div class="swiper-container-style-two swiper-initialized swiper-horizontal swiper-backface-hidden"
+                  <div
+                    class="swiper-container-style-two swiper-initialized swiper-horizontal swiper-backface-hidden"
                   >
                     <div class="swiper-wrapper">
-
-                      <div th:each="item :${aboutUsTestimonialItems}" class="swiper-slide">
+                      <div
+                        th:each="item :${aboutUsTestimonialItems}"
+                        class="swiper-slide"
+                      >
                         <div class="single-card card-horizontal">
                           <div class="card-inner">
                             <div class="content">
@@ -860,13 +908,15 @@
                               </p>
                               <div class="content content-without-bg">
                                 <div class="name">[[${ item.name_vi }]]</div>
-                                <div class="designation">[[${ item.designation_vi }]]</div>
+                                <div class="designation">
+                                  [[${ item.designation_vi }]]
+                                </div>
                               </div>
                             </div>
                             <div class="thumbnail">
                               <img
-                                      th:src="@{${item.thumbnail_url}}"
-                                      alt="Techgel"
+                                th:src="@{${item.thumbnail_url}}"
+                                alt="Techgel"
                               />
                               <div class="icon icon-quote">
                                 <i class="fa-solid fa-quote-left"></i>
@@ -875,7 +925,6 @@
                           </div>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -885,7 +934,6 @@
         </div>
       </div>
 
-
       <!-- partners & clients -->
       <div class="tmp-partner-area" style="position: relative; padding: 50px 0">
         <div class="container-full">
@@ -893,22 +941,22 @@
             <div class="col-lg-12">
               <div class="section-head pb-3">
                 <h4 class="section-sub-title center-title split-collab-words">
-
                   <span class="subtitle">
                     <img
-                          data-sal-delay="200"
-                          data-sal="fade"
-                          data-sal-duration="800"
-                          th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                          alt="Techgel"
-                  />Đối tác và khách hàng</span>
+                      data-sal-delay="200"
+                      data-sal="fade"
+                      data-sal-duration="800"
+                      th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                      alt="Techgel"
+                    />Đối tác và khách hàng</span
+                  >
                 </h4>
               </div>
             </div>
           </div>
-          <div class="partner-area-slider" >
-              <div class="slide-track">
-               <div th:each="logo : ${aboutUsClientPartnerItems}" class="slide">
+          <div class="partner-area-slider">
+            <div class="slide-track">
+              <div th:each="logo : ${aboutUsClientPartnerItems}" class="slide">
                 <img
                   th:src="${logo.getImage_url()}"
                   width="200"

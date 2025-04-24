@@ -7,12 +7,16 @@
   <body>
     <main class="content-wrapper" style="overflow: hidden">
       <div class="project-banner">
-        <img th:src="@{${project.image_url}}" class="img-fluid" th:alt="${project.title_vi}">
+        <img
+          th:src="@{${project.image_url}}"
+          class="img-fluid"
+          th:alt="${project.title_vi}"
+        />
         <div class="meta-info">
           <div class="container">
             <div class="meta-inner">
-              <h3 class="title fw-bold text-uppercase split-collab-words">
-                  [[${ project.title_vi }]]
+              <h3 class="title fw-bold text-uppercase split-collab-wordss">
+                [[${ project.title_vi }]]
               </h3>
             </div>
           </div>
@@ -24,40 +28,40 @@
             <div class="row gx-0">
               <div class="col-md-3">
                 <div class="item">
-                  <h5 class="fw-bold text-uppercase split-collab-chars">Khách hàng</h5>
-                  <div>
-                    [[${ project.client_name_vi }]]
-                  </div>
+                  <h5 class="fw-bold text-uppercase split-collab-words">
+                    Khách hàng
+                  </h5>
+                  <div>[[${ project.client_name_vi }]]</div>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="item">
-                  <h5 class="fw-bold text-uppercase split-collab-chars">Địa điểm</h5>
-                  <div>
-                    [[${ project.location_vi }]]
-                  </div>
+                  <h5 class="fw-bold text-uppercase split-collab-words">
+                    Địa điểm
+                  </h5>
+                  <div>[[${ project.location_vi }]]</div>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="item">
-                  <h5 class="fw-bold text-uppercase split-collab-chars">Phạm vi công việc</h5>
-                  <div>
-                    [[${ project.scope_of_work_vi }]]
-                  </div>
+                  <h5 class="fw-bold text-uppercase split-collab-words">
+                    Phạm vi công việc
+                  </h5>
+                  <div>[[${ project.scope_of_work_vi }]]</div>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="item">
-                  <h5 class="fw-bold text-uppercase split-collab-chars">Thời gian</h5>
-                  <div>
-                    [[${ project.time_vi  }]]
-                  </div>
+                  <h5 class="fw-bold text-uppercase split-collab-words">
+                    Thời gian
+                  </h5>
+                  <div>[[${ project.time_vi }]]</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-10">
@@ -69,7 +73,10 @@
               </div>
             </div>
           </div>
-          <div class="title_section" th:if="${not project.getProjectImageList().isEmpty()}">
+          <div
+            class="title_section"
+            th:if="${not project.getProjectImageList().isEmpty()}"
+          >
             <div class="row align-items-center">
               <div class="col-md-6">
                 <h3 class="primary-color"><span>Ảnh dự án</span></h3>
@@ -77,33 +84,60 @@
             </div>
           </div>
           <div class="overview_wrapper">
-
             <div class="slider_overview">
-              <div class="item slick-slide" th:each="projectImage : ${project.getProjectImageList()}">
+              <div
+                class="item slick-slide"
+                th:each="projectImage : ${project.getProjectImageList()}"
+              >
                 <figure>
-                  <a th:href="@{${projectImage.image_url}}" data-fancybox="overview">
-                    <img th:src="@{${projectImage.image_url}}" class="img-fluid" th:alt="${project.title_vi}">
+                  <a
+                    th:href="@{${projectImage.image_url}}"
+                    data-fancybox="overview"
+                  >
+                    <img
+                      th:src="@{${projectImage.image_url}}"
+                      class="img-fluid"
+                      th:alt="${project.title_vi}"
+                    />
                   </a>
                 </figure>
               </div>
             </div>
-
           </div>
         </div>
       </div>
 
       <div class="view-more-wrapper pb-5">
-        <a class="view-more-button" href="/projects" data-rocket-lazy-bg-04f3bbf1-6984-44d8-8a71-cd5605060b59="loaded">
+        <a
+          class="view-more-button"
+          href="/projects"
+          data-rocket-lazy-bg-04f3bbf1-6984-44d8-8a71-cd5605060b59="loaded"
+        >
           <span class="d-flex justify-content-center">
             <span class="d-flex ml-5">
-				<svg xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28" fill="none">
-                  <path d="M0.799316 26.6011L26 1.40039" stroke="#5FD1C1" stroke-width="2"></path>
-                  <path d="M3.31494 1.40039H25.9956V24.081" stroke="#5FD1C1" stroke-width="2"></path></svg>			</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="28"
+                viewBox="0 0 27 28"
+                fill="none"
+              >
+                <path
+                  d="M0.799316 26.6011L26 1.40039"
+                  stroke="#5FD1C1"
+                  stroke-width="2"
+                ></path>
+                <path
+                  d="M3.31494 1.40039H25.9956V24.081"
+                  stroke="#5FD1C1"
+                  stroke-width="2"
+                ></path>
+              </svg>
+            </span>
             <span class="elementor-button-text">XEM THÊM DỰ ÁN</span>
-		  </span>
+          </span>
         </a>
       </div>
-
     </main>
   </body>
 </html>

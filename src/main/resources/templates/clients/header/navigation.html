@@ -5,11 +5,11 @@
     <title>Title</title>
   </head>
   <body>
-    <div th:fragment="navigation">
-
+    <div th:fragment="navigation" class="navigation-fragment">
       <header
         class="tmp-header-area-start header-one position-relative"
-        style="z-index: 999">
+        style="z-index: 999"
+      >
         <div class="main-header-one-wrapper">
           <div class="header-mida-area">
             <div class="logo-area-start">
@@ -30,81 +30,158 @@
                 />
               </a>
             </div>
-<!--            <div class="mid-header-center">-->
-<!--              <div class="input-area">-->
-<!--                <input type="text" placeholder="Tìm kiếm..." />-->
-<!--                <i class="fa-solid fa-magnifying-glass searchbar-icon"></i>-->
-<!--              </div>-->
-<!--            </div>-->
-              <div>
-                <p class="title-heading">
-
-                    <span data-text="S">S</span>
-                    <span data-text="A">A</span>
-                    <span data-text="I">I</span>
-                    <span data-text="G">G</span>
-                    <span data-text="O">O</span>
-                    <span data-text="N">N</span>
-                    <span data-text="&nbsp;">&nbsp;</span>
-                    <span data-text="T">T</span>
-                    <span data-text="E">E</span>
-                    <span data-text="C">C</span>
-                    <span data-text="H">H</span>
-                    <span data-text="N">N</span>
-                    <span data-text="O">O</span>
-                    <span data-text="L">L</span>
-                    <span data-text="O">O</span>
-                    <span data-text="G">G</span>
-                    <span data-text="Y">Y</span>
-                    <span data-text="&nbsp;">&nbsp;</span>
-                    <span data-text="I">I</span>
-                    <span data-text="N">N</span>
-                    <span data-text="C">C</span>
-                    <span data-text=".">.</span>
-
-                </p>
+            <!--            <div class="mid-header-center">-->
+            <!--              <div class="input-area">-->
+            <!--                <input type="text" placeholder="Tìm kiếm..." />-->
+            <!--                <i class="fa-solid fa-magnifying-glass searchbar-icon"></i>-->
+            <!--              </div>-->
+            <!--            </div>-->
+            <div>
+              <p class="title-heading">
+                <span data-text="S">S</span>
+                <span data-text="A">A</span>
+                <span data-text="I">I</span>
+                <span data-text="G">G</span>
+                <span data-text="O">O</span>
+                <span data-text="N">N</span>
+                <span data-text="&nbsp;">&nbsp;</span>
+                <span data-text="T">T</span>
+                <span data-text="E">E</span>
+                <span data-text="C">C</span>
+                <span data-text="H">H</span>
+                <span data-text="N">N</span>
+                <span data-text="O">O</span>
+                <span data-text="L">L</span>
+                <span data-text="O">O</span>
+                <span data-text="G">G</span>
+                <span data-text="Y">Y</span>
+                <span data-text="&nbsp;">&nbsp;</span>
+                <span data-text="I">I</span>
+                <span data-text="N">N</span>
+                <span data-text="C">C</span>
+                <span data-text=".">.</span>
+              </p>
             </div>
 
-            <div class="d-flex align-items-center" style="gap:20px;">
+            <div class="d-flex align-items-center" style="gap: 20px">
               <div class="actions-area">
                 <svg display="none">
                   <symbol id="light" viewBox="0 0 24 24">
-                    <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                      <line x1="12" y1="17" x2="12" y2="20" transform="rotate(0,12,12)" />
-                      <line x1="12" y1="17" x2="12" y2="20" transform="rotate(45,12,12)" />
-                      <line x1="12" y1="17" x2="12" y2="20" transform="rotate(90,12,12)" />
-                      <line x1="12" y1="17" x2="12" y2="20" transform="rotate(135,12,12)" />
-                      <line x1="12" y1="17" x2="12" y2="20" transform="rotate(180,12,12)" />
-                      <line x1="12" y1="17" x2="12" y2="20" transform="rotate(225,12,12)" />
-                      <line x1="12" y1="17" x2="12" y2="20" transform="rotate(270,12,12)" />
-                      <line x1="12" y1="17" x2="12" y2="20" transform="rotate(315,12,12)" />
+                    <g
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    >
+                      <line
+                        x1="12"
+                        y1="17"
+                        x2="12"
+                        y2="20"
+                        transform="rotate(0,12,12)"
+                      />
+                      <line
+                        x1="12"
+                        y1="17"
+                        x2="12"
+                        y2="20"
+                        transform="rotate(45,12,12)"
+                      />
+                      <line
+                        x1="12"
+                        y1="17"
+                        x2="12"
+                        y2="20"
+                        transform="rotate(90,12,12)"
+                      />
+                      <line
+                        x1="12"
+                        y1="17"
+                        x2="12"
+                        y2="20"
+                        transform="rotate(135,12,12)"
+                      />
+                      <line
+                        x1="12"
+                        y1="17"
+                        x2="12"
+                        y2="20"
+                        transform="rotate(180,12,12)"
+                      />
+                      <line
+                        x1="12"
+                        y1="17"
+                        x2="12"
+                        y2="20"
+                        transform="rotate(225,12,12)"
+                      />
+                      <line
+                        x1="12"
+                        y1="17"
+                        x2="12"
+                        y2="20"
+                        transform="rotate(270,12,12)"
+                      />
+                      <line
+                        x1="12"
+                        y1="17"
+                        x2="12"
+                        y2="20"
+                        transform="rotate(315,12,12)"
+                      />
                     </g>
                     <circle fill="currentColor" cx="12" cy="12" r="5" />
                   </symbol>
                   <symbol id="dark" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M15.1,14.9c-3-0.5-5.5-3-6-6C8.8,7.1,9.1,5.4,9.9,4c0.4-0.8-0.4-1.7-1.2-1.4C4.6,4,1.8,7.9,2,12.5c0.2,5.1,4.4,9.3,9.5,9.5c4.5,0.2,8.5-2.6,9.9-6.6c0.3-0.8-0.6-1.7-1.4-1.2C18.6,14.9,16.9,15.2,15.1,14.9z" />
+                    <path
+                      fill="currentColor"
+                      d="M15.1,14.9c-3-0.5-5.5-3-6-6C8.8,7.1,9.1,5.4,9.9,4c0.4-0.8-0.4-1.7-1.2-1.4C4.6,4,1.8,7.9,2,12.5c0.2,5.1,4.4,9.3,9.5,9.5c4.5,0.2,8.5-2.6,9.9-6.6c0.3-0.8-0.6-1.7-1.4-1.2C18.6,14.9,16.9,15.2,15.1,14.9z"
+                    />
                   </symbol>
                 </svg>
                 <label class="switch">
-                  <input class="switch__input theme-toggle" type="checkbox" role="switch" name="dark" />
-                  <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
+                  <input
+                    class="switch__input theme-toggle"
+                    type="checkbox"
+                    role="switch"
+                    name="dark"
+                  />
+                  <svg
+                    class="switch__icon"
+                    width="24px"
+                    height="24px"
+                    aria-hidden="true"
+                  >
                     <use href="#light" />
                   </svg>
-                  <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
+                  <svg
+                    class="switch__icon"
+                    width="24px"
+                    height="24px"
+                    aria-hidden="true"
+                  >
                     <use href="#dark" />
                   </svg>
                   <span class="switch__inner"></span>
                   <span class="switch__inner-icons">
-                      <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
-                          <use href="#light" />
-                      </svg>
-                      <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
-                          <use href="#dark" />
-                      </svg>
+                    <svg
+                      class="switch__icon"
+                      width="24px"
+                      height="24px"
+                      aria-hidden="true"
+                    >
+                      <use href="#light" />
+                    </svg>
+                    <svg
+                      class="switch__icon"
+                      width="24px"
+                      height="24px"
+                      aria-hidden="true"
+                    >
+                      <use href="#dark" />
+                    </svg>
                   </span>
                   <span class="switch__sr">Dark Mode</span>
                 </label>
-
               </div>
               <div class="button-borders">
                 <a
@@ -119,19 +196,30 @@
           <div class="tmp-nav-area-one header--sticky sticky">
             <div class="logo-md-sm-device">
               <a href="/" class="logo">
-                <img height="35" th:src="@{/imgs/logos/logo-white.png}" class="only-dark" alt="Techgel logo">
-                  <img height="35" th:src="@{/imgs/logos/logo.jpg}" class="only-light" alt="Techgel logo">
+                <img
+                  height="35"
+                  th:src="@{/imgs/logos/logo-white.png}"
+                  class="only-dark"
+                  alt="Techgel logo"
+                />
+                <img
+                  height="35"
+                  th:src="@{/imgs/logos/logo.jpg}"
+                  class="only-light"
+                  alt="Techgel logo"
+                />
               </a>
             </div>
             <div class="header-nav main-nav-one menu-nav">
               <nav>
                 <ul class="parent-nav flex-wrap justify-content-center">
                   <li
-                          th:each="n, i: ${homeNavigations}"
-                          th:class="${not n.getChildrens.isEmpty() ? 'has-dropdown' : ''}">
+                    th:each="n, i: ${homeNavigations}"
+                    th:class="${not n.getChildrens.isEmpty() ? 'has-dropdown' : ''}"
+                  >
                     <a
-                            th:href="@{${n.slug}}"
-                            class="nav-link d-flex justify-content-center align-items-center"
+                      th:href="@{${n.slug}}"
+                      class="nav-link d-flex justify-content-center align-items-center"
                     >
                       <span class="rolling-text">
                         <div class="block">
@@ -141,49 +229,56 @@
                     </a>
                     <ul class="submenu" th:if="${not n.getChildrens.isEmpty()}">
                       <li th:each="sub : ${n.getChildrens}">
-                        <a th:href="@{${sub.slug}}"
-                        >[[${sub.title_vi}]]</a>
+                        <a th:href="@{${sub.slug}}">[[${sub.title_vi}]]</a>
                       </li>
                     </ul>
                   </li>
                 </ul>
-
               </nav>
             </div>
             <div class="actions-area">
               <div class="tmp-side-collups-area" id="side-collups-nav">
-                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  width="20"
+                  height="16"
+                  viewBox="0 0 20 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
                   <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
                   <rect width="20" height="2" fill="#1F1F25"></rect>
                 </svg>
               </div>
               <div class="language-dropdown d-none" id="lang-picker">
-<!--                <form action="" method="get">-->
-<!--                  <button-->
-<!--                    class="btn dropdown-toggle"-->
-<!--                    type="button"-->
-<!--                    data-bs-toggle="dropdown"-->
-<!--                    aria-expanded="false"-->
-<!--                    style="outline: none; border: none; box-shadow: none"-->
-<!--                  >-->
-<!--                    <img th:src="@{/svg/vi_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />-->
-<!--                    VI-->
-<!--                  </button>-->
-<!--                  <ul class="dropdown-menu">-->
-<!--                      <li>-->
-<!--                        <button class="dropdown-item" lang="vi" type="submit">-->
-<!--                          <img th:src="@{/svg/vi_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" /> VI-->
-<!--                        </button>-->
-<!--                      </li>-->
-<!--                      <li>-->
-<!--                        <button class="dropdown-item" lang="vi" type="submit">-->
-<!--                          <img th:src="@{/svg/en-US_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />EN - US-->
-<!--                        </button>-->
-<!--                      </li>-->
-<!--                  </ul>-->
-<!--                </form>-->
-                <label class="lang-flag lang-vi" title="Click to select the language">
+                <!--                <form action="" method="get">-->
+                <!--                  <button-->
+                <!--                    class="btn dropdown-toggle"-->
+                <!--                    type="button"-->
+                <!--                    data-bs-toggle="dropdown"-->
+                <!--                    aria-expanded="false"-->
+                <!--                    style="outline: none; border: none; box-shadow: none"-->
+                <!--                  >-->
+                <!--                    <img th:src="@{/svg/vi_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />-->
+                <!--                    VI-->
+                <!--                  </button>-->
+                <!--                  <ul class="dropdown-menu">-->
+                <!--                      <li>-->
+                <!--                        <button class="dropdown-item" lang="vi" type="submit">-->
+                <!--                          <img th:src="@{/svg/vi_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" /> VI-->
+                <!--                        </button>-->
+                <!--                      </li>-->
+                <!--                      <li>-->
+                <!--                        <button class="dropdown-item" lang="vi" type="submit">-->
+                <!--                          <img th:src="@{/svg/en-US_flag.svg}" alt="Techgel Logo" width="45" height="35" class="pe-3" />EN - US-->
+                <!--                        </button>-->
+                <!--                      </li>-->
+                <!--                  </ul>-->
+                <!--                </form>-->
+                <label
+                  class="lang-flag lang-vi"
+                  title="Click to select the language"
+                >
                   <span class="flag"></span>
                 </label>
                 <ul class="lang-list">
@@ -206,7 +301,8 @@
       <div
         id="overlay_every-where"
         data-tmp-cursor="md text-black dark:text-white opacity-10"
-        data-tmp-cursor-icon="fa-regular fa-x fa-fw"></div>
+        data-tmp-cursor-icon="fa-regular fa-x fa-fw"
+      ></div>
     </div>
   </body>
 </html>

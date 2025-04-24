@@ -35,34 +35,44 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md">
-              <div class="d-md-flex justify-content-between align-items-center">
+              <div class="flex-project-filter">
                 <ul>
                   <li th:class="${slug == null ? 'active' : ''}">
                     <a class="text-uppercase" th:href="@{/projects}">Tất cả</a>
                   </li>
-                  <li th:class="${slug != null && slug == 'featured' ? 'active' : ''}">
-                    <a class="text-uppercase" th:href="@{/projects/featured}">Nổi bật</a>
+                  <li
+                    th:class="${slug != null && slug == 'featured' ? 'active' : ''}"
+                  >
+                    <a class="text-uppercase" th:href="@{/projects/featured}"
+                      >Nổi bật</a
+                    >
                   </li>
-                  <li th:each="category: ${projectCategories}" th:class="${slug != null && slug == category.slug ? 'active' : ''}">
-                    <a class="text-uppercase" th:href="@{'/projects/' + ${category.slug}}">[[${ category.name_vi }]]</a>
+                  <li
+                    th:each="category: ${projectCategories}"
+                    th:class="${slug != null && slug == category.slug ? 'active' : ''}"
+                  >
+                    <a
+                      class="text-uppercase"
+                      th:href="@{'/projects/' + ${category.slug}}"
+                      >[[${ category.name_vi }]]</a
+                    >
                   </li>
                 </ul>
-                <div class="filter" id="filter_projects-btn">
-                  <a href="javascript:;" class="text-nowrap">
-                    <i class="fa fa-sliders" aria-hidden="true"></i> Lọc
-                  </a>
-                </div>
               </div>
             </div>
-            <div class="col-md-auto">
-              <div class="d-md-flex">
-                <a
-                  href=""
-                  target="_blank"
-                >
-                  <i class="fa-solid fa-map-location-dot"></i>
-                  Map dự án
+            <div class="filter-area-wrapper">
+              <div class="filter" id="filter_projects-btn">
+                <a href="javascript:;" class="text-nowrap">
+                  <i class="fa fa-sliders" aria-hidden="true"></i> Lọc
                 </a>
+              </div>
+              <div class="col-md-auto">
+                <div class="d-md-flex">
+                  <a href="" target="_blank">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Map dự án
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -70,7 +80,11 @@
       </div>
       <div class="filter_advance animate__animated animate__fadeIn">
         <div class="container">
-          <form th:action="@{'/projects' + ${slug != null ? '/' + slug : ''}}" method="get" class="py-4">
+          <form
+            th:action="@{'/projects' + ${slug != null ? '/' + slug : ''}}"
+            method="get"
+            class="py-4"
+          >
             <div class="row align-items-center">
               <div class="col-md">
                 <div class="row align-items-center">
@@ -79,9 +93,10 @@
                   </div>
                   <div class="col-md-10">
                     <ul>
-                      <li th:each="year: ${#numbers.sequence(2022, currentYear)}">
+                      <li
+                        th:each="year: ${#numbers.sequence(2022, currentYear)}"
+                      >
                         <input
-
                           type="checkbox"
                           class="item_year"
                           name="years[]"
@@ -128,35 +143,51 @@
       <div id="next" class="project-listing container py-5">
         <div class="col-12 project-thumbnail">
           <div class="grid row">
-
-            <div th:each="project: ${projects}"
+            <div
+              th:each="project: ${projects}"
               data-sal-delay="300"
               data-sal="zoom-in"
               data-sal-duration="800"
-              class="grid_item col-lg-6">
-              <a class="grid_box" th:href="@{'/project_details/' + ${project.id}}">
-                <div class="grid_pic">
-                  <picture>
-                    <source th:srcset="@{${project.image_url}}" type="image/webp"/>
+              class="grid_item col-lg-6"
+            >
+              <div class="project-card">
+                <!-- First content: hình ảnh -->
+                <div class="first-content">
+                  <picture class="project-list-picture">
+                    <source
+                      th:srcset="@{${project.image_url}}"
+                      type="image/webp"
+                    />
                     <img
                       th:src="@{${project.image_url}}"
                       th:alt="${project.title_vi}"
                       th:title="${project.title_vi}"
+                      class="img-fluid"
                     />
                   </picture>
                 </div>
-                <div class="info">
-                  <div class="name">
-                    <p>
-                      <strong>[[${ project.title_vi }]]</strong>
-                    </p>
-                    <p>[[${ project.client_name_vi }]]</p>
-                  </div>
-                  <div class="province">[[${ project.location_vi }]]</div>
-                </div>
-              </a>
-            </div>
 
+                <!-- Second content: thông tin -->
+                <div class="second-content">
+                  <a
+                    th:href="@{'/project_details/' + ${project.id}}"
+                    class="text-decoration-none"
+                  >
+                    <div class="info">
+                      <div class="name">
+                        <h4><strong>[[${project.title_vi}]]</strong></h4>
+                        <h5>[[${project.client_name_vi}]]</h5>
+                      </div>
+                      <div class="add-line"></div>
+                      <div class="province">
+                        <h5>[[${project.location_vi}]]</h5>
+                      </div>
+                      <div class="add-arrow"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
