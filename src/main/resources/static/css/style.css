@@ -30,7 +30,7 @@ ul li a {
 }
 body::before {
     content: "";
-    width: 100%;
+    width: 100vw;
     height: 100%;
     position: absolute;
     left: 0;
@@ -140,7 +140,7 @@ body::before {
 
 .header-top-one {
     height: 35px;
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -249,7 +249,7 @@ body::before {
 .tmp-btn.btn-primary::after {
     position: absolute;
     content: "";
-    width: 100%;
+    width: 100vw;
     height: 0;
     bottom: 0;
     left: 0;
@@ -603,7 +603,7 @@ nav ul li.has-dropdown a.nav-link::before {
 .tmp-btn.btn-primary::after {
     position: absolute;
     content: "";
-    width: 100%;
+    width: 100vw;
     height: 0;
     bottom: 0;
     left: 0;
@@ -868,19 +868,7 @@ nav ul li.has-dropdown a.nav-link::before {
         opacity: 0;
     }
 }
-@keyframes circle {
-    0% {
-        opacity: 1;
-    }
-    40% {
-        opacity: 1;
-    }
-    100% {
-        width: 200%;
-        height: 200%;
-        opacity: 0;
-    }
-}
+
 
 .thumbnail.thumbnail-rounded.border-top-left.hover-animation a {
     display: block;
@@ -890,7 +878,7 @@ nav ul li.has-dropdown a.nav-link::before {
 
 .single-services .services-inner .thumbnail.thumbnail-rounded img {
     display: inline-block;
-    width: 100%;
+    width: 100vw;
     border-radius: 100%;
     padding: 10px;
     padding-bottom: 0;
@@ -933,7 +921,7 @@ nav ul li.has-dropdown a.nav-link::before {
     position: absolute;
     content: "";
     height: 100%;
-    width: 100%;
+    width: 100vw;
     background: transparent;
     border-radius: 50%;
     border: 2.52px dashed #c5c5c5;
@@ -1011,7 +999,7 @@ nav ul li.has-dropdown a.nav-link::before {
     display: block;
     position: relative !important;
     max-width: max-content;
-    min-width: 100%;
+    min-width: 100vw;
 }
 
 .product-swiper-area-one {
@@ -1056,7 +1044,7 @@ nav ul li.has-dropdown a.nav-link::before {
     content: "";
     left: 0;
     top: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background: rgba(228, 32, 52, 0.6941176471);
     opacity: 0;
@@ -1067,7 +1055,7 @@ nav ul li.has-dropdown a.nav-link::before {
 
 .single-project-start .thumbnail img {
     display: block;
-    min-width: 100%;
+    min-width: 100vw;
     object-fit: cover;
     height: 500px;
 }
@@ -1109,7 +1097,7 @@ nav ul li.has-dropdown a.nav-link::before {
 .slider_projects .item .wrapper > a{
     display: block;
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     left: 0;
     top: 0;
@@ -1125,7 +1113,7 @@ nav ul li.has-dropdown a.nav-link::before {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     padding: 0 40px 40px;
     color: #ffffff;
 }
@@ -1140,7 +1128,7 @@ nav ul li.has-dropdown a.nav-link::before {
     white-space: nowrap;
 }
 .slider_projects .item .wrapper .meta_info table tr td:last-child{
-    width: 100%;
+    width: 100vw;
 }
 .slider_projects .item .wrapper .meta_info .detail_info{
     max-height: 0;
@@ -1175,7 +1163,7 @@ nav ul li.has-dropdown a.nav-link::before {
 }
 .slider_projects .item .wrapper figure img{
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     object-fit: cover;
     -webkit-transition: all 0.5s ease;
@@ -1294,16 +1282,16 @@ body a.read_more:hover {
 
 .single-team {
     position: relative;
-    width: 100%;
+    width: 100vw;
 }
 
 .single-team .thumbnail {
     display: inline-block;
-    width: 100%;
+    width: 100vw;
 }
 
 .single-team .thumbnail img {
-    width: 100%;
+    width: 100vw;
     display: inline-block;
 }
 
@@ -1313,7 +1301,7 @@ body a.read_more:hover {
     justify-content: space-between;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
 }
 
 .single-team .content .team-name {
@@ -1571,7 +1559,7 @@ p.description {
     transition: 0.5s;
     background-color: #F0F2F5;
     border: 1px solid transparent;
-    width: 100%;
+    width: 100vw;
 }
 
 .form-group input {
@@ -1583,7 +1571,7 @@ p.description {
     background-color: #EFF0F6;
     border: 1px solid transparent;
     outline: none;
-    width: 100%;
+    width: 100vw;
 }
 
 .contact-form .contact-form-wrapper .form-group .input-field {
@@ -1606,7 +1594,7 @@ p.description {
 
 .contact-form.style-two .contact-form-wrapper .form-submit-group .tmp-btn {
     display: block;
-    width: 100%;
+    width: 100vw;
     border: none;
 }
 
@@ -1632,7 +1620,7 @@ p.description {
 }
 
 .single-news .news-inner .thumbnail a img {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     max-height: 18.75rem;
     transition: 0.5s;
@@ -1762,7 +1750,7 @@ p.description {
 }
 
 .ft-link li a:hover::after {
-    width: 100%;
+    width: 100vw;
 }
 
 .ft-link li a::after {
@@ -1871,7 +1859,7 @@ p.description {
     position: absolute;
     content: " ";
     height: 100%;
-    width: 100%;
+    width: 100vw;
     top: 0;
     left: 0;
     /*background-image: linear-gradient(to right, var(--black), #0612b3);*/
@@ -2018,7 +2006,7 @@ p.description {
 }
 
 .swiper-container-style-two {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     position: relative;
 }
@@ -2245,7 +2233,7 @@ p.description {
 }
 
 .project-thumbnail .grid .grid_item img {
-    width: 100%;
+    width: 100vw;
     height: auto;
     display: block;
     border-radius: 5px;
@@ -2260,7 +2248,7 @@ p.description {
     top: 0;
     opacity: 0;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     color: var(--white);
     text-align: left;
     padding: 2rem;
@@ -2369,7 +2357,7 @@ p.description {
 }
 
 .obl-area .cover-image {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     object-fit: cover;
 }
@@ -2377,7 +2365,7 @@ p.description {
 .obl-area .wrapper {
     transition: all 0.5s;
     position: absolute;
-    width: 100%;
+    width: 100vw;
     z-index: -1;
     height: 500px;
 }
@@ -2393,7 +2381,7 @@ p.description {
 .obl-area .wrapper::after {
     content: "";
     opacity: 0;
-    width: 100%;
+    width: 100vw;
     height: 80px;
     transition: all 0.5s;
     position: absolute;
@@ -2432,7 +2420,7 @@ p.description {
     position: absolute;
     left: 0;
     bottom: 5%;
-    width: 100%;
+    width: 100vw;
     transition: transform 0.5s;
 }
 .obl-area .obl-card:hover .obl-card-title {
@@ -2440,7 +2428,7 @@ p.description {
 }
 
 .obl-area .character {
-    width: 100%;
+    width: 100vw;
     opacity: 0;
     transition: all 0.5s;
     position: absolute;
@@ -2725,7 +2713,7 @@ p.description {
 
 
 .news-details-left-area .thumbnail-top img {
-    width: 100%;
+    width: 100vw;
     object-fit: cover;
 }
 
@@ -2817,7 +2805,7 @@ p.description {
 .side-bar-details-page .single-side-bar .header .title::after {
     position: absolute;
     content: "";
-    width: 100%;
+    width: 100vw;
     height: 2px;
     left: 0;
     bottom: -20px;
@@ -2860,7 +2848,7 @@ p.description {
 
 .single-news-recent-post-sidebar a img {
     transition: 0.3s;
-    width: 100%;
+    width: 100vw;
     object-fit: cover;
 }
 
@@ -2891,7 +2879,7 @@ p.description {
 }
 
 .shareholder-area .divine {
-    width: 100%;
+    width: 100vw;
     border-bottom: 1px solid var(--alwaysBlack);
 }
 
@@ -2910,7 +2898,7 @@ p.description {
 }
 
 .stock-info-table {
-    width: 100%;
+    width: 100vw;
     border-collapse: separate;
     border-spacing: 0;
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -2988,7 +2976,7 @@ p.description {
 }
 
 .price-stock-table{
-    width: 100%;
+    width: 100vw;
     border-collapse: separate;
     border-spacing: 0;
     font-family: 'Avenir Next', 'Segoe UI', Roboto, sans-serif;
@@ -3101,7 +3089,7 @@ p.description {
     display: flex;
     height: 100%;
     padding-bottom: 2em;
-    width: 100%;
+    width: 100vw;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -3213,7 +3201,7 @@ p.description {
 .careers_page .career_form .form_apply .file_wrapper {
     position: relative;
     height: 35px;
-    width: 100%;
+    width: 100vw;
     background: var(--alwaysGrey);
     display: flex;
     align-items: center;
@@ -3226,7 +3214,7 @@ p.description {
 }
 .careers_page .career_form .form_apply .file_wrapper input {
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     left: 0;
     top: 0;
@@ -3234,7 +3222,7 @@ p.description {
 }
 .careers_page .career_form .form_apply .btn.btn-download {
     height: 35px;
-    width: 100%;
+    width: 100vw;
     background: var(--alwaysGrey);
     display: flex;
     align-items: center;
@@ -3329,7 +3317,7 @@ p.description {
     margin: auto;
     overflow: hidden;
     position: relative;
-    width: 100%;
+    width: 100vw;
 }
 .partner-area-slider::before, .partner-area-slider::after {
     background: linear-gradient(to right, white 0%, rgba(240, 209, 209, 0) 100%);
@@ -3392,7 +3380,7 @@ p.description {
     align-items: center;
     max-width: 950px;
     align-self: stretch !important;
-    width: 100%;
+    width: 100vw;
     justify-content: center;
 }
 
@@ -3533,7 +3521,7 @@ p.description {
     font-size: 2rem;
     color: var(--white);
     transition: all .6s ease;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background-color: #303050;
     background-image: radial-gradient(circle at center top, #cce, #33a);
@@ -3758,7 +3746,7 @@ p.description {
 .shareholder-area .select select {
     -webkit-appearance: none;
     padding: 7px 40px 7px 12px;
-    width: 100%;
+    width: 100vw;
     border: 1px solid var(--white);
     border-radius: 5px;
     color: var(--black);
@@ -3813,7 +3801,7 @@ p.description {
 
 
 .hr-policies-void {
-    width: 100%;
+    width: 100vw;
     max-width: 1024px;
     margin: auto;
     position: relative;
@@ -3829,7 +3817,7 @@ p.description {
     margin: 0;
     padding: 0;
     position: relative;
-    width: 100%;
+    width: 100vw;
     aspect-ratio: 1 / 1;
     outline: 2px dotted magenta;
     z-index: 1;
@@ -3838,7 +3826,7 @@ p.description {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 100%;
+    width: 100vw;
     animation: rotateCW calc(var(--rotate-speed) * 1s) cubic-bezier(0.000, 0.37, 1.000, 0.63) infinite;
 }
 .hr-policies-void .card-item {
@@ -3999,7 +3987,7 @@ p.description {
 }
 .career_development_page .objectives .traning_step .background {
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     left: 0;
     top: 0;
@@ -4050,7 +4038,7 @@ p.description {
 .career_development_page .objectives .traning_step:after {
     position: absolute;
     content: "";
-    width: 100%;
+    width: 100vw;
     height: 100%;
     left: 0;
     top: 0;
@@ -4176,7 +4164,7 @@ body:has(.switch__input:checked) {
     border-radius: inherit;
     content: "";
     display: block;
-    width: 100%;
+    width: 100vw;
     height: 100%;
 }
 .switch__inner-icons {
@@ -4293,7 +4281,7 @@ body:has(.switch__input:checked) {
 }
 .language-dropdown .lang-flag .flag, .language-dropdown .lang-list .lang .flag {
     float: left;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     cursor: pointer;
     background-size: 2.1875rem 2.1875rem;
