@@ -9,6 +9,8 @@ if (userTheme === "dark") {
   $themeBtn.prop('checked', false)
 }
 
+fitty('.fit-text');
+
 const lang = localStorage.getItem("lang") || "vi";
 console.log(lang);
 html.setAttribute("lang", lang);
@@ -452,14 +454,27 @@ $(document).ready(function () {
 });
 
 /* Masonry */
-$(document).ready(function () {
-  var $grid = $(".grid").masonry({
-    itemSelector: ".grid_item",
-    columnWidth: ".grid-sizer",
-    percentPosition: true,
-    gutter: 15,
-  });
+// $(document).ready(function () {
+//   var $grid = $(".grid").masonry({
+//     itemSelector: ".grid_item",
+//     columnWidth: ".grid-sizer",
+//     percentPosition: true,
+//     gutter: 15,
+//   });
+//   imagesLoaded($(".grid")).on('progress', function() {
+//     $grid.layout();
+//   });
+// });
+
+/* Isotope */
+$(document).ready(function() {
+
 });
+
+/* Fancybox */
+$(document).ready(function(){
+  Fancybox.bind("[data-fancybox]", {});
+})
 
 /* Nanogallery2 */
 $(document).ready(function () {
@@ -562,7 +577,6 @@ $(document).ready(function () {
         srct: "https://img.freepik.com/free-photo/building-construction-worker-site-with-architect_23-2149124266.jpg?t=st=1743155407~exp=1743159007~hmac=5edb90c7b809f71e3cb7659d7b8a340b70601ab58794099fe6377caaa2be167e&w=1380",
       },
     ],
-    itemsBaseURL: "http://nanogallery2.nanostudio.org/samples/",
     locationHash: false,
 
     thumbnailWidth: "auto",
@@ -570,7 +584,7 @@ $(document).ready(function () {
 
     // hover effects
     thumbnailHoverEffect2:
-      "label_font-size_1em_1.5em|title_backgroundColor_rgba(255,255,255,0.34)_rgba(((84,132,12,0.8)|title_color_#000_var(--white)|image_scale_1.00_1.10_5000|image_rotateZ_0deg_4deg_5000",
+      "image_scale_1.00_1.10_5000|image_rotateZ_0deg_4deg_5000",
   });
 });
 

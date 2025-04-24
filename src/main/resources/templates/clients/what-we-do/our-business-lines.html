@@ -29,18 +29,9 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1>LĨNH VỰC HOẠT ĐỘNG</h1>
+              <h1 class="split-collab-words">LĨNH VỰC HOẠT ĐỘNG</h1>
             </div>
           </div>
-          <a
-            id="brxe-ygpexj"
-            href="#next"
-            data-brx-anchor="true"
-            class="brxe-block small-text-shadow"
-          >
-            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
-            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
-          </a>
         </div>
       </div>
 
@@ -100,15 +91,14 @@
                       width="100"
                     />
                     <span>Chất lượng</span>
-
                   </div>
-                                      <div class="business-line-quality-icon icon" >
-                    <img
-                      th:src="@{/imgs/responsibility.png}"
-                      alt=""
-                      width="100"
-                    />
-                    <span>Đảm bảo</span>
+                    <div class="business-line-quality-icon icon" >
+                      <img
+                        th:src="@{/imgs/responsibility.png}"
+                        alt=""
+                        width="100"
+                      />
+                      <span>Đảm bảo</span>
                     </div>
                 </div>
               </div>
@@ -121,492 +111,61 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div class="section-head pb-3">
-                <div class="section-sub-title center-title">
+              <div class="section-head p-0">
+                <h4 class="section-sub-title center-title split-collab-words">
                   <img
-                    th:src="@{/imgs/small-icons/section-custom-menubar.png}"
-                    alt="Corporate_service"
+                    data-sal-delay="200"
+                    data-sal="fade"
+                    data-sal-duration="800"
+                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                    alt="Techgel"
                   />
-                  <span class="subtitle">Lĩnh vực hoạt động</span>
-                </div>
-                <h2 class="title split-collab-chars" style="opacity: 0">
-                  BAO GỒM CÁC LĨNH VỰC
-                </h2>
+                  <span class="subtitle">[[${ homeOurBusinessLine.title_vi }]]</span>
+                </h4>
               </div>
             </div>
           </div>
 
           <div class="row my-5">
-            <div style="height: 31.25rem" class="col-lg-6 d-flex my-5">
+            <div th:each="service: ${whatWeDoServices}" style="height: 31.25rem" class="col-lg-6 d-flex my-5">
               <a
                 data-sal-delay="250"
                 data-sal="zoom-in"
                 data-sal-duration="800"
                 class="flex justify-content-end"
-                href=""
-                alt="Mythrill"
-                target="_blank"
+                th:href="@{/what-we-do/our-business-line-details(id=${service.id})}"
               >
                 <div class="obl-card">
                   <div class="wrapper">
                     <img
-                      src="https://i.pinimg.com/736x/b1/a7/bb/b1a7bb939b07aece941a7d3c304de2c9.jpg"
+                      th:src="${service.image_url}"
                       class="cover-image"
                     />
-                    <!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
-                    <p class="obl-card-title text-center font-weight-bold">
-                      NĂNG LƯỢNG
+                    <p class="obl-card-title text-center font-weight-bold text-uppercase">
+                      [[${ service.title_vi }]]
                     </p>
                   </div>
                   <img
-                    th:src="@{/imgs/Pngtreerenewableenergyislandwithsolar_20061974.png}"
+                    th:src="@{${service.image_popup_url}}"
                     class="character"
                   />
                 </div>
               </a>
               <ol class="olcards">
-                <li
+                <li th:each="subService: ${service.getWhatWeDoServiceItems()}"
                   style="--cardColor: #162d59"
                   data-sal-delay="350"
                   data-sal="slide-right"
                   data-sal-duration="800"
                 >
-                  <div class="content">
-                    <div class="icon">⚡</div>
-                    <div class="text">Điện gió</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #162d59"
-                  data-sal-delay="450"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">⚡</div>
-                    <div class="text">Điện mặt trời</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #162d59"
-                  data-sal-delay="550"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">⚡</div>
-                    <div class="text">Nhà máy nhiệt điện</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #162d59"
-                  data-sal-delay="650"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">⚡</div>
-                    <div class="text">Năng lượng sinh khối</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #162d59"
-                  data-sal-delay="750"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">⚡</div>
-                    <div class="text">Giải pháp tiết kiệm năng lượng</div>
-                  </div>
+                  <a class="content text-white" th:href="@{'/what-we-do/our-business-line-details?id=' + ${service.id} + '#' + ${subService.id}}">
+                    <div class="icon"></div>
+                    <div class="text">[[${ subService.title_vi }]]</div>
+                  </a>
                 </li>
               </ol>
             </div>
 
-            <div style="height: 31.25rem" class="col-lg-6 d-flex my-5">
-              <a
-                data-sal-delay="250"
-                data-sal="zoom-in"
-                data-sal-duration="800"
-                class="flex justify-content-end"
-                href=""
-                alt="Mythrill"
-                target="_blank"
-              >
-                <div class="obl-card">
-                  <div class="wrapper">
-                    <img
-                      th:src="@{/imgs/home/terminal.png}"
-                      class="cover-image"
-                    />
-                    <!--<img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
-                    <p class="obl-card-title text-center font-weight-bold">
-                      NHÀ GA & HANGAR
-                    </p>
-                  </div>
-                  <img
-                    th:src="@{/imgs/Pngtreelargepassengerairplaneflying through_20686786.png}"
-                    class="character"
-                  />
-                </div>
-              </a>
-              <ol class="olcards">
-                <li
-                  style="--cardColor: #36aeb3"
-                  data-sal-delay="350"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">✈️</div>
-                    <div class="text">Nhà ga hành khách</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #36aeb3"
-                  data-sal-delay="450"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">✈️</div>
-                    <div class="text">Nhà ga hàng hóa</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #36aeb3"
-                  data-sal-delay="550"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">✈️</div>
-                    <div class="text">Hangar bảo dưỡng tàu bay</div>
-                  </div>
-                </li>
-              </ol>
-            </div>
-
-            <div style="height: 31.25rem" class="col-lg-6 d-flex my-5">
-              <a
-                data-sal-delay="250"
-                data-sal="zoom-in"
-                data-sal-duration="800"
-                class="flex justify-content-end"
-                href=""
-                alt="Mythrill"
-                target="_blank"
-              >
-                <div class="obl-card">
-                  <div class="wrapper">
-                    <img
-                      th:src="@{/imgs/fields/green-factory.jpg}"
-                      class="cover-image"
-                    />
-                    <!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
-                    <p class="obl-card-title text-center font-weight-bold">
-                      CÔNG NGHIỆP
-                    </p>
-                  </div>
-                  <img
-                    th:src="@{/imgs/fields/factory-transparent.png}"
-                    class="character"
-                  />
-                </div>
-              </a>
-              <ol class="olcards">
-                <li
-                  style="--cardColor: #fc374e"
-                  data-sal-delay="350"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">🏭</div>
-                    <div class="text">Xử lý nước thải</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #fc374e"
-                  data-sal-delay="450"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">🏭</div>
-                    <div class="text">Cung cấp nước sạch</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #fc374e"
-                  data-sal-delay="550"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">🏭</div>
-                    <div class="text">Nhà xưởng khu công nghiệp</div>
-                  </div>
-                </li>
-              </ol>
-            </div>
-
-            <div style="height: 31.25rem" class="col-lg-6 d-flex my-5">
-              <a
-                data-sal-delay="250"
-                data-sal="zoom-in"
-                data-sal-duration="800"
-                class="flex justify-content-end"
-                href=""
-                alt="Mythrill"
-                target="_blank"
-              >
-                <div class="obl-card">
-                  <div class="wrapper">
-                    <img
-                      src="https://i.pinimg.com/736x/9b/e3/09/9be3097543ef4dc871a2c3a3a0bbd276.jpg"
-                      class="cover-image"
-                    />
-                    <!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
-                    <p class="obl-card-title text-center font-weight-bold">
-                      DÂN DỤNG
-                    </p>
-                  </div>
-                  <img
-                    th:src="@{/imgs/dd498f479372d99fa37e9a6fb154c20f-removebg-preview.png}"
-                    class="character"
-                  />
-                </div>
-              </a>
-              <ol class="olcards">
-                <li
-                  style="--cardColor: #f15f0e"
-                  data-sal-delay="350"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/external-soft-fill-juicy-fish/60/external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish.png"
-                        alt="external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish"
-                      />
-                    </div>
-                    <div class="text">Khách sạn & khu nghỉ dưỡng</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #f15f0e"
-                  data-sal-delay="450"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/external-soft-fill-juicy-fish/60/external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish.png"
-                        alt="external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish"
-                      />
-                    </div>
-                    <div class="text">Bệnh viện</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #f15f0e"
-                  data-sal-delay="550"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/external-soft-fill-juicy-fish/60/external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish.png"
-                        alt="external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish"
-                      />
-                    </div>
-                    <div class="text">Siêu thị</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #f15f0e"
-                  data-sal-delay="650"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/external-soft-fill-juicy-fish/60/external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish.png"
-                        alt="external-civil-civil-engineering-soft-fill-soft-fill-juicy-fish"
-                      />
-                    </div>
-                    <div class="text">
-                      Chung cư cao tầng, văn phòng, trường học
-                    </div>
-                  </div>
-                </li>
-              </ol>
-            </div>
-
-            <div style="height: 31.25rem" class="col-lg-6 d-flex my-5">
-              <a
-                data-sal-delay="250"
-                data-sal="zoom-in"
-                data-sal-duration="800"
-                class="flex justify-content-end"
-                href=""
-                alt="Mythrill"
-                target="_blank"
-              >
-                <div class="obl-card">
-                  <div class="wrapper">
-                    <img
-                      src="https://i.pinimg.com/736x/55/fe/56/55fe566d34945f9534f734ae4576e09e.jpg"
-                      class="cover-image"
-                    />
-                    <!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
-                    <p class="obl-card-title text-center font-weight-bold">
-                      HẠ TẦNG
-                    </p>
-                  </div>
-                  <img
-                    th:src="@{/imgs/5c8f1c651a264ba52f5b573e62a08c88-removebg-preview.png}"
-                    class="character"
-                  />
-                </div>
-              </a>
-              <ol class="olcards">
-                <li
-                  style="--cardColor: #d637fc"
-                  data-sal-delay="350"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-infrastructure-gig-economy-flaticons-flat-flat-icons.png"
-                        alt="external-infrastructure-gig-economy-flaticons-flat-flat-icons"
-                      />
-                    </div>
-                    <div class="text">Hạ tầng khu công nghiệp, nhà máy</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #d637fc"
-                  data-sal-delay="450"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-infrastructure-gig-economy-flaticons-flat-flat-icons.png"
-                        alt="external-infrastructure-gig-economy-flaticons-flat-flat-icons"
-                      />
-                    </div>
-                    <div class="text">Hạ tầng giao thông</div>
-                  </div>
-                </li>
-              </ol>
-            </div>
-
-            <div style="height: 31.25rem" class="col-lg-6 d-flex my-5">
-              <a
-                data-sal-delay="250"
-                data-sal="zoom-in"
-                data-sal-duration="800"
-                class="flex justify-content-end"
-                href=""
-                alt="Mythrill"
-                target="_blank"
-              >
-                <div class="obl-card">
-                  <div class="wrapper">
-                    <img
-                      src="https://i.pinimg.com/736x/03/2b/b4/032bb4387d0796e02d7e23ac92adea99.jpg"
-                      class="cover-image"
-                    />
-                    <!--                                    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />-->
-                    <p class="obl-card-title text-center font-weight-bold">
-                      CÔNG NGHỆ
-                    </p>
-                  </div>
-                  <img
-                    th:src="@{/imgs/1f4d7cbabe36eb5d21276808ead1c0b3-removebg-preview.png}"
-                    class="character"
-                  />
-                </div>
-              </a>
-              <ol class="olcards">
-                <li
-                  style="--cardColor: #37bbfc"
-                  data-sal-delay="350"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/stickers/100/technology.png"
-                        alt="technology"
-                      />
-                    </div>
-                    <div class="text">Công nghệ hàng không</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #37bbfc"
-                  data-sal-delay="450"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/stickers/100/technology.png"
-                        alt="technology"
-                      />
-                    </div>
-                    <div class="text">Công nghệ Datacenter</div>
-                  </div>
-                </li>
-                <li
-                  style="--cardColor: #37bbfc"
-                  data-sal-delay="550"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="content">
-                    <div class="icon">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/stickers/100/technology.png"
-                        alt="technology"
-                      />
-                    </div>
-                    <div class="text">Công nghệ AI</div>
-                  </div>
-                </li>
-              </ol>
-            </div>
           </div>
         </div>
       </div>

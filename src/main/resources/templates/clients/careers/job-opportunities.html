@@ -19,21 +19,9 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1>
-                <span class="uni-text-outline">TUYỂN DỤNG<br /></span>CƠ HỘI
-                NGHỀ NGHIỆP
-              </h1>
+              <h1 class="split-collab-chars">CƠ HỘI NGHỀ NGHIỆP</h1>
             </div>
           </div>
-          <a
-            id="brxe-ygpexj"
-            href="#next"
-            data-brx-anchor="true"
-            class="brxe-block small-text-shadow"
-          >
-            <div id="brxe-rqhadm" class="brxe-text-basic">Xem thêm</div>
-            <i id="brxe-flgaqk" class="fa-solid fa-arrow-down"></i>
-          </a>
         </div>
       </div>
 
@@ -45,45 +33,47 @@
           <hr />
           <div class="list_careers pb-md-5">
             <div class="row">
-
-              <div th:each="career: ${careerRecruitments.content}" class="col-md-4 col-6">
+              <div
+                th:each="career: ${careerRecruitments.content}"
+                class="col-md-4 col-6"
+              >
                 <div class="item_career">
                   <div class="row">
-                    <div class="col-md-4">
-                      <a href="#">
-                        <img
-                          width="300"
-                          height="300"
-                          th:src="${career.image_url}"
-                          class="img-fluid wp-post-image"
-                          th:alt="${career.title_vi}"
-                        />
-                      </a>
+                    <div class="col-md-1">
+                      <a href="#"> </a>
                     </div>
                     <div
-                      class="col-md-8 d-flex flex-column justify-content-between"
+                      class="col-md-11 d-flex flex-column justify-content-between"
                     >
                       <h5 class="fs-20 fw-bold">
                         <a href="#">[[${ career.title_vi }]]</a>
                       </h5>
                       <ul class="d-flex flex-column">
                         <li class="p-0 m-0">
-                          <i class="fa-solid fa-location-dot"></i> [[${ career.workplace_vi }]]
+                          <i class="fa-solid fa-location-dot"></i> [[${
+                          career.workplace_vi }]]
                         </li>
-                        <li class="p-0 m-0">Số lượng: [[${ career.quantity }]]</li>
+                        <li class="p-0 m-0">
+                          Số lượng: [[${ career.quantity }]]
+                        </li>
                       </ul>
-                      <a type="button" class="text-decoration-underline"
-                         th:data-title="${career.title_vi}"
-                         th:data-image_url="${career.image_url}"
-                         th:data-quantity="${career.quantity}"
-                         th:data-qualification="${career.qualification_vi}"
-                         th:data-experience="${career.experience_vi}"
-                         th:data-salary="${career.salary_vi}"
-                         th:data-workplace="${career.workplace_vi}"
-                         th:data-expiration_date="${career.expiration_date}"
-                         th:data-description="${career.description_vi}"
-                         data-toggle="modal" data-target="#recruitment-details-modal">
-                        Mô tả công việc <i class="fa-solid fa-angles-right"></i>
+                      <a
+                        type="button"
+                        class="text-decoration-underline"
+                        th:data-title="${career.title_vi}"
+                        th:data-image_url="${career.image_url}"
+                        th:data-quantity="${career.quantity}"
+                        th:data-qualification="${career.qualification_vi}"
+                        th:data-experience="${career.experience_vi}"
+                        th:data-salary="${career.salary_vi}"
+                        th:data-workplace="${career.workplace_vi}"
+                        th:data-expiration_date="${career.expiration_date}"
+                        th:data-description="${career.description_vi}"
+                        data-toggle="modal"
+                        data-target="#recruitment-details-modal"
+                      >
+                        Xem mô tả công việc
+                        <i class="fa-solid fa-angles-right"></i>
                       </a>
                     </div>
                   </div>
@@ -91,38 +81,37 @@
               </div>
 
               <div
-                  class="tmp-pagination-area-next-pev mt--50"
-                  th:if="${totalPages > 1}"
+                class="tmp-pagination-area-next-pev mt--50"
+                th:if="${totalPages > 1}"
               >
                 <!-- Prev Button -->
                 <button
-                        th:if="${currentPage > 1}"
-                        th:attr="onclick=|window.location='@{/careers/job-opportunities(page=${currentPage - 1})}'|"
+                  th:if="${currentPage > 1}"
+                  th:attr="onclick=|window.location='@{/careers/job-opportunities(page=${currentPage - 1})}'|"
                 >
                   <i class="fa-solid fa-chevron-left"></i>
                 </button>
 
                 <!-- Numbered Pages -->
                 <button
-                        th:each="i : ${#numbers.sequence(1, totalPages)}"
-                        th:classappend="${i == currentPage} ? 'active'"
-                        th:text="${i}"
-                        th:attr="onclick=|window.location='@{/careers/job-opportunities(page=${i})}'|"
+                  th:each="i : ${#numbers.sequence(1, totalPages)}"
+                  th:classappend="${i == currentPage} ? 'active'"
+                  th:text="${i}"
+                  th:attr="onclick=|window.location='@{/careers/job-opportunities(page=${i})}'|"
                 ></button>
 
                 <!-- Next Button -->
                 <button
-                        th:if="${currentPage < totalPages}"
-                        th:attr="onclick=|window.location='@{/careers/job-opportunities(page=${currentPage + 1})}'|"
+                  th:if="${currentPage < totalPages}"
+                  th:attr="onclick=|window.location='@{/careers/job-opportunities(page=${currentPage + 1})}'|"
                 >
                   <i class="fa-solid fa-chevron-right"></i>
                 </button>
               </div>
-
             </div>
           </div>
           <div class="career_form mt-5 mb-5" id="career_form">
-            <div class="row">
+            <div class="row text-black">
               <div class="col-md-4">
                 <div class="bg_form pe-5">
                   <img
@@ -161,7 +150,7 @@
                       <h3 class="fs-20 fw-bold text-uppercase">
                         <span>ỨNG TUYỂN NGAY</span>
                       </h3>
-                      <div class="row">
+                      <div class="row text-black">
                         <div class="col-md-6">
                           <p>
                             <label for="">Họ và Tên <span>*</span></label
@@ -302,8 +291,9 @@
                               <a
                                 class="btn btn-download"
                                 href=""
-                                download="download">
-                                  Điền theo mẫu CV công ty
+                                download="download"
+                              >
+                                Điền theo mẫu CV công ty
                                 <i class="fa fa-download"></i
                               ></a>
                             </div>
@@ -323,7 +313,9 @@
         </div>
       </div>
 
-      <th:block th:include="~{clients/career-recruitment-details-modal :: modal}"></th:block>
+      <th:block
+        th:include="~{clients/career-recruitment-details-modal :: modal}"
+      ></th:block>
     </main>
   </body>
 </html>

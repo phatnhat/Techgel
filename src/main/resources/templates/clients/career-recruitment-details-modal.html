@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <th:block th:fragment="modal">
-        <div class="modal fade" id="recruitment-details-modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content px-5">
-                    <div class="modal-body">
-                        <h4 class="text-center title"></h4>
-                        <div class="d-flex align-items-center justify-content-center" style="gap:35px;">
-                            <img width="200" height="200" src="" class="img-fluid wp-post-image" alt="">
-                            <ul>
-                                <li><b>Số lượng:</b> <span class="quantity"></span></li>
-                                <li><b>Trình độ:</b> <span class="qualification"></span></li>
-                                <li><b>Kinh nghiệm:</b> <span class="experience"></span></li>
-                                <li><b>Lương:</b> <span class="salary"></span></li>
-                                <li><b>Nơi làm việc:</b> <span class="workplace"></span></li>
-                                <li><b>Ngày hết hạn:</b> <span class="expiration_date"></span></li>
-                            </ul>
-                        </div>
-                        <div class="description"></div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="recruitment-details-modal">Đóng</button>
-                        <a href="#career_form" type="button" data-dismiss="recruitment-details-modal" class="btn btn-outline-success">Nộp hồ sơ</a>
-                    </div>
-                </div>
+      <div
+        class="modal fade"
+        id="recruitment-details-modal"
+        tabindex="-1"
+        role="dialog"
+      >
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content px-5">
+            <div class="modal-body">
+              <h4 class="text-center title"></h4>
+              <div
+                class="d-flex align-items-center justify-content-center"
+                style="gap: 35px"
+              >
+                <ul>
+                  <li><b>Số lượng:</b> <span class="quantity"></span></li>
+                  <li><b>Trình độ:</b> <span class="qualification"></span></li>
+                  <li><b>Kinh nghiệm:</b> <span class="experience"></span></li>
+                  <li><b>Lương:</b> <span class="salary"></span></li>
+                  <li><b>Nơi làm việc:</b> <span class="workplace"></span></li>
+                  <li>
+                    <b>Ngày hết hạn:</b> <span class="expiration_date"></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="description"></div>
             </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="recruitment-details-modal"
+              >
+                Đóng
+              </button>
+              <a
+                href="#career_form"
+                type="button"
+                data-dismiss="recruitment-details-modal"
+                class="btn btn-outline-success"
+                >Nộp hồ sơ</a
+              >
+            </div>
+          </div>
         </div>
+      </div>
     </th:block>
-</body>
+  </body>
 </html>
