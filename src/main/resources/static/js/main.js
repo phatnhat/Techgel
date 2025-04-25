@@ -11,10 +11,6 @@ if (userTheme === "dark") {
 
 fitty('.fit-text');
 
-const lang = localStorage.getItem("lang") || "vi";
-console.log(lang);
-html.setAttribute("lang", lang);
-
 $(document).ready(function () {
   addSplitCollabAnimation("chars");
   addSplitCollabAnimation("words");
@@ -22,7 +18,19 @@ $(document).ready(function () {
   initThemeToggle();
   langToggle();
   recruitmentDetailsToggle();
+  toggleMobileClass();
 });
+
+function toggleMobileClass() {
+  const obl_card = document.querySelector('.obl-card');
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth <= 800) {
+    obl_card.classList.add('mobile-class'); // Thêm class nếu ≤ 800px
+  } else {
+    obl_card.classList.remove('mobile-class'); // Xóa class nếu > 800px
+  }
+}
 
 function recruitmentDetailsToggle() {
   $('[data-target="#recruitment-details-modal"]').on('click', function (e){

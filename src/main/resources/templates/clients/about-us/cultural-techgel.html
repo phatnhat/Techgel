@@ -36,21 +36,18 @@
           <hr />
           <div class="post_cff mt-5">
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12" th:each="news: ${newsList}">
                 <div class="post_item mb-4">
                   <div class="row gx-2 gx-md-3">
                     <div class="col-md-2 col-6">
                       <figure>
-                        <a href="#">
+                        <a th:href="@{'/news-details/' + ${news.id}}">
                           <img
                             width="720"
                             height="450"
-                            src="https://img.freepik.com/free-vector/paper-style-core-values-background_23-2149079276.jpg?t=st=1743575010~exp=1743578610~hmac=2e61aacccd2103c7997571243e1fe72da11d764f19bd934621d7c6fe76062afc&w=1380"
+                            th:src="@{${news.image_url}}"
                             class="img-fluid wp-post-image"
-                            alt=""
-                            decoding="async"
-                            fetchpriority="high"
-                            draggable="false"
+                            th:alt="${news.title_vi}"
                           />
                         </a>
                       </figure>
@@ -59,54 +56,12 @@
                       <div class="post_info">
                         <h4 class="fs-16 fw-bold">
                           <a href="#">
-                            Đào tạo chuyên đề văn hóa giao tiếp nơi công sở
+                            [[${ news.title_vi }]]
                           </a>
                         </h4>
                         <div class="d-none d-md-block">
                           <div class="post_cate cl-blue fw-bold fs-13">
-                            Người trình bày: Nguyễn Thanh Phương
-                          </div>
-                          <div class="post_cate cl-blue fw-bold fs-13">
-                            10/04/2025
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="post_item mb-4">
-                  <div class="row gx-2 gx-md-3">
-                    <div class="col-md-2 col-6">
-                      <figure>
-                        <a href="#">
-                          <img
-                            width="720"
-                            height="450"
-                            src="https://img.freepik.com/free-vector/paper-style-core-values-background_23-2149079276.jpg?t=st=1743575010~exp=1743578610~hmac=2e61aacccd2103c7997571243e1fe72da11d764f19bd934621d7c6fe76062afc&w=1380"
-                            class="img-fluid wp-post-image"
-                            alt=""
-                            decoding="async"
-                            fetchpriority="high"
-                            draggable="false"
-                          />
-                        </a>
-                      </figure>
-                    </div>
-                    <div class="col-md-10 col-6">
-                      <div class="post_info">
-                        <h4 class="fs-16 fw-bold">
-                          <a href="#">
-                            Nhiệm vụ và công việc bộ phận hành chính nhân sự
-                          </a>
-                        </h4>
-                        <div class="d-none d-md-block">
-                          <div class="post_cate cl-blue fw-bold fs-13">
-                            Người trình bày: Nguyễn Đình Hiếu
-                          </div>
-                          <div class="post_cate cl-blue fw-bold fs-13">
-                            03/04/2025
+                            [[${ #temporals.format(news.updatedAt,'dd/MM/yyyy') }]]
                           </div>
                         </div>
                       </div>

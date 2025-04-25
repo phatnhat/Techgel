@@ -152,7 +152,22 @@ public class MainController {
         }
 
         @GetMapping("/about-us/cultural-techgel")
-        public String viewCulturalTechgel() {
+        public String viewCulturalTechgel(@RequestParam(name = "type", defaultValue = "CULTURAL") NewsType type,
+                                          @RequestParam(name = "page", defaultValue = "1") int page,
+                                          Model model) {
+                int pageSize = 3;
+                Pageable pageable = PageRequest.of(page - 1, pageSize);
+
+                Page<News> allNews = newsService.getAllByType(type, pageable);
+
+                model.addAttribute("newsList", allNews);
+                model.addAttribute("currentType", type.name());
+
+                model.addAttribute("newsListPaged", allNews);
+                model.addAttribute("currentPage", page);
+                model.addAttribute("totalPages", allNews.getTotalPages());
+                model.addAttribute("newsTypeList", NewsType.getCultural());
+
                 return "clients/about-us/cultural-techgel";
         }
 
@@ -259,7 +274,7 @@ public class MainController {
             model.addAttribute("newsListPaged", allNews);
             model.addAttribute("currentPage", page);
             model.addAttribute("totalPages", allNews.getTotalPages());
-            model.addAttribute("newsTypeList", NewsType.values());
+            model.addAttribute("newsTypeList", NewsType.getAllNewsTypes());
 
             return "clients/news/news";
         }
@@ -272,7 +287,7 @@ public class MainController {
 
             model.addAttribute("news", news);
             model.addAttribute("relatedNews", relatedNews);
-            model.addAttribute("newsType", NewsType.values());
+            model.addAttribute("newsType", NewsType.getAllNewsTypes());
 
             return "clients/news/news-details";
         }

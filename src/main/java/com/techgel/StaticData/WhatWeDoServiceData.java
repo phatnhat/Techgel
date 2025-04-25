@@ -94,7 +94,7 @@ public abstract class WhatWeDoServiceData {
                                 new WhatWeDoServiceItems(16L, "Hạ tầng khu công nghiệp, nhà máy", "", 16,
                                                 "Thiết kế và xây dựng hệ thống hạ tầng đồng bộ cho các khu công nghiệp, bao gồm: đường giao thông nội bộ, hệ thống cấp thoát nước, điện, viễn thông. Áp dụng công nghệ thông minh (IoT, hệ thống giám sát tự động) để tối ưu hóa vận hành.",
                                                 ""),
-                                new WhatWeDoServiceItems(17L, "Hạ tầng", "", 17,
+                                new WhatWeDoServiceItems(17L, "Hạ tầng giao thông", "", 17,
                                                 "Thi công các công trình giao thông trọng điểm: đường cao tốc, cầu, hầm, cảng biển, sân bay. Ứng dụng vật liệu mới và công nghệ thi công tiên tiến (cầu dây văng, hầm chịu lực cao) để nâng cao tuổi thọ công trình. Phát triển hệ thống giao thông thông minh (ITS) để giảm ùn tắc và tăng tính kết nối.",
                                                 "")));
                 item6.setWhatWeDoServiceItems(List.of(
