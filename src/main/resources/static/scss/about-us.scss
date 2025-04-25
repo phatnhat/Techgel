@@ -46,8 +46,9 @@
 
     .content_abs {
       position: absolute;
-      background: var(--neutralDark);
-      color: var(--white);
+      background: var(--themePrimary);
+      background: radial-gradient(at right bottom, var(--themeSecondary), var(--themePrimary));
+      color: var(--alwaysWhite);
       padding: 32px 48px;
       top: 50%;
       transform: translateY(-50%);
@@ -149,7 +150,7 @@
           transition: all 0.5s ease;
         }
 
-        h3 {
+        h4 {
           color: var(--themePrimary);
           padding-bottom: 24px;
           margin-bottom: 24px;

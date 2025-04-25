@@ -19,9 +19,7 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1 class="split-collab-words">
-                SƠ ĐỒ TỔ CHỨC
-              </h1>
+              <h1 class="split-collab-words">SƠ ĐỒ TỔ CHỨC</h1>
             </div>
           </div>
         </div>
@@ -35,13 +33,14 @@
                 <h4 class="section-sub-title center-title split-collab-words">
                   <span class="subtitle">
                     <img
-                            data-sal-delay="200"
-                            data-sal="fade"
-                            data-sal-duration="800"
-                            th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                            alt="TECHGEL"
+                      data-sal-delay="200"
+                      data-sal="fade"
+                      data-sal-duration="800"
+                      th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                      alt="TECHGEL"
                     />
-                    [[${ aboutUsOrganizationalChart.title_vi }]]</span>
+                    [[${ aboutUsOrganizationalChart.title_vi }]]</span
+                  >
                 </h4>
               </div>
             </div>
@@ -51,7 +50,10 @@
             id="gallery-organizational"
             style="gap: 10px"
           >
-            <div th:each="item: ${aboutUsOrganizationalChartItems}" class="col-md-4">
+            <div
+              th:each="item: ${aboutUsOrganizationalChartItems}"
+              class="col-md-4"
+            >
               <div>
                 <div class="img_shadow mb-md-5 mb-3 px-5 px-md-0">
                   <a
@@ -71,13 +73,15 @@
               </div>
             </div>
           </div>
-          <div class="text-center">
-            <a
-              th:href="@{${aboutUsOrganizationalChart.file_url}}"
-              download
-              class="btn-download"
-              >Download PDF</a
-            >
+          <div class="organizational-chart-download">
+            <div class="button-borders">
+              <a
+                th:href="${aboutUsOrganizationalChart.file_url}"
+                target="_blank"
+                class="btn primary-button"
+                >Tải Bản PDF</a
+              >
+            </div>
           </div>
         </div>
       </div>
