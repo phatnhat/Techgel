@@ -454,17 +454,20 @@ $(document).ready(function () {
 });
 
 /* Masonry */
-// $(document).ready(function () {
-//   var $grid = $(".grid").masonry({
-//     itemSelector: ".grid_item",
-//     columnWidth: ".grid-sizer",
-//     percentPosition: true,
-//     gutter: 15,
-//   });
-//   imagesLoaded($(".grid")).on('progress', function() {
-//     $grid.layout();
-//   });
-// });
+$(document).ready(function () {
+  // var $grid = $(".grid").masonry({
+  //   itemSelector: ".grid_item",
+  //   columnWidth: ".grid-sizer",
+  //   percentPosition: true,
+  //   gutter: 15,
+  // });
+  // imagesLoaded($(".grid")).on('progress', function() {
+  //   $grid.layout();
+  // });
+  $('.grid').colcade({
+    items: '.grid_item'
+  });
+});
 
 /* Isotope */
 $(document).ready(function() {

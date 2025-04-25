@@ -4366,3 +4366,6 @@ body:has(.switch__input:checked) {
     font-size: 3rem;
     background-image: linear-gradient(rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0.3));
 }
+
+.grid_item { width: 25%; }
+.grid_item--width2 { width: 50%; }
