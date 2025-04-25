@@ -32,7 +32,7 @@ public class GlobalModelAttributes {
         });
         navigations.add(new HashMap<>() {
             {
-                put("Dự án", "/projects");
+                put("Dự án Thực Hiện", "/projects");
             }
         });
         navigations.add(new HashMap<>() {
