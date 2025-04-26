@@ -48,6 +48,10 @@ h6 {
   color: var(--themeSecondary);
 }
 
+.items-center {
+  justify-items: center;
+}
+
 .hover-underline {
   &:hover {
     text-decoration: underline;
@@ -984,7 +988,7 @@ div#brxe-rqhadm {
 }
 
 // SideHide
-#Aide-hide {
+.side-hide {
   position: fixed;
   top: 0;
   right: 0;

@@ -135,12 +135,12 @@
     --font-size-p-small: 13px; // .8125rem
     --font-size-p-small-bold: 13px;
 
-    --font-size-h1: 60px; // 2.5rem
-    --font-size-h2: 56px; // 2.125rem
-    --font-size-h3: 48px;
-    --font-size-h4: 40px;
-    --font-size-h5: 17px;
-    --font-size-h6: 24px;
+    --font-size-h1: 54px;  /* ~15% smaller */
+    --font-size-h2: 46px;
+    --font-size-h3: 28px;
+    --font-size-h4: 20px;
+    --font-size-h5: 16px;
+    --font-size-h6: 4px;   /* Unchanged (already very small) */
   }
 }
 
@@ -151,12 +151,12 @@
     --font-size-p-small: 12px; // .75rem
     --font-size-p-small-bold: 12px;
 
-    --font-size-h1: 56px; // 2rem
-    --font-size-h2: 48px; // 1.75rem
-    --font-size-h3: 40px;
-    --font-size-h4: 32px;
-    --font-size-h5: 24px;
-    --font-size-h6: 16px;
+    --font-size-h1: 44px;  /* ~30% smaller */
+    --font-size-h2: 38px;
+    --font-size-h3: 24px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 4px;
   }
 }
 
@@ -167,12 +167,12 @@
     --font-size-p-small: 11px; // .75rem
     --font-size-p-small-bold: 11px;
 
-    --font-size-h1: 52px; // 2rem
-    --font-size-h2: 48px; // 1.75rem
-    --font-size-h3: 40px;
-    --font-size-h4: 32px;
-    --font-size-h5: 24px;
-    --font-size-h6: 16px;
+    --font-size-h1: 36px;  /* ~45% smaller */
+    --font-size-h2: 32px;
+    --font-size-h3: 20px;
+    --font-size-h4: 16px;
+    --font-size-h5: 13px;
+    --font-size-h6: 4px;
   }
 }
 
