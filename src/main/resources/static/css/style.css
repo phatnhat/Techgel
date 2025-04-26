@@ -962,7 +962,7 @@ nav ul li.has-dropdown a.nav-link::before {
   position: absolute;
   content: "";
   height: 100%;
-  width: 100vw;
+  width: 100%;
   background: transparent;
   border-radius: 50%;
   border: 2.52px dashed #c5c5c5;
@@ -2359,7 +2359,6 @@ p.description {
   width: 100%;
   opacity: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
   border-radius: 0.9rem;
   transition: all 0.4s;
@@ -2373,6 +2372,10 @@ p.description {
   height: 100%;
   font-size: 1.8rem;
   transform: rotate(0deg);
+}
+
+.info{
+  color: var(--alwaysWhite) !important;
 }
 
 .project-list-picture {

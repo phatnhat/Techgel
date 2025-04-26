@@ -55,7 +55,7 @@
                     <div class="col-md-10 col-6">
                       <div class="post_info">
                         <h4 class="fs-16 fw-bold">
-                          <a href="#">
+                          <a th:href="@{'/news-details/' + ${news.id}}">
                             [[${ news.title_vi }]]
                           </a>
                         </h4>
