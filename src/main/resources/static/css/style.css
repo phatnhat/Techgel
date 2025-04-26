@@ -3622,10 +3622,10 @@ p.description {
 }
 .sd-area .commit-page .center {
   opacity: 1;
-  background-image: url(https://techgel.com.vn/wp-content/uploads/2024/05/Logo_Techgel-full.jpg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url("/imgs/logos/logo.jpg");
+background-size: 90%;
+background-repeat: no-repeat;
+background-position: center;
   background-attachment: fixed;
   background-color: white;
 }
@@ -3660,6 +3660,7 @@ p.description {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1.25rem;
 }
 .sd-area .commit-page .ref {
   background-color: #000;

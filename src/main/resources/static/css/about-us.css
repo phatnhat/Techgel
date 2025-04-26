@@ -33,8 +33,9 @@
 .about-vmv .vision_info .content_abs,
 .about-vmv .mission_info .content_abs {
   position: absolute;
-  background: var(--neutralDark);
-  color: var(--white);
+  background: var(--themePrimary);
+  background: radial-gradient(at right bottom, var(--themeSecondary), var(--themePrimary));
+  color: var(--alwaysWhite);
   padding: 32px 48px;
   top: 50%;
   transform: translateY(-50%);
@@ -121,14 +122,14 @@
   color: var(--themeTertiary);
   transition: all 0.5s ease;
 }
-.about-vmv .value_info .item_value .value_inner h3 {
+.about-vmv .value_info .item_value .value_inner h4 {
   color: var(--themePrimary);
   padding-bottom: 24px;
   margin-bottom: 24px;
   position: relative;
   transition: all 0.5s ease;
 }
-.about-vmv .value_info .item_value .value_inner h3::before {
+.about-vmv .value_info .item_value .value_inner h4::before {
   position: absolute;
   content: "";
   width: 1.875rem;
