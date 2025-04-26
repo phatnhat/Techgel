@@ -152,7 +152,22 @@ public class MainController {
         }
 
         @GetMapping("/about-us/cultural-techgel")
-        public String viewCulturalTechgel() {
+        public String viewCulturalTechgel(@RequestParam(name = "type", defaultValue = "CULTURAL") NewsType type,
+                                          @RequestParam(name = "page", defaultValue = "1") int page,
+                                          Model model) {
+                int pageSize = 3;
+                Pageable pageable = PageRequest.of(page - 1, pageSize);
+
+                Page<News> allNews = newsService.getAllByType(type, pageable);
+
+                model.addAttribute("newsList", allNews);
+                model.addAttribute("currentType", type.name());
+
+                model.addAttribute("newsListPaged", allNews);
+                model.addAttribute("currentPage", page);
+                model.addAttribute("totalPages", allNews.getTotalPages());
+                model.addAttribute("newsTypeList", NewsType.getCultural());
+
                 return "clients/about-us/cultural-techgel";
         }
 
@@ -209,7 +224,7 @@ public class MainController {
                 return "clients/projects/project_details";
         }
 
-        @GetMapping({"/what-we-do", "/what-we-do/our-business-lines"})
+        @GetMapping({ "/what-we-do", "/what-we-do/our-business-lines" })
         public String viewOurBusinessLines(Model model) {
                 HomeOurBusinessLine homeOurBusinessLine = homeOurBusinessLineService.getById(1L);
                 List<WhatWeDoService> whatWeDoServices = whatWeDoServiceService.getAll();
@@ -219,8 +234,8 @@ public class MainController {
                 return "clients/what-we-do/our-business-lines";
         }
 
-        @GetMapping({"/what-we-do/our-business-line-details"})
-        public String viewOurBusinessLineDetails(Model model, @RequestParam Long id){
+        @GetMapping({ "/what-we-do/our-business-line-details" })
+        public String viewOurBusinessLineDetails(Model model, @RequestParam Long id) {
                 WhatWeDoService whatWeDoService = whatWeDoServiceService.getById(id);
 
                 model.addAttribute("whatWeDoService", whatWeDoService);
@@ -244,42 +259,43 @@ public class MainController {
 
         @GetMapping("/news")
         public String getNewsPage(
-                @RequestParam(name = "type", defaultValue = "PROJECT") NewsType type,
-                @RequestParam(name = "page", defaultValue = "1") int page,
-                Model model) {
+                        @RequestParam(name = "type", defaultValue = "PROJECT") NewsType type,
+                        @RequestParam(name = "page", defaultValue = "1") int page,
+                        Model model) {
 
-            int pageSize = 3;
-            Pageable pageable = PageRequest.of(page - 1, pageSize);
+                int pageSize = 3;
+                Pageable pageable = PageRequest.of(page - 1, pageSize);
 
-            Page<News> allNews = newsService.getAllByType(type, pageable);
+                Page<News> allNews = newsService.getAllByType(type, pageable);
 
-            model.addAttribute("newsList", allNews);
-            model.addAttribute("currentType", type.name());
+                model.addAttribute("newsList", allNews);
+                model.addAttribute("currentType", type.name());
 
             model.addAttribute("newsListPaged", allNews);
             model.addAttribute("currentPage", page);
             model.addAttribute("totalPages", allNews.getTotalPages());
-            model.addAttribute("newsTypeList", NewsType.values());
+            model.addAttribute("newsTypeList", NewsType.getAllNewsTypes());
 
-            return "clients/news/news";
+                return "clients/news/news";
         }
 
         @GetMapping("/news-details/{newsId}")
         public String viewNewsDetails(Model model, @PathVariable long newsId) {
-            News news = newsService.getById(newsId);
+                News news = newsService.getById(newsId);
 
-            List<News> relatedNews = newsService.getAllByType(news.getType(), PageRequest.of(0, 2)).stream().toList();
+                List<News> relatedNews = newsService.getAllByType(news.getType(), PageRequest.of(0, 2)).stream()
+                                .toList();
 
             model.addAttribute("news", news);
             model.addAttribute("relatedNews", relatedNews);
-            model.addAttribute("newsType", NewsType.values());
+            model.addAttribute("newsType", NewsType.getAllNewsTypes());
 
-            return "clients/news/news-details";
+                return "clients/news/news-details";
         }
 
-        @GetMapping({"/careers","/careers/job-opportunities"})
+        @GetMapping({ "/careers", "/careers/job-opportunities" })
         public String viewJobOpportunities(Model model,
-                           @RequestParam(name = "page", defaultValue = "1") int page) {
+                        @RequestParam(name = "page", defaultValue = "1") int page) {
 
                 int pageSize = 9;
                 Pageable pageable = PageRequest.of(page - 1, pageSize);

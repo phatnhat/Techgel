@@ -306,7 +306,7 @@
                 <div
                   class="thumbnail thumbnail-rounded border-top-left hover-animation"
                 >
-                  <a href="#">
+                  <a th:href="@{/what-we-do/our-business-line-details (id=${service.id})}">
                     <img
                       th:src="@{${service.image_url}}"
                       th:alt="${service.title_vi}"
@@ -869,7 +869,7 @@
               <div class="col-lg-12">
                 <div class="testimonials-button-area">
                   <div class="section-head text-align-left">
-                    <h4 class="section-sub-title split-collab-chars">
+                    <h4 class="section-sub-title split-collab-words">
                       <span class="subtitle">
                         <img
                           data-sal-delay="200"
