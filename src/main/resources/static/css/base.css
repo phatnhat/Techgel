@@ -386,13 +386,6 @@ html[data-theme=dark] .only-dark {
 
 .button-borders {
   position: relative;
-  margin-right: 2.5rem;
-}
-@media (max-width: 510px) {
-  .button-borders {
-    margin-right: 1.5rem;
-    margin-left: 0;
-  }
 }
 .button-borders::before, .button-borders::after {
   content: "";

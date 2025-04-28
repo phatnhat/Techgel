@@ -45,6 +45,16 @@
     .single-card.card-horizontal .card-inner {
         padding: 20px;
     }
+
+    .about-vmv .vision_info .content_abs, .about-vmv .mission_info .content_abs {
+        width: 100%;
+        position: relative;
+        transform: none;
+    }
+
+    .careers_page .career_form .form_apply {
+        padding-left: 2rem;
+    }
 }
 
 @media only screen and (max-width: 800px) {

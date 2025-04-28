@@ -2239,6 +2239,7 @@ p.description {
   margin-bottom: 0;
   flex-wrap: wrap;
   column-gap: 1.5rem;
+  justify-content: center;
 }
 
 .filter_projects ul li.active a {
@@ -3480,7 +3481,7 @@ p.description {
 }
 .sd-area .quote {
   z-index: 1;
-  background-image: url(https://unicons.vn/wp-content/uploads/about-unicons-bg.svg);
+    background-image: url(/imgs/sustainable-development/bg.png);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -3492,7 +3493,7 @@ p.description {
   padding-top: 10rem;
 }
 .sd-area .quote:hover {
-  background-image: url(https://unicons.vn/wp-content/uploads/2024/02/about-unicons-hover@2x.webp);
+  background-image: url(/imgs/sustainable-development/bg-hover.webp);
   background-size: cover;
 }
 .sd-area .quote .quote-content {
