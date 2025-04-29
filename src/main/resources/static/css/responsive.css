@@ -4,6 +4,17 @@
     }
 }
 
+@media only screen and (max-width: 883px){
+    .glow-effect {
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width: 814px){
+    .glow-effect {
+        font-size: 0.65rem;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .tmp-header-area-start.header-one .header-mida-area {
         display: none;
