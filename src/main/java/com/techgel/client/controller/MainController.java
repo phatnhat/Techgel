@@ -86,16 +86,18 @@ public class MainController {
                 // Get Featured projects
                 List<Project> featuredProjects = projectService.getAllByFeaturedIsTrue();
                 model.addAttribute("featuredProjects", featuredProjects);
+                model.addAttribute("title", "Trang chủ - Techgel");
 
                 return "clients/home/home";
         }
 
         @GetMapping("/profile")
         public String viewEProfile(Model model) {
+                model.addAttribute("title", "Hồ sơ năng lực - Techgel");
                 return "clients/profile";
         }
 
-        @GetMapping({ "/about-us", "/about-us/overview" })
+        @GetMapping({ "/about-us/overview" })
         public String viewIntroduce(Model model) {
                 AboutUsIntroduce aboutUsIntroduce = aboutUsIntroduceService.getById(1L);
                 EProfile eProfile = eProfileService.getById(1L);
@@ -126,12 +128,14 @@ public class MainController {
                                 .getAll();
                 model.addAttribute("aboutUsOrganizationalChart", aboutUsOrganizationalChart);
                 model.addAttribute("aboutUsOrganizationalChartItems", aboutUsOrganizationalChartItems);
+                model.addAttribute("title", "Sơ đồ tổ chức - Techgel");
 
                 return "clients/about-us/organizational-chart";
         }
 
-        @GetMapping("/about-us/vision-mission-values")
-        public String viewVisionMissionValues() {
+        @GetMapping({"/about-us", "/about-us/vision-mission-values"})
+        public String viewVisionMissionValues(Model model) {
+                model.addAttribute("title", "Tầm nhìn, sứ mệnh & giá trị cốt lõi - Techgel");
                 return "clients/about-us/vision-mission-values";
         }
 
@@ -139,6 +143,7 @@ public class MainController {
         public String viewLicensesCertificates(Model model) {
                 List<AboutUsLicenseCertificate> aboutUsLicenseCertificates = aboutUsLicenseCertificateService.getAll();
                 model.addAttribute("aboutUsLicenseCertificates", aboutUsLicenseCertificates);
+                model.addAttribute("title", "Giấy phép & chứng chỉ - Techgel");
 
                 return "clients/about-us/licenses-certificates";
         }
@@ -147,6 +152,7 @@ public class MainController {
         public String viewClientsPartners(Model model) {
                 List<AboutUsClientPartner> aboutUsClientPartners = aboutUsClientPartnerService.getAll();
                 model.addAttribute("aboutUsClientPartners", aboutUsClientPartners);
+                model.addAttribute("title", "Đối tác khách hàng - Techgel");
 
                 return "clients/about-us/clients-partners";
         }
@@ -167,12 +173,14 @@ public class MainController {
                 model.addAttribute("currentPage", page);
                 model.addAttribute("totalPages", allNews.getTotalPages());
                 model.addAttribute("newsTypeList", NewsType.getCultural());
+                model.addAttribute("title", "Văn hóa Techgel - Techgel");
 
                 return "clients/about-us/cultural-techgel";
         }
 
         @GetMapping("/about-us/shareholder")
-        public String viewShareholder() {
+        public String viewShareholder(Model model) {
+                model.addAttribute("title", "Quan hệ cổ đông - Techgel");
                 return "clients/shareholder/shareholder";
         }
 
@@ -211,6 +219,7 @@ public class MainController {
                 model.addAttribute("regions", ProjectRegions.values());
                 model.addAttribute("projects", projects);
                 model.addAttribute("projectCategories", projectCategories);
+                model.addAttribute("title", "Dự án - Techgel");
 
                 return "clients/projects/projects";
         }
@@ -220,6 +229,7 @@ public class MainController {
                 Project project = projectService.getById(projectId);
 
                 model.addAttribute("project", project);
+                model.addAttribute("title", project.getTitle_vi() + " - Techgel");
 
                 return "clients/projects/project_details";
         }
@@ -231,6 +241,7 @@ public class MainController {
 
                 model.addAttribute("homeOurBusinessLine", homeOurBusinessLine);
                 model.addAttribute("whatWeDoServices", whatWeDoServices);
+                model.addAttribute("title", "Lĩnh vực hoạt động - Techgel");
                 return "clients/what-we-do/our-business-lines";
         }
 
@@ -239,11 +250,13 @@ public class MainController {
                 WhatWeDoService whatWeDoService = whatWeDoServiceService.getById(id);
 
                 model.addAttribute("whatWeDoService", whatWeDoService);
+                model.addAttribute("title", whatWeDoService.getTitle_vi() + " - Techgel");
                 return "clients/what-we-do/our-business-line-details";
         }
 
         @GetMapping("/what-we-do/sustainable-development")
-        public String viewSustainableDevelopment() {
+        public String viewSustainableDevelopment(Model model) {
+                model.addAttribute("title", "Phát triển bền vững - Techgel");
                 return "clients/what-we-do/sustainable-development";
         }
 
@@ -253,7 +266,8 @@ public class MainController {
         }
 
         @GetMapping("/contact-us")
-        public String viewContactUs() {
+        public String viewContactUs(Model model) {
+                model.addAttribute("title", "Liên hệ - Techgel");
                 return "clients/contact-us";
         }
 
@@ -275,6 +289,7 @@ public class MainController {
             model.addAttribute("currentPage", page);
             model.addAttribute("totalPages", allNews.getTotalPages());
             model.addAttribute("newsTypeList", NewsType.getAllNewsTypes());
+                model.addAttribute("title", type.getVietnameseName() + " - Techgel");
 
                 return "clients/news/news";
         }
@@ -289,8 +304,9 @@ public class MainController {
             model.addAttribute("news", news);
             model.addAttribute("relatedNews", relatedNews);
             model.addAttribute("newsType", NewsType.getAllNewsTypes());
+            model.addAttribute("title", news.getTitle_vi() + " - Techgel");
 
-                return "clients/news/news-details";
+            return "clients/news/news-details";
         }
 
         @GetMapping({ "/careers", "/careers/job-opportunities" })
@@ -305,11 +321,14 @@ public class MainController {
                 model.addAttribute("careerRecruitments", careerRecruitments);
                 model.addAttribute("currentPage", page);
                 model.addAttribute("totalPages", careerRecruitments.getTotalPages());
+                model.addAttribute("title", "Cơ hội nghề nghiệp - Techgel");
+
                 return "clients/careers/job-opportunities";
         }
 
         @GetMapping("/careers/hr-policies")
-        public String viewHrPolicies() {
+        public String viewHrPolicies(Model model) {
+                model.addAttribute("title", "Chính sách nhân sự - Techgel");
                 return "clients/careers/hr-policies";
         }
 }

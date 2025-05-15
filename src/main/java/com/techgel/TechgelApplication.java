@@ -10,6 +10,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 //@EnableJpaAuditing
 public class TechgelApplication {
     public static void main(String[] args) {
+        System.out.println("Java Version: " + System.getProperty("java.version"));
+        System.out.println("JVM Vendor: " + System.getProperty("java.vendor"));
         SpringApplication.run(TechgelApplication.class, args);
     }
 }

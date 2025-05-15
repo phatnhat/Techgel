@@ -11,8 +11,8 @@ public abstract class WhatWeDoServiceData {
                                 "/imgs/field-of-activities/energy.jpg", "/imgs/field-of-activities/energy-popup.png",
                                 "Ngành năng lượng của chúng tôi hướng đến mục tiêu phát triển bền vững, đa dạng hóa nguồn năng lượng và giảm thiểu tác động đến môi trường. Với chiến lược đầu tư bài bản vào các nguồn năng lượng tái tạo và giải pháp tiết kiệm năng lượng, chúng tôi cam kết đóng góp vào sự phát triển kinh tế - xã hội, đồng thời đảm bảo an ninh năng lượng quốc gia.",
                                 "");
-                WhatWeDoService item2 = new WhatWeDoService(2L, "Công trình nhà ga", "Aviation", 2,
-                                "/imgs/field-of-activities/aviation.webp",
+                WhatWeDoService item2 = new WhatWeDoService(2L, "Công trình nhà ga", "Airside", 2,
+                                "/imgs/field-of-activities/airside.jpg",
                                 "/imgs/field-of-activities/aviation-popup.png",
                                 "Ngành Công trình Nhà ga là một trong những lĩnh vực trọng điểm của chúng tôi, tập trung vào thiết kế, xây dựng và vận hành các công trình phục vụ hoạt động hàng không và vận tải. Với kinh nghiệm và công nghệ hiện đại, chúng tôi cam kết mang đến những giải pháp tối ưu, đảm bảo tính an toàn, hiệu quả và đáp ứng các tiêu chuẩn quốc tế.",
                                 "");

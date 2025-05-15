@@ -386,13 +386,6 @@ html[data-theme=dark] .only-dark {
 
 .button-borders {
   position: relative;
-  margin-right: 2.5rem;
-}
-@media (max-width: 510px) {
-  .button-borders {
-    margin-right: 1.5rem;
-    margin-left: 0;
-  }
 }
 .button-borders::before, .button-borders::after {
   content: "";
@@ -427,11 +420,6 @@ html[data-theme=dark] .only-dark {
   color: var(--themePrimary) !important;
 }
 
-@media (max-width: 69.1875rem) {
-  .mid-header-center {
-    display: none !important;
-  }
-}
 .tmp-header-area-start {
   height: 5.3125rem;
   width: 100vw;
@@ -483,11 +471,6 @@ html[data-theme=dark] .only-dark {
   padding: 0 0.9375rem;
   background-color: var(--alwaysWhite);
   color: var(--black);
-}
-@media (max-width: 69.1875rem) {
-  .tmp-header-area-start.header-one .header-mida-area .mid-header-center .input-area {
-    display: none;
-  }
 }
 .tmp-header-area-start.header-one .header-mida-area .logo-area-start .logo {
   display: block;
@@ -735,7 +718,7 @@ nav ul li.has-dropdown:hover .submenu {
 
 .tmp-banner-area {
   background-size: cover !important;
-  background-position: bottom center !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
 }
 
@@ -1664,6 +1647,7 @@ div#brxe-rqhadm {
 }
 
 .glow-effect {
+  text-align: center;
   animation-name: glow;
   animation-duration: 1s;
   animation-iteration-count: infinite;

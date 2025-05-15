@@ -30,38 +30,46 @@
                 />
               </a>
             </div>
-            <!--            <div class="mid-header-center">-->
-            <!--              <div class="input-area">-->
-            <!--                <input type="text" placeholder="Tìm kiếm..." />-->
-            <!--                <i class="fa-solid fa-magnifying-glass searchbar-icon"></i>-->
-            <!--              </div>-->
-            <!--            </div>-->
+<!--            <div class="mid-header-center">-->
+<!--              <div class="input-area">-->
+<!--                <input type="text" placeholder="Tìm kiếm..." />-->
+<!--                <i class="fa-solid fa-magnifying-glass searchbar-icon"></i>-->
+<!--              </div>-->
+<!--            </div>-->
+
             <div class="glow-effect">
-              <span id="S">S</span>
-              <span id="A">A</span>
-              <span id="I">I</span>
-              <span id="G">G</span>
-              <span id="O">O</span>
-              <span id="N">N</span>
-              <span data-text="&nbsp;">&nbsp;</span>
-              <span id="T">T</span>
-              <span id="E">E</span>
-              <span id="C">C</span>
-              <span id="H">H</span>
-              <span id="N">N</span>
-              <span id="O">O</span>
-              <span id="L">L</span>
-              <span id="O">O</span>
-              <span id="G">G</span>
-              <span id="Y">Y</span>
-              <span>&nbsp;</span>
-              <span id="I">I</span>
-              <span id="N">N</span>
-              <span id="C">C</span>
-              <span id="I_NC">.</span>
+              <th:block th:each="s: ${'CÔNG TY CỔ PHẦN'.toCharArray()}">
+                <span th:id="${#strings.isEmpty(s) ? '&nbsp;' : s}">[[${ #strings.isEmpty(s) ? '&nbsp;' : s }]]</span>
+              </th:block>
+              <br>
+              <th:block th:each="s: ${'KỸ THUẬT CÔNG NGHỆ SÀI GÒN'.toCharArray()}">
+                <span th:id="${#strings.isEmpty(s) ? '&nbsp;' : s}">[[${ #strings.isEmpty(s) ? '&nbsp;' : s }]]</span>
+              </th:block>
+<!--              <span id="S">S</span>-->
+<!--              <span id="A">A</span>-->
+<!--              <span id="I">I</span>-->
+<!--              <span id="G">G</span>-->
+<!--              <span id="O">O</span>-->
+<!--              <span id="N">N</span>-->
+<!--              <span data-text="&nbsp;">&nbsp;</span>-->
+<!--              <span id="T">T</span>-->
+<!--              <span id="E">E</span>-->
+<!--              <span id="C">C</span>-->
+<!--              <span id="H">H</span>-->
+<!--              <span id="N">N</span>-->
+<!--              <span id="O">O</span>-->
+<!--              <span id="L">L</span>-->
+<!--              <span id="O">O</span>-->
+<!--              <span id="G">G</span>-->
+<!--              <span id="Y">Y</span>-->
+<!--              <span>&nbsp;</span>-->
+<!--              <span id="I">I</span>-->
+<!--              <span id="N">N</span>-->
+<!--              <span id="C">C</span>-->
+<!--              <span id="I_NC">.</span>-->
             </div>
 
-            <div class="d-flex align-items-center" style="gap: 20px">
+            <div class="d-flex align-items-center mx-5" style="gap: 20px">
               <div class="actions-area">
                 <svg display="none">
                   <symbol id="light" viewBox="0 0 24 24">

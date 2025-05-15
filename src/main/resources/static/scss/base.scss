@@ -254,12 +254,12 @@ html[data-theme="dark"] .only-dark {
 
 .button-borders {
   position: relative; // Needed to position :before and :after correctly
-  margin-right: 2.5rem;
+  //margin-right: 2.5rem;
 
-  @media (max-width: 510px) {
-    margin-right: 1.5rem;
-    margin-left: 0;
-  }
+  //@media (max-width: 510px) {
+  //  margin-right: 1.5rem;
+  //  margin-left: 0;
+  //}
 
   &::before,
   &::after {
@@ -311,11 +311,7 @@ html[data-theme="dark"] .only-dark {
   }
 }
 
-@media (max-width: 69.1875rem) {
-  .mid-header-center {
-    display: none !important;
-  }
-}
+
 
 // sub headers
 .tmp-header-area-start {
@@ -370,10 +366,6 @@ html[data-theme="dark"] .only-dark {
             padding: 0 .9375rem;
             background-color: var(--alwaysWhite);
             color: var(--black);
-          }
-
-          @media (max-width: 69.1875rem) {
-            display: none;
           }
         }
       }
@@ -656,7 +648,7 @@ nav ul li.has-dropdown:hover .submenu {
 
 .tmp-banner-area {
   background-size: cover !important;
-  background-position: bottom center !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
 }
 
@@ -1708,6 +1700,7 @@ div#brxe-rqhadm {
 
 // Flickering
 .glow-effect {
+  text-align: center;
   animation-name:glow;
   animation-duration:1s;
   animation-iteration-count:infinite;
