@@ -3,7 +3,7 @@
 //sass src/main/resources/static/scss:src/main/resources/static/css --watch
 
 html {
-  width: fit-content;
+  width: calc(100vw - 15px);
   font-size: 16px;
   overflow-x: hidden;
 }

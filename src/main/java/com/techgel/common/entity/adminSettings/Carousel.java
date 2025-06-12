@@ -27,4 +27,8 @@ public class Carousel extends BasedEntity {
         this.description_vi = description_vi;
         this.description_en = description_en;
     }
+
+    public String getDescription(String lang){
+        return "vi".equalsIgnoreCase(lang) ? description_vi : description_en;
+    }
 }

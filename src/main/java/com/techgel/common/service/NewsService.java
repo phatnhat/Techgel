@@ -11,7 +11,5 @@ import java.util.List;
 public interface NewsService {
     News getById(Long id);
     List<News> getAll();
-    Page<News> getAllByType(NewsType type, Pageable pageable);
-    List<News> getRecentNews();
     News update(News news);
 }

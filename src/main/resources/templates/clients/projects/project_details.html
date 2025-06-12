@@ -10,13 +10,13 @@
         <img
           th:src="@{${project.image_url}}"
           class="img-fluid"
-          th:alt="${project.title_vi}"
+          th:alt="${project.getTitle(#locale.language)}"
         />
         <div class="meta-info">
           <div class="container">
             <div class="meta-inner">
               <h3 class="title fw-bold text-uppercase split-collab-wordss">
-                [[${ project.title_vi }]]
+                [[${ project.getTitle(#locale.language) }]]
               </h3>
             </div>
           </div>
@@ -29,33 +29,33 @@
               <div class="col-md-3">
                 <div class="item">
                   <h5 class="fw-bold text-uppercase split-collab-words">
-                    Khách hàng
+                    [[#{ client }]]
                   </h5>
-                  <div>[[${ project.client_name_vi }]]</div>
+                  <div>[[${ project.getClientName(#locale.language) }]]</div>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="item">
                   <h5 class="fw-bold text-uppercase split-collab-words">
-                    Địa điểm
+                    [[#{ location }]]
                   </h5>
-                  <div>[[${ project.location_vi }]]</div>
+                  <div>[[${ project.getLocation(#locale.language) }]]</div>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="item">
                   <h5 class="fw-bold text-uppercase split-collab-words">
-                    Phạm vi công việc
+                    [[#{ scope_of_work }]]
                   </h5>
-                  <div>[[${ project.scope_of_work_vi }]]</div>
+                  <div>[[${ project.getScopeOfWork(#locale.language) }]]</div>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="item">
                   <h5 class="fw-bold text-uppercase split-collab-words">
-                    Thời gian
+                    [[#{ time }]]
                   </h5>
-                  <div>[[${ project.time_vi }]]</div>
+                  <div>[[${ project.getTime(#locale.language) }]]</div>
                 </div>
               </div>
             </div>
@@ -66,10 +66,10 @@
           <div class="row justify-content-center">
             <div class="col-md-10">
               <h2 class="fs-50 fw-bold text-center">
-                [[${ project.title_vi }]]
+                [[${ project.getTitle(#locale.language) }]]
               </h2>
               <div class="description mb-md-5 mb-4 text-center">
-                <p>[[${ project.description_vi }]]</p>
+                <p>[[${ project.getDescription(#locale.language) }]]</p>
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@
           >
             <div class="row align-items-center">
               <div class="col-md-6">
-                <h3 class="primary-color"><span>Ảnh dự án</span></h3>
+                <h3 class="primary-color"><span>[[#{ project_images } ]]</span></h3>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@
                     <img
                       th:src="@{${projectImage.image_url}}"
                       class="img-fluid"
-                      th:alt="${project.title_vi}"
+                      th:alt="${project.getTitle(#locale.language)}"
                     />
                   </a>
                 </figure>
@@ -115,7 +115,7 @@
         >
           <div class="d-flex justify-content-center">
             <div class="button-borders">
-              <a th:href="${'/projects/' + project.getProjectCategory().getSlug()}" class="btn primary-button">Xem thêm dự án</a>
+              <a th:href="${'/projects/' + project.getProjectCategory().getSlug()}" class="btn primary-button">[[#{ see_more_projects } ]]</a>
             </div>
           </div>
         </a>

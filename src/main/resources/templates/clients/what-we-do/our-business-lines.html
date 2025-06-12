@@ -8,7 +8,7 @@
     <main class="content-wrapper">
       <style>
         .breadcrumb-bg {
-          background-image: url([[@{/imgs/banners/tech-field.jpg}]]);
+          background-image: url([[@{${whatWeDoOurBusinessLine.banner_url}}]]);
         }
 
         .bg-1 {
@@ -29,83 +29,24 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1 class="split-collab-words">LĨNH VỰC HOẠT ĐỘNG</h1>
+              <h1 class="split-collab-words">[[${ whatWeDoOurBusinessLine.getTitle(#locale.language) }]]</h1>
             </div>
           </div>
         </div>
       </div>
 
-      <div id="next" class="whatwedo_page py-5">
-        <div class="container">
-          <div class="general">
-            <div class="row gx-0 align-items-center">
-              <div class="col-md-6 order-md-1">
-                <div class="img_full">
-                  <img
-                    th:src="@{/imgs/business-line/safety-handshake.jpg}"
-                    class="img-fluid"
-                    alt=""
-                    draggable="false"
-                  />
-                </div>
-              </div>
-              <div class="col-md-6 order-md-0">
-                <div class="content text-justify">
-                  <h3 class="fs-30 fw-bold business-line header">Tổng Thầu</h3>
-                  <p class="business-line paragraph">
-                    TECHGEL hoạt động trong lĩnh vực nghiên cứu, ứng dụng và
-                    chuyển giao các giải pháp kỹ thuật – công nghệ nhằm hỗ trợ
-                    tiến trình hiện đại hoá và phát triển bền vững tại Việt Nam.
-                    Chúng tôi tập trung triển khai toàn diện các dự án từ khâu
-                    khảo sát, thiết kế, triển khai công nghệ đến vận hành và đào
-                    tạo, đặc biệt trong các lĩnh vực công nghiệp, xây dựng, năng
-                    lượng và hạ tầng kỹ thuật.
-                  </p>
-                  <p class="business-line paragraph">
-                    Với năng lực tích hợp đa ngành, hệ thống quản trị bài bản,
-                    đội ngũ kỹ sư và chuyên gia giàu kinh nghiệm, cùng sự chủ
-                    động trong việc làm chủ công nghệ, TECHGEL cam kết mang đến
-                    cho khách hàng và đối tác:
-                  </p>
-                  <ul class="business-line list">
-                    <li>Các giải pháp tối ưu, phù hợp với thực tiễn.</li>
-                    <li>Đảm bảo tiến độ và chất lượng triển khai.</li>
-                    <li>
-                      Giảm thiểu chi phí đầu tư mà vẫn đảm bảo hiệu quả vận
-                      hành.
-                    </li>
-                  </ul>
-                  <div class="business-line-quality-icon wrapper">
-                    <div class="business-line-quality-icon icon" >
-                    <img
-                      th:src="@{/imgs/sustainable-development.png}"
-                      alt=""
-                      width="100"
-                    />
-                    <span>Tối ưu</span>
-                    </div>
-                     <div class="business-line-quality-icon icon" >
-                    <img
-                      th:src="@{/imgs/badge.png}"
-                      alt=""
-                      width="100"
-                    />
-                    <span>Chất lượng</span>
-                  </div>
-                    <div class="business-line-quality-icon icon" >
-                      <img
-                        th:src="@{/imgs/responsibility.png}"
-                        alt=""
-                        width="100"
-                      />
-                      <span>Đảm bảo</span>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!--      <div id="next" class="whatwedo_page py-5">-->
+<!--        <div class="container">-->
+<!--          <div class="general">-->
+<!--            <div class="row gx-0 align-items-center">-->
+
+<!--              <div class="col-md-12 order-md-0">-->
+<!--                <div class="content text-justify" th:utext="${ whatWeDoOurBusinessLine.getGeneralIntroduction(#locale.language) }">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <div class="obl-area tmp-section-gap about-style-one mb-5">
         <div class="container">
@@ -121,7 +62,7 @@
                             th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                             alt="Techgel"
                     />
-                    [[${ homeOurBusinessLine.title_vi }]]</span>
+                    [[${ whatWeDoOurBusinessLine.getTitle(#locale.language) }]]</span>
                 </h4>
               </div>
             </div>
@@ -143,7 +84,7 @@
                       class="cover-image"
                     />
                     <p class="obl-card-title text-center font-weight-bold text-uppercase">
-                      [[${ service.title_vi }]]
+                      [[${ service.getTitle(#locale.language) }]]
                     </p>
                   </div>
                   <img
@@ -161,7 +102,7 @@
                 >
                   <a class="content text-white" th:href="@{'/what-we-do/our-business-line-details?id=' + ${service.id} + '#' + ${subService.id}}">
                     <div class="icon"></div>
-                    <div class="text">[[${ subService.title_vi }]]</div>
+                    <div class="text">[[${ subService.getTitle(#locale.language) }]]</div>
                   </a>
                 </li>
               </ol>

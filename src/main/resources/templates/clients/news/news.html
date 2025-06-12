@@ -8,11 +8,7 @@
     <main class="content-wrapper" style="overflow: hidden">
       <style>
         .breadcrumb-bg {
-          background-image: url([[@{/imgs/banners/news-banner.jpg}]]);
-        }
-
-        .bg-1 {
-          background-image: url([[@{/imgs/bg-01.jpg}]]);
+          background-image: url([[@{${news.banner_url}}]]);
         }
 
         .line_img {
@@ -30,7 +26,7 @@
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
               <h1 class="split-collab-words">
-                Tin Tức
+                [[${ news.getTitle(#locale.language) }]]
               </h1>
             </div>
           </div>
@@ -42,7 +38,7 @@
           <div class="menu-news">
             <div class="row align-items-center">
               <div class="col-md-6">
-                <h3 class="fs-40 fw-bold primary-color">Tin tức</h3>
+                <h3 class="fs-40 fw-bold primary-color">[[${ news.getTitle(#locale.language) }]]</h3>
               </div>
               <div class="col-md-6">
                 <ul class="menu-news-list">
@@ -51,7 +47,7 @@
                       th:classappend="${currentType == newType.name()} ? 'current-menu-item'"
                       class="menu-item"
                   >
-                    <a th:href="@{/news(type=${newType.name()})}">[[${newType.getVietnameseName()}]]</a>
+                    <a th:href="@{/news(type=${newType.name()})}" th:text="${#locale.language == 'vi'} ? ${newType.getVietnameseName()} : ${newType.getEnglishName()}"></a>
                   </li>
 
                 </ul>
@@ -73,7 +69,7 @@
                         <a th:href="@{'/news-details/' + ${newsList.content[0].id}}">
                           <img
                                   th:src="@{${newsList.content[0].image_url}}"
-                                  th:alt="${newsList.content[0].title_vi}"
+                                  th:alt="${newsList.content[0].getTitle(#locale.language)}"
                           />
                         </a>
                         <div class="pmt-news-meta">
@@ -106,11 +102,11 @@
                         </div>
                         <div class="news-body">
                           <a href="#" class="title-area">
-                            <h4 class="title" th:text="${newsList.content[0].title_vi}">
+                            <h4 class="title" th:text="${newsList.content[0].getTitle(#locale.language)}">
                               Tiêu đề
                             </h4>
                           </a>
-                          <p class="description" th:text="${newsList.content[0].summary_vi}">
+                          <p class="description" th:text="${newsList.content[0].getSummary(#locale.language)}">
                             Tóm tắt...
                           </p>
                         </div>
@@ -129,19 +125,19 @@
                     <div
                             th:if="${newsListPaged.content != null and !newsListPaged.content.isEmpty()}"
                     >
-                      <div class="item-post-sb" th:each="news : ${newsListPaged.content}">
+                      <div class="item-post-sb" th:each="n : ${newsListPaged.content}">
                         <div class="meta-post">
                           <div class="date-post">
                             <ul class="all-meta">
                               <li class="date">
                               <span
-                                      th:text="${#temporals.format(news.updatedAt, 'dd')}"
+                                      th:text="${#temporals.format(n.updatedAt, 'dd')}"
                               >20</span
                               >
                               </li>
                               <li class="month">
                               <span
-                                      th:text="'THÁNG ' + ${#temporals.format(news.updatedAt, 'M')}"
+                                      th:text="'THÁNG ' + ${#temporals.format(n.updatedAt, 'M')}"
                               >THÁNG 1</span
                               >
                               </li>
@@ -151,13 +147,13 @@
                             <div class="post_info">
                               <h5 class="fs-16 fw-bold">
                                 <a
-                                        th:href="@{'/news-details/' + ${news.id}}"
-                                        th:text="${news.title_vi}"
+                                        th:href="@{'/news-details/' + ${n.id}}"
+                                        th:text="${n.getTitle(#locale.language)}"
                                 >Tiêu đề tin tức</a
                                 >
                               </h5>
                               <a
-                                      th:href="@{'/news-details/' + ${news.id}}"
+                                      th:href="@{'/news-details/' + ${n.id}}"
                                       style="font-size: 12px"
                               >
                                 <i>
@@ -181,27 +177,27 @@
               <h3>Các tin dự án khác</h3>
               <div class="row">
                 <div class="row" th:if="${newsListPaged.content}">
-                  <div class="col-md-4 mb-5" th:each="news : ${newsListPaged}">
+                  <div class="col-md-4 mb-5" th:each="n : ${newsListPaged}">
                     <div class="single-news">
                       <div class="news-inner">
                         <div class="thumbnail">
-                          <a th:href="@{'/news-details/' + ${news.id}}">
+                          <a th:href="@{'/news-details/' + ${n.id}}">
                             <img
-                                    th:src="@{${news.image_url}}"
-                                    th:alt="${news.title_vi}"
+                                    th:src="@{${n.image_url}}"
+                                    th:alt="${n.getTitle(#locale.language)}"
                             />
                           </a>
                           <div class="pmt-news-meta">
                             <ul class="all-meta">
                               <li class="date">
                               <span
-                                      th:text="${#temporals.format(news.updatedAt, 'dd')}"
+                                      th:text="${#temporals.format(n.updatedAt, 'dd')}"
                               ></span
                               >
                               </li>
                               <li class="month">
                               <span
-                                      th:text="'THÁNG ' + ${#temporals.format(news.updatedAt, 'M')}"
+                                      th:text="'THÁNG ' + ${#temporals.format(n.updatedAt, 'M')}"
                               ></span
                               >
                               </li>
@@ -218,20 +214,20 @@
                           </div>
                           <div class="news-body">
                             <a
-                                    th:href="@{'/news-details/' + ${news.id}}"
+                                    th:href="@{'/news-details/' + ${n.id}}"
                                     class="title-area"
                             >
-                              <h4 class="title" th:text="${news.title_vi}">
+                              <h4 class="title" th:text="${n.getTitle(#locale.language)}">
                                 Tiêu đề
                               </h4>
                             </a>
-                            <p class="description" th:text="${news.summary_vi}">
+                            <p class="description" th:text="${n.getSummary(#locale.language)}">
                               Tóm tắt...
                             </p>
                           </div>
                           <a
                                   class="btn-read-more"
-                                  th:href="@{'/news-details/' + ${news.id}}"
+                                  th:href="@{'/news-details/' + ${n.id}}"
                           >
                             <span class="read-more-text">Đọc thêm</span>
                             <span class="read-more-icon"
@@ -277,7 +273,7 @@
             </div>
           </th:block>
           <th:block th:unless="${not newsList.isEmpty()}">
-            <h4 class="text-center">Không tìm thấy tin tức.</h4>
+            <h4 class="text-center">[[#{ news.not_found }]].</h4>
           </th:block>
         </div>
       </div>

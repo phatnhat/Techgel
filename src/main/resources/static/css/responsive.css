@@ -46,7 +46,7 @@
     }
 
     .mySwiper-banner-one {
-        max-height: calc(100vh - 15px);
+        max-height: 100%;
     }
 
     .tmp-header-area-start {

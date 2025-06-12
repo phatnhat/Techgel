@@ -12,5 +12,4 @@ import java.util.List;
 
 @Repository
 public interface NewsRepository extends JpaRepository<News, Long> {
-    Page<News> findAllByType(NewsType type, Pageable pageable);
 }

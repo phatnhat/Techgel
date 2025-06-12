@@ -1,0 +1,14 @@
+package com.techgel.common.repository;
+
+import com.techgel.common.entity.adminSettings.Project;
+import com.techgel.common.entity.adminSettings.ProjectList;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface ProjectListRepository extends JpaRepository<ProjectList, Long> {
+    List<Project> findAllByProjectCategorySlug(String slug);
+    List<Project> findAllByFeaturedIsTrue();
+}

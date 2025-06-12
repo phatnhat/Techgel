@@ -36,4 +36,12 @@ public class AboutUsTestimonialItems extends BasedEntity {
         this.thumbnail_url = thumbnail_url;
         this.displayOrder = displayOrder;
     }
+
+    public String getDescription(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? description_vi : description_en;
+    }
+
+    public String getDesignation(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? designation_vi : designation_en;
+    }
 }

@@ -27,15 +27,6 @@ public class ProjectOfflineService implements ProjectService {
                         HttpStatus.NOT_FOUND, "Project not found"));
     }
 
-    public List<Project> getAllByProjectCategorySlug(String slug) {
-        return this.getAll().stream().filter(project -> Objects.nonNull(project.getProjectCategory())
-                && project.getProjectCategory().getSlug().equals(slug)).collect(Collectors.toList());
-    }
-
-    public List<Project> getAllByFeaturedIsTrue() {
-        return this.getAll().stream().filter(Project::isFeatured).collect(Collectors.toList());
-    }
-
     public Project update(Project project) {
         return null;
     }

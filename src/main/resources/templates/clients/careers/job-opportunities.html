@@ -8,7 +8,7 @@
     <main class="content-wrapper">
       <style>
         .breadcrumb-bg {
-          background-image: url([[@{/imgs/banners/job-opportunity.webp}]]);
+          background-image: url([[@{${jobOpportunity.banner_url}}]]);
         }
       </style>
 
@@ -19,7 +19,7 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1 class="split-collab-words">CƠ HỘI NGHỀ NGHIỆP</h1>
+              <h1 class="split-collab-words">[[${ jobOpportunity.getTitle(#locale.language) }]]</h1>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@
       <div id="next" class="careers_page py-5">
         <div class="container">
           <h1 class="title split-collab-words" style="opacity: 1">
-            Cơ hội nghề nghiệp
+            [[${ jobOpportunity.getTitle(#locale.language) }]]
           </h1>
           <hr />
           <div class="list_careers pb-md-5">
@@ -46,33 +46,33 @@
                       class="col-md-11 d-flex flex-column justify-content-between"
                     >
                       <h5 class="fs-20 fw-bold">
-                        <a href="#">[[${ career.title_vi }]]</a>
+                        <a href="#">[[${ career.getTitle(#locale.language) }]]</a>
                       </h5>
                       <ul class="d-flex flex-column">
                         <li class="p-0 m-0">
                           <i class="fa-solid fa-location-dot"></i> [[${
-                          career.workplace_vi }]]
+                          career.getWorkplace(#locale.language) }]]
                         </li>
                         <li class="p-0 m-0">
-                          Số lượng: [[${ career.quantity }]]
+                          [[#{ quantity }]]: [[${ career.quantity }]]
                         </li>
                       </ul>
                       <a
                         type="button"
                         class="text-decoration-underline"
-                        th:data-title="${career.title_vi}"
+                        th:data-title="${career.getTitle(#locale.language)}"
                         th:data-image_url="${career.image_url}"
                         th:data-quantity="${career.quantity}"
-                        th:data-qualification="${career.qualification_vi}"
-                        th:data-experience="${career.experience_vi}"
-                        th:data-salary="${career.salary_vi}"
-                        th:data-workplace="${career.workplace_vi}"
+                        th:data-qualification="${career.getQualification(#locale.language)}"
+                        th:data-experience="${career.getExperience(#locale.language)}"
+                        th:data-salary="${career.getSalary(#locale.language)}"
+                        th:data-workplace="${career.getWorkplace(#locale.language)}"
                         th:data-expiration_date="${career.expiration_date}"
-                        th:data-description="${career.description_vi}"
+                        th:data-description="${career.getDescription(#locale.language)}"
                         data-toggle="modal"
                         data-target="#recruitment-details-modal"
                       >
-                        Xem mô tả công việc
+                        [[#{ view_job_description }]]
                         <i class="fa-solid fa-angles-right"></i>
                       </a>
                     </div>
@@ -139,21 +139,19 @@
                       <ul></ul>
                     </div>
                     <form
-                      action="/co-hoi-nghe-nghiep/#wpcf7-f6513-o1"
+                      action="/apply-job"
                       method="post"
                       class="wpcf7-form init"
                       aria-label="Contact form"
                       enctype="multipart/form-data"
-                      novalidate="novalidate"
-                      data-status="init"
                     >
                       <h3 class="fs-20 fw-bold text-uppercase">
-                        <span>ỨNG TUYỂN NGAY</span>
+                        <span th:with="apply_now=#{apply_now}">[[${apply_now.toUpperCase()}]]</span>
                       </h3>
                       <div class="row text-black">
                         <div class="col-md-6">
                           <p>
-                            <label for="">Họ và Tên <span>*</span></label
+                            <label>[[#{ fullname }]] <span>*</span></label
                             ><br />
                             <span
                               class="wpcf7-form-control-wrap"
@@ -167,13 +165,14 @@
                                 placeholder="Aa"
                                 value=""
                                 type="text"
-                                name="your-name"
+                                name="fullname"
+                                required=""
                             /></span>
                           </p>
                         </div>
                         <div class="col-md-6">
                           <p>
-                            <label for="">Vị Trí Ứng Tuyển <span>*</span></label
+                            <label for="">[[#{ position_apply }]] <span>*</span></label
                             ><br />
                             <span
                               class="wpcf7-form-control-wrap"
@@ -187,7 +186,8 @@
                                 placeholder="Aa"
                                 value=""
                                 type="text"
-                                name="your-position"
+                                name="position"
+                                required
                             /></span>
                           </p>
                         </div>
@@ -207,13 +207,14 @@
                                 placeholder="Aa"
                                 value=""
                                 type="email"
-                                name="your-email"
+                                name="email"
+                                required
                             /></span>
                           </p>
                         </div>
                         <div class="col-md-6">
                           <p>
-                            <label for="">Điện Thoại <span>*</span></label
+                            <label for="">Phone <span>*</span></label
                             ><br />
                             <span
                               class="wpcf7-form-control-wrap"
@@ -227,13 +228,14 @@
                                 placeholder="Aa"
                                 value=""
                                 type="tel"
-                                name="your-phone"
+                                name="phone"
+                                required="required"
                             /></span>
                           </p>
                         </div>
                         <div class="col-md-12">
                           <p>
-                            <label for="">Nội Dung</label><br />
+                            <label for="">[[#{ content }]]</label><br />
                             <span
                               class="wpcf7-form-control-wrap"
                               data-name="your-message"
@@ -245,7 +247,7 @@
                                 class="wpcf7-form-control wpcf7-textarea form-control mb-3"
                                 aria-invalid="false"
                                 placeholder="Aa"
-                                name="your-message"
+                                name="message"
                               ></textarea>
                             </span>
                           </p>
@@ -268,7 +270,8 @@
                                   aria-required="true"
                                   aria-invalid="false"
                                   type="file"
-                                  name="your-cv"
+                                  name="cv"
+                                  required=""
                               /></span>
                             </div>
                           </div>
@@ -278,26 +281,12 @@
                             <input
                               class="wpcf7-form-control wpcf7-submit has-spinner"
                               type="submit"
-                              value="GỬI HỒ SƠ"
+                              th:with="submit_application=#{submit_application}"
+                              th:value="${submit_application.toUpperCase()}"
+                              required="required"
                             />
                             <span class="wpcf7-spinner"></span>
                           </p>
-                        </div>
-                        <div class="col-md-5">
-                          <div class="mt-2">
-                            <div
-                              class="d-flex justify-content-center align-items-center"
-                            >
-                              <a
-                                class="btn btn-download"
-                                href=""
-                                download="download"
-                              >
-                                Mẫu CV công ty
-                                <i class="fa fa-download"></i
-                              ></a>
-                            </div>
-                          </div>
                         </div>
                       </div>
                       <div
@@ -316,6 +305,15 @@
       <th:block
         th:include="~{clients/career-recruitment-details-modal :: modal}"
       ></th:block>
+
+      <script>
+        document.getElementsByName('cv')[0].addEventListener('change', function(event) {
+          const file = event.target.files[0];
+          if (file) {
+            document.getElementsByClassName("file-name")[0].innerHTML = file.name;
+          }
+        });
+      </script>
     </main>
   </body>
 </html>

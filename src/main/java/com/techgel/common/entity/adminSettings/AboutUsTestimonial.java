@@ -32,4 +32,12 @@ public class AboutUsTestimonial extends BasedEntity {
         this.subtitle_vi = subtitle_vi;
         this.subtitle_en = subtitle_en;
     }
+
+    public String getTitle(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
+    }
+
+    public String getSubTitle(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? subtitle_vi : subtitle_en;
+    }
 }

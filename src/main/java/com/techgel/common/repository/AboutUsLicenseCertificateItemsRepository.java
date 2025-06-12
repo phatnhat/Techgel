@@ -1,6 +1,5 @@
 package com.techgel.common.repository;
 
-import com.techgel.common.entity.adminSettings.AboutUsLicenseCertificate;
 import com.techgel.common.entity.adminSettings.AboutUsLicenseCertificateItems;
 import com.techgel.common.entity.adminSettings.AboutUsOrganizationalChartItems;
 import org.springframework.data.jpa.repository.JpaRepository;

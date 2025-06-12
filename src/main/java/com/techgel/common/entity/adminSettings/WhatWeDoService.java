@@ -38,4 +38,12 @@ public class WhatWeDoService extends BasedEntity {
         this.description_vi = description_vi;
         this.description_en = description_en;
     }
+
+    public String getTitle(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
+    }
+
+    public String getDescription(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? description_vi : description_en;
+    }
 }

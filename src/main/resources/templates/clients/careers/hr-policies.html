@@ -8,7 +8,7 @@
     <main class="content-wrapper">
       <style>
         .breadcrumb-bg {
-          background-image: url([[@{/imgs/banners/job-interview.jpg}]]);
+          background-image: url([[@{${hrPolicies.banner_url}}]]);
         }
       </style>
 
@@ -19,7 +19,7 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1 class="split-collab-words">CHÍNH SÁCH NHÂN SỰ</h1>
+              <h1 class="split-collab-words">[[${ hrPolicies.getTitle(#locale.language) }]]</h1>
             </div>
           </div>
         </div>
@@ -28,40 +28,20 @@
       <div id="next" class="hr_policies_page py-5">
         <div class="container">
           <h1 class="title split-collab-words" style="opacity: 1">
-            Thu hút nhân tài
+            [[${ attractTalent.getTitle(#locale.language) }]]
           </h1>
           <hr />
           <div class="mt-5">
             <div class="row gx-0 align-items-center content">
               <div class="col-lg-7 center">
                 <img
-                  th:src="@{/imgs/hr/boost-handshake.webp}"
+                  th:src="@{${attractTalent.image_general_image}}"
                   class="img-fluid center"
                   alt="Techgel"
                 />
               </div>
               <div class="col-lg-5">
-                <div class="p-4 text-justify">
-                  <p class="text-center">
-                    Việc tuyển chọn đội ngũ nhân sự chất lượng, đáp ứng yêu cầu
-                    công việc góp phần thực hiện mục tiêu và định hướng phát
-                    triển Công ty là mục tiêu hàng đầu trong hoạt động nhân sự:
-                    <br />
-                    <br />
-                    Quy trình tuyển dụng được thực hiện một cách bài bản, đảm
-                    bảo tính minh bạch, thống nhất; cùng với hệ thống tiêu chí
-                    tuyển dụng khoa học và có tính thực chiến cao nhằm lựa chọn
-                    ra những ứng viên phù hợp cả về năng lực chuyên môn, kỹ
-                    năng, thái độ. Bên cạnh đó, công tác xây dựng thương hiệu
-                    tuyển dụng thông qua việc ký kết hợp tác chiến lược với các
-                    trường đại học uy tín trong nước cũng được Công ty đặt ưu
-                    tiên hàng đầu. Bằng việc triển khai các chương trình thực
-                    tập, trao học bổng, tổ chức các buổi hội thảo chuyên đề,…
-                    Tất cả những yếu tố trên cùng góp phần giúp TECHGEL tìm kiếm
-                    và chọn ra những ứng viên đầu vào chất lượng, phù hợp với
-                    tiêu chí tuyển dụng, định hướng phát triển của Công ty và
-                    văn hóa doanh nghiệp.
-                  </p>
+                <div class="p-4 text-justify" th:utext="${ attractTalent.getGeneralContent(#locale.language) }">
                 </div>
               </div>
             </div>
@@ -70,96 +50,19 @@
       </div>
 
       <div class="container hr-policies-void py-5">
-        <div class="text-center lh-base description">
-          Tại Techgel, con người là trung tâm của mọi chiến lược
-          <br>
-          Chúng tôi xây dựng chính sách lương thưởng minh bạch, cạnh tranh, kết hợp thưởng dự án, thưởng hiệu suất và thưởng thành tích cuối năm
-          <br>
-          <i>Môi trường làm việc năng động, bền vững – cùng bạn phát triển!</i>
+        <div class="text-center lh-base description" th:utext="${ attractTalent.getDescription(#locale.language) }">
         </div>
         <div class="list">
-          <div class="cardd">
+          <div class="cardd" th:each="item: ${attractTalentItemsList}">
             <div class="face face1">
               <div class="content">
-                <img src="/imgs/small-icons/promotion.png">
-                <h5>CHÍNH SÁCH THĂNG TIẾN VÀ LUÂN CHUYỂN NHÂN SỰ</h5>
+                <img th:src="@{${item.image_url}}">
+                <h5>[[${ #strings.toUpperCase(item.getTitle(#locale.language)) }]]</h5>
               </div>
             </div>
             <div class="face face2">
               <div class="content">
-                <p>Cơ hội phát triển nghề nghiệp rõ ràng, luân chuyển linh
-                  hoạt theo năng lực và định hướng cá nhân.</p>
-              </div>
-            </div>
-          </div>
-          <div class="cardd">
-            <div class="face face1">
-              <div class="content">
-                <img src="/imgs/small-icons/training.png">
-                <h5>CHÍNH SÁCH ĐÀO TẠO</h5>
-              </div>
-            </div>
-            <div class="face face2">
-              <div class="content">
-                <p>Đào tạo chuyên môn, kỹ năng mềm và công nghệ mới nhằm nâng
-                  cao năng lực toàn diện cho nhân viên.</p>
-              </div>
-            </div>
-          </div>
-          <div class="cardd">
-            <div class="face face1">
-              <div class="content">
-                <img src="/imgs/small-icons/employee-benefit.png">
-                <h5>CHÍNH SÁCH LƯƠNG – THƯỞNG</h5>
-              </div>
-            </div>
-            <div class="face face2">
-              <div class="content">
-                <p>Thu nhập hấp dẫn, thưởng theo hiệu suất và kết quả kinh
-                  doanh, đảm bảo công bằng và minh bạch.</p>
-              </div>
-
-            </div>
-          </div>
-          <div class="cardd">
-            <div class="face face1">
-              <div class="content">
-                <img src="/imgs/small-icons/income.png">
-                <h5>HỆ THỐNG LƯƠNG THƯỞNG CẠNH TRANH</h5>
-              </div>
-            </div>
-            <div class="face face2">
-              <div class="content">
-                <p>Áp dụng khung lương thị trường, đánh giá định kỳ, khuyến
-                  khích cống hiến và phát triển lâu dài.</p>
-              </div>
-            </div>
-          </div>
-          <div class="cardd">
-            <div class="face face1">
-              <div class="content">
-                <img src="/imgs/small-icons/incentive.png">
-                <h5>CHÍNH SÁCH PHÚC LỢI, ĐÃI NGỘ</h5>
-              </div>
-            </div>
-            <div class="face face2">
-              <div class="content">
-                <p>Chế độ phúc lợi toàn diện: nghỉ lễ, du lịch, hiếu hỷ, sinh
-                  nhật, hỗ trợ học tập và gắn kết nội bộ.</p>
-              </div>
-            </div>
-          </div>
-          <div class="cardd">
-            <div class="face face1">
-              <div class="content">
-                <img src="/imgs/small-icons/life-insurance.png">
-                <h5>CHÍNH SÁCH BẢO HIỂM, SỨC KHỎE</h5>
-              </div>
-            </div>
-            <div class="face face2">
-              <div class="content">
-                <p>Đầy đủ BHXH, BHYT, BHTN và bảo hiểm sức khỏe mở rộng, khám
-                  định kỳ, hỗ trợ chi phí y tế.</p>
+                <p>[[${ item.getContent(#locale.language) }]]</p>
               </div>
             </div>
           </div>
@@ -170,14 +73,14 @@
       <div class="career_development_page pt-5">
         <div class="container">
           <h1 class="title split-collab-words" style="opacity: 1">
-            Phát triển nguồn nhân lực
+            [[${ humanResourceDevelopment.getTitle(#locale.language) }]]
           </h1>
           <hr />
           <div class="mt-5">
             <div
               class="row gx-md-5 d-flex align-items-center-justify-content-center"
             >
-              <div class="col-lg-4 col-8 order-lg-1 d-flex align-items-center">
+              <div class="col-lg-4 col-8 order-lg-1 d-flex align-items-center justify-content-center">
                 <div class="img_mep mb-3">
                   <div class="logo-area-start">
                     <a class="logo" href="/">
@@ -201,30 +104,14 @@
               </div>
               <div class="col-lg-4 order-lg-0">
                 <div class="text-justify">
-                  Chúng tôi sử dụng nguồn lực theo nguyên tắc: “Đúng người –
-                  Đúng việc – Đúng thời điểm”. Phải biết chắc chắn rằng công
-                  việc và con người phải phù hợp với nhau, từ đó thúc đẩy sự
-                  phát triển tốt nhất của mỗi cá nhân gắn liền với sự phát triển
-                  của tổ chức. Vì vậy, đào tạo nội bộ là quy trình bắt buộc,
-                  không chỉ dành riêng cho các nhân sự mới. Trong quá trình làm
-                  việc, tất cả các nhân viên đều có cơ hội bồi dưỡng kiến thức
-                  chuyên môn với các Chuyên gia được mời đến tận nơi hoặc được
-                  tài trợ học bổng toàn phần cho các khóa học khác tại các trung
-                  tâm đào tạo uy tín trong và ngoài nước.
+                  [[${ humanResourceDevelopment.getLeftContent(#locale.language) }]]
                 </div>
               </div>
               <div class="col-lg-4 order-lg-2">
                 <div class="text-justify mb-3">
-                  Phát triển nguồn nhân lực là điều kiện quyết định để doanh
-                  nghiệp có thể tồn tại và phát triển trong nền kinh tế thị
-                  trường cùng với sự bùng nổ công nghệ như hiện nay. Chính sách
-                  phát triển nguồn nhân lực ưu việt sẽ giúp người lao động tự
-                  tin cống hiến và trưởng thành, tạo cho họ cảm giác yên tâm làm
-                  việc, gắn bó với Công ty, đem hết khả năng của mình phục vụ
-                  cho tổ chức, coi sự phát triển lớn mạnh của Công ty là sự phát
-                  triển của bản thân mỗi người.
+                  [[${ humanResourceDevelopment.getRightContent(#locale.language) }]]
                 </div>
-                <a th:href="@{/careers/job-opportunities}" class="read_more">Tham gia với chúng tôi</a>
+                <a th:href="@{/careers/job-opportunities}" class="read_more">[[#{ join_us }]]</a>
               </div>
             </div>
           </div>
@@ -232,93 +119,78 @@
         <div class="objectives py-5 mt-5">
           <div class="container">
             <div class="row justify-content-center">
-              <div class="col-md-10">
-                <div
-                  class="mb-5 text-center"
-                  style="
-                    color: var(--themePrimary);
-                    font-weight: 700;
-                    font-size: 20px;
-                  "
-                >
-                  Việc đào tạo giúp cho các cán bộ, nhân viên tiềm năng được đào
-                  tạo không chỉ vận dụng kiến thức vào thực tế một cách hiệu quả
-                  mà còn xác định được lộ trình phát triển phù hợp với mục tiêu
-                  phát triển của Công ty.
-                </div>
+              <div class="col-md-10" th:utext="${humanResourceDevelopment.getDescription(#locale.language)}">
+
               </div>
             </div>
             <div class="row gx-0">
-              <div class="col-md-4">
+              <div class="col-md-4" th:each="item: ${humanResourceDevelopmentItemsList}">
                 <div class="traning_step">
                   <div class="inner">
                     <div class="img">
                       <img
-                        src="/imgs/small-icons/rulers.png"
+                        th:src="@{${item.image_url}}"
                         class="img-fluid"
                         alt=""
                         draggable="false"
                       />
                     </div>
-                    <div class="num fs-30 fw-bold">01</div>
+                    <div class="num fs-30 fw-bold">0[[${item.orderNumber}]]</div>
                     <div class="text-justify">
-                      Hoạt động đào tạo vừa giúp CBNV đã được đào tạo áp dụng
-                      hiệu quả vào công việc thực tế, vừa giúp CBNV có thể xác
-                      định được lộ trình phát triển của bản thân phù hợp với mục
-                      tiêu phát triển của Công ty.
+                      [[${ item.getContent(#locale.language) }]]
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="traning_step">
-                  <div class="inner">
-                    <div class="img">
-                      <img
-                        src="/imgs/small-icons/good-feedback.png"
-                        class="img-fluid"
-                        alt=""
-                        draggable="false"
-                      />
-                    </div>
-                    <div class="num fs-30 fw-bold">02</div>
-                    <div class="text-justify">
-                      TECHGEL xây dựng một hệ thống đánh giá công việc công tâm,
-                      khách quan nhằm tạo điều kiện tối đa cho việc nâng cao
-                      hiệu suất làm việc và phát triển tài năng, nhân cách đối
-                      với các cá nhân được quy hoạch lên Quản lý cấp trung; Lãnh
-                      đạo kế thừa. Qua đó, nhằm tạo điều kiện để tất cả CBNV đều
-                      có cơ hội thăng tiến và phát triển sự nghiệp một cách bình
-                      đẳng tại Công ty.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="traning_step">
-                  <div class="inner">
-                    <div class="img">
-                      <img
-                        src="/imgs/small-icons/labor.png"
-                        class="img-fluid"
-                        alt=""
-                        draggable="false"
-                      />
-                    </div>
-                    <div class="num fs-30 fw-bold">03</div>
-                    <div class="text-justify">
-                      Tất cả CBNV sau khi ký hợp đồng lao động có thời hạn với
-                      Công ty sẽ được tham dự các lớp đào tạo nghiệp vụ ngắn
-                      hạn, trung hạn theo kế hoạch đào tạo hàng năm hoặc đào tạo
-                      đột xuất theo yêu cầu cấp thiết của mỗi đơn vị.
-                    </div>
-                  </div>
-                </div>
-              </div>
+<!--              <div class="col-md-4">-->
+<!--                <div class="traning_step">-->
+<!--                  <div class="inner">-->
+<!--                    <div class="img">-->
+<!--                      <img-->
+<!--                        src="/imgs/small-icons/good-feedback.png"-->
+<!--                        class="img-fluid"-->
+<!--                        alt=""-->
+<!--                        draggable="false"-->
+<!--                      />-->
+<!--                    </div>-->
+<!--                    <div class="num fs-30 fw-bold">02</div>-->
+<!--                    <div class="text-justify">-->
+<!--                      TECHGEL xây dựng một hệ thống đánh giá công việc công tâm,-->
+<!--                      khách quan nhằm tạo điều kiện tối đa cho việc nâng cao-->
+<!--                      hiệu suất làm việc và phát triển tài năng, nhân cách đối-->
+<!--                      với các cá nhân được quy hoạch lên Quản lý cấp trung; Lãnh-->
+<!--                      đạo kế thừa. Qua đó, nhằm tạo điều kiện để tất cả CBNV đều-->
+<!--                      có cơ hội thăng tiến và phát triển sự nghiệp một cách bình-->
+<!--                      đẳng tại Công ty.-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-md-4">-->
+<!--                <div class="traning_step">-->
+<!--                  <div class="inner">-->
+<!--                    <div class="img">-->
+<!--                      <img-->
+<!--                        src="/imgs/small-icons/labor.png"-->
+<!--                        class="img-fluid"-->
+<!--                        alt=""-->
+<!--                        draggable="false"-->
+<!--                      />-->
+<!--                    </div>-->
+<!--                    <div class="num fs-30 fw-bold">03</div>-->
+<!--                    <div class="text-justify">-->
+<!--                      Tất cả CBNV sau khi ký hợp đồng lao động có thời hạn với-->
+<!--                      Công ty sẽ được tham dự các lớp đào tạo nghiệp vụ ngắn-->
+<!--                      hạn, trung hạn theo kế hoạch đào tạo hàng năm hoặc đào tạo-->
+<!--                      đột xuất theo yêu cầu cấp thiết của mỗi đơn vị.-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
             </div>
             <div class="text-center mt-3 mb-md-5">
               <a th:href="@{/careers/job-opportunities}" class="read_more"
-                >Tham gia với chúng tôi</a
+                >[[#{ join_us }]]</a
               >
             </div>
           </div>

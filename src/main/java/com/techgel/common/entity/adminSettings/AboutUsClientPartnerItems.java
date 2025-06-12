@@ -23,7 +23,7 @@ public class AboutUsClientPartnerItems extends BasedEntity {
 
     @ManyToOne
     @JoinColumn(name = "about_us_client_partner_id")
-    private AboutUsClientPartner aboutUsClientPartner;
+    private AboutUsClientPartnerList aboutUsClientPartnerList;
 
     public AboutUsClientPartnerItems(String title_vi, String title_en, String link, String image_url, int displayOrder) {
         this.title_vi = title_vi;
@@ -39,13 +39,17 @@ public class AboutUsClientPartnerItems extends BasedEntity {
         this.image_url = image_url;
     }
 
-    public AboutUsClientPartnerItems(Long id, String title_vi, String title_en, String link, String image_url, int displayOrder, AboutUsClientPartner aboutUsClientPartner) {
+    public AboutUsClientPartnerItems(Long id, String title_vi, String title_en, String link, String image_url, int displayOrder, AboutUsClientPartnerList aboutUsClientPartnerList) {
         super(id);
         this.title_vi = title_vi;
         this.title_en = title_en;
         this.link = link;
         this.image_url = image_url;
         this.displayOrder = displayOrder;
-        this.aboutUsClientPartner = aboutUsClientPartner;
+        this.aboutUsClientPartnerList = aboutUsClientPartnerList;
+    }
+
+    public String getTitle(String lang){
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
     }
 }

@@ -23,4 +23,21 @@ public class WhatWeDoSustainableDevelopmentItems extends BasedEntity {
     private String content_vi;
     @Lob
     private String content_en;
+
+    public WhatWeDoSustainableDevelopmentItems(Long id, String title_vi, String title_en, String image_url, String content_vi, String content_en) {
+        super(id);
+        this.title_vi = title_vi;
+        this.title_en = title_en;
+        this.image_url = image_url;
+        this.content_vi = content_vi;
+        this.content_en = content_en;
+    }
+
+    public String getTitle(String lang){
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
+    }
+
+    public String getContent(String lang){
+        return "vi".equalsIgnoreCase(lang) ? content_vi : content_en;
+    }
 }

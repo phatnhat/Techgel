@@ -10,103 +10,97 @@ public abstract class WhatWeDoServiceData {
                 WhatWeDoService item1 = new WhatWeDoService(1L, "Năng lượng", "Energy", 1,
                                 "/imgs/field-of-activities/energy.jpg", "/imgs/field-of-activities/energy-popup.png",
                                 "Ngành năng lượng của chúng tôi hướng đến mục tiêu phát triển bền vững, đa dạng hóa nguồn năng lượng và giảm thiểu tác động đến môi trường. Với chiến lược đầu tư bài bản vào các nguồn năng lượng tái tạo và giải pháp tiết kiệm năng lượng, chúng tôi cam kết đóng góp vào sự phát triển kinh tế - xã hội, đồng thời đảm bảo an ninh năng lượng quốc gia.",
-                                "");
-                WhatWeDoService item2 = new WhatWeDoService(2L, "Công trình nhà ga", "Airside", 2,
+                                "Our energy sector is committed to sustainable development, diversifying energy sources, and minimizing environmental impact. With a well-planned investment strategy in renewable energy and energy-saving solutions, we strive to contribute to socio-economic growth while ensuring national energy security.");
+                WhatWeDoService item2 = new WhatWeDoService(2L, "Công trình nhà ga", "Aviation", 2,
                                 "/imgs/field-of-activities/airside.jpg",
                                 "/imgs/field-of-activities/aviation-popup.png",
                                 "Ngành Công trình Nhà ga là một trong những lĩnh vực trọng điểm của chúng tôi, tập trung vào thiết kế, xây dựng và vận hành các công trình phục vụ hoạt động hàng không và vận tải. Với kinh nghiệm và công nghệ hiện đại, chúng tôi cam kết mang đến những giải pháp tối ưu, đảm bảo tính an toàn, hiệu quả và đáp ứng các tiêu chuẩn quốc tế.",
-                                "");
+                                "The Terminal Infrastructure sector is one of our core business areas, focusing on the design, construction, and operation of facilities serving aviation and transportation activities. With extensive experience and advanced technology, we are committed to delivering optimal solutions that ensure safety, efficiency, and compliance with international standards.");
                 WhatWeDoService item3 = new WhatWeDoService(3L, "Công nghiệp", "Industry", 3,
                                 "/imgs/field-of-activities/industry.jfif",
                                 "/imgs/field-of-activities/industry-popup.png",
                                 "Ngành Công nghiệp tập trung vào các giải pháp bền vững nhằm đáp ứng nhu cầu phát triển hạ tầng, bảo vệ môi trường và nâng cao chất lượng cuộc sống. Với hệ thống công nghệ hiện đại và đội ngũ chuyên gia giàu kinh nghiệm, chúng tôi cam kết mang đến những dịch vụ và công trình công nghiệp chất lượng cao, đảm bảo hiệu quả kinh tế và thân thiện với môi trường.",
-                                "");
+                                "Our Industrial sector focuses on sustainable solutions to meet the growing demands of infrastructure development, environmental protection, and improved quality of life. With advanced technology systems and a team of experienced professionals, we are committed to delivering high-quality industrial services and projects that ensure economic efficiency and environmental friendliness.");
                 WhatWeDoService item4 = new WhatWeDoService(4L, "Dân dụng", "Civil", 4,
                                 "/imgs/field-of-activities/civil.jpg", "/imgs/field-of-activities/civil-popup.png",
                                 "Ngành Dân dụng chuyên thiết kế và thi công các công trình phục vụ nhu cầu đời sống, làm việc, giáo dục và chăm sóc sức khỏe của cộng đồng. Với phương châm \"Chất lượng - An toàn - Thẩm mỹ\", chúng tôi cam kết mang đến những công trình bền vững, hiện đại, đáp ứng tiêu chuẩn quốc tế và nâng cao chất lượng sống.",
-                                "");
+                                "Our Civil Construction sector specializes in the design and construction of projects that serve the needs of daily life, work, education, and healthcare within the community. Guided by the motto \"Quality – Safety – Aesthetics,\" we are committed to delivering sustainable and modern structures that meet international standards and enhance quality of life.");
                 WhatWeDoService item5 = new WhatWeDoService(5L, "Hạ tầng", "Infrastructure", 5,
-                                "/imgs/field-of-activities/infrastructure.jpg", "",
+                                "/imgs/field-of-activities/infrastructure.jpg", "/imgs/field-of-activities/infrastructure-popup.jpg",
                                 "Ngành Hạ tầng đóng vai trò quan trọng trong chiến lược phát triển bền vững của chúng tôi, tập trung vào việc thiết kế, xây dựng và nâng cấp các hệ thống cơ sở hạ tầng phục vụ phát triển kinh tế - xã hội. Với kinh nghiệm và công nghệ hiện đại, chúng tôi cam kết mang đến những công trình chất lượng cao, đáp ứng nhu cầu hiện tại và tương lai.",
-                                "");
+                                "The Infrastructure sector plays a vital role in our sustainable development strategy, focusing on the design, construction, and upgrading of infrastructure systems that support socio-economic growth. With proven experience and modern technology, we are committed to delivering high-quality projects that meet both current and future demands.");
                 WhatWeDoService item6 = new WhatWeDoService(6L, "Công nghệ", "Technology", 6,
                                 "/imgs/field-of-activities/technology.jpg",
                                 "/imgs/field-of-activities/technology-popup.png",
                                 "Ngành Công nghệ là lĩnh vực mũi nhọn đầy triển vọng của chúng tôi, tập trung vào nghiên cứu, phát triển và ứng dụng các giải pháp công nghệ tiên tiến để thúc đẩy chuyển đổi số và nâng cao hiệu quả trong nhiều lĩnh vực. Với đội ngũ chuyên gia giàu kinh nghiệm cùng chiến lược đầu tư bài bản, chúng tôi cam kết mang đến những sản phẩm và dịch vụ công nghệ đột phá, đáp ứng xu thế toàn cầu.",
-                                "");
+                                "Technology is one of our most promising and strategic sectors, focusing on the research, development, and application of advanced technological solutions to drive digital transformation and enhance efficiency across various fields. With a team of experienced experts and a well-planned investment strategy, we are committed to delivering cutting-edge technology products and services that align with global trends.");
 
                 item1.setWhatWeDoServiceItems(List.of(
-                                new WhatWeDoServiceItems(1L, "Điện gió", "", 1,
+                                new WhatWeDoServiceItems(1L, "Điện gió", "Wind Power", 1,
                                                 "Chúng tôi tập trung phát triển các dự án điện gió trên cả đất liền và ngoài khơi, tận dụng tiềm năng gió lớn tại nhiều khu vực. Các trang trại gió của chúng tôi được trang bị công nghệ tiên tiến, đảm bảo hiệu suất cao và giảm thiểu tác tác động đến môi trường.",
-                                                ""),
-                                new WhatWeDoServiceItems(2L, "Điện mặt trời", "", 2,
+                                                "We focus on developing wind power projects both onshore and offshore, leveraging the abundant wind potential in various regions. Our wind farms are equipped with advanced technologies to ensure high efficiency while minimizing environmental impact."),
+                                new WhatWeDoServiceItems(2L, "Điện mặt trời", "Solar Power", 2,
                                                 "Với lợi thế về nắng và không gian rộng lớn, chúng tôi đầu tư mạnh vào điện mặt trời, bao gồm các dự án quy mô lớn (điện mặt trời tập trung) và hệ thống áp mái cho hộ gia đình, doanh nghiệp. Công nghệ pin mặt trời hiện đại giúp tối ưu hóa hiệu suất và kéo dài tuổi thọ hệ thống.",
-                                                ""),
-                                new WhatWeDoServiceItems(3L, "Nhà máy nhiệt điện", "", 3,
+                                                "With advantages in sunlight and vast open spaces, we are heavily investing in solar power, including large-scale projects (concentrated solar power) and rooftop systems for households and businesses. Modern photovoltaic technology enables us to optimize performance and extend system lifespan."),
+                                new WhatWeDoServiceItems(3L, "Nhà máy nhiệt điện", "Thermal Power Plant", 3,
                                                 "Bên cạnh năng lượng tái tạo, chúng tôi vận hành các nhà máy nhiệt điện với công nghệ tiên tiến, sử dụng nhiên liệu sạch hơn như khí thiên nhiên hóa lỏng (LNG) và than cải tiến, nhằm giảm phát thải CO₂ và đáp ứng nhu cầu điện ổn định cho hệ thống.",
-                                                ""),
-                                new WhatWeDoServiceItems(4L, "Năng lượng sinh khối", "", 4,
+                                                "In addition to renewable energy, we operate thermal power plants equipped with advanced technologies, utilizing cleaner fuels such as liquefied natural gas (LNG) and upgraded coal. This approach helps reduce CO₂ emissions while ensuring a stable electricity supply for the grid."),
+                                new WhatWeDoServiceItems(4L, "Năng lượng sinh khối", "Biomass Energy", 4,
                                                 "Chúng tôi khai thác nguồn năng lượng từ sinh khối (bã mía, trấu, gỗ, phế thải nông nghiệp…) để sản xuất điện và nhiệt năng. Giải pháp này không chỉ tạo ra năng lượng sạch mà còn góp phần xử lý chất thải, phát triển nông nghiệp bền vững.",
-                                                ""),
-                                new WhatWeDoServiceItems(5L, "Giải pháp tiết kiệm năng lượng", "", 5,
+                                                "We harness energy from biomass sources—such as bagasse, rice husks, wood, and agricultural waste—to produce electricity and thermal energy. This solution not only generates clean energy but also contributes to waste management and the advancement of sustainable agriculture."),
+                                new WhatWeDoServiceItems(5L, "Giải pháp tiết kiệm năng lượng", "Energy-saving solutions", 5,
                                                 "Ngoài sản xuất năng lượng, chúng tôi cung cấp các giải pháp tiết kiệm năng lượng như hệ thống quản lý năng lượng (EMS), đèn LED tiết kiệm điện, giải pháp cách nhiệt và tối ưu hóa hiệu suất cho doanh nghiệp. Với định hướng phát triển bền vững, chúng tôi không ngừng nghiên cứu, ứng dụng công nghệ mới nhằm nâng cao hiệu quả và giảm thiểu tác động môi trường, góp phần xây dựng một tương lai năng lượng xanh cho Việt Nam và khu vực.",
-                                                "")));
+                                                "In addition to energy production, we offer energy-saving solutions such as Energy Management Systems (EMS), energy-efficient LED lighting, insulation systems, and performance optimization services for businesses. Guided by a sustainable development vision, we continuously research and apply new technologies to improve efficiency and minimize environmental impact — contributing to a greener energy future for Vietnam and the region.")));
                 item2.setWhatWeDoServiceItems(List.of(
-                                new WhatWeDoServiceItems(6L, "Nhà ga hành khách", "", 6,
+                                new WhatWeDoServiceItems(6L, "Nhà ga hành khách", "Passenger Terminal", 6,
                                                 "Chúng tôi thiết kế và xây dựng các nhà ga hành khách với quy mô từ sân bay quốc tế đến sân bay nội địa, đảm bảo khả năng tiếp nhận lượng lớn hành khách một cách thuận tiện và an toàn. Các công trình được trang bị hệ thống check-in, an ninh, thông tin liên lạc hiện đại, cùng không gian thương mại và dịch vụ tiện ích.",
-                                                ""),
-                                new WhatWeDoServiceItems(7L, "Nhà ga hàng hóa", "", 7,
+                                                "We design and construct passenger terminals ranging from international airports to domestic airports, ensuring the capacity to accommodate large volumes of passengers conveniently and safely. Our facilities are equipped with modern check-in systems, security, communication technologies, as well as commercial spaces and convenient service amenities."),
+                                new WhatWeDoServiceItems(7L, "Nhà ga hàng hóa", "Cargo Terminal", 7,
                                                 "Nhà ga hàng hóa được xây dựng để đáp ứng nhu cầu vận chuyển hàng hóa bằng đường hàng không với công suất lớn. Chúng tôi tích hợp hệ thống kho bãi thông minh, thiết bị xếp dỡ tự động và công nghệ quản lý logistics để tối ưu hóa quy trình, giảm thời gian lưu kho và nâng cao hiệu quả vận hành.",
-                                                ""),
-                                new WhatWeDoServiceItems(8L, "Hangar bảo dưỡng tàu bay", "", 8,
-                                                "Hangar bảo dưỡng là công trình chuyên dụng phục vụ cho việc kiểm tra, sửa chữa và bảo dưỡng máy bay. Chúng tôi thiết kế hangar với kết cấu khung thép lớn, hệ thống thiết bị nâng hạ chuyên dụng, cùng các phân khu chức năng như khu bảo trì động cơ, kiểm tra thân máy bay và khu vực lắp ráp phụ tùng.\n"
-                                                                +
-                                                                "\n" +
-                                                                "Với đội ngũ kỹ sư giàu kinh nghiệm và công nghệ tiên tiến, chúng tôi tự hào là đơn vị tiên phong trong lĩnh vực xây dựng công trình nhà ga, góp phần phát triển hệ thống hạ tầng hàng không hiện đại, bền vững.",
-                                                "")));
+                                                "Cargo terminals are designed to meet the high-capacity demands of air freight transport. We integrate intelligent warehousing systems, automated loading and unloading equipment, and logistics management technologies to optimize processes, reduce storage time, and enhance operational efficiency."),
+                                new WhatWeDoServiceItems(8L, "Hangar bảo dưỡng tàu bay", "Aircraft Maintenance Hangar", 8,
+                                                "Hangar bảo dưỡng là công trình chuyên dụng phục vụ cho việc kiểm tra, sửa chữa và bảo dưỡng máy bay. Chúng tôi thiết kế hangar với kết cấu khung thép lớn, hệ thống thiết bị nâng hạ chuyên dụng, cùng các phân khu chức năng như khu bảo trì động cơ, kiểm tra thân máy bay và khu vực lắp ráp phụ tùng. Với đội ngũ kỹ sư giàu kinh nghiệm và công nghệ tiên tiến, chúng tôi tự hào là đơn vị tiên phong trong lĩnh vực xây dựng công trình nhà ga, góp phần phát triển hệ thống hạ tầng hàng không hiện đại, bền vững.",
+                                                "Maintenance hangars are specialized facilities for aircraft inspection, repair, and maintenance. We design hangars with large steel frame structures, specialized lifting equipment, and functional zones such as engine maintenance areas, airframe inspection sections, and parts assembly zones. With an experienced team of engineers and advanced technology, we take pride in being a pioneer in terminal construction, contributing to the development of a modern and sustainable aviation infrastructure system.")));
                 item3.setWhatWeDoServiceItems(List.of(
-                                new WhatWeDoServiceItems(9L, "Xử lý nước thải", "", 9,
+                                new WhatWeDoServiceItems(9L, "Xử lý nước thải", "Wastewater Treatment", 9,
                                                 "Chúng tôi cung cấp các giải pháp xử lý nước thải công nghiệp và đô thị bằng công nghệ tiên tiến như MBR (Màng lọc sinh học), MBBR (Bể bùn hoạt tính dính bám), và hệ thống xử lý hóa lý. Các hệ thống được thiết kế tối ưu, đảm bảo nước thải đầu ra đạt tiêu chuẩn môi trường, góp phần bảo vệ nguồn nước và sức khỏe cộng đồng.",
-                                                ""),
-                                new WhatWeDoServiceItems(10L, "Cung cấp nước sạch", "", 10,
+                                                "We provide advanced wastewater treatment solutions for industrial and urban applications, utilizing technologies such as MBR (Membrane Bioreactor), MBBR (Moving Bed Biofilm Reactor), and physico-chemical treatment systems. Our optimized systems ensure treated wastewater meets environmental standards, contributing to the protection of water resources and public health."),
+                                new WhatWeDoServiceItems(10L, "Cung cấp nước sạch", "Clean Water Supply", 10,
                                                 "Chúng tôi đầu tư và vận hành các nhà máy cung cấp nước sạch với công suất lớn, sử dụng công nghệ lọc RO, UV, ozone và các phương pháp tiên tiến khác để đảm bảo nguồn nước an toàn, đạt chuẩn quốc gia và quốc tế. Hệ thống phân phối nước được quản lý thông minh, giảm thiểu thất thoát và nâng cao hiệu quả sử dụng.",
-                                                ""),
-                                new WhatWeDoServiceItems(11L, "Nhà xưởng khu công nghiệp", "", 11,
-                                                "Chúng tôi thiết kế và xây dựng các nhà xưởng, khu công nghiệp đạt tiêu chuẩn, đáp ứng nhu cầu sản xuất của doanh nghiệp. Các công trình được trang bị hệ thống điện, thông gió, PCCC hiện đại, cùng Hạ tầng và logistics đồng bộ, tạo môi trường làm việc an toàn và hiệu quả.\n"
-                                                                +
-                                                                "\n" +
-                                                                "Với định hướng phát triển bền vững, chúng tôi không ngừng nghiên cứu và ứng dụng công nghệ mới, góp phần thúc đẩy ngành công nghiệp trong nước, đồng thời bảo vệ môi trường và nâng cao chất lượng cuộc sống.",
-                                                "")));
+                                                "We invest in and operate large-capacity clean water plants, employing technologies such as RO filtration, UV treatment, ozone, and other advanced methods to ensure safe water quality that meets national and international standards. Our smart water distribution systems minimize losses and enhance efficiency."),
+                                new WhatWeDoServiceItems(11L, "Nhà xưởng khu công nghiệp", "Industrial Factory", 11,
+                                                "Chúng tôi thiết kế và xây dựng các nhà xưởng, khu công nghiệp đạt tiêu chuẩn, đáp ứng nhu cầu sản xuất của doanh nghiệp. Các công trình được trang bị hệ thống điện, thông gió, PCCC hiện đại, cùng Hạ tầng và logistics đồng bộ, tạo môi trường làm việc an toàn và hiệu quả. Với định hướng phát triển bền vững, chúng tôi không ngừng nghiên cứu và ứng dụng công nghệ mới, góp phần thúc đẩy ngành công nghiệp trong nước, đồng thời bảo vệ môi trường và nâng cao chất lượng cuộc sống.",
+                                                "We design and construct factories and industrial zones that meet high standards, catering to the production needs of businesses. Our facilities are equipped with modern electrical systems, ventilation, and fire protection, alongside integrated infrastructure and logistics, creating a safe and efficient working environment. With a sustainable development orientation, we continuously research and apply new technologies to promote domestic industry while protecting the environment and enhancing quality of life.")));
                 item4.setWhatWeDoServiceItems(List.of(
-                                new WhatWeDoServiceItems(12L, "Khách sạn & khu nghỉ dưỡng", "", 12,
+                                new WhatWeDoServiceItems(12L, "Khách sạn & khu nghỉ dưỡng", "Hotels & Resorts", 12,
                                                 "Thiết kế và xây dựng các tổ hợp khách sạn 5 sao, resort cao cấp với kiến trúc độc đáo, hài hòa với thiên nhiên.Tích hợp hệ thống tiện ích đẳng cấp: hồ bơi, spa, nhà hàng, khu vui chơi giải trí.",
-                                                ""),
-                                new WhatWeDoServiceItems(13L, "Bệnh viện", "", 13,
+                                                "Designing and constructing 5-star hotel complexes and luxury resorts with unique architecture that harmonizes with nature. Integrated with high-class amenities including swimming pools, spas, restaurants, and entertainment areas."),
+                                new WhatWeDoServiceItems(13L, "Bệnh viện", "Hospitals", 13,
                                                 "Xây dựng bệnh viện đa khoa, chuyên khoa với hệ thống phòng mổ vô trùng, phòng ICU hiện đại. Áp dụng giải pháp kiến trúc xanh, đảm bảo môi trường chữa bệnh thân thiện, an toàn.",
-                                                ""),
-                                new WhatWeDoServiceItems(14L, "Siêu thị", "", 14,
+                                                "Constructing general and specialized hospitals equipped with sterile operating rooms and modern ICU facilities. Implementing green architectural solutions to ensure a safe, friendly healing environment."),
+                                new WhatWeDoServiceItems(14L, "Siêu thị", "Supermarkets", 14,
                                                 "Thi công siêu thị, trung tâm mua sắm quy mô lớn với hệ thống điện lạnh, chiếu sáng và an ninh tối ưu. Bố trí không gian mua sắm khoa học, trải nghiệm khách hàng là ưu tiên hàng đầu.",
-                                                ""),
-                                new WhatWeDoServiceItems(15L, "Chung cư cao tầng, văn phòng, trường học", "", 15,
+                                                "Construction of large-scale supermarkets and shopping centers equipped with optimized refrigeration, lighting, and security systems. The shopping spaces are thoughtfully designed with a focus on enhancing customer experience."),
+                                new WhatWeDoServiceItems(15L, "Chung cư cao tầng, văn phòng, trường học", "High-rise Apartments, Office Buildings, Schools", 15,
                                                 "Phát triển các dự án chung cư cao cấp, đô thị thông minh với tiêu chuẩn xanh (LEED, LOTUS). Chú trọng an ninh, tiện ích nội khu (công viên, phòng gym, khu vui chơi trẻ em).",
-                                                "")));
+                                                "Developing high-end residential projects and smart urban areas following green standards (LEED, LOTUS). Emphasizing security and internal amenities such as parks, gyms, and children's playgrounds.")));
                 item5.setWhatWeDoServiceItems(List.of(
-                                new WhatWeDoServiceItems(16L, "Hạ tầng khu công nghiệp, nhà máy", "", 16,
+                                new WhatWeDoServiceItems(16L, "Hạ tầng khu công nghiệp, nhà máy", "Industrial Park Infrastructure, Factories", 16,
                                                 "Thiết kế và xây dựng hệ thống hạ tầng đồng bộ cho các khu công nghiệp, bao gồm: đường giao thông nội bộ, hệ thống cấp thoát nước, điện, viễn thông. Áp dụng công nghệ thông minh (IoT, hệ thống giám sát tự động) để tối ưu hóa vận hành.",
-                                                ""),
-                                new WhatWeDoServiceItems(17L, "Hạ tầng giao thông", "", 17,
+                                                "Designing and constructing integrated infrastructure systems for industrial zones, including internal roads, water supply and drainage, electricity, and telecommunications. Applying smart technologies (IoT, automated monitoring systems) to optimize operations."),
+                                new WhatWeDoServiceItems(17L, "Hạ tầng giao thông", "Transportation Infrastructure", 17,
                                                 "Thi công các công trình giao thông trọng điểm: đường cao tốc, cầu, hầm, cảng biển, sân bay. Ứng dụng vật liệu mới và công nghệ thi công tiên tiến (cầu dây văng, hầm chịu lực cao) để nâng cao tuổi thọ công trình. Phát triển hệ thống giao thông thông minh (ITS) để giảm ùn tắc và tăng tính kết nối.",
-                                                "")));
+                                                "Construction of key transportation projects such as highways, bridges, tunnels, seaports, and airports. Utilizing new materials and advanced construction technologies (cable-stayed bridges, high-strength tunnels) to enhance structural durability. Developing Intelligent Transportation Systems (ITS) to reduce congestion and improve connectivity.")));
                 item6.setWhatWeDoServiceItems(List.of(
-                                new WhatWeDoServiceItems(18L, "Công nghệ hàng không", "", 18,
+                                new WhatWeDoServiceItems(18L, "Công nghệ hàng không", "Aviation Technology", 18,
                                                 "Nghiên cứu và phát triển các giải pháp công nghệ cho ngành hàng không như hệ thống quản lý không lưu thông minh, giám sát drone, và phần mềm tối ưu hóa vận hành sân bay. Ứng dụng AI và IoT để nâng cao hiệu quả bảo trì, dự đoán lỗi thiết bị và cải thiện trải nghiệm hành khách.",
-                                                ""),
-                                new WhatWeDoServiceItems(19L, "Công nghệ Datacenter", "", 19,
+                                                "Researching and developing technology solutions for the aviation industry such as intelligent air traffic management systems, drone monitoring, and airport operations optimization software. Applying AI and IoT to enhance maintenance efficiency, predict equipment failures, and improve passenger experience."),
+                                new WhatWeDoServiceItems(19L, "Công nghệ Datacenter", "Datacenter Technology", 19,
                                                 "Xây dựng và vận hành các trung tâm dữ liệu (datacenter) hiện đại, đạt tiêu chuẩn Tier 3/4, với hệ thống làm mát tiết kiệm năng lượng và bảo mật đa lớp. Cung cấp giải pháp điện toán đám mây (cloud), lưu trữ dữ liệu lớn (Big Data) và hạ tầng mạng tốc độ cao.",
-                                                ""),
-                                new WhatWeDoServiceItems(20L, "Công nghệ AI", "", 20,
+                                                "Building and operating modern data centers meeting Tier 3/4 standards, featuring energy-efficient cooling systems and multi-layer security. Providing cloud computing solutions, big data storage, and high-speed network infrastructure."),
+                                new WhatWeDoServiceItems(20L, "Công nghệ AI", "AI Technology", 20,
                                                 "Phát triển các ứng dụng AI trong nhiều lĩnh vực: xử lý ngôn ngữ tự nhiên (NLP), thị giác máy tính (Computer Vision), và hệ thống khuyến nghị (Recommendation Systems). Triển khai AI vào tự động hóa quy trình sản xuất, phân tích dữ liệu dự đoán và nâng cao hiệu quả kinh doanh.",
-                                                "")));
+                                                "Developing AI applications across various fields: natural language processing (NLP), computer vision, and recommendation systems. Implementing AI for production process automation, predictive data analytics, and business efficiency improvement.")));
 
                 return List.of(item1, item2, item3, item4, item5, item6);
         }

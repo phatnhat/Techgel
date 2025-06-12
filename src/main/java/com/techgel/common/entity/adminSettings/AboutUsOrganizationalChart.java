@@ -18,6 +18,7 @@ public class AboutUsOrganizationalChart extends BasedEntity {
     private String subtitle_vi;
     private String subtitle_en;
     private String file_url;
+    private String banner_url;
 
     public AboutUsOrganizationalChart(String title_vi, String title_en, String subtitle_vi, String subtitle_en) {
         this.title_vi = title_vi;
@@ -26,12 +27,17 @@ public class AboutUsOrganizationalChart extends BasedEntity {
         this.subtitle_en = subtitle_en;
     }
 
-    public AboutUsOrganizationalChart(Long id, String title_vi, String title_en, String subtitle_vi, String subtitle_en, String file_url) {
+    public AboutUsOrganizationalChart(Long id, String title_vi, String title_en, String subtitle_vi, String subtitle_en, String file_url, String banner_url) {
         super(id);
         this.title_vi = title_vi;
         this.title_en = title_en;
         this.subtitle_vi = subtitle_vi;
         this.subtitle_en = subtitle_en;
         this.file_url = file_url;
+        this.banner_url = banner_url;
+    }
+
+    public String getTitle(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
     }
 }

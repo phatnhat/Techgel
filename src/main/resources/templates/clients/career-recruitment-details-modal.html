@@ -21,13 +21,13 @@
                 style="gap: 35px"
               >
                 <ul>
-                  <li><b>Số lượng:</b> <span class="quantity"></span></li>
-                  <li><b>Trình độ:</b> <span class="qualification"></span></li>
-                  <li><b>Kinh nghiệm:</b> <span class="experience"></span></li>
-                  <li><b>Lương:</b> <span class="salary"></span></li>
-                  <li><b>Nơi làm việc:</b> <span class="workplace"></span></li>
+                  <li><b>[[#{ quantity }]]:</b> <span class="quantity"></span></li>
+                  <li><b>[[#{ qualification }]]:</b> <span class="qualification"></span></li>
+                  <li><b>[[#{ experience }]]:</b> <span class="experience"></span></li>
+                  <li><b>[[#{ salary }]]:</b> <span class="salary"></span></li>
+                  <li><b>[[#{ workplace }]]:</b> <span class="workplace"></span></li>
                   <li>
-                    <b>Ngày hết hạn:</b> <span class="expiration_date"></span>
+                    <b>[[#{ expiration_date }]]:</b> <span class="expiration_date"></span>
                   </li>
                 </ul>
               </div>
@@ -39,15 +39,14 @@
                 class="btn btn-secondary"
                 data-dismiss="recruitment-details-modal"
               >
-                Đóng
+                [[#{ close }]]
               </button>
               <a
                 href="#career_form"
                 type="button"
                 data-dismiss="recruitment-details-modal"
                 class="btn btn-outline-success"
-                >Nộp hồ sơ</a
-              >
+                >[[#{ submit_application }]]</a>
             </div>
           </div>
         </div>

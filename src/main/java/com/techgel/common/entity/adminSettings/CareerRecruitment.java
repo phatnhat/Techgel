@@ -52,4 +52,28 @@ public class CareerRecruitment extends BasedEntity {
         this.description_en = description_en;
         this.image_url = image_url;
     }
+
+    public String getTitle(String lang){
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
+    }
+
+    public String getSalary(String lang){
+        return "vi".equalsIgnoreCase(lang) ? salary_vi : salary_en;
+    }
+
+    public String getQualification(String lang){
+        return "vi".equalsIgnoreCase(lang) ? qualification_vi : qualification_en;
+    }
+
+    public String getExperience(String lang){
+        return "vi".equalsIgnoreCase(lang) ? experience_vi : experience_en;
+    }
+
+    public String getWorkplace(String lang){
+        return "vi".equalsIgnoreCase(lang) ? workplace_vi : workplace_en;
+    }
+
+    public String getDescription(String lang){
+        return "vi".equalsIgnoreCase(lang) ? description_vi : description_en;
+    }
 }

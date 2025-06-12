@@ -15,26 +15,17 @@ import lombok.Setter;
 public class News extends BasedEntity {
     private String title_vi;
     private String title_en;
-    @Enumerated(EnumType.STRING)
-    private NewsType type;
-    private String summary_vi;
-    private String summary_en;
-    @Lob
-    private String content_vi;
-    @Lob
-    private String content_en;
-    private String image_url;
 
+    private String banner_url;
 
-    public News(Long id, String title_vi, String title_en, NewsType type, String summary_vi, String summary_en, String content_vi, String content_en, String image_url) {
+    public News(Long id, String title_vi, String title_en, String banner_url) {
         super(id);
         this.title_vi = title_vi;
         this.title_en = title_en;
-        this.type = type;
-        this.summary_vi = summary_vi;
-        this.summary_en = summary_en;
-        this.content_vi = content_vi;
-        this.content_en = content_en;
-        this.image_url = image_url;
+        this.banner_url = banner_url;
+    }
+
+    public String getTitle(String lang){
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
     }
 }

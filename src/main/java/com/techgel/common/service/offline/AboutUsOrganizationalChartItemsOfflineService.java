@@ -7,12 +7,17 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Profile("offline")
 public class AboutUsOrganizationalChartItemsOfflineService implements AboutUsOrganizationalChartItemsService {
     public List<AboutUsOrganizationalChartItems> getAll(){
         return AboutUsOrganizationalChartItemData.get();
+    }
+
+    public List<AboutUsOrganizationalChartItems> getAllByLang(String lang){
+        return AboutUsOrganizationalChartItemData.get().stream().filter(item -> item.getOrganizationalLang().name().equalsIgnoreCase(lang)).collect(Collectors.toList());
     }
 
     public AboutUsOrganizationalChartItems getById(Long id){

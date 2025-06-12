@@ -8,7 +8,7 @@
     <main class="content-wrapper" style="overflow: hidden">
       <style>
         .breadcrumb-bg {
-          background-image: url([[@{/imgs/banners/project-banner.webp}]]);
+          background-image: url([[@{${project.banner_url}}]]);
         }
         .line_img {
           height: 10px;
@@ -25,7 +25,7 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1 class="split-collab-words">DỰ ÁN</h1>
+              <h1 class="split-collab-words">[[${ project.getTitle(#locale.language) }]]</h1>
             </div>
           </div>
         </div>
@@ -38,13 +38,13 @@
               <div class="flex-project-filter">
                 <ul>
                   <li th:class="${slug == null ? 'active' : ''}">
-                    <a class="text-uppercase" th:href="@{/projects}">Tất cả</a>
+                    <a class="text-uppercase" th:href="@{/projects}">[[#{ all } ]]</a>
                   </li>
                   <li
                     th:class="${slug != null && slug == 'featured' ? 'active' : ''}"
                   >
                     <a class="text-uppercase" th:href="@{/projects/featured}"
-                      >Nổi bật</a
+                      >[[#{ featured }]]</a
                     >
                   </li>
                   <li
@@ -54,7 +54,7 @@
                     <a
                       class="text-uppercase"
                       th:href="@{'/projects/' + ${category.slug}}"
-                      >[[${ category.name_vi }]]</a
+                      >[[${ category.getName(#locale.language) }]]</a
                     >
                   </li>
                 </ul>
@@ -63,14 +63,14 @@
             <div class="filter-area-wrapper">
               <div class="filter" id="filter_projects-btn">
                 <a href="javascript:;" class="text-nowrap">
-                  <i class="fa fa-sliders" aria-hidden="true"></i> Lọc
+                  <i class="fa fa-sliders" aria-hidden="true"></i> [[#{ filter }]]
                 </a>
               </div>
               <div class="col-md-auto">
                 <div class="d-md-flex">
                   <a href="" target="_blank">
                     <i class="fa-solid fa-map-location-dot"></i>
-                    Map dự án
+                    [[#{ project.map }]]
                   </a>
                 </div>
               </div>
@@ -89,7 +89,7 @@
               <div class="col-md">
                 <div class="row align-items-center">
                   <div class="col-md-2">
-                    <h4 class="fs-20 fw-bold">Năm</h4>
+                    <h4 class="fs-20 fw-bold">[[#{ year }]]</h4>
                   </div>
                   <div class="col-md-10">
                     <ul>
@@ -97,6 +97,7 @@
                         th:each="year: ${#numbers.sequence(2022, currentYear)}"
                       >
                         <input
+                          th:checked="${years_checked != null and #lists.contains(years_checked, year)}"
                           type="checkbox"
                           class="item_year"
                           name="years[]"
@@ -107,7 +108,7 @@
                     </ul>
                   </div>
                   <div class="col-md-2">
-                    <h4 class="fs-20 fw-bold mt-3 mt-md-0">Khu vực</h4>
+                    <h4 class="fs-20 fw-bold mt-3 mt-md-0">[[#{ region }]]</h4>
                   </div>
                   <div class="col-md-10">
                     <ul>
@@ -119,7 +120,7 @@
                           name="regions[]"
                           th:value="${region.name()}"
                         />
-                        <label>[[${region.getVietnameseName()}]]</label>
+                        <label th:text="${#locale.language == 'vi'} ? ${region.vietnameseName} : ${region.englishName}"></label>
                       </li>
                     </ul>
                   </div>
@@ -127,11 +128,11 @@
               </div>
               <div class="col-md-auto">
                 <div class="mt-3 mt-md-0">
-                  <input type="reset" class="btn btn-reset" value="Đặt lại" />
+                  <input type="reset" class="btn btn-reset" th:value="#{reset}" />
                   <input
                     type="submit"
                     class="btn btn-submit"
-                    value="Xác nhận"
+                    th:value="#{confirm}"
                   />
                 </div>
               </div>
@@ -144,7 +145,7 @@
         <div class="col-12 project-thumbnail">
           <div class="grid row">
             <div
-              th:each="project: ${projects}"
+              th:each="p: ${projects}"
               data-sal-delay="300"
               data-sal="zoom-in"
               data-sal-duration="800"
@@ -155,13 +156,13 @@
                 <div class="first-content">
                   <picture class="project-list-picture">
                     <source
-                      th:srcset="@{${project.image_url}}"
+                      th:srcset="@{${p.image_url}}"
                       type="image/webp"
                     />
                     <img
-                      th:src="@{${project.image_url}}"
-                      th:alt="${project.title_vi}"
-                      th:title="${project.title_vi}"
+                      th:src="@{${p.image_url}}"
+                      th:alt="${p.getTitle(#locale.language)}"
+                      th:title="${p.getTitle(#locale.language)}"
                       class="img-fluid"
                     />
                   </picture>
@@ -170,17 +171,17 @@
                 <!-- Second content: thông tin -->
                 <div class="second-content">
                   <a
-                    th:href="@{'/project_details/' + ${project.id}}"
+                    th:href="@{'/project_details/' + ${p.id}}"
                     class="text-decoration-none"
                   >
                     <div class="info">
                       <div class="name">
-                        <h4><strong>[[${project.title_vi}]]</strong></h4>
-                        <h5>[[${project.client_name_vi}]]</h5>
+                        <h4><strong>[[${p.getTitle(#locale.language)}]]</strong></h4>
+                        <h5>[[${p.getClientName(#locale.language)}]]</h5>
                       </div>
                       <div class="add-line"></div>
                       <div class="province">
-                        <h5>[[${project.location_vi}]]</h5>
+                        <h5>[[${p.getLocation(#locale.language)}]]</h5>
                       </div>
                       <div class="add-arrow"></div>
                     </div>

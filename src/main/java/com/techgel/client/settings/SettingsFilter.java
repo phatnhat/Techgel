@@ -3,8 +3,10 @@ package com.techgel.client.settings;
 import com.techgel.common.entity.adminSettings.EProfile;
 import com.techgel.common.entity.adminSettings.HomeNavigation;
 import com.techgel.common.entity.adminSettings.News;
+import com.techgel.common.entity.adminSettings.NewsList;
 import com.techgel.common.service.EProfileService;
 import com.techgel.common.service.HomeNavigationService;
+import com.techgel.common.service.NewsListService;
 import com.techgel.common.service.NewsService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,13 +26,13 @@ public class SettingsFilter implements Filter {
 
     private final HomeNavigationService homeNavigationService;
     private final EProfileService eProfileService;
-    private final NewsService newsService;
+    private final NewsListService newsListService;
 
     @Autowired(required = false)
-    public SettingsFilter(HomeNavigationService homeNavigationService, EProfileService eProfileService, NewsService newsService) {
+    public SettingsFilter(HomeNavigationService homeNavigationService, EProfileService eProfileService, NewsListService newsListService) {
         this.homeNavigationService = homeNavigationService;
         this.eProfileService = eProfileService;
-        this.newsService = newsService;
+        this.newsListService = newsListService;
     }
 
     @Override
@@ -40,7 +42,7 @@ public class SettingsFilter implements Filter {
 
         List<HomeNavigation> homeNavigations = homeNavigationService.getParents();
         EProfile eProfile = eProfileService.getById(1L);
-        List<News> recentNews = newsService.getRecentNews();
+        List<NewsList> recentNews = newsListService.getRecentNews();
 
         if(!hasNotAllowedExtension(url) && !hasNotAllowedPath(url)){
             request.setAttribute("homeNavigations", homeNavigations);
