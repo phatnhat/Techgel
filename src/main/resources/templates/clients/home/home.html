@@ -273,7 +273,7 @@
                       <h3 class="title animated fadeIn">
                         <span
                           class="counter animated fadeInDownBig property-number"
-                          >[[${ item.counter }]]</span
+                          >[[${item.counter % 1 == 0} ? ${item.counter.intValue()} : ${item.counter}]]</span
                         >[[${ item.getUnit(#locale.language) }]]
                       </h3>
                     </div>
