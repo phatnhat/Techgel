@@ -265,6 +265,9 @@ h6 {
   color: var(--alwaysBlack);
 }
 
+.hide-on-mobile {
+  margin-bottom: 0.5rem;
+}
 @media (max-width: 768px) {
   .hide-on-mobile {
     display: none;
