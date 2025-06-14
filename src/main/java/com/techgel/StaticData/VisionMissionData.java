@@ -1,14 +1,24 @@
 package com.techgel.StaticData;
 
+import com.techgel.common.entity.adminSettings.CeoMessage;
+
 import com.techgel.common.entity.adminSettings.VisionMission;
 
 import java.util.List;
 
-public abstract class VisionMissionData {
-    public static List<VisionMission> get() {
-        VisionMission VisionMission1 = new VisionMission(1L, "Tầm nhìn", "Vision", "KỸ THUẬT KIẾN TẠO TƯƠNG LAI\nTechgel kết hợp kỹ thuật cơ điện và công nghệ để xây dựng nhuững công trình thông minh cho một tương lai số hiện đại bậc nhất Đông Nam Á.", "WE ENGINEERING THE FUTURE\nTechgel combines MEP engineering and innovation to shape the smartest, most advanced future of Southeast Asia.", "", 1);
-        VisionMission VisionMission2 = new VisionMission(2L, "Sứ mệnh", "Mission", "Chúng ta đang sống trong một thời đại nơi kỹ thuật và công nghệ hội tụ, tái định hình cách các thành phố vận hành, cách ngành công nghiệp phát triển và cách con người sống và làm việc. Tại thời điểm bước ngoặt của quá trình hiện đại hóa Đông Nam Á, Techgel đứng ở tuyến đầu – nơi nhu cầu về những công trình và thiết bị thông minh, hiện đại hóa cực kì to lớn." + "\n" + "Đây không chỉ là cơ hội, mà còn là một sứ mệnh sâu sắc", "We are living in an era where engineering and technology converge, reshaping how cities operate, how industries evolve, and how people live and work. At this pivotal moment in Southeast Asia’s modernization, Techgel stands at the forefront—where the demand for intelligent infrastructure and advanced systems is greater than ever.\nThis is not just an opportunity, but a profound mission." + "\n", "", 2);
+public class VisionMissionData {
+    public static List<VisionMission> get(){
+        return List.of(
+                new VisionMission(1L, "Tầm nhìn", "Vision",
+                        "Định hình hạ tầng cơ điện và năng lượng tái tạo của tương lai, mang đến các giải pháp công nghệ tiên tiến giúp tối ưu hóa hiệu suất, giảm thiểu tác động môi trường và nâng cao chất lượng cuộc sống.",
+                        "Shaping the future of MEP and renewable energy infrastructure with advanced technology solutions that optimize performance, reduce environmental impact, and enhance quality of life.",
+                        "/imgs/about/inaugurate.jpg"),
 
-        return List.of(VisionMission1, VisionMission2);
+                new VisionMission(2L, "Sứ mệnh", "Mission",
+                        "Nâng cao hiệu quả hoạt động của những công trình thông qua việc tích hợp các hệ thống cơ điện thông minh và triển khai đồng bộ các giải pháp công nghệ tiên tiến, năng lượng tái tạo xanh, tạo ra nhiều giá trị bền vững và môi trường sống, làm việc tối ưu.",
+                        "Enhancing project performance by integrating smart MEP systems and deploying advanced technologies and green renewable energy solutions to deliver sustainable value and optimize living and working environments.",
+                        "/imgs/about/quality-handshake.png")
+        );
     }
 }
+

@@ -1,7 +1,10 @@
 package com.techgel.common.service.offline;
 
 import com.techgel.StaticData.AboutUsLicenseCertificateData;
+import com.techgel.StaticData.AboutUsLicenseCertificateListData;
 import com.techgel.common.entity.adminSettings.AboutUsLicenseCertificate;
+import com.techgel.common.entity.adminSettings.AboutUsLicenseCertificateList;
+import com.techgel.common.service.AboutUsLicenseCertificateListService;
 import com.techgel.common.service.AboutUsLicenseCertificateService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;

@@ -24,7 +24,7 @@
                         <div class="overlay"></div>
                         <div class="inner text-white">
                           <th:block
-                            th:utext="${banner.description_vi}"
+                            th:utext="${banner.getDescription(#locale.language)}"
                           ></th:block>
                         </div>
                       </div>

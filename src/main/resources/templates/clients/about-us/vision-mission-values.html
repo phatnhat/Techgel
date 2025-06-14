@@ -8,7 +8,7 @@
     <main class="content-wrapper">
       <style>
         .breadcrumb-bg {
-          background-image: url([[@{/imgs/banners/vision-banner.jpg}]]);
+          background-image: url([[@{${visionMissionValue.banner_url}}]]);
         }
         .line_img {
           height: 10px;
@@ -26,7 +26,7 @@
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
               <h1 class="split-collab-words">
-                TẦM NHÌN, SỨ MỆNH & GIÁ TRỊ CỐT LÕI
+                [[${ visionMissionValue.getTitle(#locale.language) }]]
               </h1>
             </div>
           </div>
@@ -35,51 +35,54 @@
 
       <div class="tmp-section-gap about-vmv">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-head pb-3">
-                <h4 class="section-sub-title center-title split-collab-words">
-                  <img
-                    data-sal-delay="200"
-                    data-sal="fade"
-                    data-sal-duration="800"
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                    alt="Techgel"
-                  />
-                  <span class="subtitle">[[${ visionMission.getTitle_vi }]]</span>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="vision_info mb-5" style="overflow: hidden">
-              <div
-                class="row justify-content-end"
-                data-sal-delay="150"
-                data-sal="slide-left"
-                data-sal-duration="800"
-              >
-                <div class="col-md-8">
-                  <img
-                    th:src="@{/imgs/about/inaugurate.jpg}"
-                    class="img-fluid"
-                    alt=""
-                    draggable="false"
-                  />
+          <th:block th:each="visionMission, iter: ${visionMissions}">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-head pb-3">
+                  <h4 class="section-sub-title center-title split-collab-words">
+                    <img
+                            data-sal-delay="200"
+                            data-sal="fade"
+                            data-sal-duration="800"
+                            th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
+                            alt="Techgel"
+                    />
+                    <span class="subtitle">[[${ visionMission.getTitle(#locale.language) }]]</span>
+                  </h4>
+
                 </div>
               </div>
-              <div class="content_abs">
+            </div>
+            <div>
+              <div th:class="${iter.index%2==0} ? 'vision_info mb-5' : 'mission_info mb-5'" style="overflow: hidden">
                 <div
-                  class="fs-18 fw-bold text-justify"
-                  data-sal-delay="150"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
+                        th:class="${iter.index%2==0} ? 'justify-content-end row' : 'justify-content-start row'"
+                        data-sal-delay="150"
+                        data-sal="slide-left"
+                        data-sal-duration="800"
                 >
-                  Trở thành nhà cung cấp, giải pháp cơ điện lạnh hàng đầu Việt Nam.
+                  <div class="col-md-8">
+                    <img
+                            th:src="@{${visionMission.image_url}}"
+                            class="img-fluid"
+                            alt=""
+                            draggable="false"
+                    />
+                  </div>
+                </div>
+                <div class="content_abs">
+                  <div
+                          class="fs-18 fw-bold text-justify"
+                          data-sal-delay="150"
+                          data-sal="slide-right"
+                          data-sal-duration="800"
+                          th:utext="${#strings.replace(visionMission.getContent(#locale.language), '\n', '<br />')}"
+                  >
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </th:block>
 
           <div class="row">
             <div class="col-lg-12">
@@ -92,53 +95,7 @@
                     th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                     alt="Techgel"
                   />
-                  <span class="subtitle">SỨ MỆNH</span>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="mission_info mb-5" style="overflow: hidden">
-              <div
-                class="row justify-content-start"
-                data-sal-delay="150"
-                data-sal="slide-right"
-                data-sal-duration="800"
-              >
-                <div class="col-md-8">
-                  <img
-                    th:src="@{/imgs/about/quality-handshake.png}"
-                    class="img-fluid"
-                    alt=""
-                    draggable="false"
-                  />
-                </div>
-              </div>
-              <div class="content_abs">
-                <div
-                  class="fs-18 fw-bold text-justify"
-                  data-sal-delay="150"
-                  data-sal="slide-left"
-                  data-sal-duration="800"
-                >
-                  Mang đến cho khách hàng những giải pháp thiết kế, cung cấp và lắp đặt hệ thống kỹ thuật tối ưu, hiệu quả và đạt chuẩn quốc tế, góp phần xây dựng nền công nghiệp hiện đại và phát triển bền vững. TECHGEL cam kết không ngừng đổi mới, ứng dụng công nghệ tiên tiến và đề cao chất lượng trong từng công trình.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-head pb-3">
-                <h4 class="section-sub-title center-title split-collab-words">
-                  <img
-                    data-sal-delay="200"
-                    data-sal="fade"
-                    data-sal-duration="800"
-                    th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
-                    alt="Techgel"
-                  />
-                  <span class="subtitle">GIÁ TRỊ CỐT LÕI</span>
+                  <span class="subtitle">[[${ coreValue.getTitle(#locale.language) }]]</span>
                 </h4>
               </div>
             </div>
@@ -161,7 +118,7 @@
                     />
                   </div>
                 </div>
-                <div
+                <div th:each="coreValueItem: ${coreValueItems}"
                   class="col-md-4"
                   data-sal-delay="300"
                   data-sal="slide-left"
@@ -171,135 +128,23 @@
                     <div class="value_inner">
                       <div class="icon_img">
                         <img
-                          th:src="@{/imgs/badge.png}"
+                          th:src="@{${coreValueItem.image_url}}"
                           class="img-fluid"
                           alt=""
                           draggable="false"
                         />
                       </div>
-                      <h2 class="fs-20 num fw-bold">01</h2>
+                      <h2 class="fs-20 num fw-bold">0[[${ coreValueItem.orderNumber }]]</h2>
                       <h4 class="fs-24 fw-bold text-uppercase">
-                        Chất lượng hàng đầu
+                        [[${ coreValueItem.getTitle(#locale.language) }]]
                       </h4>
                       <div class="description text-justify">
-                        Techgel luôn đặt chất lượng sản phẩm và dịch vụ lên hàng
-                        đầu, cam kết cung cấp các sản phẩm chính hãng, chất
-                        lượng cao, có nguồn gốc xuất xứ rõ ràng và dịch vụ tận
-                        tình, chu đáo.
+                        [[${ coreValueItem.getContent(#locale.language) }]]
                       </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="col-md-4"
-                  data-sal-delay="300"
-                  data-sal="zoom-in"
-                  data-sal-duration="800"
-                >
-                  <div class="item_value">
-                    <div class="value_inner">
-                      <div class="icon_img">
-                        <img
-                          th:src="@{/imgs/responsibility.png}"
-                          class="img-fluid"
-                          alt=""
-                          draggable="false"
-                        />
-                      </div>
-                      <h2 class="fs-20 num fw-bold">02</h2>
-                      <h4 class="fs-24 fw-bold text-uppercase">
-                        Uy tín và trách nhiệm
-                      </h4>
-                      <div class="description text-justify">
-                        Techgel xây dựng uy tín dựa trên sự trung thực, minh
-                        bạch và trách nhiệm trong mọi hoạt động kinh doanh.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="col-md-4"
-                  data-sal-delay="300"
-                  data-sal="zoom-in"
-                  data-sal-duration="800"
-                >
-                  <div class="item_value">
-                    <div class="value_inner">
-                      <div class="icon_img">
-                        <img
-                          th:src="@{/imgs/creativity.png}"
-                          class="img-fluid"
-                          alt=""
-                          draggable="false"
-                        />
-                      </div>
-                      <h2 class="fs-20 num fw-bold">03</h2>
-                      <h4 class="fs-24 fw-bold text-uppercase">
-                        Sáng tạo và đổi mới
-                      </h4>
-                      <div class="description text-justify">
-                        Techgel không ngừng tìm kiếm, nghiên cứu và áp dụng
-                        những công nghệ mới nhất để mang đến cho khách hàng
-                        những giải pháp tối ưu và hiệu quả nhất.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="col-md-4"
-                  data-sal-delay="300"
-                  data-sal="zoom-in"
-                  data-sal-duration="800"
-                >
-                  <div class="item_value">
-                    <div class="value_inner">
-                      <div class="icon_img">
-                        <img
-                          th:src="@{/imgs/sustainable-development.png}"
-                          class="img-fluid"
-                          alt=""
-                          draggable="false"
-                        />
-                      </div>
-                      <h2 class="fs-20 num fw-bold">04</h2>
-                      <h4 class="fs-24 fw-bold text-uppercase">
-                        Phát triển bền vững
-                      </h4>
-                      <div class="description text-justify">
-                        Techgel luôn hướng đến sự phát triển bền vững, không chỉ
-                        cho doanh nghiệp mà còn cho cả cộng đồng và xã hội.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="col-md-4"
-                  data-sal-delay="300"
-                  data-sal="slide-right"
-                  data-sal-duration="800"
-                >
-                  <div class="item_value">
-                    <div class="value_inner">
-                      <div class="icon_img">
-                        <img
-                          th:src="@{/imgs/trust.png}"
-                          class="img-fluid"
-                          alt=""
-                          draggable="false"
-                        />
-                      </div>
-                      <h2 class="fs-20 num fw-bold">05</h2>
-                      <h4 class="fs-24 fw-bold text-uppercase">
-                        Tôn trọng và hợp tác
-                      </h4>
-                      <div class="description text-justify">
-                        Techgel xây dựng mối quan hệ tốt đẹp với đối tác, khách
-                        hàng và đồng nghiệp dựa trên sự tôn trọng, tin cậy và
-                        hợp tác.
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
                 <div
                   class="col-md-8"
                   data-sal-delay="300"

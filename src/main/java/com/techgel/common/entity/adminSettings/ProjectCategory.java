@@ -41,4 +41,8 @@ public class ProjectCategory extends BasedEntity {
         this.slug = slug;
         this.displayOrder = displayOrder;
     }
+
+    public String getName(String lang){
+        return "vi".equalsIgnoreCase(lang) ? name_vi : name_en;
+    }
 }

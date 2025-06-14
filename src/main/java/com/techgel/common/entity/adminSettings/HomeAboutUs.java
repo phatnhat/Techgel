@@ -45,4 +45,16 @@ public class HomeAboutUs extends BasedEntity {
         this.image_url_2 = image_url_2;
         this.image_url_3 = image_url_3;
     }
+
+    public String getTitle(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
+    }
+
+    public String getSubTitle(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? subtitle_vi : subtitle_en;
+    }
+
+    public String getContent(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? content_vi : content_en;
+    }
 }

@@ -39,22 +39,6 @@ public class NewsOfflineService implements NewsService {
         return NewsData.get();
     }
 
-    public Page<News> getAllByType(NewsType type, Pageable pageable){
-        List<News> filtered = this.getAll().stream()
-                .filter(news -> news.getType().equals(type))
-                .sorted(Comparator.comparing(News::getUpdatedAt).reversed())
-                .collect(Collectors.toList());
-
-        return PaginateList.page(filtered, pageable);
-    }
-
-    @Override
-    public List<News> getRecentNews() {
-        return this.getAll().stream()
-                .sorted(Comparator.comparing(News::getUpdatedAt).reversed())
-                .collect(Collectors.toList());
-    }
-
     public News update(News news){
         return null;
     }

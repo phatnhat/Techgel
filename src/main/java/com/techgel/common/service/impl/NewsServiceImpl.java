@@ -15,32 +15,32 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-@Profile("online")
-@RequiredArgsConstructor
-public class NewsServiceImpl implements NewsService {
-    private final NewsRepository newsRepository;
-
-    public List<News> getAll(){
-        return newsRepository.findAll();
-    }
-
-    public Page<News> getAllByType(NewsType type, Pageable pageable) {
-        return newsRepository.findAllByType(type, pageable);
-    }
-
-    @Override
-    public List<News> getRecentNews() {
-        return null;
-    }
-
-    public News getById(Long id){
-        return newsRepository.findById(id).orElse(null);
-    }
-
-
-    public News update(News news){
-        return newsRepository.save(news);
-    }
-
-}
+//@Service
+//@Profile("online")
+//@RequiredArgsConstructor
+//public class NewsServiceImpl implements NewsService {
+//    private final NewsRepository newsRepository;
+//
+//    public List<News> getAll(){
+//        return newsRepository.findAll();
+//    }
+//
+//    public Page<News> getAllByType(NewsType type, Pageable pageable) {
+//        return newsRepository.findAllByType(type, pageable);
+//    }
+//
+//    @Override
+//    public List<News> getRecentNews() {
+//        return null;
+//    }
+//
+//    public News getById(Long id){
+//        return newsRepository.findById(id).orElse(null);
+//    }
+//
+//
+//    public News update(News news){
+//        return newsRepository.save(news);
+//    }
+//
+//}

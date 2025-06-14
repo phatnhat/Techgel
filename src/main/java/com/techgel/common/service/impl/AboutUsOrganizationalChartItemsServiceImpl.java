@@ -19,6 +19,11 @@ public class AboutUsOrganizationalChartItemsServiceImpl implements AboutUsOrgani
         return aboutUsOrganizationalChartItemsRepository.findAll();
     }
 
+    @Override
+    public List<AboutUsOrganizationalChartItems> getAllByLang(String lang) {
+        return null;
+    }
+
     public AboutUsOrganizationalChartItems getById(Long id){
         return aboutUsOrganizationalChartItemsRepository.findById(id).orElse(null);
     }

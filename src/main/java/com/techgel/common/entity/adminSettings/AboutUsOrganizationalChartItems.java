@@ -2,6 +2,7 @@ package com.techgel.common.entity.adminSettings;
 
 import com.techgel.common.entity.BasedEntity;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,10 +17,19 @@ import org.checkerframework.checker.index.qual.SearchIndexBottom;
 public class AboutUsOrganizationalChartItems extends BasedEntity {
     private String image_url;
     private int displayOrder;
+    @Enumerated
+    private OrganizationalLang organizationalLang;
 
-    public AboutUsOrganizationalChartItems(Long id, String image_url, int displayOrder) {
+    public AboutUsOrganizationalChartItems(Long id, String image_url, int displayOrder, OrganizationalLang lang) {
         super(id);
         this.image_url = image_url;
         this.displayOrder = displayOrder;
+        this.organizationalLang = lang;
+    }
+
+    public enum OrganizationalLang {
+        vi, en
     }
 }
+
+

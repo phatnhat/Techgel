@@ -8,7 +8,7 @@
     <main class="content-wrapper">
       <style>
         .breadcrumb-bg {
-          background-image: url("[[@{/imgs/banners/orgchart.jpg}]]");
+          background-image: url("[[@{${aboutUsOrganizationalChart.banner_url}}]]");
         }
       </style>
 
@@ -19,7 +19,7 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1 class="split-collab-words">SƠ ĐỒ TỔ CHỨC</h1>
+              <h1 class="split-collab-words">[[${ aboutUsOrganizationalChart.getTitle(#locale.language) }]]</h1>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
                       th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                       alt="TECHGEL"
                     />
-                    [[${ aboutUsOrganizationalChart.title_vi }]]</span
+                    [[${ aboutUsOrganizationalChart.getTitle(#locale.language) }]]</span
                   >
                 </h4>
               </div>
@@ -79,7 +79,7 @@
                 th:href="${aboutUsOrganizationalChart.file_url}"
                 target="_blank"
                 class="btn primary-button"
-                >Tải Bản PDF</a
+                >[[#{ download.pdf }]]</a
               >
             </div>
           </div>

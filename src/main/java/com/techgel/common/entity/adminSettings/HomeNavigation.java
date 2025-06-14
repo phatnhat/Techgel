@@ -78,4 +78,8 @@ public class HomeNavigation extends BasedEntity {
     public List<HomeNavigation> getChildrens(){
         return this.children.stream().filter(navigation -> navigation.getParent() != null && navigation.isPublished() == true).collect(Collectors.toList());
     }
+
+    public String getTitle(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
+    }
 }

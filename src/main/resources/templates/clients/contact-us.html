@@ -8,7 +8,7 @@
     <main class="content-wrapper">
       <style>
         .breadcrumb-bg {
-          background-image: url([[@{/imgs/banners/contact-us.jpg}]]);
+          background-image: url([[@{${contactUs.banner_url}}]]);
         }
 
         .bg-1 {
@@ -30,7 +30,7 @@
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
               <h1 class="split-collab-words">
-                LIÊN HỆ
+                [[${ contactUs.getTitle(#locale.language) }]]
               </h1>
             </div>
           </div>
@@ -43,6 +43,12 @@
         </div>
         <div class="container">
           <div class="row g-5">
+            <div class="oaerror success" th:if="${isSend != null && isSend == 'success'}">
+              <strong>Cảm ơn vì đã liên hệ với chúng tôi!</strong> - Nội dung đã được gửi.
+            </div>
+            <div class="oaerror danger" th:if="${isSend != null && isSend == 'error'}">
+              <strong>Có lỗi xảy ra</strong> - Nội dung chưa được gửi.
+            </div>
             <div class="col-lg-5">
               <div class="contact-inner">
                 <div
@@ -51,7 +57,7 @@
                   data-sal="slide-up"
                   data-sal-duration="800"
                 >
-                  <span class="title">Liên hệ</span>
+                  <span class="title contact-us-title">[[#{ contact }]]</span>
                 </div>
                 <ul
                   class="ft-link ft-link-style-three p-0"
@@ -90,10 +96,9 @@
                         <i class="fa-solid fa-map-location-dot"></i>
                       </div>
                       <div class="content">
-                        <span>Địa chỉ</span>
+                        <span>[[#{ address }]]</span>
                         <a class="contact-here" href="#"
-                          >30 Phan Chu Trinh, Phường 2, Bình Thạnh, Hồ Chí
-                          Minh</a
+                          >[[#{ company.address }]]</a
                         >
                       </div>
                     </div>
@@ -105,10 +110,9 @@
                   data-sal="slide-up"
                   data-sal-duration="800"
                 >
-                  <a class="tag-list" href="#">Facebook</a>
-                  <a class="tag-list" href="#">Zalo</a>
-                  <a class="tag-list" href="#">Twitter</a>
-                  <a class="tag-list" href="#">Instagram</a>
+                  <a class="tag-list" href="https://www.facebook.com/techgel.inc" target="_blank">Facebook</a>
+                  <a class="tag-list" href="https://zalo.me/2317208855045151734" target="_blank">Zalo</a>
+                  <a class="tag-list" href="https://www.linkedin.com/company/techgelcom" target="_blank">LinkedIn</a>
                 </div>
               </div>
             </div>
@@ -120,17 +124,17 @@
             >
               <div class="contact-inner">
                 <div class="section-head section-head-one-side text-align-left">
-                  <span class="title">KẾT NỐI</span>
+                  <span th:with="label=#{connect}" class="title contact-us-title">[[${#strings.toUpperCase(label)}]]</span>
                 </div>
                 <div class="contact-form style-two">
-                  <form action="" id="contact-form">
+                  <form action="/contact-us" method="post" id="contact-form">
                     <div class="contact-form-wrapper row">
                       <div class="col-lg-6">
                         <div class="form-group">
                           <input
                             class="input-field"
-                            name="contact-name"
-                            placeholder="Họ và tên"
+                            name="fullname"
+                            th:placeholder="#{fullname}"
                             id="contact-name"
                             type="text"
                             required=""
@@ -141,8 +145,8 @@
                         <div class="form-group">
                           <input
                             class="input-field"
-                            name="contact-phone"
-                            placeholder="SĐT"
+                            name="phone"
+                            placeholder="Phone"
                             type="text"
                           />
                         </div>
@@ -151,7 +155,7 @@
                         <div class="form-group">
                           <input
                             class="input-field"
-                            name="contact-phone"
+                            name="email"
                             placeholder="Email"
                             type="email"
                             required=""
@@ -162,8 +166,8 @@
                         <div class="form-group">
                           <textarea
                             class="input-field"
-                            placeholder="Nội dung cần hỗ trợ"
-                            name="contact-message"
+                            th:placeholder="#{support_needed}"
+                            name="message"
                             id="contact-message"
                           ></textarea>
                         </div>
@@ -176,7 +180,7 @@
                             type="submit"
                             id="submit"
                           >
-                            Gửi thông tin
+                            [[#{ send_information }]]
                           </button>
                         </div>
                       </div>

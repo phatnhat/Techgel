@@ -16,17 +16,26 @@ import lombok.Setter;
 public class WhatWeDoOurBusinessLine extends BasedEntity {
     private String title_vi;
     private String title_en;
-    private String subtitle_vi;
-    private String subtitle_en;
     @Lob
     private String general_introduction_vi;
     @Lob
     private String general_introduction_en;
+    private String banner_url;
 
-    public WhatWeDoOurBusinessLine(String title_vi, String title_en, String subtitle_vi, String subtitle_en) {
+    public WhatWeDoOurBusinessLine(Long id, String title_vi, String title_en, String general_introduction_vi, String general_introduction_en, String banner_url) {
+        super(id);
         this.title_vi = title_vi;
         this.title_en = title_en;
-        this.subtitle_vi = subtitle_vi;
-        this.subtitle_en = subtitle_en;
+        this.general_introduction_vi = general_introduction_vi;
+        this.general_introduction_en = general_introduction_en;
+        this.banner_url = banner_url;
+    }
+
+    public String getTitle(String lang){
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
+    }
+
+    public String getGeneralIntroduction(String lang){
+        return "vi".equalsIgnoreCase(lang) ? general_introduction_vi : general_introduction_en;
     }
 }

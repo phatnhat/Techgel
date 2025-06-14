@@ -166,7 +166,7 @@
 }
 
 html {
-  width: fit-content;
+  width: calc(100vw - 15px);
   font-size: 16px;
   overflow-x: hidden;
 }
@@ -712,7 +712,7 @@ nav ul li.has-dropdown:hover .submenu {
 }
 @media (max-width: 768px) {
   .banner-one-height-control {
-    height: 50vh;
+    height: 100%;
   }
 }
 
@@ -978,7 +978,7 @@ nav ul li.has-dropdown:hover .submenu {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   position: relative;
 }
 @media (max-width: 768px) {

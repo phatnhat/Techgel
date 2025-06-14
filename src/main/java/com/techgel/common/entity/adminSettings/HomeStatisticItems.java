@@ -29,4 +29,12 @@ public class HomeStatisticItems extends BasedEntity {
         this.unit_vi = unit_vi;
         this.unit_en = unit_en;
     }
+
+    public String getTitle(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
+    }
+
+    public String getUnit(String lang) {
+        return "vi".equalsIgnoreCase(lang) ? unit_vi : unit_en;
+    }
 }

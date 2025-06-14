@@ -8,7 +8,7 @@
     <main class="content-wrapper">
       <style>
         .breadcrumb-bg {
-          background-image: url([[@{/imgs/banners/growth-sustain.png}]]);
+          background-image: url([[@{${whatWeDoSustainableDevelopment.banner_url}}]]);
         }
       </style>
 
@@ -19,28 +19,14 @@
               id="brxe-naxryb"
               class="brxe-text uni-text-outline-white uni-text-outline"
             >
-              <h1 class="split-collab-words">PHÁT TRIỂN BỀN VỮNG</h1>
+              <h1 class="split-collab-words">[[${ whatWeDoSustainableDevelopment.getTitle(#locale.language) }]]</h1>
             </div>
           </div>
         </div>
       </div>
 
       <div id="next" class="sd-area">
-        <div class="quote">
-          <div
-            class="quote-content"
-            data-sal-delay="200"
-            data-sal="flip-down"
-            data-sal-duration="800"
-          >
-            <h2 class="pb-3">
-              KINH DOANH BỀN VỮNG THIẾT LẬP NỀN TẢNG CHO CỘNG ĐỒNG THỊNH VƯỢNG
-            </h2>
-            <h3>Từ kế hoạch trên giấy đến hành động thực tiễn.</h3>
-            <h3>Từ ý niệm ban đầu đến tính cam kết dài lâu.</h3>
-            <h3>Đó là cách chúng tôi nói, hiểu và làm</h3>
-            <h3>về <i>PHÁT TRIỂN BỀN VỮNG.</i></h3>
-          </div>
+        <div class="quote" th:utext="${ whatWeDoSustainableDevelopment.getQuote(#locale.language) }">
         </div>
 
         <div class="commit-page tmp-section-gap">
@@ -53,26 +39,18 @@
                 class="title text-center split-collab text-white"
                 style="opacity: 1"
               >
-                <span>Cam kết phát triển bền vững</span>
+                <span>[[${ whatWeDoSustainableDevelopment.getCommitTitle(#locale.language) }]]</span>
               </h1>
               <div
                 data-sal-delay="200"
                 data-sal="zoom-in"
                 data-sal-duration="800"
               >
-                <p class="text-white" style="text-align: center">
-                  Thế giới ngày càng phụ thuộc vào các Công ty đưa ra các lựa
-                  chọn phát triển bền vững.
-                </p>
-                <p class="text-white" style="text-align: center">
-                  Techgel nhận thức được trách nhiệm đúng đắn sứ mệnh cộng giá
-                  trị cho các bên liên quan – khách hàng, đối tác, môi trường,
-                  cộng đồng, quốc gia, và toàn cầu nói chung cũng như sự phát
-                  triển của mỗi con người trong tổ chức nói riêng.
-                </p>
+                <th:block th:utext="${ whatWeDoSustainableDevelopment.getCommitContent(#locale.language) }"></th:block>
               </div>
             </div>
             <div
+              th:if="${whatWeDoSustainableDevelopmentItems.size() >= 4}"
               class="all"
               data-sal-delay="200"
               data-sal="slide-down"
@@ -81,37 +59,37 @@
               <div
                 class="lefter scroll-btn"
                 data-target="commitment-to-employees"
-                style="--bg: url(/imgs/sustainable-development/emp.jpg)"
+                th:style="|--bg: url('${whatWeDoSustainableDevelopmentItems[0].image_url}')|"
               >
-                <div class="text">Cam kết với Người lao động</div>
+                <div class="text">[[${ whatWeDoSustainableDevelopmentItems[0].getTitle(#locale.language) }]]</div>
               </div>
               <div
                 class="left scroll-btn"
-                style="--bg: url(/imgs/sustainable-development/shareholder.jpg)"
+                th:style="|--bg: url('${whatWeDoSustainableDevelopmentItems[1].image_url}')|"
                 data-target="commitment-to-shareholders"
               >
-                <div class="text">Cam kết với Cổ đông</div>
+                <div class="text">[[${ whatWeDoSustainableDevelopmentItems[1].getTitle(#locale.language) }]]</div>
               </div>
               <div class="center">
                 <div class="explainer">
                   <span style="font-weight: 500"
-                    >CAM KẾT PHÁT TRIỂN BỀN VỮNG</span
+                    >[[${ whatWeDoSustainableDevelopment.getCommitTitle(#locale.language) }]]</span
                   >
                 </div>
               </div>
               <div
                 class="right scroll-btn"
                 data-target="commitment-to-partners"
-                style="--bg: url(/imgs/sustainable-development/partners.jpg)"
+                th:style="|--bg: url('${whatWeDoSustainableDevelopmentItems[2].image_url}')|"
               >
-                <div class="text">Cam kết với Đối tác</div>
+                <div class="text">[[${ whatWeDoSustainableDevelopmentItems[2].getTitle(#locale.language) }]]</div>
               </div>
               <div
                 class="righter scroll-btn"
                 data-target="commitment-to-community-society"
-                style="--bg: url(/imgs/sustainable-development/esg.jpg)"
+                th:style="|--bg: url('${whatWeDoSustainableDevelopmentItems[3].image_url}')|"
               >
-                <div class="text">Cam kết với Cộng đồng & Xã hội</div>
+                <div class="text">[[${ whatWeDoSustainableDevelopmentItems[3].getTitle(#locale.language) }]]</div>
               </div>
             </div>
 
@@ -119,36 +97,36 @@
               <div
                 class="text-white item scroll-btn"
                 data-target="commitment-to-employees"
-                style="--bg: url(/imgs/sustainable-development/emp.jpg)"
+                th:style="|--bg: url('${whatWeDoSustainableDevelopmentItems[0].image_url}')|"
               >
-                <span>Cam kết với Người lao động</span>
+                <span>[[${ whatWeDoSustainableDevelopmentItems[0].getTitle(#locale.language) }]]</span>
               </div>
               <div
                 class="text-white item scroll-btn"
                 data-target="commitment-to-shareholders"
-                style="--bg: url(/imgs/sustainable-development/shareholder.jpg)"
+                th:style="|--bg: url('${whatWeDoSustainableDevelopmentItems[1].image_url}')|"
               >
-                <span>Cam kết với Cổ đông</span>
+                <span>[[${ whatWeDoSustainableDevelopmentItems[1].getTitle(#locale.language) }]]</span>
               </div>
               <div
                 class="text-white item scroll-btn"
                 data-target="commitment-to-partners"
-                style="--bg: url(/imgs/sustainable-development/partners.jpg)"
+                th:style="|--bg: url('${whatWeDoSustainableDevelopmentItems[2].image_url}')|"
               >
-                <span>Cam kết với Đối tác</span>
+                <span>[[${ whatWeDoSustainableDevelopmentItems[2].getTitle(#locale.language) }]]</span>
               </div>
               <div
                 class="text-white item scroll-btn"
                 data-target="commitment-to-community-society"
-                style="--bg: url(/imgs/sustainable-development/esg.jpg)"
+                th:style="|--bg: url('${whatWeDoSustainableDevelopmentItems[3].image_url}')|"
               >
-                <span>Cam kết với Cộng đồng & xã hội</span>
+                <span>[[${ whatWeDoSustainableDevelopmentItems[3].getTitle(#locale.language) }]]</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="commit-page-details py-5">
+        <div class="commit-page-details py-5" th:if="${whatWeDoSustainableDevelopmentItems.size() >= 4}">
           <div class="container">
             <ul>
               <li
@@ -158,10 +136,9 @@
                 data-sal="slide-right"
                 data-sal-duration="800"
               >
-                <div class="date fit-text">CAM KẾT VỚI NGƯỜI LAO ĐỘNG</div>
+                <div class="date fit-text">[[${ whatWeDoSustainableDevelopmentItems[0].getTitle(#locale.language) }]]</div>
                 <div class="descr">
-                  Cam kết xây dựng môi trường làm việc công bằng, nơi mỗi cá
-                  nhân tài năng được trao cơ hội để vươn xa trong sự nghiệp.
+                  [[${ whatWeDoSustainableDevelopmentItems[0].getContent(#locale.language) }]]
                 </div>
               </li>
               <li
@@ -171,10 +148,9 @@
                 data-sal="slide-left"
                 data-sal-duration="800"
               >
-                <div class="date fit-text">CAM KẾT VỚI CỔ ĐÔNG</div>
+                <div class="date fit-text">[[${ whatWeDoSustainableDevelopmentItems[1].getTitle(#locale.language) }]]</div>
                 <div class="descr">
-                  Cam kết minh bạch, phản hồi kịp thời và tạo giá trị bền vững
-                  cho cổ đông.
+                  [[${ whatWeDoSustainableDevelopmentItems[1].getContent(#locale.language) }]]
                 </div>
               </li>
               <li
@@ -184,10 +160,9 @@
                 data-sal="slide-right"
                 data-sal-duration="800"
               >
-                <div class="date fit-text">CAM KẾT VỚI ĐỐI TÁC</div>
+                <div class="date fit-text">[[${ whatWeDoSustainableDevelopmentItems[2].getTitle(#locale.language) }]]</div>
                 <div class="descr">
-                  Cam kết chữ Tín, chia sẻ cơ hội, đảm bảo chất lượng và cùng
-                  nhau phát triển bền vững trên mọi công trình.
+                  [[${ whatWeDoSustainableDevelopmentItems[2].getContent(#locale.language) }]]
                 </div>
               </li>
               <li
@@ -197,10 +172,9 @@
                 data-sal="slide-left"
                 data-sal-duration="800"
               >
-                <div class="date fit-text">CAM KẾT VỚI CỘNG ĐỒNG VÀ XÃ HỘI</div>
+                <div class="date fit-text">[[${ whatWeDoSustainableDevelopmentItems[3].getTitle(#locale.language) }]]</div>
                 <div class="descr">
-                  Cam kết trách nhiệm, gắn bó với ESG, lan toả giá trị nhân văn
-                  và cộng đồng.
+                  [[${ whatWeDoSustainableDevelopmentItems[3].getContent(#locale.language) }]]
                 </div>
               </li>
             </ul>

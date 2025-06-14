@@ -19,21 +19,16 @@ import java.util.List;
 public class AboutUsClientPartner extends BasedEntity {
     private String title_vi;
     private String title_en;
-    private int displayOrder;
+    private String banner_url;
 
-    @OneToMany(mappedBy = "aboutUsClientPartner")
-    private List<AboutUsClientPartnerItems> aboutUsClientPartnerItems = new ArrayList<>();
-
-    public AboutUsClientPartner(String title_vi, String title_en, int displayOrder) {
-        this.title_vi = title_vi;
-        this.title_en = title_en;
-        this.displayOrder = displayOrder;
-    }
-
-    public AboutUsClientPartner(Long id, String title_vi, String title_en, int displayOrder) {
+    public AboutUsClientPartner(Long id, String title_vi, String title_en, String banner_url) {
         super(id);
         this.title_vi = title_vi;
         this.title_en = title_en;
-        this.displayOrder = displayOrder;
+        this.banner_url = banner_url;
+    }
+
+    public String getTitle(String lang){
+        return "vi".equalsIgnoreCase(lang) ? title_vi : title_en;
     }
 }
