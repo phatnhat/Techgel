@@ -1,6 +1,7 @@
 package com.techgel.StaticData;
 
 import com.techgel.common.entity.adminSettings.CeoMessage;
+
 import com.techgel.common.entity.adminSettings.VisionMission;
 
 import java.util.List;
@@ -20,3 +21,4 @@ public class VisionMissionData {
         );
     }
 }
+

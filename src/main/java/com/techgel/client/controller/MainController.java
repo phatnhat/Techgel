@@ -82,6 +82,7 @@ public class MainController {
         private final ContactUsService contactUsService;
         private final MailService mailService;
 
+
         @GetMapping("")
         public String viewHomagePage(Model model, HttpServletRequest request) {
                 List<Carousel> banners = carouselService.getAll();
@@ -179,6 +180,7 @@ public class MainController {
                 model.addAttribute("visionMissions", visionMissions);
                 model.addAttribute("coreValue", coreValue);
                 model.addAttribute("coreValueItems", coreValueItems);
+
                 return "clients/about-us/vision-mission-values";
         }
 
