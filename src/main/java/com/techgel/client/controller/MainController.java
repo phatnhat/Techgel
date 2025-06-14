@@ -51,6 +51,7 @@ public class MainController {
         private final ProjectService projectService;
         private final NewsService newsService;
         private final CareerRecruitmentService careerRecruitmentService;
+        private final VisionMissionService visionMissionService;
 
         @GetMapping("")
         public String viewHomagePage(Model model, HttpServletRequest request) {
@@ -136,6 +137,12 @@ public class MainController {
         @GetMapping({"/about-us", "/about-us/vision-mission-values"})
         public String viewVisionMissionValues(Model model) {
                 model.addAttribute("title", "Tầm nhìn, sứ mệnh & giá trị cốt lõi - Techgel");
+                List<VisionMission> visionMissions = visionMissionService.getAll();
+                for (VisionMission vm : visionMissions) {
+                        System.out.println(vm.getTitle_en()); // Make sure VisionMission has a proper toString() method
+                }
+                model.addAttribute("visionMissions", visionMissions);
+
                 return "clients/about-us/vision-mission-values";
         }
 

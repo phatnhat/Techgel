@@ -133,9 +133,7 @@ public abstract class AboutUsClientPartnerData {
                                 new AboutUsClientPartnerItems(7L, "EuroWindow", "EuroWindow", "https://eurowindow.biz/",
                                                 "/imgs/logos/partnership-logos/eurowindow-logo.png",
                                                 7, aboutUsClientPartner2),
-                                new AboutUsClientPartnerItems(1L, "GB Industrial", "GB Industrial", "",
-                                                "/imgs/logos/partnership-logos/gbindustrial-logo.png",
-                                                1, aboutUsClientPartner2),
+
                                 new AboutUsClientPartnerItems(2L, "Incotec", "Incotec", "",
                                                 "/imgs/logos/partnership-logos/incotec-logo.png",
                                                 3, aboutUsClientPartner2),
