@@ -1553,6 +1553,7 @@ div#brxe-rqhadm {
 .signature-block .signature-wrapper {
   position: relative;
   width: 11.25rem;
+  display: none;
 }
 .signature-block .signature-wrapper .signature-img {
   width: 100%;
