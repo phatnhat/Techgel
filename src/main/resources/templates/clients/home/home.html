@@ -46,11 +46,11 @@
             <div class="col-lg-6">
               <div class="about-thumbnails position-relative">
                 <div class="thumbnail">
-<!--                  <div class="video-container">-->
-<!--                    <video autoplay loop muted playsinline>-->
-<!--                      <source class="w-100" src="/imgs/home/IMG_6393.MOV" type="video/mp4">-->
-<!--                    </video>-->
-<!--                  </div>-->
+                  <!--                  <div class="video-container">-->
+                  <!--                    <video autoplay loop muted playsinline>-->
+                  <!--                      <source class="w-100" src="/imgs/home/IMG_6393.MOV" type="video/mp4">-->
+                  <!--                    </video>-->
+                  <!--                  </div>-->
 
                   <img
                     data-sal-delay="300"
@@ -117,10 +117,13 @@
                   </div>
                 </div>
                 <div
-                    data-sal-delay="400"
-                    data-sal="zoom-in"
-                    data-sal-duration="800"
-                    class="vedio-icone" data-tmp-cursor="lg" data-tmp-cursor-text="Play Video">
+                  data-sal-delay="400"
+                  data-sal="zoom-in"
+                  data-sal-duration="800"
+                  class="vedio-icone"
+                  data-tmp-cursor="lg"
+                  data-tmp-cursor-text="Play Video"
+                >
                   <a class="video-play-button play-video" href="#">
                     <span></span>
                   </a>
@@ -131,7 +134,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="about-inner" style="place-items:start;">
+              <div class="about-inner" style="place-items: start">
                 <div class="section-head text-left section-head-one-side">
                   <h4 class="section-sub-title split-collab-words">
                     <span class="subtitle">
@@ -142,10 +145,13 @@
                         th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                         alt="Techgel"
                       />
-                      [[${homeAboutUs.getTitle(#locale.language)}]]</span>
+                      [[${homeAboutUs.getTitle(#locale.language)}]]</span
+                    >
                   </h4>
                 </div>
-                <h4 class="text-uppercase font-bold">[[#{company.firstname}]] [[#{company.lastname}]]</h4>
+                <h4 class="text-uppercase font-bold">
+                  [[#{company.firstname}]] [[#{company.lastname}]]
+                </h4>
                 <p
                   class="fs-5"
                   data-sal-delay="200"
@@ -195,7 +201,9 @@
                   data-sal-duration="800"
                 >
                   "[[${ ceoMessage.getSubTitle(#locale.language) }]]
-                  <span class="highlight-word">[[${ ceoMessage.getSubTitleMark(#locale.language)  }]]</span>"
+                  <span class="highlight-word"
+                    >[[${ ceoMessage.getSubTitleMark(#locale.language) }]]</span
+                  >"
                 </h2>
                 <div class="title-underline"></div>
               </div>
@@ -206,9 +214,10 @@
                 data-sal="flip-down"
                 data-sal-duration="800"
               >
-                <p>
-                  [[${ ceoMessage.getMessage(#locale.language) }]]
-                </p>
+                <div
+                  th:utext="${ceoMessage.getMessage(#locale.language)}"
+                ></div>
+
                 <div class="quote-mark">“</div>
               </div>
 
@@ -227,8 +236,12 @@
                   <div class="ink-effect"></div>
                 </div>
                 <div class="ceo-info">
-                  <p class="ceo-name split-collab-words">[[${ ceoMessage.getName(#locale.language) }]]</p>
-                  <p class="ceo-position split-collab-words">[[${ ceoMessage.getPosition(#locale.language) }]]</p>
+                  <p class="ceo-name split-collab-words">
+                    [[${ ceoMessage.getName(#locale.language) }]]
+                  </p>
+                  <p class="ceo-position split-collab-words">
+                    [[${ ceoMessage.getPosition(#locale.language) }]]
+                  </p>
                 </div>
               </div>
             </div>
@@ -268,12 +281,15 @@
                   class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim"
                 >
                   <div class="count-box counter-style-4 text-center">
-                    <h4 class="counter-title">[[${ item.getTitle(#locale.language) }]]</h4>
+                    <h4 class="counter-title">
+                      [[${ item.getTitle(#locale.language) }]]
+                    </h4>
                     <div>
                       <h3 class="title animated fadeIn">
                         <span
                           class="counter animated fadeInDownBig property-number"
-                          >[[${item.counter % 1 == 0} ? ${item.counter.intValue()} : ${item.counter}]]</span
+                          >[[${item.counter % 1 == 0} ?
+                          ${item.counter.intValue()} : ${item.counter}]]</span
                         >[[${ item.getUnit(#locale.language) }]]
                       </h3>
                     </div>
@@ -300,7 +316,8 @@
                       th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                       alt="Techgel"
                     />
-                    [[${ homeOurBusinessLine.getTitle(#locale.language) }]]</span
+                    [[${ homeOurBusinessLine.getTitle(#locale.language)
+                    }]]</span
                   >
                 </h4>
               </div>
@@ -321,7 +338,9 @@
                 <div
                   class="thumbnail thumbnail-rounded border-top-left hover-animation"
                 >
-                  <a th:href="@{/what-we-do/our-business-line-details (id=${service.id})}">
+                  <a
+                    th:href="@{/what-we-do/our-business-line-details (id=${service.id})}"
+                  >
                     <img
                       th:src="@{${service.image_url}}"
                       th:alt="${service.getTitle(#locale.language)}"
@@ -334,7 +353,9 @@
                 <div
                   class="services-content services-content-style-1 text-center"
                 >
-                  <h5 class="title">[[${ service.getTitle(#locale.language) }]]</h5>
+                  <h5 class="title">
+                    [[${ service.getTitle(#locale.language) }]]
+                  </h5>
                 </div>
               </div>
             </div>
@@ -382,7 +403,9 @@
                 </figure>
 
                 <div class="meta_info">
-                  <h4 class="fs-20 fw-bold">[[${project.getTitle(#locale.language)}]]</h4>
+                  <h4 class="fs-20 fw-bold">
+                    [[${project.getTitle(#locale.language)}]]
+                  </h4>
 
                   <div class="detail_info">
                     <div class="table-responsive">
@@ -390,15 +413,21 @@
                         <tbody>
                           <tr>
                             <td>[[#{ client }]]</td>
-                            <td>[[${project.getClientName(#locale.language)}]]</td>
+                            <td>
+                              [[${project.getClientName(#locale.language)}]]
+                            </td>
                           </tr>
                           <tr>
                             <td>[[#{ location }]]</td>
-                            <td>[[${project.getLocation(#locale.language)}]]</td>
+                            <td>
+                              [[${project.getLocation(#locale.language)}]]
+                            </td>
                           </tr>
                           <tr>
                             <td>[[#{ scope_of_work }]]</td>
-                            <td>[[${project.getScopeOfWork(#locale.language)}]]</td>
+                            <td>
+                              [[${project.getScopeOfWork(#locale.language)}]]
+                            </td>
                           </tr>
                         </tbody>
                       </table>
@@ -893,7 +922,8 @@
                           th:src="@{/imgs/small-icons/section-custom-menubar-blue.png}"
                           alt="Techgel"
                         />
-                        [[${ aboutUsTestimonial.getTitle(#locale.language) }]]</span
+                        [[${ aboutUsTestimonial.getTitle(#locale.language)
+                        }]]</span
                       >
                     </h4>
                   </div>
