@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<svg id="Component2" width="286" height="150" viewBox="0 0 286 150" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; max-height: 100%;">
+<svg id="Component2" width="286" height="150" viewBox="0 0 286 150" fill="none" xmlns="https://www.w3.org/2000/svg" style="max-width: 100%; max-height: 100%;">
 <path d="M146 10C178.436 10 207.32 18.0371 227.768 30.5049C248.39 43.0794 259 59.1022 259 75C259 90.8978 248.39 106.921 227.768 119.495C207.32 131.963 178.436 140 146 140C113.564 140 84.6797 131.963 64.2324 119.495C43.6103 106.921 33 90.8978 33 75C33 59.1022 43.6103 43.0794 64.2324 30.5049C84.6797 18.0371 113.564 10 146 10Z" stroke="#DA251A" stroke-width="20" stroke-dasharray="0,0,0,568.45654296875"><animate attributeType="XML" attributeName="stroke-dasharray" repeatCount="1" dur="1.6129032258064515s" values="0,0,0,568.45654296875; 
           0,284.228271484375,284.228271484375,0; 
           568.45654296875,0,0,0" keyTimes="0; 0.5; 1" fill="freeze"></animate></path>
