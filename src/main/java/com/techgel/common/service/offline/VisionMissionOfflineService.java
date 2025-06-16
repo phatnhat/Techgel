@@ -5,6 +5,7 @@ import com.techgel.StaticData.EProfileData;
 import com.techgel.StaticData.VisionMissionData;
 import com.techgel.common.entity.adminSettings.CeoMessage;
 import com.techgel.common.entity.adminSettings.EProfile;
+
 import com.techgel.common.entity.adminSettings.VisionMission;
 import com.techgel.common.service.VisionMissionService;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 @Service
@@ -31,4 +33,5 @@ public class VisionMissionOfflineService implements VisionMissionService {
     }
 
     public void deleteById(Long id){}
+
 }
