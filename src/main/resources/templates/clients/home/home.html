@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   lang="en"
-  xmlns:th="http://www.thymeleaf.org"
+  xmlns:th="https://www.thymeleaf.org"
   th:replace="~{clients/index :: dynamic(~{::main})}"
 >
   <head>
@@ -173,7 +173,7 @@
             <div class="ceo-portrait-wrapper">
               <div class="ceo-portrait">
                 <img
-                  src="/imgs/MUiM2Sx0ZtU 1.svg"
+                  src="/imgs/home/pen-signature.png"
                   alt="Techgel General Director"
                   class="portrait-img"
                   data-sal-delay="300"
@@ -222,7 +222,7 @@
               </div>
 
               <div class="signature-block">
-                <div
+                <!-- <div
                   class="signature-wrapper"
                   data-sal-delay="300"
                   data-sal="zoom-in"
@@ -234,7 +234,7 @@
                     class="signature-img"
                   />
                   <div class="ink-effect"></div>
-                </div>
+                </div> -->
                 <div class="ceo-info">
                   <p class="ceo-name split-collab-words">
                     [[${ ceoMessage.getName(#locale.language) }]]
@@ -678,7 +678,6 @@
                   data-tmp-cursor="lg transparent fw-bold"
                   data-tmp-cursor-text="View Details"
                 >
-                  <img th:src="@{/imgs/IMG_6797.JPG}" alt="Corporate team" />
                 </a>
                 <div class="content">
                   <div class="team-name content-with-bg">
@@ -717,7 +716,6 @@
                   data-tmp-cursor="lg transparent fw-bold"
                   data-tmp-cursor-text="View Details"
                 >
-                  <img th:src="@{/imgs/IMG_6797.JPG}" alt="Corporate team" />
                 </a>
                 <div class="content">
                   <div class="team-name content-with-bg">
