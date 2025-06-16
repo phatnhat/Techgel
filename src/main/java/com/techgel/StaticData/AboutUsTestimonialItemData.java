@@ -14,7 +14,7 @@ public abstract class AboutUsTestimonialItemData {
                                 1);
 
                 AboutUsTestimonialItems aboutUsTestimonialItems2 = new AboutUsTestimonialItems(1L,
-                                "Tôi cho rằng điều quan trọng hơn cả là hiểu cách mà Techgel vận hành và triển khai công việc.ệp. Dù đây chỉ là một dự án quy mô nhỏ, Techgel đã thể hiện được tinh thần nghiêm túc và thái độ làm việc chuyên nghiệp, không ngừng hoàn thiện và điều chỉnh linh hoạt để đảm bảo quy trình quản lý thi công được vận hành trơn tru và hiệu quả.",
+                                "Tôi cho rằng điều quan trọng hơn cả là hiểu cách mà Techgel vận hành và triển khai công việc. Dù đây chỉ là một dự án quy mô nhỏ, Techgel đã thể hiện được tinh thần nghiêm túc và thái độ làm việc chuyên nghiệp, không ngừng hoàn thiện và điều chỉnh linh hoạt để đảm bảo quy trình quản lý thi công được vận hành trơn tru và hiệu quả.",
                                 "I think it is more of knowing how Techgel does business and from what I have seen to date Techgel is very professional. For such a small project as we have Techgel has demonstrated a very serious and professional approach with continued growth towards making minor adjustments for maintaining a smooth construction operating management.",
                                 "Steven R. Macomber", "Steven R. Macomber", "Quản lý hiện trường dự án | BV",
                                 "Project Field Manager | BV",

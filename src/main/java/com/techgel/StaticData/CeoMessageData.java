@@ -18,7 +18,7 @@ public class CeoMessageData {
 
     public static List<CeoMessage> get() {
         return List.of(
-                new CeoMessage(1L, "Thông điệp tổng giám", "Message from the general director",
+                new CeoMessage(1L, "Thông điệp tổng giám đốc", "Message from the general director",
                         "Make TECHGEL", "Make TECHGEL", "great again", "great again",
                         msg_vi,
                         msg_en,
