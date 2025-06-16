@@ -10,7 +10,7 @@ public abstract class HomeAboutUsData {
                 "Công ty CP Kỹ thuật Công nghệ Sài Gòn (TECHGEL) là một trong những đơn vị hàng đầu tại Việt Nam trong lĩnh vực thiết kế, cung cấp và lắp đặt hệ thống điện, hàng không, công nghiệp, dân dụng, hạ tầng & công nghệ. Với hơn 25 năm kinh nghiệm, TECHGEL đã khẳng định được vị thế của mình trên thị trường và mang đến cho khách hàng những giải pháp toàn diện, tiên tiến, hiệu quả và bền vững, đạt tiêu chuẩn hàng đầu quốc tế & trong nước.",
                 "Saigon Technology Engineering Joint Stock Company (TECHGEL) is one of Vietnam’s leading companies in the design, supply, and installation of electrical, aviation, industrial, civil, infrastructure, and technology systems. With over 25 years of experience, TECHGEL has established its position in the market, providing customers with comprehensive, advanced, efficient, and sustainable solutions that meet top international and domestic standards.",
                 "/imgs/home/08410da143e68862c1fd1776101df10f.jpg", "/imgs/home/43790c92e4c15b450e83572e4c68dcaa.jpg",
-                "/imgs/home/3.jpg");
+                "/imgs/home/3.png");
 
         return List.of(homeAboutUs1);
     }

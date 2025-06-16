@@ -498,6 +498,7 @@ nav ul li.has-dropdown a.nav-link::before {
 .tmp-banner-swiper-one-area .tmp-banner-area {
   position: relative;
   z-index: 1;
+  align-content: end;
 }
 
 .tmp-banner-swiper-one-area
@@ -819,7 +820,7 @@ nav ul li.has-dropdown a.nav-link::before {
 }
 
 .tmp-section-gap {
-  padding: 120px 0;
+  padding: 2rem 0;
 }
 
 .section-head {
